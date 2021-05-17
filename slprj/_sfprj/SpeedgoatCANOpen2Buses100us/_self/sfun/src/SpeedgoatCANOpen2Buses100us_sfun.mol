@@ -1,26 +1,27 @@
 SpeedgoatCANOpen2Buses100us_sfun.obj
 c1_SpeedgoatCANOpen2Buses100us.obj
+c2_SpeedgoatCANOpen2Buses100us.obj
+c3_SpeedgoatCANOpen2Buses100us.obj
 c12_SpeedgoatCANOpen2Buses100us.obj
-c13_SpeedgoatCANOpen2Buses100us.obj
-c14_SpeedgoatCANOpen2Buses100us.obj
 SpeedgoatCANOpen2Buses100us_sfun_registry.obj
-c_mexapi_version.obj
-"C:\Users\Venqo\Desktop\SpeedGoat\Applications\Trike_git\Trike_SpeedGoat_algo\slprj\_slcc\ib2slzC4BPSVN9k9boIaXB\ib2slzC4BPSVN9k9boIaXB_cclib.lib"
 
-"E:\Program Files\MATLAB\R2018b\extern\lib\win64\microsoft\sf_runtime.lib"
-"E:\Program Files\MATLAB\R2018b\extern\lib\win64\microsoft\libmx.lib"
-"E:\Program Files\MATLAB\R2018b\extern\lib\win64\microsoft\libmex.lib"
-"E:\Program Files\MATLAB\R2018b\extern\lib\win64\microsoft\libmat.lib"
-"E:\Program Files\MATLAB\R2018b\extern\lib\win64\microsoft\libfixedpoint.lib"
-"E:\Program Files\MATLAB\R2018b\extern\lib\win64\microsoft\libut.lib"
-"E:\Program Files\MATLAB\R2018b\extern\lib\win64\microsoft\libmwstringutil.lib"
-"E:\Program Files\MATLAB\R2018b\extern\lib\win64\microsoft\libmwmathutil.lib"
-"E:\Program Files\MATLAB\R2018b\extern\lib\win64\microsoft\libemlrt.lib"
-"E:\Program Files\MATLAB\R2018b\extern\lib\win64\microsoft\libmwsl_log_load_blocks.lib"
-"E:\Program Files\MATLAB\R2018b\extern\lib\win64\microsoft\libmwsimulink.lib"
-"E:\Program Files\MATLAB\R2018b\extern\lib\win64\microsoft\libmwsl_sfcn_cov_bridge.lib"
-"E:\Program Files\MATLAB\R2018b\extern\lib\win64\microsoft\libcovrt.lib"
-"E:\Program Files\MATLAB\R2018b\extern\lib\win64\microsoft\libmwsl_simtarget_core.lib"
-"E:\Program Files\MATLAB\R2018b\extern\lib\win64\microsoft\libmwsl_simtarget_instrumentation.lib"
-"E:\Program Files\MATLAB\R2018b\extern\lib\win64\microsoft\libmwslexec_simlog.lib"
-"E:\Program Files\MATLAB\R2018b\lib\win64\libmwipp.lib"
+
+"E:\W\T\Trike_SpeedGoat_algo\slprj\_slcc\YniSwGxVGDuH0o55vVoK7E\YniSwGxVGDuH0o55vVoK7E_cclib.lib"
+"C:\LegacyApp\Matlab18b\R2018b\extern\lib\win64\mingw64\sf_runtime.lib" 
+"C:\LegacyApp\Matlab18b\R2018b\extern\lib\win64\mingw64\libmx.lib" 
+"C:\LegacyApp\Matlab18b\R2018b\extern\lib\win64\mingw64\libmex.lib" 
+"C:\LegacyApp\Matlab18b\R2018b\extern\lib\win64\mingw64\libmat.lib" 
+"C:\LegacyApp\Matlab18b\R2018b\extern\lib\win64\mingw64\libfixedpoint.lib" 
+"C:\LegacyApp\Matlab18b\R2018b\extern\lib\win64\mingw64\libut.lib" 
+"C:\LegacyApp\Matlab18b\R2018b\extern\lib\win64\mingw64\libmwstringutil.lib" 
+"C:\LegacyApp\Matlab18b\R2018b\extern\lib\win64\mingw64\libmwmathutil.lib" 
+"C:\LegacyApp\Matlab18b\R2018b\extern\lib\win64\mingw64\libemlrt.lib" 
+"C:\LegacyApp\Matlab18b\R2018b\extern\lib\win64\mingw64\libmwsl_log_load_blocks.lib" 
+"C:\LegacyApp\Matlab18b\R2018b\extern\lib\win64\mingw64\libmwsimulink.lib" 
+"C:\LegacyApp\Matlab18b\R2018b\extern\lib\win64\mingw64\libmwsl_sfcn_cov_bridge.lib" 
+"C:\LegacyApp\Matlab18b\R2018b\extern\lib\win64\mingw64\libcovrt.lib" 
+"C:\LegacyApp\Matlab18b\R2018b\extern\lib\win64\mingw64\libmwsl_simtarget_core.lib" 
+"C:\LegacyApp\Matlab18b\R2018b\extern\lib\win64\mingw64\libmwsl_simtarget_instrumentation.lib" 
+"C:\LegacyApp\Matlab18b\R2018b\extern\lib\win64\mingw64\libmwslexec_simlog.lib" 
+"-LC:\LegacyApp\Matlab18b\R2018b\bin\win64" "-llibmwipp"
+

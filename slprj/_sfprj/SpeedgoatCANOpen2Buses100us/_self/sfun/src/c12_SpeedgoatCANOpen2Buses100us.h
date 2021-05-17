@@ -10,7 +10,7 @@ typedef struct {
   ChartInfoStruct chartInfo;
   uint32_T chartNumber;
   uint32_T instanceNumber;
-  boolean_T c12_dataWrittenToVector[8];
+  boolean_T c12_dataWrittenToVector[7];
   uint8_T c12_doSetSimStateSideEffects;
   const mxArray *c12_setSimStateSideEffectsInfo;
   void *c12_fEmlrtCtx;
@@ -18,17 +18,14 @@ typedef struct {
   uint8_T *c12_is_active_c12_SpeedgoatCANOpen2Buses100us;
   uint8_T *c12_is_c12_SpeedgoatCANOpen2Buses100us;
   real32_T *c12_ButtonStatus;
-  real32_T *c12_Joystick_LatCmd;
   real32_T *c12_ClearError;
   real32_T *c12_DeviceMode;
   real32_T *c12_BrakeCtrl;
   real32_T *c12_ReadError;
   real32_T *c12_aux2;
   real32_T *c12_aux;
-  real32_T *c12_enable;
   real32_T *c12_PowerEnable;
-  real32_T *c12_Joystick_LongCmd;
-  real32_T *c12_SpeedRequest;
+  real32_T *c12_InitStatus;
 } SFc12_SpeedgoatCANOpen2Buses100usInstanceStruct;
 
 #endif                                 /*typedef_SFc12_SpeedgoatCANOpen2Buses100usInstanceStruct*/

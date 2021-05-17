@@ -23,7 +23,7 @@
 //Maximum number of transmit PDOs (0 to 16)
 #define NR_OF_TPDOS                 4    
 //Maximum number of receive  PDOs (0 to 16)
-#define NR_OF_RPDOS                9
+#define NR_OF_RPDOS                13
 
 /**************************************************************************
 DEFINES: CONST ENTRIES IN OBJECT DICTIONARY

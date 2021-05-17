@@ -7,24 +7,24 @@
 		sf_debug_unset_instance_data_value_ptr(sfGlobalDebugInstanceStruct, _SpeedgoatCANOpen2Buses100usMachineNumber_,CHARTINSTANCE_CHARTNUMBER,CHARTINSTANCE_INSTANCENUMBER,v1);
 	#define _SFD_SET_DATA_VALUE_PTR_VAR_DIM(v1,v2,v3)\
 		sf_debug_set_instance_data_value_ptr(sfGlobalDebugInstanceStruct, _SpeedgoatCANOpen2Buses100usMachineNumber_,CHARTINSTANCE_CHARTNUMBER,CHARTINSTANCE_INSTANCENUMBER,v1,(void *)(v2),(void *)(v3));
-	#define _SFD_DATA_RANGE_CHECK_MIN_MAX(dVal,dNum,dMin,dMax,ssid,offset,length, dRealWorldVal)\
+	#define _SFD_DATA_RANGE_CHECK_MIN_MAX(dVal,dNum,dMin,dMax,ssid,offset,length)\
 	                      sf_debug_data_range_error_wrapper_min_max(sfGlobalDebugInstanceStruct, _SpeedgoatCANOpen2Buses100usMachineNumber_,\
 	CHARTINSTANCE_CHARTNUMBER,\
 	CHARTINSTANCE_INSTANCENUMBER,\
 	                                             dNum,(double)(dVal),\
- (double)dMin,(double)dMax,ssid,offset,length, (double)dRealWorldVal)
-	#define _SFD_DATA_RANGE_CHECK_MIN(dVal,dNum,dMin,ssid,offset,length, dRealWorldVal)\
+ (double)dMin,(double)dMax,ssid,offset,length)
+	#define _SFD_DATA_RANGE_CHECK_MIN(dVal,dNum,dMin,ssid,offset,length)\
 	                      sf_debug_data_range_error_wrapper_min(sfGlobalDebugInstanceStruct, _SpeedgoatCANOpen2Buses100usMachineNumber_,\
 	CHARTINSTANCE_CHARTNUMBER,\
 	CHARTINSTANCE_INSTANCENUMBER,\
 	                                             dNum,(double)(dVal),\
- (double)dMin,ssid,offset,length, (double)dRealWorldVal)
-	#define _SFD_DATA_RANGE_CHECK_MAX(dVal,dNum,dMax,ssid,offset,length, dRealWorldVal)\
+ (double)dMin,ssid,offset,length)
+	#define _SFD_DATA_RANGE_CHECK_MAX(dVal,dNum,dMax,ssid,offset,length)\
 	                      sf_debug_data_range_error_wrapper_max(sfGlobalDebugInstanceStruct, _SpeedgoatCANOpen2Buses100usMachineNumber_,\
 	CHARTINSTANCE_CHARTNUMBER,\
 	CHARTINSTANCE_INSTANCENUMBER,\
 	                                             dNum,(double)(dVal),\
- (double)dMax,ssid,offset,length, (double)dRealWorldVal)
+ (double)dMax,ssid,offset,length)
 	#define _SFD_DATA_RANGE_CHECK(dVal,dNum)\
 	                      sf_debug_data_range_wrapper(sfGlobalDebugInstanceStruct, _SpeedgoatCANOpen2Buses100usMachineNumber_,\
 	CHARTINSTANCE_CHARTNUMBER,\

@@ -116,6 +116,17 @@ typedef union {
 	uint8_T Message[8];
 } RPDO_ID18x;
 
+typedef union {
+	struct {
+		uint8_T  ClearError;
+		uint8_T  DeviceMode;
+		uint16_T dummy1;
+		uint16_T dummy2;
+		uint16_T dummy3;
+  	} ;
+	uint8_T Message[8];
+} RPDO_ID28x;
+
 // Joystick
 typedef union {
 	struct {

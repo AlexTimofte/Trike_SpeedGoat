@@ -19,6 +19,7 @@ RPDO_ID1FF RPDO03; // Absolut Encoder WDGA
 RPDO_ID2FF RPDO04; // Absolut Encoder WDGA
 RPDO_ID1C8 RPDO05; // mCAN.4.ai-box
 RPDO_ID18x RPDO06,RPDO07,RPDO08,RPDO09; // DunkenMotoren
+RPDO_ID28x RPDO10,RPDO11,RPDO12,RPDO13; // DunkenMotoren
 
 // SpeedGoat TPDOs    -> Device RPDOs
 TPDO_ID20x   TPDO01,TPDO02,TPDO03,TPDO04; // DunkenMotoren
@@ -269,6 +270,13 @@ void CANOpenSlave_ResetCommunication(void)
        CANOpenSlave_InitRPDO(7, 0x18B, 8, &RPDO07.Message); // DunkB TPDO
        CANOpenSlave_InitRPDO(8, 0x18C, 8, &RPDO08.Message); // DunkC TPDO
        CANOpenSlave_InitRPDO(9, 0x18D, 8, &RPDO09.Message); // DunkD TPDO 
+       
+       
+       CANOpenSlave_InitRPDO(6, 0x28A, 8, &RPDO10.Message); // DunkA TPDO
+       CANOpenSlave_InitRPDO(7, 0x28B, 8, &RPDO11.Message); // DunkB TPDO
+       CANOpenSlave_InitRPDO(8, 0x28C, 8, &RPDO12.Message); // DunkC TPDO
+       CANOpenSlave_InitRPDO(9, 0x28D, 8, &RPDO13.Message); // DunkD TPDO 
+       
     #endif
  
 
