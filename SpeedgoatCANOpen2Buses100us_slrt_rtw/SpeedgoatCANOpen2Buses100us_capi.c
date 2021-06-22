@@ -3,9 +3,9 @@
  *
  * Code generation for model "SpeedgoatCANOpen2Buses100us".
  *
- * Model version              : 1.456
+ * Model version              : 1.480
  * Simulink Coder version : 9.0 (R2018b) 24-May-2018
- * C source code generated on : Sat May 15 14:03:32 2021
+ * C source code generated on : Tue Jun 22 20:30:45 2021
  *
  * Target selection: slrt.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -23,11 +23,11 @@
 #define TARGET_CONST
 #define TARGET_STRING(s)               (s)
 #ifndef SS_INT64
-#define SS_INT64                       39
+#define SS_INT64                       38
 #endif
 
 #ifndef SS_UINT64
-#define SS_UINT64                      40
+#define SS_UINT64                      39
 #endif
 
 #else                                  /* HOST_CAPI_BUILD */
@@ -85,492 +85,557 @@ static const rtwCAPI_Signals rtBlockSignals[] = {
   { 11, 0, TARGET_STRING("APT_RPDOs/RPDOs from APT/p8"),
     TARGET_STRING("APT_Direction"), 7, 1, 0, 0, 0 },
 
-  { 12, 0, TARGET_STRING("Dunker #1/RPDOs from Dunker #1/p1"),
+  { 12, 0, TARGET_STRING("Dold_MiniMaster_RPDOs/Constant"),
+    TARGET_STRING("Enable"), 0, 1, 0, 0, 0 },
+
+  { 13, 0, TARGET_STRING("Dunker #1/RPDOs from Dunker #1/p1"),
     TARGET_STRING("DunkA_ActualCurrent"), 0, 4, 0, 0, 0 },
 
-  { 13, 0, TARGET_STRING("Dunker #1/RPDOs from Dunker #1/p2"),
+  { 14, 0, TARGET_STRING("Dunker #1/RPDOs from Dunker #1/p2"),
     TARGET_STRING("DunkA_ActualVelocity"), 1, 4, 0, 0, 0 },
 
-  { 14, 0, TARGET_STRING("Dunker #2/RPDOs from Dunker #1/p1"),
+  { 15, 0, TARGET_STRING("Dunker #2/RPDOs from Dunker #1/p1"),
     TARGET_STRING("DunkB_ActualCurrent"), 0, 4, 0, 0, 0 },
 
-  { 15, 0, TARGET_STRING("Dunker #2/RPDOs from Dunker #1/p2"),
+  { 16, 0, TARGET_STRING("Dunker #2/RPDOs from Dunker #1/p2"),
     TARGET_STRING("DunkB_ActualVelocity"), 1, 4, 0, 0, 0 },
 
-  { 16, 0, TARGET_STRING("Dunker #3/RPDOs from Dunker #1/p1"),
+  { 17, 0, TARGET_STRING("Dunker #3/RPDOs from Dunker #1/p1"),
     TARGET_STRING("DunkC_ActualCurrent"), 0, 4, 0, 0, 0 },
 
-  { 17, 0, TARGET_STRING("Dunker #3/RPDOs from Dunker #1/p2"),
+  { 18, 0, TARGET_STRING("Dunker #3/RPDOs from Dunker #1/p2"),
     TARGET_STRING("DunkC_ActualVelocity"), 1, 4, 0, 0, 0 },
 
-  { 18, 0, TARGET_STRING("Dunker #4/RPDOs from Dunker #1/p1"),
+  { 19, 0, TARGET_STRING("Dunker #4/RPDOs from Dunker #1/p1"),
     TARGET_STRING("DunkD_ActualCurrent"), 0, 4, 0, 0, 0 },
 
-  { 19, 0, TARGET_STRING("Dunker #4/RPDOs from Dunker #1/p2"),
+  { 20, 0, TARGET_STRING("Dunker #4/RPDOs from Dunker #1/p2"),
     TARGET_STRING("DunkD_ActualVelocity"), 1, 4, 0, 0, 0 },
 
-  { 20, 0, TARGET_STRING("Encoder_RPDOs/RPDOs from Encoder/p1"),
+  { 21, 0, TARGET_STRING("Encoder_RPDOs/RPDOs from Encoder/p1"),
     TARGET_STRING("Encoder_Actual_Position"), 0, 5, 0, 0, 0 },
 
-  { 21, 0, TARGET_STRING("Encoder_RPDOs/RPDOs from Encoder/p2"),
+  { 22, 0, TARGET_STRING("Encoder_RPDOs/RPDOs from Encoder/p2"),
     TARGET_STRING("Encoder_Stored_Position"), 1, 5, 0, 0, 0 },
 
-  { 22, 0, TARGET_STRING("Joystick_RPDOs/RPDOs from Joystick/p1"),
+  { 23, 0, TARGET_STRING("Joystick_RPDOs/RPDOs from Joystick/p1"),
     TARGET_STRING("Joystick_ButtonsStatus"), 0, 1, 0, 0, 0 },
 
-  { 23, 0, TARGET_STRING("Joystick_RPDOs/RPDOs from Joystick/p2"),
+  { 24, 0, TARGET_STRING("Joystick_RPDOs/RPDOs from Joystick/p2"),
     TARGET_STRING("Joystick_LongCmd"), 1, 6, 0, 0, 0 },
 
-  { 24, 0, TARGET_STRING("Joystick_RPDOs/RPDOs from Joystick/p3"),
+  { 25, 0, TARGET_STRING("Joystick_RPDOs/RPDOs from Joystick/p3"),
     TARGET_STRING("Joystick_LatCmd"), 2, 6, 0, 0, 0 },
 
-  { 25, 0, TARGET_STRING("Trike Application Layer/Data Type Conversion14"),
+  { 26, 0, TARGET_STRING("Trike Application Layer/Scopes/Data Type Conversion14"),
     TARGET_STRING("Desired_Current"), 0, 6, 0, 0, 0 },
 
-  { 26, 0, TARGET_STRING("Trike Application Layer/Data Type Conversion15"),
+  { 27, 0, TARGET_STRING("Trike Application Layer/Scopes/Data Type Conversion15"),
     TARGET_STRING("Joystick_LatCmd"), 0, 6, 0, 0, 0 },
 
-  { 27, 0, TARGET_STRING("Trike Application Layer/Data Type Conversion16"),
+  { 28, 0, TARGET_STRING("Trike Application Layer/Scopes/Data Type Conversion16"),
     TARGET_STRING("Joystick_LongCmd"), 0, 6, 0, 0, 0 },
 
-  { 28, 0, TARGET_STRING("Trike Application Layer/Data Type Conversion17"),
+  { 29, 0, TARGET_STRING("Trike Application Layer/Scopes/Data Type Conversion17"),
     TARGET_STRING("AN1"), 0, 6, 0, 0, 0 },
 
-  { 29, 0, TARGET_STRING("Trike Application Layer/Data Type Conversion18"),
+  { 30, 0, TARGET_STRING("Trike Application Layer/Scopes/Data Type Conversion18"),
     TARGET_STRING("Encoder_Actual_Position"), 0, 6, 0, 0, 0 },
 
-  { 30, 0, TARGET_STRING("Trike Application Layer/Data Type Conversion19"),
+  { 31, 0, TARGET_STRING("Trike Application Layer/Scopes/Data Type Conversion19"),
     TARGET_STRING("AN2"), 0, 6, 0, 0, 0 },
 
-  { 31, 0, TARGET_STRING("Trike Application Layer/Data Type Conversion20"),
+  { 32, 0, TARGET_STRING("Trike Application Layer/Scopes/Data Type Conversion20"),
     TARGET_STRING("AN3"), 0, 6, 0, 0, 0 },
 
-  { 32, 0, TARGET_STRING("Trike Application Layer/Data Type Conversion21"),
+  { 33, 0, TARGET_STRING("Trike Application Layer/Scopes/Data Type Conversion21"),
     TARGET_STRING("AN4"), 0, 6, 0, 0, 0 },
 
-  { 33, 0, TARGET_STRING("Trike Application Layer/Data Type Conversion5"),
+  { 34, 0, TARGET_STRING("Trike Application Layer/Scopes/Data Type Conversion5"),
     TARGET_STRING("Encoder_Stored_Position"), 0, 6, 0, 0, 0 },
 
-  { 34, 0, TARGET_STRING("Trike Application Layer/Data Type Conversion9"),
+  { 35, 0, TARGET_STRING("Trike Application Layer/Scopes/Data Type Conversion9"),
     TARGET_STRING("Actual_Current"), 0, 6, 0, 0, 0 },
 
-  { 37, 2, TARGET_STRING("Trike Application Layer/Moving Average"),
+  { 38, 3, TARGET_STRING("Trike Application Layer/Scopes/Moving Average"),
     TARGET_STRING(""), 0, 8, 0, 0, 0 },
 
-  { 38, 0, TARGET_STRING(
+  { 39, 0, TARGET_STRING(
     "Trike Application Layer/Subsystem/Data Type Conversion22"),
     TARGET_STRING("DunkB_TPDO_ClearError"), 0, 1, 0, 0, 0 },
 
-  { 39, 0, TARGET_STRING(
+  { 40, 0, TARGET_STRING(
     "Trike Application Layer/Subsystem/Data Type Conversion23"),
     TARGET_STRING("DunkB_TPDO_BrakeCtrl"), 0, 1, 0, 0, 0 },
 
-  { 40, 0, TARGET_STRING(
+  { 41, 0, TARGET_STRING(
     "Trike Application Layer/Subsystem/Data Type Conversion24"),
     TARGET_STRING("DunkB_TPDO_DeviceMode"), 0, 1, 0, 0, 0 },
 
-  { 41, 0, TARGET_STRING(
+  { 42, 0, TARGET_STRING(
     "Trike Application Layer/Subsystem/Data Type Conversion25"),
     TARGET_STRING("DunkB_TPDO_PowerEnable"), 0, 1, 0, 0, 0 },
 
-  { 42, 0, TARGET_STRING(
+  { 43, 0, TARGET_STRING(
     "Trike Application Layer/Subsystem/Data Type Conversion26"),
     TARGET_STRING("DunkB_TPDO_DesiredCurrent"), 0, 4, 0, 0, 1 },
 
-  { 43, 0, TARGET_STRING(
+  { 44, 0, TARGET_STRING(
     "Trike Application Layer/Subsystem/Data Type Conversion27"),
     TARGET_STRING("DunkC_TPDO_ClearError"), 0, 1, 0, 0, 0 },
 
-  { 44, 0, TARGET_STRING(
+  { 45, 0, TARGET_STRING(
     "Trike Application Layer/Subsystem/Data Type Conversion28"),
     TARGET_STRING("DunkC_TPDO_BrakeCtrl"), 0, 1, 0, 0, 0 },
 
-  { 45, 0, TARGET_STRING(
+  { 46, 0, TARGET_STRING(
     "Trike Application Layer/Subsystem/Data Type Conversion29"),
     TARGET_STRING("DunkC_TPDO_DeviceMode"), 0, 1, 0, 0, 0 },
 
-  { 46, 0, TARGET_STRING(
+  { 47, 0, TARGET_STRING(
     "Trike Application Layer/Subsystem/Data Type Conversion3"),
     TARGET_STRING("DunkA_TPDO_ClearError"), 0, 1, 0, 0, 0 },
 
-  { 47, 0, TARGET_STRING(
+  { 48, 0, TARGET_STRING(
     "Trike Application Layer/Subsystem/Data Type Conversion30"),
     TARGET_STRING("DunkC_TPDO_PowerEnable"), 0, 1, 0, 0, 0 },
 
-  { 48, 0, TARGET_STRING(
+  { 49, 0, TARGET_STRING(
     "Trike Application Layer/Subsystem/Data Type Conversion31"),
     TARGET_STRING("DunkC_TPDO_DesiredCurrent"), 0, 4, 0, 0, 1 },
 
-  { 49, 0, TARGET_STRING(
+  { 50, 0, TARGET_STRING(
     "Trike Application Layer/Subsystem/Data Type Conversion32"),
     TARGET_STRING("DunkD_TPDO_ClearError"), 0, 1, 0, 0, 0 },
 
-  { 50, 0, TARGET_STRING(
+  { 51, 0, TARGET_STRING(
     "Trike Application Layer/Subsystem/Data Type Conversion33"),
     TARGET_STRING("DunkD_TPDO_BrakeCtrl"), 0, 1, 0, 0, 0 },
 
-  { 51, 0, TARGET_STRING(
+  { 52, 0, TARGET_STRING(
     "Trike Application Layer/Subsystem/Data Type Conversion34"),
     TARGET_STRING("DunkD_TPDO_DeviceMode"), 0, 1, 0, 0, 0 },
 
-  { 52, 0, TARGET_STRING(
+  { 53, 0, TARGET_STRING(
     "Trike Application Layer/Subsystem/Data Type Conversion35"),
     TARGET_STRING("DunkD_TPDO_PowerEnable"), 0, 1, 0, 0, 0 },
 
-  { 53, 0, TARGET_STRING(
+  { 54, 0, TARGET_STRING(
     "Trike Application Layer/Subsystem/Data Type Conversion36"),
     TARGET_STRING("DunkD_TPDO_DesiredCurrent"), 0, 4, 0, 0, 0 },
 
-  { 54, 0, TARGET_STRING(
+  { 55, 0, TARGET_STRING(
     "Trike Application Layer/Subsystem/Data Type Conversion4"),
     TARGET_STRING("DunkA_TPDO_BrakeCtrl"), 0, 1, 0, 0, 0 },
 
-  { 55, 0, TARGET_STRING(
+  { 56, 0, TARGET_STRING(
     "Trike Application Layer/Subsystem/Data Type Conversion6"),
     TARGET_STRING("DunkA_TPDO_DeviceMode"), 0, 1, 0, 0, 0 },
 
-  { 56, 0, TARGET_STRING(
+  { 57, 0, TARGET_STRING(
     "Trike Application Layer/Subsystem/Data Type Conversion7"),
     TARGET_STRING("DunkA_TPDO_PowerEnable"), 0, 1, 0, 0, 0 },
 
-  { 57, 0, TARGET_STRING(
+  { 58, 0, TARGET_STRING(
     "Trike Application Layer/Subsystem/Data Type Conversion8"),
     TARGET_STRING("DunkA_TPDO_DesiredCurrent"), 0, 4, 0, 0, 1 },
 
-  { 58, 3, TARGET_STRING("Trike Application Layer/Subsystem1/HeartBeatgenerator"),
+  { 59, 4, TARGET_STRING("Trike Application Layer/Subsystem1/HeartBeatgenerator"),
     TARGET_STRING(""), 0, 8, 0, 0, 0 },
 
-  { 59, 0, TARGET_STRING(
+  { 60, 0, TARGET_STRING(
     "Trike Application Layer/Subsystem1/Data Type Conversion"),
     TARGET_STRING("APT_TPDO_ControlWord"), 0, 1, 0, 0, 0 },
 
-  { 60, 0, TARGET_STRING(
+  { 61, 0, TARGET_STRING(
     "Trike Application Layer/Subsystem1/Data Type Conversion1"),
     TARGET_STRING("APT_TPDO_PedalPosition"), 0, 1, 0, 0, 0 },
 
-  { 61, 0, TARGET_STRING(
+  { 62, 0, TARGET_STRING(
     "Trike Application Layer/Subsystem1/Data Type Conversion2"),
     TARGET_STRING("APT_TPDO_Heartbeat"), 0, 1, 0, 0, 0 },
 
-  { 62, 0, TARGET_STRING("Trike Application Layer/System_Control/Cast To Single"),
+  { 63, 0, TARGET_STRING("Trike Application Layer/System_Control/Cast To Single"),
     TARGET_STRING(""), 0, 6, 0, 0, 0 },
 
-  { 63, 10, TARGET_STRING("Trike Application Layer/System_Init/MATLAB Function"),
+  { 64, 11, TARGET_STRING("Trike Application Layer/System_Init/MATLAB Function"),
     TARGET_STRING(""), 0, 8, 0, 0, 0 },
 
-  { 64, 11, TARGET_STRING("Trike Application Layer/System_Init/MATLAB Function1"),
+  { 65, 12, TARGET_STRING("Trike Application Layer/System_Init/MATLAB Function1"),
     TARGET_STRING(""), 0, 8, 0, 0, 0 },
 
-  { 65, 0, TARGET_STRING("Trike Application Layer/System_Init/Cast To Single3"),
+  { 66, 0, TARGET_STRING("Trike Application Layer/System_Init/Constant"),
+    TARGET_STRING(""), 0, 8, 0, 0, 0 },
+
+  { 67, 0, TARGET_STRING("Trike Application Layer/System_Init/Cast To Single3"),
     TARGET_STRING(""), 0, 6, 0, 0, 0 },
 
-  { 66, 0, TARGET_STRING(
+  { 68, 0, TARGET_STRING(
     "Speedgoat_TPDOs/CAN Bus Communication/CANOpen Slave  Protocol Stack - CAN Bus #1 (A)/C Caller/p1"),
     TARGET_STRING(""), 0, 5, 0, 0, 0 },
 
-  { 67, 0, TARGET_STRING(
+  { 69, 0, TARGET_STRING(
     "Speedgoat_TPDOs/CAN Bus Communication/CANOpen Slave  Protocol Stack - CAN Bus #1 (A)/C Caller/p2"),
     TARGET_STRING(""), 1, 1, 0, 0, 0 },
 
-  { 68, 0, TARGET_STRING(
+  { 70, 0, TARGET_STRING(
     "Speedgoat_TPDOs/CAN Bus Communication/CANOpen Slave  Protocol Stack - CAN Bus #1 (A)/C Caller/p3"),
     TARGET_STRING(""), 2, 1, 1, 0, 0 },
 
-  { 70, 6, TARGET_STRING(
+  { 71, 0, TARGET_STRING(
+    "Speedgoat_TPDOs/CAN Bus Communication/CANOpen Slave  Protocol Stack - CAN Bus #2 (B)/C Caller/p1"),
+    TARGET_STRING(""), 0, 5, 0, 0, 0 },
+
+  { 72, 0, TARGET_STRING(
+    "Speedgoat_TPDOs/CAN Bus Communication/CANOpen Slave  Protocol Stack - CAN Bus #2 (B)/C Caller/p2"),
+    TARGET_STRING(""), 1, 1, 0, 0, 0 },
+
+  { 73, 0, TARGET_STRING(
+    "Speedgoat_TPDOs/CAN Bus Communication/CANOpen Slave  Protocol Stack - CAN Bus #2 (B)/C Caller/p3"),
+    TARGET_STRING(""), 2, 1, 1, 0, 0 },
+
+  { 75, 7, TARGET_STRING(
     "Trike Application Layer/System_Control/BrakeControl/Gain2"),
     TARGET_STRING(""), 0, 5, 0, 1, 0 },
 
-  { 71, 6, TARGET_STRING(
+  { 76, 7, TARGET_STRING(
     "Trike Application Layer/System_Control/BrakeControl/Saturation"),
     TARGET_STRING(""), 0, 5, 0, 1, 0 },
 
-  { 72, 4, TARGET_STRING(
+  { 77, 5, TARGET_STRING(
     "Trike Application Layer/System_Control/DirectionControl/P Direction Controller"),
     TARGET_STRING("DirSpeedRef"), 0, 8, 0, 0, 1 },
 
-  { 73, 0, TARGET_STRING(
+  { 78, 0, TARGET_STRING(
     "Trike Application Layer/System_Control/DirectionControl/Cast To Single"),
     TARGET_STRING(""), 0, 8, 0, 0, 0 },
 
-  { 74, 0, TARGET_STRING(
+  { 79, 0, TARGET_STRING(
     "Trike Application Layer/System_Control/DirectionControl/Cast To Single1"),
     TARGET_STRING(""), 0, 8, 0, 0, 0 },
 
-  { 75, 0, TARGET_STRING(
+  { 80, 0, TARGET_STRING(
     "Trike Application Layer/System_Control/DirectionControl/Robotics Convention"),
     TARGET_STRING(""), 0, 6, 0, 0, 0 },
 
-  { 79, 0, TARGET_STRING(
+  { 81, 0, TARGET_STRING(
+    "Trike Application Layer/System_Control/DirectionControl/degree2rad"),
+    TARGET_STRING(""), 0, 8, 0, 0, 0 },
+
+  { 82, 0, TARGET_STRING(
+    "Trike Application Layer/System_Control/DirectionControl/inc2deg"),
+    TARGET_STRING("Direction"), 0, 8, 0, 0, 0 },
+
+  { 83, 0, TARGET_STRING(
+    "Trike Application Layer/System_Control/DirectionControl/Memory1"),
+    TARGET_STRING(""), 0, 8, 0, 0, 0 },
+
+  { 84, 0, TARGET_STRING(
+    "Trike Application Layer/System_Control/DirectionControl/Sum"),
+    TARGET_STRING("Pos_out"), 0, 8, 0, 0, 0 },
+
+  { 85, 0, TARGET_STRING(
     "Trike Application Layer/System_Control/Subsystem/Switch"),
     TARGET_STRING(""), 0, 8, 0, 0, 1 },
 
-  { 80, 0, TARGET_STRING(
+  { 86, 0, TARGET_STRING(
     "Trike Application Layer/System_Control/Subsystem/Switch1"),
     TARGET_STRING(""), 0, 8, 0, 0, 1 },
 
-  { 81, 0, TARGET_STRING(
+  { 87, 0, TARGET_STRING(
     "Trike Application Layer/System_Control/Subsystem/Switch2"),
     TARGET_STRING(""), 0, 8, 0, 0, 1 },
 
-  { 82, 0, TARGET_STRING(
+  { 88, 0, TARGET_STRING(
     "Trike Application Layer/System_Control/Subsystem/Switch3"),
     TARGET_STRING(""), 0, 8, 0, 0, 0 },
 
-  { 83, 0, TARGET_STRING(
+  { 89, 0, TARGET_STRING(
     "Trike Application Layer/System_Control/Subsystem/Switch4"),
     TARGET_STRING(""), 0, 8, 0, 0, 0 },
 
-  { 84, 7, TARGET_STRING(
+  { 90, 8, TARGET_STRING(
     "Trike Application Layer/System_Control/TiltingControl/PI Tilting Controller/p1"),
     TARGET_STRING("LTilt CurrentRef"), 0, 8, 0, 0, 1 },
 
-  { 85, 7, TARGET_STRING(
+  { 91, 8, TARGET_STRING(
     "Trike Application Layer/System_Control/TiltingControl/PI Tilting Controller/p2"),
     TARGET_STRING("RTilt CurrenRef"), 1, 8, 0, 0, 1 },
 
-  { 86, 8, TARGET_STRING(
+  { 92, 9, TARGET_STRING(
     "Trike Application Layer/System_Control/TiltingControl/ServoTilting"),
-    TARGET_STRING(""), 0, 8, 0, 0, 0 },
+    TARGET_STRING("TiltingAngle [deg]"), 0, 8, 0, 0, 0 },
 
-  { 87, 0, TARGET_STRING(
+  { 93, 0, TARGET_STRING(
     "Trike Application Layer/System_Control/TiltingControl/Cast To Single"),
     TARGET_STRING(""), 0, 8, 0, 0, 0 },
 
-  { 88, 0, TARGET_STRING(
+  { 94, 0, TARGET_STRING(
     "Trike Application Layer/System_Control/TiltingControl/Cast To Single1"),
     TARGET_STRING(""), 0, 8, 0, 0, 0 },
 
-  { 89, 0, TARGET_STRING(
+  { 95, 0, TARGET_STRING(
     "Trike Application Layer/System_Control/TiltingControl/Volt2meter"),
-    TARGET_STRING("DispRight"), 0, 8, 0, 0, 0 },
+    TARGET_STRING("DispRight [m]"), 0, 8, 0, 0, 0 },
 
-  { 90, 0, TARGET_STRING(
+  { 96, 0, TARGET_STRING(
     "Trike Application Layer/System_Control/TiltingControl/degree2m"),
-    TARGET_STRING(""), 0, 8, 0, 0, 0 },
+    TARGET_STRING("PosRef [m]"), 0, 8, 0, 0, 0 },
 
-  { 91, 0, TARGET_STRING(
+  { 97, 0, TARGET_STRING(
     "Trike Application Layer/System_Control/TiltingControl/Memory"),
     TARGET_STRING(""), 0, 8, 0, 0, 0 },
 
-  { 92, 0, TARGET_STRING(
+  { 98, 0, TARGET_STRING(
     "Trike Application Layer/System_Control/TiltingControl/Sum"),
     TARGET_STRING(""), 0, 8, 0, 0, 0 },
 
-  { 93, 0, TARGET_STRING(
+  { 99, 6, TARGET_STRING(
+    "Trike Application Layer/System_Control/TractionControl/Abs"),
+    TARGET_STRING("TractionRef"), 0, 6, 0, 0, 0 },
+
+  { 100, 6, TARGET_STRING(
+    "Trike Application Layer/System_Control/TractionControl/Gain1"),
+    TARGET_STRING(""), 0, 6, 0, 0, 0 },
+
+  { 101, 0, TARGET_STRING(
     "Trike Application Layer/System_Control/TractionControl/Gain2"),
     TARGET_STRING("SpeedRear_SI"), 0, 4, 0, 2, 0 },
 
-  { 96, 5, TARGET_STRING(
+  { 104, 0, TARGET_STRING(
     "Trike Application Layer/System_Control/TractionControl/Saturation1"),
-    TARGET_STRING("TractionRef"), 0, 6, 0, 0, 0 },
+    TARGET_STRING("TractionRef"), 0, 8, 0, 0, 0 },
 
-  { 97, 9, TARGET_STRING(
-    "Trike Application Layer/System_Init/Brakes_DunkMotor_Init/DunkA_Steering_Init/p1"),
+  { 105, 10, TARGET_STRING(
+    "Trike Application Layer/System_Init/Brakes_DunkMotor_Init/DunkD_Brake_Init_CurrentMode/p1"),
     TARGET_STRING(""), 0, 6, 0, 0, 0 },
 
-  { 98, 9, TARGET_STRING(
-    "Trike Application Layer/System_Init/Brakes_DunkMotor_Init/DunkA_Steering_Init/p2"),
+  { 106, 10, TARGET_STRING(
+    "Trike Application Layer/System_Init/Brakes_DunkMotor_Init/DunkD_Brake_Init_CurrentMode/p2"),
     TARGET_STRING(""), 1, 6, 0, 0, 0 },
 
-  { 99, 9, TARGET_STRING(
-    "Trike Application Layer/System_Init/Brakes_DunkMotor_Init/DunkA_Steering_Init/p3"),
+  { 107, 10, TARGET_STRING(
+    "Trike Application Layer/System_Init/Brakes_DunkMotor_Init/DunkD_Brake_Init_CurrentMode/p3"),
     TARGET_STRING(""), 2, 6, 0, 0, 0 },
 
-  { 100, 9, TARGET_STRING(
-    "Trike Application Layer/System_Init/Brakes_DunkMotor_Init/DunkA_Steering_Init/p4"),
+  { 108, 10, TARGET_STRING(
+    "Trike Application Layer/System_Init/Brakes_DunkMotor_Init/DunkD_Brake_Init_CurrentMode/p4"),
     TARGET_STRING(""), 3, 6, 0, 0, 0 },
 
-  { 101, 9, TARGET_STRING(
-    "Trike Application Layer/System_Init/Brakes_DunkMotor_Init/DunkA_Steering_Init/p5"),
+  { 109, 10, TARGET_STRING(
+    "Trike Application Layer/System_Init/Brakes_DunkMotor_Init/DunkD_Brake_Init_CurrentMode/p5"),
     TARGET_STRING(""), 4, 6, 0, 0, 0 },
 
-  { 102, 0, TARGET_STRING(
+  { 110, 0, TARGET_STRING(
     "Trike Application Layer/System_Init/Brakes_DunkMotor_Init/Constant"),
     TARGET_STRING(""), 0, 6, 0, 0, 0 },
 
-  { 103, 0, TARGET_STRING(
-    "Trike Application Layer/System_Init/Brakes_DunkMotor_Init/Constant1"),
-    TARGET_STRING(""), 0, 6, 0, 0, 0 },
-
-  { 104, 0, TARGET_STRING(
-    "Trike Application Layer/System_Init/Brakes_DunkMotor_Init/Cast To Single1"),
+  { 111, 0, TARGET_STRING(
+    "Trike Application Layer/System_Init/Brakes_DunkMotor_Init/Cast To Single"),
     TARGET_STRING("DeviceMode"), 0, 1, 0, 0, 0 },
 
-  { 105, 0, TARGET_STRING(
+  { 112, 0, TARGET_STRING(
+    "Trike Application Layer/System_Init/Brakes_DunkMotor_Init/Cast To Single1"),
+    TARGET_STRING("ClearError"), 0, 1, 0, 0, 0 },
+
+  { 113, 0, TARGET_STRING(
     "Trike Application Layer/System_Init/Brakes_DunkMotor_Init/Cast To Single2"),
     TARGET_STRING("BrakeCtrl"), 0, 1, 0, 0, 0 },
 
-  { 106, 0, TARGET_STRING(
+  { 114, 0, TARGET_STRING(
     "Trike Application Layer/System_Init/Brakes_DunkMotor_Init/Cast To Single3"),
-    TARGET_STRING("ClearError"), 0, 1, 0, 0, 0 },
-
-  { 107, 0, TARGET_STRING(
-    "Trike Application Layer/System_Init/Brakes_DunkMotor_Init/Cast To Single4"),
     TARGET_STRING("PowerEnable"), 0, 1, 0, 0, 0 },
 
-  { 108, 12, TARGET_STRING(
-    "Trike Application Layer/System_Init/Steering_DunkMotor_Init/DunkA_Steering_Init/p1"),
+  { 115, 13, TARGET_STRING(
+    "Trike Application Layer/System_Init/Steering_DunkMotor_Init/DunkA_Steering_Init_SpeedMode/p1"),
     TARGET_STRING(""), 0, 6, 0, 0, 0 },
 
-  { 109, 12, TARGET_STRING(
-    "Trike Application Layer/System_Init/Steering_DunkMotor_Init/DunkA_Steering_Init/p2"),
+  { 116, 13, TARGET_STRING(
+    "Trike Application Layer/System_Init/Steering_DunkMotor_Init/DunkA_Steering_Init_SpeedMode/p2"),
     TARGET_STRING(""), 1, 6, 0, 0, 0 },
 
-  { 110, 12, TARGET_STRING(
-    "Trike Application Layer/System_Init/Steering_DunkMotor_Init/DunkA_Steering_Init/p3"),
+  { 117, 13, TARGET_STRING(
+    "Trike Application Layer/System_Init/Steering_DunkMotor_Init/DunkA_Steering_Init_SpeedMode/p3"),
     TARGET_STRING(""), 2, 6, 0, 0, 0 },
 
-  { 111, 12, TARGET_STRING(
-    "Trike Application Layer/System_Init/Steering_DunkMotor_Init/DunkA_Steering_Init/p4"),
+  { 118, 13, TARGET_STRING(
+    "Trike Application Layer/System_Init/Steering_DunkMotor_Init/DunkA_Steering_Init_SpeedMode/p4"),
     TARGET_STRING(""), 3, 6, 0, 0, 0 },
 
-  { 112, 12, TARGET_STRING(
-    "Trike Application Layer/System_Init/Steering_DunkMotor_Init/DunkA_Steering_Init/p5"),
+  { 119, 13, TARGET_STRING(
+    "Trike Application Layer/System_Init/Steering_DunkMotor_Init/DunkA_Steering_Init_SpeedMode/p5"),
     TARGET_STRING(""), 4, 6, 0, 0, 0 },
 
-  { 113, 0, TARGET_STRING(
+  { 120, 0, TARGET_STRING(
     "Trike Application Layer/System_Init/Steering_DunkMotor_Init/Constant"),
     TARGET_STRING(""), 0, 6, 0, 0, 0 },
 
-  { 114, 0, TARGET_STRING(
-    "Trike Application Layer/System_Init/Steering_DunkMotor_Init/Constant1"),
-    TARGET_STRING(""), 0, 6, 0, 0, 0 },
-
-  { 115, 0, TARGET_STRING(
+  { 121, 0, TARGET_STRING(
     "Trike Application Layer/System_Init/Steering_DunkMotor_Init/Cast To Single"),
     TARGET_STRING("DeviceMode"), 0, 1, 0, 0, 0 },
 
-  { 116, 0, TARGET_STRING(
+  { 122, 0, TARGET_STRING(
     "Trike Application Layer/System_Init/Steering_DunkMotor_Init/Cast To Single1"),
     TARGET_STRING("ClearError"), 0, 1, 0, 0, 0 },
 
-  { 117, 0, TARGET_STRING(
+  { 123, 0, TARGET_STRING(
     "Trike Application Layer/System_Init/Steering_DunkMotor_Init/Cast To Single2"),
     TARGET_STRING("BrakeCtrl"), 0, 1, 0, 0, 0 },
 
-  { 118, 0, TARGET_STRING(
+  { 124, 0, TARGET_STRING(
     "Trike Application Layer/System_Init/Steering_DunkMotor_Init/Cast To Single3"),
     TARGET_STRING("PowerEnable"), 0, 1, 0, 0, 0 },
 
-  { 119, 13, TARGET_STRING(
-    "Trike Application Layer/System_Init/TiltingLeft_DunkMotor_Init/DunkA_Steering_Init/p1"),
+  { 125, 0, TARGET_STRING("Trike Application Layer/System_Init/Subsystem/Sum"),
+    TARGET_STRING(""), 0, 8, 0, 0, 0 },
+
+  { 126, 14, TARGET_STRING(
+    "Trike Application Layer/System_Init/TiltingLeft_DunkMotor_Init/DunkB_TiltLeft_Init_CurrentMode/p1"),
     TARGET_STRING(""), 0, 6, 0, 0, 0 },
 
-  { 120, 13, TARGET_STRING(
-    "Trike Application Layer/System_Init/TiltingLeft_DunkMotor_Init/DunkA_Steering_Init/p2"),
+  { 127, 14, TARGET_STRING(
+    "Trike Application Layer/System_Init/TiltingLeft_DunkMotor_Init/DunkB_TiltLeft_Init_CurrentMode/p2"),
     TARGET_STRING(""), 1, 6, 0, 0, 0 },
 
-  { 121, 13, TARGET_STRING(
-    "Trike Application Layer/System_Init/TiltingLeft_DunkMotor_Init/DunkA_Steering_Init/p3"),
+  { 128, 14, TARGET_STRING(
+    "Trike Application Layer/System_Init/TiltingLeft_DunkMotor_Init/DunkB_TiltLeft_Init_CurrentMode/p3"),
     TARGET_STRING(""), 2, 6, 0, 0, 0 },
 
-  { 122, 13, TARGET_STRING(
-    "Trike Application Layer/System_Init/TiltingLeft_DunkMotor_Init/DunkA_Steering_Init/p4"),
+  { 129, 14, TARGET_STRING(
+    "Trike Application Layer/System_Init/TiltingLeft_DunkMotor_Init/DunkB_TiltLeft_Init_CurrentMode/p4"),
     TARGET_STRING(""), 3, 6, 0, 0, 0 },
 
-  { 123, 13, TARGET_STRING(
-    "Trike Application Layer/System_Init/TiltingLeft_DunkMotor_Init/DunkA_Steering_Init/p5"),
+  { 130, 14, TARGET_STRING(
+    "Trike Application Layer/System_Init/TiltingLeft_DunkMotor_Init/DunkB_TiltLeft_Init_CurrentMode/p5"),
     TARGET_STRING(""), 4, 6, 0, 0, 0 },
 
-  { 124, 0, TARGET_STRING(
+  { 131, 0, TARGET_STRING(
     "Trike Application Layer/System_Init/TiltingLeft_DunkMotor_Init/Constant"),
     TARGET_STRING(""), 0, 6, 0, 0, 0 },
 
-  { 125, 0, TARGET_STRING(
-    "Trike Application Layer/System_Init/TiltingLeft_DunkMotor_Init/Constant1"),
-    TARGET_STRING(""), 0, 6, 0, 0, 0 },
-
-  { 126, 0, TARGET_STRING(
-    "Trike Application Layer/System_Init/TiltingLeft_DunkMotor_Init/Cast To Single1"),
+  { 132, 0, TARGET_STRING(
+    "Trike Application Layer/System_Init/TiltingLeft_DunkMotor_Init/Cast To Single"),
     TARGET_STRING("DeviceMode"), 0, 1, 0, 0, 0 },
 
-  { 127, 0, TARGET_STRING(
+  { 133, 0, TARGET_STRING(
+    "Trike Application Layer/System_Init/TiltingLeft_DunkMotor_Init/Cast To Single1"),
+    TARGET_STRING("ClearError"), 0, 1, 0, 0, 0 },
+
+  { 134, 0, TARGET_STRING(
     "Trike Application Layer/System_Init/TiltingLeft_DunkMotor_Init/Cast To Single2"),
     TARGET_STRING("BrakeCtrl"), 0, 1, 0, 0, 0 },
 
-  { 128, 0, TARGET_STRING(
+  { 135, 0, TARGET_STRING(
     "Trike Application Layer/System_Init/TiltingLeft_DunkMotor_Init/Cast To Single3"),
-    TARGET_STRING("ClearError"), 0, 1, 0, 0, 0 },
-
-  { 129, 0, TARGET_STRING(
-    "Trike Application Layer/System_Init/TiltingLeft_DunkMotor_Init/Cast To Single4"),
     TARGET_STRING("PowerEnable"), 0, 1, 0, 0, 0 },
 
-  { 130, 14, TARGET_STRING(
-    "Trike Application Layer/System_Init/TiltingRight_DunkMotor_Init/DunkA_Steering_Init/p1"),
+  { 136, 15, TARGET_STRING(
+    "Trike Application Layer/System_Init/TiltingRight_DunkMotor_Init/DunkC_TiltRight_Init_CurrentMode/p1"),
     TARGET_STRING(""), 0, 6, 0, 0, 0 },
 
-  { 131, 14, TARGET_STRING(
-    "Trike Application Layer/System_Init/TiltingRight_DunkMotor_Init/DunkA_Steering_Init/p2"),
+  { 137, 15, TARGET_STRING(
+    "Trike Application Layer/System_Init/TiltingRight_DunkMotor_Init/DunkC_TiltRight_Init_CurrentMode/p2"),
     TARGET_STRING(""), 1, 6, 0, 0, 0 },
 
-  { 132, 14, TARGET_STRING(
-    "Trike Application Layer/System_Init/TiltingRight_DunkMotor_Init/DunkA_Steering_Init/p3"),
+  { 138, 15, TARGET_STRING(
+    "Trike Application Layer/System_Init/TiltingRight_DunkMotor_Init/DunkC_TiltRight_Init_CurrentMode/p3"),
     TARGET_STRING(""), 2, 6, 0, 0, 0 },
 
-  { 133, 14, TARGET_STRING(
-    "Trike Application Layer/System_Init/TiltingRight_DunkMotor_Init/DunkA_Steering_Init/p4"),
+  { 139, 15, TARGET_STRING(
+    "Trike Application Layer/System_Init/TiltingRight_DunkMotor_Init/DunkC_TiltRight_Init_CurrentMode/p4"),
     TARGET_STRING(""), 3, 6, 0, 0, 0 },
 
-  { 134, 14, TARGET_STRING(
-    "Trike Application Layer/System_Init/TiltingRight_DunkMotor_Init/DunkA_Steering_Init/p5"),
+  { 140, 15, TARGET_STRING(
+    "Trike Application Layer/System_Init/TiltingRight_DunkMotor_Init/DunkC_TiltRight_Init_CurrentMode/p5"),
     TARGET_STRING(""), 4, 6, 0, 0, 0 },
 
-  { 135, 0, TARGET_STRING(
+  { 141, 0, TARGET_STRING(
     "Trike Application Layer/System_Init/TiltingRight_DunkMotor_Init/Constant"),
     TARGET_STRING(""), 0, 6, 0, 0, 0 },
 
-  { 136, 0, TARGET_STRING(
-    "Trike Application Layer/System_Init/TiltingRight_DunkMotor_Init/Constant1"),
-    TARGET_STRING(""), 0, 6, 0, 0, 0 },
-
-  { 137, 0, TARGET_STRING(
-    "Trike Application Layer/System_Init/TiltingRight_DunkMotor_Init/Cast To Single1"),
+  { 142, 0, TARGET_STRING(
+    "Trike Application Layer/System_Init/TiltingRight_DunkMotor_Init/Cast To Single"),
     TARGET_STRING("DeviceMode"), 0, 1, 0, 0, 0 },
 
-  { 138, 0, TARGET_STRING(
+  { 143, 0, TARGET_STRING(
+    "Trike Application Layer/System_Init/TiltingRight_DunkMotor_Init/Cast To Single1"),
+    TARGET_STRING("ClearError"), 0, 1, 0, 0, 0 },
+
+  { 144, 0, TARGET_STRING(
     "Trike Application Layer/System_Init/TiltingRight_DunkMotor_Init/Cast To Single2"),
     TARGET_STRING("BrakeCtrl"), 0, 1, 0, 0, 0 },
 
-  { 139, 0, TARGET_STRING(
+  { 145, 0, TARGET_STRING(
     "Trike Application Layer/System_Init/TiltingRight_DunkMotor_Init/Cast To Single3"),
-    TARGET_STRING("ClearError"), 0, 1, 0, 0, 0 },
-
-  { 140, 0, TARGET_STRING(
-    "Trike Application Layer/System_Init/TiltingRight_DunkMotor_Init/Cast To Single4"),
     TARGET_STRING("PowerEnable"), 0, 1, 0, 0, 0 },
 
-  { 141, 0, TARGET_STRING(
+  { 146, 0, TARGET_STRING(
     "Speedgoat_TPDOs/CAN Bus Communication/CANOpen Slave  Protocol Stack - CAN Bus #1 (A)/CAN RX Wrapper/CAN Read/p1"),
-    TARGET_STRING(""), 0, 14, 0, 0, 0 },
+    TARGET_STRING(""), 0, 13, 0, 0, 0 },
 
-  { 142, 0, TARGET_STRING(
+  { 147, 0, TARGET_STRING(
     "Speedgoat_TPDOs/CAN Bus Communication/CANOpen Slave  Protocol Stack - CAN Bus #1 (A)/CAN RX Wrapper/CAN Read/p2"),
     TARGET_STRING(""), 1, 5, 0, 0, 0 },
 
-  { 143, 0, TARGET_STRING(
+  { 148, 0, TARGET_STRING(
     "Speedgoat_TPDOs/CAN Bus Communication/CANOpen Slave  Protocol Stack - CAN Bus #1 (A)/CAN RX Wrapper/CAN Read/p3"),
     TARGET_STRING(""), 2, 1, 0, 0, 0 },
 
-  { 144, 0, TARGET_STRING(
+  { 149, 0, TARGET_STRING(
     "Speedgoat_TPDOs/CAN Bus Communication/CANOpen Slave  Protocol Stack - CAN Bus #1 (A)/CAN RX Wrapper/CAN Read/p4"),
     TARGET_STRING(""), 3, 1, 0, 0, 0 },
 
-  { 145, 0, TARGET_STRING(
+  { 150, 0, TARGET_STRING(
     "Speedgoat_TPDOs/CAN Bus Communication/CANOpen Slave  Protocol Stack - CAN Bus #1 (A)/CAN RX Wrapper/CAN Read/p5"),
     TARGET_STRING(""), 4, 8, 0, 0, 0 },
 
-  { 146, 0, TARGET_STRING(
+  { 151, 0, TARGET_STRING(
     "Speedgoat_TPDOs/CAN Bus Communication/CANOpen Slave  Protocol Stack - CAN Bus #1 (A)/CAN RX Wrapper/CAN Read/p6"),
     TARGET_STRING(""), 5, 1, 1, 0, 0 },
 
-  { 147, 0, TARGET_STRING(
+  { 152, 0, TARGET_STRING(
     "Speedgoat_TPDOs/CAN Bus Communication/CANOpen Slave  Protocol Stack - CAN Bus #1 (A)/CAN RX Wrapper/Switch"),
     TARGET_STRING(""), 0, 1, 0, 0, 0 },
 
-  { 148, 1, TARGET_STRING(
+  { 153, 1, TARGET_STRING(
     "Speedgoat_TPDOs/CAN Bus Communication/CANOpen Slave  Protocol Stack - CAN Bus #1 (A)/CAN TX Wrapper/Constant"),
     TARGET_STRING(""), 0, 1, 0, 0, 0 },
+
+  { 154, 0, TARGET_STRING(
+    "Speedgoat_TPDOs/CAN Bus Communication/CANOpen Slave  Protocol Stack - CAN Bus #2 (B)/CAN RX Wrapper/CAN Read/p1"),
+    TARGET_STRING(""), 0, 13, 0, 0, 0 },
+
+  { 155, 0, TARGET_STRING(
+    "Speedgoat_TPDOs/CAN Bus Communication/CANOpen Slave  Protocol Stack - CAN Bus #2 (B)/CAN RX Wrapper/CAN Read/p2"),
+    TARGET_STRING(""), 1, 5, 0, 0, 0 },
+
+  { 156, 0, TARGET_STRING(
+    "Speedgoat_TPDOs/CAN Bus Communication/CANOpen Slave  Protocol Stack - CAN Bus #2 (B)/CAN RX Wrapper/CAN Read/p3"),
+    TARGET_STRING(""), 2, 1, 0, 0, 0 },
+
+  { 157, 0, TARGET_STRING(
+    "Speedgoat_TPDOs/CAN Bus Communication/CANOpen Slave  Protocol Stack - CAN Bus #2 (B)/CAN RX Wrapper/CAN Read/p4"),
+    TARGET_STRING(""), 3, 1, 0, 0, 0 },
+
+  { 158, 0, TARGET_STRING(
+    "Speedgoat_TPDOs/CAN Bus Communication/CANOpen Slave  Protocol Stack - CAN Bus #2 (B)/CAN RX Wrapper/CAN Read/p5"),
+    TARGET_STRING(""), 4, 8, 0, 0, 0 },
+
+  { 159, 0, TARGET_STRING(
+    "Speedgoat_TPDOs/CAN Bus Communication/CANOpen Slave  Protocol Stack - CAN Bus #2 (B)/CAN RX Wrapper/CAN Read/p6"),
+    TARGET_STRING(""), 5, 1, 1, 0, 0 },
+
+  { 160, 0, TARGET_STRING(
+    "Speedgoat_TPDOs/CAN Bus Communication/CANOpen Slave  Protocol Stack - CAN Bus #2 (B)/CAN RX Wrapper/Switch"),
+    TARGET_STRING(""), 0, 1, 0, 0, 0 },
+
+  { 161, 2, TARGET_STRING(
+    "Speedgoat_TPDOs/CAN Bus Communication/CANOpen Slave  Protocol Stack - CAN Bus #2 (B)/CAN TX Wrapper/Constant"),
+    TARGET_STRING(""), 0, 1, 0, 0, 0 },
+
+  { 162, 0, TARGET_STRING(
+    "Trike Application Layer/System_Init/Subsystem/Compare To Constant/Compare"),
+    TARGET_STRING(""), 0, 13, 0, 0, 0 },
 
   {
     0, 0, (NULL), (NULL), 0, 0, 0, 0, 0
@@ -581,121 +646,139 @@ static const rtwCAPI_BlockParameters rtBlockParameters[] = {
   /* addrMapIndex, blockPath,
    * paramName, dataTypeIndex, dimIndex, fixPtIdx
    */
-  { 149, TARGET_STRING("Trike Application Layer/Constant"),
-    TARGET_STRING("Value"), 8, 0, 0 },
-
-  { 150, TARGET_STRING("Trike Application Layer/Gain2"),
-    TARGET_STRING("Gain"), 5, 0, 3 },
-
-  { 151, TARGET_STRING("Trike Application Layer/Gain4"),
-    TARGET_STRING("Gain"), 5, 0, 3 },
-
-  { 152, TARGET_STRING("Speedgoat_TPDOs/CAN Bus Communication/CAN Setup "),
-    TARGET_STRING("P1"), 8, 3, 0 },
-
-  { 153, TARGET_STRING("Speedgoat_TPDOs/CAN Bus Communication/CAN Setup "),
-    TARGET_STRING("P2"), 8, 0, 0 },
-
-  { 154, TARGET_STRING("Speedgoat_TPDOs/CAN Bus Communication/CAN Setup "),
-    TARGET_STRING("P3"), 8, 0, 0 },
-
-  { 155, TARGET_STRING("Trike Application Layer/System_Init/Constant"),
-    TARGET_STRING("Value"), 8, 0, 0 },
-
-  { 156, TARGET_STRING("Trike Application Layer/System_Control/BrakeControl/Gain1"),
-    TARGET_STRING("Gain"), 5, 0, 4 },
-
-  { 157, TARGET_STRING("Trike Application Layer/System_Control/BrakeControl/Gain2"),
-    TARGET_STRING("Gain"), 0, 0, 5 },
-
-  { 158, TARGET_STRING("Trike Application Layer/System_Control/BrakeControl/Saturation"),
-    TARGET_STRING("UpperLimit"), 5, 0, 1 },
-
-  { 159, TARGET_STRING("Trike Application Layer/System_Control/BrakeControl/Saturation"),
-    TARGET_STRING("LowerLimit"), 5, 0, 1 },
-
-  { 160, TARGET_STRING("Trike Application Layer/System_Control/DirectionControl/Robotics Convention"),
-    TARGET_STRING("Gain"), 6, 0, 0 },
-
-  { 162, TARGET_STRING("Trike Application Layer/System_Control/DirectionControl/inc2deg"),
-    TARGET_STRING("Gain"), 5, 0, 3 },
-
-  { 164, TARGET_STRING("Trike Application Layer/System_Control/Subsystem/Constant"),
-    TARGET_STRING("Value"), 8, 0, 0 },
-
-  { 165, TARGET_STRING("Trike Application Layer/System_Control/Subsystem/Switch"),
-    TARGET_STRING("Threshold"), 8, 0, 0 },
-
-  { 166, TARGET_STRING("Trike Application Layer/System_Control/Subsystem/Switch1"),
-    TARGET_STRING("Threshold"), 8, 0, 0 },
-
-  { 167, TARGET_STRING("Trike Application Layer/System_Control/Subsystem/Switch2"),
-    TARGET_STRING("Threshold"), 8, 0, 0 },
-
-  { 168, TARGET_STRING("Trike Application Layer/System_Control/Subsystem/Switch3"),
-    TARGET_STRING("Threshold"), 8, 0, 0 },
-
-  { 169, TARGET_STRING("Trike Application Layer/System_Control/Subsystem/Switch4"),
-    TARGET_STRING("Threshold"), 8, 0, 0 },
-
-  { 170, TARGET_STRING("Trike Application Layer/System_Control/TiltingControl/Constant"),
-    TARGET_STRING("Value"), 8, 0, 0 },
-
-  { 171, TARGET_STRING("Trike Application Layer/System_Control/TiltingControl/Volt2meter"),
-    TARGET_STRING("Gain"), 8, 0, 0 },
-
-  { 172, TARGET_STRING("Trike Application Layer/System_Control/TiltingControl/degree2m"),
-    TARGET_STRING("Gain"), 8, 0, 0 },
-
-  { 173, TARGET_STRING("Trike Application Layer/System_Control/TiltingControl/Memory"),
-    TARGET_STRING("InitialCondition"), 8, 0, 0 },
-
-  { 174, TARGET_STRING("Trike Application Layer/System_Control/TractionControl/Gain2"),
-    TARGET_STRING("Gain"), 2, 0, 6 },
-
-  { 175, TARGET_STRING("Trike Application Layer/System_Control/TractionControl/WheelRadius"),
-    TARGET_STRING("Gain"), 4, 0, 7 },
-
-  { 177, TARGET_STRING("Trike Application Layer/System_Control/TractionControl/Saturation1"),
-    TARGET_STRING("UpperLimit"), 6, 0, 0 },
-
-  { 178, TARGET_STRING("Trike Application Layer/System_Control/TractionControl/Saturation1"),
-    TARGET_STRING("LowerLimit"), 6, 0, 0 },
-
-  { 179, TARGET_STRING("Trike Application Layer/System_Init/Brakes_DunkMotor_Init/Constant"),
-    TARGET_STRING("Value"), 6, 0, 0 },
-
-  { 180, TARGET_STRING("Trike Application Layer/System_Init/Brakes_DunkMotor_Init/Constant1"),
-    TARGET_STRING("Value"), 6, 0, 0 },
-
-  { 181, TARGET_STRING("Trike Application Layer/System_Init/Steering_DunkMotor_Init/Constant"),
-    TARGET_STRING("Value"), 6, 0, 0 },
-
-  { 182, TARGET_STRING("Trike Application Layer/System_Init/Steering_DunkMotor_Init/Constant1"),
-    TARGET_STRING("Value"), 6, 0, 0 },
-
-  { 183, TARGET_STRING("Trike Application Layer/System_Init/TiltingLeft_DunkMotor_Init/Constant"),
-    TARGET_STRING("Value"), 6, 0, 0 },
-
-  { 184, TARGET_STRING("Trike Application Layer/System_Init/TiltingLeft_DunkMotor_Init/Constant1"),
-    TARGET_STRING("Value"), 6, 0, 0 },
-
-  { 185, TARGET_STRING("Trike Application Layer/System_Init/TiltingRight_DunkMotor_Init/Constant"),
-    TARGET_STRING("Value"), 6, 0, 0 },
-
-  { 186, TARGET_STRING("Trike Application Layer/System_Init/TiltingRight_DunkMotor_Init/Constant1"),
-    TARGET_STRING("Value"), 6, 0, 0 },
-
-  { 187, TARGET_STRING("Speedgoat_TPDOs/CAN Bus Communication/CANOpen Slave  Protocol Stack - CAN Bus #1 (A)/CAN RX Wrapper/CAN Read"),
-    TARGET_STRING("P1"), 8, 4, 0 },
-
-  { 188, TARGET_STRING("Speedgoat_TPDOs/CAN Bus Communication/CANOpen Slave  Protocol Stack - CAN Bus #1 (A)/CAN RX Wrapper/Switch"),
-    TARGET_STRING("Threshold"), 1, 0, 0 },
-
-  { 189, TARGET_STRING("Speedgoat_TPDOs/CAN Bus Communication/CANOpen Slave  Protocol Stack - CAN Bus #1 (A)/CAN TX Wrapper/Constant"),
+  { 163, TARGET_STRING("Dold_MiniMaster_RPDOs/Constant"),
     TARGET_STRING("Value"), 1, 0, 0 },
 
-  { 190, TARGET_STRING("Speedgoat_TPDOs/CAN Bus Communication/CANOpen Slave  Protocol Stack - CAN Bus #1 (A)/CAN TX Wrapper/CAN Write"),
+  { 164, TARGET_STRING("Speedgoat_TPDOs/CAN Bus Communication/CAN Setup "),
+    TARGET_STRING("P1"), 8, 3, 0 },
+
+  { 165, TARGET_STRING("Speedgoat_TPDOs/CAN Bus Communication/CAN Setup "),
+    TARGET_STRING("P2"), 8, 0, 0 },
+
+  { 166, TARGET_STRING("Speedgoat_TPDOs/CAN Bus Communication/CAN Setup "),
+    TARGET_STRING("P3"), 8, 0, 0 },
+
+  { 167, TARGET_STRING("Trike Application Layer/Scopes/Constant"),
+    TARGET_STRING("Value"), 8, 0, 0 },
+
+  { 168, TARGET_STRING("Trike Application Layer/Scopes/Gain2"),
+    TARGET_STRING("Gain"), 5, 0, 3 },
+
+  { 169, TARGET_STRING("Trike Application Layer/Scopes/Gain4"),
+    TARGET_STRING("Gain"), 5, 0, 3 },
+
+  { 170, TARGET_STRING("Trike Application Layer/System_Init/Constant"),
+    TARGET_STRING("Value"), 8, 0, 0 },
+
+  { 171, TARGET_STRING("Trike Application Layer/System_Control/BrakeControl/Gain1"),
+    TARGET_STRING("Gain"), 5, 0, 4 },
+
+  { 172, TARGET_STRING("Trike Application Layer/System_Control/BrakeControl/Gain2"),
+    TARGET_STRING("Gain"), 0, 0, 5 },
+
+  { 173, TARGET_STRING("Trike Application Layer/System_Control/BrakeControl/Saturation"),
+    TARGET_STRING("UpperLimit"), 5, 0, 1 },
+
+  { 174, TARGET_STRING("Trike Application Layer/System_Control/BrakeControl/Saturation"),
+    TARGET_STRING("LowerLimit"), 5, 0, 1 },
+
+  { 175, TARGET_STRING("Trike Application Layer/System_Control/DirectionControl/Constant1"),
+    TARGET_STRING("Value"), 8, 0, 0 },
+
+  { 176, TARGET_STRING("Trike Application Layer/System_Control/DirectionControl/Robotics Convention"),
+    TARGET_STRING("Gain"), 6, 0, 0 },
+
+  { 177, TARGET_STRING("Trike Application Layer/System_Control/DirectionControl/degree2rad"),
+    TARGET_STRING("Gain"), 8, 0, 0 },
+
+  { 178, TARGET_STRING("Trike Application Layer/System_Control/DirectionControl/inc2deg"),
+    TARGET_STRING("Gain"), 8, 0, 0 },
+
+  { 179, TARGET_STRING("Trike Application Layer/System_Control/DirectionControl/Memory1"),
+    TARGET_STRING("InitialCondition"), 8, 0, 0 },
+
+  { 180, TARGET_STRING("Trike Application Layer/System_Control/Subsystem/Constant"),
+    TARGET_STRING("Value"), 8, 0, 0 },
+
+  { 181, TARGET_STRING("Trike Application Layer/System_Control/Subsystem/Switch"),
+    TARGET_STRING("Threshold"), 8, 0, 0 },
+
+  { 182, TARGET_STRING("Trike Application Layer/System_Control/Subsystem/Switch1"),
+    TARGET_STRING("Threshold"), 8, 0, 0 },
+
+  { 183, TARGET_STRING("Trike Application Layer/System_Control/Subsystem/Switch2"),
+    TARGET_STRING("Threshold"), 8, 0, 0 },
+
+  { 184, TARGET_STRING("Trike Application Layer/System_Control/Subsystem/Switch3"),
+    TARGET_STRING("Threshold"), 8, 0, 0 },
+
+  { 185, TARGET_STRING("Trike Application Layer/System_Control/Subsystem/Switch4"),
+    TARGET_STRING("Threshold"), 8, 0, 0 },
+
+  { 186, TARGET_STRING("Trike Application Layer/System_Control/TiltingControl/Constant"),
+    TARGET_STRING("Value"), 8, 0, 0 },
+
+  { 187, TARGET_STRING("Trike Application Layer/System_Control/TiltingControl/Volt2meter"),
+    TARGET_STRING("Gain"), 8, 0, 0 },
+
+  { 188, TARGET_STRING("Trike Application Layer/System_Control/TiltingControl/degree2m"),
+    TARGET_STRING("Gain"), 8, 0, 0 },
+
+  { 189, TARGET_STRING("Trike Application Layer/System_Control/TiltingControl/Memory"),
+    TARGET_STRING("InitialCondition"), 8, 0, 0 },
+
+  { 190, TARGET_STRING("Trike Application Layer/System_Control/TractionControl/Gain1"),
+    TARGET_STRING("Gain"), 6, 0, 0 },
+
+  { 191, TARGET_STRING("Trike Application Layer/System_Control/TractionControl/Gain2"),
+    TARGET_STRING("Gain"), 2, 0, 6 },
+
+  { 192, TARGET_STRING("Trike Application Layer/System_Control/TractionControl/WheelRadius"),
+    TARGET_STRING("Gain"), 4, 0, 7 },
+
+  { 194, TARGET_STRING("Trike Application Layer/System_Control/TractionControl/Saturation1"),
+    TARGET_STRING("UpperLimit"), 8, 0, 0 },
+
+  { 195, TARGET_STRING("Trike Application Layer/System_Control/TractionControl/Saturation1"),
+    TARGET_STRING("LowerLimit"), 8, 0, 0 },
+
+  { 196, TARGET_STRING("Trike Application Layer/System_Init/Brakes_DunkMotor_Init/Constant"),
+    TARGET_STRING("Value"), 6, 0, 0 },
+
+  { 197, TARGET_STRING("Trike Application Layer/System_Init/Steering_DunkMotor_Init/Constant"),
+    TARGET_STRING("Value"), 6, 0, 0 },
+
+  { 198, TARGET_STRING("Trike Application Layer/System_Init/Subsystem/Compare To Constant"),
+    TARGET_STRING("const"), 8, 0, 0 },
+
+  { 199, TARGET_STRING("Trike Application Layer/System_Init/TiltingLeft_DunkMotor_Init/Constant"),
+    TARGET_STRING("Value"), 6, 0, 0 },
+
+  { 200, TARGET_STRING("Trike Application Layer/System_Init/TiltingRight_DunkMotor_Init/Constant"),
+    TARGET_STRING("Value"), 6, 0, 0 },
+
+  { 201, TARGET_STRING("Speedgoat_TPDOs/CAN Bus Communication/CANOpen Slave  Protocol Stack - CAN Bus #1 (A)/CAN RX Wrapper/CAN Read"),
+    TARGET_STRING("P1"), 8, 4, 0 },
+
+  { 202, TARGET_STRING("Speedgoat_TPDOs/CAN Bus Communication/CANOpen Slave  Protocol Stack - CAN Bus #1 (A)/CAN RX Wrapper/Switch"),
+    TARGET_STRING("Threshold"), 1, 0, 0 },
+
+  { 203, TARGET_STRING("Speedgoat_TPDOs/CAN Bus Communication/CANOpen Slave  Protocol Stack - CAN Bus #1 (A)/CAN TX Wrapper/Constant"),
+    TARGET_STRING("Value"), 1, 0, 0 },
+
+  { 204, TARGET_STRING("Speedgoat_TPDOs/CAN Bus Communication/CANOpen Slave  Protocol Stack - CAN Bus #1 (A)/CAN TX Wrapper/CAN Write"),
+    TARGET_STRING("P1"), 8, 5, 0 },
+
+  { 205, TARGET_STRING("Speedgoat_TPDOs/CAN Bus Communication/CANOpen Slave  Protocol Stack - CAN Bus #2 (B)/CAN RX Wrapper/CAN Read"),
+    TARGET_STRING("P1"), 8, 4, 0 },
+
+  { 206, TARGET_STRING("Speedgoat_TPDOs/CAN Bus Communication/CANOpen Slave  Protocol Stack - CAN Bus #2 (B)/CAN RX Wrapper/Switch"),
+    TARGET_STRING("Threshold"), 1, 0, 0 },
+
+  { 207, TARGET_STRING("Speedgoat_TPDOs/CAN Bus Communication/CANOpen Slave  Protocol Stack - CAN Bus #2 (B)/CAN TX Wrapper/Constant"),
+    TARGET_STRING("Value"), 1, 0, 0 },
+
+  { 208, TARGET_STRING("Speedgoat_TPDOs/CAN Bus Communication/CANOpen Slave  Protocol Stack - CAN Bus #2 (B)/CAN TX Wrapper/CAN Write"),
     TARGET_STRING("P1"), 8, 5, 0 },
 
   {
@@ -725,185 +808,203 @@ static void* rtDataAddrMap[] = {
   &SpeedgoatCANOpen2Buses100us_B.APT_Temp,/* 9: Signal */
   &SpeedgoatCANOpen2Buses100us_B.APT_ErrStatus,/* 10: Signal */
   &SpeedgoatCANOpen2Buses100us_B.APT_Direction,/* 11: Signal */
-  &SpeedgoatCANOpen2Buses100us_B.DunkA_ActualCurrent,/* 12: Signal */
-  &SpeedgoatCANOpen2Buses100us_B.DunkA_ActualVelocity,/* 13: Signal */
-  &SpeedgoatCANOpen2Buses100us_B.DunkB_ActualCurrent,/* 14: Signal */
-  &SpeedgoatCANOpen2Buses100us_B.DunkB_ActualVelocity,/* 15: Signal */
-  &SpeedgoatCANOpen2Buses100us_B.DunkC_ActualCurrent,/* 16: Signal */
-  &SpeedgoatCANOpen2Buses100us_B.DunkC_ActualVelocity,/* 17: Signal */
-  &SpeedgoatCANOpen2Buses100us_B.DunkD_ActualCurrent,/* 18: Signal */
-  &SpeedgoatCANOpen2Buses100us_B.DunkD_ActualVelocity,/* 19: Signal */
-  &SpeedgoatCANOpen2Buses100us_B.Encoder_Actual_Position,/* 20: Signal */
-  &SpeedgoatCANOpen2Buses100us_B.Encoder_Stored_Position,/* 21: Signal */
-  &SpeedgoatCANOpen2Buses100us_B.Joystick_ButtonsStatus,/* 22: Signal */
-  &SpeedgoatCANOpen2Buses100us_B.Joystick_LongCmd,/* 23: Signal */
-  &SpeedgoatCANOpen2Buses100us_B.Joystick_LatCmd,/* 24: Signal */
-  &SpeedgoatCANOpen2Buses100us_B.Desired_Current,/* 25: Signal */
-  &SpeedgoatCANOpen2Buses100us_B.Joystick_LatCmd_f,/* 26: Signal */
-  &SpeedgoatCANOpen2Buses100us_B.Joystick_LongCmd_m,/* 27: Signal */
-  &SpeedgoatCANOpen2Buses100us_B.AN1,  /* 28: Signal */
-  &SpeedgoatCANOpen2Buses100us_B.Encoder_Actual_Position_g,/* 29: Signal */
-  &SpeedgoatCANOpen2Buses100us_B.AN2,  /* 30: Signal */
-  &SpeedgoatCANOpen2Buses100us_B.AN3,  /* 31: Signal */
-  &SpeedgoatCANOpen2Buses100us_B.AN4,  /* 32: Signal */
-  &SpeedgoatCANOpen2Buses100us_B.Encoder_Stored_Position_d,/* 33: Signal */
-  &SpeedgoatCANOpen2Buses100us_B.Actual_Current,/* 34: Signal */
-  &SpeedgoatCANOpen2Buses100us_B.Gain2,/* 35: Signal */
-  &SpeedgoatCANOpen2Buses100us_B.Gain4,/* 36: Signal */
-  &SpeedgoatCANOpen2Buses100us_B.MovingAverage,/* 37: Signal */
-  &SpeedgoatCANOpen2Buses100us_B.DunkB_TPDO_ClearError,/* 38: Signal */
-  &SpeedgoatCANOpen2Buses100us_B.DunkB_TPDO_BrakeCtrl,/* 39: Signal */
-  &SpeedgoatCANOpen2Buses100us_B.DunkB_TPDO_DeviceMode,/* 40: Signal */
-  &SpeedgoatCANOpen2Buses100us_B.DunkB_TPDO_PowerEnable,/* 41: Signal */
-  &SpeedgoatCANOpen2Buses100us_B.DunkB_TPDO_DesiredCurrent_j,/* 42: Signal */
-  &SpeedgoatCANOpen2Buses100us_B.DunkC_TPDO_ClearError,/* 43: Signal */
-  &SpeedgoatCANOpen2Buses100us_B.DunkC_TPDO_BrakeCtrl,/* 44: Signal */
-  &SpeedgoatCANOpen2Buses100us_B.DunkC_TPDO_DeviceMode,/* 45: Signal */
-  &SpeedgoatCANOpen2Buses100us_B.DunkA_TPDO_ClearError,/* 46: Signal */
-  &SpeedgoatCANOpen2Buses100us_B.DunkC_TPDO_PowerEnable,/* 47: Signal */
-  &SpeedgoatCANOpen2Buses100us_B.DunkC_TPDO_DesiredCurrent_g,/* 48: Signal */
-  &SpeedgoatCANOpen2Buses100us_B.DunkD_TPDO_ClearError,/* 49: Signal */
-  &SpeedgoatCANOpen2Buses100us_B.DunkD_TPDO_BrakeCtrl,/* 50: Signal */
-  &SpeedgoatCANOpen2Buses100us_B.DunkD_TPDO_DeviceMode,/* 51: Signal */
-  &SpeedgoatCANOpen2Buses100us_B.DunkD_TPDO_PowerEnable,/* 52: Signal */
-  &SpeedgoatCANOpen2Buses100us_B.DunkD_TPDO_DesiredCurrent,/* 53: Signal */
-  &SpeedgoatCANOpen2Buses100us_B.DunkA_TPDO_BrakeCtrl,/* 54: Signal */
-  &SpeedgoatCANOpen2Buses100us_B.DunkA_TPDO_DeviceMode,/* 55: Signal */
-  &SpeedgoatCANOpen2Buses100us_B.DunkA_TPDO_PowerEnable,/* 56: Signal */
-  &SpeedgoatCANOpen2Buses100us_B.DunkA_TPDO_DesiredCurrent_h,/* 57: Signal */
-  &SpeedgoatCANOpen2Buses100us_B.HB,   /* 58: Signal */
-  &SpeedgoatCANOpen2Buses100us_B.APT_TPDO_ControlWord,/* 59: Signal */
-  &SpeedgoatCANOpen2Buses100us_B.APT_TPDO_PedalPosition,/* 60: Signal */
-  &SpeedgoatCANOpen2Buses100us_B.APT_TPDO_Heartbeat,/* 61: Signal */
-  &SpeedgoatCANOpen2Buses100us_B.CastToSingle_e,/* 62: Signal */
-  &SpeedgoatCANOpen2Buses100us_B.button,/* 63: Signal */
-  &SpeedgoatCANOpen2Buses100us_B.Byte0,/* 64: Signal */
-  &SpeedgoatCANOpen2Buses100us_B.CastToSingle3,/* 65: Signal */
-  &SpeedgoatCANOpen2Buses100us_B.CCaller_o1,/* 66: Signal */
-  &SpeedgoatCANOpen2Buses100us_B.CCaller_o2,/* 67: Signal */
-  &SpeedgoatCANOpen2Buses100us_B.CCaller_o3[0],/* 68: Signal */
-  &SpeedgoatCANOpen2Buses100us_B.BrCurrentRef,/* 69: Signal */
-  &SpeedgoatCANOpen2Buses100us_B.Gain2_a,/* 70: Signal */
-  &SpeedgoatCANOpen2Buses100us_B.Saturation,/* 71: Signal */
-  &SpeedgoatCANOpen2Buses100us_B.SpeedRef,/* 72: Signal */
-  &SpeedgoatCANOpen2Buses100us_B.CastToSingle_g,/* 73: Signal */
-  &SpeedgoatCANOpen2Buses100us_B.CastToSingle1_g,/* 74: Signal */
-  &SpeedgoatCANOpen2Buses100us_B.RoboticsConvention,/* 75: Signal */
-  &SpeedgoatCANOpen2Buses100us_B.degree2rad,/* 76: Signal */
-  &SpeedgoatCANOpen2Buses100us_B.Direction,/* 77: Signal */
-  &SpeedgoatCANOpen2Buses100us_B.Memory1,/* 78: Signal */
-  &SpeedgoatCANOpen2Buses100us_B.Switch,/* 79: Signal */
-  &SpeedgoatCANOpen2Buses100us_B.Switch1,/* 80: Signal */
-  &SpeedgoatCANOpen2Buses100us_B.Switch2,/* 81: Signal */
-  &SpeedgoatCANOpen2Buses100us_B.Switch3,/* 82: Signal */
-  &SpeedgoatCANOpen2Buses100us_B.Switch4,/* 83: Signal */
-  &SpeedgoatCANOpen2Buses100us_B.LTiltCurrRef,/* 84: Signal */
-  &SpeedgoatCANOpen2Buses100us_B.RTiltCurrRef,/* 85: Signal */
-  &SpeedgoatCANOpen2Buses100us_B.TiltingAngle,/* 86: Signal */
-  &SpeedgoatCANOpen2Buses100us_B.CastToSingle,/* 87: Signal */
-  &SpeedgoatCANOpen2Buses100us_B.CastToSingle1,/* 88: Signal */
-  &SpeedgoatCANOpen2Buses100us_B.DispRight,/* 89: Signal */
-  &SpeedgoatCANOpen2Buses100us_B.degree2m,/* 90: Signal */
-  &SpeedgoatCANOpen2Buses100us_B.Memory,/* 91: Signal */
-  &SpeedgoatCANOpen2Buses100us_B.Sum,  /* 92: Signal */
-  &SpeedgoatCANOpen2Buses100us_B.SpeedRear_SI,/* 93: Signal */
-  &SpeedgoatCANOpen2Buses100us_B.VehSpeed_SI,/* 94: Signal */
-  &SpeedgoatCANOpen2Buses100us_B.VehSpeed_Kmh,/* 95: Signal */
-  &SpeedgoatCANOpen2Buses100us_B.TractionRef,/* 96: Signal */
-  &SpeedgoatCANOpen2Buses100us_B.sf_DunkA_Steering_Init.ClearError,/* 97: Signal */
-  &SpeedgoatCANOpen2Buses100us_B.sf_DunkA_Steering_Init.DeviceMode,/* 98: Signal */
-  &SpeedgoatCANOpen2Buses100us_B.sf_DunkA_Steering_Init.BrakeCtrl,/* 99: Signal */
-  &SpeedgoatCANOpen2Buses100us_B.sf_DunkA_Steering_Init.PowerEnable,/* 100: Signal */
-  &SpeedgoatCANOpen2Buses100us_B.sf_DunkA_Steering_Init.SpeedRequest,/* 101: Signal */
-  &SpeedgoatCANOpen2Buses100us_B.Constant_jw,/* 102: Signal */
-  &SpeedgoatCANOpen2Buses100us_B.Constant1_g,/* 103: Signal */
-  &SpeedgoatCANOpen2Buses100us_B.DeviceMode_p,/* 104: Signal */
-  &SpeedgoatCANOpen2Buses100us_B.BrakeCtrl_a,/* 105: Signal */
-  &SpeedgoatCANOpen2Buses100us_B.ClearError_a,/* 106: Signal */
-  &SpeedgoatCANOpen2Buses100us_B.PowerEnable_a,/* 107: Signal */
-  &SpeedgoatCANOpen2Buses100us_B.sf_DunkA_Steering_Init_k.ClearError,/* 108: Signal */
-  &SpeedgoatCANOpen2Buses100us_B.sf_DunkA_Steering_Init_k.DeviceMode,/* 109: Signal */
-  &SpeedgoatCANOpen2Buses100us_B.sf_DunkA_Steering_Init_k.BrakeCtrl,/* 110: Signal */
-  &SpeedgoatCANOpen2Buses100us_B.sf_DunkA_Steering_Init_k.PowerEnable,/* 111: Signal */
-  &SpeedgoatCANOpen2Buses100us_B.sf_DunkA_Steering_Init_k.SpeedRequest,/* 112: Signal */
-  &SpeedgoatCANOpen2Buses100us_B.Constant,/* 113: Signal */
-  &SpeedgoatCANOpen2Buses100us_B.Constant1,/* 114: Signal */
-  &SpeedgoatCANOpen2Buses100us_B.DeviceMode,/* 115: Signal */
-  &SpeedgoatCANOpen2Buses100us_B.ClearError,/* 116: Signal */
+  &SpeedgoatCANOpen2Buses100us_B.Enable,/* 12: Signal */
+  &SpeedgoatCANOpen2Buses100us_B.DunkA_ActualCurrent,/* 13: Signal */
+  &SpeedgoatCANOpen2Buses100us_B.DunkA_ActualVelocity,/* 14: Signal */
+  &SpeedgoatCANOpen2Buses100us_B.DunkB_ActualCurrent,/* 15: Signal */
+  &SpeedgoatCANOpen2Buses100us_B.DunkB_ActualVelocity,/* 16: Signal */
+  &SpeedgoatCANOpen2Buses100us_B.DunkC_ActualCurrent,/* 17: Signal */
+  &SpeedgoatCANOpen2Buses100us_B.DunkC_ActualVelocity,/* 18: Signal */
+  &SpeedgoatCANOpen2Buses100us_B.DunkD_ActualCurrent,/* 19: Signal */
+  &SpeedgoatCANOpen2Buses100us_B.DunkD_ActualVelocity,/* 20: Signal */
+  &SpeedgoatCANOpen2Buses100us_B.Encoder_Actual_Position,/* 21: Signal */
+  &SpeedgoatCANOpen2Buses100us_B.Encoder_Stored_Position,/* 22: Signal */
+  &SpeedgoatCANOpen2Buses100us_B.Joystick_ButtonsStatus,/* 23: Signal */
+  &SpeedgoatCANOpen2Buses100us_B.Joystick_LongCmd,/* 24: Signal */
+  &SpeedgoatCANOpen2Buses100us_B.Joystick_LatCmd,/* 25: Signal */
+  &SpeedgoatCANOpen2Buses100us_B.Desired_Current,/* 26: Signal */
+  &SpeedgoatCANOpen2Buses100us_B.Joystick_LatCmd_f,/* 27: Signal */
+  &SpeedgoatCANOpen2Buses100us_B.Joystick_LongCmd_m,/* 28: Signal */
+  &SpeedgoatCANOpen2Buses100us_B.AN1,  /* 29: Signal */
+  &SpeedgoatCANOpen2Buses100us_B.Encoder_Actual_Position_g,/* 30: Signal */
+  &SpeedgoatCANOpen2Buses100us_B.AN2,  /* 31: Signal */
+  &SpeedgoatCANOpen2Buses100us_B.AN3,  /* 32: Signal */
+  &SpeedgoatCANOpen2Buses100us_B.AN4,  /* 33: Signal */
+  &SpeedgoatCANOpen2Buses100us_B.Encoder_Stored_Position_d,/* 34: Signal */
+  &SpeedgoatCANOpen2Buses100us_B.Actual_Current,/* 35: Signal */
+  &SpeedgoatCANOpen2Buses100us_B.Gain2,/* 36: Signal */
+  &SpeedgoatCANOpen2Buses100us_B.Gain4,/* 37: Signal */
+  &SpeedgoatCANOpen2Buses100us_B.MovingAverage,/* 38: Signal */
+  &SpeedgoatCANOpen2Buses100us_B.DunkB_TPDO_ClearError,/* 39: Signal */
+  &SpeedgoatCANOpen2Buses100us_B.DunkB_TPDO_BrakeCtrl,/* 40: Signal */
+  &SpeedgoatCANOpen2Buses100us_B.DunkB_TPDO_DeviceMode,/* 41: Signal */
+  &SpeedgoatCANOpen2Buses100us_B.DunkB_TPDO_PowerEnable,/* 42: Signal */
+  &SpeedgoatCANOpen2Buses100us_B.DunkB_TPDO_DesiredCurrent,/* 43: Signal */
+  &SpeedgoatCANOpen2Buses100us_B.DunkC_TPDO_ClearError,/* 44: Signal */
+  &SpeedgoatCANOpen2Buses100us_B.DunkC_TPDO_BrakeCtrl,/* 45: Signal */
+  &SpeedgoatCANOpen2Buses100us_B.DunkC_TPDO_DeviceMode,/* 46: Signal */
+  &SpeedgoatCANOpen2Buses100us_B.DunkA_TPDO_ClearError,/* 47: Signal */
+  &SpeedgoatCANOpen2Buses100us_B.DunkC_TPDO_PowerEnable,/* 48: Signal */
+  &SpeedgoatCANOpen2Buses100us_B.DunkC_TPDO_DesiredCurrent,/* 49: Signal */
+  &SpeedgoatCANOpen2Buses100us_B.DunkD_TPDO_ClearError,/* 50: Signal */
+  &SpeedgoatCANOpen2Buses100us_B.DunkD_TPDO_BrakeCtrl,/* 51: Signal */
+  &SpeedgoatCANOpen2Buses100us_B.DunkD_TPDO_DeviceMode,/* 52: Signal */
+  &SpeedgoatCANOpen2Buses100us_B.DunkD_TPDO_PowerEnable,/* 53: Signal */
+  &SpeedgoatCANOpen2Buses100us_B.DunkD_TPDO_DesiredCurrent,/* 54: Signal */
+  &SpeedgoatCANOpen2Buses100us_B.DunkA_TPDO_BrakeCtrl,/* 55: Signal */
+  &SpeedgoatCANOpen2Buses100us_B.DunkA_TPDO_DeviceMode,/* 56: Signal */
+  &SpeedgoatCANOpen2Buses100us_B.DunkA_TPDO_PowerEnable,/* 57: Signal */
+  &SpeedgoatCANOpen2Buses100us_B.DunkA_TPDO_DesiredCurrent,/* 58: Signal */
+  &SpeedgoatCANOpen2Buses100us_B.HB,   /* 59: Signal */
+  &SpeedgoatCANOpen2Buses100us_B.APT_TPDO_ControlWord,/* 60: Signal */
+  &SpeedgoatCANOpen2Buses100us_B.APT_TPDO_PedalPosition,/* 61: Signal */
+  &SpeedgoatCANOpen2Buses100us_B.APT_TPDO_Heartbeat,/* 62: Signal */
+  &SpeedgoatCANOpen2Buses100us_B.CastToSingle_e,/* 63: Signal */
+  &SpeedgoatCANOpen2Buses100us_B.button,/* 64: Signal */
+  &SpeedgoatCANOpen2Buses100us_B.Byte0,/* 65: Signal */
+  &SpeedgoatCANOpen2Buses100us_B.Constant,/* 66: Signal */
+  &SpeedgoatCANOpen2Buses100us_B.CastToSingle3,/* 67: Signal */
+  &SpeedgoatCANOpen2Buses100us_B.CCaller_o1,/* 68: Signal */
+  &SpeedgoatCANOpen2Buses100us_B.CCaller_o2,/* 69: Signal */
+  &SpeedgoatCANOpen2Buses100us_B.CCaller_o3[0],/* 70: Signal */
+  &SpeedgoatCANOpen2Buses100us_B.CCaller_o1_n,/* 71: Signal */
+  &SpeedgoatCANOpen2Buses100us_B.CCaller_o2_n,/* 72: Signal */
+  &SpeedgoatCANOpen2Buses100us_B.CCaller_o3_n[0],/* 73: Signal */
+  &SpeedgoatCANOpen2Buses100us_B.BrCurrentRef,/* 74: Signal */
+  &SpeedgoatCANOpen2Buses100us_B.Gain2_a,/* 75: Signal */
+  &SpeedgoatCANOpen2Buses100us_B.Saturation,/* 76: Signal */
+  &SpeedgoatCANOpen2Buses100us_B.SpeedRef,/* 77: Signal */
+  &SpeedgoatCANOpen2Buses100us_B.CastToSingle_g,/* 78: Signal */
+  &SpeedgoatCANOpen2Buses100us_B.CastToSingle1_g,/* 79: Signal */
+  &SpeedgoatCANOpen2Buses100us_B.RoboticsConvention,/* 80: Signal */
+  &SpeedgoatCANOpen2Buses100us_B.degree2rad,/* 81: Signal */
+  &SpeedgoatCANOpen2Buses100us_B.Direction,/* 82: Signal */
+  &SpeedgoatCANOpen2Buses100us_B.Memory1,/* 83: Signal */
+  &SpeedgoatCANOpen2Buses100us_B.Pos_out,/* 84: Signal */
+  &SpeedgoatCANOpen2Buses100us_B.Switch,/* 85: Signal */
+  &SpeedgoatCANOpen2Buses100us_B.Switch1,/* 86: Signal */
+  &SpeedgoatCANOpen2Buses100us_B.Switch2,/* 87: Signal */
+  &SpeedgoatCANOpen2Buses100us_B.Switch3,/* 88: Signal */
+  &SpeedgoatCANOpen2Buses100us_B.Switch4,/* 89: Signal */
+  &SpeedgoatCANOpen2Buses100us_B.LTiltCurrRef,/* 90: Signal */
+  &SpeedgoatCANOpen2Buses100us_B.RTiltCurrRef,/* 91: Signal */
+  &SpeedgoatCANOpen2Buses100us_B.TiltingAngle,/* 92: Signal */
+  &SpeedgoatCANOpen2Buses100us_B.CastToSingle,/* 93: Signal */
+  &SpeedgoatCANOpen2Buses100us_B.CastToSingle1,/* 94: Signal */
+  &SpeedgoatCANOpen2Buses100us_B.DispRightm,/* 95: Signal */
+  &SpeedgoatCANOpen2Buses100us_B.PosRefm,/* 96: Signal */
+  &SpeedgoatCANOpen2Buses100us_B.Memory,/* 97: Signal */
+  &SpeedgoatCANOpen2Buses100us_B.Sum,  /* 98: Signal */
+  &SpeedgoatCANOpen2Buses100us_B.TractionRef_k,/* 99: Signal */
+  &SpeedgoatCANOpen2Buses100us_B.Gain1,/* 100: Signal */
+  &SpeedgoatCANOpen2Buses100us_B.SpeedRear_SI,/* 101: Signal */
+  &SpeedgoatCANOpen2Buses100us_B.VehSpeed_SI,/* 102: Signal */
+  &SpeedgoatCANOpen2Buses100us_B.VehSpeed_Kmh,/* 103: Signal */
+  &SpeedgoatCANOpen2Buses100us_B.TractionRef,/* 104: Signal */
+  &SpeedgoatCANOpen2Buses100us_B.sf_DunkD_Brake_Init_CurrentMode.ClearError,/* 105: Signal */
+  &SpeedgoatCANOpen2Buses100us_B.sf_DunkD_Brake_Init_CurrentMode.DeviceMode,/* 106: Signal */
+  &SpeedgoatCANOpen2Buses100us_B.sf_DunkD_Brake_Init_CurrentMode.BrakeCtrl,/* 107: Signal */
+  &SpeedgoatCANOpen2Buses100us_B.sf_DunkD_Brake_Init_CurrentMode.PowerEnable,/* 108: Signal */
+  &SpeedgoatCANOpen2Buses100us_B.sf_DunkD_Brake_Init_CurrentMode.InitStatus,/* 109: Signal */
+  &SpeedgoatCANOpen2Buses100us_B.Constant_g,/* 110: Signal */
+  &SpeedgoatCANOpen2Buses100us_B.DeviceMode_g,/* 111: Signal */
+  &SpeedgoatCANOpen2Buses100us_B.ClearError_mj,/* 112: Signal */
+  &SpeedgoatCANOpen2Buses100us_B.BrakeCtrl_k,/* 113: Signal */
+  &SpeedgoatCANOpen2Buses100us_B.PowerEnable_p,/* 114: Signal */
+  &SpeedgoatCANOpen2Buses100us_B.ClearError,/* 115: Signal */
+  &SpeedgoatCANOpen2Buses100us_B.DeviceMode,/* 116: Signal */
   &SpeedgoatCANOpen2Buses100us_B.BrakeCtrl,/* 117: Signal */
   &SpeedgoatCANOpen2Buses100us_B.PowerEnable,/* 118: Signal */
-  &SpeedgoatCANOpen2Buses100us_B.sf_DunkA_Steering_Init_j.ClearError,/* 119: Signal */
-  &SpeedgoatCANOpen2Buses100us_B.sf_DunkA_Steering_Init_j.DeviceMode,/* 120: Signal */
-  &SpeedgoatCANOpen2Buses100us_B.sf_DunkA_Steering_Init_j.BrakeCtrl,/* 121: Signal */
-  &SpeedgoatCANOpen2Buses100us_B.sf_DunkA_Steering_Init_j.PowerEnable,/* 122: Signal */
-  &SpeedgoatCANOpen2Buses100us_B.sf_DunkA_Steering_Init_j.SpeedRequest,/* 123: Signal */
-  &SpeedgoatCANOpen2Buses100us_B.Constant_a,/* 124: Signal */
-  &SpeedgoatCANOpen2Buses100us_B.Constant1_a,/* 125: Signal */
-  &SpeedgoatCANOpen2Buses100us_B.DeviceMode_k,/* 126: Signal */
-  &SpeedgoatCANOpen2Buses100us_B.BrakeCtrl_l,/* 127: Signal */
-  &SpeedgoatCANOpen2Buses100us_B.ClearError_h,/* 128: Signal */
-  &SpeedgoatCANOpen2Buses100us_B.PowerEnable_k,/* 129: Signal */
-  &SpeedgoatCANOpen2Buses100us_B.sf_DunkA_Steering_Init_m.ClearError,/* 130: Signal */
-  &SpeedgoatCANOpen2Buses100us_B.sf_DunkA_Steering_Init_m.DeviceMode,/* 131: Signal */
-  &SpeedgoatCANOpen2Buses100us_B.sf_DunkA_Steering_Init_m.BrakeCtrl,/* 132: Signal */
-  &SpeedgoatCANOpen2Buses100us_B.sf_DunkA_Steering_Init_m.PowerEnable,/* 133: Signal */
-  &SpeedgoatCANOpen2Buses100us_B.sf_DunkA_Steering_Init_m.SpeedRequest,/* 134: Signal */
-  &SpeedgoatCANOpen2Buses100us_B.Constant_j,/* 135: Signal */
-  &SpeedgoatCANOpen2Buses100us_B.Constant1_i,/* 136: Signal */
-  &SpeedgoatCANOpen2Buses100us_B.DeviceMode_e,/* 137: Signal */
-  &SpeedgoatCANOpen2Buses100us_B.BrakeCtrl_o,/* 138: Signal */
-  &SpeedgoatCANOpen2Buses100us_B.ClearError_o,/* 139: Signal */
-  &SpeedgoatCANOpen2Buses100us_B.PowerEnable_d,/* 140: Signal */
-  &SpeedgoatCANOpen2Buses100us_B.CANRead_o1,/* 141: Signal */
-  &SpeedgoatCANOpen2Buses100us_B.CANRead_o2,/* 142: Signal */
-  &SpeedgoatCANOpen2Buses100us_B.CANRead_o3,/* 143: Signal */
-  &SpeedgoatCANOpen2Buses100us_B.CANRead_o4,/* 144: Signal */
-  &SpeedgoatCANOpen2Buses100us_B.CANRead_o5,/* 145: Signal */
-  &SpeedgoatCANOpen2Buses100us_B.CANRead_o6[0],/* 146: Signal */
-  &SpeedgoatCANOpen2Buses100us_B.Switch_c,/* 147: Signal */
-  &SpeedgoatCANOpen2Buses100us_B.Constant_g,/* 148: Signal */
-  &SpeedgoatCANOpen2Buses100us_P.Constant_Value_k,/* 149: Block Parameter */
-  &SpeedgoatCANOpen2Buses100us_P.Gain2_Gain,/* 150: Block Parameter */
-  &SpeedgoatCANOpen2Buses100us_P.Gain4_Gain,/* 151: Block Parameter */
-  &SpeedgoatCANOpen2Buses100us_P.CANSetup_P1[0],/* 152: Block Parameter */
-  &SpeedgoatCANOpen2Buses100us_P.CANSetup_P2,/* 153: Block Parameter */
-  &SpeedgoatCANOpen2Buses100us_P.CANSetup_P3,/* 154: Block Parameter */
-  &SpeedgoatCANOpen2Buses100us_P.Constant_Value,/* 155: Block Parameter */
-  &SpeedgoatCANOpen2Buses100us_P.Gain1_Gain,/* 156: Block Parameter */
-  &SpeedgoatCANOpen2Buses100us_P.Gain2_Gain_p,/* 157: Block Parameter */
-  &SpeedgoatCANOpen2Buses100us_P.Saturation_UpperSat,/* 158: Block Parameter */
-  &SpeedgoatCANOpen2Buses100us_P.Saturation_LowerSat,/* 159: Block Parameter */
-  &SpeedgoatCANOpen2Buses100us_P.RoboticsConvention_Gain,/* 160: Block Parameter */
-  &SpeedgoatCANOpen2Buses100us_P.degree2rad_Gain,/* 161: Block Parameter */
-  &SpeedgoatCANOpen2Buses100us_P.inc2deg_Gain,/* 162: Block Parameter */
-  &SpeedgoatCANOpen2Buses100us_P.Memory1_InitialCondition,/* 163: Block Parameter */
-  &SpeedgoatCANOpen2Buses100us_P.Constant_Value_i,/* 164: Block Parameter */
-  &SpeedgoatCANOpen2Buses100us_P.Switch_Threshold,/* 165: Block Parameter */
-  &SpeedgoatCANOpen2Buses100us_P.Switch1_Threshold,/* 166: Block Parameter */
-  &SpeedgoatCANOpen2Buses100us_P.Switch2_Threshold,/* 167: Block Parameter */
-  &SpeedgoatCANOpen2Buses100us_P.Switch3_Threshold,/* 168: Block Parameter */
-  &SpeedgoatCANOpen2Buses100us_P.Switch4_Threshold,/* 169: Block Parameter */
-  &SpeedgoatCANOpen2Buses100us_P.Constant_Value_g,/* 170: Block Parameter */
-  &SpeedgoatCANOpen2Buses100us_P.Volt2meter_Gain,/* 171: Block Parameter */
-  &SpeedgoatCANOpen2Buses100us_P.degree2m_Gain,/* 172: Block Parameter */
-  &SpeedgoatCANOpen2Buses100us_P.Memory_InitialCondition,/* 173: Block Parameter */
-  &SpeedgoatCANOpen2Buses100us_P.Gain2_Gain_k,/* 174: Block Parameter */
-  &SpeedgoatCANOpen2Buses100us_P.WheelRadius_Gain,/* 175: Block Parameter */
-  &SpeedgoatCANOpen2Buses100us_P.ms2Kmh_Gain,/* 176: Block Parameter */
-  &SpeedgoatCANOpen2Buses100us_P.Saturation1_UpperSat,/* 177: Block Parameter */
-  &SpeedgoatCANOpen2Buses100us_P.Saturation1_LowerSat,/* 178: Block Parameter */
-  &SpeedgoatCANOpen2Buses100us_P.Constant_Value_n,/* 179: Block Parameter */
-  &SpeedgoatCANOpen2Buses100us_P.Constant1_Value_g,/* 180: Block Parameter */
-  &SpeedgoatCANOpen2Buses100us_P.Constant_Value_l,/* 181: Block Parameter */
-  &SpeedgoatCANOpen2Buses100us_P.Constant1_Value,/* 182: Block Parameter */
-  &SpeedgoatCANOpen2Buses100us_P.Constant_Value_g5,/* 183: Block Parameter */
-  &SpeedgoatCANOpen2Buses100us_P.Constant1_Value_a,/* 184: Block Parameter */
-  &SpeedgoatCANOpen2Buses100us_P.Constant_Value_m,/* 185: Block Parameter */
-  &SpeedgoatCANOpen2Buses100us_P.Constant1_Value_k,/* 186: Block Parameter */
-  &SpeedgoatCANOpen2Buses100us_P.CANRead_P1[0],/* 187: Block Parameter */
-  &SpeedgoatCANOpen2Buses100us_P.Switch_Threshold_m,/* 188: Block Parameter */
-  &SpeedgoatCANOpen2Buses100us_P.Constant_Value_kp,/* 189: Block Parameter */
-  &SpeedgoatCANOpen2Buses100us_P.CANWrite_P1[0],/* 190: Block Parameter */
+  &SpeedgoatCANOpen2Buses100us_B.InitStatus,/* 119: Signal */
+  &SpeedgoatCANOpen2Buses100us_B.Constant_j,/* 120: Signal */
+  &SpeedgoatCANOpen2Buses100us_B.DeviceMode_e,/* 121: Signal */
+  &SpeedgoatCANOpen2Buses100us_B.ClearError_m,/* 122: Signal */
+  &SpeedgoatCANOpen2Buses100us_B.BrakeCtrl_m,/* 123: Signal */
+  &SpeedgoatCANOpen2Buses100us_B.PowerEnable_i,/* 124: Signal */
+  &SpeedgoatCANOpen2Buses100us_B.Sum_b,/* 125: Signal */
+  &SpeedgoatCANOpen2Buses100us_B.sf_DunkB_TiltLeft_Init_CurrentM.ClearError,/* 126: Signal */
+  &SpeedgoatCANOpen2Buses100us_B.sf_DunkB_TiltLeft_Init_CurrentM.DeviceMode,/* 127: Signal */
+  &SpeedgoatCANOpen2Buses100us_B.sf_DunkB_TiltLeft_Init_CurrentM.BrakeCtrl,/* 128: Signal */
+  &SpeedgoatCANOpen2Buses100us_B.sf_DunkB_TiltLeft_Init_CurrentM.PowerEnable,/* 129: Signal */
+  &SpeedgoatCANOpen2Buses100us_B.sf_DunkB_TiltLeft_Init_CurrentM.InitStatus,/* 130: Signal */
+  &SpeedgoatCANOpen2Buses100us_B.Constant_e,/* 131: Signal */
+  &SpeedgoatCANOpen2Buses100us_B.DeviceMode_d,/* 132: Signal */
+  &SpeedgoatCANOpen2Buses100us_B.ClearError_jv,/* 133: Signal */
+  &SpeedgoatCANOpen2Buses100us_B.BrakeCtrl_k0,/* 134: Signal */
+  &SpeedgoatCANOpen2Buses100us_B.PowerEnable_ir,/* 135: Signal */
+  &SpeedgoatCANOpen2Buses100us_B.sf_DunkC_TiltRight_Init_Current.ClearError,/* 136: Signal */
+  &SpeedgoatCANOpen2Buses100us_B.sf_DunkC_TiltRight_Init_Current.DeviceMode,/* 137: Signal */
+  &SpeedgoatCANOpen2Buses100us_B.sf_DunkC_TiltRight_Init_Current.BrakeCtrl,/* 138: Signal */
+  &SpeedgoatCANOpen2Buses100us_B.sf_DunkC_TiltRight_Init_Current.PowerEnable,/* 139: Signal */
+  &SpeedgoatCANOpen2Buses100us_B.sf_DunkC_TiltRight_Init_Current.InitStatus,/* 140: Signal */
+  &SpeedgoatCANOpen2Buses100us_B.Constant_m,/* 141: Signal */
+  &SpeedgoatCANOpen2Buses100us_B.DeviceMode_h,/* 142: Signal */
+  &SpeedgoatCANOpen2Buses100us_B.ClearError_j,/* 143: Signal */
+  &SpeedgoatCANOpen2Buses100us_B.BrakeCtrl_b,/* 144: Signal */
+  &SpeedgoatCANOpen2Buses100us_B.PowerEnable_a,/* 145: Signal */
+  &SpeedgoatCANOpen2Buses100us_B.CANRead_o1,/* 146: Signal */
+  &SpeedgoatCANOpen2Buses100us_B.CANRead_o2,/* 147: Signal */
+  &SpeedgoatCANOpen2Buses100us_B.CANRead_o3,/* 148: Signal */
+  &SpeedgoatCANOpen2Buses100us_B.CANRead_o4,/* 149: Signal */
+  &SpeedgoatCANOpen2Buses100us_B.CANRead_o5,/* 150: Signal */
+  &SpeedgoatCANOpen2Buses100us_B.CANRead_o6[0],/* 151: Signal */
+  &SpeedgoatCANOpen2Buses100us_B.Switch_c,/* 152: Signal */
+  &SpeedgoatCANOpen2Buses100us_B.Constant_ge,/* 153: Signal */
+  &SpeedgoatCANOpen2Buses100us_B.CANRead_o1_b,/* 154: Signal */
+  &SpeedgoatCANOpen2Buses100us_B.CANRead_o2_e,/* 155: Signal */
+  &SpeedgoatCANOpen2Buses100us_B.CANRead_o3_m,/* 156: Signal */
+  &SpeedgoatCANOpen2Buses100us_B.CANRead_o4_a,/* 157: Signal */
+  &SpeedgoatCANOpen2Buses100us_B.CANRead_o5_h,/* 158: Signal */
+  &SpeedgoatCANOpen2Buses100us_B.CANRead_o6_h[0],/* 159: Signal */
+  &SpeedgoatCANOpen2Buses100us_B.Switch_g,/* 160: Signal */
+  &SpeedgoatCANOpen2Buses100us_B.Constant_em,/* 161: Signal */
+  &SpeedgoatCANOpen2Buses100us_B.Compare,/* 162: Signal */
+  &SpeedgoatCANOpen2Buses100us_P.Constant_Value_e,/* 163: Block Parameter */
+  &SpeedgoatCANOpen2Buses100us_P.CANSetup_P1[0],/* 164: Block Parameter */
+  &SpeedgoatCANOpen2Buses100us_P.CANSetup_P2,/* 165: Block Parameter */
+  &SpeedgoatCANOpen2Buses100us_P.CANSetup_P3,/* 166: Block Parameter */
+  &SpeedgoatCANOpen2Buses100us_P.Constant_Value_k,/* 167: Block Parameter */
+  &SpeedgoatCANOpen2Buses100us_P.Gain2_Gain,/* 168: Block Parameter */
+  &SpeedgoatCANOpen2Buses100us_P.Gain4_Gain,/* 169: Block Parameter */
+  &SpeedgoatCANOpen2Buses100us_P.Constant_Value,/* 170: Block Parameter */
+  &SpeedgoatCANOpen2Buses100us_P.Gain1_Gain_c,/* 171: Block Parameter */
+  &SpeedgoatCANOpen2Buses100us_P.Gain2_Gain_p,/* 172: Block Parameter */
+  &SpeedgoatCANOpen2Buses100us_P.Saturation_UpperSat,/* 173: Block Parameter */
+  &SpeedgoatCANOpen2Buses100us_P.Saturation_LowerSat,/* 174: Block Parameter */
+  &SpeedgoatCANOpen2Buses100us_P.Constant1_Value,/* 175: Block Parameter */
+  &SpeedgoatCANOpen2Buses100us_P.RoboticsConvention_Gain,/* 176: Block Parameter */
+  &SpeedgoatCANOpen2Buses100us_P.degree2rad_Gain,/* 177: Block Parameter */
+  &SpeedgoatCANOpen2Buses100us_P.inc2deg_Gain,/* 178: Block Parameter */
+  &SpeedgoatCANOpen2Buses100us_P.Memory1_InitialCondition,/* 179: Block Parameter */
+  &SpeedgoatCANOpen2Buses100us_P.Constant_Value_i,/* 180: Block Parameter */
+  &SpeedgoatCANOpen2Buses100us_P.Switch_Threshold,/* 181: Block Parameter */
+  &SpeedgoatCANOpen2Buses100us_P.Switch1_Threshold,/* 182: Block Parameter */
+  &SpeedgoatCANOpen2Buses100us_P.Switch2_Threshold,/* 183: Block Parameter */
+  &SpeedgoatCANOpen2Buses100us_P.Switch3_Threshold,/* 184: Block Parameter */
+  &SpeedgoatCANOpen2Buses100us_P.Switch4_Threshold,/* 185: Block Parameter */
+  &SpeedgoatCANOpen2Buses100us_P.Constant_Value_g,/* 186: Block Parameter */
+  &SpeedgoatCANOpen2Buses100us_P.Volt2meter_Gain,/* 187: Block Parameter */
+  &SpeedgoatCANOpen2Buses100us_P.degree2m_Gain,/* 188: Block Parameter */
+  &SpeedgoatCANOpen2Buses100us_P.Memory_InitialCondition,/* 189: Block Parameter */
+  &SpeedgoatCANOpen2Buses100us_P.Gain1_Gain,/* 190: Block Parameter */
+  &SpeedgoatCANOpen2Buses100us_P.Gain2_Gain_k,/* 191: Block Parameter */
+  &SpeedgoatCANOpen2Buses100us_P.WheelRadius_Gain,/* 192: Block Parameter */
+  &SpeedgoatCANOpen2Buses100us_P.ms2Kmh_Gain,/* 193: Block Parameter */
+  &SpeedgoatCANOpen2Buses100us_P.Saturation1_UpperSat,/* 194: Block Parameter */
+  &SpeedgoatCANOpen2Buses100us_P.Saturation1_LowerSat,/* 195: Block Parameter */
+  &SpeedgoatCANOpen2Buses100us_P.Constant_Value_h,/* 196: Block Parameter */
+  &SpeedgoatCANOpen2Buses100us_P.Constant_Value_l,/* 197: Block Parameter */
+  &SpeedgoatCANOpen2Buses100us_P.CompareToConstant_const,/* 198: Mask Parameter */
+  &SpeedgoatCANOpen2Buses100us_P.Constant_Value_n,/* 199: Block Parameter */
+  &SpeedgoatCANOpen2Buses100us_P.Constant_Value_j,/* 200: Block Parameter */
+  &SpeedgoatCANOpen2Buses100us_P.CANRead_P1[0],/* 201: Block Parameter */
+  &SpeedgoatCANOpen2Buses100us_P.Switch_Threshold_m,/* 202: Block Parameter */
+  &SpeedgoatCANOpen2Buses100us_P.Constant_Value_kp,/* 203: Block Parameter */
+  &SpeedgoatCANOpen2Buses100us_P.CANWrite_P1[0],/* 204: Block Parameter */
+  &SpeedgoatCANOpen2Buses100us_P.CANRead_P1_n[0],/* 205: Block Parameter */
+  &SpeedgoatCANOpen2Buses100us_P.Switch_Threshold_l,/* 206: Block Parameter */
+  &SpeedgoatCANOpen2Buses100us_P.Constant_Value_nv,/* 207: Block Parameter */
+  &SpeedgoatCANOpen2Buses100us_P.CANWrite_P1_h[0],/* 208: Block Parameter */
 };
 
 /* Declare Data Run-Time Dimension Buffer Addresses statically */
@@ -937,17 +1038,13 @@ static TARGET_CONST rtwCAPI_DataTypeMap rtDataTypeMap[] = {
 
   { "numeric", "uint64_T", 0, 0, sizeof(uint64_T), SS_UINT64, 0, 0 },
 
-  { "numeric", "uint64_T", 0, 0, sizeof(uint64_T), SS_UINT64, 0, 0 },
-
-  { "struct", "uint128m_T", 1, 1, sizeof(uint128m_T), SS_STRUCT, 0, 0 },
-
   { "numeric", "int64_T", 0, 0, sizeof(int64_T), SS_INT64, 0, 0 },
 
-  { "struct", "int128m_T", 1, 2, sizeof(int128m_T), SS_STRUCT, 0, 0 },
+  { "numeric", "uint64_T", 0, 0, sizeof(uint64_T), SS_UINT64, 0, 0 },
+
+  { "struct", "int128m_T", 1, 1, sizeof(int128m_T), SS_STRUCT, 0, 0 },
 
   { "unsigned char", "boolean_T", 0, 0, sizeof(boolean_T), SS_BOOLEAN, 0, 0 },
-
-  { "numeric", "uint64_T", 0, 0, sizeof(uint64_T), SS_UINT64, 0, 0 },
 
   { "numeric", "int64_T", 0, 0, sizeof(int64_T), SS_INT64, 0, 0 }
 };
@@ -961,9 +1058,7 @@ static TARGET_CONST rtwCAPI_ElementMap rtElementMap[] = {
   /* elementName, elementOffset, dataTypeIndex, dimIndex, fxpIndex */
   { (NULL), 0, 0, 0, 0 },
 
-  { "chunks", rt_offsetof(uint128m_T, chunks), 10, 2, 0 },
-
-  { "chunks", rt_offsetof(int128m_T, chunks), 10, 2, 0 }
+  { "chunks", rt_offsetof(int128m_T, chunks), 11, 2, 0 }
 };
 
 /* Dimension Map - use dimensionMapIndex to access elements of ths structure*/
@@ -1057,11 +1152,11 @@ static rtwCAPI_ModelMappingStaticInfo mmiStatic = {
    *          elementMap, sampleTimeMap, dimensionArray},
    * TargetType: targetType
    */
-  { rtBlockSignals, 141,
+  { rtBlockSignals, 158,
     (NULL), 0,
     (NULL), 0 },
 
-  { rtBlockParameters, 39,
+  { rtBlockParameters, 45,
     rtModelParameters, 0 },
 
   { (NULL), 0 },
@@ -1070,10 +1165,10 @@ static rtwCAPI_ModelMappingStaticInfo mmiStatic = {
     rtElementMap, rtSampleTimeMap, rtDimensionArray },
   "float",
 
-  { 192964501U,
-    2607867282U,
-    1583081065U,
-    920499378U },
+  { 3100654823U,
+    4167409382U,
+    2938179712U,
+    157165536U },
   (NULL), 0,
   0
 };

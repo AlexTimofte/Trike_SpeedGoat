@@ -3,9 +3,9 @@
  *
  * Code generation for model "SpeedgoatCANOpen2Buses100us".
  *
- * Model version              : 1.456
+ * Model version              : 1.480
  * Simulink Coder version : 9.0 (R2018b) 24-May-2018
- * C source code generated on : Sat May 15 14:03:32 2021
+ * C source code generated on : Tue Jun 22 20:30:45 2021
  *
  * Target selection: slrt.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping

@@ -466,7 +466,7 @@ static void c12_chartstep_c12_SpeedgoatCANOpen2Buses100us
       CV_CHART_EVAL(6, 0, c12_IN_Clear_Error);
       _SFD_CT_CALL(TRANSITION_BEFORE_PROCESSING_TAG, 2U,
                    *chartInstance->c12_sfEvent);
-      _SFD_SYMBOL_SCOPE_PUSH_EML(0U, 3U, 3U, c12_f_debug_family_names,
+      _SFD_SYMBOL_SCOPE_PUSH_EML(0U, 3U, 3U, c12_h_debug_family_names,
         c12_debug_family_var_map);
       _SFD_SYMBOL_SCOPE_ADD_EML_IMPORTABLE(&c12_nargin, 0U, c12_sf_marshallOut,
         c12_sf_marshallIn);
@@ -588,7 +588,7 @@ static void c12_chartstep_c12_SpeedgoatCANOpen2Buses100us
       CV_CHART_EVAL(6, 0, c12_IN_SetCurrentMode);
       _SFD_CT_CALL(TRANSITION_BEFORE_PROCESSING_TAG, 6U,
                    *chartInstance->c12_sfEvent);
-      _SFD_SYMBOL_SCOPE_PUSH_EML(0U, 3U, 3U, c12_j_debug_family_names,
+      _SFD_SYMBOL_SCOPE_PUSH_EML(0U, 3U, 3U, c12_g_debug_family_names,
         c12_b_debug_family_var_map);
       _SFD_SYMBOL_SCOPE_ADD_EML_IMPORTABLE(&c12_b_nargin, 0U, c12_sf_marshallOut,
         c12_sf_marshallIn);
@@ -643,7 +643,7 @@ static void c12_chartstep_c12_SpeedgoatCANOpen2Buses100us
       chartInstance->c12_dataWrittenToVector[2U] = true;
       _SFD_CT_CALL(TRANSITION_BEFORE_PROCESSING_TAG, 3U,
                    *chartInstance->c12_sfEvent);
-      _SFD_SYMBOL_SCOPE_PUSH_EML(0U, 3U, 3U, c12_g_debug_family_names,
+      _SFD_SYMBOL_SCOPE_PUSH_EML(0U, 3U, 3U, c12_i_debug_family_names,
         c12_d_debug_family_var_map);
       _SFD_SYMBOL_SCOPE_ADD_EML_IMPORTABLE(&c12_d_nargin, 0U, c12_sf_marshallOut,
         c12_sf_marshallIn);
@@ -693,7 +693,7 @@ static void c12_chartstep_c12_SpeedgoatCANOpen2Buses100us
       } else {
         _SFD_CT_CALL(TRANSITION_BEFORE_PROCESSING_TAG, 4U,
                      *chartInstance->c12_sfEvent);
-        _SFD_SYMBOL_SCOPE_PUSH_EML(0U, 3U, 3U, c12_h_debug_family_names,
+        _SFD_SYMBOL_SCOPE_PUSH_EML(0U, 3U, 3U, c12_j_debug_family_names,
           c12_g_debug_family_var_map);
         _SFD_SYMBOL_SCOPE_ADD_EML_IMPORTABLE(&c12_g_nargin, 0U,
           c12_sf_marshallOut, c12_sf_marshallIn);
@@ -727,7 +727,7 @@ static void c12_chartstep_c12_SpeedgoatCANOpen2Buses100us
         } else {
           _SFD_CT_CALL(TRANSITION_BEFORE_PROCESSING_TAG, 5U,
                        *chartInstance->c12_sfEvent);
-          _SFD_SYMBOL_SCOPE_PUSH_EML(0U, 3U, 3U, c12_i_debug_family_names,
+          _SFD_SYMBOL_SCOPE_PUSH_EML(0U, 3U, 3U, c12_f_debug_family_names,
             c12_j_debug_family_var_map);
           _SFD_SYMBOL_SCOPE_ADD_EML_IMPORTABLE(&c12_j_nargin, 0U,
             c12_sf_marshallOut, c12_sf_marshallIn);
@@ -1198,10 +1198,10 @@ static void init_simulink_io_address
 static uint32_T* sf_get_sfun_dwork_checksum(void);
 void sf_c12_SpeedgoatCANOpen2Buses100us_get_check_sum(mxArray *plhs[])
 {
-  ((real_T *)mxGetPr((plhs[0])))[0] = (real_T)(2932751216U);
-  ((real_T *)mxGetPr((plhs[0])))[1] = (real_T)(2877377591U);
-  ((real_T *)mxGetPr((plhs[0])))[2] = (real_T)(3506990754U);
-  ((real_T *)mxGetPr((plhs[0])))[3] = (real_T)(2140102585U);
+  ((real_T *)mxGetPr((plhs[0])))[0] = (real_T)(3866734953U);
+  ((real_T *)mxGetPr((plhs[0])))[1] = (real_T)(2270352048U);
+  ((real_T *)mxGetPr((plhs[0])))[2] = (real_T)(2728589927U);
+  ((real_T *)mxGetPr((plhs[0])))[3] = (real_T)(4020325489U);
 }
 
 mxArray* sf_c12_SpeedgoatCANOpen2Buses100us_get_post_codegen_info(void);
@@ -1215,7 +1215,7 @@ mxArray *sf_c12_SpeedgoatCANOpen2Buses100us_get_autoinheritance_info(void)
     autoinheritanceFields);
 
   {
-    mxArray *mxChecksum = mxCreateString("H3Flg1PHqzOtVelt75tIIB");
+    mxArray *mxChecksum = mxCreateString("LdxtLrfkkr9ojI5wWju5uB");
     mxSetField(mxAutoinheritanceInfo,0,"checksum",mxChecksum);
   }
 
@@ -1620,6 +1620,12 @@ static void chart_debug_initialization(SimStruct *S, unsigned int
 
         _SFD_CV_INIT_EML_RELATIONAL(1,0,0,1,18,-1,0);
         _SFD_CV_INIT_EML_RELATIONAL(1,0,1,22,36,-1,1);
+        _SFD_CV_INIT_EML(5,0,0,0,1,0,0,0,0,0,0,0);
+        _SFD_CV_INIT_EML_IF(5,0,0,1,15,1,15);
+        _SFD_CV_INIT_EML_RELATIONAL(5,0,0,1,15,-1,1);
+        _SFD_CV_INIT_EML(6,0,0,0,1,0,0,0,0,0,0,0);
+        _SFD_CV_INIT_EML_IF(6,0,0,1,15,1,15);
+        _SFD_CV_INIT_EML_RELATIONAL(6,0,0,1,15,-1,1);
         _SFD_CV_INIT_EML(2,0,0,0,1,0,0,0,0,0,0,0);
         _SFD_CV_INIT_EML_IF(2,0,0,1,9,1,9);
         _SFD_CV_INIT_EML_RELATIONAL(2,0,0,1,9,-1,4);
@@ -1655,12 +1661,6 @@ static void chart_debug_initialization(SimStruct *S, unsigned int
 
         _SFD_CV_INIT_EML_RELATIONAL(4,0,0,1,16,-1,0);
         _SFD_CV_INIT_EML_RELATIONAL(4,0,1,20,34,-1,0);
-        _SFD_CV_INIT_EML(5,0,0,0,1,0,0,0,0,0,0,0);
-        _SFD_CV_INIT_EML_IF(5,0,0,1,15,1,15);
-        _SFD_CV_INIT_EML_RELATIONAL(5,0,0,1,15,-1,1);
-        _SFD_CV_INIT_EML(6,0,0,0,1,0,0,0,0,0,0,0);
-        _SFD_CV_INIT_EML_IF(6,0,0,1,15,1,15);
-        _SFD_CV_INIT_EML_RELATIONAL(6,0,0,1,15,-1,1);
         _SFD_SET_DATA_COMPILED_PROPS(0,SF_SINGLE,0,NULL,0,0,0,0.0,1.0,0,0,
           (MexFcnForType)c12_d_sf_marshallOut,(MexInFcnForType)
           c12_d_sf_marshallIn);
@@ -1720,7 +1720,7 @@ static void chart_debug_initialize_data_addresses(SimStruct *S)
 
 static const char* sf_get_instance_specialization(void)
 {
-  return "ssIAy4aSCnpVUtC9OfD9OOH";
+  return "sxAoWUzDiUrAlBtoYAidqUD";
 }
 
 static void sf_check_dwork_consistency(SimStruct *S)
@@ -1930,10 +1930,10 @@ static void mdlSetWorkWidths_c12_SpeedgoatCANOpen2Buses100us(SimStruct *S)
   }
 
   ssSetOptions(S,ssGetOptions(S)|SS_OPTION_WORKS_WITH_CODE_REUSE);
-  ssSetChecksum0(S,(1830384434U));
-  ssSetChecksum1(S,(437457615U));
-  ssSetChecksum2(S,(2591874557U));
-  ssSetChecksum3(S,(3207509995U));
+  ssSetChecksum0(S,(3443417946U));
+  ssSetChecksum1(S,(3124418136U));
+  ssSetChecksum2(S,(2552860460U));
+  ssSetChecksum3(S,(2837555131U));
   ssSetmdlDerivatives(S, NULL);
   ssSetExplicitFCSSCtrl(S,1);
   ssSetStateSemanticsClassicAndSynchronous(S, true);

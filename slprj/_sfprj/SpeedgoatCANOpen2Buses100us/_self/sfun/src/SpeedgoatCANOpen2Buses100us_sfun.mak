@@ -6,7 +6,7 @@ CPU = AMD64
 
 MODEL     = SpeedgoatCANOpen2Buses100us
 TARGET      = sfun
-MODULE_SRCS   = c1_SpeedgoatCANOpen2Buses100us.c c12_SpeedgoatCANOpen2Buses100us.c c13_SpeedgoatCANOpen2Buses100us.c c14_SpeedgoatCANOpen2Buses100us.c
+MODULE_SRCS   = c1_SpeedgoatCANOpen2Buses100us.c c2_SpeedgoatCANOpen2Buses100us.c c3_SpeedgoatCANOpen2Buses100us.c c12_SpeedgoatCANOpen2Buses100us.c
 MODEL_SRC  = SpeedgoatCANOpen2Buses100us_sfun.c
 MODEL_REG = SpeedgoatCANOpen2Buses100us_sfun_registry.c
 MAKEFILE    = SpeedgoatCANOpen2Buses100us_sfun.mak
@@ -38,7 +38,7 @@ MLSLSF_INCLUDES = \
 
 COMPILER_INCLUDES = /I "$(MSVC_ROOT)\include"
 
-THIRD_PARTY_INCLUDES   =  /I "C:\Users\Venqo\Desktop\SpeedGoat\Applications\Trike_git\Trike_SpeedGoat_algo\slprj\_slcc\ib2slzC4BPSVN9k9boIaXB"
+THIRD_PARTY_INCLUDES   =  /I "C:\Users\Venqo\Desktop\SpeedGoat\Applications\Trike_git\Trike_SpeedGoat_algo\slprj\_slcc\RntCWIQhSBMk0JpdeDcPVE"
 INCLUDE_PATH = $(USER_INCLUDES) $(AUX_INCLUDES) $(MLSLSF_INCLUDES)\
  $(THIRD_PARTY_INCLUDES)
 LIB_PATH     = "$(MSVC_ROOT)\lib"

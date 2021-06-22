@@ -13,6 +13,7 @@ xpc_datatype_ground.obj
 rt_logging_mmi.obj
 rtw_modelmap_utils.obj
 CANOpenSlave.obj
+CANOpenSlaveAPT.obj
 host_timer_x86.obj
 xpc_code_profiling_utility_functions.obj
 RPDOs_from_AN2CANConv_wrapper.obj

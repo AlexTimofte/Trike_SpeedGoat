@@ -3,9 +3,9 @@
  *
  * Code generation for model "SpeedgoatCANOpen2Buses100us".
  *
- * Model version              : 1.456
+ * Model version              : 1.480
  * Simulink Coder version : 9.0 (R2018b) 24-May-2018
- * C source code generated on : Sat May 15 14:03:32 2021
+ * C source code generated on : Tue Jun 22 20:30:45 2021
  *
  * Target selection: slrt.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -77,6 +77,15 @@ typedef struct {
   uint8_T ErrStatus;
   uint8_T Direction;
 } APT_RPDOs;
+
+#endif
+
+#ifndef DEFINED_TYPEDEF_FOR_Dold_RPDOs_
+#define DEFINED_TYPEDEF_FOR_Dold_RPDOs_
+
+typedef struct {
+  uint8_T Enable;
+} Dold_RPDOs;
 
 #endif
 
@@ -200,11 +209,11 @@ typedef struct {
 #endif                                 /*typedef_dsp_simulink_MovingAverage_Sp_T*/
 
 #ifndef SS_INT64
-#define SS_INT64                       39
+#define SS_INT64                       38
 #endif
 
 #ifndef SS_UINT64
-#define SS_UINT64                      40
+#define SS_UINT64                      39
 #endif
 
 /* Parameters (default storage) */

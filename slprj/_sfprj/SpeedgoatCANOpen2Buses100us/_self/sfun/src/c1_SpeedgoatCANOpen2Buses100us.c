@@ -1189,10 +1189,10 @@ static void init_simulink_io_address
 static uint32_T* sf_get_sfun_dwork_checksum(void);
 void sf_c1_SpeedgoatCANOpen2Buses100us_get_check_sum(mxArray *plhs[])
 {
-  ((real_T *)mxGetPr((plhs[0])))[0] = (real_T)(659735109U);
-  ((real_T *)mxGetPr((plhs[0])))[1] = (real_T)(67273877U);
-  ((real_T *)mxGetPr((plhs[0])))[2] = (real_T)(3121450779U);
-  ((real_T *)mxGetPr((plhs[0])))[3] = (real_T)(3018787303U);
+  ((real_T *)mxGetPr((plhs[0])))[0] = (real_T)(2447946917U);
+  ((real_T *)mxGetPr((plhs[0])))[1] = (real_T)(3132647008U);
+  ((real_T *)mxGetPr((plhs[0])))[2] = (real_T)(3142738310U);
+  ((real_T *)mxGetPr((plhs[0])))[3] = (real_T)(2390809362U);
 }
 
 mxArray* sf_c1_SpeedgoatCANOpen2Buses100us_get_post_codegen_info(void);
@@ -1704,7 +1704,7 @@ static void chart_debug_initialize_data_addresses(SimStruct *S)
 
 static const char* sf_get_instance_specialization(void)
 {
-  return "sulRI4lwDvYm6xNx9KeiG9G";
+  return "s1SJq9tXGtLfhyaRzVgN5SD";
 }
 
 static void sf_check_dwork_consistency(SimStruct *S)
@@ -1913,10 +1913,10 @@ static void mdlSetWorkWidths_c1_SpeedgoatCANOpen2Buses100us(SimStruct *S)
   }
 
   ssSetOptions(S,ssGetOptions(S)|SS_OPTION_WORKS_WITH_CODE_REUSE);
-  ssSetChecksum0(S,(3542760620U));
-  ssSetChecksum1(S,(2752547489U));
-  ssSetChecksum2(S,(4230178934U));
-  ssSetChecksum3(S,(2646973858U));
+  ssSetChecksum0(S,(1266251590U));
+  ssSetChecksum1(S,(2350436748U));
+  ssSetChecksum2(S,(2112944739U));
+  ssSetChecksum3(S,(1373645868U));
   ssSetmdlDerivatives(S, NULL);
   ssSetExplicitFCSSCtrl(S,1);
   ssSetStateSemanticsClassicAndSynchronous(S, true);

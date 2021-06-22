@@ -3,9 +3,9 @@
  *
  * Code generation for model "SpeedgoatCANOpen2Buses100us".
  *
- * Model version              : 1.456
+ * Model version              : 1.480
  * Simulink Coder version : 9.0 (R2018b) 24-May-2018
- * C source code generated on : Sat May 15 14:03:32 2021
+ * C source code generated on : Tue Jun 22 20:30:45 2021
  *
  * Target selection: slrt.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -76,12 +76,11 @@ extern "C" {
 
 #endif
 
-  extern void RPDOs_from_AN2CANConv_Start_wrapper(void);
-  extern void RPDOs_from_AN2CANConv_Outputs_wrapper(uint16_T *Channel_AN1,
-    uint16_T *Channel_AN2,
-    uint16_T *Channel_AN3,
-    uint16_T *Channel_AN4);
-  extern void RPDOs_from_AN2CANConv_Terminate_wrapper(void);
+  extern void RPDOs_from_Joystick_Start_wrapper(void);
+  extern void RPDOs_from_Joystick_Outputs_wrapper(uint8_T *ButtonsStatus,
+    real32_T *LongCmd,
+    real32_T *LatCmd);
+  extern void RPDOs_from_Joystick_Terminate_wrapper(void);
 
 #ifdef __cplusplus
 
@@ -116,11 +115,12 @@ extern "C" {
 
 #endif
 
-  extern void RPDOs_from_Joystick_Start_wrapper(void);
-  extern void RPDOs_from_Joystick_Outputs_wrapper(uint8_T *ButtonsStatus,
-    real32_T *LongCmd,
-    real32_T *LatCmd);
-  extern void RPDOs_from_Joystick_Terminate_wrapper(void);
+  extern void RPDOs_from_AN2CANConv_Start_wrapper(void);
+  extern void RPDOs_from_AN2CANConv_Outputs_wrapper(uint16_T *Channel_AN1,
+    uint16_T *Channel_AN2,
+    uint16_T *Channel_AN3,
+    uint16_T *Channel_AN4);
+  extern void RPDOs_from_AN2CANConv_Terminate_wrapper(void);
 
 #ifdef __cplusplus
 
@@ -309,17 +309,14 @@ extern void* slrtRegisterSignalToLoggingService(rtwCAPI_ModelMappingInfo* mdlMMI
   const char* relBlkPath, int portNumber);
 extern const char *getRefMdlPath(const char *refMdl);
 extern int getRefMdlSignalNumber(const char *mdlBlock, const char *signalName);
-extern void uMultiWordMul(const uint64_T u1[], int32_T n1, const uint64_T u2[],
-  int32_T n2, uint64_T y[], int32_T n);
-extern real_T uMultiWord2Double(const uint64_T u1[], int32_T n1, int32_T e1);
 extern void sMultiWordMul(const uint64_T u1[], int32_T n1, const uint64_T u2[],
   int32_T n2, uint64_T y[], int32_T n);
 extern void sg_IO602_IO691_write_s(SimStruct *rts);
 extern void sg_IO602_IO691_setup_s(SimStruct *rts);
 extern void sg_IO602_IO691_read_s(SimStruct *rts);
-extern void Sp_DunkA_Steering_Init_Init(DW_DunkA_Steering_Init_Speedg_T *localDW);
-extern void Speedgo_DunkA_Steering_Init(real32_T rtu_ButtonStatus, real32_T
-  rtu_Joystick_LatCmd, real32_T rtu_ReadError, B_DunkA_Steering_Init_Speedgo_T
-  *localB, DW_DunkA_Steering_Init_Speedg_T *localDW);
+extern void DunkD_Brake_Init_Curre_Init(DW_DunkD_Brake_Init_CurrentMo_T *localDW);
+extern void DunkD_Brake_Init_CurrentMod(real32_T rtu_ButtonStatus, real32_T
+  rtu_ReadError, B_DunkD_Brake_Init_CurrentMod_T *localB,
+  DW_DunkD_Brake_Init_CurrentMo_T *localDW);
 
 #endif                                 /* RTW_HEADER_SpeedgoatCANOpen2Buses100us_private_h_ */

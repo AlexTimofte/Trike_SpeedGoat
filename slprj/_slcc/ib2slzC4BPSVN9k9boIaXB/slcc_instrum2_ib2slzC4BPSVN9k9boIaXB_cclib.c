@@ -45,15 +45,15 @@ double __mw_instrum_ib2slzC4BPSVN9k9boIaXB_cclib_rel_tol;
 #define __MW_INSTRUM_MAX(lhs, rhs) ((lhs) < (rhs) ? (rhs) : (lhs))
 #define __MW_INSTRUM_TOL(lhs, rhs) __MW_INSTRUM_MAX(__mw_instrum_ib2slzC4BPSVN9k9boIaXB_cclib_abs_tol, __mw_instrum_ib2slzC4BPSVN9k9boIaXB_cclib_rel_tol * __MW_INSTRUM_MAX(__MW_INSTRUM_ABS(lhs), __MW_INSTRUM_ABS(rhs)))
 
-#define __MW_INSTRUM_NODE_412() \
+#define __MW_INSTRUM_NODE_416() \
   (((!__mw_instrum_ib2slzC4BPSVN9k9boIaXB_cclib_enabled || __mw_instrum_ib2slzC4BPSVN9k9boIaXB_cclib_ptruth_tables) ? \
     ((void) 0) : \
     ((void) (__mw_instrum_ib2slzC4BPSVN9k9boIaXB_cclib_ptruth_tables = __MW_INSTRUM_ib2slzC4BPSVN9k9boIaXB_cclib_INIT_FILE(0)))), \
-   __MW_INSTRUM_RECORD_HIT(412U))
-#define __MW_INSTRUM_NODE_413() \
-  (__MW_INSTRUM_RECORD_HIT(413U))
-#define __MW_INSTRUM_NODE_414() \
-  (__MW_INSTRUM_RECORD_HIT(414U))
+   __MW_INSTRUM_RECORD_HIT(416U))
+#define __MW_INSTRUM_NODE_417() \
+  (__MW_INSTRUM_RECORD_HIT(417U))
+#define __MW_INSTRUM_NODE_418() \
+  (__MW_INSTRUM_RECORD_HIT(418U))
 
 #else /* __MW_INTERNAL_SLDV_PS_ANALYSIS__ */
 
@@ -64,10 +64,10 @@ extern "C"
 #else
 extern
 #endif
-void __MW_INSTRUM_RECORD_HIT_412EZ_ib2slzC4BPSVN9k9boIaXB(void) { }
-#define __MW_INSTRUM_NODE_412() __MW_INSTRUM_RECORD_HIT_412EZ_ib2slzC4BPSVN9k9boIaXB()
+void __MW_INSTRUM_RECORD_HIT_416EZ_ib2slzC4BPSVN9k9boIaXB(void) { }
+#define __MW_INSTRUM_NODE_416() __MW_INSTRUM_RECORD_HIT_416EZ_ib2slzC4BPSVN9k9boIaXB()
 
-#define __MW_INSTRUM_NODE_413() ((void)0)
+#define __MW_INSTRUM_NODE_417() ((void)0)
 
 
 #ifdef __cplusplus
@@ -75,8 +75,8 @@ extern "C"
 #else
 extern
 #endif
-void __MW_INSTRUM_RECORD_HIT_414XZ_ib2slzC4BPSVN9k9boIaXB(void) { }
-#define __MW_INSTRUM_NODE_414() __MW_INSTRUM_RECORD_HIT_414XZ_ib2slzC4BPSVN9k9boIaXB()
+void __MW_INSTRUM_RECORD_HIT_418XZ_ib2slzC4BPSVN9k9boIaXB(void) { }
+#define __MW_INSTRUM_NODE_418() __MW_INSTRUM_RECORD_HIT_418XZ_ib2slzC4BPSVN9k9boIaXB()
 
 #endif /* __MW_INTERNAL_SLDV_PS_ANALYSIS__ */
 
@@ -6651,9 +6651,22 @@ int32_T ActualVelocity;
 }; 
 uint8_T Message[8]; 
 } RPDO_ID18x; 
-#line 127
+#line 128
 typedef 
-#line 120
+#line 119
+union { 
+struct { 
+uint8_T ClearError; 
+uint8_T DeviceMode; 
+uint16_T dummy1; 
+uint16_T dummy2; 
+uint16_T dummy3; 
+}; 
+uint8_T Message[8]; 
+} RPDO_ID28x; 
+#line 138
+typedef 
+#line 131
 union { 
 struct { 
 uint8_T StatusButtons1_8; 
@@ -6662,9 +6675,9 @@ int16_T Longitudinal;
 }; 
 uint8_T Message[8]; 
 } TPDO_ID185; 
-#line 140
+#line 151
 typedef 
-#line 129
+#line 140
 union { 
 struct { 
 uint8_T Status1; 
@@ -6756,8 +6769,8 @@ __declspec(dllexport) void customcode_ib2slzC4BPSVN9k9boIaXB_initializer(void);
 #endif /* __customcode_ib2slzC4BPSVN9k9boIaXB_h__ */
 #line 4 "C:\\Users\\Venqo\\Desktop\\SpeedGoat\\Applications\\Trike_git\\Trike_SpeedGoat_algo\\slprj\\_slcc\\ib2slzC4BPSVN9k9boIaXB\\customcode_ib2slzC4BPSVN9k9boIaXB.c"
 void customcode_ib2slzC4BPSVN9k9boIaXB_initializer(void) 
-{ __MW_INSTRUM_FCN_ENTER_20(); __MW_INSTRUM_NODE_412(); 
-__MW_INSTRUM_NODE_413(), CANOpenSlave_ResetCommunication(); __MW_INSTRUM_NODE_414(); 
+{ __MW_INSTRUM_FCN_ENTER_20(); __MW_INSTRUM_NODE_416(); 
+__MW_INSTRUM_NODE_417(), CANOpenSlave_ResetCommunication(); __MW_INSTRUM_NODE_418(); 
 
 
 } 

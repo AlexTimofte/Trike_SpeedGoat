@@ -65,7 +65,7 @@ DEBUG_BUILD     = 0
 #  MEX_OPT_FILE    - Original file name of the mexopt.bat.
 
 MODEL           = SpeedgoatCANOpen2Buses100us
-MODULES         = rt_matrx.c rt_printf.c rt_logging.c SpeedgoatCANOpen2Buses100us.c SpeedgoatCANOpen2Buses100us_capi.c SpeedgoatCANOpen2Buses100us_data.c SpeedgoatCANOpen2Buses100us_xcp.c SpeedgoatCANOpen2Buses100us_xcp_TET.c rtGetInf.c rtGetNaN.c rt_nonfinite.c xpc_datatype_ground.c rt_logging_mmi.c rtw_modelmap_utils.c CANOpenSlave.c host_timer_x86.c xpc_code_profiling_utility_functions.c
+MODULES         = rt_matrx.c rt_printf.c rt_logging.c SpeedgoatCANOpen2Buses100us.c SpeedgoatCANOpen2Buses100us_capi.c SpeedgoatCANOpen2Buses100us_data.c SpeedgoatCANOpen2Buses100us_xcp.c SpeedgoatCANOpen2Buses100us_xcp_TET.c rtGetInf.c rtGetNaN.c rt_nonfinite.c xpc_datatype_ground.c rt_logging_mmi.c rtw_modelmap_utils.c CANOpenSlave.c CANOpenSlaveAPT.c host_timer_x86.c xpc_code_profiling_utility_functions.c
 MAKEFILE        = SpeedgoatCANOpen2Buses100us.mk
 MATLAB_ROOT     = E:\Program Files\MATLAB\R2018b
 ALT_MATLAB_ROOT = E:\PROGRA~2\MATLAB\R2018b
