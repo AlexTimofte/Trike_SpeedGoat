@@ -3,9 +3,9 @@
  *
  * Code generation for model "SpeedgoatCANOpen2Buses100us".
  *
- * Model version              : 1.480
+ * Model version              : 1.614
  * Simulink Coder version : 9.0 (R2018b) 24-May-2018
- * C source code generated on : Tue Jun 22 20:30:45 2021
+ * C source code generated on : Fri Jul  2 21:10:33 2021
  *
  * Target selection: slrt.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -60,6 +60,10 @@ typedef struct {
   uint8_T DunkD_PowerEnable;
   uint8_T DunkD_BrakeCtrl;
   int32_T DunkD_DesiredCurrent;
+  uint16_T Test_AN1;
+  uint16_T Test_AN2;
+  uint16_T Test_AN3;
+  uint16_T Test_AN4;
 } Speedgoat_TPDOs;
 
 #endif
@@ -184,6 +188,16 @@ typedef struct {
 
 #endif                                 /*typedef_dsp_private_SlidingWindowAver_T*/
 
+#ifndef typedef_dsp_private_SlidingWindowAv_i_T
+#define typedef_dsp_private_SlidingWindowAv_i_T
+
+typedef struct {
+  int32_T isInitialized;
+  boolean_T isSetupComplete;
+} dsp_private_SlidingWindowAv_i_T;
+
+#endif                                 /*typedef_dsp_private_SlidingWindowAv_i_T*/
+
 #ifndef typedef_cell_wrap_SpeedgoatCANOpen2Bu_T
 #define typedef_cell_wrap_SpeedgoatCANOpen2Bu_T
 
@@ -208,12 +222,27 @@ typedef struct {
 
 #endif                                 /*typedef_dsp_simulink_MovingAverage_Sp_T*/
 
+#ifndef typedef_dsp_simulink_MovingAverage_i_T
+#define typedef_dsp_simulink_MovingAverage_i_T
+
+typedef struct {
+  boolean_T matlabCodegenIsDeleted;
+  int32_T isInitialized;
+  boolean_T isSetupComplete;
+  boolean_T TunablePropsChanged;
+  cell_wrap_SpeedgoatCANOpen2Bu_T inputVarSize;
+  dsp_private_SlidingWindowAv_i_T *pStatistic;
+  int32_T NumChannels;
+} dsp_simulink_MovingAverage_i_T;
+
+#endif                                 /*typedef_dsp_simulink_MovingAverage_i_T*/
+
 #ifndef SS_INT64
-#define SS_INT64                       38
+#define SS_INT64                       40
 #endif
 
 #ifndef SS_UINT64
-#define SS_UINT64                      39
+#define SS_UINT64                      41
 #endif
 
 /* Parameters (default storage) */

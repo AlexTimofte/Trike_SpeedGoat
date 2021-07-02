@@ -1,1 +1,0 @@
-rttboot xpckrnl.rtb

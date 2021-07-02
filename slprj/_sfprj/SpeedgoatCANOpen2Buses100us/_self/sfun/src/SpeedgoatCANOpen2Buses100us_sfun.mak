@@ -6,7 +6,7 @@ CPU = AMD64
 
 MODEL     = SpeedgoatCANOpen2Buses100us
 TARGET      = sfun
-MODULE_SRCS   = c1_SpeedgoatCANOpen2Buses100us.c c2_SpeedgoatCANOpen2Buses100us.c c3_SpeedgoatCANOpen2Buses100us.c c12_SpeedgoatCANOpen2Buses100us.c
+MODULE_SRCS   = c1_SpeedgoatCANOpen2Buses100us.c c2_SpeedgoatCANOpen2Buses100us.c c3_SpeedgoatCANOpen2Buses100us.c c4_SpeedgoatCANOpen2Buses100us.c c12_SpeedgoatCANOpen2Buses100us.c
 MODEL_SRC  = SpeedgoatCANOpen2Buses100us_sfun.c
 MODEL_REG = SpeedgoatCANOpen2Buses100us_sfun_registry.c
 MAKEFILE    = SpeedgoatCANOpen2Buses100us_sfun.mak

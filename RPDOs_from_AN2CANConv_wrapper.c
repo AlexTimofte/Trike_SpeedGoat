@@ -23,14 +23,14 @@
  *
  */
 /* %%%-SFUNWIZ_wrapper_externs_Changes_BEGIN --- EDIT HERE TO _END */
-RPDO_ID1C8 RPDO05;
+RPDO_ID290 RPDO05;
 /* %%%-SFUNWIZ_wrapper_externs_Changes_END --- EDIT HERE TO _BEGIN */
 
 /*
  * Output function
  *
  */
-void RPDOs_from_AN2CANConv_Outputs_wrapper(uint16_T *Channel_AN1,
+void RPDOs_from_AN2CANConv_Outputs_wrapper(int16_T *Channel_AN1,
 			uint16_T *Channel_AN2,
 			uint16_T *Channel_AN3,
 			uint16_T *Channel_AN4)

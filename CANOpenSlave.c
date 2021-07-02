@@ -17,12 +17,14 @@ RPDO_ID182 RPDO01; // Joystick
 RPDO_ID282 RPDO02; // Joystick
 RPDO_ID1FF RPDO03; // Absolut Encoder WDGA
 RPDO_ID2FF RPDO04; // Absolut Encoder WDGA
-RPDO_ID1C8 RPDO05; // mCAN.4.ai-box
+RPDO_ID290 RPDO05; // mCAN.4.ai-box
 RPDO_ID18x RPDO06,RPDO07,RPDO08,RPDO09; // DunkenMotoren
 RPDO_ID28x RPDO10,RPDO11,RPDO12,RPDO13; // DunkenMotoren
 
 // SpeedGoat TPDOs    -> Device RPDOs
 TPDO_ID20x   TPDO01,TPDO02,TPDO03,TPDO04; // DunkenMotoren
+
+
 // TPDO_ID1A4   TPDO01; //TPDO_ID185 TPDO01;
 
 /************************************************************************
@@ -249,13 +251,15 @@ void CANOpenSlave_ResetCommunication(void)
     CANOpenSlave_Init(500, OD_NODEID, 2000); //OD_HEARTBEAT
     #if NR_OF_TPDOS>0
         // TPDO1, default ID (0x180+NodeID),100ms event, 0ms inhibite, 4 bytes
-        // Transmit trigger: 100 ms event time
+        // Transmit trigger: 10 ms event time
 
-        CANOpenSlave_InitTPDO(1,   0x20A,  10, 0, 8,  &TPDO01.Message);  // DunkA RPDO
-        CANOpenSlave_InitTPDO(2,   0x20B,  10, 0, 8,  &TPDO02.Message);  // DunkB RPDO
-        CANOpenSlave_InitTPDO(3,   0x20C,  10, 0, 8,  &TPDO03.Message);  // DunkC RPDO
-        CANOpenSlave_InitTPDO(4,   0x20D,  10, 0, 8,  &TPDO04.Message);  // DunkD RPDO
-
+        CANOpenSlave_InitTPDO(1,   0x20A,  5, 0, 8,  &TPDO01.Message);  // DunkA RPDO
+        CANOpenSlave_InitTPDO(2,   0x20B,  5, 0, 8,  &TPDO02.Message);  // DunkB RPDO
+        CANOpenSlave_InitTPDO(3,   0x20C,  5, 0, 8,  &TPDO03.Message);  // DunkC RPDO
+        CANOpenSlave_InitTPDO(4,   0x20D,  5, 0, 8,  &TPDO04.Message);  // DunkD RPDO
+        
+    
+    
     #endif
 
     #if NR_OF_RPDOS>0
@@ -265,17 +269,19 @@ void CANOpenSlave_ResetCommunication(void)
        CANOpenSlave_InitRPDO(2, 0x282, 8, &RPDO02.Message); // Joystick
        CANOpenSlave_InitRPDO(3, 0x1FF, 4, &RPDO03.Message); // Absolut Encoder WDGA
        CANOpenSlave_InitRPDO(4, 0x2FF, 4, &RPDO04.Message); // Absolut Encoder WDGA
-       CANOpenSlave_InitRPDO(5, 0x1C8, 8, &RPDO05.Message); // mCAN.4.ai-box
+        
+       CANOpenSlave_InitRPDO(5, 0x290, 8, &RPDO05.Message); // mCAN.4.ai-box
+      
        CANOpenSlave_InitRPDO(6, 0x18A, 8, &RPDO06.Message); // DunkA TPDO
        CANOpenSlave_InitRPDO(7, 0x18B, 8, &RPDO07.Message); // DunkB TPDO
        CANOpenSlave_InitRPDO(8, 0x18C, 8, &RPDO08.Message); // DunkC TPDO
        CANOpenSlave_InitRPDO(9, 0x18D, 8, &RPDO09.Message); // DunkD TPDO 
        
-       
-       CANOpenSlave_InitRPDO(6, 0x28A, 8, &RPDO10.Message); // DunkA TPDO
-       CANOpenSlave_InitRPDO(7, 0x28B, 8, &RPDO11.Message); // DunkB TPDO
-       CANOpenSlave_InitRPDO(8, 0x28C, 8, &RPDO12.Message); // DunkC TPDO
-       CANOpenSlave_InitRPDO(9, 0x28D, 8, &RPDO13.Message); // DunkD TPDO 
+//        
+//        CANOpenSlave_InitRPDO(6, 0x28A, 8, &RPDO10.Message); // DunkA TPDO
+//        CANOpenSlave_InitRPDO(7, 0x28B, 8, &RPDO11.Message); // DunkB TPDO
+//        CANOpenSlave_InitRPDO(8, 0x28C, 8, &RPDO12.Message); // DunkC TPDO
+//        CANOpenSlave_InitRPDO(9, 0x28D, 8, &RPDO13.Message); // DunkD TPDO 
        
     #endif
  

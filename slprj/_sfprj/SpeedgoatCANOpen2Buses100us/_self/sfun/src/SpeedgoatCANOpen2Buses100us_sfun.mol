@@ -2,6 +2,7 @@ SpeedgoatCANOpen2Buses100us_sfun.obj
 c1_SpeedgoatCANOpen2Buses100us.obj
 c2_SpeedgoatCANOpen2Buses100us.obj
 c3_SpeedgoatCANOpen2Buses100us.obj
+c4_SpeedgoatCANOpen2Buses100us.obj
 c12_SpeedgoatCANOpen2Buses100us.obj
 SpeedgoatCANOpen2Buses100us_sfun_registry.obj
 c_mexapi_version.obj

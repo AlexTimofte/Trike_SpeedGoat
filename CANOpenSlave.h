@@ -21,7 +21,7 @@
 #define OD_HEARTBEAT                1000L
 
 //Maximum number of transmit PDOs (0 to 16)
-#define NR_OF_TPDOS                 4    
+#define NR_OF_TPDOS                 4   
 //Maximum number of receive  PDOs (0 to 16)
 #define NR_OF_RPDOS                13
 

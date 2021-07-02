@@ -6,6 +6,7 @@
 #include "c1_SpeedgoatCANOpen2Buses100us.h"
 #include "c2_SpeedgoatCANOpen2Buses100us.h"
 #include "c3_SpeedgoatCANOpen2Buses100us.h"
+#include "c4_SpeedgoatCANOpen2Buses100us.h"
 #include "c12_SpeedgoatCANOpen2Buses100us.h"
 
 /* Type Definitions */
@@ -45,6 +46,11 @@ unsigned int sf_SpeedgoatCANOpen2Buses100us_method_dispatcher(SimStruct
 
   if (chartFileNumber==3) {
     c3_SpeedgoatCANOpen2Buses100us_method_dispatcher(simstructPtr, method, data);
+    return 1;
+  }
+
+  if (chartFileNumber==4) {
+    c4_SpeedgoatCANOpen2Buses100us_method_dispatcher(simstructPtr, method, data);
     return 1;
   }
 
@@ -99,6 +105,14 @@ unsigned int sf_SpeedgoatCANOpen2Buses100us_process_testpoint_info_call( int
         extern mxArray *sf_c3_SpeedgoatCANOpen2Buses100us_get_testpoint_info
           (void);
         plhs[0] = sf_c3_SpeedgoatCANOpen2Buses100us_get_testpoint_info();
+        break;
+      }
+
+     case 4:
+      {
+        extern mxArray *sf_c4_SpeedgoatCANOpen2Buses100us_get_testpoint_info
+          (void);
+        plhs[0] = sf_c4_SpeedgoatCANOpen2Buses100us_get_testpoint_info();
         break;
       }
 
@@ -176,6 +190,14 @@ unsigned int sf_SpeedgoatCANOpen2Buses100us_process_check_sum_call( int nlhs,
           extern void sf_c3_SpeedgoatCANOpen2Buses100us_get_check_sum(mxArray
             *plhs[]);
           sf_c3_SpeedgoatCANOpen2Buses100us_get_check_sum(plhs);
+          break;
+        }
+
+       case 4:
+        {
+          extern void sf_c4_SpeedgoatCANOpen2Buses100us_get_check_sum(mxArray
+            *plhs[]);
+          sf_c4_SpeedgoatCANOpen2Buses100us_get_check_sum(plhs);
           break;
         }
 
@@ -280,6 +302,19 @@ unsigned int sf_SpeedgoatCANOpen2Buses100us_autoinheritance_info( int nlhs,
         break;
       }
 
+     case 4:
+      {
+        if (strcmp(aiChksum, "0NfG38tPMKdBLj6KXxlNvE") == 0) {
+          extern mxArray
+            *sf_c4_SpeedgoatCANOpen2Buses100us_get_autoinheritance_info(void);
+          plhs[0] = sf_c4_SpeedgoatCANOpen2Buses100us_get_autoinheritance_info();
+          break;
+        }
+
+        plhs[0] = mxCreateDoubleMatrix(0,0,mxREAL);
+        break;
+      }
+
      case 12:
       {
         if (strcmp(aiChksum, "LdxtLrfkkr9ojI5wWju5uB") == 0) {
@@ -373,6 +408,20 @@ unsigned int sf_SpeedgoatCANOpen2Buses100us_get_eml_resolved_functions_info( int
         }
       }
 
+     case 4:
+      {
+        if (strcmp(instanceChksum, "sOHA9EDXE2HfYijKlUer4rD") == 0) {
+          extern const mxArray
+            *sf_c4_SpeedgoatCANOpen2Buses100us_get_eml_resolved_functions_info
+            (void);
+          mxArray *persistentMxArray = (mxArray *)
+            sf_c4_SpeedgoatCANOpen2Buses100us_get_eml_resolved_functions_info();
+          plhs[0] = mxDuplicateArray(persistentMxArray);
+          mxDestroyArray(persistentMxArray);
+          break;
+        }
+      }
+
      case 12:
       {
         if (strcmp(instanceChksum, "sxAoWUzDiUrAlBtoYAidqUD") == 0) {
@@ -452,6 +501,16 @@ unsigned int sf_SpeedgoatCANOpen2Buses100us_third_party_uses_info( int nlhs,
         }
       }
 
+     case 4:
+      {
+        if (strcmp(tpChksum, "sOHA9EDXE2HfYijKlUer4rD") == 0) {
+          extern mxArray
+            *sf_c4_SpeedgoatCANOpen2Buses100us_third_party_uses_info(void);
+          plhs[0] = sf_c4_SpeedgoatCANOpen2Buses100us_third_party_uses_info();
+          break;
+        }
+      }
+
      case 12:
       {
         if (strcmp(tpChksum, "sxAoWUzDiUrAlBtoYAidqUD") == 0) {
@@ -516,6 +575,16 @@ unsigned int sf_SpeedgoatCANOpen2Buses100us_jit_fallback_info( int nlhs, mxArray
           extern mxArray *sf_c3_SpeedgoatCANOpen2Buses100us_jit_fallback_info
             (void);
           plhs[0] = sf_c3_SpeedgoatCANOpen2Buses100us_jit_fallback_info();
+          break;
+        }
+      }
+
+     case 4:
+      {
+        if (strcmp(tpChksum, "sOHA9EDXE2HfYijKlUer4rD") == 0) {
+          extern mxArray *sf_c4_SpeedgoatCANOpen2Buses100us_jit_fallback_info
+            (void);
+          plhs[0] = sf_c4_SpeedgoatCANOpen2Buses100us_jit_fallback_info();
           break;
         }
       }
@@ -588,6 +657,16 @@ unsigned int sf_SpeedgoatCANOpen2Buses100us_updateBuildInfo_args_info( int nlhs,
         }
       }
 
+     case 4:
+      {
+        if (strcmp(tpChksum, "sOHA9EDXE2HfYijKlUer4rD") == 0) {
+          extern mxArray
+            *sf_c4_SpeedgoatCANOpen2Buses100us_updateBuildInfo_args_info(void);
+          plhs[0] = sf_c4_SpeedgoatCANOpen2Buses100us_updateBuildInfo_args_info();
+          break;
+        }
+      }
+
      case 12:
       {
         if (strcmp(tpChksum, "sxAoWUzDiUrAlBtoYAidqUD") == 0) {
@@ -611,7 +690,7 @@ void SpeedgoatCANOpen2Buses100us_debug_initialize(struct SfDebugInstanceStruct*
   debugInstance)
 {
   _SpeedgoatCANOpen2Buses100usMachineNumber_ = sf_debug_initialize_machine
-    (debugInstance,"SpeedgoatCANOpen2Buses100us","sfun",0,10,0,0,0);
+    (debugInstance,"SpeedgoatCANOpen2Buses100us","sfun",0,11,0,0,0);
   sf_debug_set_machine_event_thresholds(debugInstance,
     _SpeedgoatCANOpen2Buses100usMachineNumber_,0,0);
   sf_debug_set_machine_data_thresholds(debugInstance,

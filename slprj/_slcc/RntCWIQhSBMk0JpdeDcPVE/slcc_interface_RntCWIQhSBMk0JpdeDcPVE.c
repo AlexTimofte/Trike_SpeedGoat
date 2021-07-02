@@ -3,7 +3,7 @@
 #include "slcc_interface_RntCWIQhSBMk0JpdeDcPVE.h"
 
 const uint8_T *get_checksum_source_info(int32_T *size) {
-    static const uint8_T data[79344] = {
+    static const uint8_T data[79329] = {
         0U, 1U, 73U, 77U, 0U, 0U, 0U, 0U, 14U, 0U, 0U, 0U, 136U, 0U, 0U, 0U, 
 6U, 0U, 0U, 0U, 8U, 0U, 0U, 0U, 17U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 
 1U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 1U, 0U, 4U, 0U, 77U, 67U, 79U, 83U, 
@@ -218,8 +218,8 @@ const uint8_T *get_checksum_source_info(int32_T *size) {
 1U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 16U, 0U, 0U, 0U, 53U, 0U, 0U, 0U, 
 67U, 58U, 92U, 85U, 115U, 101U, 114U, 115U, 92U, 86U, 101U, 110U, 113U, 111U, 92U, 65U, 
 112U, 112U, 68U, 97U, 116U, 97U, 92U, 76U, 111U, 99U, 97U, 108U, 92U, 84U, 101U, 109U, 
-112U, 92U, 97U, 54U, 56U, 56U, 45U, 51U, 51U, 102U, 56U, 45U, 98U, 100U, 102U, 52U, 
-45U, 101U, 57U, 56U, 54U, 0U, 0U, 0U, 14U, 0U, 0U, 0U, 104U, 4U, 0U, 0U, 
+112U, 92U, 98U, 98U, 52U, 97U, 45U, 50U, 57U, 55U, 49U, 45U, 98U, 98U, 56U, 51U, 
+45U, 53U, 49U, 50U, 49U, 0U, 0U, 0U, 14U, 0U, 0U, 0U, 104U, 4U, 0U, 0U, 
 6U, 0U, 0U, 0U, 8U, 0U, 0U, 0U, 1U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 
 5U, 0U, 0U, 0U, 8U, 0U, 0U, 0U, 15U, 0U, 0U, 0U, 1U, 0U, 0U, 0U, 
 1U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 14U, 0U, 0U, 0U, 56U, 0U, 0U, 0U, 
@@ -372,19 +372,19 @@ const uint8_T *get_checksum_source_info(int32_T *size) {
 6U, 0U, 0U, 0U, 8U, 0U, 0U, 0U, 6U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 
 5U, 0U, 0U, 0U, 8U, 0U, 0U, 0U, 1U, 0U, 0U, 0U, 4U, 0U, 0U, 0U, 
 1U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 9U, 0U, 0U, 0U, 32U, 0U, 0U, 0U, 
-44U, 15U, 72U, 158U, 237U, 135U, 38U, 65U, 114U, 28U, 199U, 129U, 115U, 135U, 38U, 65U, 
-130U, 67U, 90U, 50U, 47U, 135U, 38U, 65U, 212U, 240U, 183U, 253U, 44U, 136U, 38U, 65U, 
+125U, 221U, 232U, 178U, 71U, 136U, 38U, 65U, 200U, 80U, 217U, 181U, 71U, 136U, 38U, 65U, 
+130U, 67U, 90U, 50U, 47U, 135U, 38U, 65U, 156U, 87U, 19U, 183U, 71U, 136U, 38U, 65U, 
 14U, 0U, 0U, 0U, 80U, 0U, 0U, 0U, 6U, 0U, 0U, 0U, 8U, 0U, 0U, 0U, 
 6U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 5U, 0U, 0U, 0U, 8U, 0U, 0U, 0U, 
 1U, 0U, 0U, 0U, 4U, 0U, 0U, 0U, 1U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 
-9U, 0U, 0U, 0U, 32U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 56U, 191U, 64U, 
+9U, 0U, 0U, 0U, 32U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 55U, 191U, 64U, 
 0U, 0U, 0U, 0U, 128U, 92U, 192U, 64U, 0U, 0U, 0U, 0U, 0U, 0U, 134U, 64U, 
-0U, 0U, 0U, 0U, 0U, 168U, 168U, 64U, 14U, 0U, 0U, 0U, 80U, 0U, 0U, 0U, 
+0U, 0U, 0U, 0U, 0U, 178U, 168U, 64U, 14U, 0U, 0U, 0U, 80U, 0U, 0U, 0U, 
 6U, 0U, 0U, 0U, 8U, 0U, 0U, 0U, 6U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 
 5U, 0U, 0U, 0U, 8U, 0U, 0U, 0U, 1U, 0U, 0U, 0U, 4U, 0U, 0U, 0U, 
 1U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 9U, 0U, 0U, 0U, 32U, 0U, 0U, 0U, 
-0U, 0U, 0U, 226U, 59U, 65U, 204U, 65U, 0U, 0U, 0U, 167U, 199U, 128U, 199U, 65U, 
-0U, 0U, 32U, 136U, 26U, 249U, 229U, 65U, 0U, 0U, 128U, 114U, 24U, 62U, 221U, 65U, 
+0U, 0U, 128U, 91U, 2U, 55U, 206U, 65U, 0U, 0U, 0U, 172U, 93U, 116U, 196U, 65U, 
+0U, 0U, 192U, 79U, 4U, 113U, 239U, 65U, 0U, 0U, 192U, 90U, 40U, 218U, 214U, 65U, 
 14U, 0U, 0U, 0U, 8U, 15U, 0U, 0U, 6U, 0U, 0U, 0U, 8U, 0U, 0U, 0U, 
 2U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 5U, 0U, 0U, 0U, 8U, 0U, 0U, 0U, 
 1U, 0U, 0U, 0U, 1U, 0U, 0U, 0U, 1U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 
@@ -523,8 +523,8 @@ const uint8_T *get_checksum_source_info(int32_T *size) {
 1U, 0U, 0U, 0U, 53U, 0U, 0U, 0U, 1U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 
 16U, 0U, 0U, 0U, 53U, 0U, 0U, 0U, 67U, 58U, 92U, 85U, 115U, 101U, 114U, 115U, 
 92U, 86U, 101U, 110U, 113U, 111U, 92U, 65U, 112U, 112U, 68U, 97U, 116U, 97U, 92U, 76U, 
-111U, 99U, 97U, 108U, 92U, 84U, 101U, 109U, 112U, 92U, 97U, 54U, 56U, 56U, 45U, 51U, 
-51U, 102U, 56U, 45U, 98U, 100U, 102U, 52U, 45U, 101U, 57U, 56U, 54U, 0U, 0U, 0U, 
+111U, 99U, 97U, 108U, 92U, 84U, 101U, 109U, 112U, 92U, 98U, 98U, 52U, 97U, 45U, 50U, 
+57U, 55U, 49U, 45U, 98U, 98U, 56U, 51U, 45U, 53U, 49U, 50U, 49U, 0U, 0U, 0U, 
 14U, 0U, 0U, 0U, 104U, 4U, 0U, 0U, 6U, 0U, 0U, 0U, 8U, 0U, 0U, 0U, 
 1U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 5U, 0U, 0U, 0U, 8U, 0U, 0U, 0U, 
 15U, 0U, 0U, 0U, 1U, 0U, 0U, 0U, 1U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 
@@ -639,11 +639,11 @@ const uint8_T *get_checksum_source_info(int32_T *size) {
 6U, 0U, 0U, 0U, 8U, 0U, 0U, 0U, 6U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 
 5U, 0U, 0U, 0U, 8U, 0U, 0U, 0U, 1U, 0U, 0U, 0U, 1U, 0U, 0U, 0U, 
 1U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 9U, 0U, 0U, 0U, 8U, 0U, 0U, 0U, 
-44U, 15U, 72U, 158U, 237U, 135U, 38U, 65U, 14U, 0U, 0U, 0U, 56U, 0U, 0U, 0U, 
+230U, 246U, 7U, 185U, 71U, 136U, 38U, 65U, 14U, 0U, 0U, 0U, 56U, 0U, 0U, 0U, 
 6U, 0U, 0U, 0U, 8U, 0U, 0U, 0U, 6U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 
 5U, 0U, 0U, 0U, 8U, 0U, 0U, 0U, 1U, 0U, 0U, 0U, 1U, 0U, 0U, 0U, 
 1U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 9U, 0U, 0U, 0U, 8U, 0U, 0U, 0U, 
-0U, 0U, 0U, 0U, 32U, 252U, 224U, 64U, 14U, 0U, 0U, 0U, 80U, 1U, 0U, 0U, 
+0U, 0U, 0U, 0U, 160U, 2U, 225U, 64U, 14U, 0U, 0U, 0U, 80U, 1U, 0U, 0U, 
 6U, 0U, 0U, 0U, 8U, 0U, 0U, 0U, 1U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 
 5U, 0U, 0U, 0U, 8U, 0U, 0U, 0U, 1U, 0U, 0U, 0U, 2U, 0U, 0U, 0U, 
 1U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 14U, 0U, 0U, 0U, 144U, 0U, 0U, 0U, 
@@ -668,18 +668,18 @@ const uint8_T *get_checksum_source_info(int32_T *size) {
 14U, 0U, 0U, 0U, 64U, 0U, 0U, 0U, 6U, 0U, 0U, 0U, 8U, 0U, 0U, 0U, 
 6U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 5U, 0U, 0U, 0U, 8U, 0U, 0U, 0U, 
 1U, 0U, 0U, 0U, 2U, 0U, 0U, 0U, 1U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 
-9U, 0U, 0U, 0U, 16U, 0U, 0U, 0U, 44U, 15U, 72U, 158U, 237U, 135U, 38U, 65U, 
-212U, 240U, 183U, 253U, 44U, 136U, 38U, 65U, 14U, 0U, 0U, 0U, 64U, 0U, 0U, 0U, 
+9U, 0U, 0U, 0U, 16U, 0U, 0U, 0U, 125U, 221U, 232U, 178U, 71U, 136U, 38U, 65U, 
+156U, 87U, 19U, 183U, 71U, 136U, 38U, 65U, 14U, 0U, 0U, 0U, 64U, 0U, 0U, 0U, 
 6U, 0U, 0U, 0U, 8U, 0U, 0U, 0U, 6U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 
 5U, 0U, 0U, 0U, 8U, 0U, 0U, 0U, 1U, 0U, 0U, 0U, 2U, 0U, 0U, 0U, 
 1U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 9U, 0U, 0U, 0U, 16U, 0U, 0U, 0U, 
-0U, 0U, 0U, 0U, 0U, 56U, 191U, 64U, 0U, 0U, 0U, 0U, 0U, 168U, 168U, 64U, 
+0U, 0U, 0U, 0U, 0U, 55U, 191U, 64U, 0U, 0U, 0U, 0U, 0U, 178U, 168U, 64U, 
 14U, 0U, 0U, 0U, 80U, 0U, 0U, 0U, 6U, 0U, 0U, 0U, 8U, 0U, 0U, 0U, 
 6U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 5U, 0U, 0U, 0U, 8U, 0U, 0U, 0U, 
 1U, 0U, 0U, 0U, 4U, 0U, 0U, 0U, 1U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 
-9U, 0U, 0U, 0U, 32U, 0U, 0U, 0U, 0U, 0U, 160U, 184U, 155U, 233U, 236U, 65U, 
-0U, 0U, 32U, 176U, 153U, 75U, 234U, 65U, 0U, 0U, 0U, 110U, 60U, 71U, 221U, 65U, 
-0U, 0U, 160U, 245U, 32U, 51U, 235U, 65U, 14U, 0U, 0U, 0U, 8U, 15U, 0U, 0U, 
+9U, 0U, 0U, 0U, 32U, 0U, 0U, 0U, 0U, 0U, 0U, 233U, 46U, 246U, 235U, 65U, 
+0U, 0U, 128U, 22U, 69U, 52U, 226U, 65U, 0U, 0U, 0U, 150U, 199U, 232U, 162U, 65U, 
+0U, 0U, 0U, 252U, 110U, 108U, 210U, 65U, 14U, 0U, 0U, 0U, 8U, 15U, 0U, 0U, 
 6U, 0U, 0U, 0U, 8U, 0U, 0U, 0U, 2U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 
 5U, 0U, 0U, 0U, 8U, 0U, 0U, 0U, 1U, 0U, 0U, 0U, 1U, 0U, 0U, 0U, 
 1U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 5U, 0U, 4U, 0U, 21U, 0U, 0U, 0U, 
@@ -818,8 +818,8 @@ const uint8_T *get_checksum_source_info(int32_T *size) {
 1U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 16U, 0U, 0U, 0U, 53U, 0U, 0U, 0U, 
 67U, 58U, 92U, 85U, 115U, 101U, 114U, 115U, 92U, 86U, 101U, 110U, 113U, 111U, 92U, 65U, 
 112U, 112U, 68U, 97U, 116U, 97U, 92U, 76U, 111U, 99U, 97U, 108U, 92U, 84U, 101U, 109U, 
-112U, 92U, 97U, 54U, 56U, 56U, 45U, 51U, 51U, 102U, 56U, 45U, 98U, 100U, 102U, 52U, 
-45U, 101U, 57U, 56U, 54U, 0U, 0U, 0U, 14U, 0U, 0U, 0U, 104U, 4U, 0U, 0U, 
+112U, 92U, 98U, 98U, 52U, 97U, 45U, 50U, 57U, 55U, 49U, 45U, 98U, 98U, 56U, 51U, 
+45U, 53U, 49U, 50U, 49U, 0U, 0U, 0U, 14U, 0U, 0U, 0U, 104U, 4U, 0U, 0U, 
 6U, 0U, 0U, 0U, 8U, 0U, 0U, 0U, 1U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 
 5U, 0U, 0U, 0U, 8U, 0U, 0U, 0U, 15U, 0U, 0U, 0U, 1U, 0U, 0U, 0U, 
 1U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 14U, 0U, 0U, 0U, 56U, 0U, 0U, 0U, 
@@ -933,11 +933,11 @@ const uint8_T *get_checksum_source_info(int32_T *size) {
 14U, 0U, 0U, 0U, 56U, 0U, 0U, 0U, 6U, 0U, 0U, 0U, 8U, 0U, 0U, 0U, 
 6U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 5U, 0U, 0U, 0U, 8U, 0U, 0U, 0U, 
 1U, 0U, 0U, 0U, 1U, 0U, 0U, 0U, 1U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 
-9U, 0U, 0U, 0U, 8U, 0U, 0U, 0U, 68U, 79U, 5U, 130U, 115U, 135U, 38U, 65U, 
+9U, 0U, 0U, 0U, 8U, 0U, 0U, 0U, 91U, 187U, 198U, 192U, 71U, 136U, 38U, 65U, 
 14U, 0U, 0U, 0U, 56U, 0U, 0U, 0U, 6U, 0U, 0U, 0U, 8U, 0U, 0U, 0U, 
 6U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 5U, 0U, 0U, 0U, 8U, 0U, 0U, 0U, 
 1U, 0U, 0U, 0U, 1U, 0U, 0U, 0U, 1U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 
-9U, 0U, 0U, 0U, 8U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 224U, 51U, 224U, 64U, 
+9U, 0U, 0U, 0U, 8U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 96U, 65U, 224U, 64U, 
 14U, 0U, 0U, 0U, 248U, 1U, 0U, 0U, 6U, 0U, 0U, 0U, 8U, 0U, 0U, 0U, 
 1U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 5U, 0U, 0U, 0U, 8U, 0U, 0U, 0U, 
 1U, 0U, 0U, 0U, 3U, 0U, 0U, 0U, 1U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 
@@ -973,19 +973,19 @@ const uint8_T *get_checksum_source_info(int32_T *size) {
 14U, 0U, 0U, 0U, 72U, 0U, 0U, 0U, 6U, 0U, 0U, 0U, 8U, 0U, 0U, 0U, 
 6U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 5U, 0U, 0U, 0U, 8U, 0U, 0U, 0U, 
 1U, 0U, 0U, 0U, 3U, 0U, 0U, 0U, 1U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 
-9U, 0U, 0U, 0U, 24U, 0U, 0U, 0U, 114U, 28U, 199U, 129U, 115U, 135U, 38U, 65U, 
-130U, 67U, 90U, 50U, 47U, 135U, 38U, 65U, 209U, 72U, 192U, 103U, 47U, 135U, 38U, 65U, 
+9U, 0U, 0U, 0U, 24U, 0U, 0U, 0U, 200U, 80U, 217U, 181U, 71U, 136U, 38U, 65U, 
+130U, 67U, 90U, 50U, 47U, 135U, 38U, 65U, 229U, 12U, 138U, 192U, 71U, 136U, 38U, 65U, 
 14U, 0U, 0U, 0U, 72U, 0U, 0U, 0U, 6U, 0U, 0U, 0U, 8U, 0U, 0U, 0U, 
 6U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 5U, 0U, 0U, 0U, 8U, 0U, 0U, 0U, 
 1U, 0U, 0U, 0U, 3U, 0U, 0U, 0U, 1U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 
 9U, 0U, 0U, 0U, 24U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 128U, 92U, 192U, 64U, 
-0U, 0U, 0U, 0U, 0U, 0U, 134U, 64U, 0U, 0U, 0U, 0U, 0U, 144U, 154U, 64U, 
+0U, 0U, 0U, 0U, 0U, 0U, 134U, 64U, 0U, 0U, 0U, 0U, 0U, 216U, 156U, 64U, 
 14U, 0U, 0U, 0U, 80U, 0U, 0U, 0U, 6U, 0U, 0U, 0U, 8U, 0U, 0U, 0U, 
 6U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 5U, 0U, 0U, 0U, 8U, 0U, 0U, 0U, 
 1U, 0U, 0U, 0U, 4U, 0U, 0U, 0U, 1U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 
-9U, 0U, 0U, 0U, 32U, 0U, 0U, 0U, 0U, 0U, 32U, 75U, 193U, 44U, 227U, 65U, 
-0U, 0U, 224U, 206U, 109U, 5U, 235U, 65U, 0U, 0U, 128U, 233U, 20U, 47U, 216U, 65U, 
-0U, 0U, 128U, 219U, 198U, 8U, 228U, 65U, 14U, 0U, 0U, 0U, 8U, 4U, 0U, 0U, 
+9U, 0U, 0U, 0U, 32U, 0U, 0U, 0U, 0U, 0U, 128U, 25U, 185U, 20U, 194U, 65U, 
+0U, 0U, 128U, 250U, 216U, 138U, 222U, 65U, 0U, 0U, 128U, 36U, 173U, 81U, 197U, 65U, 
+0U, 0U, 64U, 118U, 175U, 31U, 215U, 65U, 14U, 0U, 0U, 0U, 8U, 4U, 0U, 0U, 
 6U, 0U, 0U, 0U, 8U, 0U, 0U, 0U, 2U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 
 5U, 0U, 0U, 0U, 8U, 0U, 0U, 0U, 1U, 0U, 0U, 0U, 1U, 0U, 0U, 0U, 
 1U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 5U, 0U, 4U, 0U, 11U, 0U, 0U, 0U, 
@@ -1085,7 +1085,7 @@ const uint8_T *get_checksum_source_info(int32_T *size) {
 1U, 0U, 0U, 0U, 5U, 0U, 0U, 0U, 77U, 67U, 79U, 83U, 0U, 0U, 0U, 0U, 
 14U, 0U, 0U, 0U, 0U, 0U, 0U, 0U
     };
-    *size = (int32_T)79344;
+    *size = (int32_T)79329;
     return data;
 }
 
@@ -1106,9 +1106,9 @@ void get_gRxCAN_addr_RntCWIQhSBMk0JpdeDcPVE(CAN_MSG ***varAddr)
     *varAddr = &gRxCAN;
 }
 
-void get_gRxCAN_APT_addr_RntCWIQhSBMk0JpdeDcPVE(CAN_MSG_APT ***varAddr)
+void get_can_rx_queue_addr_RntCWIQhSBMk0JpdeDcPVE(CAN_MSG_QUEUE **varAddr)
 {
-    *varAddr = &gRxCAN_APT;
+    *varAddr = &can_rx_queue;
 }
 
 void get_can_rx_queue_APT_addr_RntCWIQhSBMk0JpdeDcPVE(CAN_MSG_QUEUE_APT **varAddr)
@@ -1116,14 +1116,54 @@ void get_can_rx_queue_APT_addr_RntCWIQhSBMk0JpdeDcPVE(CAN_MSG_QUEUE_APT **varAdd
     *varAddr = &can_rx_queue_APT;
 }
 
-void get_can_rx_queue_addr_RntCWIQhSBMk0JpdeDcPVE(CAN_MSG_QUEUE **varAddr)
+void get_gRxCAN_APT_addr_RntCWIQhSBMk0JpdeDcPVE(CAN_MSG_APT ***varAddr)
 {
-    *varAddr = &can_rx_queue;
+    *varAddr = &gRxCAN_APT;
 }
 
 const char_T *get_dll_checksum_RntCWIQhSBMk0JpdeDcPVE(void)
 {
-    return "UoLUFYnzJ3dGch7CSNMcQB";
+    return "hAgI6Cf4hFoBZfHdbm3qDC";
+}
+
+void CANOpenSlave_GetRPDO_RntCWIQhSBMk0JpdeDcPVE(uint8_T no, uint8_T *data)
+{
+    CANOpenSlave_GetRPDO(no, data);
+}
+
+void CANOpenSlave_SetTPDO_APT_RntCWIQhSBMk0JpdeDcPVE(uint8_T no, const uint8_T *data)
+{
+    CANOpenSlave_SetTPDO_APT(no, data);
+}
+
+void CANOpenSlave_ResetCommunication_RntCWIQhSBMk0JpdeDcPVE(void)
+{
+    CANOpenSlave_ResetCommunication();
+}
+
+void CANOpenSlave_ProcessStackAsyncRx_RntCWIQhSBMk0JpdeDcPVE(uint32_T *txID, uint8_T *txDLC, uint8_T *txData)
+{
+    CANOpenSlave_ProcessStackAsyncRx(txID, txDLC, txData);
+}
+
+void CANOpenSlave_ProcessStack_RntCWIQhSBMk0JpdeDcPVE(uint32_T rxID, uint8_T rxDLC, const uint8_T *rxData, uint32_T *txID, uint8_T *txDLC, uint8_T *txData)
+{
+    CANOpenSlave_ProcessStack(rxID, rxDLC, rxData, txID, txDLC, txData);
+}
+
+void CANOpenSlave_GetRPDO_APT_RntCWIQhSBMk0JpdeDcPVE(uint8_T no, uint8_T *data)
+{
+    CANOpenSlave_GetRPDO_APT(no, data);
+}
+
+void CANOpenSlave_SetTPDO_RntCWIQhSBMk0JpdeDcPVE(uint8_T no, const uint8_T *data)
+{
+    CANOpenSlave_SetTPDO(no, data);
+}
+
+void CANOpenSlave_ResetCommunication_APT_RntCWIQhSBMk0JpdeDcPVE(void)
+{
+    CANOpenSlave_ResetCommunication_APT();
 }
 
 void CANOpenSlave_ProcessStackAsyncRx_APT_RntCWIQhSBMk0JpdeDcPVE(uint32_T *txID, uint8_T *txDLC, uint8_T *txData)
@@ -1131,9 +1171,9 @@ void CANOpenSlave_ProcessStackAsyncRx_APT_RntCWIQhSBMk0JpdeDcPVE(uint32_T *txID,
     CANOpenSlave_ProcessStackAsyncRx_APT(txID, txDLC, txData);
 }
 
-uint8_T Handle_SDO_Request_APT_RntCWIQhSBMk0JpdeDcPVE(uint8_T *pData, uint32_T *txID, uint8_T *txDLC, uint8_T *txData)
+void CANOpenHW_SendMessage_RntCWIQhSBMk0JpdeDcPVE(CAN_MSG *pTransmitBuf, uint32_T *txID, uint8_T *txDLC, uint8_T *txData)
 {
-    return Handle_SDO_Request_APT(pData, txID, txDLC, txData);
+    CANOpenHW_SendMessage(pTransmitBuf, txID, txDLC, txData);
 }
 
 void CANOpenSlave_ProcessStack_APT_RntCWIQhSBMk0JpdeDcPVE(uint32_T rxID, uint8_T rxDLC, const uint8_T *rxData, uint32_T *txID, uint8_T *txDLC, uint8_T *txData)
@@ -1146,53 +1186,13 @@ void CANOpenHW_SendMessage_APT_RntCWIQhSBMk0JpdeDcPVE(CAN_MSG_APT *pTransmitBuf,
     CANOpenHW_SendMessage_APT(pTransmitBuf, txID, txDLC, txData);
 }
 
-void CANOpenSlave_ProcessStack_RntCWIQhSBMk0JpdeDcPVE(uint32_T rxID, uint8_T rxDLC, const uint8_T *rxData, uint32_T *txID, uint8_T *txDLC, uint8_T *txData)
-{
-    CANOpenSlave_ProcessStack(rxID, rxDLC, rxData, txID, txDLC, txData);
-}
-
-void CANOpenSlave_SetTPDO_APT_RntCWIQhSBMk0JpdeDcPVE(uint8_T no, const uint8_T *data)
-{
-    CANOpenSlave_SetTPDO_APT(no, data);
-}
-
-void CANOpenSlave_GetRPDO_RntCWIQhSBMk0JpdeDcPVE(uint8_T no, uint8_T *data)
-{
-    CANOpenSlave_GetRPDO(no, data);
-}
-
-void CANOpenHW_SendMessage_RntCWIQhSBMk0JpdeDcPVE(CAN_MSG *pTransmitBuf, uint32_T *txID, uint8_T *txDLC, uint8_T *txData)
-{
-    CANOpenHW_SendMessage(pTransmitBuf, txID, txDLC, txData);
-}
-
-void CANOpenSlave_GetRPDO_APT_RntCWIQhSBMk0JpdeDcPVE(uint8_T no, uint8_T *data)
-{
-    CANOpenSlave_GetRPDO_APT(no, data);
-}
-
 uint8_T Handle_SDO_Request_RntCWIQhSBMk0JpdeDcPVE(uint8_T *pData, uint32_T *txID, uint8_T *txDLC, uint8_T *txData)
 {
     return Handle_SDO_Request(pData, txID, txDLC, txData);
 }
 
-void CANOpenSlave_ResetCommunication_APT_RntCWIQhSBMk0JpdeDcPVE(void)
+uint8_T Handle_SDO_Request_APT_RntCWIQhSBMk0JpdeDcPVE(uint8_T *pData, uint32_T *txID, uint8_T *txDLC, uint8_T *txData)
 {
-    CANOpenSlave_ResetCommunication_APT();
-}
-
-void CANOpenSlave_ProcessStackAsyncRx_RntCWIQhSBMk0JpdeDcPVE(uint32_T *txID, uint8_T *txDLC, uint8_T *txData)
-{
-    CANOpenSlave_ProcessStackAsyncRx(txID, txDLC, txData);
-}
-
-void CANOpenSlave_SetTPDO_RntCWIQhSBMk0JpdeDcPVE(uint8_T no, const uint8_T *data)
-{
-    CANOpenSlave_SetTPDO(no, data);
-}
-
-void CANOpenSlave_ResetCommunication_RntCWIQhSBMk0JpdeDcPVE(void)
-{
-    CANOpenSlave_ResetCommunication();
+    return Handle_SDO_Request_APT(pData, txID, txDLC, txData);
 }
 

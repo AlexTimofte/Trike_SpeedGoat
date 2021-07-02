@@ -212,7 +212,7 @@ static void c12_update_debugger_state_c12_SpeedgoatCANOpen2Buses100us
   _SFD_SET_ANIMATION(0U);
   _SFD_SET_HONOR_BREAKPOINTS(0U);
   if (*chartInstance->c12_is_active_c12_SpeedgoatCANOpen2Buses100us == 1U) {
-    _SFD_CC_CALL(CHART_ACTIVE_TAG, 6U, *chartInstance->c12_sfEvent);
+    _SFD_CC_CALL(CHART_ACTIVE_TAG, 7U, *chartInstance->c12_sfEvent);
   }
 
   if (*chartInstance->c12_is_c12_SpeedgoatCANOpen2Buses100us == c12_IN_Init) {
@@ -397,7 +397,7 @@ static void sf_gateway_c12_SpeedgoatCANOpen2Buses100us
   c12_set_sim_state_side_effects_c12_SpeedgoatCANOpen2Buses100us(chartInstance);
   _SFD_SYMBOL_SCOPE_PUSH(0U, 0U);
   _sfTime_ = sf_get_time(chartInstance->S);
-  _SFD_CC_CALL(CHART_ENTER_SFUNCTION_TAG, 6, *chartInstance->c12_sfEvent);
+  _SFD_CC_CALL(CHART_ENTER_SFUNCTION_TAG, 7, *chartInstance->c12_sfEvent);
   _SFD_DATA_RANGE_CHECK((real_T)*chartInstance->c12_ReadError, 3U);
   _SFD_DATA_RANGE_CHECK((real_T)*chartInstance->c12_ButtonStatus, 2U);
   *chartInstance->c12_sfEvent = CALL_EVENT;
@@ -451,11 +451,11 @@ static void c12_chartstep_c12_SpeedgoatCANOpen2Buses100us
   real_T c12_j_nargin = 0.0;
   real_T c12_j_nargout = 1.0;
   boolean_T c12_f_out;
-  _SFD_CC_CALL(CHART_ENTER_DURING_FUNCTION_TAG, 6U, *chartInstance->c12_sfEvent);
+  _SFD_CC_CALL(CHART_ENTER_DURING_FUNCTION_TAG, 7U, *chartInstance->c12_sfEvent);
   if (*chartInstance->c12_is_active_c12_SpeedgoatCANOpen2Buses100us == 0U) {
-    _SFD_CC_CALL(CHART_ENTER_ENTRY_FUNCTION_TAG, 6U, *chartInstance->c12_sfEvent);
+    _SFD_CC_CALL(CHART_ENTER_ENTRY_FUNCTION_TAG, 7U, *chartInstance->c12_sfEvent);
     *chartInstance->c12_is_active_c12_SpeedgoatCANOpen2Buses100us = 1U;
-    _SFD_CC_CALL(EXIT_OUT_OF_FUNCTION_TAG, 6U, *chartInstance->c12_sfEvent);
+    _SFD_CC_CALL(EXIT_OUT_OF_FUNCTION_TAG, 7U, *chartInstance->c12_sfEvent);
     _SFD_CT_CALL(TRANSITION_ACTIVE_TAG, 0U, *chartInstance->c12_sfEvent);
     *chartInstance->c12_is_c12_SpeedgoatCANOpen2Buses100us = c12_IN_Init;
     _SFD_CS_CALL(STATE_ACTIVE_TAG, 1U, *chartInstance->c12_sfEvent);
@@ -463,7 +463,7 @@ static void c12_chartstep_c12_SpeedgoatCANOpen2Buses100us
   } else {
     switch (*chartInstance->c12_is_c12_SpeedgoatCANOpen2Buses100us) {
      case c12_IN_Clear_Error:
-      CV_CHART_EVAL(6, 0, c12_IN_Clear_Error);
+      CV_CHART_EVAL(7, 0, c12_IN_Clear_Error);
       _SFD_CT_CALL(TRANSITION_BEFORE_PROCESSING_TAG, 2U,
                    *chartInstance->c12_sfEvent);
       _SFD_SYMBOL_SCOPE_PUSH_EML(0U, 3U, 3U, c12_h_debug_family_names,
@@ -539,7 +539,7 @@ static void c12_chartstep_c12_SpeedgoatCANOpen2Buses100us
       break;
 
      case c12_IN_Init:
-      CV_CHART_EVAL(6, 0, c12_IN_Init);
+      CV_CHART_EVAL(7, 0, c12_IN_Init);
       *chartInstance->c12_BrakeCtrl = 0.0F;
       chartInstance->c12_dataWrittenToVector[2U] = true;
       _SFD_CT_CALL(TRANSITION_BEFORE_PROCESSING_TAG, 1U,
@@ -585,7 +585,7 @@ static void c12_chartstep_c12_SpeedgoatCANOpen2Buses100us
       break;
 
      case c12_IN_SetCurrentMode:
-      CV_CHART_EVAL(6, 0, c12_IN_SetCurrentMode);
+      CV_CHART_EVAL(7, 0, c12_IN_SetCurrentMode);
       _SFD_CT_CALL(TRANSITION_BEFORE_PROCESSING_TAG, 6U,
                    *chartInstance->c12_sfEvent);
       _SFD_SYMBOL_SCOPE_PUSH_EML(0U, 3U, 3U, c12_g_debug_family_names,
@@ -638,7 +638,7 @@ static void c12_chartstep_c12_SpeedgoatCANOpen2Buses100us
       break;
 
      case c12_IN_Wait:
-      CV_CHART_EVAL(6, 0, c12_IN_Wait);
+      CV_CHART_EVAL(7, 0, c12_IN_Wait);
       *chartInstance->c12_BrakeCtrl = 2.0F;
       chartInstance->c12_dataWrittenToVector[2U] = true;
       _SFD_CT_CALL(TRANSITION_BEFORE_PROCESSING_TAG, 3U,
@@ -763,7 +763,7 @@ static void c12_chartstep_c12_SpeedgoatCANOpen2Buses100us
       break;
 
      default:
-      CV_CHART_EVAL(6, 0, 0);
+      CV_CHART_EVAL(7, 0, 0);
 
       /* Unreachable state, for coverage only */
       *chartInstance->c12_is_c12_SpeedgoatCANOpen2Buses100us =
@@ -773,7 +773,7 @@ static void c12_chartstep_c12_SpeedgoatCANOpen2Buses100us
     }
   }
 
-  _SFD_CC_CALL(EXIT_OUT_OF_FUNCTION_TAG, 6U, *chartInstance->c12_sfEvent);
+  _SFD_CC_CALL(EXIT_OUT_OF_FUNCTION_TAG, 7U, *chartInstance->c12_sfEvent);
 }
 
 static void initSimStructsc12_SpeedgoatCANOpen2Buses100us

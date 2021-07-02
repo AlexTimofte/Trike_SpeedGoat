@@ -76,7 +76,7 @@ typedef union {
 		uint16_T AN_04;
 	};
 	uint8_T Message[8];
-} RPDO_ID1C8;
+} RPDO_ID290;
 
 // WDGA Absolut Encoder
 typedef union {
@@ -149,4 +149,6 @@ typedef union {
 	};
 	uint8_T Message[8];
 } TPDO_ID186;
- 
+
+
+

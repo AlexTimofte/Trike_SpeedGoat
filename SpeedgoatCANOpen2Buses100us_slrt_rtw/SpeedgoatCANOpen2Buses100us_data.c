@@ -3,9 +3,9 @@
  *
  * Code generation for model "SpeedgoatCANOpen2Buses100us".
  *
- * Model version              : 1.480
+ * Model version              : 1.614
  * Simulink Coder version : 9.0 (R2018b) 24-May-2018
- * C source code generated on : Tue Jun 22 20:30:45 2021
+ * C source code generated on : Fri Jul  2 21:10:33 2021
  *
  * Target selection: slrt.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -20,109 +20,229 @@
 /* Block parameters (default storage) */
 P_SpeedgoatCANOpen2Buses100us_T SpeedgoatCANOpen2Buses100us_P = {
   /* Mask Parameter: CompareToConstant_const
-   * Referenced by: '<S50>/Constant'
+   * Referenced by: '<S56>/Constant'
    */
-  5.0,
+  5.0F,
 
   /* Computed Parameter: CANWrite_P1_Size
-   * Referenced by: '<S17>/CAN Write'
+   * Referenced by: '<S18>/CAN Write'
    */
   { 1.0, 7.0 },
 
   /* Expression: [initValues(1:4) messageType initValues(6) enableStatusPort]
-   * Referenced by: '<S17>/CAN Write'
+   * Referenced by: '<S18>/CAN Write'
    */
   { 691.0, 1.0, 0.0001, 0.0, 2.0, 1.0, 0.0 },
 
   /* Computed Parameter: CANWrite_P1_Size_p
-   * Referenced by: '<S19>/CAN Write'
+   * Referenced by: '<S20>/CAN Write'
    */
   { 1.0, 7.0 },
 
   /* Expression: [initValues(1:4) messageType initValues(6) enableStatusPort]
-   * Referenced by: '<S19>/CAN Write'
+   * Referenced by: '<S20>/CAN Write'
    */
   { 691.0, 1.0, 0.0001, 1.0, 2.0, 1.0, 0.0 },
 
   /* Computed Parameter: CANSetup_P1_Size
-   * Referenced by: '<S12>/CAN Setup '
+   * Referenced by: '<S13>/CAN Setup '
    */
   { 1.0, 40.0 },
 
   /* Expression: [moduleInitValues, chn1, ArbitrationManbdrChn1, FdManbdrChn1, chn2, ArbitrationManbdrChn2, FdManbdrChn2, chn3, ArbitrationManbdrChn3, FdManbdrChn3, chn4, ArbitrationManbdrChn4, FdManbdrChn4]
-   * Referenced by: '<S12>/CAN Setup '
+   * Referenced by: '<S13>/CAN Setup '
    */
   { 691.0, 1.0, -1.0, -1.0, 2.0, 2.0, 16.0, 63.0, 16.0, 2.0, 2.0, 5.0, 2.0, 2.0,
     2.0, 16.0, 63.0, 16.0, 2.0, 2.0, 5.0, 2.0, 1.0, 2.0, 8.0, 31.0, 8.0, 2.0,
     2.0, 5.0, 2.0, 1.0, 2.0, 8.0, 31.0, 8.0, 2.0, 2.0, 5.0, 2.0 },
 
   /* Computed Parameter: CANSetup_P2_Size
-   * Referenced by: '<S12>/CAN Setup '
+   * Referenced by: '<S13>/CAN Setup '
    */
   { 1.0, 1.0 },
 
   /* Expression: initStruct
-   * Referenced by: '<S12>/CAN Setup '
+   * Referenced by: '<S13>/CAN Setup '
    */
   0.0,
 
   /* Computed Parameter: CANSetup_P3_Size
-   * Referenced by: '<S12>/CAN Setup '
+   * Referenced by: '<S13>/CAN Setup '
    */
   { 1.0, 1.0 },
 
   /* Expression: termStruct
-   * Referenced by: '<S12>/CAN Setup '
+   * Referenced by: '<S13>/CAN Setup '
    */
   0.0,
 
   /* Computed Parameter: CANRead_P1_Size
-   * Referenced by: '<S16>/CAN Read'
+   * Referenced by: '<S17>/CAN Read'
    */
   { 1.0, 6.0 },
 
   /* Expression: [initValues(1:4) messageType initValues(6)]
-   * Referenced by: '<S16>/CAN Read'
+   * Referenced by: '<S17>/CAN Read'
    */
   { 691.0, 1.0, 0.0001, 0.0, 2.0, 1.0 },
 
   /* Computed Parameter: CANRead_P1_Size_b
-   * Referenced by: '<S18>/CAN Read'
+   * Referenced by: '<S19>/CAN Read'
    */
   { 1.0, 6.0 },
 
   /* Expression: [initValues(1:4) messageType initValues(6)]
-   * Referenced by: '<S18>/CAN Read'
+   * Referenced by: '<S19>/CAN Read'
    */
   { 691.0, 1.0, 0.0001, 1.0, 2.0, 1.0 },
 
+  /* Expression: 0
+   * Referenced by: '<S35>/Constant'
+   */
+  0.0,
+
+  /* Expression: 0
+   * Referenced by: synthesized block
+   */
+  0.0,
+
+  /* Expression: 3600
+   * Referenced by: '<S33>/offset'
+   */
+  3600.0,
+
+  /* Expression: 0.00015625
+   * Referenced by: '<S33>/Gain3'
+   */
+  0.00015625,
+
+  /* Expression: -1
+   * Referenced by: '<S33>/Gain2'
+   */
+  -1.0,
+
+  /* Expression: 0
+   * Referenced by: '<S33>/Saturation'
+   */
+  0.0,
+
+  /* Expression: -1
+   * Referenced by: '<S33>/Saturation'
+   */
+  -1.0,
+
+  /* Expression: 12.7
+   * Referenced by: '<S33>/Gain1'
+   */
+  12.7,
+
+  /* Expression: 1000
+   * Referenced by: '<S33>/Amp2mAmp'
+   */
+  1000.0,
+
+  /* Expression: 0
+   * Referenced by: synthesized block
+   */
+  0.0,
+
+  /* Expression: 0
+   * Referenced by: synthesized block
+   */
+  0.0,
+
   /* Expression: 1
-   * Referenced by: '<S24>/Constant'
+   * Referenced by: '<S14>/Sine Wave1'
    */
   1.0,
 
+  /* Expression: 0.5
+   * Referenced by: '<S14>/Sine Wave1'
+   */
+  0.5,
+
+  /* Expression: 0.5
+   * Referenced by: '<S14>/Sine Wave1'
+   */
+  0.5,
+
   /* Expression: 0
-   * Referenced by: '<S34>/Constant'
+   * Referenced by: '<S14>/Sine Wave1'
+   */
+  0.0,
+
+  /* Expression: 1
+   * Referenced by: '<S14>/Sine Wave2'
+   */
+  1.0,
+
+  /* Expression: 0.5
+   * Referenced by: '<S14>/Sine Wave2'
+   */
+  0.5,
+
+  /* Expression: 0.5
+   * Referenced by: '<S14>/Sine Wave2'
+   */
+  0.5,
+
+  /* Expression: 0
+   * Referenced by: '<S14>/Sine Wave2'
+   */
+  0.0,
+
+  /* Expression: 1
+   * Referenced by: '<S14>/Sine Wave3'
+   */
+  1.0,
+
+  /* Expression: 0.5
+   * Referenced by: '<S14>/Sine Wave3'
+   */
+  0.5,
+
+  /* Expression: 0.5
+   * Referenced by: '<S14>/Sine Wave3'
+   */
+  0.5,
+
+  /* Expression: 0
+   * Referenced by: '<S14>/Sine Wave3'
+   */
+  0.0,
+
+  /* Expression: 5000
+   * Referenced by: '<S14>/Sine Wave'
+   */
+  5000.0,
+
+  /* Expression: 2500
+   * Referenced by: '<S14>/Sine Wave'
+   */
+  2500.0,
+
+  /* Expression: 0.5
+   * Referenced by: '<S14>/Sine Wave'
+   */
+  0.5,
+
+  /* Expression: 0
+   * Referenced by: '<S14>/Sine Wave'
    */
   0.0,
 
   /* Expression: 0
-   * Referenced by: '<S34>/Switch4'
+   * Referenced by: '<S21>/Constant'
    */
   0.0,
 
   /* Expression: 0
-   * Referenced by: '<S33>/Memory1'
+   * Referenced by: '<S36>/Constant1'
    */
   0.0,
-
-  /* Expression: pi/180
-   * Referenced by: '<S33>/degree2rad'
-   */
-  0.017453292519943295,
 
   /* Expression: 0.00246
-   * Referenced by: '<S35>/degree2m'
+   * Referenced by: '<S36>/degree2m'
    */
   0.00246,
 
@@ -132,7 +252,27 @@ P_SpeedgoatCANOpen2Buses100us_T SpeedgoatCANOpen2Buses100us_P = {
   0.0,
 
   /* Expression: 0
-   * Referenced by: '<S35>/Memory'
+   * Referenced by: '<S36>/Memory'
+   */
+  0.0,
+
+  /* Expression: 0
+   * Referenced by: synthesized block
+   */
+  0.0,
+
+  /* Expression: 1000
+   * Referenced by: '<S36>/Amp2mAmp_conv1'
+   */
+  1000.0,
+
+  /* Expression: 1000
+   * Referenced by: '<S36>/Amp2mAmp_conv2'
+   */
+  1000.0,
+
+  /* Expression: 0
+   * Referenced by: '<S34>/Memory1'
    */
   0.0,
 
@@ -143,210 +283,190 @@ P_SpeedgoatCANOpen2Buses100us_T SpeedgoatCANOpen2Buses100us_P = {
 
   /* Expression: 0
    * Referenced by: synthesized block
-   */
-  0.0,
-
-  /* Expression: 0
-   * Referenced by: synthesized block
-   */
-  0.0,
-
-  /* Expression: 0
-   * Referenced by: '<S34>/Switch2'
-   */
-  0.0,
-
-  /* Expression: 0
-   * Referenced by: '<S34>/Switch3'
-   */
-  0.0,
-
-  /* Expression: 0
-   * Referenced by: synthesized block
-   */
-  0.0,
-
-  /* Expression: 0
-   * Referenced by: synthesized block
-   */
-  0.0,
-
-  /* Expression: 0
-   * Referenced by: synthesized block
-   */
-  0.0,
-
-  /* Expression: 0
-   * Referenced by: synthesized block
-   */
-  0.0,
-
-  /* Expression: 0
-   * Referenced by: '<S34>/Switch'
-   */
-  0.0,
-
-  /* Expression: 0
-   * Referenced by: synthesized block
-   */
-  0.0,
-
-  /* Expression: 0
-   * Referenced by: synthesized block
-   */
-  0.0,
-
-  /* Expression: 0
-   * Referenced by: '<S34>/Switch1'
-   */
-  0.0,
-
-  /* Expression: 0
-   * Referenced by: '<S20>/Constant'
    */
   0.0,
 
   /* Expression: 2048
-   * Referenced by: '<S33>/Constant1'
+   * Referenced by: '<S34>/Offset to 0 pos => pos = [-180 180]deg'
    */
   2048.0,
 
   /* Expression: 180/2048
-   * Referenced by: '<S33>/inc2deg'
+   * Referenced by: '<S34>/inc2deg'
    */
   0.087890625,
 
-  /* Expression: 5
-   * Referenced by: '<S35>/Constant'
+  /* Expression: 3.16
+   * Referenced by: '<S36>/Offset for 0 deg (3.16V -> 52.54mm)'
    */
-  5.0,
+  3.16,
 
   /* Expression: 0.076/5
-   * Referenced by: '<S35>/Volt2meter'
+   * Referenced by: '<S36>/Volt2meter'
    */
   0.0152,
 
+  /* Expression: 0
+   * Referenced by: '<S44>/Unit Delay1'
+   */
+  0.0,
+
+  /* Expression: 2000
+   * Referenced by: '<S36>/Constant2'
+   */
+  2000.0,
+
+  /* Expression: zeta
+   * Referenced by: '<S44>/Constant'
+   */
+  0.70710678118654746,
+
+  /* Expression: tau
+   * Referenced by: '<S44>/Constant1'
+   */
+  5.0E-5,
+
+  /* Expression: 2
+   * Referenced by: '<S44>/Gain1'
+   */
+  2.0,
+
+  /* Expression: 0
+   * Referenced by: '<S44>/Unit Delay2'
+   */
+  0.0,
+
+  /* Expression: 10
+   * Referenced by: '<S36>/Constant'
+   */
+  10.0,
+
   /* Expression: 1
-   * Referenced by: '<S36>/Saturation1'
+   * Referenced by: '<S36>/Sine Wave'
    */
   1.0,
 
   /* Expression: 0
-   * Referenced by: '<S36>/Saturation1'
+   * Referenced by: '<S36>/Sine Wave'
+   */
+  0.0,
+
+  /* Expression: 0.5
+   * Referenced by: '<S36>/Sine Wave'
+   */
+  0.5,
+
+  /* Expression: 0
+   * Referenced by: '<S36>/Sine Wave'
    */
   0.0,
 
   /* Computed Parameter: ms2Kmh_Gain
-   * Referenced by: '<S36>/m//s2Km//h'
+   * Referenced by: '<S37>/m//s2Km//h'
    */
   (8301034833169298432LL),
 
-  /* Computed Parameter: DunkA_TPDO_DesiredCurrent_Initi
-   * Referenced by: synthesized block
+  /* Computed Parameter: Gain_Gain
+   * Referenced by: '<S6>/Gain'
    */
-  0,
-
-  /* Computed Parameter: DunkB_TPDO_DesiredCurrent_Initi
-   * Referenced by: synthesized block
-   */
-  0,
-
-  /* Computed Parameter: DunkC_TPDO_DesiredCurrent_Initi
-   * Referenced by: synthesized block
-   */
-  0,
+  MIN_int32_T,
 
   /* Computed Parameter: WheelRadius_Gain
-   * Referenced by: '<S36>/WheelRadius'
+   * Referenced by: '<S37>/WheelRadius'
    */
   1073741824,
 
-  /* Computed Parameter: Gain1_Gain
-   * Referenced by: '<S36>/Gain1'
+  /* Computed Parameter: Gain1_Gain_n
+   * Referenced by: '<S37>/Gain1'
    */
   0.1F,
 
   /* Computed Parameter: Constant_Value_l
-   * Referenced by: '<S44>/Constant'
+   * Referenced by: '<S50>/Constant'
+   */
+  1.0F,
+
+  /* Computed Parameter: Constant_Value_n
+   * Referenced by: '<S52>/Constant'
    */
   1.0F,
 
   /* Computed Parameter: Constant_Value_j
-   * Referenced by: '<S47>/Constant'
+   * Referenced by: '<S53>/Constant'
    */
   1.0F,
 
   /* Computed Parameter: Constant_Value_h
-   * Referenced by: '<S41>/Constant'
-   */
-  1.0F,
-
-  /* Computed Parameter: RoboticsConvention_Gain
-   * Referenced by: '<S33>/Robotics Convention'
-   */
-  -1.0F,
-
-  /* Computed Parameter: Constant_Value_n
    * Referenced by: '<S46>/Constant'
    */
   1.0F,
 
-  /* Computed Parameter: Saturation_UpperSat
-   * Referenced by: '<S32>/Saturation'
+  /* Computed Parameter: dem_Gain
+   * Referenced by: '<S34>/dem'
    */
-  0U,
+  0.25F,
 
-  /* Computed Parameter: Saturation_LowerSat
-   * Referenced by: '<S32>/Saturation'
+  /* Computed Parameter: RoboticsConvention_Gain
+   * Referenced by: '<S34>/Robotics Convention'
    */
-  0U,
+  -0.09F,
 
-  /* Computed Parameter: Gain1_Gain_c
-   * Referenced by: '<S32>/Gain1'
+  /* Computed Parameter: degree2rad_Gain
+   * Referenced by: '<S34>/degree2rad'
    */
-  3409130291U,
+  0.0174532924F,
 
-  /* Computed Parameter: Gain2_Gain
-   * Referenced by: '<S20>/Gain2'
+  /* Computed Parameter: Gain2_Gain_p
+   * Referenced by: '<S21>/Gain2'
    */
   3123612579U,
 
   /* Computed Parameter: Gain4_Gain
-   * Referenced by: '<S20>/Gain4'
+   * Referenced by: '<S21>/Gain4'
    */
   3123612579U,
 
   /* Computed Parameter: Gain2_Gain_k
-   * Referenced by: '<S36>/Gain2'
+   * Referenced by: '<S37>/Gain2'
    */
   27452,
 
-  /* Computed Parameter: Gain2_Gain_p
-   * Referenced by: '<S32>/Gain2'
+  /* Computed Parameter: LSB2Volt_Gain
+   * Referenced by: '<S36>/LSB2Volt'
    */
-  0U,
+  40970U,
+
+  /* Computed Parameter: Saturation1_UpperSat
+   * Referenced by: '<S33>/Saturation1'
+   */
+  10000U,
+
+  /* Computed Parameter: Saturation1_LowerSat
+   * Referenced by: '<S33>/Saturation1'
+   */
+  3600U,
 
   /* Computed Parameter: Constant_Value_kp
-   * Referenced by: '<S17>/Constant'
+   * Referenced by: '<S18>/Constant'
    */
   0U,
 
   /* Computed Parameter: Constant_Value_nv
-   * Referenced by: '<S19>/Constant'
+   * Referenced by: '<S20>/Constant'
    */
   0U,
 
-  /* Computed Parameter: Switch_Threshold_m
-   * Referenced by: '<S16>/Switch'
+  /* Computed Parameter: Switch_Threshold
+   * Referenced by: '<S17>/Switch'
    */
   0U,
 
   /* Computed Parameter: Switch_Threshold_l
-   * Referenced by: '<S18>/Switch'
+   * Referenced by: '<S19>/Switch'
    */
   0U,
 
-  /* Computed Parameter: Constant_Value_e
+  /* Computed Parameter: Constant_Value_ej
    * Referenced by: '<S3>/Constant'
    */
   1U

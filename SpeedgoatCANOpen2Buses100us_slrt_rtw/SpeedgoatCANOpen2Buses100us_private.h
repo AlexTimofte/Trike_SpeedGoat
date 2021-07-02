@@ -3,9 +3,9 @@
  *
  * Code generation for model "SpeedgoatCANOpen2Buses100us".
  *
- * Model version              : 1.480
+ * Model version              : 1.614
  * Simulink Coder version : 9.0 (R2018b) 24-May-2018
- * C source code generated on : Tue Jun 22 20:30:45 2021
+ * C source code generated on : Fri Jul  2 21:10:33 2021
  *
  * Target selection: slrt.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -93,16 +93,12 @@ extern "C" {
 
 #endif
 
-  extern void RPDOs_from_APT_Start_wrapper(void);
-  extern void RPDOs_from_APT_Outputs_wrapper(uint8_T *StatusWord,
-    int16_T *PhaseCurrent,
-    int16_T *Speed,
-    uint16_T *BusVoltage,
-    int8_T *MotorTemp,
-    int8_T *APTTemp,
-    uint8_T *ErrStatus,
-    uint8_T *Direction);
-  extern void RPDOs_from_APT_Terminate_wrapper(void);
+  extern void RPDOs_from_AN2CANConv_Start_wrapper(void);
+  extern void RPDOs_from_AN2CANConv_Outputs_wrapper(int16_T *Channel_AN1,
+    uint16_T *Channel_AN2,
+    uint16_T *Channel_AN3,
+    uint16_T *Channel_AN4);
+  extern void RPDOs_from_AN2CANConv_Terminate_wrapper(void);
 
 #ifdef __cplusplus
 
@@ -115,12 +111,34 @@ extern "C" {
 
 #endif
 
-  extern void RPDOs_from_AN2CANConv_Start_wrapper(void);
-  extern void RPDOs_from_AN2CANConv_Outputs_wrapper(uint16_T *Channel_AN1,
-    uint16_T *Channel_AN2,
-    uint16_T *Channel_AN3,
-    uint16_T *Channel_AN4);
-  extern void RPDOs_from_AN2CANConv_Terminate_wrapper(void);
+  extern void TPDOs_TEST_Start_wrapper(void);
+  extern void TPDOs_TEST_Outputs_wrapper(const uint16_T *AN1,
+    const uint16_T *AN2,
+    const uint16_T *AN3,
+    const uint16_T *AN4);
+  extern void TPDOs_TEST_Terminate_wrapper(void);
+
+#ifdef __cplusplus
+
+}
+#endif
+
+#ifdef __cplusplus
+
+extern "C" {
+
+#endif
+
+  extern void RPDOs_from_APT_Start_wrapper(void);
+  extern void RPDOs_from_APT_Outputs_wrapper(uint8_T *StatusWord,
+    int16_T *PhaseCurrent,
+    int16_T *Speed,
+    uint16_T *BusVoltage,
+    int8_T *MotorTemp,
+    int8_T *APTTemp,
+    uint8_T *ErrStatus,
+    uint8_T *Direction);
+  extern void RPDOs_from_APT_Terminate_wrapper(void);
 
 #ifdef __cplusplus
 
@@ -307,8 +325,6 @@ extern const bcstatus1553 bcstatground;
 extern const bmmsglist1553 bmmsg1553ground;
 extern void* slrtRegisterSignalToLoggingService(rtwCAPI_ModelMappingInfo* mdlMMI,
   const char* relBlkPath, int portNumber);
-extern const char *getRefMdlPath(const char *refMdl);
-extern int getRefMdlSignalNumber(const char *mdlBlock, const char *signalName);
 extern void sMultiWordMul(const uint64_T u1[], int32_T n1, const uint64_T u2[],
   int32_T n2, uint64_T y[], int32_T n);
 extern void sg_IO602_IO691_write_s(SimStruct *rts);
