@@ -26,7 +26,7 @@
  * | See matlabroot/simulink/src/sfuntmpl_doc.c for a more detailed template |
  *  ------------------------------------------------------------------------- 
  *
- * Created: Fri Jul 02 21:02:42 2021
+ * Created: Sat Jul 03 12:26:05 2021
  */
 
 #define S_FUNCTION_LEVEL 2
@@ -38,7 +38,7 @@
 #define IN_PORT_0_NAME        AN1
 #define INPUT_0_WIDTH         1
 #define INPUT_DIMS_0_COL      1
-#define INPUT_0_DTYPE         uint16_T
+#define INPUT_0_DTYPE         int16_T
 #define INPUT_0_COMPLEX       COMPLEX_NO
 #define IN_0_FRAME_BASED      FRAME_NO
 #define IN_0_BUS_BASED        0
@@ -55,7 +55,7 @@
 #define IN_PORT_1_NAME        AN2
 #define INPUT_1_WIDTH         1
 #define INPUT_DIMS_1_COL      1
-#define INPUT_1_DTYPE         uint16_T
+#define INPUT_1_DTYPE         int16_T
 #define INPUT_1_COMPLEX       COMPLEX_NO
 #define IN_1_FRAME_BASED      FRAME_NO
 #define IN_1_BUS_BASED        0
@@ -72,7 +72,7 @@
 #define IN_PORT_2_NAME        AN3
 #define INPUT_2_WIDTH         1
 #define INPUT_DIMS_2_COL      1
-#define INPUT_2_DTYPE         uint16_T
+#define INPUT_2_DTYPE         int16_T
 #define INPUT_2_COMPLEX       COMPLEX_NO
 #define IN_2_FRAME_BASED      FRAME_NO
 #define IN_2_BUS_BASED        0
@@ -89,7 +89,7 @@
 #define IN_PORT_3_NAME        AN4
 #define INPUT_3_WIDTH         1
 #define INPUT_DIMS_3_COL      1
-#define INPUT_3_DTYPE         uint16_T
+#define INPUT_3_DTYPE         int16_T
 #define INPUT_3_COMPLEX       COMPLEX_NO
 #define IN_3_FRAME_BASED      FRAME_NO
 #define IN_3_BUS_BASED        0
@@ -115,7 +115,7 @@
 
 #define SFUNWIZ_GENERATE_TLC  1
 #define SOURCEFILES           "__SFB__"
-#define PANELINDEX            0
+#define PANELINDEX            8
 #define USE_SIMSTRUCT         0
 #define SHOW_COMPILE_STEPS    0
 #define CREATE_DEBUG_MEXFILE  0
@@ -126,10 +126,10 @@
 #include "simstruc.h"
 
 
-extern void TPDOs_TEST_Outputs_wrapper(const uint16_T *AN1,
-			const uint16_T *AN2,
-			const uint16_T *AN3,
-			const uint16_T *AN4);
+extern void TPDOs_TEST_Outputs_wrapper(const int16_T *AN1,
+			const int16_T *AN2,
+			const int16_T *AN3,
+			const int16_T *AN4);
 /*====================*
  * S-function methods *
  *====================*/
@@ -158,28 +158,28 @@ static void mdlInitializeSizes(SimStruct *S)
     if (!ssSetNumInputPorts(S, NUM_INPUTS)) return;
     /* Input Port 0 */
     ssSetInputPortWidth(S, 0, INPUT_0_WIDTH);
-    ssSetInputPortDataType(S, 0, SS_UINT16);
+    ssSetInputPortDataType(S, 0, SS_INT16);
     ssSetInputPortComplexSignal(S, 0, INPUT_0_COMPLEX);
     ssSetInputPortDirectFeedThrough(S, 0, INPUT_0_FEEDTHROUGH);
     ssSetInputPortRequiredContiguous(S, 0, 1); /*direct input signal access*/
 
     /* Input Port 1 */
     ssSetInputPortWidth(S, 1, INPUT_1_WIDTH);
-    ssSetInputPortDataType(S, 1, SS_UINT16);
+    ssSetInputPortDataType(S, 1, SS_INT16);
     ssSetInputPortComplexSignal(S, 1, INPUT_1_COMPLEX);
     ssSetInputPortDirectFeedThrough(S, 1, INPUT_1_FEEDTHROUGH);
     ssSetInputPortRequiredContiguous(S, 1, 1); /*direct input signal access*/
 
     /* Input Port 2 */
     ssSetInputPortWidth(S, 2, INPUT_2_WIDTH);
-    ssSetInputPortDataType(S, 2, SS_UINT16);
+    ssSetInputPortDataType(S, 2, SS_INT16);
     ssSetInputPortComplexSignal(S, 2, INPUT_2_COMPLEX);
     ssSetInputPortDirectFeedThrough(S, 2, INPUT_2_FEEDTHROUGH);
     ssSetInputPortRequiredContiguous(S, 2, 1); /*direct input signal access*/
 
     /* Input Port 3 */
     ssSetInputPortWidth(S, 3, INPUT_3_WIDTH);
-    ssSetInputPortDataType(S, 3, SS_UINT16);
+    ssSetInputPortDataType(S, 3, SS_INT16);
     ssSetInputPortComplexSignal(S, 3, INPUT_3_COMPLEX);
     ssSetInputPortDirectFeedThrough(S, 3, INPUT_3_FEEDTHROUGH);
     ssSetInputPortRequiredContiguous(S, 3, 1); /*direct input signal access*/
@@ -250,10 +250,10 @@ static void mdlStart(SimStruct *S)
  */
 static void mdlOutputs(SimStruct *S, int_T tid)
 {
-    const uint16_T *AN1 = (uint16_T *) ssGetInputPortRealSignal(S, 0);
-    const uint16_T *AN2 = (uint16_T *) ssGetInputPortRealSignal(S, 1);
-    const uint16_T *AN3 = (uint16_T *) ssGetInputPortRealSignal(S, 2);
-    const uint16_T *AN4 = (uint16_T *) ssGetInputPortRealSignal(S, 3);
+    const int16_T *AN1 = (int16_T *) ssGetInputPortRealSignal(S, 0);
+    const int16_T *AN2 = (int16_T *) ssGetInputPortRealSignal(S, 1);
+    const int16_T *AN3 = (int16_T *) ssGetInputPortRealSignal(S, 2);
+    const int16_T *AN4 = (int16_T *) ssGetInputPortRealSignal(S, 3);
 
     TPDOs_TEST_Outputs_wrapper(AN1, AN2, AN3, AN4);
 

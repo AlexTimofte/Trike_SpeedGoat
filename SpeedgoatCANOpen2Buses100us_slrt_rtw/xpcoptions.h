@@ -12,7 +12,7 @@
 #define SIZEOF_PARAMS                  (-1 * (int)sizeof(P_SpeedgoatCANOpen2Buses100us_T))
 #define SIMMODE                        0
 #define LOGTET                         0
-#define LOGBUFSIZE                     100000
+#define LOGBUFSIZE                     140000
 #define PROFILINGFLAG                  1
 #define EVENTNUMBER                    5000
 #define IRQ_NO                         0

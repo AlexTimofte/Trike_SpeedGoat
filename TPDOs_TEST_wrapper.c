@@ -23,23 +23,23 @@
  *
  */
 /* %%%-SFUNWIZ_wrapper_externs_Changes_BEGIN --- EDIT HERE TO _END */
-TPDO_test  TPDO05;
+TPDO_test  TPDO05_APT;
 /* %%%-SFUNWIZ_wrapper_externs_Changes_END --- EDIT HERE TO _BEGIN */
 
 /*
  * Output function
  *
  */
-void TPDOs_TEST_Outputs_wrapper(const uint16_T *AN1,
-			const uint16_T *AN2,
-			const uint16_T *AN3,
-			const uint16_T *AN4)
+void TPDOs_TEST_Outputs_wrapper(const int16_T *AN1,
+			const int16_T *AN2,
+			const int16_T *AN3,
+			const int16_T *AN4)
 {
 /* %%%-SFUNWIZ_wrapper_Outputs_Changes_BEGIN --- EDIT HERE TO _END */
-TPDO05.AN_01           = *AN1;
-TPDO05.AN_02           = *AN2;
-TPDO05.AN_03            = *AN3;
-TPDO05.AN_04            = *AN4;
+TPDO05_APT.AN_01 = *AN1;
+TPDO05_APT.AN_02 = *AN2;
+TPDO05_APT.AN_03 = *AN3;
+TPDO05_APT.AN_04 = *AN4;
 /* %%%-SFUNWIZ_wrapper_Outputs_Changes_END --- EDIT HERE TO _BEGIN */
 }
 

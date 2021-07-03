@@ -3,9 +3,9 @@
  *
  * Code generation for model "SpeedgoatCANOpen2Buses100us".
  *
- * Model version              : 1.614
+ * Model version              : 1.654
  * Simulink Coder version : 9.0 (R2018b) 24-May-2018
- * C source code generated on : Fri Jul  2 21:10:33 2021
+ * C source code generated on : Sat Jul  3 15:23:12 2021
  *
  * Target selection: slrt.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -95,28 +95,10 @@ extern "C" {
 
   extern void RPDOs_from_AN2CANConv_Start_wrapper(void);
   extern void RPDOs_from_AN2CANConv_Outputs_wrapper(int16_T *Channel_AN1,
-    uint16_T *Channel_AN2,
-    uint16_T *Channel_AN3,
-    uint16_T *Channel_AN4);
+    int16_T *Channel_AN2,
+    int16_T *Channel_AN3,
+    int16_T *Channel_AN4);
   extern void RPDOs_from_AN2CANConv_Terminate_wrapper(void);
-
-#ifdef __cplusplus
-
-}
-#endif
-
-#ifdef __cplusplus
-
-extern "C" {
-
-#endif
-
-  extern void TPDOs_TEST_Start_wrapper(void);
-  extern void TPDOs_TEST_Outputs_wrapper(const uint16_T *AN1,
-    const uint16_T *AN2,
-    const uint16_T *AN3,
-    const uint16_T *AN4);
-  extern void TPDOs_TEST_Terminate_wrapper(void);
 
 #ifdef __cplusplus
 

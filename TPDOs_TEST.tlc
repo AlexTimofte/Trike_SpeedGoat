@@ -1,5 +1,5 @@
 %% File : TPDOs_TEST.tlc
-%% Created : Fri Jul 02 21:02:42 2021
+%% Created : Sat Jul 03 12:26:05 2021
 %%
 %% Description: 
 %%   Simulink Coder wrapper functions interface generated for 
@@ -30,10 +30,10 @@
 
     extern void TPDOs_TEST_Start_wrapper(void);
 
-    extern void TPDOs_TEST_Outputs_wrapper(const uint16_T *AN1,
-			const uint16_T *AN2,
-			const uint16_T *AN3,
-			const uint16_T *AN4);
+    extern void TPDOs_TEST_Outputs_wrapper(const int16_T *AN1,
+			const int16_T *AN2,
+			const int16_T *AN3,
+			const int16_T *AN4);
 
     extern void TPDOs_TEST_Terminate_wrapper(void);
 

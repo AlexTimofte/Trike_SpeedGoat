@@ -61,10 +61,10 @@ typedef union {
 
 typedef union {
 	struct {
-		uint16_T AN_01;
-		uint16_T AN_02;
-		uint16_T AN_03;
-		uint16_T AN_04;
+		int16_T AN_01;
+		int16_T AN_02;
+		int16_T AN_03;
+		int16_T AN_04;
 	};
 	uint8_T Message[8];
 } TPDO_test;

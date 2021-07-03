@@ -45,17 +45,17 @@ double __mw_instrum_RntCWIQhSBMk0JpdeDcPVE_cclib_rel_tol;
 #define __MW_INSTRUM_MAX(lhs, rhs) ((lhs) < (rhs) ? (rhs) : (lhs))
 #define __MW_INSTRUM_TOL(lhs, rhs) __MW_INSTRUM_MAX(__mw_instrum_RntCWIQhSBMk0JpdeDcPVE_cclib_abs_tol, __mw_instrum_RntCWIQhSBMk0JpdeDcPVE_cclib_rel_tol * __MW_INSTRUM_MAX(__MW_INSTRUM_ABS(lhs), __MW_INSTRUM_ABS(rhs)))
 
-#define __MW_INSTRUM_NODE_809() \
+#define __MW_INSTRUM_NODE_808() \
   (((!__mw_instrum_RntCWIQhSBMk0JpdeDcPVE_cclib_enabled || __mw_instrum_RntCWIQhSBMk0JpdeDcPVE_cclib_ptruth_tables) ? \
     ((void) 0) : \
     ((void) (__mw_instrum_RntCWIQhSBMk0JpdeDcPVE_cclib_ptruth_tables = __MW_INSTRUM_RntCWIQhSBMk0JpdeDcPVE_cclib_INIT_FILE(0)))), \
-   __MW_INSTRUM_RECORD_HIT(809U))
+   __MW_INSTRUM_RECORD_HIT(808U))
+#define __MW_INSTRUM_NODE_809() \
+  (__MW_INSTRUM_RECORD_HIT(809U))
 #define __MW_INSTRUM_NODE_810() \
   (__MW_INSTRUM_RECORD_HIT(810U))
 #define __MW_INSTRUM_NODE_811() \
   (__MW_INSTRUM_RECORD_HIT(811U))
-#define __MW_INSTRUM_NODE_812() \
-  (__MW_INSTRUM_RECORD_HIT(812U))
 
 #else /* __MW_INTERNAL_SLDV_PS_ANALYSIS__ */
 
@@ -66,13 +66,13 @@ extern "C"
 #else
 extern
 #endif
-void __MW_INSTRUM_RECORD_HIT_809EZ_RntCWIQhSBMk0JpdeDcPVE(void) { }
-#define __MW_INSTRUM_NODE_809() __MW_INSTRUM_RECORD_HIT_809EZ_RntCWIQhSBMk0JpdeDcPVE()
+void __MW_INSTRUM_RECORD_HIT_808EZ_RntCWIQhSBMk0JpdeDcPVE(void) { }
+#define __MW_INSTRUM_NODE_808() __MW_INSTRUM_RECORD_HIT_808EZ_RntCWIQhSBMk0JpdeDcPVE()
+
+#define __MW_INSTRUM_NODE_809() ((void)0)
+
 
 #define __MW_INSTRUM_NODE_810() ((void)0)
-
-
-#define __MW_INSTRUM_NODE_811() ((void)0)
 
 
 #ifdef __cplusplus
@@ -80,8 +80,8 @@ extern "C"
 #else
 extern
 #endif
-void __MW_INSTRUM_RECORD_HIT_812XZ_RntCWIQhSBMk0JpdeDcPVE(void) { }
-#define __MW_INSTRUM_NODE_812() __MW_INSTRUM_RECORD_HIT_812XZ_RntCWIQhSBMk0JpdeDcPVE()
+void __MW_INSTRUM_RECORD_HIT_811XZ_RntCWIQhSBMk0JpdeDcPVE(void) { }
+#define __MW_INSTRUM_NODE_811() __MW_INSTRUM_RECORD_HIT_811XZ_RntCWIQhSBMk0JpdeDcPVE()
 
 #endif /* __MW_INTERNAL_SLDV_PS_ANALYSIS__ */
 
@@ -6560,39 +6560,39 @@ int16_T Longitudinal;
 }; 
 uint8_T Message[8]; 
 } RPDO_ID282; 
-#line 79
+#line 39
 typedef 
-#line 71
+#line 31
 union { 
 struct { 
-uint16_T AN_01; 
-uint16_T AN_02; 
-uint16_T AN_03; 
-uint16_T AN_04; 
+int16_T AN_01; 
+int16_T AN_02; 
+int16_T AN_03; 
+int16_T AN_04; 
 }; 
 uint8_T Message[8]; 
 } RPDO_ID290; 
-#line 87
+#line 48
 typedef 
-#line 82
+#line 43
 union { 
 struct { 
 uint32_T Encoder_Actual_Position; 
 }; 
 uint8_T Message[4]; 
 } RPDO_ID1FF; 
-#line 93
+#line 54
 typedef 
-#line 88
+#line 49
 union { 
 struct { 
 uint32_T Encoder_Stored_Position; 
 }; 
 uint8_T Message[4]; 
 } RPDO_ID2FF; 
-#line 107
+#line 68
 typedef 
-#line 98
+#line 59
 union { 
 struct { 
 uint8_T ClearError; 
@@ -6603,9 +6603,9 @@ int32_T DesiredCurrent;
 }; 
 uint8_T Message[8]; 
 } TPDO_ID20x; 
-#line 117
+#line 76
 typedef 
-#line 111
+#line 70
 union { 
 struct { 
 int32_T ActualCurrent; 
@@ -6613,9 +6613,9 @@ int32_T ActualVelocity;
 }; 
 uint8_T Message[8]; 
 } RPDO_ID18x; 
-#line 128
+#line 87
 typedef 
-#line 119
+#line 78
 union { 
 struct { 
 uint8_T ClearError; 
@@ -6626,9 +6626,9 @@ uint16_T dummy3;
 }; 
 uint8_T Message[8]; 
 } RPDO_ID28x; 
-#line 138
+#line 98
 typedef 
-#line 131
+#line 91
 union { 
 struct { 
 uint8_T StatusButtons1_8; 
@@ -6637,9 +6637,9 @@ int16_T Longitudinal;
 }; 
 uint8_T Message[8]; 
 } TPDO_ID185; 
-#line 151
+#line 111
 typedef 
-#line 140
+#line 100
 union { 
 struct { 
 uint8_T Status1; 
@@ -6851,8 +6851,8 @@ __declspec(dllexport) void customcode_RntCWIQhSBMk0JpdeDcPVE_initializer(void);
 #endif /* __customcode_RntCWIQhSBMk0JpdeDcPVE_h__ */
 #line 4 "C:\\Users\\Venqo\\Desktop\\SpeedGoat\\Applications\\Trike_git\\Trike_SpeedGoat_algo\\slprj\\_slcc\\RntCWIQhSBMk0JpdeDcPVE\\customcode_RntCWIQhSBMk0JpdeDcPVE.c"
 void customcode_RntCWIQhSBMk0JpdeDcPVE_initializer(void) 
-{ __MW_INSTRUM_FCN_ENTER_39(); __MW_INSTRUM_NODE_809(); 
-__MW_INSTRUM_NODE_810(), CANOpenSlave_ResetCommunication(); 
-__MW_INSTRUM_NODE_811(), CANOpenSlave_ResetCommunication_APT(); __MW_INSTRUM_NODE_812(); 
+{ __MW_INSTRUM_FCN_ENTER_39(); __MW_INSTRUM_NODE_808(); 
+__MW_INSTRUM_NODE_809(), CANOpenSlave_ResetCommunication(); 
+__MW_INSTRUM_NODE_810(), CANOpenSlave_ResetCommunication_APT(); __MW_INSTRUM_NODE_811(); 
 
 } 

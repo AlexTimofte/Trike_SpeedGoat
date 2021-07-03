@@ -31,9 +31,9 @@ RPDO_ID290 RPDO05;
  *
  */
 void RPDOs_from_AN2CANConv_Outputs_wrapper(int16_T *Channel_AN1,
-			uint16_T *Channel_AN2,
-			uint16_T *Channel_AN3,
-			uint16_T *Channel_AN4)
+			int16_T *Channel_AN2,
+			int16_T *Channel_AN3,
+			int16_T *Channel_AN4)
 {
 /* %%%-SFUNWIZ_wrapper_Outputs_Changes_BEGIN --- EDIT HERE TO _END */
 *Channel_AN1   = RPDO05.AN_01;

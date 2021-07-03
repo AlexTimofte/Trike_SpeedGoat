@@ -3,9 +3,9 @@
  *
  * Code generation for model "SpeedgoatCANOpen2Buses100us".
  *
- * Model version              : 1.614
+ * Model version              : 1.654
  * Simulink Coder version : 9.0 (R2018b) 24-May-2018
- * C source code generated on : Fri Jul  2 21:10:33 2021
+ * C source code generated on : Sat Jul  3 15:23:12 2021
  *
  * Target selection: slrt.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -25,10 +25,10 @@
 #define DEFINED_TYPEDEF_FOR_AN2CAN_conv_
 
 typedef struct {
-  uint16_T AN_01;
-  uint16_T AN_02;
-  uint16_T AN_03;
-  uint16_T AN_04;
+  int16_T AN_01;
+  int16_T AN_02;
+  int16_T AN_03;
+  int16_T AN_04;
 } AN2CAN_conv;
 
 #endif
@@ -60,10 +60,10 @@ typedef struct {
   uint8_T DunkD_PowerEnable;
   uint8_T DunkD_BrakeCtrl;
   int32_T DunkD_DesiredCurrent;
-  uint16_T Test_AN1;
-  uint16_T Test_AN2;
-  uint16_T Test_AN3;
-  uint16_T Test_AN4;
+  int16_T Test_AN1;
+  int16_T Test_AN2;
+  int16_T Test_AN3;
+  int16_T Test_AN4;
 } Speedgoat_TPDOs;
 
 #endif

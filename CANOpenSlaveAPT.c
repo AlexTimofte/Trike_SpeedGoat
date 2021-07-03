@@ -17,7 +17,7 @@ RPDO_ID1C1 RPDO01_APT;
 RPDO_ID1C2 RPDO02_APT;
 RPDO_ID1C3 RPDO03_APT;
 TPDO_ID1A4 TPDO01_APT;
-TPDO_test    TPDO05;
+// TPDO_test  TPDO05_APT;
 /************************************************************************
  GLOBAL VARIABLES
 *************************************************************************/
@@ -228,7 +228,7 @@ void CANOpenSlave_ResetCommunication_APT(void)
         // TPDO1, default ID (0x180+NodeID),100ms event, 0ms inhibite, 4 bytes
         // Transmit trigger: 100 ms event time
         CANOpenSlave_InitTPDO_APT(1,   0x00 ,  10,  0, 8,  &TPDO01_APT.Message);  // APT
-            CANOpenSlave_InitTPDO(2,   0x290,  1, 0, 8,  &TPDO05.Message);  // test tx
+//         CANOpenSlave_InitTPDO_APT(2,   0x290,  100,   0, 8,  &TPDO05_APT.Message);  // test tx
     #endif
 
     #if NR_OF_RPDOS_APT>0

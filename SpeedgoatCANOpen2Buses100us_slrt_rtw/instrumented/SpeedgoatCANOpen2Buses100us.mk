@@ -73,7 +73,7 @@ MATLAB_BIN      = E:\Program Files\MATLAB\R2018b\bin
 ALT_MATLAB_BIN  = E:\PROGRA~2\MATLAB\R2018b\bin
 MASTER_ANCHOR_DIR = 
 START_DIR       = C:\Users\Venqo\Desktop\SpeedGoat\Applications\Trike_git\Trike_SpeedGoat_algo
-S_FUNCTIONS     = RPDOs_from_AN2CANConv_wrapper.c RPDOs_from_APT_wrapper.c RPDOs_from_DunkA_wrapper.c RPDOs_from_DunkB_wrapper.c RPDOs_from_DunkC_wrapper.c RPDOs_from_DunkD_wrapper.c RPDOs_from_Encoder_wrapper.c RPDOs_from_Joystick_wrapper.c TPDOs_TEST_wrapper.c TPDOs_to_APT_wrapper.c TPDOs_to_DunkA_wrapper.c TPDOs_to_DunkB_wrapper.c TPDOs_to_DunkC_wrapper.c TPDOs_to_DunkD_wrapper.c sg_IO602_IO691_read_s.cpp sg_IO602_IO691_setup_s.cpp sg_IO602_IO691_write_s.cpp
+S_FUNCTIONS     = RPDOs_from_AN2CANConv_wrapper.c RPDOs_from_APT_wrapper.c RPDOs_from_DunkA_wrapper.c RPDOs_from_DunkB_wrapper.c RPDOs_from_DunkC_wrapper.c RPDOs_from_DunkD_wrapper.c RPDOs_from_Encoder_wrapper.c RPDOs_from_Joystick_wrapper.c TPDOs_to_APT_wrapper.c TPDOs_to_DunkA_wrapper.c TPDOs_to_DunkB_wrapper.c TPDOs_to_DunkC_wrapper.c TPDOs_to_DunkD_wrapper.c sg_IO602_IO691_read_s.cpp sg_IO602_IO691_setup_s.cpp sg_IO602_IO691_write_s.cpp
 S_FUNCTIONS_LIB = C:\ProgramData\Speedgoat\speedgoatlib\R2018b\8.28.4\sg_blocks\common\libsg\libsg_MSVC150_vc.lib C:\ProgramData\Speedgoat\speedgoatlib\R2018b\8.28.4\sg_blocks\can\include\IO602_IO691_lib_MSVC150_vc.lib
 NUMST           = 3
 TID01EQ         = 1
@@ -252,9 +252,6 @@ xpcruntime.lib: xpcimports.obj xpcPCFunctions.obj
 {C:\ProgramData\Speedgoat\speedgoatlib\R2018b\8.28.4\sg_blocks\can\src}.c.obj :
 	@cmd /C "echo ### Compiling $<"
 	$(CC) $(CFLAGS) $<
-{E:\W\T\Trike_SpeedGoat}.c.obj :
-	@cmd /C "echo ### Compiling $<"
-	$(CC) $(CFLAGS) $<
 {C:\ProgramData\Speedgoat\speedgoatlib\R2018b\8.28.4\sg_blocks\can}.c.obj :
 	@cmd /C "echo ### Compiling $<"
 	$(CC) $(CFLAGS) $<
@@ -277,10 +274,6 @@ xpcruntime.lib: xpcimports.obj xpcPCFunctions.obj
 	$(CC) $(CPPFLAGS) $<
 
 {C:\ProgramData\Speedgoat\speedgoatlib\R2018b\8.28.4\sg_blocks\can\src}.cpp.obj :
-	@cmd /C "echo ### Compiling $<"
-	$(CC) $(CPPFLAGS) $<
-
-{E:\W\T\Trike_SpeedGoat}.cpp.obj :
 	@cmd /C "echo ### Compiling $<"
 	$(CC) $(CPPFLAGS) $<
 

@@ -3,9 +3,9 @@
  *
  * Code generation for model "SpeedgoatCANOpen2Buses100us".
  *
- * Model version              : 1.614
+ * Model version              : 1.654
  * Simulink Coder version : 9.0 (R2018b) 24-May-2018
- * C source code generated on : Fri Jul  2 21:10:33 2021
+ * C source code generated on : Sat Jul  3 15:23:12 2021
  *
  * Target selection: slrt.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -151,66 +151,6 @@ P_SpeedgoatCANOpen2Buses100us_T SpeedgoatCANOpen2Buses100us_P = {
    */
   0.0,
 
-  /* Expression: 1
-   * Referenced by: '<S14>/Sine Wave1'
-   */
-  1.0,
-
-  /* Expression: 0.5
-   * Referenced by: '<S14>/Sine Wave1'
-   */
-  0.5,
-
-  /* Expression: 0.5
-   * Referenced by: '<S14>/Sine Wave1'
-   */
-  0.5,
-
-  /* Expression: 0
-   * Referenced by: '<S14>/Sine Wave1'
-   */
-  0.0,
-
-  /* Expression: 1
-   * Referenced by: '<S14>/Sine Wave2'
-   */
-  1.0,
-
-  /* Expression: 0.5
-   * Referenced by: '<S14>/Sine Wave2'
-   */
-  0.5,
-
-  /* Expression: 0.5
-   * Referenced by: '<S14>/Sine Wave2'
-   */
-  0.5,
-
-  /* Expression: 0
-   * Referenced by: '<S14>/Sine Wave2'
-   */
-  0.0,
-
-  /* Expression: 1
-   * Referenced by: '<S14>/Sine Wave3'
-   */
-  1.0,
-
-  /* Expression: 0.5
-   * Referenced by: '<S14>/Sine Wave3'
-   */
-  0.5,
-
-  /* Expression: 0.5
-   * Referenced by: '<S14>/Sine Wave3'
-   */
-  0.5,
-
-  /* Expression: 0
-   * Referenced by: '<S14>/Sine Wave3'
-   */
-  0.0,
-
   /* Expression: 5000
    * Referenced by: '<S14>/Sine Wave'
    */
@@ -221,13 +161,73 @@ P_SpeedgoatCANOpen2Buses100us_T SpeedgoatCANOpen2Buses100us_P = {
    */
   2500.0,
 
-  /* Expression: 0.5
+  /* Expression: 4
    * Referenced by: '<S14>/Sine Wave'
    */
-  0.5,
+  4.0,
 
   /* Expression: 0
    * Referenced by: '<S14>/Sine Wave'
+   */
+  0.0,
+
+  /* Expression: 5000
+   * Referenced by: '<S14>/Sine Wave1'
+   */
+  5000.0,
+
+  /* Expression: 2500
+   * Referenced by: '<S14>/Sine Wave1'
+   */
+  2500.0,
+
+  /* Expression: 4
+   * Referenced by: '<S14>/Sine Wave1'
+   */
+  4.0,
+
+  /* Expression: 0
+   * Referenced by: '<S14>/Sine Wave1'
+   */
+  0.0,
+
+  /* Expression: 5000
+   * Referenced by: '<S14>/Sine Wave3'
+   */
+  5000.0,
+
+  /* Expression: 2500
+   * Referenced by: '<S14>/Sine Wave3'
+   */
+  2500.0,
+
+  /* Expression: 4
+   * Referenced by: '<S14>/Sine Wave3'
+   */
+  4.0,
+
+  /* Expression: 0
+   * Referenced by: '<S14>/Sine Wave3'
+   */
+  0.0,
+
+  /* Expression: 5000
+   * Referenced by: '<S14>/Sine Wave2'
+   */
+  5000.0,
+
+  /* Expression: 2500
+   * Referenced by: '<S14>/Sine Wave2'
+   */
+  2500.0,
+
+  /* Expression: 4
+   * Referenced by: '<S14>/Sine Wave2'
+   */
+  4.0,
+
+  /* Expression: 0
+   * Referenced by: '<S14>/Sine Wave2'
    */
   0.0,
 
@@ -236,10 +236,35 @@ P_SpeedgoatCANOpen2Buses100us_T SpeedgoatCANOpen2Buses100us_P = {
    */
   0.0,
 
+  /* Expression: 2
+   * Referenced by: '<S36>/Sine Wave'
+   */
+  2.0,
+
+  /* Expression: 0
+   * Referenced by: '<S36>/Sine Wave'
+   */
+  0.0,
+
+  /* Expression: 0.5
+   * Referenced by: '<S36>/Sine Wave'
+   */
+  0.5,
+
+  /* Expression: 0
+   * Referenced by: '<S36>/Sine Wave'
+   */
+  0.0,
+
   /* Expression: 0
    * Referenced by: '<S36>/Constant1'
    */
   0.0,
+
+  /* Expression: 1
+   * Referenced by: '<S36>/Constant'
+   */
+  1.0,
 
   /* Expression: 0.00246
    * Referenced by: '<S36>/degree2m'
@@ -296,6 +321,16 @@ P_SpeedgoatCANOpen2Buses100us_T SpeedgoatCANOpen2Buses100us_P = {
    */
   0.087890625,
 
+  /* Expression: 400
+   * Referenced by: '<S36>/Constant2'
+   */
+  400.0,
+
+  /* Expression: tau
+   * Referenced by: '<S44>/Constant'
+   */
+  5.0000000010416671E-5,
+
   /* Expression: 3.16
    * Referenced by: '<S36>/Offset for 0 deg (3.16V -> 52.54mm)'
    */
@@ -307,57 +342,7 @@ P_SpeedgoatCANOpen2Buses100us_T SpeedgoatCANOpen2Buses100us_P = {
   0.0152,
 
   /* Expression: 0
-   * Referenced by: '<S44>/Unit Delay1'
-   */
-  0.0,
-
-  /* Expression: 2000
-   * Referenced by: '<S36>/Constant2'
-   */
-  2000.0,
-
-  /* Expression: zeta
-   * Referenced by: '<S44>/Constant'
-   */
-  0.70710678118654746,
-
-  /* Expression: tau
-   * Referenced by: '<S44>/Constant1'
-   */
-  5.0E-5,
-
-  /* Expression: 2
-   * Referenced by: '<S44>/Gain1'
-   */
-  2.0,
-
-  /* Expression: 0
-   * Referenced by: '<S44>/Unit Delay2'
-   */
-  0.0,
-
-  /* Expression: 10
-   * Referenced by: '<S36>/Constant'
-   */
-  10.0,
-
-  /* Expression: 1
-   * Referenced by: '<S36>/Sine Wave'
-   */
-  1.0,
-
-  /* Expression: 0
-   * Referenced by: '<S36>/Sine Wave'
-   */
-  0.0,
-
-  /* Expression: 0.5
-   * Referenced by: '<S36>/Sine Wave'
-   */
-  0.5,
-
-  /* Expression: 0
-   * Referenced by: '<S36>/Sine Wave'
+   * Referenced by: '<S44>/Unit Delay'
    */
   0.0,
 
@@ -416,6 +401,11 @@ P_SpeedgoatCANOpen2Buses100us_T SpeedgoatCANOpen2Buses100us_P = {
    */
   0.0174532924F,
 
+  /* Computed Parameter: n_Gain
+   * Referenced by: '<S36>/n'
+   */
+  -1.0F,
+
   /* Computed Parameter: Gain2_Gain_p
    * Referenced by: '<S21>/Gain2'
    */
@@ -434,7 +424,7 @@ P_SpeedgoatCANOpen2Buses100us_T SpeedgoatCANOpen2Buses100us_P = {
   /* Computed Parameter: LSB2Volt_Gain
    * Referenced by: '<S36>/LSB2Volt'
    */
-  40970U,
+  20485,
 
   /* Computed Parameter: Saturation1_UpperSat
    * Referenced by: '<S33>/Saturation1'
@@ -456,6 +446,11 @@ P_SpeedgoatCANOpen2Buses100us_T SpeedgoatCANOpen2Buses100us_P = {
    */
   0U,
 
+  /* Computed Parameter: ManualSwitch_CurrentSetting
+   * Referenced by: '<S36>/Manual Switch'
+   */
+  1U,
+
   /* Computed Parameter: Switch_Threshold
    * Referenced by: '<S17>/Switch'
    */
@@ -466,8 +461,13 @@ P_SpeedgoatCANOpen2Buses100us_T SpeedgoatCANOpen2Buses100us_P = {
    */
   0U,
 
-  /* Computed Parameter: Constant_Value_ej
+  /* Computed Parameter: Constant_Value_e
    * Referenced by: '<S3>/Constant'
    */
-  1U
+  1U,
+
+  /* Computed Parameter: ManualSwitch1_CurrentSetting
+   * Referenced by: '<S36>/Manual Switch1'
+   */
+  0U
 };

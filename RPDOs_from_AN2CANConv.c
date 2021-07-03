@@ -26,7 +26,7 @@
  * | See matlabroot/simulink/src/sfuntmpl_doc.c for a more detailed template |
  *  ------------------------------------------------------------------------- 
  *
- * Created: Fri Jul 02 21:09:59 2021
+ * Created: Sat Jul 03 11:51:24 2021
  */
 
 #define S_FUNCTION_LEVEL 2
@@ -56,7 +56,7 @@
 #define OUT_PORT_1_NAME       Channel_AN2
 #define OUTPUT_1_WIDTH        1
 #define OUTPUT_DIMS_1_COL     1
-#define OUTPUT_1_DTYPE        uint16_T
+#define OUTPUT_1_DTYPE        int16_T
 #define OUTPUT_1_COMPLEX      COMPLEX_NO
 #define OUT_1_FRAME_BASED     FRAME_NO
 #define OUT_1_BUS_BASED       0
@@ -72,7 +72,7 @@
 #define OUT_PORT_2_NAME       Channel_AN3
 #define OUTPUT_2_WIDTH        1
 #define OUTPUT_DIMS_2_COL     1
-#define OUTPUT_2_DTYPE        uint16_T
+#define OUTPUT_2_DTYPE        int16_T
 #define OUTPUT_2_COMPLEX      COMPLEX_NO
 #define OUT_2_FRAME_BASED     FRAME_NO
 #define OUT_2_BUS_BASED       0
@@ -88,7 +88,7 @@
 #define OUT_PORT_3_NAME       Channel_AN4
 #define OUTPUT_3_WIDTH        1
 #define OUTPUT_DIMS_3_COL     1
-#define OUTPUT_3_DTYPE        uint16_T
+#define OUTPUT_3_DTYPE        int16_T
 #define OUTPUT_3_COMPLEX      COMPLEX_NO
 #define OUT_3_FRAME_BASED     FRAME_NO
 #define OUT_3_BUS_BASED       0
@@ -123,9 +123,9 @@
 
 
 extern void RPDOs_from_AN2CANConv_Outputs_wrapper(int16_T *Channel_AN1,
-			uint16_T *Channel_AN2,
-			uint16_T *Channel_AN3,
-			uint16_T *Channel_AN4);
+			int16_T *Channel_AN2,
+			int16_T *Channel_AN3,
+			int16_T *Channel_AN4);
 /*====================*
  * S-function methods *
  *====================*/
@@ -159,15 +159,15 @@ static void mdlInitializeSizes(SimStruct *S)
     ssSetOutputPortComplexSignal(S, 0, OUTPUT_0_COMPLEX);
     /* Output Port 1 */
     ssSetOutputPortWidth(S, 1, OUTPUT_1_WIDTH);
-    ssSetOutputPortDataType(S, 1, SS_UINT16);
+    ssSetOutputPortDataType(S, 1, SS_INT16);
     ssSetOutputPortComplexSignal(S, 1, OUTPUT_1_COMPLEX);
     /* Output Port 2 */
     ssSetOutputPortWidth(S, 2, OUTPUT_2_WIDTH);
-    ssSetOutputPortDataType(S, 2, SS_UINT16);
+    ssSetOutputPortDataType(S, 2, SS_INT16);
     ssSetOutputPortComplexSignal(S, 2, OUTPUT_2_COMPLEX);
     /* Output Port 3 */
     ssSetOutputPortWidth(S, 3, OUTPUT_3_WIDTH);
-    ssSetOutputPortDataType(S, 3, SS_UINT16);
+    ssSetOutputPortDataType(S, 3, SS_INT16);
     ssSetOutputPortComplexSignal(S, 3, OUTPUT_3_COMPLEX);
     ssSetNumPWork(S, 0);
 
@@ -227,9 +227,9 @@ static void mdlStart(SimStruct *S)
 static void mdlOutputs(SimStruct *S, int_T tid)
 {
     int16_T *Channel_AN1 = (int16_T *) ssGetOutputPortRealSignal(S, 0);
-    uint16_T *Channel_AN2 = (uint16_T *) ssGetOutputPortRealSignal(S, 1);
-    uint16_T *Channel_AN3 = (uint16_T *) ssGetOutputPortRealSignal(S, 2);
-    uint16_T *Channel_AN4 = (uint16_T *) ssGetOutputPortRealSignal(S, 3);
+    int16_T *Channel_AN2 = (int16_T *) ssGetOutputPortRealSignal(S, 1);
+    int16_T *Channel_AN3 = (int16_T *) ssGetOutputPortRealSignal(S, 2);
+    int16_T *Channel_AN4 = (int16_T *) ssGetOutputPortRealSignal(S, 3);
 
     RPDOs_from_AN2CANConv_Outputs_wrapper(Channel_AN1, Channel_AN2, Channel_AN3, Channel_AN4);
 

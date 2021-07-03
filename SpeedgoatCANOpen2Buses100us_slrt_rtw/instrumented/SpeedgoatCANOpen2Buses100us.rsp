@@ -24,7 +24,6 @@ RPDOs_from_DunkC_wrapper.obj
 RPDOs_from_DunkD_wrapper.obj
 RPDOs_from_Encoder_wrapper.obj
 RPDOs_from_Joystick_wrapper.obj
-TPDOs_TEST_wrapper.obj
 TPDOs_to_APT_wrapper.obj
 TPDOs_to_DunkA_wrapper.obj
 TPDOs_to_DunkB_wrapper.obj

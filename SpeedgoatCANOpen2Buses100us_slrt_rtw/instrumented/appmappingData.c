@@ -12,8 +12,8 @@ const AppMapInfo appInfo[] =
 			SpeedgoatCANOpen2Buses100us_SIDMAP,
 			SpeedgoatCANOpen2Buses100us_SBIO,
 			SpeedgoatCANOpen2Buses100us_SLBL,
-			{0,221},
-			194,
+			{0,218},
+			191,
 		},
 		{ /* ParamMapInfo */
 			SpeedgoatCANOpen2Buses100us_PTIDSMAP,

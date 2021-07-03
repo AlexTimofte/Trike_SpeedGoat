@@ -1,5 +1,5 @@
 %% File : RPDOs_from_AN2CANConv.tlc
-%% Created : Fri Jul 02 21:09:59 2021
+%% Created : Sat Jul 03 11:51:24 2021
 %%
 %% Description: 
 %%   Simulink Coder wrapper functions interface generated for 
@@ -31,9 +31,9 @@
     extern void RPDOs_from_AN2CANConv_Start_wrapper(void);
 
     extern void RPDOs_from_AN2CANConv_Outputs_wrapper(int16_T *Channel_AN1,
-			uint16_T *Channel_AN2,
-			uint16_T *Channel_AN3,
-			uint16_T *Channel_AN4);
+			int16_T *Channel_AN2,
+			int16_T *Channel_AN3,
+			int16_T *Channel_AN4);
 
     extern void RPDOs_from_AN2CANConv_Terminate_wrapper(void);
 

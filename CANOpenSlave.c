@@ -252,14 +252,10 @@ void CANOpenSlave_ResetCommunication(void)
     #if NR_OF_TPDOS>0
         // TPDO1, default ID (0x180+NodeID),100ms event, 0ms inhibite, 4 bytes
         // Transmit trigger: 10 ms event time
-
         CANOpenSlave_InitTPDO(1,   0x20A,  5, 0, 8,  &TPDO01.Message);  // DunkA RPDO
         CANOpenSlave_InitTPDO(2,   0x20B,  5, 0, 8,  &TPDO02.Message);  // DunkB RPDO
         CANOpenSlave_InitTPDO(3,   0x20C,  5, 0, 8,  &TPDO03.Message);  // DunkC RPDO
         CANOpenSlave_InitTPDO(4,   0x20D,  5, 0, 8,  &TPDO04.Message);  // DunkD RPDO
-        
-    
-    
     #endif
 
     #if NR_OF_RPDOS>0
@@ -268,10 +264,8 @@ void CANOpenSlave_ResetCommunication(void)
        CANOpenSlave_InitRPDO(1, 0x182, 8, &RPDO01.Message); // Joystick
        CANOpenSlave_InitRPDO(2, 0x282, 8, &RPDO02.Message); // Joystick
        CANOpenSlave_InitRPDO(3, 0x1FF, 4, &RPDO03.Message); // Absolut Encoder WDGA
-       CANOpenSlave_InitRPDO(4, 0x2FF, 4, &RPDO04.Message); // Absolut Encoder WDGA
-        
-       CANOpenSlave_InitRPDO(5, 0x290, 8, &RPDO05.Message); // mCAN.4.ai-box
-      
+       CANOpenSlave_InitRPDO(4, 0x2FF, 4, &RPDO04.Message); // Absolut Encoder WDGA    
+       CANOpenSlave_InitRPDO(5, 0x290, 8, &RPDO05.Message); // mCAN.4.ai-box     
        CANOpenSlave_InitRPDO(6, 0x18A, 8, &RPDO06.Message); // DunkA TPDO
        CANOpenSlave_InitRPDO(7, 0x18B, 8, &RPDO07.Message); // DunkB TPDO
        CANOpenSlave_InitRPDO(8, 0x18C, 8, &RPDO08.Message); // DunkC TPDO
