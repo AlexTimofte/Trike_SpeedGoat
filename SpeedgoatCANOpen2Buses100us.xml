@@ -1870,121 +1870,272 @@ Average</sigName>
 		<Name>TiltingControl</Name>
 		<xPCName>SpeedgoatCANOpen2Buses100us/Trike Application Layer/System_Control/TiltingControl</xPCName>
 				<SubSystem>
-		<Name>Discrete Varying Lowpass</Name>
-		<xPCName>SpeedgoatCANOpen2Buses100us/Trike Application Layer/System_Control/TiltingControl/Discrete Varying Lowpass</xPCName>
-				<SubSystem>
-		<Name>FOS</Name>
-		<xPCName>SpeedgoatCANOpen2Buses100us/Trike Application Layer/System_Control/TiltingControl/Discrete Varying Lowpass/FOS</xPCName>
-				<SubSystem>
-		<Name>MATLAB Function</Name>
-		<xPCName>SpeedgoatCANOpen2Buses100us/Trike Application Layer/System_Control/TiltingControl/Discrete Varying Lowpass/FOS/MATLAB Function</xPCName>
+		<Name>PI_ctrl</Name>
+		<xPCName>SpeedgoatCANOpen2Buses100us/Trike Application Layer/System_Control/TiltingControl/PI_ctrl</xPCName>
 		
-		
-
-		</SubSystem>
-
 		
             <block>
-            <blkName>Constant</blkName>
-            <xpcblkName>Trike Application Layer/System_Control/TiltingControl/Discrete Varying Lowpass/FOS/Constant</xpcblkName>
-            <SLblockPath>SpeedgoatCANOpen2Buses100us/Trike Application Layer/System_Control/TiltingControl/Discrete Varying Lowpass/FOS/Constant</SLblockPath>
-            <isSrc>[1 0 1]</isSrc>
-          <parameter>
-          <paramName>Value</paramName>
-          <dim>[1, 1]</dim>  
-		  <SubSystemName>SpeedgoatCANOpen2Buses100us/Trike Application Layer/System_Control/TiltingControl/Discrete Varying Lowpass/FOS</SubSystemName>
-          </parameter>
-          </block>
-            <block>
-            <blkName>Unit Delay</blkName>
-            <xpcblkName>Trike Application Layer/System_Control/TiltingControl/Discrete Varying Lowpass/FOS/Unit Delay</xpcblkName>
-            <SLblockPath>SpeedgoatCANOpen2Buses100us/Trike Application Layer/System_Control/TiltingControl/Discrete Varying Lowpass/FOS/Unit Delay</SLblockPath>
+            <blkName>Discrete-Time
+Integrator</blkName>
+            <xpcblkName>Trike Application Layer/System_Control/TiltingControl/PI_ctrl/Discrete-Time Integrator</xpcblkName>
+            <SLblockPath>SpeedgoatCANOpen2Buses100us/Trike Application Layer/System_Control/TiltingControl/PI_ctrl/Discrete-Time Integrator</SLblockPath>
             <isSrc>[0 1 1]</isSrc>
+          <parameter>
+          <paramName>gainval</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>SpeedgoatCANOpen2Buses100us/Trike Application Layer/System_Control/TiltingControl/PI_ctrl</SubSystemName>
+          </parameter>
           <parameter>
           <paramName>InitialCondition</paramName>
           <dim>[1, 1]</dim>  
-		  <SubSystemName>SpeedgoatCANOpen2Buses100us/Trike Application Layer/System_Control/TiltingControl/Discrete Varying Lowpass/FOS</SubSystemName>
+		  <SubSystemName>SpeedgoatCANOpen2Buses100us/Trike Application Layer/System_Control/TiltingControl/PI_ctrl</SubSystemName>
+          </parameter>
+          </block>
+            <block>
+            <blkName>AntiWindup</blkName>
+            <xpcblkName>Trike Application Layer/System_Control/TiltingControl/PI_ctrl/AntiWindup</xpcblkName>
+            <SLblockPath>SpeedgoatCANOpen2Buses100us/Trike Application Layer/System_Control/TiltingControl/PI_ctrl/AntiWindup</SLblockPath>
+            <isSrc>[0 1 1]</isSrc>
+          <parameter>
+          <paramName>Ki</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>SpeedgoatCANOpen2Buses100us/Trike Application Layer/System_Control/TiltingControl/PI_ctrl</SubSystemName>
+          </parameter>
+          <parameter>
+          <paramName>Kp</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>SpeedgoatCANOpen2Buses100us/Trike Application Layer/System_Control/TiltingControl/PI_ctrl</SubSystemName>
+          </parameter>
+          </block>
+            <block>
+            <blkName>Gain</blkName>
+            <xpcblkName>Trike Application Layer/System_Control/TiltingControl/PI_ctrl/Gain</xpcblkName>
+            <SLblockPath>SpeedgoatCANOpen2Buses100us/Trike Application Layer/System_Control/TiltingControl/PI_ctrl/Gain</SLblockPath>
+            <isSrc>[0 1 1]</isSrc>
+          <parameter>
+          <paramName>Gain</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>SpeedgoatCANOpen2Buses100us/Trike Application Layer/System_Control/TiltingControl/PI_ctrl</SubSystemName>
+          </parameter>
+          </block>
+            <block>
+            <blkName>Integral
+Gain1</blkName>
+            <xpcblkName>Trike Application Layer/System_Control/TiltingControl/PI_ctrl/Integral Gain1</xpcblkName>
+            <SLblockPath>SpeedgoatCANOpen2Buses100us/Trike Application Layer/System_Control/TiltingControl/PI_ctrl/Integral Gain1</SLblockPath>
+            <isSrc>[0 1 1]</isSrc>
+          <parameter>
+          <paramName>Ki</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>SpeedgoatCANOpen2Buses100us/Trike Application Layer/System_Control/TiltingControl/PI_ctrl</SubSystemName>
+          </parameter>
+          </block>
+            <block>
+            <blkName>Proportional Gain1</blkName>
+            <xpcblkName>Trike Application Layer/System_Control/TiltingControl/PI_ctrl/Proportional Gain1</xpcblkName>
+            <SLblockPath>SpeedgoatCANOpen2Buses100us/Trike Application Layer/System_Control/TiltingControl/PI_ctrl/Proportional Gain1</SLblockPath>
+            <isSrc>[0 1 1]</isSrc>
+          <parameter>
+          <paramName>Kp</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>SpeedgoatCANOpen2Buses100us/Trike Application Layer/System_Control/TiltingControl/PI_ctrl</SubSystemName>
+          </parameter>
+          </block>
+            <block>
+            <blkName>Saturation</blkName>
+            <xpcblkName>Trike Application Layer/System_Control/TiltingControl/PI_ctrl/Saturation</xpcblkName>
+            <SLblockPath>SpeedgoatCANOpen2Buses100us/Trike Application Layer/System_Control/TiltingControl/PI_ctrl/Saturation</SLblockPath>
+            <isSrc>[0 1 1]</isSrc>
+          <parameter>
+          <paramName>Req_lim</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>SpeedgoatCANOpen2Buses100us/Trike Application Layer/System_Control/TiltingControl/PI_ctrl</SubSystemName>
+          </parameter>
+          <parameter>
+          <paramName>Req_lim</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>SpeedgoatCANOpen2Buses100us/Trike Application Layer/System_Control/TiltingControl/PI_ctrl</SubSystemName>
+          </parameter>
+          </block>
+            <block>
+            <blkName>FeedForward</blkName>
+            <xpcblkName>Trike Application Layer/System_Control/TiltingControl/PI_ctrl/FeedForward</xpcblkName>
+            <SLblockPath>SpeedgoatCANOpen2Buses100us/Trike Application Layer/System_Control/TiltingControl/PI_ctrl/FeedForward</SLblockPath>
+            <isSrc>[0 1 1]</isSrc>
+          <parameter>
+          <paramName>Numerator</paramName>
+          <dim>[1, 2]</dim>  
+		  <SubSystemName>SpeedgoatCANOpen2Buses100us/Trike Application Layer/System_Control/TiltingControl/PI_ctrl</SubSystemName>
+          </parameter>
+          <parameter>
+          <paramName>Denominator</paramName>
+          <dim>[1, 2]</dim>  
+		  <SubSystemName>SpeedgoatCANOpen2Buses100us/Trike Application Layer/System_Control/TiltingControl/PI_ctrl</SubSystemName>
+          </parameter>
+          <parameter>
+          <paramName>InitialStates</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>SpeedgoatCANOpen2Buses100us/Trike Application Layer/System_Control/TiltingControl/PI_ctrl</SubSystemName>
           </parameter>
           </block>
 			  
 			  
               <signal>
-              <sigName>MATLAB Function/p1</sigName>
-              <xpcsigName>Trike Application Layer/System_Control/TiltingControl/Discrete Varying Lowpass/FOS/MATLAB Function/p1</xpcsigName>
+              <sigName>Discrete-Time
+Integrator</sigName>
+              <xpcsigName>Trike Application Layer/System_Control/TiltingControl/PI_ctrl/Discrete-Time Integrator</xpcsigName>
               <sigWidth>1</sigWidth>
               <sigDim>[1, 1]</sigDim>
-			  <SubSystemName>SpeedgoatCANOpen2Buses100us/Trike Application Layer/System_Control/TiltingControl/Discrete Varying Lowpass/FOS</SubSystemName>
+			  <SubSystemName>SpeedgoatCANOpen2Buses100us/Trike Application Layer/System_Control/TiltingControl/PI_ctrl</SubSystemName>
+                <sigLabel>i</sigLabel>
 			  <sigTestPoint>false</sigTestPoint>
             </signal>
 			  
 			  
               <signal>
-              <sigName>MATLAB Function/p2</sigName>
-              <xpcsigName>Trike Application Layer/System_Control/TiltingControl/Discrete Varying Lowpass/FOS/MATLAB Function/p2</xpcsigName>
+              <sigName>AntiWindup</sigName>
+              <xpcsigName>Trike Application Layer/System_Control/TiltingControl/PI_ctrl/AntiWindup</xpcsigName>
               <sigWidth>1</sigWidth>
               <sigDim>[1, 1]</sigDim>
-			  <SubSystemName>SpeedgoatCANOpen2Buses100us/Trike Application Layer/System_Control/TiltingControl/Discrete Varying Lowpass/FOS</SubSystemName>
+			  <SubSystemName>SpeedgoatCANOpen2Buses100us/Trike Application Layer/System_Control/TiltingControl/PI_ctrl</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Gain</sigName>
+              <xpcsigName>Trike Application Layer/System_Control/TiltingControl/PI_ctrl/Gain</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses100us/Trike Application Layer/System_Control/TiltingControl/PI_ctrl</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Integral
+Gain1</sigName>
+              <xpcsigName>Trike Application Layer/System_Control/TiltingControl/PI_ctrl/Integral Gain1</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses100us/Trike Application Layer/System_Control/TiltingControl/PI_ctrl</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Proportional Gain1</sigName>
+              <xpcsigName>Trike Application Layer/System_Control/TiltingControl/PI_ctrl/Proportional Gain1</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses100us/Trike Application Layer/System_Control/TiltingControl/PI_ctrl</SubSystemName>
+                <sigLabel>p</sigLabel>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Product</sigName>
+              <xpcsigName>Trike Application Layer/System_Control/TiltingControl/PI_ctrl/Product</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses100us/Trike Application Layer/System_Control/TiltingControl/PI_ctrl</SubSystemName>
 			  <sigTestPoint>false</sigTestPoint>
             </signal>
 			  
 			  
               <signal>
               <sigName>Product1</sigName>
-              <xpcsigName>Trike Application Layer/System_Control/TiltingControl/Discrete Varying Lowpass/FOS/Product1</xpcsigName>
+              <xpcsigName>Trike Application Layer/System_Control/TiltingControl/PI_ctrl/Product1</xpcsigName>
               <sigWidth>1</sigWidth>
               <sigDim>[1, 1]</sigDim>
-			  <SubSystemName>SpeedgoatCANOpen2Buses100us/Trike Application Layer/System_Control/TiltingControl/Discrete Varying Lowpass/FOS</SubSystemName>
+			  <SubSystemName>SpeedgoatCANOpen2Buses100us/Trike Application Layer/System_Control/TiltingControl/PI_ctrl</SubSystemName>
 			  <sigTestPoint>false</sigTestPoint>
             </signal>
 			  
 			  
               <signal>
-              <sigName>Product4</sigName>
-              <xpcsigName>Trike Application Layer/System_Control/TiltingControl/Discrete Varying Lowpass/FOS/Product4</xpcsigName>
+              <sigName>Product2</sigName>
+              <xpcsigName>Trike Application Layer/System_Control/TiltingControl/PI_ctrl/Product2</xpcsigName>
               <sigWidth>1</sigWidth>
               <sigDim>[1, 1]</sigDim>
-			  <SubSystemName>SpeedgoatCANOpen2Buses100us/Trike Application Layer/System_Control/TiltingControl/Discrete Varying Lowpass/FOS</SubSystemName>
+			  <SubSystemName>SpeedgoatCANOpen2Buses100us/Trike Application Layer/System_Control/TiltingControl/PI_ctrl</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Saturation</sigName>
+              <xpcsigName>Trike Application Layer/System_Control/TiltingControl/PI_ctrl/Saturation</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses100us/Trike Application Layer/System_Control/TiltingControl/PI_ctrl</SubSystemName>
 			  <sigTestPoint>false</sigTestPoint>
             </signal>
 			  
 			  
               <signal>
               <sigName>Sum</sigName>
-              <xpcsigName>Trike Application Layer/System_Control/TiltingControl/Discrete Varying Lowpass/FOS/Sum</xpcsigName>
+              <xpcsigName>Trike Application Layer/System_Control/TiltingControl/PI_ctrl/Sum</xpcsigName>
               <sigWidth>1</sigWidth>
               <sigDim>[1, 1]</sigDim>
-			  <SubSystemName>SpeedgoatCANOpen2Buses100us/Trike Application Layer/System_Control/TiltingControl/Discrete Varying Lowpass/FOS</SubSystemName>
+			  <SubSystemName>SpeedgoatCANOpen2Buses100us/Trike Application Layer/System_Control/TiltingControl/PI_ctrl</SubSystemName>
 			  <sigTestPoint>false</sigTestPoint>
             </signal>
 			  
 			  
               <signal>
               <sigName>Sum1</sigName>
-              <xpcsigName>Trike Application Layer/System_Control/TiltingControl/Discrete Varying Lowpass/FOS/Sum1</xpcsigName>
+              <xpcsigName>Trike Application Layer/System_Control/TiltingControl/PI_ctrl/Sum1</xpcsigName>
               <sigWidth>1</sigWidth>
               <sigDim>[1, 1]</sigDim>
-			  <SubSystemName>SpeedgoatCANOpen2Buses100us/Trike Application Layer/System_Control/TiltingControl/Discrete Varying Lowpass/FOS</SubSystemName>
+			  <SubSystemName>SpeedgoatCANOpen2Buses100us/Trike Application Layer/System_Control/TiltingControl/PI_ctrl</SubSystemName>
+                <sigLabel>e</sigLabel>
 			  <sigTestPoint>false</sigTestPoint>
             </signal>
 			  
 			  
               <signal>
-              <sigName>Unit Delay</sigName>
-              <xpcsigName>Trike Application Layer/System_Control/TiltingControl/Discrete Varying Lowpass/FOS/Unit Delay</xpcsigName>
+              <sigName>Sum2</sigName>
+              <xpcsigName>Trike Application Layer/System_Control/TiltingControl/PI_ctrl/Sum2</xpcsigName>
               <sigWidth>1</sigWidth>
               <sigDim>[1, 1]</sigDim>
-			  <SubSystemName>SpeedgoatCANOpen2Buses100us/Trike Application Layer/System_Control/TiltingControl/Discrete Varying Lowpass/FOS</SubSystemName>
+			  <SubSystemName>SpeedgoatCANOpen2Buses100us/Trike Application Layer/System_Control/TiltingControl/PI_ctrl</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Sum4</sigName>
+              <xpcsigName>Trike Application Layer/System_Control/TiltingControl/PI_ctrl/Sum4</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses100us/Trike Application Layer/System_Control/TiltingControl/PI_ctrl</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>FeedForward</sigName>
+              <xpcsigName>Trike Application Layer/System_Control/TiltingControl/PI_ctrl/FeedForward</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses100us/Trike Application Layer/System_Control/TiltingControl/PI_ctrl</SubSystemName>
+                <sigLabel>ff</sigLabel>
 			  <sigTestPoint>false</sigTestPoint>
             </signal>
 
 		</SubSystem>
-
+		<SubSystem>
+		<Name>MATLAB Function</Name>
+		<xPCName>SpeedgoatCANOpen2Buses100us/Trike Application Layer/System_Control/TiltingControl/MATLAB Function</xPCName>
+		
 		
 
 		</SubSystem>
 		<SubSystem>
-		<Name>PI Tilting Controller</Name>
-		<xPCName>SpeedgoatCANOpen2Buses100us/Trike Application Layer/System_Control/TiltingControl/PI Tilting Controller</xPCName>
+		<Name>PI_incremental Tilting Controller</Name>
+		<xPCName>SpeedgoatCANOpen2Buses100us/Trike Application Layer/System_Control/TiltingControl/PI_incremental Tilting Controller</xPCName>
 		
 		
 
@@ -1998,6 +2149,27 @@ Average</sigName>
 		</SubSystem>
 
 		
+            <block>
+            <blkName>PI_ctrl</blkName>
+            <xpcblkName>Trike Application Layer/System_Control/TiltingControl/PI_ctrl</xpcblkName>
+            <SLblockPath>SpeedgoatCANOpen2Buses100us/Trike Application Layer/System_Control/TiltingControl/PI_ctrl</SLblockPath>
+            <isSrc>[0 3 2]</isSrc>
+          <parameter>
+          <paramName>Kp</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>SpeedgoatCANOpen2Buses100us/Trike Application Layer/System_Control/TiltingControl</SubSystemName>
+          </parameter>
+          <parameter>
+          <paramName>Ki</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>SpeedgoatCANOpen2Buses100us/Trike Application Layer/System_Control/TiltingControl</SubSystemName>
+          </parameter>
+          <parameter>
+          <paramName>Req_lim</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>SpeedgoatCANOpen2Buses100us/Trike Application Layer/System_Control/TiltingControl</SubSystemName>
+          </parameter>
+          </block>
             <block>
             <blkName>Constant</blkName>
             <xpcblkName>Trike Application Layer/System_Control/TiltingControl/Constant</xpcblkName>
@@ -2021,20 +2193,9 @@ Average</sigName>
           </parameter>
           </block>
             <block>
-            <blkName>Constant2</blkName>
-            <xpcblkName>Trike Application Layer/System_Control/TiltingControl/Constant2</xpcblkName>
-            <SLblockPath>SpeedgoatCANOpen2Buses100us/Trike Application Layer/System_Control/TiltingControl/Constant2</SLblockPath>
-            <isSrc>[1 0 1]</isSrc>
-          <parameter>
-          <paramName>Value</paramName>
-          <dim>[1, 1]</dim>  
-		  <SubSystemName>SpeedgoatCANOpen2Buses100us/Trike Application Layer/System_Control/TiltingControl</SubSystemName>
-          </parameter>
-          </block>
-            <block>
-            <blkName>Offset for 0 deg (3.16V -&gt; 52.54mm)</blkName>
-            <xpcblkName>Trike Application Layer/System_Control/TiltingControl/Offset for 0 deg (3.16V -&gt; 52.54mm)</xpcblkName>
-            <SLblockPath>SpeedgoatCANOpen2Buses100us/Trike Application Layer/System_Control/TiltingControl/Offset for 0 deg (3.16V -&gt; 52.54mm)</SLblockPath>
+            <blkName>Offset for 0 deg (3.5064V -&gt; 57.02mm)</blkName>
+            <xpcblkName>Trike Application Layer/System_Control/TiltingControl/Offset for 0 deg (3.5064V -&gt; 57.02mm)</xpcblkName>
+            <SLblockPath>SpeedgoatCANOpen2Buses100us/Trike Application Layer/System_Control/TiltingControl/Offset for 0 deg (3.5064V -&gt; 57.02mm)</SLblockPath>
             <isSrc>[1 0 1]</isSrc>
           <parameter>
           <paramName>Value</paramName>
@@ -2109,9 +2270,9 @@ Average</sigName>
           </parameter>
           </block>
             <block>
-            <blkName>Memory</blkName>
-            <xpcblkName>Trike Application Layer/System_Control/TiltingControl/Memory</xpcblkName>
-            <SLblockPath>SpeedgoatCANOpen2Buses100us/Trike Application Layer/System_Control/TiltingControl/Memory</SLblockPath>
+            <blkName>Memory1</blkName>
+            <xpcblkName>Trike Application Layer/System_Control/TiltingControl/Memory1</xpcblkName>
+            <SLblockPath>SpeedgoatCANOpen2Buses100us/Trike Application Layer/System_Control/TiltingControl/Memory1</SLblockPath>
             <isSrc>[0 1 1]</isSrc>
           <parameter>
           <paramName>InitialCondition</paramName>
@@ -2167,11 +2328,76 @@ Average</sigName>
 		  <SubSystemName>SpeedgoatCANOpen2Buses100us/Trike Application Layer/System_Control/TiltingControl</SubSystemName>
           </parameter>
           </block>
+            <block>
+            <blkName>Discrete Filter</blkName>
+            <xpcblkName>Trike Application Layer/System_Control/TiltingControl/Discrete Filter</xpcblkName>
+            <SLblockPath>SpeedgoatCANOpen2Buses100us/Trike Application Layer/System_Control/TiltingControl/Discrete Filter</SLblockPath>
+            <isSrc>[0 1 1]</isSrc>
+          <parameter>
+          <paramName>Numerator</paramName>
+          <dim>[1, 3]</dim>  
+		  <SubSystemName>SpeedgoatCANOpen2Buses100us/Trike Application Layer/System_Control/TiltingControl</SubSystemName>
+          </parameter>
+          <parameter>
+          <paramName>Denominator</paramName>
+          <dim>[1, 3]</dim>  
+		  <SubSystemName>SpeedgoatCANOpen2Buses100us/Trike Application Layer/System_Control/TiltingControl</SubSystemName>
+          </parameter>
+          <parameter>
+          <paramName>InitialStates</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>SpeedgoatCANOpen2Buses100us/Trike Application Layer/System_Control/TiltingControl</SubSystemName>
+          </parameter>
+          </block>
 			  
 			  
               <signal>
-              <sigName>PI Tilting Controller/p1</sigName>
-              <xpcsigName>Trike Application Layer/System_Control/TiltingControl/PI Tilting Controller/p1</xpcsigName>
+              <sigName>MATLAB Function/p1</sigName>
+              <xpcsigName>Trike Application Layer/System_Control/TiltingControl/MATLAB Function/p1</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses100us/Trike Application Layer/System_Control/TiltingControl</SubSystemName>
+                <sigLabel>LTilt CurrentRef2</sigLabel>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>MATLAB Function/p2</sigName>
+              <xpcsigName>Trike Application Layer/System_Control/TiltingControl/MATLAB Function/p2</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses100us/Trike Application Layer/System_Control/TiltingControl</SubSystemName>
+                <sigLabel>RTilt CurrenRef2</sigLabel>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>MATLAB Function/p3</sigName>
+              <xpcsigName>Trike Application Layer/System_Control/TiltingControl/MATLAB Function/p3</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses100us/Trike Application Layer/System_Control/TiltingControl</SubSystemName>
+                <sigLabel>c1</sigLabel>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>MATLAB Function/p4</sigName>
+              <xpcsigName>Trike Application Layer/System_Control/TiltingControl/MATLAB Function/p4</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses100us/Trike Application Layer/System_Control/TiltingControl</SubSystemName>
+                <sigLabel>c2</sigLabel>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>PI_incremental Tilting Controller/p1</sigName>
+              <xpcsigName>Trike Application Layer/System_Control/TiltingControl/PI_incremental Tilting Controller/p1</xpcsigName>
               <sigWidth>1</sigWidth>
               <sigDim>[1, 1]</sigDim>
 			  <SubSystemName>SpeedgoatCANOpen2Buses100us/Trike Application Layer/System_Control/TiltingControl</SubSystemName>
@@ -2181,8 +2407,8 @@ Average</sigName>
 			  
 			  
               <signal>
-              <sigName>PI Tilting Controller/p2</sigName>
-              <xpcsigName>Trike Application Layer/System_Control/TiltingControl/PI Tilting Controller/p2</xpcsigName>
+              <sigName>PI_incremental Tilting Controller/p2</sigName>
+              <xpcsigName>Trike Application Layer/System_Control/TiltingControl/PI_incremental Tilting Controller/p2</xpcsigName>
               <sigWidth>1</sigWidth>
               <sigDim>[1, 1]</sigDim>
 			  <SubSystemName>SpeedgoatCANOpen2Buses100us/Trike Application Layer/System_Control/TiltingControl</SubSystemName>
@@ -2192,34 +2418,34 @@ Average</sigName>
 			  
 			  
               <signal>
-              <sigName>PI Tilting Controller/p3</sigName>
-              <xpcsigName>Trike Application Layer/System_Control/TiltingControl/PI Tilting Controller/p3</xpcsigName>
+              <sigName>PI_incremental Tilting Controller/p3</sigName>
+              <xpcsigName>Trike Application Layer/System_Control/TiltingControl/PI_incremental Tilting Controller/p3</xpcsigName>
               <sigWidth>1</sigWidth>
               <sigDim>[1, 1]</sigDim>
 			  <SubSystemName>SpeedgoatCANOpen2Buses100us/Trike Application Layer/System_Control/TiltingControl</SubSystemName>
-                <sigLabel>eP</sigLabel>
+                <sigLabel>up</sigLabel>
 			  <sigTestPoint>false</sigTestPoint>
             </signal>
 			  
 			  
               <signal>
-              <sigName>PI Tilting Controller/p4</sigName>
-              <xpcsigName>Trike Application Layer/System_Control/TiltingControl/PI Tilting Controller/p4</xpcsigName>
+              <sigName>PI_incremental Tilting Controller/p4</sigName>
+              <xpcsigName>Trike Application Layer/System_Control/TiltingControl/PI_incremental Tilting Controller/p4</xpcsigName>
               <sigWidth>1</sigWidth>
               <sigDim>[1, 1]</sigDim>
 			  <SubSystemName>SpeedgoatCANOpen2Buses100us/Trike Application Layer/System_Control/TiltingControl</SubSystemName>
-                <sigLabel>eI</sigLabel>
+                <sigLabel>ui</sigLabel>
 			  <sigTestPoint>false</sigTestPoint>
             </signal>
 			  
 			  
               <signal>
-              <sigName>PI Tilting Controller/p5</sigName>
-              <xpcsigName>Trike Application Layer/System_Control/TiltingControl/PI Tilting Controller/p5</xpcsigName>
+              <sigName>PI_incremental Tilting Controller/p5</sigName>
+              <xpcsigName>Trike Application Layer/System_Control/TiltingControl/PI_incremental Tilting Controller/p5</xpcsigName>
               <sigWidth>1</sigWidth>
               <sigDim>[1, 1]</sigDim>
 			  <SubSystemName>SpeedgoatCANOpen2Buses100us/Trike Application Layer/System_Control/TiltingControl</SubSystemName>
-                <sigLabel>eD</sigLabel>
+                <sigLabel>ud</sigLabel>
 			  <sigTestPoint>false</sigTestPoint>
             </signal>
 			  
@@ -2319,11 +2545,12 @@ Average</sigName>
 			  
 			  
               <signal>
-              <sigName>Memory</sigName>
-              <xpcsigName>Trike Application Layer/System_Control/TiltingControl/Memory</xpcsigName>
+              <sigName>Memory1</sigName>
+              <xpcsigName>Trike Application Layer/System_Control/TiltingControl/Memory1</xpcsigName>
               <sigWidth>1</sigWidth>
               <sigDim>[1, 1]</sigDim>
 			  <SubSystemName>SpeedgoatCANOpen2Buses100us/Trike Application Layer/System_Control/TiltingControl</SubSystemName>
+                <sigLabel>DispLeft [m] filt</sigLabel>
 			  <sigTestPoint>false</sigTestPoint>
             </signal>
 			  
@@ -2356,7 +2583,7 @@ Average</sigName>
               <sigWidth>1</sigWidth>
               <sigDim>[1, 1]</sigDim>
 			  <SubSystemName>SpeedgoatCANOpen2Buses100us/Trike Application Layer/System_Control/TiltingControl</SubSystemName>
-                <sigLabel>err</sigLabel>
+                <sigLabel>Pos_err</sigLabel>
 			  <sigTestPoint>false</sigTestPoint>
             </signal>
 			  
@@ -2374,6 +2601,16 @@ Average</sigName>
               <signal>
               <sigName>Manual Switch1</sigName>
               <xpcsigName>Trike Application Layer/System_Control/TiltingControl/Manual Switch1</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses100us/Trike Application Layer/System_Control/TiltingControl</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Discrete Filter</sigName>
+              <xpcsigName>Trike Application Layer/System_Control/TiltingControl/Discrete Filter</xpcsigName>
               <sigWidth>1</sigWidth>
               <sigDim>[1, 1]</sigDim>
 			  <SubSystemName>SpeedgoatCANOpen2Buses100us/Trike Application Layer/System_Control/TiltingControl</SubSystemName>

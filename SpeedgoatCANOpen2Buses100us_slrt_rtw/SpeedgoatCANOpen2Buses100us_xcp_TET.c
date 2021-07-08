@@ -7,11 +7,11 @@ typedef struct SLRTTET_tag {
   double TET;                          /* average TET since model starts*/
 } SLRTTET_T;
 
-SLRTTET_T slrtTETViaXCP[2];
+SLRTTET_T slrtTETViaXCP[3];
 void SLRT_update_TET(const int tid, const double mdltime, const double currTET)
 {
-  if (tid >= 2 ) {
-    printf("Error: task ID %d is out of range. This model has %d tasks", tid, 2);
+  if (tid >= 3 ) {
+    printf("Error: task ID %d is out of range. This model has %d tasks", tid, 3);
     return;
   }
 
