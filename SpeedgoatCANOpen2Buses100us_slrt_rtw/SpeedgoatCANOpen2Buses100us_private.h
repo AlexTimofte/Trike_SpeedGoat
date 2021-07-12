@@ -3,9 +3,9 @@
  *
  * Code generation for model "SpeedgoatCANOpen2Buses100us".
  *
- * Model version              : 1.736
+ * Model version              : 1.750
  * Simulink Coder version : 9.0 (R2018b) 24-May-2018
- * C source code generated on : Thu Jul  8 19:55:38 2021
+ * C source code generated on : Mon Jul 12 21:12:35 2021
  *
  * Target selection: slrt.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -305,8 +305,11 @@ extern const serialfifoptr serialfifoground;
 extern const bcmsglist1553 bcmsg1553ground;
 extern const bcstatus1553 bcstatground;
 extern const bmmsglist1553 bmmsg1553ground;
+extern real_T rt_remd_snf(real_T u0, real_T u1);
 extern void* slrtRegisterSignalToLoggingService(rtwCAPI_ModelMappingInfo* mdlMMI,
   const char* relBlkPath, int portNumber);
+extern real_T look1_binlxpw(real_T u0, const real_T bp0[], const real_T table[],
+  uint32_T maxIndex);
 extern void sMultiWordMul(const uint64_T u1[], int32_T n1, const uint64_T u2[],
   int32_T n2, uint64_T y[], int32_T n);
 extern void sg_IO602_IO691_write_s(SimStruct *rts);

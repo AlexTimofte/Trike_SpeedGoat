@@ -690,7 +690,7 @@ void SpeedgoatCANOpen2Buses100us_debug_initialize(struct SfDebugInstanceStruct*
   debugInstance)
 {
   _SpeedgoatCANOpen2Buses100usMachineNumber_ = sf_debug_initialize_machine
-    (debugInstance,"SpeedgoatCANOpen2Buses100us","sfun",0,11,0,0,0);
+    (debugInstance,"SpeedgoatCANOpen2Buses100us","sfun",0,10,0,0,0);
   sf_debug_set_machine_event_thresholds(debugInstance,
     _SpeedgoatCANOpen2Buses100usMachineNumber_,0,0);
   sf_debug_set_machine_data_thresholds(debugInstance,
