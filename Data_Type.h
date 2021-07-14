@@ -1,4 +1,11 @@
-
+//#include <rtwtypes.h>
+#include <stdint.h>
+typedef int32_t int32_T;
+typedef int16_t int16_T;
+typedef int8_t int8_T;
+typedef uint32_t uint32_T;
+typedef uint16_t uint16_T;
+typedef uint8_t uint8_T;
 //Data Handling Macros
 #define SWAP16(x) ((((x)&0xff)<<8)|(((x)&0xff00)>>8))
 
@@ -20,120 +27,67 @@ typedef union {
 	uint8_T Message[8];
 } RPDO_ID282;
 
-
-typedef union {
-	struct {
-		uint8_T Byte0; // b7 1/0= start/stop; b6 1/0 boost enable/disable; b5 1/0 regen enable/disable; b4 eco mode 1/0 enable/disable; b3b2 -
-		uint8_T Byte1; // phase current rms [A]
-		uint8_T Byte2;
-		uint8_T Byte3; // dummy
-		uint8_T Byte4; // dummy
-		uint8_T Byte5; // rotor speed [rpm] offset -8000d
-		uint8_T Byte6;
-		uint8_T Byte7; // heartbeat
-	} ;
-	uint8_T Message[8];
-} RPDO_ID1C1;
-
-
-typedef union {
-	struct {
-		uint16_T BusVoltage; // cV i.e. 0.01V
-		uint16_T dummy0;
-		uint8_T MotorTemperature; // offset -10
-		uint8_T APTTemperature; // offset -10
-		uint16_T dummy1;
-	};
-	uint8_T Message[8];
-} RPDO_ID1C2;
-
-typedef union {
-	struct {
-		uint8_T ErrorStatus; // b7 - overvoltage, b6 -, b5 - motor overheat, b4 - APT overheat, b3 - HW error, b2 - Sensor error, b1 - phase overcurrent, b0 - undervoltage
-		uint16_T dummy0;
-		uint8_T PedalPosition; // 0-100 delta =0.4
-		uint8_T Direction; //b7b6 = 00 Neutral    01 - Forward  10 - Reverse
-		uint16_T dummy1;
-		uint8_T dummy2;
-	};
-	uint8_T Message[8];
-} RPDO_ID1C3;
-
-
 // Analog to CAN converter
 typedef union {
 	struct {
-		uint16_T AN_01;  
-		uint16_T AN_02;
-		uint16_T AN_03;  
-		uint16_T AN_04;  
+		int16_T AN_01;
+		int16_T AN_02;
+		int16_T AN_03;
+		int16_T AN_04;
 	};
 	uint8_T Message[8];
-} RPDO_ID1C8;
+} RPDO_ID290;
 
 
-
-// typedef union {
-// 	struct {
-// 		uint8_T ControlWord; // b7 - 1/0 start/stop, b6 - boost 1/0 enable/disable, b5 - regen 1/0 enable/disable, b4 - eco 1/0 enable/disable, b3b2 - direction 00 neutral 01 forward 10 reverse, b1 - brake 1/0 ebable/disable, b0  - reserved
-// 		uint8_T dummy0;
-// 		uint8_T dummy1;
-// 		uint8_T dummy2;
-// 		uint8_T dummy3;
-// 		uint8_T PedalPosition; // 0-100 delta =0.4
-// 		uint8_T Heartbeat; //
-// 		uint8_T dummy4;
-// 	};
-// 	uint8_T Message[8];
-// } TPDO_ID1A4;
-
+// WDGA Absolut Encoder
 typedef union {
 	struct {
-		uint16_T ControlWord; 
-		int16_T  BrakeControl; 
-        int8_T   OperationMode;
-		uint8_T  dummy1;
-		uint8_T  dummy2;
-		uint8_T  dummy3;
-		uint8_T  dummy4; //
-		uint8_T  dummy5;
+		uint32_T Encoder_Actual_Position; 
+	};
+	uint8_T Message[4];
+} RPDO_ID1FF;
+typedef union {
+	struct {
+		uint32_T Encoder_Stored_Position; 
+	};
+	uint8_T Message[4];
+} RPDO_ID2FF;
+
+ 
+
+// Dunk 
+typedef union {
+	struct {
+		uint8_T  ClearError;
+		uint8_T  DeviceMode;
+		uint8_T  PowerEnable;
+		uint8_T  BrakeCtrl;
+		int32_T  DesiredCurrent;
 	};
 	uint8_T Message[8];
 } TPDO_ID20x;
  
-
 typedef union {
 	struct {
-		int32_T TargetPosition; 
-		int32_T TargetVelocity; 
-		uint8_T dummy1;
-		uint8_T dummy2;
-		uint8_T dummy3; 
-        uint8_T dummy4;  
-		uint8_T dummy5;
-        uint8_T dummy6;
-	};
-	uint8_T Message[8];
-} TPDO_ID30x; 
-
-typedef union {
-	struct {
-		uint16_T StatusWord; //
-		int8_T   StatusOpMode; // 
-		int16_T  CurrentActualValue; //
-		int16_T  ActualTorque; //
+		 int32_T ActualCurrent;  
+		 int32_T ActualVelocity; 
   	} ;
 	uint8_T Message[8];
 } RPDO_ID18x;
 
 typedef union {
 	struct {
-		 int32_T ActualPosition; //
-		 int32_T ActualVelocity; //
+		uint8_T  ClearError;
+		uint8_T  DeviceMode;
+		uint16_T dummy1;
+		uint16_T dummy2;
+		uint16_T dummy3;
   	} ;
 	uint8_T Message[8];
 } RPDO_ID28x;
- 
+
+
+// Joystick
 typedef union {
 	struct {
 		uint8_T StatusButtons1_8; //Echo status buttons 1-8 Joystick
@@ -156,42 +110,5 @@ typedef union {
 	uint8_T Message[8];
 } TPDO_ID186;
 
-/*
 
-
-typedef union {
-	struct {
-		int16_T X; //World X coord in cm (-36500cm ~ +36500cm)
-		int16_T Y; //World Y coord in cm (-36500cm ~ +36500cm)
-		int16_T A; //World Posture Azimuth in 1e-4Rad (-2*pi*10000 ~ +2*pi*10000)
-		int16_T H; //World Speed Heading in mRad (-2*pi*1000 ~ +2*pi*1000)
-	};
-	uint8_T Message[8];
-} TPDO_ID385;
-
-typedef union {
-	struct {
-		uint16_T sonar1;
-		uint16_T sonar2;
-		uint16_T sonar3;
-		uint16_T sonar4;
-	};
-	uint8_T Message[8];
-} TPDO_ID485;
-
-typedef union {
-	struct {
-		uint16_T motorA;
-		uint16_T motorB;
-		uint16_T motorC;
-		uint16_T motorD;
-	};
-	uint8_T Message[8];
-} TPDO_ID585;
-
-typedef union {
-	uint8_T sonar_id;
-	uint8_T Message[8];
-} TPDO_ID206;
-*/
 

@@ -7,7 +7,7 @@
  */
 #ifndef _CANOPENSLAVE_DEFINES_H
 #define _CANOPENSLAVE_DEFINES_H
-#include "CANOpenSlave_PDOs.h"
+//#include "CANOpenSlave_PDOs.h"
 #include "Data_Type.h"
 //Standard data types
 #define BYTE uint8_T
@@ -21,9 +21,9 @@
 #define OD_HEARTBEAT                1000L
 
 //Maximum number of transmit PDOs (0 to 16)
-#define NR_OF_TPDOS                 8   //5
+#define NR_OF_TPDOS                 4   
 //Maximum number of receive  PDOs (0 to 16)
-#define NR_OF_RPDOS                 14
+#define NR_OF_RPDOS                13
 
 /**************************************************************************
 DEFINES: CONST ENTRIES IN OBJECT DICTIONARY
