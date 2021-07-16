@@ -14,16 +14,8 @@ xcp.events(1).sampletime = 0.0001;
 xcp.events(1).offset     = 0.0;
          
 xcp.events(2).id         = 1;
-xcp.events(2).sampletime = 0.0002;
+xcp.events(2).sampletime = 0.005;
 xcp.events(2).offset     = 0.0;
-         
-xcp.events(3).id         = 2;
-xcp.events(3).sampletime = 0.001;
-xcp.events(3).offset     = 0.0;
-         
-xcp.events(4).id         = 3;
-xcp.events(4).sampletime = 0.005;
-xcp.events(4).offset     = 0.0;
     
 xcp.signals(1).symbol =  'SpeedgoatCANOpen2Buses100us_B.Channel_AN1';
     
@@ -237,205 +229,177 @@ xcp.signals(105).symbol =  'SpeedgoatCANOpen2Buses100us_B.CastToSingle';
     
 xcp.signals(106).symbol =  'SpeedgoatCANOpen2Buses100us_B.CastToSingle1';
     
-xcp.signals(107).symbol =  'SpeedgoatCANOpen2Buses100us_B.Amp2mAmp_conv1';
+xcp.signals(107).symbol =  'SpeedgoatCANOpen2Buses100us_B.PosRefm';
     
-xcp.signals(108).symbol =  'SpeedgoatCANOpen2Buses100us_B.Amp2mAmp_conv2';
+xcp.signals(108).symbol =  'SpeedgoatCANOpen2Buses100us_B.n';
     
-xcp.signals(109).symbol =  'SpeedgoatCANOpen2Buses100us_B.PosRefm';
+xcp.signals(109).symbol =  'SpeedgoatCANOpen2Buses100us_B.Product2_a';
     
-xcp.signals(110).symbol =  'SpeedgoatCANOpen2Buses100us_B.n';
+xcp.signals(110).symbol =  'SpeedgoatCANOpen2Buses100us_B.TractionRef';
     
-xcp.signals(111).symbol =  'SpeedgoatCANOpen2Buses100us_B.TiltingAngledeg';
+xcp.signals(111).symbol =  'SpeedgoatCANOpen2Buses100us_B.Gain1_e';
     
-xcp.signals(112).symbol =  'SpeedgoatCANOpen2Buses100us_B.Pos_err';
+xcp.signals(112).symbol =  'SpeedgoatCANOpen2Buses100us_B.SpeedRear_SI';
     
-xcp.signals(113).symbol =  'SpeedgoatCANOpen2Buses100us_B.ManualSwitch';
+xcp.signals(113).symbol =  'SpeedgoatCANOpen2Buses100us_B.ClearError_k';
     
-xcp.signals(114).symbol =  'SpeedgoatCANOpen2Buses100us_B.ManualSwitch1';
+xcp.signals(114).symbol =  'SpeedgoatCANOpen2Buses100us_B.DeviceMode_b';
     
-xcp.signals(115).symbol =  'SpeedgoatCANOpen2Buses100us_B.Sys_out';
+xcp.signals(115).symbol =  'SpeedgoatCANOpen2Buses100us_B.BrakeCtrl_n';
     
-xcp.signals(116).symbol =  'SpeedgoatCANOpen2Buses100us_B.Sys_in';
+xcp.signals(116).symbol =  'SpeedgoatCANOpen2Buses100us_B.PowerEnable_au';
     
-xcp.signals(117).symbol =  'SpeedgoatCANOpen2Buses100us_B.TractionRef';
+xcp.signals(117).symbol =  'SpeedgoatCANOpen2Buses100us_B.InitStatus_h';
     
-xcp.signals(118).symbol =  'SpeedgoatCANOpen2Buses100us_B.Gain1_e';
+xcp.signals(118).symbol =  'SpeedgoatCANOpen2Buses100us_B.Constant_g';
     
-xcp.signals(119).symbol =  'SpeedgoatCANOpen2Buses100us_B.SpeedRear_SI';
+xcp.signals(119).symbol =  'SpeedgoatCANOpen2Buses100us_B.DeviceMode_g';
     
-xcp.signals(120).symbol =  'SpeedgoatCANOpen2Buses100us_B.sf_DunkD_Brake_Init_CurrentMode.ClearError';
+xcp.signals(120).symbol =  'SpeedgoatCANOpen2Buses100us_B.ClearError_mj';
     
-xcp.signals(121).symbol =  'SpeedgoatCANOpen2Buses100us_B.sf_DunkD_Brake_Init_CurrentMode.DeviceMode';
+xcp.signals(121).symbol =  'SpeedgoatCANOpen2Buses100us_B.BrakeCtrl_k2';
     
-xcp.signals(122).symbol =  'SpeedgoatCANOpen2Buses100us_B.sf_DunkD_Brake_Init_CurrentMode.BrakeCtrl';
+xcp.signals(122).symbol =  'SpeedgoatCANOpen2Buses100us_B.PowerEnable_p';
     
-xcp.signals(123).symbol =  'SpeedgoatCANOpen2Buses100us_B.sf_DunkD_Brake_Init_CurrentMode.PowerEnable';
+xcp.signals(123).symbol =  'SpeedgoatCANOpen2Buses100us_B.ClearError_n';
     
-xcp.signals(124).symbol =  'SpeedgoatCANOpen2Buses100us_B.sf_DunkD_Brake_Init_CurrentMode.InitStatus';
+xcp.signals(124).symbol =  'SpeedgoatCANOpen2Buses100us_B.DeviceMode_o';
     
-xcp.signals(125).symbol =  'SpeedgoatCANOpen2Buses100us_B.Constant_g';
+xcp.signals(125).symbol =  'SpeedgoatCANOpen2Buses100us_B.BrakeCtrl_b';
     
-xcp.signals(126).symbol =  'SpeedgoatCANOpen2Buses100us_B.DeviceMode_g';
+xcp.signals(126).symbol =  'SpeedgoatCANOpen2Buses100us_B.PowerEnable_a';
     
-xcp.signals(127).symbol =  'SpeedgoatCANOpen2Buses100us_B.ClearError_mj';
+xcp.signals(127).symbol =  'SpeedgoatCANOpen2Buses100us_B.InitStatus_f';
     
-xcp.signals(128).symbol =  'SpeedgoatCANOpen2Buses100us_B.BrakeCtrl_k';
+xcp.signals(128).symbol =  'SpeedgoatCANOpen2Buses100us_B.Constant';
     
-xcp.signals(129).symbol =  'SpeedgoatCANOpen2Buses100us_B.PowerEnable_p';
+xcp.signals(129).symbol =  'SpeedgoatCANOpen2Buses100us_B.DeviceMode_e';
     
-xcp.signals(130).symbol =  'SpeedgoatCANOpen2Buses100us_B.ClearError';
+xcp.signals(130).symbol =  'SpeedgoatCANOpen2Buses100us_B.ClearError_m';
     
-xcp.signals(131).symbol =  'SpeedgoatCANOpen2Buses100us_B.DeviceMode';
+xcp.signals(131).symbol =  'SpeedgoatCANOpen2Buses100us_B.BrakeCtrl_mu';
     
-xcp.signals(132).symbol =  'SpeedgoatCANOpen2Buses100us_B.BrakeCtrl';
+xcp.signals(132).symbol =  'SpeedgoatCANOpen2Buses100us_B.PowerEnable_i';
     
-xcp.signals(133).symbol =  'SpeedgoatCANOpen2Buses100us_B.PowerEnable';
+xcp.signals(133).symbol =  'SpeedgoatCANOpen2Buses100us_B.Sum_b';
     
-xcp.signals(134).symbol =  'SpeedgoatCANOpen2Buses100us_B.InitStatus';
+xcp.signals(134).symbol =  'SpeedgoatCANOpen2Buses100us_B.ClearError_h';
     
-xcp.signals(135).symbol =  'SpeedgoatCANOpen2Buses100us_B.Constant';
+xcp.signals(135).symbol =  'SpeedgoatCANOpen2Buses100us_B.DeviceMode_f';
     
-xcp.signals(136).symbol =  'SpeedgoatCANOpen2Buses100us_B.DeviceMode_e';
+xcp.signals(136).symbol =  'SpeedgoatCANOpen2Buses100us_B.BrakeCtrl_m';
     
-xcp.signals(137).symbol =  'SpeedgoatCANOpen2Buses100us_B.ClearError_m';
+xcp.signals(137).symbol =  'SpeedgoatCANOpen2Buses100us_B.PowerEnable_m';
     
-xcp.signals(138).symbol =  'SpeedgoatCANOpen2Buses100us_B.BrakeCtrl_m';
+xcp.signals(138).symbol =  'SpeedgoatCANOpen2Buses100us_B.InitStatus_k';
     
-xcp.signals(139).symbol =  'SpeedgoatCANOpen2Buses100us_B.PowerEnable_i';
+xcp.signals(139).symbol =  'SpeedgoatCANOpen2Buses100us_B.Constant_m';
     
-xcp.signals(140).symbol =  'SpeedgoatCANOpen2Buses100us_B.Sum_b';
+xcp.signals(140).symbol =  'SpeedgoatCANOpen2Buses100us_B.DeviceMode_h';
     
-xcp.signals(141).symbol =  'SpeedgoatCANOpen2Buses100us_B.sf_DunkB_TiltLeft_Init_CurrentM.ClearError';
+xcp.signals(141).symbol =  'SpeedgoatCANOpen2Buses100us_B.ClearError_jb';
     
-xcp.signals(142).symbol =  'SpeedgoatCANOpen2Buses100us_B.sf_DunkB_TiltLeft_Init_CurrentM.DeviceMode';
+xcp.signals(142).symbol =  'SpeedgoatCANOpen2Buses100us_B.BrakeCtrl_bj';
     
-xcp.signals(143).symbol =  'SpeedgoatCANOpen2Buses100us_B.sf_DunkB_TiltLeft_Init_CurrentM.BrakeCtrl';
+xcp.signals(143).symbol =  'SpeedgoatCANOpen2Buses100us_B.PowerEnable_ar';
     
-xcp.signals(144).symbol =  'SpeedgoatCANOpen2Buses100us_B.sf_DunkB_TiltLeft_Init_CurrentM.PowerEnable';
+xcp.signals(144).symbol =  'SpeedgoatCANOpen2Buses100us_B.ClearError';
     
-xcp.signals(145).symbol =  'SpeedgoatCANOpen2Buses100us_B.sf_DunkB_TiltLeft_Init_CurrentM.InitStatus';
+xcp.signals(145).symbol =  'SpeedgoatCANOpen2Buses100us_B.DeviceMode';
     
-xcp.signals(146).symbol =  'SpeedgoatCANOpen2Buses100us_B.Constant_e';
+xcp.signals(146).symbol =  'SpeedgoatCANOpen2Buses100us_B.BrakeCtrl';
     
-xcp.signals(147).symbol =  'SpeedgoatCANOpen2Buses100us_B.DeviceMode_d';
+xcp.signals(147).symbol =  'SpeedgoatCANOpen2Buses100us_B.PowerEnable';
     
-xcp.signals(148).symbol =  'SpeedgoatCANOpen2Buses100us_B.ClearError_jv';
+xcp.signals(148).symbol =  'SpeedgoatCANOpen2Buses100us_B.InitStatus';
     
-xcp.signals(149).symbol =  'SpeedgoatCANOpen2Buses100us_B.BrakeCtrl_k0';
+xcp.signals(149).symbol =  'SpeedgoatCANOpen2Buses100us_B.Constant_e';
     
-xcp.signals(150).symbol =  'SpeedgoatCANOpen2Buses100us_B.PowerEnable_ir';
+xcp.signals(150).symbol =  'SpeedgoatCANOpen2Buses100us_B.DeviceMode_d';
     
-xcp.signals(151).symbol =  'SpeedgoatCANOpen2Buses100us_B.sf_DunkC_TiltRight_Init_Current.ClearError';
+xcp.signals(151).symbol =  'SpeedgoatCANOpen2Buses100us_B.ClearError_j';
     
-xcp.signals(152).symbol =  'SpeedgoatCANOpen2Buses100us_B.sf_DunkC_TiltRight_Init_Current.DeviceMode';
+xcp.signals(152).symbol =  'SpeedgoatCANOpen2Buses100us_B.BrakeCtrl_k';
     
-xcp.signals(153).symbol =  'SpeedgoatCANOpen2Buses100us_B.sf_DunkC_TiltRight_Init_Current.BrakeCtrl';
+xcp.signals(153).symbol =  'SpeedgoatCANOpen2Buses100us_B.PowerEnable_ir';
     
-xcp.signals(154).symbol =  'SpeedgoatCANOpen2Buses100us_B.sf_DunkC_TiltRight_Init_Current.PowerEnable';
+xcp.signals(154).symbol =  'SpeedgoatCANOpen2Buses100us_B.CANRead_o1';
     
-xcp.signals(155).symbol =  'SpeedgoatCANOpen2Buses100us_B.sf_DunkC_TiltRight_Init_Current.InitStatus';
+xcp.signals(155).symbol =  'SpeedgoatCANOpen2Buses100us_B.CANRead_o2';
     
-xcp.signals(156).symbol =  'SpeedgoatCANOpen2Buses100us_B.Constant_m';
+xcp.signals(156).symbol =  'SpeedgoatCANOpen2Buses100us_B.CANRead_o3';
     
-xcp.signals(157).symbol =  'SpeedgoatCANOpen2Buses100us_B.DeviceMode_h';
+xcp.signals(157).symbol =  'SpeedgoatCANOpen2Buses100us_B.CANRead_o4';
     
-xcp.signals(158).symbol =  'SpeedgoatCANOpen2Buses100us_B.ClearError_j';
+xcp.signals(158).symbol =  'SpeedgoatCANOpen2Buses100us_B.CANRead_o5';
     
-xcp.signals(159).symbol =  'SpeedgoatCANOpen2Buses100us_B.BrakeCtrl_b';
+xcp.signals(159).symbol =  'SpeedgoatCANOpen2Buses100us_B.CANRead_o6';
     
-xcp.signals(160).symbol =  'SpeedgoatCANOpen2Buses100us_B.PowerEnable_a';
+xcp.signals(160).symbol =  'SpeedgoatCANOpen2Buses100us_B.Switch_c';
     
-xcp.signals(161).symbol =  'SpeedgoatCANOpen2Buses100us_B.CANRead_o1';
+xcp.signals(161).symbol =  'SpeedgoatCANOpen2Buses100us_B.Constant_ge';
     
-xcp.signals(162).symbol =  'SpeedgoatCANOpen2Buses100us_B.CANRead_o2';
+xcp.signals(162).symbol =  'SpeedgoatCANOpen2Buses100us_B.CANRead_o1_b';
     
-xcp.signals(163).symbol =  'SpeedgoatCANOpen2Buses100us_B.CANRead_o3';
+xcp.signals(163).symbol =  'SpeedgoatCANOpen2Buses100us_B.CANRead_o2_e';
     
-xcp.signals(164).symbol =  'SpeedgoatCANOpen2Buses100us_B.CANRead_o4';
+xcp.signals(164).symbol =  'SpeedgoatCANOpen2Buses100us_B.CANRead_o3_m';
     
-xcp.signals(165).symbol =  'SpeedgoatCANOpen2Buses100us_B.CANRead_o5';
+xcp.signals(165).symbol =  'SpeedgoatCANOpen2Buses100us_B.CANRead_o4_a';
     
-xcp.signals(166).symbol =  'SpeedgoatCANOpen2Buses100us_B.CANRead_o6';
+xcp.signals(166).symbol =  'SpeedgoatCANOpen2Buses100us_B.CANRead_o5_h';
     
-xcp.signals(167).symbol =  'SpeedgoatCANOpen2Buses100us_B.Switch_c';
+xcp.signals(167).symbol =  'SpeedgoatCANOpen2Buses100us_B.CANRead_o6_h';
     
-xcp.signals(168).symbol =  'SpeedgoatCANOpen2Buses100us_B.Constant_ge';
+xcp.signals(168).symbol =  'SpeedgoatCANOpen2Buses100us_B.Switch_g';
     
-xcp.signals(169).symbol =  'SpeedgoatCANOpen2Buses100us_B.CANRead_o1_b';
+xcp.signals(169).symbol =  'SpeedgoatCANOpen2Buses100us_B.Constant_em';
     
-xcp.signals(170).symbol =  'SpeedgoatCANOpen2Buses100us_B.CANRead_o2_e';
+xcp.signals(170).symbol =  'SpeedgoatCANOpen2Buses100us_B.DispLeftVolt';
     
-xcp.signals(171).symbol =  'SpeedgoatCANOpen2Buses100us_B.CANRead_o3_m';
+xcp.signals(171).symbol =  'SpeedgoatCANOpen2Buses100us_B.DispLeftm';
     
-xcp.signals(172).symbol =  'SpeedgoatCANOpen2Buses100us_B.CANRead_o4_a';
+xcp.signals(172).symbol =  'SpeedgoatCANOpen2Buses100us_B.DispLeftmfilt_k';
     
-xcp.signals(173).symbol =  'SpeedgoatCANOpen2Buses100us_B.CANRead_o5_h';
+xcp.signals(173).symbol =  'SpeedgoatCANOpen2Buses100us_B.DispLeftOffsetVolt';
     
-xcp.signals(174).symbol =  'SpeedgoatCANOpen2Buses100us_B.CANRead_o6_h';
+xcp.signals(174).symbol =  'SpeedgoatCANOpen2Buses100us_B.DiscreteFilter';
     
-xcp.signals(175).symbol =  'SpeedgoatCANOpen2Buses100us_B.Switch_g';
+xcp.signals(175).symbol =  'SpeedgoatCANOpen2Buses100us_B.Integral';
     
-xcp.signals(176).symbol =  'SpeedgoatCANOpen2Buses100us_B.Constant_em';
+xcp.signals(176).symbol =  'SpeedgoatCANOpen2Buses100us_B.DiscreteTimeIntegrator1';
     
-xcp.signals(177).symbol =  'SpeedgoatCANOpen2Buses100us_B.DispLeftVolt';
+xcp.signals(177).symbol =  'SpeedgoatCANOpen2Buses100us_B.AntiWindup';
     
-xcp.signals(178).symbol =  'SpeedgoatCANOpen2Buses100us_B.DispLeftm';
+xcp.signals(178).symbol =  'SpeedgoatCANOpen2Buses100us_B.DerivativeGain';
     
-xcp.signals(179).symbol =  'SpeedgoatCANOpen2Buses100us_B.DispLeftmfilt';
+xcp.signals(179).symbol =  'SpeedgoatCANOpen2Buses100us_B.Derivative';
     
-xcp.signals(180).symbol =  'SpeedgoatCANOpen2Buses100us_B.DispLeftOffsetVolt';
+xcp.signals(180).symbol =  'SpeedgoatCANOpen2Buses100us_B.IntegralGain';
     
-xcp.signals(181).symbol =  'SpeedgoatCANOpen2Buses100us_B.DiscreteFilter';
+xcp.signals(181).symbol =  'SpeedgoatCANOpen2Buses100us_B.Proportional';
     
-xcp.signals(182).symbol =  'SpeedgoatCANOpen2Buses100us_B.Clock';
+xcp.signals(182).symbol =  'SpeedgoatCANOpen2Buses100us_B.c1';
     
-xcp.signals(183).symbol =  'SpeedgoatCANOpen2Buses100us_B.Output';
+xcp.signals(183).symbol =  'SpeedgoatCANOpen2Buses100us_B.Product';
     
-xcp.signals(184).symbol =  'SpeedgoatCANOpen2Buses100us_B.LookUpTable1';
+xcp.signals(184).symbol =  'SpeedgoatCANOpen2Buses100us_B.Product1';
     
-xcp.signals(185).symbol =  'SpeedgoatCANOpen2Buses100us_B.MathFunction';
+xcp.signals(185).symbol =  'SpeedgoatCANOpen2Buses100us_B.Product2';
     
-xcp.signals(186).symbol =  'SpeedgoatCANOpen2Buses100us_B.Sum';
+xcp.signals(186).symbol =  'SpeedgoatCANOpen2Buses100us_B.Saturation';
     
-xcp.signals(187).symbol =  'SpeedgoatCANOpen2Buses100us_B.Compare';
+xcp.signals(187).symbol =  'SpeedgoatCANOpen2Buses100us_B.Sum';
     
-xcp.signals(188).symbol =  'SpeedgoatCANOpen2Buses100us_B.Integral';
+xcp.signals(188).symbol =  'SpeedgoatCANOpen2Buses100us_B.e';
     
-xcp.signals(189).symbol =  'SpeedgoatCANOpen2Buses100us_B.DiscreteTimeIntegrator1';
+xcp.signals(189).symbol =  'SpeedgoatCANOpen2Buses100us_B.Sum2';
     
-xcp.signals(190).symbol =  'SpeedgoatCANOpen2Buses100us_B.AntiWindup';
+xcp.signals(190).symbol =  'SpeedgoatCANOpen2Buses100us_B.Sum3';
     
-xcp.signals(191).symbol =  'SpeedgoatCANOpen2Buses100us_B.DerivativeGain';
+xcp.signals(191).symbol =  'SpeedgoatCANOpen2Buses100us_B.Sum4';
     
-xcp.signals(192).symbol =  'SpeedgoatCANOpen2Buses100us_B.FF_En';
-    
-xcp.signals(193).symbol =  'SpeedgoatCANOpen2Buses100us_B.Derivative';
-    
-xcp.signals(194).symbol =  'SpeedgoatCANOpen2Buses100us_B.Gain';
-    
-xcp.signals(195).symbol =  'SpeedgoatCANOpen2Buses100us_B.IntegralGain';
-    
-xcp.signals(196).symbol =  'SpeedgoatCANOpen2Buses100us_B.Proportional';
-    
-xcp.signals(197).symbol =  'SpeedgoatCANOpen2Buses100us_B.Product';
-    
-xcp.signals(198).symbol =  'SpeedgoatCANOpen2Buses100us_B.Product1';
-    
-xcp.signals(199).symbol =  'SpeedgoatCANOpen2Buses100us_B.Product2';
-    
-xcp.signals(200).symbol =  'SpeedgoatCANOpen2Buses100us_B.Saturation';
-    
-xcp.signals(201).symbol =  'SpeedgoatCANOpen2Buses100us_B.Sum_a';
-    
-xcp.signals(202).symbol =  'SpeedgoatCANOpen2Buses100us_B.e';
-    
-xcp.signals(203).symbol =  'SpeedgoatCANOpen2Buses100us_B.Sum2';
-    
-xcp.signals(204).symbol =  'SpeedgoatCANOpen2Buses100us_B.Sum3';
-    
-xcp.signals(205).symbol =  'SpeedgoatCANOpen2Buses100us_B.Sum4';
-    
-xcp.signals(206).symbol =  'SpeedgoatCANOpen2Buses100us_B.FeedForward_a';
+xcp.signals(192).symbol =  'SpeedgoatCANOpen2Buses100us_B.Compare';
          
 xcp.parameters(1).symbol = 'SpeedgoatCANOpen2Buses100us_P.Constant_Value_e';
 xcp.parameters(1).size   =  1;       
@@ -627,284 +591,209 @@ xcp.parameters(38).size   =  1;
 xcp.parameters(38).dtname = 'real_T'; 
 xcp.parameters(39).baseaddr = '&SpeedgoatCANOpen2Buses100us_P.inc2deg_Gain';     
          
-xcp.parameters(39).symbol = 'SpeedgoatCANOpen2Buses100us_P.Memory1_InitialCondition_f';
+xcp.parameters(39).symbol = 'SpeedgoatCANOpen2Buses100us_P.Memory1_InitialCondition';
 xcp.parameters(39).size   =  1;       
 xcp.parameters(39).dtname = 'real_T'; 
-xcp.parameters(40).baseaddr = '&SpeedgoatCANOpen2Buses100us_P.Memory1_InitialCondition_f';     
+xcp.parameters(40).baseaddr = '&SpeedgoatCANOpen2Buses100us_P.Memory1_InitialCondition';     
          
 xcp.parameters(40).symbol = 'SpeedgoatCANOpen2Buses100us_P.Constant_Value';
 xcp.parameters(40).size   =  1;       
 xcp.parameters(40).dtname = 'real_T'; 
 xcp.parameters(41).baseaddr = '&SpeedgoatCANOpen2Buses100us_P.Constant_Value';     
          
-xcp.parameters(41).symbol = 'SpeedgoatCANOpen2Buses100us_P.RepeatingSequence_rep_seq_y';
-xcp.parameters(41).size   =  8;       
+xcp.parameters(41).symbol = 'SpeedgoatCANOpen2Buses100us_P.PID_ctrl_Kp';
+xcp.parameters(41).size   =  1;       
 xcp.parameters(41).dtname = 'real_T'; 
-xcp.parameters(42).baseaddr = '&SpeedgoatCANOpen2Buses100us_P.RepeatingSequence_rep_seq_y[0]';     
+xcp.parameters(42).baseaddr = '&SpeedgoatCANOpen2Buses100us_P.PID_ctrl_Kp';     
          
-xcp.parameters(42).symbol = 'SpeedgoatCANOpen2Buses100us_P.Constant_Value_ce';
+xcp.parameters(42).symbol = 'SpeedgoatCANOpen2Buses100us_P.PID_ctrl_Ki';
 xcp.parameters(42).size   =  1;       
 xcp.parameters(42).dtname = 'real_T'; 
-xcp.parameters(43).baseaddr = '&SpeedgoatCANOpen2Buses100us_P.Constant_Value_ce';     
+xcp.parameters(43).baseaddr = '&SpeedgoatCANOpen2Buses100us_P.PID_ctrl_Ki';     
          
-xcp.parameters(43).symbol = 'SpeedgoatCANOpen2Buses100us_P.Constant1_Value';
+xcp.parameters(43).symbol = 'SpeedgoatCANOpen2Buses100us_P.PID_ctrl_Kd';
 xcp.parameters(43).size   =  1;       
 xcp.parameters(43).dtname = 'real_T'; 
-xcp.parameters(44).baseaddr = '&SpeedgoatCANOpen2Buses100us_P.Constant1_Value';     
+xcp.parameters(44).baseaddr = '&SpeedgoatCANOpen2Buses100us_P.PID_ctrl_Kd';     
          
-xcp.parameters(44).symbol = 'SpeedgoatCANOpen2Buses100us_P.Amp2mAmp_conv1_Gain';
+xcp.parameters(44).symbol = 'SpeedgoatCANOpen2Buses100us_P.PID_ctrl_N';
 xcp.parameters(44).size   =  1;       
 xcp.parameters(44).dtname = 'real_T'; 
-xcp.parameters(45).baseaddr = '&SpeedgoatCANOpen2Buses100us_P.Amp2mAmp_conv1_Gain';     
+xcp.parameters(45).baseaddr = '&SpeedgoatCANOpen2Buses100us_P.PID_ctrl_N';     
          
-xcp.parameters(45).symbol = 'SpeedgoatCANOpen2Buses100us_P.Amp2mAmp_conv2_Gain';
+xcp.parameters(45).symbol = 'SpeedgoatCANOpen2Buses100us_P.PID_ctrl_Req_lim';
 xcp.parameters(45).size   =  1;       
 xcp.parameters(45).dtname = 'real_T'; 
-xcp.parameters(46).baseaddr = '&SpeedgoatCANOpen2Buses100us_P.Amp2mAmp_conv2_Gain';     
+xcp.parameters(46).baseaddr = '&SpeedgoatCANOpen2Buses100us_P.PID_ctrl_Req_lim';     
          
-xcp.parameters(46).symbol = 'SpeedgoatCANOpen2Buses100us_P.degree2m_Gain';
+xcp.parameters(46).symbol = 'SpeedgoatCANOpen2Buses100us_P.Constant_Value_c';
 xcp.parameters(46).size   =  1;       
 xcp.parameters(46).dtname = 'real_T'; 
-xcp.parameters(47).baseaddr = '&SpeedgoatCANOpen2Buses100us_P.degree2m_Gain';     
+xcp.parameters(47).baseaddr = '&SpeedgoatCANOpen2Buses100us_P.Constant_Value_c';     
          
-xcp.parameters(47).symbol = 'SpeedgoatCANOpen2Buses100us_P.n_Gain';
+xcp.parameters(47).symbol = 'SpeedgoatCANOpen2Buses100us_P.Gain_Gain';
 xcp.parameters(47).size   =  1;       
-xcp.parameters(47).dtname = 'real32_T'; 
-xcp.parameters(48).baseaddr = '&SpeedgoatCANOpen2Buses100us_P.n_Gain';     
+xcp.parameters(47).dtname = 'int32_T'; 
+xcp.parameters(48).baseaddr = '&SpeedgoatCANOpen2Buses100us_P.Gain_Gain';     
          
-xcp.parameters(48).symbol = 'SpeedgoatCANOpen2Buses100us_P.SineWave_Amp_d';
+xcp.parameters(48).symbol = 'SpeedgoatCANOpen2Buses100us_P.degree2m_Gain';
 xcp.parameters(48).size   =  1;       
 xcp.parameters(48).dtname = 'real_T'; 
-xcp.parameters(49).baseaddr = '&SpeedgoatCANOpen2Buses100us_P.SineWave_Amp_d';     
+xcp.parameters(49).baseaddr = '&SpeedgoatCANOpen2Buses100us_P.degree2m_Gain';     
          
-xcp.parameters(49).symbol = 'SpeedgoatCANOpen2Buses100us_P.SineWave_Bias_f';
+xcp.parameters(49).symbol = 'SpeedgoatCANOpen2Buses100us_P.n_Gain';
 xcp.parameters(49).size   =  1;       
-xcp.parameters(49).dtname = 'real_T'; 
-xcp.parameters(50).baseaddr = '&SpeedgoatCANOpen2Buses100us_P.SineWave_Bias_f';     
+xcp.parameters(49).dtname = 'real32_T'; 
+xcp.parameters(50).baseaddr = '&SpeedgoatCANOpen2Buses100us_P.n_Gain';     
          
-xcp.parameters(50).symbol = 'SpeedgoatCANOpen2Buses100us_P.SineWave_Freq_d';
+xcp.parameters(50).symbol = 'SpeedgoatCANOpen2Buses100us_P.Gain1_Gain_n';
 xcp.parameters(50).size   =  1;       
-xcp.parameters(50).dtname = 'real_T'; 
-xcp.parameters(51).baseaddr = '&SpeedgoatCANOpen2Buses100us_P.SineWave_Freq_d';     
+xcp.parameters(50).dtname = 'real32_T'; 
+xcp.parameters(51).baseaddr = '&SpeedgoatCANOpen2Buses100us_P.Gain1_Gain_n';     
          
-xcp.parameters(51).symbol = 'SpeedgoatCANOpen2Buses100us_P.SineWave_Phase_d';
+xcp.parameters(51).symbol = 'SpeedgoatCANOpen2Buses100us_P.Gain2_Gain_k';
 xcp.parameters(51).size   =  1;       
-xcp.parameters(51).dtname = 'real_T'; 
-xcp.parameters(52).baseaddr = '&SpeedgoatCANOpen2Buses100us_P.SineWave_Phase_d';     
+xcp.parameters(51).dtname = 'int16_T'; 
+xcp.parameters(52).baseaddr = '&SpeedgoatCANOpen2Buses100us_P.Gain2_Gain_k';     
          
-xcp.parameters(52).symbol = 'SpeedgoatCANOpen2Buses100us_P.ManualSwitch_CurrentSetting';
+xcp.parameters(52).symbol = 'SpeedgoatCANOpen2Buses100us_P.WheelRadius_Gain';
 xcp.parameters(52).size   =  1;       
-xcp.parameters(52).dtname = 'uint8_T'; 
-xcp.parameters(53).baseaddr = '&SpeedgoatCANOpen2Buses100us_P.ManualSwitch_CurrentSetting';     
+xcp.parameters(52).dtname = 'int32_T'; 
+xcp.parameters(53).baseaddr = '&SpeedgoatCANOpen2Buses100us_P.WheelRadius_Gain';     
          
-xcp.parameters(53).symbol = 'SpeedgoatCANOpen2Buses100us_P.ManualSwitch1_CurrentSetting';
+xcp.parameters(53).symbol = 'SpeedgoatCANOpen2Buses100us_P.Constant_Value_h';
 xcp.parameters(53).size   =  1;       
-xcp.parameters(53).dtname = 'uint8_T'; 
-xcp.parameters(54).baseaddr = '&SpeedgoatCANOpen2Buses100us_P.ManualSwitch1_CurrentSetting';     
+xcp.parameters(53).dtname = 'real32_T'; 
+xcp.parameters(54).baseaddr = '&SpeedgoatCANOpen2Buses100us_P.Constant_Value_h';     
          
-xcp.parameters(54).symbol = 'SpeedgoatCANOpen2Buses100us_P.Gain1_Gain_n';
+xcp.parameters(54).symbol = 'SpeedgoatCANOpen2Buses100us_P.Constant_Value_l';
 xcp.parameters(54).size   =  1;       
 xcp.parameters(54).dtname = 'real32_T'; 
-xcp.parameters(55).baseaddr = '&SpeedgoatCANOpen2Buses100us_P.Gain1_Gain_n';     
+xcp.parameters(55).baseaddr = '&SpeedgoatCANOpen2Buses100us_P.Constant_Value_l';     
          
-xcp.parameters(55).symbol = 'SpeedgoatCANOpen2Buses100us_P.Gain2_Gain_k';
+xcp.parameters(55).symbol = 'SpeedgoatCANOpen2Buses100us_P.CompareToConstant_const';
 xcp.parameters(55).size   =  1;       
-xcp.parameters(55).dtname = 'int16_T'; 
-xcp.parameters(56).baseaddr = '&SpeedgoatCANOpen2Buses100us_P.Gain2_Gain_k';     
+xcp.parameters(55).dtname = 'real32_T'; 
+xcp.parameters(56).baseaddr = '&SpeedgoatCANOpen2Buses100us_P.CompareToConstant_const';     
          
-xcp.parameters(56).symbol = 'SpeedgoatCANOpen2Buses100us_P.WheelRadius_Gain';
+xcp.parameters(56).symbol = 'SpeedgoatCANOpen2Buses100us_P.Constant_Value_j';
 xcp.parameters(56).size   =  1;       
-xcp.parameters(56).dtname = 'int32_T'; 
-xcp.parameters(57).baseaddr = '&SpeedgoatCANOpen2Buses100us_P.WheelRadius_Gain';     
+xcp.parameters(56).dtname = 'real32_T'; 
+xcp.parameters(57).baseaddr = '&SpeedgoatCANOpen2Buses100us_P.Constant_Value_j';     
          
-xcp.parameters(57).symbol = 'SpeedgoatCANOpen2Buses100us_P.Constant_Value_h';
+xcp.parameters(57).symbol = 'SpeedgoatCANOpen2Buses100us_P.Constant_Value_n';
 xcp.parameters(57).size   =  1;       
 xcp.parameters(57).dtname = 'real32_T'; 
-xcp.parameters(58).baseaddr = '&SpeedgoatCANOpen2Buses100us_P.Constant_Value_h';     
+xcp.parameters(58).baseaddr = '&SpeedgoatCANOpen2Buses100us_P.Constant_Value_n';     
          
-xcp.parameters(58).symbol = 'SpeedgoatCANOpen2Buses100us_P.Constant_Value_l';
-xcp.parameters(58).size   =  1;       
-xcp.parameters(58).dtname = 'real32_T'; 
-xcp.parameters(59).baseaddr = '&SpeedgoatCANOpen2Buses100us_P.Constant_Value_l';     
+xcp.parameters(58).symbol = 'SpeedgoatCANOpen2Buses100us_P.CANRead_P1';
+xcp.parameters(58).size   =  6;       
+xcp.parameters(58).dtname = 'real_T'; 
+xcp.parameters(59).baseaddr = '&SpeedgoatCANOpen2Buses100us_P.CANRead_P1[0]';     
          
-xcp.parameters(59).symbol = 'SpeedgoatCANOpen2Buses100us_P.CompareToConstant_const';
+xcp.parameters(59).symbol = 'SpeedgoatCANOpen2Buses100us_P.Switch_Threshold';
 xcp.parameters(59).size   =  1;       
-xcp.parameters(59).dtname = 'real32_T'; 
-xcp.parameters(60).baseaddr = '&SpeedgoatCANOpen2Buses100us_P.CompareToConstant_const';     
+xcp.parameters(59).dtname = 'uint8_T'; 
+xcp.parameters(60).baseaddr = '&SpeedgoatCANOpen2Buses100us_P.Switch_Threshold';     
          
-xcp.parameters(60).symbol = 'SpeedgoatCANOpen2Buses100us_P.Constant_Value_n';
+xcp.parameters(60).symbol = 'SpeedgoatCANOpen2Buses100us_P.Constant_Value_kp';
 xcp.parameters(60).size   =  1;       
-xcp.parameters(60).dtname = 'real32_T'; 
-xcp.parameters(61).baseaddr = '&SpeedgoatCANOpen2Buses100us_P.Constant_Value_n';     
+xcp.parameters(60).dtname = 'uint8_T'; 
+xcp.parameters(61).baseaddr = '&SpeedgoatCANOpen2Buses100us_P.Constant_Value_kp';     
          
-xcp.parameters(61).symbol = 'SpeedgoatCANOpen2Buses100us_P.Constant_Value_j';
-xcp.parameters(61).size   =  1;       
-xcp.parameters(61).dtname = 'real32_T'; 
-xcp.parameters(62).baseaddr = '&SpeedgoatCANOpen2Buses100us_P.Constant_Value_j';     
+xcp.parameters(61).symbol = 'SpeedgoatCANOpen2Buses100us_P.CANWrite_P1';
+xcp.parameters(61).size   =  7;       
+xcp.parameters(61).dtname = 'real_T'; 
+xcp.parameters(62).baseaddr = '&SpeedgoatCANOpen2Buses100us_P.CANWrite_P1[0]';     
          
-xcp.parameters(62).symbol = 'SpeedgoatCANOpen2Buses100us_P.CANRead_P1';
+xcp.parameters(62).symbol = 'SpeedgoatCANOpen2Buses100us_P.CANRead_P1_n';
 xcp.parameters(62).size   =  6;       
 xcp.parameters(62).dtname = 'real_T'; 
-xcp.parameters(63).baseaddr = '&SpeedgoatCANOpen2Buses100us_P.CANRead_P1[0]';     
+xcp.parameters(63).baseaddr = '&SpeedgoatCANOpen2Buses100us_P.CANRead_P1_n[0]';     
          
-xcp.parameters(63).symbol = 'SpeedgoatCANOpen2Buses100us_P.Switch_Threshold';
+xcp.parameters(63).symbol = 'SpeedgoatCANOpen2Buses100us_P.Switch_Threshold_l';
 xcp.parameters(63).size   =  1;       
 xcp.parameters(63).dtname = 'uint8_T'; 
-xcp.parameters(64).baseaddr = '&SpeedgoatCANOpen2Buses100us_P.Switch_Threshold';     
+xcp.parameters(64).baseaddr = '&SpeedgoatCANOpen2Buses100us_P.Switch_Threshold_l';     
          
-xcp.parameters(64).symbol = 'SpeedgoatCANOpen2Buses100us_P.Constant_Value_kp';
+xcp.parameters(64).symbol = 'SpeedgoatCANOpen2Buses100us_P.Constant_Value_nv';
 xcp.parameters(64).size   =  1;       
 xcp.parameters(64).dtname = 'uint8_T'; 
-xcp.parameters(65).baseaddr = '&SpeedgoatCANOpen2Buses100us_P.Constant_Value_kp';     
+xcp.parameters(65).baseaddr = '&SpeedgoatCANOpen2Buses100us_P.Constant_Value_nv';     
          
-xcp.parameters(65).symbol = 'SpeedgoatCANOpen2Buses100us_P.CANWrite_P1';
+xcp.parameters(65).symbol = 'SpeedgoatCANOpen2Buses100us_P.CANWrite_P1_h';
 xcp.parameters(65).size   =  7;       
 xcp.parameters(65).dtname = 'real_T'; 
-xcp.parameters(66).baseaddr = '&SpeedgoatCANOpen2Buses100us_P.CANWrite_P1[0]';     
+xcp.parameters(66).baseaddr = '&SpeedgoatCANOpen2Buses100us_P.CANWrite_P1_h[0]';     
          
-xcp.parameters(66).symbol = 'SpeedgoatCANOpen2Buses100us_P.CANRead_P1_n';
-xcp.parameters(66).size   =  6;       
+xcp.parameters(66).symbol = 'SpeedgoatCANOpen2Buses100us_P.Offsetfor0deg35064V5702mm_Value';
+xcp.parameters(66).size   =  1;       
 xcp.parameters(66).dtname = 'real_T'; 
-xcp.parameters(67).baseaddr = '&SpeedgoatCANOpen2Buses100us_P.CANRead_P1_n[0]';     
+xcp.parameters(67).baseaddr = '&SpeedgoatCANOpen2Buses100us_P.Offsetfor0deg35064V5702mm_Value';     
          
-xcp.parameters(67).symbol = 'SpeedgoatCANOpen2Buses100us_P.Switch_Threshold_l';
+xcp.parameters(67).symbol = 'SpeedgoatCANOpen2Buses100us_P.LSB2Volt_Gain';
 xcp.parameters(67).size   =  1;       
-xcp.parameters(67).dtname = 'uint8_T'; 
-xcp.parameters(68).baseaddr = '&SpeedgoatCANOpen2Buses100us_P.Switch_Threshold_l';     
+xcp.parameters(67).dtname = 'int16_T'; 
+xcp.parameters(68).baseaddr = '&SpeedgoatCANOpen2Buses100us_P.LSB2Volt_Gain';     
          
-xcp.parameters(68).symbol = 'SpeedgoatCANOpen2Buses100us_P.Constant_Value_nv';
+xcp.parameters(68).symbol = 'SpeedgoatCANOpen2Buses100us_P.Volt2meter_Gain';
 xcp.parameters(68).size   =  1;       
-xcp.parameters(68).dtname = 'uint8_T'; 
-xcp.parameters(69).baseaddr = '&SpeedgoatCANOpen2Buses100us_P.Constant_Value_nv';     
+xcp.parameters(68).dtname = 'real_T'; 
+xcp.parameters(69).baseaddr = '&SpeedgoatCANOpen2Buses100us_P.Volt2meter_Gain';     
          
-xcp.parameters(69).symbol = 'SpeedgoatCANOpen2Buses100us_P.CANWrite_P1_h';
-xcp.parameters(69).size   =  7;       
+xcp.parameters(69).symbol = 'SpeedgoatCANOpen2Buses100us_P.Memory1_InitialCondition_k';
+xcp.parameters(69).size   =  1;       
 xcp.parameters(69).dtname = 'real_T'; 
-xcp.parameters(70).baseaddr = '&SpeedgoatCANOpen2Buses100us_P.CANWrite_P1_h[0]';     
+xcp.parameters(70).baseaddr = '&SpeedgoatCANOpen2Buses100us_P.Memory1_InitialCondition_k';     
          
-xcp.parameters(70).symbol = 'SpeedgoatCANOpen2Buses100us_P.Offsetfor0deg35064V5702mm_Value';
-xcp.parameters(70).size   =  1;       
+xcp.parameters(70).symbol = 'SpeedgoatCANOpen2Buses100us_P.DiscreteFilter_NumCoef';
+xcp.parameters(70).size   =  3;       
 xcp.parameters(70).dtname = 'real_T'; 
-xcp.parameters(71).baseaddr = '&SpeedgoatCANOpen2Buses100us_P.Offsetfor0deg35064V5702mm_Value';     
+xcp.parameters(71).baseaddr = '&SpeedgoatCANOpen2Buses100us_P.DiscreteFilter_NumCoef[0]';     
          
-xcp.parameters(71).symbol = 'SpeedgoatCANOpen2Buses100us_P.LSB2Volt_Gain';
-xcp.parameters(71).size   =  1;       
-xcp.parameters(71).dtname = 'int16_T'; 
-xcp.parameters(72).baseaddr = '&SpeedgoatCANOpen2Buses100us_P.LSB2Volt_Gain';     
+xcp.parameters(71).symbol = 'SpeedgoatCANOpen2Buses100us_P.DiscreteFilter_DenCoef';
+xcp.parameters(71).size   =  3;       
+xcp.parameters(71).dtname = 'real_T'; 
+xcp.parameters(72).baseaddr = '&SpeedgoatCANOpen2Buses100us_P.DiscreteFilter_DenCoef[0]';     
          
-xcp.parameters(72).symbol = 'SpeedgoatCANOpen2Buses100us_P.Volt2meter_Gain';
+xcp.parameters(72).symbol = 'SpeedgoatCANOpen2Buses100us_P.DiscreteFilter_InitialStates';
 xcp.parameters(72).size   =  1;       
 xcp.parameters(72).dtname = 'real_T'; 
-xcp.parameters(73).baseaddr = '&SpeedgoatCANOpen2Buses100us_P.Volt2meter_Gain';     
+xcp.parameters(73).baseaddr = '&SpeedgoatCANOpen2Buses100us_P.DiscreteFilter_InitialStates';     
          
-xcp.parameters(73).symbol = 'SpeedgoatCANOpen2Buses100us_P.Memory1_InitialCondition';
+xcp.parameters(73).symbol = 'SpeedgoatCANOpen2Buses100us_P.DiscreteTimeIntegrator_gainval';
 xcp.parameters(73).size   =  1;       
 xcp.parameters(73).dtname = 'real_T'; 
-xcp.parameters(74).baseaddr = '&SpeedgoatCANOpen2Buses100us_P.Memory1_InitialCondition';     
+xcp.parameters(74).baseaddr = '&SpeedgoatCANOpen2Buses100us_P.DiscreteTimeIntegrator_gainval';     
          
-xcp.parameters(74).symbol = 'SpeedgoatCANOpen2Buses100us_P.DiscreteFilter_NumCoef';
-xcp.parameters(74).size   =  3;       
+xcp.parameters(74).symbol = 'SpeedgoatCANOpen2Buses100us_P.DiscreteTimeIntegrator_IC';
+xcp.parameters(74).size   =  1;       
 xcp.parameters(74).dtname = 'real_T'; 
-xcp.parameters(75).baseaddr = '&SpeedgoatCANOpen2Buses100us_P.DiscreteFilter_NumCoef[0]';     
+xcp.parameters(75).baseaddr = '&SpeedgoatCANOpen2Buses100us_P.DiscreteTimeIntegrator_IC';     
          
-xcp.parameters(75).symbol = 'SpeedgoatCANOpen2Buses100us_P.DiscreteFilter_DenCoef';
-xcp.parameters(75).size   =  3;       
+xcp.parameters(75).symbol = 'SpeedgoatCANOpen2Buses100us_P.DiscreteTimeIntegrator1_gainval';
+xcp.parameters(75).size   =  1;       
 xcp.parameters(75).dtname = 'real_T'; 
-xcp.parameters(76).baseaddr = '&SpeedgoatCANOpen2Buses100us_P.DiscreteFilter_DenCoef[0]';     
+xcp.parameters(76).baseaddr = '&SpeedgoatCANOpen2Buses100us_P.DiscreteTimeIntegrator1_gainval';     
          
-xcp.parameters(76).symbol = 'SpeedgoatCANOpen2Buses100us_P.DiscreteFilter_InitialStates';
+xcp.parameters(76).symbol = 'SpeedgoatCANOpen2Buses100us_P.DiscreteTimeIntegrator1_IC';
 xcp.parameters(76).size   =  1;       
 xcp.parameters(76).dtname = 'real_T'; 
-xcp.parameters(77).baseaddr = '&SpeedgoatCANOpen2Buses100us_P.DiscreteFilter_InitialStates';     
+xcp.parameters(77).baseaddr = '&SpeedgoatCANOpen2Buses100us_P.DiscreteTimeIntegrator1_IC';     
          
-xcp.parameters(77).symbol = 'SpeedgoatCANOpen2Buses100us_P.Constant_Value_c';
+xcp.parameters(77).symbol = 'SpeedgoatCANOpen2Buses100us_P.c1_Gain';
 xcp.parameters(77).size   =  1;       
 xcp.parameters(77).dtname = 'real_T'; 
-xcp.parameters(78).baseaddr = '&SpeedgoatCANOpen2Buses100us_P.Constant_Value_c';     
-         
-xcp.parameters(78).symbol = 'SpeedgoatCANOpen2Buses100us_P.LookUpTable1_bp01Data';
-xcp.parameters(78).size   =  8;       
-xcp.parameters(78).dtname = 'real_T'; 
-xcp.parameters(79).baseaddr = '&SpeedgoatCANOpen2Buses100us_P.LookUpTable1_bp01Data[0]';     
-         
-xcp.parameters(79).symbol = 'SpeedgoatCANOpen2Buses100us_P.PI_ctrl_Kp';
-xcp.parameters(79).size   =  1;       
-xcp.parameters(79).dtname = 'real_T'; 
-xcp.parameters(80).baseaddr = '&SpeedgoatCANOpen2Buses100us_P.PI_ctrl_Kp';     
-         
-xcp.parameters(80).symbol = 'SpeedgoatCANOpen2Buses100us_P.PI_ctrl_Ki';
-xcp.parameters(80).size   =  1;       
-xcp.parameters(80).dtname = 'real_T'; 
-xcp.parameters(81).baseaddr = '&SpeedgoatCANOpen2Buses100us_P.PI_ctrl_Ki';     
-         
-xcp.parameters(81).symbol = 'SpeedgoatCANOpen2Buses100us_P.PI_ctrl_Kd';
-xcp.parameters(81).size   =  1;       
-xcp.parameters(81).dtname = 'real_T'; 
-xcp.parameters(82).baseaddr = '&SpeedgoatCANOpen2Buses100us_P.PI_ctrl_Kd';     
-         
-xcp.parameters(82).symbol = 'SpeedgoatCANOpen2Buses100us_P.PI_ctrl_N';
-xcp.parameters(82).size   =  1;       
-xcp.parameters(82).dtname = 'real_T'; 
-xcp.parameters(83).baseaddr = '&SpeedgoatCANOpen2Buses100us_P.PI_ctrl_N';     
-         
-xcp.parameters(83).symbol = 'SpeedgoatCANOpen2Buses100us_P.PI_ctrl_FF_En';
-xcp.parameters(83).size   =  1;       
-xcp.parameters(83).dtname = 'real_T'; 
-xcp.parameters(84).baseaddr = '&SpeedgoatCANOpen2Buses100us_P.PI_ctrl_FF_En';     
-         
-xcp.parameters(84).symbol = 'SpeedgoatCANOpen2Buses100us_P.PI_ctrl_Req_lim';
-xcp.parameters(84).size   =  1;       
-xcp.parameters(84).dtname = 'real_T'; 
-xcp.parameters(85).baseaddr = '&SpeedgoatCANOpen2Buses100us_P.PI_ctrl_Req_lim';     
-         
-xcp.parameters(85).symbol = 'SpeedgoatCANOpen2Buses100us_P.DiscreteTimeIntegrator_gainval';
-xcp.parameters(85).size   =  1;       
-xcp.parameters(85).dtname = 'real_T'; 
-xcp.parameters(86).baseaddr = '&SpeedgoatCANOpen2Buses100us_P.DiscreteTimeIntegrator_gainval';     
-         
-xcp.parameters(86).symbol = 'SpeedgoatCANOpen2Buses100us_P.DiscreteTimeIntegrator_IC';
-xcp.parameters(86).size   =  1;       
-xcp.parameters(86).dtname = 'real_T'; 
-xcp.parameters(87).baseaddr = '&SpeedgoatCANOpen2Buses100us_P.DiscreteTimeIntegrator_IC';     
-         
-xcp.parameters(87).symbol = 'SpeedgoatCANOpen2Buses100us_P.DiscreteTimeIntegrator1_gainval';
-xcp.parameters(87).size   =  1;       
-xcp.parameters(87).dtname = 'real_T'; 
-xcp.parameters(88).baseaddr = '&SpeedgoatCANOpen2Buses100us_P.DiscreteTimeIntegrator1_gainval';     
-         
-xcp.parameters(88).symbol = 'SpeedgoatCANOpen2Buses100us_P.DiscreteTimeIntegrator1_IC';
-xcp.parameters(88).size   =  1;       
-xcp.parameters(88).dtname = 'real_T'; 
-xcp.parameters(89).baseaddr = '&SpeedgoatCANOpen2Buses100us_P.DiscreteTimeIntegrator1_IC';     
-         
-xcp.parameters(89).symbol = 'SpeedgoatCANOpen2Buses100us_P.Gain_Gain';
-xcp.parameters(89).size   =  1;       
-xcp.parameters(89).dtname = 'real_T'; 
-xcp.parameters(90).baseaddr = '&SpeedgoatCANOpen2Buses100us_P.Gain_Gain';     
-         
-xcp.parameters(90).symbol = 'SpeedgoatCANOpen2Buses100us_P.FeedForward_NumCoef';
-xcp.parameters(90).size   =  2;       
-xcp.parameters(90).dtname = 'real_T'; 
-xcp.parameters(91).baseaddr = '&SpeedgoatCANOpen2Buses100us_P.FeedForward_NumCoef[0]';     
-         
-xcp.parameters(91).symbol = 'SpeedgoatCANOpen2Buses100us_P.FeedForward_DenCoef';
-xcp.parameters(91).size   =  2;       
-xcp.parameters(91).dtname = 'real_T'; 
-xcp.parameters(92).baseaddr = '&SpeedgoatCANOpen2Buses100us_P.FeedForward_DenCoef[0]';     
-         
-xcp.parameters(92).symbol = 'SpeedgoatCANOpen2Buses100us_P.FeedForward_InitialStates';
-xcp.parameters(92).size   =  1;       
-xcp.parameters(92).dtname = 'real_T'; 
-xcp.parameters(93).baseaddr = '&SpeedgoatCANOpen2Buses100us_P.FeedForward_InitialStates';     
+xcp.parameters(78).baseaddr = '&SpeedgoatCANOpen2Buses100us_P.c1_Gain';     
 
 function n = getNumParameters
-n = 92;
+n = 77;
 
 function n = getNumSignals
-n = 206;
+n = 192;
 
 function n = getNumEvents
-n = 4;
+n = 2;
 
 function n = getNumModels
 n = 1;
