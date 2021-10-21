@@ -1437,7 +1437,21 @@ Average</sigName>
 				<SubSystem>
 		<Name>BrakeControl</Name>
 		<xPCName>SpeedgoatCANOpen2Buses100us/Trike Application Layer/System_Control/BrakeControl</xPCName>
+				<SubSystem>
+		<Name>MATLAB Function</Name>
+		<xPCName>SpeedgoatCANOpen2Buses100us/Trike Application Layer/System_Control/BrakeControl/MATLAB Function</xPCName>
 		
+		
+
+		</SubSystem>
+		<SubSystem>
+		<Name>Retract</Name>
+		<xPCName>SpeedgoatCANOpen2Buses100us/Trike Application Layer/System_Control/BrakeControl/Retract</xPCName>
+		
+		
+
+		</SubSystem>
+
 		
             <block>
             <blkName>offset</blkName>
@@ -1495,6 +1509,17 @@ Average</sigName>
           </parameter>
           </block>
             <block>
+            <blkName>Gain4</blkName>
+            <xpcblkName>Trike Application Layer/System_Control/BrakeControl/Gain4</xpcblkName>
+            <SLblockPath>SpeedgoatCANOpen2Buses100us/Trike Application Layer/System_Control/BrakeControl/Gain4</SLblockPath>
+            <isSrc>[0 1 1]</isSrc>
+          <parameter>
+          <paramName>Gain</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>SpeedgoatCANOpen2Buses100us/Trike Application Layer/System_Control/BrakeControl</SubSystemName>
+          </parameter>
+          </block>
+            <block>
             <blkName>Saturation</blkName>
             <xpcblkName>Trike Application Layer/System_Control/BrakeControl/Saturation</xpcblkName>
             <SLblockPath>SpeedgoatCANOpen2Buses100us/Trike Application Layer/System_Control/BrakeControl/Saturation</SLblockPath>
@@ -1526,11 +1551,84 @@ Average</sigName>
 		  <SubSystemName>SpeedgoatCANOpen2Buses100us/Trike Application Layer/System_Control/BrakeControl</SubSystemName>
           </parameter>
           </block>
+            <block>
+            <blkName>Saturation2</blkName>
+            <xpcblkName>Trike Application Layer/System_Control/BrakeControl/Saturation2</xpcblkName>
+            <SLblockPath>SpeedgoatCANOpen2Buses100us/Trike Application Layer/System_Control/BrakeControl/Saturation2</SLblockPath>
+            <isSrc>[0 1 1]</isSrc>
+          <parameter>
+          <paramName>UpperLimit</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>SpeedgoatCANOpen2Buses100us/Trike Application Layer/System_Control/BrakeControl</SubSystemName>
+          </parameter>
+          <parameter>
+          <paramName>LowerLimit</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>SpeedgoatCANOpen2Buses100us/Trike Application Layer/System_Control/BrakeControl</SubSystemName>
+          </parameter>
+          </block>
+            <block>
+            <blkName>Delay</blkName>
+            <xpcblkName>Trike Application Layer/System_Control/BrakeControl/Delay</xpcblkName>
+            <SLblockPath>SpeedgoatCANOpen2Buses100us/Trike Application Layer/System_Control/BrakeControl/Delay</SLblockPath>
+            <isSrc>[0 1 1]</isSrc>
+          <parameter>
+          <paramName>DelayLength</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>SpeedgoatCANOpen2Buses100us/Trike Application Layer/System_Control/BrakeControl</SubSystemName>
+          </parameter>
+          <parameter>
+          <paramName>InitialCondition</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>SpeedgoatCANOpen2Buses100us/Trike Application Layer/System_Control/BrakeControl</SubSystemName>
+          </parameter>
+          </block>
+			  
+			  
+              <signal>
+              <sigName>MATLAB Function</sigName>
+              <xpcsigName>Trike Application Layer/System_Control/BrakeControl/MATLAB Function</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses100us/Trike Application Layer/System_Control/BrakeControl</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Retract</sigName>
+              <xpcsigName>Trike Application Layer/System_Control/BrakeControl/Retract</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses100us/Trike Application Layer/System_Control/BrakeControl</SubSystemName>
+                <sigLabel>Retract_current</sigLabel>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Cast To Single3</sigName>
+              <xpcsigName>Trike Application Layer/System_Control/BrakeControl/Cast To Single3</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses100us/Trike Application Layer/System_Control/BrakeControl</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
 			  
 			  
               <signal>
               <sigName>Data Type Conversion</sigName>
               <xpcsigName>Trike Application Layer/System_Control/BrakeControl/Data Type Conversion</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses100us/Trike Application Layer/System_Control/BrakeControl</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Data Type Conversion1</sigName>
+              <xpcsigName>Trike Application Layer/System_Control/BrakeControl/Data Type Conversion1</xpcsigName>
               <sigWidth>1</sigWidth>
               <sigDim>[1, 1]</sigDim>
 			  <SubSystemName>SpeedgoatCANOpen2Buses100us/Trike Application Layer/System_Control/BrakeControl</SubSystemName>
@@ -1575,6 +1673,17 @@ Average</sigName>
               <sigWidth>1</sigWidth>
               <sigDim>[1, 1]</sigDim>
 			  <SubSystemName>SpeedgoatCANOpen2Buses100us/Trike Application Layer/System_Control/BrakeControl</SubSystemName>
+                <sigLabel>br_percent2</sigLabel>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Gain4</sigName>
+              <xpcsigName>Trike Application Layer/System_Control/BrakeControl/Gain4</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses100us/Trike Application Layer/System_Control/BrakeControl</SubSystemName>
                 <sigLabel>br_percent</sigLabel>
 			  <sigTestPoint>false</sigTestPoint>
             </signal>
@@ -1601,8 +1710,48 @@ Average</sigName>
 			  
 			  
               <signal>
+              <sigName>Saturation2</sigName>
+              <xpcsigName>Trike Application Layer/System_Control/BrakeControl/Saturation2</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses100us/Trike Application Layer/System_Control/BrakeControl</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
               <sigName>Sum</sigName>
               <xpcsigName>Trike Application Layer/System_Control/BrakeControl/Sum</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses100us/Trike Application Layer/System_Control/BrakeControl</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Sum1</sigName>
+              <xpcsigName>Trike Application Layer/System_Control/BrakeControl/Sum1</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses100us/Trike Application Layer/System_Control/BrakeControl</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Sum2</sigName>
+              <xpcsigName>Trike Application Layer/System_Control/BrakeControl/Sum2</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses100us/Trike Application Layer/System_Control/BrakeControl</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Delay</sigName>
+              <xpcsigName>Trike Application Layer/System_Control/BrakeControl/Delay</xpcsigName>
               <sigWidth>1</sigWidth>
               <sigDim>[1, 1]</sigDim>
 			  <SubSystemName>SpeedgoatCANOpen2Buses100us/Trike Application Layer/System_Control/BrakeControl</SubSystemName>
@@ -2398,6 +2547,16 @@ Gain</sigName>
               <sigDim>[1, 1]</sigDim>
 			  <SubSystemName>SpeedgoatCANOpen2Buses100us/Trike Application Layer/System_Control/TiltingControl</SubSystemName>
                 <sigLabel>TiltingAngle [deg]</sigLabel>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Constant</sigName>
+              <xpcsigName>Trike Application Layer/System_Control/TiltingControl/Constant</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses100us/Trike Application Layer/System_Control/TiltingControl</SubSystemName>
 			  <sigTestPoint>false</sigTestPoint>
             </signal>
 			  

@@ -3,9 +3,9 @@
  *
  * Code generation for model "SpeedgoatCANOpen2Buses100us".
  *
- * Model version              : 1.791
+ * Model version              : 1.809
  * Simulink Coder version : 9.0 (R2018b) 24-May-2018
- * C source code generated on : Fri Jul 16 18:28:33 2021
+ * C source code generated on : Thu Jul 22 18:33:43 2021
  *
  * Target selection: slrt.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -20,36 +20,36 @@
 /* Block parameters (default storage) */
 P_SpeedgoatCANOpen2Buses100us_T SpeedgoatCANOpen2Buses100us_P = {
   /* Mask Parameter: PID_ctrl_Kd
-   * Referenced by: '<S41>/Derivative Gain'
+   * Referenced by: '<S43>/Derivative Gain'
    */
   0.0,
 
   /* Mask Parameter: PID_ctrl_Ki
    * Referenced by:
-   *   '<S41>/AntiWindup'
-   *   '<S41>/Integral Gain'
+   *   '<S43>/AntiWindup'
+   *   '<S43>/Integral Gain'
    */
   0.0,
 
   /* Mask Parameter: PID_ctrl_Kp
    * Referenced by:
-   *   '<S41>/AntiWindup'
-   *   '<S41>/Proportional  Gain'
+   *   '<S43>/AntiWindup'
+   *   '<S43>/Proportional  Gain'
    */
   100.0,
 
   /* Mask Parameter: PID_ctrl_N
-   * Referenced by: '<S41>/FilterOrder'
+   * Referenced by: '<S43>/FilterOrder'
    */
   1.0,
 
   /* Mask Parameter: PID_ctrl_Req_lim
-   * Referenced by: '<S41>/Saturation'
+   * Referenced by: '<S43>/Saturation'
    */
   2.0,
 
   /* Mask Parameter: CompareToConstant_const
-   * Referenced by: '<S59>/Constant'
+   * Referenced by: '<S61>/Constant'
    */
   5.0F,
 
@@ -72,41 +72,6 @@ P_SpeedgoatCANOpen2Buses100us_T SpeedgoatCANOpen2Buses100us_P = {
    * Referenced by: '<S20>/CAN Write'
    */
   { 691.0, 1.0, 0.0001, 1.0, 2.0, 1.0, 0.0 },
-
-  /* Expression: 3600
-   * Referenced by: '<S33>/offset'
-   */
-  3600.0,
-
-  /* Expression: 0.00015625
-   * Referenced by: '<S33>/Gain3'
-   */
-  0.00015625,
-
-  /* Expression: -1
-   * Referenced by: '<S33>/Gain2'
-   */
-  -1.0,
-
-  /* Expression: 0
-   * Referenced by: '<S33>/Saturation'
-   */
-  0.0,
-
-  /* Expression: -1
-   * Referenced by: '<S33>/Saturation'
-   */
-  -1.0,
-
-  /* Expression: 12.7
-   * Referenced by: '<S33>/Gain1'
-   */
-  12.7,
-
-  /* Expression: 1000
-   * Referenced by: '<S33>/Amp2mAmp'
-   */
-  1000.0,
 
   /* Computed Parameter: CANSetup_P1_Size
    * Referenced by: '<S13>/CAN Setup '
@@ -250,11 +215,6 @@ P_SpeedgoatCANOpen2Buses100us_T SpeedgoatCANOpen2Buses100us_P = {
    */
   0.0,
 
-  /* Expression: 2
-   * Referenced by: '<S36>/Constant'
-   */
-  2.0,
-
   /* Expression: 0.00246
    * Referenced by: '<S36>/degree2m'
    */
@@ -266,27 +226,27 @@ P_SpeedgoatCANOpen2Buses100us_T SpeedgoatCANOpen2Buses100us_P = {
   0.0,
 
   /* Computed Parameter: DiscreteTimeIntegrator_gainval
-   * Referenced by: '<S41>/Discrete-Time Integrator'
+   * Referenced by: '<S43>/Discrete-Time Integrator'
    */
   0.0002,
 
   /* Expression: 0
-   * Referenced by: '<S41>/Discrete-Time Integrator'
+   * Referenced by: '<S43>/Discrete-Time Integrator'
    */
   0.0,
 
   /* Computed Parameter: DiscreteTimeIntegrator1_gainval
-   * Referenced by: '<S41>/Discrete-Time Integrator1'
+   * Referenced by: '<S43>/Discrete-Time Integrator1'
    */
   0.0002,
 
   /* Expression: 0
-   * Referenced by: '<S41>/Discrete-Time Integrator1'
+   * Referenced by: '<S43>/Discrete-Time Integrator1'
    */
   0.0,
 
   /* Expression: -1000
-   * Referenced by: '<S41>/c1'
+   * Referenced by: '<S43>/c1'
    */
   -1000.0,
 
@@ -294,6 +254,16 @@ P_SpeedgoatCANOpen2Buses100us_T SpeedgoatCANOpen2Buses100us_P = {
    * Referenced by: '<S21>/Constant'
    */
   0.0,
+
+  /* Expression: 3600
+   * Referenced by: '<S33>/offset'
+   */
+  3600.0,
+
+  /* Expression: 0.00015625
+   * Referenced by: '<S33>/Gain3'
+   */
+  0.00015625,
 
   /* Expression: 0
    * Referenced by: '<S34>/Memory1'
@@ -321,17 +291,17 @@ P_SpeedgoatCANOpen2Buses100us_T SpeedgoatCANOpen2Buses100us_P = {
   0.087890625,
 
   /* Expression: 0
-   * Referenced by: '<S40>/Memory1'
+   * Referenced by: '<S42>/Memory1'
    */
   0.0,
 
   /* Expression: 3.4829
-   * Referenced by: '<S40>/Offset for 0 deg (3.5064V -> 57.02mm)'
+   * Referenced by: '<S42>/Offset for 0 deg (3.5064V -> 57.02mm)'
    */
   3.4829,
 
   /* Expression: 0.076/5
-   * Referenced by: '<S40>/Volt2meter'
+   * Referenced by: '<S42>/Volt2meter'
    */
   0.0152,
 
@@ -341,19 +311,24 @@ P_SpeedgoatCANOpen2Buses100us_T SpeedgoatCANOpen2Buses100us_P = {
   0.0,
 
   /* Expression: [0.0201 0.0402 0.0201]
-   * Referenced by: '<S40>/Discrete Filter'
+   * Referenced by: '<S42>/Discrete Filter'
    */
   { 0.0201, 0.0402, 0.0201 },
 
   /* Expression: [1 -1.561 0.6414]
-   * Referenced by: '<S40>/Discrete Filter'
+   * Referenced by: '<S42>/Discrete Filter'
    */
   { 1.0, -1.561, 0.6414 },
 
   /* Expression: 0
-   * Referenced by: '<S40>/Discrete Filter'
+   * Referenced by: '<S42>/Discrete Filter'
    */
   0.0,
+
+  /* Expression: 2
+   * Referenced by: '<S36>/Constant'
+   */
+  2.0,
 
   /* Computed Parameter: ms2Kmh_Gain
    * Referenced by: '<S37>/m//s2Km//h'
@@ -375,28 +350,28 @@ P_SpeedgoatCANOpen2Buses100us_T SpeedgoatCANOpen2Buses100us_P = {
    */
   1073741824,
 
-  /* Computed Parameter: Gain1_Gain_n
+  /* Computed Parameter: Gain1_Gain
    * Referenced by: '<S37>/Gain1'
    */
   0.1F,
 
   /* Computed Parameter: Constant_Value_l
-   * Referenced by: '<S53>/Constant'
-   */
-  1.0F,
-
-  /* Computed Parameter: Constant_Value_n
-   * Referenced by: '<S56>/Constant'
-   */
-  1.0F,
-
-  /* Computed Parameter: Constant_Value_j
    * Referenced by: '<S55>/Constant'
    */
   1.0F,
 
+  /* Computed Parameter: Constant_Value_n
+   * Referenced by: '<S58>/Constant'
+   */
+  1.0F,
+
+  /* Computed Parameter: Constant_Value_j
+   * Referenced by: '<S57>/Constant'
+   */
+  1.0F,
+
   /* Computed Parameter: Constant_Value_h
-   * Referenced by: '<S49>/Constant'
+   * Referenced by: '<S51>/Constant'
    */
   1.0F,
 
@@ -421,6 +396,51 @@ P_SpeedgoatCANOpen2Buses100us_T SpeedgoatCANOpen2Buses100us_P = {
   -1.0F,
 
   /* Computed Parameter: Gain4_Gain
+   * Referenced by: '<S33>/Gain4'
+   */
+  0.001F,
+
+  /* Computed Parameter: Gain2_Gain
+   * Referenced by: '<S33>/Gain2'
+   */
+  -1.0F,
+
+  /* Computed Parameter: Saturation_UpperSat
+   * Referenced by: '<S33>/Saturation'
+   */
+  0.0F,
+
+  /* Computed Parameter: Saturation_LowerSat
+   * Referenced by: '<S33>/Saturation'
+   */
+  -1.0F,
+
+  /* Computed Parameter: Gain1_Gain_c
+   * Referenced by: '<S33>/Gain1'
+   */
+  12.7F,
+
+  /* Computed Parameter: Delay_InitialCondition
+   * Referenced by: '<S33>/Delay'
+   */
+  0.0F,
+
+  /* Computed Parameter: Saturation2_UpperSat
+   * Referenced by: '<S33>/Saturation2'
+   */
+  8.0F,
+
+  /* Computed Parameter: Saturation2_LowerSat
+   * Referenced by: '<S33>/Saturation2'
+   */
+  -8.0F,
+
+  /* Computed Parameter: Amp2mAmp_Gain
+   * Referenced by: '<S33>/Amp2mAmp'
+   */
+  1000.0F,
+
+  /* Computed Parameter: Gain4_Gain_h
    * Referenced by: '<S21>/Gain4'
    */
   3123612579U,
@@ -430,13 +450,18 @@ P_SpeedgoatCANOpen2Buses100us_T SpeedgoatCANOpen2Buses100us_P = {
    */
   3123612579U,
 
+  /* Computed Parameter: Delay_DelayLength
+   * Referenced by: '<S33>/Delay'
+   */
+  2U,
+
   /* Computed Parameter: Gain2_Gain_k
    * Referenced by: '<S37>/Gain2'
    */
   27452,
 
   /* Computed Parameter: LSB2Volt_Gain
-   * Referenced by: '<S40>/LSB2Volt'
+   * Referenced by: '<S42>/LSB2Volt'
    */
   20485,
 

@@ -380,8 +380,8 @@ pt(24).subsource = 'SS_UINT32';
 pt(24).ndims     = '2';
 pt(24).size      = '[]';
 pt(24).isStruct  = false;
-pt(24).symbol     = 'SpeedgoatCANOpen2Buses100us_P.Gain4_Gain';
-pt(24).baseaddr   = '&SpeedgoatCANOpen2Buses100us_P.Gain4_Gain';
+pt(24).symbol     = 'SpeedgoatCANOpen2Buses100us_P.Gain4_Gain_h';
+pt(24).baseaddr   = '&SpeedgoatCANOpen2Buses100us_P.Gain4_Gain_h';
 pt(24).dtname     = 'uint32_T';
 
 
@@ -408,13 +408,13 @@ pt(26).paramname = 'Gain';
 pt(26).class     = 'scalar';
 pt(26).nrows     = 1;
 pt(26).ncols     = 1;
-pt(26).subsource = 'SS_DOUBLE';
+pt(26).subsource = 'SS_SINGLE';
 pt(26).ndims     = '2';
 pt(26).size      = '[]';
 pt(26).isStruct  = false;
 pt(26).symbol     = 'SpeedgoatCANOpen2Buses100us_P.Amp2mAmp_Gain';
 pt(26).baseaddr   = '&SpeedgoatCANOpen2Buses100us_P.Amp2mAmp_Gain';
-pt(26).dtname     = 'real_T';
+pt(26).dtname     = 'real32_T';
 
 
 
@@ -424,13 +424,13 @@ pt(27).paramname = 'Gain';
 pt(27).class     = 'scalar';
 pt(27).nrows     = 1;
 pt(27).ncols     = 1;
-pt(27).subsource = 'SS_DOUBLE';
+pt(27).subsource = 'SS_SINGLE';
 pt(27).ndims     = '2';
 pt(27).size      = '[]';
 pt(27).isStruct  = false;
-pt(27).symbol     = 'SpeedgoatCANOpen2Buses100us_P.Gain1_Gain';
-pt(27).baseaddr   = '&SpeedgoatCANOpen2Buses100us_P.Gain1_Gain';
-pt(27).dtname     = 'real_T';
+pt(27).symbol     = 'SpeedgoatCANOpen2Buses100us_P.Gain1_Gain_c';
+pt(27).baseaddr   = '&SpeedgoatCANOpen2Buses100us_P.Gain1_Gain_c';
+pt(27).dtname     = 'real32_T';
 
 
 
@@ -440,13 +440,13 @@ pt(28).paramname = 'Gain';
 pt(28).class     = 'scalar';
 pt(28).nrows     = 1;
 pt(28).ncols     = 1;
-pt(28).subsource = 'SS_DOUBLE';
+pt(28).subsource = 'SS_SINGLE';
 pt(28).ndims     = '2';
 pt(28).size      = '[]';
 pt(28).isStruct  = false;
 pt(28).symbol     = 'SpeedgoatCANOpen2Buses100us_P.Gain2_Gain';
 pt(28).baseaddr   = '&SpeedgoatCANOpen2Buses100us_P.Gain2_Gain';
-pt(28).dtname     = 'real_T';
+pt(28).dtname     = 'real32_T';
 
 
 
@@ -467,56 +467,56 @@ pt(29).dtname     = 'real_T';
 
 
   
-pt(30).blockname = 'Trike Application Layer/System_Control/BrakeControl/Saturation';
-pt(30).paramname = 'UpperLimit';
+pt(30).blockname = 'Trike Application Layer/System_Control/BrakeControl/Gain4';
+pt(30).paramname = 'Gain';
 pt(30).class     = 'scalar';
 pt(30).nrows     = 1;
 pt(30).ncols     = 1;
-pt(30).subsource = 'SS_DOUBLE';
+pt(30).subsource = 'SS_SINGLE';
 pt(30).ndims     = '2';
 pt(30).size      = '[]';
 pt(30).isStruct  = false;
-pt(30).symbol     = 'SpeedgoatCANOpen2Buses100us_P.Saturation_UpperSat';
-pt(30).baseaddr   = '&SpeedgoatCANOpen2Buses100us_P.Saturation_UpperSat';
-pt(30).dtname     = 'real_T';
+pt(30).symbol     = 'SpeedgoatCANOpen2Buses100us_P.Gain4_Gain';
+pt(30).baseaddr   = '&SpeedgoatCANOpen2Buses100us_P.Gain4_Gain';
+pt(30).dtname     = 'real32_T';
 
 
 
   
 pt(31).blockname = 'Trike Application Layer/System_Control/BrakeControl/Saturation';
-pt(31).paramname = 'LowerLimit';
+pt(31).paramname = 'UpperLimit';
 pt(31).class     = 'scalar';
 pt(31).nrows     = 1;
 pt(31).ncols     = 1;
-pt(31).subsource = 'SS_DOUBLE';
+pt(31).subsource = 'SS_SINGLE';
 pt(31).ndims     = '2';
 pt(31).size      = '[]';
 pt(31).isStruct  = false;
-pt(31).symbol     = 'SpeedgoatCANOpen2Buses100us_P.Saturation_LowerSat';
-pt(31).baseaddr   = '&SpeedgoatCANOpen2Buses100us_P.Saturation_LowerSat';
-pt(31).dtname     = 'real_T';
+pt(31).symbol     = 'SpeedgoatCANOpen2Buses100us_P.Saturation_UpperSat';
+pt(31).baseaddr   = '&SpeedgoatCANOpen2Buses100us_P.Saturation_UpperSat';
+pt(31).dtname     = 'real32_T';
 
 
 
   
-pt(32).blockname = 'Trike Application Layer/System_Control/BrakeControl/Saturation1';
-pt(32).paramname = 'UpperLimit';
+pt(32).blockname = 'Trike Application Layer/System_Control/BrakeControl/Saturation';
+pt(32).paramname = 'LowerLimit';
 pt(32).class     = 'scalar';
 pt(32).nrows     = 1;
 pt(32).ncols     = 1;
-pt(32).subsource = 'SS_UINT16';
+pt(32).subsource = 'SS_SINGLE';
 pt(32).ndims     = '2';
 pt(32).size      = '[]';
 pt(32).isStruct  = false;
-pt(32).symbol     = 'SpeedgoatCANOpen2Buses100us_P.Saturation1_UpperSat';
-pt(32).baseaddr   = '&SpeedgoatCANOpen2Buses100us_P.Saturation1_UpperSat';
-pt(32).dtname     = 'uint16_T';
+pt(32).symbol     = 'SpeedgoatCANOpen2Buses100us_P.Saturation_LowerSat';
+pt(32).baseaddr   = '&SpeedgoatCANOpen2Buses100us_P.Saturation_LowerSat';
+pt(32).dtname     = 'real32_T';
 
 
 
   
 pt(33).blockname = 'Trike Application Layer/System_Control/BrakeControl/Saturation1';
-pt(33).paramname = 'LowerLimit';
+pt(33).paramname = 'UpperLimit';
 pt(33).class     = 'scalar';
 pt(33).nrows     = 1;
 pt(33).ncols     = 1;
@@ -524,31 +524,31 @@ pt(33).subsource = 'SS_UINT16';
 pt(33).ndims     = '2';
 pt(33).size      = '[]';
 pt(33).isStruct  = false;
-pt(33).symbol     = 'SpeedgoatCANOpen2Buses100us_P.Saturation1_LowerSat';
-pt(33).baseaddr   = '&SpeedgoatCANOpen2Buses100us_P.Saturation1_LowerSat';
+pt(33).symbol     = 'SpeedgoatCANOpen2Buses100us_P.Saturation1_UpperSat';
+pt(33).baseaddr   = '&SpeedgoatCANOpen2Buses100us_P.Saturation1_UpperSat';
 pt(33).dtname     = 'uint16_T';
 
 
 
   
-pt(34).blockname = 'Trike Application Layer/System_Control/DirectionControl/Offset to 0 pos => pos = [-180 180]deg';
-pt(34).paramname = 'Value';
+pt(34).blockname = 'Trike Application Layer/System_Control/BrakeControl/Saturation1';
+pt(34).paramname = 'LowerLimit';
 pt(34).class     = 'scalar';
 pt(34).nrows     = 1;
 pt(34).ncols     = 1;
-pt(34).subsource = 'SS_DOUBLE';
+pt(34).subsource = 'SS_UINT16';
 pt(34).ndims     = '2';
 pt(34).size      = '[]';
 pt(34).isStruct  = false;
-pt(34).symbol     = 'SpeedgoatCANOpen2Buses100us_P.Offsetto0pospos180180deg_Value';
-pt(34).baseaddr   = '&SpeedgoatCANOpen2Buses100us_P.Offsetto0pospos180180deg_Value';
-pt(34).dtname     = 'real_T';
+pt(34).symbol     = 'SpeedgoatCANOpen2Buses100us_P.Saturation1_LowerSat';
+pt(34).baseaddr   = '&SpeedgoatCANOpen2Buses100us_P.Saturation1_LowerSat';
+pt(34).dtname     = 'uint16_T';
 
 
 
   
-pt(35).blockname = 'Trike Application Layer/System_Control/DirectionControl/Robotics Convention';
-pt(35).paramname = 'Gain';
+pt(35).blockname = 'Trike Application Layer/System_Control/BrakeControl/Saturation2';
+pt(35).paramname = 'UpperLimit';
 pt(35).class     = 'scalar';
 pt(35).nrows     = 1;
 pt(35).ncols     = 1;
@@ -556,15 +556,15 @@ pt(35).subsource = 'SS_SINGLE';
 pt(35).ndims     = '2';
 pt(35).size      = '[]';
 pt(35).isStruct  = false;
-pt(35).symbol     = 'SpeedgoatCANOpen2Buses100us_P.RoboticsConvention_Gain';
-pt(35).baseaddr   = '&SpeedgoatCANOpen2Buses100us_P.RoboticsConvention_Gain';
+pt(35).symbol     = 'SpeedgoatCANOpen2Buses100us_P.Saturation2_UpperSat';
+pt(35).baseaddr   = '&SpeedgoatCANOpen2Buses100us_P.Saturation2_UpperSat';
 pt(35).dtname     = 'real32_T';
 
 
 
   
-pt(36).blockname = 'Trike Application Layer/System_Control/DirectionControl/degree2rad';
-pt(36).paramname = 'Gain';
+pt(36).blockname = 'Trike Application Layer/System_Control/BrakeControl/Saturation2';
+pt(36).paramname = 'LowerLimit';
 pt(36).class     = 'scalar';
 pt(36).nrows     = 1;
 pt(36).ncols     = 1;
@@ -572,47 +572,47 @@ pt(36).subsource = 'SS_SINGLE';
 pt(36).ndims     = '2';
 pt(36).size      = '[]';
 pt(36).isStruct  = false;
-pt(36).symbol     = 'SpeedgoatCANOpen2Buses100us_P.degree2rad_Gain';
-pt(36).baseaddr   = '&SpeedgoatCANOpen2Buses100us_P.degree2rad_Gain';
+pt(36).symbol     = 'SpeedgoatCANOpen2Buses100us_P.Saturation2_LowerSat';
+pt(36).baseaddr   = '&SpeedgoatCANOpen2Buses100us_P.Saturation2_LowerSat';
 pt(36).dtname     = 'real32_T';
 
 
 
   
-pt(37).blockname = 'Trike Application Layer/System_Control/DirectionControl/dem';
-pt(37).paramname = 'Gain';
+pt(37).blockname = 'Trike Application Layer/System_Control/BrakeControl/Delay';
+pt(37).paramname = 'DelayLength';
 pt(37).class     = 'scalar';
 pt(37).nrows     = 1;
 pt(37).ncols     = 1;
-pt(37).subsource = 'SS_SINGLE';
+pt(37).subsource = 'SS_UINT32';
 pt(37).ndims     = '2';
 pt(37).size      = '[]';
 pt(37).isStruct  = false;
-pt(37).symbol     = 'SpeedgoatCANOpen2Buses100us_P.dem_Gain';
-pt(37).baseaddr   = '&SpeedgoatCANOpen2Buses100us_P.dem_Gain';
-pt(37).dtname     = 'real32_T';
+pt(37).symbol     = 'SpeedgoatCANOpen2Buses100us_P.Delay_DelayLength';
+pt(37).baseaddr   = '&SpeedgoatCANOpen2Buses100us_P.Delay_DelayLength';
+pt(37).dtname     = 'uint32_T';
 
 
 
   
-pt(38).blockname = 'Trike Application Layer/System_Control/DirectionControl/inc2deg';
-pt(38).paramname = 'Gain';
+pt(38).blockname = 'Trike Application Layer/System_Control/BrakeControl/Delay';
+pt(38).paramname = 'InitialCondition';
 pt(38).class     = 'scalar';
 pt(38).nrows     = 1;
 pt(38).ncols     = 1;
-pt(38).subsource = 'SS_DOUBLE';
+pt(38).subsource = 'SS_SINGLE';
 pt(38).ndims     = '2';
 pt(38).size      = '[]';
 pt(38).isStruct  = false;
-pt(38).symbol     = 'SpeedgoatCANOpen2Buses100us_P.inc2deg_Gain';
-pt(38).baseaddr   = '&SpeedgoatCANOpen2Buses100us_P.inc2deg_Gain';
-pt(38).dtname     = 'real_T';
+pt(38).symbol     = 'SpeedgoatCANOpen2Buses100us_P.Delay_InitialCondition';
+pt(38).baseaddr   = '&SpeedgoatCANOpen2Buses100us_P.Delay_InitialCondition';
+pt(38).dtname     = 'real32_T';
 
 
 
   
-pt(39).blockname = 'Trike Application Layer/System_Control/DirectionControl/Memory1';
-pt(39).paramname = 'InitialCondition';
+pt(39).blockname = 'Trike Application Layer/System_Control/DirectionControl/Offset to 0 pos => pos = [-180 180]deg';
+pt(39).paramname = 'Value';
 pt(39).class     = 'scalar';
 pt(39).nrows     = 1;
 pt(39).ncols     = 1;
@@ -620,63 +620,63 @@ pt(39).subsource = 'SS_DOUBLE';
 pt(39).ndims     = '2';
 pt(39).size      = '[]';
 pt(39).isStruct  = false;
-pt(39).symbol     = 'SpeedgoatCANOpen2Buses100us_P.Memory1_InitialCondition';
-pt(39).baseaddr   = '&SpeedgoatCANOpen2Buses100us_P.Memory1_InitialCondition';
+pt(39).symbol     = 'SpeedgoatCANOpen2Buses100us_P.Offsetto0pospos180180deg_Value';
+pt(39).baseaddr   = '&SpeedgoatCANOpen2Buses100us_P.Offsetto0pospos180180deg_Value';
 pt(39).dtname     = 'real_T';
 
 
 
   
-pt(40).blockname = 'Trike Application Layer/System_Control/Subsystem/Constant';
-pt(40).paramname = 'Value';
+pt(40).blockname = 'Trike Application Layer/System_Control/DirectionControl/Robotics Convention';
+pt(40).paramname = 'Gain';
 pt(40).class     = 'scalar';
 pt(40).nrows     = 1;
 pt(40).ncols     = 1;
-pt(40).subsource = 'SS_DOUBLE';
+pt(40).subsource = 'SS_SINGLE';
 pt(40).ndims     = '2';
 pt(40).size      = '[]';
 pt(40).isStruct  = false;
-pt(40).symbol     = 'SpeedgoatCANOpen2Buses100us_P.Constant_Value';
-pt(40).baseaddr   = '&SpeedgoatCANOpen2Buses100us_P.Constant_Value';
-pt(40).dtname     = 'real_T';
+pt(40).symbol     = 'SpeedgoatCANOpen2Buses100us_P.RoboticsConvention_Gain';
+pt(40).baseaddr   = '&SpeedgoatCANOpen2Buses100us_P.RoboticsConvention_Gain';
+pt(40).dtname     = 'real32_T';
 
 
 
   
-pt(41).blockname = 'Trike Application Layer/System_Control/TiltingControl/PID_ctrl';
-pt(41).paramname = 'Kp';
+pt(41).blockname = 'Trike Application Layer/System_Control/DirectionControl/degree2rad';
+pt(41).paramname = 'Gain';
 pt(41).class     = 'scalar';
 pt(41).nrows     = 1;
 pt(41).ncols     = 1;
-pt(41).subsource = 'SS_DOUBLE';
+pt(41).subsource = 'SS_SINGLE';
 pt(41).ndims     = '2';
 pt(41).size      = '[]';
 pt(41).isStruct  = false;
-pt(41).symbol     = 'SpeedgoatCANOpen2Buses100us_P.PID_ctrl_Kp';
-pt(41).baseaddr   = '&SpeedgoatCANOpen2Buses100us_P.PID_ctrl_Kp';
-pt(41).dtname     = 'real_T';
+pt(41).symbol     = 'SpeedgoatCANOpen2Buses100us_P.degree2rad_Gain';
+pt(41).baseaddr   = '&SpeedgoatCANOpen2Buses100us_P.degree2rad_Gain';
+pt(41).dtname     = 'real32_T';
 
 
 
   
-pt(42).blockname = 'Trike Application Layer/System_Control/TiltingControl/PID_ctrl';
-pt(42).paramname = 'Ki';
+pt(42).blockname = 'Trike Application Layer/System_Control/DirectionControl/dem';
+pt(42).paramname = 'Gain';
 pt(42).class     = 'scalar';
 pt(42).nrows     = 1;
 pt(42).ncols     = 1;
-pt(42).subsource = 'SS_DOUBLE';
+pt(42).subsource = 'SS_SINGLE';
 pt(42).ndims     = '2';
 pt(42).size      = '[]';
 pt(42).isStruct  = false;
-pt(42).symbol     = 'SpeedgoatCANOpen2Buses100us_P.PID_ctrl_Ki';
-pt(42).baseaddr   = '&SpeedgoatCANOpen2Buses100us_P.PID_ctrl_Ki';
-pt(42).dtname     = 'real_T';
+pt(42).symbol     = 'SpeedgoatCANOpen2Buses100us_P.dem_Gain';
+pt(42).baseaddr   = '&SpeedgoatCANOpen2Buses100us_P.dem_Gain';
+pt(42).dtname     = 'real32_T';
 
 
 
   
-pt(43).blockname = 'Trike Application Layer/System_Control/TiltingControl/PID_ctrl';
-pt(43).paramname = 'Kd';
+pt(43).blockname = 'Trike Application Layer/System_Control/DirectionControl/inc2deg';
+pt(43).paramname = 'Gain';
 pt(43).class     = 'scalar';
 pt(43).nrows     = 1;
 pt(43).ncols     = 1;
@@ -684,15 +684,15 @@ pt(43).subsource = 'SS_DOUBLE';
 pt(43).ndims     = '2';
 pt(43).size      = '[]';
 pt(43).isStruct  = false;
-pt(43).symbol     = 'SpeedgoatCANOpen2Buses100us_P.PID_ctrl_Kd';
-pt(43).baseaddr   = '&SpeedgoatCANOpen2Buses100us_P.PID_ctrl_Kd';
+pt(43).symbol     = 'SpeedgoatCANOpen2Buses100us_P.inc2deg_Gain';
+pt(43).baseaddr   = '&SpeedgoatCANOpen2Buses100us_P.inc2deg_Gain';
 pt(43).dtname     = 'real_T';
 
 
 
   
-pt(44).blockname = 'Trike Application Layer/System_Control/TiltingControl/PID_ctrl';
-pt(44).paramname = 'N';
+pt(44).blockname = 'Trike Application Layer/System_Control/DirectionControl/Memory1';
+pt(44).paramname = 'InitialCondition';
 pt(44).class     = 'scalar';
 pt(44).nrows     = 1;
 pt(44).ncols     = 1;
@@ -700,15 +700,15 @@ pt(44).subsource = 'SS_DOUBLE';
 pt(44).ndims     = '2';
 pt(44).size      = '[]';
 pt(44).isStruct  = false;
-pt(44).symbol     = 'SpeedgoatCANOpen2Buses100us_P.PID_ctrl_N';
-pt(44).baseaddr   = '&SpeedgoatCANOpen2Buses100us_P.PID_ctrl_N';
+pt(44).symbol     = 'SpeedgoatCANOpen2Buses100us_P.Memory1_InitialCondition';
+pt(44).baseaddr   = '&SpeedgoatCANOpen2Buses100us_P.Memory1_InitialCondition';
 pt(44).dtname     = 'real_T';
 
 
 
   
-pt(45).blockname = 'Trike Application Layer/System_Control/TiltingControl/PID_ctrl';
-pt(45).paramname = 'Req_lim';
+pt(45).blockname = 'Trike Application Layer/System_Control/Subsystem/Constant';
+pt(45).paramname = 'Value';
 pt(45).class     = 'scalar';
 pt(45).nrows     = 1;
 pt(45).ncols     = 1;
@@ -716,15 +716,15 @@ pt(45).subsource = 'SS_DOUBLE';
 pt(45).ndims     = '2';
 pt(45).size      = '[]';
 pt(45).isStruct  = false;
-pt(45).symbol     = 'SpeedgoatCANOpen2Buses100us_P.PID_ctrl_Req_lim';
-pt(45).baseaddr   = '&SpeedgoatCANOpen2Buses100us_P.PID_ctrl_Req_lim';
+pt(45).symbol     = 'SpeedgoatCANOpen2Buses100us_P.Constant_Value';
+pt(45).baseaddr   = '&SpeedgoatCANOpen2Buses100us_P.Constant_Value';
 pt(45).dtname     = 'real_T';
 
 
 
   
-pt(46).blockname = 'Trike Application Layer/System_Control/TiltingControl/Constant';
-pt(46).paramname = 'Value';
+pt(46).blockname = 'Trike Application Layer/System_Control/TiltingControl/PID_ctrl';
+pt(46).paramname = 'Kp';
 pt(46).class     = 'scalar';
 pt(46).nrows     = 1;
 pt(46).ncols     = 1;
@@ -732,31 +732,31 @@ pt(46).subsource = 'SS_DOUBLE';
 pt(46).ndims     = '2';
 pt(46).size      = '[]';
 pt(46).isStruct  = false;
-pt(46).symbol     = 'SpeedgoatCANOpen2Buses100us_P.Constant_Value_c';
-pt(46).baseaddr   = '&SpeedgoatCANOpen2Buses100us_P.Constant_Value_c';
+pt(46).symbol     = 'SpeedgoatCANOpen2Buses100us_P.PID_ctrl_Kp';
+pt(46).baseaddr   = '&SpeedgoatCANOpen2Buses100us_P.PID_ctrl_Kp';
 pt(46).dtname     = 'real_T';
 
 
 
   
-pt(47).blockname = 'Trike Application Layer/System_Control/TiltingControl/Gain';
-pt(47).paramname = 'Gain';
+pt(47).blockname = 'Trike Application Layer/System_Control/TiltingControl/PID_ctrl';
+pt(47).paramname = 'Ki';
 pt(47).class     = 'scalar';
 pt(47).nrows     = 1;
 pt(47).ncols     = 1;
-pt(47).subsource = 'SS_INT32';
+pt(47).subsource = 'SS_DOUBLE';
 pt(47).ndims     = '2';
 pt(47).size      = '[]';
 pt(47).isStruct  = false;
-pt(47).symbol     = 'SpeedgoatCANOpen2Buses100us_P.Gain_Gain';
-pt(47).baseaddr   = '&SpeedgoatCANOpen2Buses100us_P.Gain_Gain';
-pt(47).dtname     = 'int32_T';
+pt(47).symbol     = 'SpeedgoatCANOpen2Buses100us_P.PID_ctrl_Ki';
+pt(47).baseaddr   = '&SpeedgoatCANOpen2Buses100us_P.PID_ctrl_Ki';
+pt(47).dtname     = 'real_T';
 
 
 
   
-pt(48).blockname = 'Trike Application Layer/System_Control/TiltingControl/degree2m';
-pt(48).paramname = 'Gain';
+pt(48).blockname = 'Trike Application Layer/System_Control/TiltingControl/PID_ctrl';
+pt(48).paramname = 'Kd';
 pt(48).class     = 'scalar';
 pt(48).nrows     = 1;
 pt(48).ncols     = 1;
@@ -764,62 +764,62 @@ pt(48).subsource = 'SS_DOUBLE';
 pt(48).ndims     = '2';
 pt(48).size      = '[]';
 pt(48).isStruct  = false;
-pt(48).symbol     = 'SpeedgoatCANOpen2Buses100us_P.degree2m_Gain';
-pt(48).baseaddr   = '&SpeedgoatCANOpen2Buses100us_P.degree2m_Gain';
+pt(48).symbol     = 'SpeedgoatCANOpen2Buses100us_P.PID_ctrl_Kd';
+pt(48).baseaddr   = '&SpeedgoatCANOpen2Buses100us_P.PID_ctrl_Kd';
 pt(48).dtname     = 'real_T';
 
 
 
   
-pt(49).blockname = 'Trike Application Layer/System_Control/TiltingControl/n';
-pt(49).paramname = 'Gain';
+pt(49).blockname = 'Trike Application Layer/System_Control/TiltingControl/PID_ctrl';
+pt(49).paramname = 'N';
 pt(49).class     = 'scalar';
 pt(49).nrows     = 1;
 pt(49).ncols     = 1;
-pt(49).subsource = 'SS_SINGLE';
+pt(49).subsource = 'SS_DOUBLE';
 pt(49).ndims     = '2';
 pt(49).size      = '[]';
 pt(49).isStruct  = false;
-pt(49).symbol     = 'SpeedgoatCANOpen2Buses100us_P.n_Gain';
-pt(49).baseaddr   = '&SpeedgoatCANOpen2Buses100us_P.n_Gain';
-pt(49).dtname     = 'real32_T';
+pt(49).symbol     = 'SpeedgoatCANOpen2Buses100us_P.PID_ctrl_N';
+pt(49).baseaddr   = '&SpeedgoatCANOpen2Buses100us_P.PID_ctrl_N';
+pt(49).dtname     = 'real_T';
 
 
 
   
-pt(50).blockname = 'Trike Application Layer/System_Control/TractionControl/Gain1';
-pt(50).paramname = 'Gain';
+pt(50).blockname = 'Trike Application Layer/System_Control/TiltingControl/PID_ctrl';
+pt(50).paramname = 'Req_lim';
 pt(50).class     = 'scalar';
 pt(50).nrows     = 1;
 pt(50).ncols     = 1;
-pt(50).subsource = 'SS_SINGLE';
+pt(50).subsource = 'SS_DOUBLE';
 pt(50).ndims     = '2';
 pt(50).size      = '[]';
 pt(50).isStruct  = false;
-pt(50).symbol     = 'SpeedgoatCANOpen2Buses100us_P.Gain1_Gain_n';
-pt(50).baseaddr   = '&SpeedgoatCANOpen2Buses100us_P.Gain1_Gain_n';
-pt(50).dtname     = 'real32_T';
+pt(50).symbol     = 'SpeedgoatCANOpen2Buses100us_P.PID_ctrl_Req_lim';
+pt(50).baseaddr   = '&SpeedgoatCANOpen2Buses100us_P.PID_ctrl_Req_lim';
+pt(50).dtname     = 'real_T';
 
 
 
   
-pt(51).blockname = 'Trike Application Layer/System_Control/TractionControl/Gain2';
-pt(51).paramname = 'Gain';
+pt(51).blockname = 'Trike Application Layer/System_Control/TiltingControl/Constant';
+pt(51).paramname = 'Value';
 pt(51).class     = 'scalar';
 pt(51).nrows     = 1;
 pt(51).ncols     = 1;
-pt(51).subsource = 'SS_INT16';
+pt(51).subsource = 'SS_DOUBLE';
 pt(51).ndims     = '2';
 pt(51).size      = '[]';
 pt(51).isStruct  = false;
-pt(51).symbol     = 'SpeedgoatCANOpen2Buses100us_P.Gain2_Gain_k';
-pt(51).baseaddr   = '&SpeedgoatCANOpen2Buses100us_P.Gain2_Gain_k';
-pt(51).dtname     = 'int16_T';
+pt(51).symbol     = 'SpeedgoatCANOpen2Buses100us_P.Constant_Value_c';
+pt(51).baseaddr   = '&SpeedgoatCANOpen2Buses100us_P.Constant_Value_c';
+pt(51).dtname     = 'real_T';
 
 
 
   
-pt(52).blockname = 'Trike Application Layer/System_Control/TractionControl/WheelRadius';
+pt(52).blockname = 'Trike Application Layer/System_Control/TiltingControl/Gain';
 pt(52).paramname = 'Gain';
 pt(52).class     = 'scalar';
 pt(52).nrows     = 1;
@@ -828,31 +828,31 @@ pt(52).subsource = 'SS_INT32';
 pt(52).ndims     = '2';
 pt(52).size      = '[]';
 pt(52).isStruct  = false;
-pt(52).symbol     = 'SpeedgoatCANOpen2Buses100us_P.WheelRadius_Gain';
-pt(52).baseaddr   = '&SpeedgoatCANOpen2Buses100us_P.WheelRadius_Gain';
+pt(52).symbol     = 'SpeedgoatCANOpen2Buses100us_P.Gain_Gain';
+pt(52).baseaddr   = '&SpeedgoatCANOpen2Buses100us_P.Gain_Gain';
 pt(52).dtname     = 'int32_T';
 
 
 
   
-pt(53).blockname = 'Trike Application Layer/System_Init/Brakes_DunkMotor_Init/Constant';
-pt(53).paramname = 'Value';
+pt(53).blockname = 'Trike Application Layer/System_Control/TiltingControl/degree2m';
+pt(53).paramname = 'Gain';
 pt(53).class     = 'scalar';
 pt(53).nrows     = 1;
 pt(53).ncols     = 1;
-pt(53).subsource = 'SS_SINGLE';
+pt(53).subsource = 'SS_DOUBLE';
 pt(53).ndims     = '2';
 pt(53).size      = '[]';
 pt(53).isStruct  = false;
-pt(53).symbol     = 'SpeedgoatCANOpen2Buses100us_P.Constant_Value_h';
-pt(53).baseaddr   = '&SpeedgoatCANOpen2Buses100us_P.Constant_Value_h';
-pt(53).dtname     = 'real32_T';
+pt(53).symbol     = 'SpeedgoatCANOpen2Buses100us_P.degree2m_Gain';
+pt(53).baseaddr   = '&SpeedgoatCANOpen2Buses100us_P.degree2m_Gain';
+pt(53).dtname     = 'real_T';
 
 
 
   
-pt(54).blockname = 'Trike Application Layer/System_Init/Steering_DunkMotor_Init/Constant';
-pt(54).paramname = 'Value';
+pt(54).blockname = 'Trike Application Layer/System_Control/TiltingControl/n';
+pt(54).paramname = 'Gain';
 pt(54).class     = 'scalar';
 pt(54).nrows     = 1;
 pt(54).ncols     = 1;
@@ -860,15 +860,15 @@ pt(54).subsource = 'SS_SINGLE';
 pt(54).ndims     = '2';
 pt(54).size      = '[]';
 pt(54).isStruct  = false;
-pt(54).symbol     = 'SpeedgoatCANOpen2Buses100us_P.Constant_Value_l';
-pt(54).baseaddr   = '&SpeedgoatCANOpen2Buses100us_P.Constant_Value_l';
+pt(54).symbol     = 'SpeedgoatCANOpen2Buses100us_P.n_Gain';
+pt(54).baseaddr   = '&SpeedgoatCANOpen2Buses100us_P.n_Gain';
 pt(54).dtname     = 'real32_T';
 
 
 
   
-pt(55).blockname = 'Trike Application Layer/System_Init/Subsystem/Compare To Constant';
-pt(55).paramname = 'const';
+pt(55).blockname = 'Trike Application Layer/System_Control/TractionControl/Gain1';
+pt(55).paramname = 'Gain';
 pt(55).class     = 'scalar';
 pt(55).nrows     = 1;
 pt(55).ncols     = 1;
@@ -876,143 +876,143 @@ pt(55).subsource = 'SS_SINGLE';
 pt(55).ndims     = '2';
 pt(55).size      = '[]';
 pt(55).isStruct  = false;
-pt(55).symbol     = 'SpeedgoatCANOpen2Buses100us_P.CompareToConstant_const';
-pt(55).baseaddr   = '&SpeedgoatCANOpen2Buses100us_P.CompareToConstant_const';
+pt(55).symbol     = 'SpeedgoatCANOpen2Buses100us_P.Gain1_Gain';
+pt(55).baseaddr   = '&SpeedgoatCANOpen2Buses100us_P.Gain1_Gain';
 pt(55).dtname     = 'real32_T';
 
 
 
   
-pt(56).blockname = 'Trike Application Layer/System_Init/TiltingLeft_DunkMotor_Init/Constant';
-pt(56).paramname = 'Value';
+pt(56).blockname = 'Trike Application Layer/System_Control/TractionControl/Gain2';
+pt(56).paramname = 'Gain';
 pt(56).class     = 'scalar';
 pt(56).nrows     = 1;
 pt(56).ncols     = 1;
-pt(56).subsource = 'SS_SINGLE';
+pt(56).subsource = 'SS_INT16';
 pt(56).ndims     = '2';
 pt(56).size      = '[]';
 pt(56).isStruct  = false;
-pt(56).symbol     = 'SpeedgoatCANOpen2Buses100us_P.Constant_Value_j';
-pt(56).baseaddr   = '&SpeedgoatCANOpen2Buses100us_P.Constant_Value_j';
-pt(56).dtname     = 'real32_T';
+pt(56).symbol     = 'SpeedgoatCANOpen2Buses100us_P.Gain2_Gain_k';
+pt(56).baseaddr   = '&SpeedgoatCANOpen2Buses100us_P.Gain2_Gain_k';
+pt(56).dtname     = 'int16_T';
 
 
 
   
-pt(57).blockname = 'Trike Application Layer/System_Init/TiltingRight_DunkMotor_Init/Constant';
-pt(57).paramname = 'Value';
+pt(57).blockname = 'Trike Application Layer/System_Control/TractionControl/WheelRadius';
+pt(57).paramname = 'Gain';
 pt(57).class     = 'scalar';
 pt(57).nrows     = 1;
 pt(57).ncols     = 1;
-pt(57).subsource = 'SS_SINGLE';
+pt(57).subsource = 'SS_INT32';
 pt(57).ndims     = '2';
 pt(57).size      = '[]';
 pt(57).isStruct  = false;
-pt(57).symbol     = 'SpeedgoatCANOpen2Buses100us_P.Constant_Value_n';
-pt(57).baseaddr   = '&SpeedgoatCANOpen2Buses100us_P.Constant_Value_n';
-pt(57).dtname     = 'real32_T';
+pt(57).symbol     = 'SpeedgoatCANOpen2Buses100us_P.WheelRadius_Gain';
+pt(57).baseaddr   = '&SpeedgoatCANOpen2Buses100us_P.WheelRadius_Gain';
+pt(57).dtname     = 'int32_T';
 
 
 
   
-pt(58).blockname = 'Speedgoat_TPDOs/CAN Bus Communication/CANOpen Slave  Protocol Stack - CAN Bus #1 (A)/CAN RX Wrapper/CAN Read';
-pt(58).paramname = 'P1';
-pt(58).class     = 'vector';
+pt(58).blockname = 'Trike Application Layer/System_Init/Brakes_DunkMotor_Init/Constant';
+pt(58).paramname = 'Value';
+pt(58).class     = 'scalar';
 pt(58).nrows     = 1;
-pt(58).ncols     = 6;
-pt(58).subsource = 'SS_DOUBLE';
+pt(58).ncols     = 1;
+pt(58).subsource = 'SS_SINGLE';
 pt(58).ndims     = '2';
 pt(58).size      = '[]';
 pt(58).isStruct  = false;
-pt(58).symbol     = 'SpeedgoatCANOpen2Buses100us_P.CANRead_P1';
-pt(58).baseaddr   = '&SpeedgoatCANOpen2Buses100us_P.CANRead_P1[0]';
-pt(58).dtname     = 'real_T';
+pt(58).symbol     = 'SpeedgoatCANOpen2Buses100us_P.Constant_Value_h';
+pt(58).baseaddr   = '&SpeedgoatCANOpen2Buses100us_P.Constant_Value_h';
+pt(58).dtname     = 'real32_T';
 
 
 
   
-pt(59).blockname = 'Speedgoat_TPDOs/CAN Bus Communication/CANOpen Slave  Protocol Stack - CAN Bus #1 (A)/CAN RX Wrapper/Switch';
-pt(59).paramname = 'Threshold';
+pt(59).blockname = 'Trike Application Layer/System_Init/Steering_DunkMotor_Init/Constant';
+pt(59).paramname = 'Value';
 pt(59).class     = 'scalar';
 pt(59).nrows     = 1;
 pt(59).ncols     = 1;
-pt(59).subsource = 'SS_UINT8';
+pt(59).subsource = 'SS_SINGLE';
 pt(59).ndims     = '2';
 pt(59).size      = '[]';
 pt(59).isStruct  = false;
-pt(59).symbol     = 'SpeedgoatCANOpen2Buses100us_P.Switch_Threshold';
-pt(59).baseaddr   = '&SpeedgoatCANOpen2Buses100us_P.Switch_Threshold';
-pt(59).dtname     = 'uint8_T';
+pt(59).symbol     = 'SpeedgoatCANOpen2Buses100us_P.Constant_Value_l';
+pt(59).baseaddr   = '&SpeedgoatCANOpen2Buses100us_P.Constant_Value_l';
+pt(59).dtname     = 'real32_T';
 
 
 
   
-pt(60).blockname = 'Speedgoat_TPDOs/CAN Bus Communication/CANOpen Slave  Protocol Stack - CAN Bus #1 (A)/CAN TX Wrapper/Constant';
-pt(60).paramname = 'Value';
+pt(60).blockname = 'Trike Application Layer/System_Init/Subsystem/Compare To Constant';
+pt(60).paramname = 'const';
 pt(60).class     = 'scalar';
 pt(60).nrows     = 1;
 pt(60).ncols     = 1;
-pt(60).subsource = 'SS_UINT8';
+pt(60).subsource = 'SS_SINGLE';
 pt(60).ndims     = '2';
 pt(60).size      = '[]';
 pt(60).isStruct  = false;
-pt(60).symbol     = 'SpeedgoatCANOpen2Buses100us_P.Constant_Value_kp';
-pt(60).baseaddr   = '&SpeedgoatCANOpen2Buses100us_P.Constant_Value_kp';
-pt(60).dtname     = 'uint8_T';
+pt(60).symbol     = 'SpeedgoatCANOpen2Buses100us_P.CompareToConstant_const';
+pt(60).baseaddr   = '&SpeedgoatCANOpen2Buses100us_P.CompareToConstant_const';
+pt(60).dtname     = 'real32_T';
 
 
 
   
-pt(61).blockname = 'Speedgoat_TPDOs/CAN Bus Communication/CANOpen Slave  Protocol Stack - CAN Bus #1 (A)/CAN TX Wrapper/CAN Write';
-pt(61).paramname = 'P1';
-pt(61).class     = 'vector';
+pt(61).blockname = 'Trike Application Layer/System_Init/TiltingLeft_DunkMotor_Init/Constant';
+pt(61).paramname = 'Value';
+pt(61).class     = 'scalar';
 pt(61).nrows     = 1;
-pt(61).ncols     = 7;
-pt(61).subsource = 'SS_DOUBLE';
+pt(61).ncols     = 1;
+pt(61).subsource = 'SS_SINGLE';
 pt(61).ndims     = '2';
 pt(61).size      = '[]';
 pt(61).isStruct  = false;
-pt(61).symbol     = 'SpeedgoatCANOpen2Buses100us_P.CANWrite_P1';
-pt(61).baseaddr   = '&SpeedgoatCANOpen2Buses100us_P.CANWrite_P1[0]';
-pt(61).dtname     = 'real_T';
+pt(61).symbol     = 'SpeedgoatCANOpen2Buses100us_P.Constant_Value_j';
+pt(61).baseaddr   = '&SpeedgoatCANOpen2Buses100us_P.Constant_Value_j';
+pt(61).dtname     = 'real32_T';
 
 
 
   
-pt(62).blockname = 'Speedgoat_TPDOs/CAN Bus Communication/CANOpen Slave  Protocol Stack - CAN Bus #2 (B)/CAN RX Wrapper/CAN Read';
-pt(62).paramname = 'P1';
-pt(62).class     = 'vector';
+pt(62).blockname = 'Trike Application Layer/System_Init/TiltingRight_DunkMotor_Init/Constant';
+pt(62).paramname = 'Value';
+pt(62).class     = 'scalar';
 pt(62).nrows     = 1;
-pt(62).ncols     = 6;
-pt(62).subsource = 'SS_DOUBLE';
+pt(62).ncols     = 1;
+pt(62).subsource = 'SS_SINGLE';
 pt(62).ndims     = '2';
 pt(62).size      = '[]';
 pt(62).isStruct  = false;
-pt(62).symbol     = 'SpeedgoatCANOpen2Buses100us_P.CANRead_P1_n';
-pt(62).baseaddr   = '&SpeedgoatCANOpen2Buses100us_P.CANRead_P1_n[0]';
-pt(62).dtname     = 'real_T';
+pt(62).symbol     = 'SpeedgoatCANOpen2Buses100us_P.Constant_Value_n';
+pt(62).baseaddr   = '&SpeedgoatCANOpen2Buses100us_P.Constant_Value_n';
+pt(62).dtname     = 'real32_T';
 
 
 
   
-pt(63).blockname = 'Speedgoat_TPDOs/CAN Bus Communication/CANOpen Slave  Protocol Stack - CAN Bus #2 (B)/CAN RX Wrapper/Switch';
-pt(63).paramname = 'Threshold';
-pt(63).class     = 'scalar';
+pt(63).blockname = 'Speedgoat_TPDOs/CAN Bus Communication/CANOpen Slave  Protocol Stack - CAN Bus #1 (A)/CAN RX Wrapper/CAN Read';
+pt(63).paramname = 'P1';
+pt(63).class     = 'vector';
 pt(63).nrows     = 1;
-pt(63).ncols     = 1;
-pt(63).subsource = 'SS_UINT8';
+pt(63).ncols     = 6;
+pt(63).subsource = 'SS_DOUBLE';
 pt(63).ndims     = '2';
 pt(63).size      = '[]';
 pt(63).isStruct  = false;
-pt(63).symbol     = 'SpeedgoatCANOpen2Buses100us_P.Switch_Threshold_l';
-pt(63).baseaddr   = '&SpeedgoatCANOpen2Buses100us_P.Switch_Threshold_l';
-pt(63).dtname     = 'uint8_T';
+pt(63).symbol     = 'SpeedgoatCANOpen2Buses100us_P.CANRead_P1';
+pt(63).baseaddr   = '&SpeedgoatCANOpen2Buses100us_P.CANRead_P1[0]';
+pt(63).dtname     = 'real_T';
 
 
 
   
-pt(64).blockname = 'Speedgoat_TPDOs/CAN Bus Communication/CANOpen Slave  Protocol Stack - CAN Bus #2 (B)/CAN TX Wrapper/Constant';
-pt(64).paramname = 'Value';
+pt(64).blockname = 'Speedgoat_TPDOs/CAN Bus Communication/CANOpen Slave  Protocol Stack - CAN Bus #1 (A)/CAN RX Wrapper/Switch';
+pt(64).paramname = 'Threshold';
 pt(64).class     = 'scalar';
 pt(64).nrows     = 1;
 pt(64).ncols     = 1;
@@ -1020,143 +1020,143 @@ pt(64).subsource = 'SS_UINT8';
 pt(64).ndims     = '2';
 pt(64).size      = '[]';
 pt(64).isStruct  = false;
-pt(64).symbol     = 'SpeedgoatCANOpen2Buses100us_P.Constant_Value_nv';
-pt(64).baseaddr   = '&SpeedgoatCANOpen2Buses100us_P.Constant_Value_nv';
+pt(64).symbol     = 'SpeedgoatCANOpen2Buses100us_P.Switch_Threshold';
+pt(64).baseaddr   = '&SpeedgoatCANOpen2Buses100us_P.Switch_Threshold';
 pt(64).dtname     = 'uint8_T';
 
 
 
   
-pt(65).blockname = 'Speedgoat_TPDOs/CAN Bus Communication/CANOpen Slave  Protocol Stack - CAN Bus #2 (B)/CAN TX Wrapper/CAN Write';
-pt(65).paramname = 'P1';
-pt(65).class     = 'vector';
+pt(65).blockname = 'Speedgoat_TPDOs/CAN Bus Communication/CANOpen Slave  Protocol Stack - CAN Bus #1 (A)/CAN TX Wrapper/Constant';
+pt(65).paramname = 'Value';
+pt(65).class     = 'scalar';
 pt(65).nrows     = 1;
-pt(65).ncols     = 7;
-pt(65).subsource = 'SS_DOUBLE';
+pt(65).ncols     = 1;
+pt(65).subsource = 'SS_UINT8';
 pt(65).ndims     = '2';
 pt(65).size      = '[]';
 pt(65).isStruct  = false;
-pt(65).symbol     = 'SpeedgoatCANOpen2Buses100us_P.CANWrite_P1_h';
-pt(65).baseaddr   = '&SpeedgoatCANOpen2Buses100us_P.CANWrite_P1_h[0]';
-pt(65).dtname     = 'real_T';
+pt(65).symbol     = 'SpeedgoatCANOpen2Buses100us_P.Constant_Value_kp';
+pt(65).baseaddr   = '&SpeedgoatCANOpen2Buses100us_P.Constant_Value_kp';
+pt(65).dtname     = 'uint8_T';
 
 
 
   
-pt(66).blockname = 'Trike Application Layer/System_Control/TiltingControl/Offset_Conversion/Offset for 0 deg (3.5064V -> 57.02mm)';
-pt(66).paramname = 'Value';
-pt(66).class     = 'scalar';
+pt(66).blockname = 'Speedgoat_TPDOs/CAN Bus Communication/CANOpen Slave  Protocol Stack - CAN Bus #1 (A)/CAN TX Wrapper/CAN Write';
+pt(66).paramname = 'P1';
+pt(66).class     = 'vector';
 pt(66).nrows     = 1;
-pt(66).ncols     = 1;
+pt(66).ncols     = 7;
 pt(66).subsource = 'SS_DOUBLE';
 pt(66).ndims     = '2';
 pt(66).size      = '[]';
 pt(66).isStruct  = false;
-pt(66).symbol     = 'SpeedgoatCANOpen2Buses100us_P.Offsetfor0deg35064V5702mm_Value';
-pt(66).baseaddr   = '&SpeedgoatCANOpen2Buses100us_P.Offsetfor0deg35064V5702mm_Value';
+pt(66).symbol     = 'SpeedgoatCANOpen2Buses100us_P.CANWrite_P1';
+pt(66).baseaddr   = '&SpeedgoatCANOpen2Buses100us_P.CANWrite_P1[0]';
 pt(66).dtname     = 'real_T';
 
 
 
   
-pt(67).blockname = 'Trike Application Layer/System_Control/TiltingControl/Offset_Conversion/LSB2Volt';
-pt(67).paramname = 'Gain';
-pt(67).class     = 'scalar';
+pt(67).blockname = 'Speedgoat_TPDOs/CAN Bus Communication/CANOpen Slave  Protocol Stack - CAN Bus #2 (B)/CAN RX Wrapper/CAN Read';
+pt(67).paramname = 'P1';
+pt(67).class     = 'vector';
 pt(67).nrows     = 1;
-pt(67).ncols     = 1;
-pt(67).subsource = 'SS_INT16';
+pt(67).ncols     = 6;
+pt(67).subsource = 'SS_DOUBLE';
 pt(67).ndims     = '2';
 pt(67).size      = '[]';
 pt(67).isStruct  = false;
-pt(67).symbol     = 'SpeedgoatCANOpen2Buses100us_P.LSB2Volt_Gain';
-pt(67).baseaddr   = '&SpeedgoatCANOpen2Buses100us_P.LSB2Volt_Gain';
-pt(67).dtname     = 'int16_T';
+pt(67).symbol     = 'SpeedgoatCANOpen2Buses100us_P.CANRead_P1_n';
+pt(67).baseaddr   = '&SpeedgoatCANOpen2Buses100us_P.CANRead_P1_n[0]';
+pt(67).dtname     = 'real_T';
 
 
 
   
-pt(68).blockname = 'Trike Application Layer/System_Control/TiltingControl/Offset_Conversion/Volt2meter';
-pt(68).paramname = 'Gain';
+pt(68).blockname = 'Speedgoat_TPDOs/CAN Bus Communication/CANOpen Slave  Protocol Stack - CAN Bus #2 (B)/CAN RX Wrapper/Switch';
+pt(68).paramname = 'Threshold';
 pt(68).class     = 'scalar';
 pt(68).nrows     = 1;
 pt(68).ncols     = 1;
-pt(68).subsource = 'SS_DOUBLE';
+pt(68).subsource = 'SS_UINT8';
 pt(68).ndims     = '2';
 pt(68).size      = '[]';
 pt(68).isStruct  = false;
-pt(68).symbol     = 'SpeedgoatCANOpen2Buses100us_P.Volt2meter_Gain';
-pt(68).baseaddr   = '&SpeedgoatCANOpen2Buses100us_P.Volt2meter_Gain';
-pt(68).dtname     = 'real_T';
+pt(68).symbol     = 'SpeedgoatCANOpen2Buses100us_P.Switch_Threshold_l';
+pt(68).baseaddr   = '&SpeedgoatCANOpen2Buses100us_P.Switch_Threshold_l';
+pt(68).dtname     = 'uint8_T';
 
 
 
   
-pt(69).blockname = 'Trike Application Layer/System_Control/TiltingControl/Offset_Conversion/Memory1';
-pt(69).paramname = 'InitialCondition';
+pt(69).blockname = 'Speedgoat_TPDOs/CAN Bus Communication/CANOpen Slave  Protocol Stack - CAN Bus #2 (B)/CAN TX Wrapper/Constant';
+pt(69).paramname = 'Value';
 pt(69).class     = 'scalar';
 pt(69).nrows     = 1;
 pt(69).ncols     = 1;
-pt(69).subsource = 'SS_DOUBLE';
+pt(69).subsource = 'SS_UINT8';
 pt(69).ndims     = '2';
 pt(69).size      = '[]';
 pt(69).isStruct  = false;
-pt(69).symbol     = 'SpeedgoatCANOpen2Buses100us_P.Memory1_InitialCondition_k';
-pt(69).baseaddr   = '&SpeedgoatCANOpen2Buses100us_P.Memory1_InitialCondition_k';
-pt(69).dtname     = 'real_T';
+pt(69).symbol     = 'SpeedgoatCANOpen2Buses100us_P.Constant_Value_nv';
+pt(69).baseaddr   = '&SpeedgoatCANOpen2Buses100us_P.Constant_Value_nv';
+pt(69).dtname     = 'uint8_T';
 
 
 
   
-pt(70).blockname = 'Trike Application Layer/System_Control/TiltingControl/Offset_Conversion/Discrete Filter';
-pt(70).paramname = 'Numerator';
+pt(70).blockname = 'Speedgoat_TPDOs/CAN Bus Communication/CANOpen Slave  Protocol Stack - CAN Bus #2 (B)/CAN TX Wrapper/CAN Write';
+pt(70).paramname = 'P1';
 pt(70).class     = 'vector';
 pt(70).nrows     = 1;
-pt(70).ncols     = 3;
+pt(70).ncols     = 7;
 pt(70).subsource = 'SS_DOUBLE';
 pt(70).ndims     = '2';
 pt(70).size      = '[]';
 pt(70).isStruct  = false;
-pt(70).symbol     = 'SpeedgoatCANOpen2Buses100us_P.DiscreteFilter_NumCoef';
-pt(70).baseaddr   = '&SpeedgoatCANOpen2Buses100us_P.DiscreteFilter_NumCoef[0]';
+pt(70).symbol     = 'SpeedgoatCANOpen2Buses100us_P.CANWrite_P1_h';
+pt(70).baseaddr   = '&SpeedgoatCANOpen2Buses100us_P.CANWrite_P1_h[0]';
 pt(70).dtname     = 'real_T';
 
 
 
   
-pt(71).blockname = 'Trike Application Layer/System_Control/TiltingControl/Offset_Conversion/Discrete Filter';
-pt(71).paramname = 'Denominator';
-pt(71).class     = 'vector';
+pt(71).blockname = 'Trike Application Layer/System_Control/TiltingControl/Offset_Conversion/Offset for 0 deg (3.5064V -> 57.02mm)';
+pt(71).paramname = 'Value';
+pt(71).class     = 'scalar';
 pt(71).nrows     = 1;
-pt(71).ncols     = 3;
+pt(71).ncols     = 1;
 pt(71).subsource = 'SS_DOUBLE';
 pt(71).ndims     = '2';
 pt(71).size      = '[]';
 pt(71).isStruct  = false;
-pt(71).symbol     = 'SpeedgoatCANOpen2Buses100us_P.DiscreteFilter_DenCoef';
-pt(71).baseaddr   = '&SpeedgoatCANOpen2Buses100us_P.DiscreteFilter_DenCoef[0]';
+pt(71).symbol     = 'SpeedgoatCANOpen2Buses100us_P.Offsetfor0deg35064V5702mm_Value';
+pt(71).baseaddr   = '&SpeedgoatCANOpen2Buses100us_P.Offsetfor0deg35064V5702mm_Value';
 pt(71).dtname     = 'real_T';
 
 
 
   
-pt(72).blockname = 'Trike Application Layer/System_Control/TiltingControl/Offset_Conversion/Discrete Filter';
-pt(72).paramname = 'InitialStates';
+pt(72).blockname = 'Trike Application Layer/System_Control/TiltingControl/Offset_Conversion/LSB2Volt';
+pt(72).paramname = 'Gain';
 pt(72).class     = 'scalar';
 pt(72).nrows     = 1;
 pt(72).ncols     = 1;
-pt(72).subsource = 'SS_DOUBLE';
+pt(72).subsource = 'SS_INT16';
 pt(72).ndims     = '2';
 pt(72).size      = '[]';
 pt(72).isStruct  = false;
-pt(72).symbol     = 'SpeedgoatCANOpen2Buses100us_P.DiscreteFilter_InitialStates';
-pt(72).baseaddr   = '&SpeedgoatCANOpen2Buses100us_P.DiscreteFilter_InitialStates';
-pt(72).dtname     = 'real_T';
+pt(72).symbol     = 'SpeedgoatCANOpen2Buses100us_P.LSB2Volt_Gain';
+pt(72).baseaddr   = '&SpeedgoatCANOpen2Buses100us_P.LSB2Volt_Gain';
+pt(72).dtname     = 'int16_T';
 
 
 
   
-pt(73).blockname = 'Trike Application Layer/System_Control/TiltingControl/PID_ctrl/Discrete-Time Integrator';
-pt(73).paramname = 'gainval';
+pt(73).blockname = 'Trike Application Layer/System_Control/TiltingControl/Offset_Conversion/Volt2meter';
+pt(73).paramname = 'Gain';
 pt(73).class     = 'scalar';
 pt(73).nrows     = 1;
 pt(73).ncols     = 1;
@@ -1164,14 +1164,14 @@ pt(73).subsource = 'SS_DOUBLE';
 pt(73).ndims     = '2';
 pt(73).size      = '[]';
 pt(73).isStruct  = false;
-pt(73).symbol     = 'SpeedgoatCANOpen2Buses100us_P.DiscreteTimeIntegrator_gainval';
-pt(73).baseaddr   = '&SpeedgoatCANOpen2Buses100us_P.DiscreteTimeIntegrator_gainval';
+pt(73).symbol     = 'SpeedgoatCANOpen2Buses100us_P.Volt2meter_Gain';
+pt(73).baseaddr   = '&SpeedgoatCANOpen2Buses100us_P.Volt2meter_Gain';
 pt(73).dtname     = 'real_T';
 
 
 
   
-pt(74).blockname = 'Trike Application Layer/System_Control/TiltingControl/PID_ctrl/Discrete-Time Integrator';
+pt(74).blockname = 'Trike Application Layer/System_Control/TiltingControl/Offset_Conversion/Memory1';
 pt(74).paramname = 'InitialCondition';
 pt(74).class     = 'scalar';
 pt(74).nrows     = 1;
@@ -1180,47 +1180,47 @@ pt(74).subsource = 'SS_DOUBLE';
 pt(74).ndims     = '2';
 pt(74).size      = '[]';
 pt(74).isStruct  = false;
-pt(74).symbol     = 'SpeedgoatCANOpen2Buses100us_P.DiscreteTimeIntegrator_IC';
-pt(74).baseaddr   = '&SpeedgoatCANOpen2Buses100us_P.DiscreteTimeIntegrator_IC';
+pt(74).symbol     = 'SpeedgoatCANOpen2Buses100us_P.Memory1_InitialCondition_k';
+pt(74).baseaddr   = '&SpeedgoatCANOpen2Buses100us_P.Memory1_InitialCondition_k';
 pt(74).dtname     = 'real_T';
 
 
 
   
-pt(75).blockname = 'Trike Application Layer/System_Control/TiltingControl/PID_ctrl/Discrete-Time Integrator1';
-pt(75).paramname = 'gainval';
-pt(75).class     = 'scalar';
+pt(75).blockname = 'Trike Application Layer/System_Control/TiltingControl/Offset_Conversion/Discrete Filter';
+pt(75).paramname = 'Numerator';
+pt(75).class     = 'vector';
 pt(75).nrows     = 1;
-pt(75).ncols     = 1;
+pt(75).ncols     = 3;
 pt(75).subsource = 'SS_DOUBLE';
 pt(75).ndims     = '2';
 pt(75).size      = '[]';
 pt(75).isStruct  = false;
-pt(75).symbol     = 'SpeedgoatCANOpen2Buses100us_P.DiscreteTimeIntegrator1_gainval';
-pt(75).baseaddr   = '&SpeedgoatCANOpen2Buses100us_P.DiscreteTimeIntegrator1_gainval';
+pt(75).symbol     = 'SpeedgoatCANOpen2Buses100us_P.DiscreteFilter_NumCoef';
+pt(75).baseaddr   = '&SpeedgoatCANOpen2Buses100us_P.DiscreteFilter_NumCoef[0]';
 pt(75).dtname     = 'real_T';
 
 
 
   
-pt(76).blockname = 'Trike Application Layer/System_Control/TiltingControl/PID_ctrl/Discrete-Time Integrator1';
-pt(76).paramname = 'InitialCondition';
-pt(76).class     = 'scalar';
+pt(76).blockname = 'Trike Application Layer/System_Control/TiltingControl/Offset_Conversion/Discrete Filter';
+pt(76).paramname = 'Denominator';
+pt(76).class     = 'vector';
 pt(76).nrows     = 1;
-pt(76).ncols     = 1;
+pt(76).ncols     = 3;
 pt(76).subsource = 'SS_DOUBLE';
 pt(76).ndims     = '2';
 pt(76).size      = '[]';
 pt(76).isStruct  = false;
-pt(76).symbol     = 'SpeedgoatCANOpen2Buses100us_P.DiscreteTimeIntegrator1_IC';
-pt(76).baseaddr   = '&SpeedgoatCANOpen2Buses100us_P.DiscreteTimeIntegrator1_IC';
+pt(76).symbol     = 'SpeedgoatCANOpen2Buses100us_P.DiscreteFilter_DenCoef';
+pt(76).baseaddr   = '&SpeedgoatCANOpen2Buses100us_P.DiscreteFilter_DenCoef[0]';
 pt(76).dtname     = 'real_T';
 
 
 
   
-pt(77).blockname = 'Trike Application Layer/System_Control/TiltingControl/PID_ctrl/c1';
-pt(77).paramname = 'Gain';
+pt(77).blockname = 'Trike Application Layer/System_Control/TiltingControl/Offset_Conversion/Discrete Filter';
+pt(77).paramname = 'InitialStates';
 pt(77).class     = 'scalar';
 pt(77).nrows     = 1;
 pt(77).ncols     = 1;
@@ -1228,11 +1228,91 @@ pt(77).subsource = 'SS_DOUBLE';
 pt(77).ndims     = '2';
 pt(77).size      = '[]';
 pt(77).isStruct  = false;
-pt(77).symbol     = 'SpeedgoatCANOpen2Buses100us_P.c1_Gain';
-pt(77).baseaddr   = '&SpeedgoatCANOpen2Buses100us_P.c1_Gain';
+pt(77).symbol     = 'SpeedgoatCANOpen2Buses100us_P.DiscreteFilter_InitialStates';
+pt(77).baseaddr   = '&SpeedgoatCANOpen2Buses100us_P.DiscreteFilter_InitialStates';
 pt(77).dtname     = 'real_T';
 
 
+
+  
+pt(78).blockname = 'Trike Application Layer/System_Control/TiltingControl/PID_ctrl/Discrete-Time Integrator';
+pt(78).paramname = 'gainval';
+pt(78).class     = 'scalar';
+pt(78).nrows     = 1;
+pt(78).ncols     = 1;
+pt(78).subsource = 'SS_DOUBLE';
+pt(78).ndims     = '2';
+pt(78).size      = '[]';
+pt(78).isStruct  = false;
+pt(78).symbol     = 'SpeedgoatCANOpen2Buses100us_P.DiscreteTimeIntegrator_gainval';
+pt(78).baseaddr   = '&SpeedgoatCANOpen2Buses100us_P.DiscreteTimeIntegrator_gainval';
+pt(78).dtname     = 'real_T';
+
+
+
+  
+pt(79).blockname = 'Trike Application Layer/System_Control/TiltingControl/PID_ctrl/Discrete-Time Integrator';
+pt(79).paramname = 'InitialCondition';
+pt(79).class     = 'scalar';
+pt(79).nrows     = 1;
+pt(79).ncols     = 1;
+pt(79).subsource = 'SS_DOUBLE';
+pt(79).ndims     = '2';
+pt(79).size      = '[]';
+pt(79).isStruct  = false;
+pt(79).symbol     = 'SpeedgoatCANOpen2Buses100us_P.DiscreteTimeIntegrator_IC';
+pt(79).baseaddr   = '&SpeedgoatCANOpen2Buses100us_P.DiscreteTimeIntegrator_IC';
+pt(79).dtname     = 'real_T';
+
+
+
+  
+pt(80).blockname = 'Trike Application Layer/System_Control/TiltingControl/PID_ctrl/Discrete-Time Integrator1';
+pt(80).paramname = 'gainval';
+pt(80).class     = 'scalar';
+pt(80).nrows     = 1;
+pt(80).ncols     = 1;
+pt(80).subsource = 'SS_DOUBLE';
+pt(80).ndims     = '2';
+pt(80).size      = '[]';
+pt(80).isStruct  = false;
+pt(80).symbol     = 'SpeedgoatCANOpen2Buses100us_P.DiscreteTimeIntegrator1_gainval';
+pt(80).baseaddr   = '&SpeedgoatCANOpen2Buses100us_P.DiscreteTimeIntegrator1_gainval';
+pt(80).dtname     = 'real_T';
+
+
+
+  
+pt(81).blockname = 'Trike Application Layer/System_Control/TiltingControl/PID_ctrl/Discrete-Time Integrator1';
+pt(81).paramname = 'InitialCondition';
+pt(81).class     = 'scalar';
+pt(81).nrows     = 1;
+pt(81).ncols     = 1;
+pt(81).subsource = 'SS_DOUBLE';
+pt(81).ndims     = '2';
+pt(81).size      = '[]';
+pt(81).isStruct  = false;
+pt(81).symbol     = 'SpeedgoatCANOpen2Buses100us_P.DiscreteTimeIntegrator1_IC';
+pt(81).baseaddr   = '&SpeedgoatCANOpen2Buses100us_P.DiscreteTimeIntegrator1_IC';
+pt(81).dtname     = 'real_T';
+
+
+
+  
+pt(82).blockname = 'Trike Application Layer/System_Control/TiltingControl/PID_ctrl/c1';
+pt(82).paramname = 'Gain';
+pt(82).class     = 'scalar';
+pt(82).nrows     = 1;
+pt(82).ncols     = 1;
+pt(82).subsource = 'SS_DOUBLE';
+pt(82).ndims     = '2';
+pt(82).size      = '[]';
+pt(82).isStruct  = false;
+pt(82).symbol     = 'SpeedgoatCANOpen2Buses100us_P.c1_Gain';
+pt(82).baseaddr   = '&SpeedgoatCANOpen2Buses100us_P.c1_Gain';
+pt(82).dtname     = 'real_T';
+
+
 function len = getlenPT
-len = 77;
+len = 82;
 
