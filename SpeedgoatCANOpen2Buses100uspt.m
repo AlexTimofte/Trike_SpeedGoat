@@ -408,13 +408,13 @@ pt(26).paramname = 'Gain';
 pt(26).class     = 'scalar';
 pt(26).nrows     = 1;
 pt(26).ncols     = 1;
-pt(26).subsource = 'SS_SINGLE';
+pt(26).subsource = 'SS_DOUBLE';
 pt(26).ndims     = '2';
 pt(26).size      = '[]';
 pt(26).isStruct  = false;
 pt(26).symbol     = 'SpeedgoatCANOpen2Buses100us_P.Amp2mAmp_Gain';
 pt(26).baseaddr   = '&SpeedgoatCANOpen2Buses100us_P.Amp2mAmp_Gain';
-pt(26).dtname     = 'real32_T';
+pt(26).dtname     = 'real_T';
 
 
 
@@ -424,13 +424,13 @@ pt(27).paramname = 'Gain';
 pt(27).class     = 'scalar';
 pt(27).nrows     = 1;
 pt(27).ncols     = 1;
-pt(27).subsource = 'SS_SINGLE';
+pt(27).subsource = 'SS_DOUBLE';
 pt(27).ndims     = '2';
 pt(27).size      = '[]';
 pt(27).isStruct  = false;
-pt(27).symbol     = 'SpeedgoatCANOpen2Buses100us_P.Gain1_Gain_c';
-pt(27).baseaddr   = '&SpeedgoatCANOpen2Buses100us_P.Gain1_Gain_c';
-pt(27).dtname     = 'real32_T';
+pt(27).symbol     = 'SpeedgoatCANOpen2Buses100us_P.Gain1_Gain';
+pt(27).baseaddr   = '&SpeedgoatCANOpen2Buses100us_P.Gain1_Gain';
+pt(27).dtname     = 'real_T';
 
 
 
@@ -440,13 +440,13 @@ pt(28).paramname = 'Gain';
 pt(28).class     = 'scalar';
 pt(28).nrows     = 1;
 pt(28).ncols     = 1;
-pt(28).subsource = 'SS_SINGLE';
+pt(28).subsource = 'SS_DOUBLE';
 pt(28).ndims     = '2';
 pt(28).size      = '[]';
 pt(28).isStruct  = false;
 pt(28).symbol     = 'SpeedgoatCANOpen2Buses100us_P.Gain2_Gain';
 pt(28).baseaddr   = '&SpeedgoatCANOpen2Buses100us_P.Gain2_Gain';
-pt(28).dtname     = 'real32_T';
+pt(28).dtname     = 'real_T';
 
 
 
@@ -488,13 +488,13 @@ pt(31).paramname = 'UpperLimit';
 pt(31).class     = 'scalar';
 pt(31).nrows     = 1;
 pt(31).ncols     = 1;
-pt(31).subsource = 'SS_SINGLE';
+pt(31).subsource = 'SS_DOUBLE';
 pt(31).ndims     = '2';
 pt(31).size      = '[]';
 pt(31).isStruct  = false;
 pt(31).symbol     = 'SpeedgoatCANOpen2Buses100us_P.Saturation_UpperSat';
 pt(31).baseaddr   = '&SpeedgoatCANOpen2Buses100us_P.Saturation_UpperSat';
-pt(31).dtname     = 'real32_T';
+pt(31).dtname     = 'real_T';
 
 
 
@@ -504,13 +504,13 @@ pt(32).paramname = 'LowerLimit';
 pt(32).class     = 'scalar';
 pt(32).nrows     = 1;
 pt(32).ncols     = 1;
-pt(32).subsource = 'SS_SINGLE';
+pt(32).subsource = 'SS_DOUBLE';
 pt(32).ndims     = '2';
 pt(32).size      = '[]';
 pt(32).isStruct  = false;
 pt(32).symbol     = 'SpeedgoatCANOpen2Buses100us_P.Saturation_LowerSat';
 pt(32).baseaddr   = '&SpeedgoatCANOpen2Buses100us_P.Saturation_LowerSat';
-pt(32).dtname     = 'real32_T';
+pt(32).dtname     = 'real_T';
 
 
 
@@ -552,13 +552,13 @@ pt(35).paramname = 'UpperLimit';
 pt(35).class     = 'scalar';
 pt(35).nrows     = 1;
 pt(35).ncols     = 1;
-pt(35).subsource = 'SS_SINGLE';
+pt(35).subsource = 'SS_DOUBLE';
 pt(35).ndims     = '2';
 pt(35).size      = '[]';
 pt(35).isStruct  = false;
 pt(35).symbol     = 'SpeedgoatCANOpen2Buses100us_P.Saturation2_UpperSat';
 pt(35).baseaddr   = '&SpeedgoatCANOpen2Buses100us_P.Saturation2_UpperSat';
-pt(35).dtname     = 'real32_T';
+pt(35).dtname     = 'real_T';
 
 
 
@@ -568,13 +568,13 @@ pt(36).paramname = 'LowerLimit';
 pt(36).class     = 'scalar';
 pt(36).nrows     = 1;
 pt(36).ncols     = 1;
-pt(36).subsource = 'SS_SINGLE';
+pt(36).subsource = 'SS_DOUBLE';
 pt(36).ndims     = '2';
 pt(36).size      = '[]';
 pt(36).isStruct  = false;
 pt(36).symbol     = 'SpeedgoatCANOpen2Buses100us_P.Saturation2_LowerSat';
 pt(36).baseaddr   = '&SpeedgoatCANOpen2Buses100us_P.Saturation2_LowerSat';
-pt(36).dtname     = 'real32_T';
+pt(36).dtname     = 'real_T';
 
 
 
@@ -876,8 +876,8 @@ pt(55).subsource = 'SS_SINGLE';
 pt(55).ndims     = '2';
 pt(55).size      = '[]';
 pt(55).isStruct  = false;
-pt(55).symbol     = 'SpeedgoatCANOpen2Buses100us_P.Gain1_Gain';
-pt(55).baseaddr   = '&SpeedgoatCANOpen2Buses100us_P.Gain1_Gain';
+pt(55).symbol     = 'SpeedgoatCANOpen2Buses100us_P.Gain1_Gain_n';
+pt(55).baseaddr   = '&SpeedgoatCANOpen2Buses100us_P.Gain1_Gain_n';
 pt(55).dtname     = 'real32_T';
 
 
@@ -1123,7 +1123,7 @@ pt(70).dtname     = 'real_T';
 
 
   
-pt(71).blockname = 'Trike Application Layer/System_Control/TiltingControl/Offset_Conversion/Offset for 0 deg (3.5064V -> 57.02mm)';
+pt(71).blockname = 'Trike Application Layer/System_Control/TiltingControl/Offset_Conversion/Offset for 0 deg';
 pt(71).paramname = 'Value';
 pt(71).class     = 'scalar';
 pt(71).nrows     = 1;
@@ -1132,8 +1132,8 @@ pt(71).subsource = 'SS_DOUBLE';
 pt(71).ndims     = '2';
 pt(71).size      = '[]';
 pt(71).isStruct  = false;
-pt(71).symbol     = 'SpeedgoatCANOpen2Buses100us_P.Offsetfor0deg35064V5702mm_Value';
-pt(71).baseaddr   = '&SpeedgoatCANOpen2Buses100us_P.Offsetfor0deg35064V5702mm_Value';
+pt(71).symbol     = 'SpeedgoatCANOpen2Buses100us_P.Offsetfor0deg_Value';
+pt(71).baseaddr   = '&SpeedgoatCANOpen2Buses100us_P.Offsetfor0deg_Value';
 pt(71).dtname     = 'real_T';
 
 

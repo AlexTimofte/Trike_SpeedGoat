@@ -3,9 +3,9 @@
  *
  * Code generation for model "SpeedgoatCANOpen2Buses100us".
  *
- * Model version              : 1.809
+ * Model version              : 1.813
  * Simulink Coder version : 9.0 (R2018b) 24-May-2018
- * C source code generated on : Thu Jul 22 18:33:43 2021
+ * C source code generated on : Thu Dec 30 12:50:12 2021
  *
  * Target selection: slrt.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -900,9 +900,16 @@ typedef struct {
   real_T Product2;                     /* '<S43>/Product2' */
   real_T c1;                           /* '<S43>/c1' */
   real_T Switch1;                      /* '<S35>/Switch1' */
-  real_T Switch3;                      /* '<S35>/Switch3' */
   real_T Sum;                          /* '<S33>/Sum' */
   real_T br_percent2;                  /* '<S33>/Gain3' */
+  real_T br_percent;                   /* '<S33>/Sum3' */
+  real_T Gain2_a;                      /* '<S33>/Gain2' */
+  real_T Saturation_e;                 /* '<S33>/Saturation' */
+  real_T Gain1;                        /* '<S33>/Gain1' */
+  real_T Sum2;                         /* '<S33>/Sum2' */
+  real_T Saturation2;                  /* '<S33>/Saturation2' */
+  real_T BrCurrentRef;                 /* '<S33>/Amp2mAmp' */
+  real_T Switch3;                      /* '<S35>/Switch3' */
   real_T CastToSingle_g;               /* '<S34>/Cast To Single' */
   real_T Memory1;                      /* '<S34>/Memory1' */
   real_T DirectionAvg;                 /* '<S34>/Cast To Single1' */
@@ -918,7 +925,7 @@ typedef struct {
   real_T Sum_e;                        /* '<S43>/Sum' */
   real_T AntiWindup;                   /* '<S43>/AntiWindup' */
   real_T IntegralGain;                 /* '<S43>/Integral Gain' */
-  real_T Sum2;                         /* '<S43>/Sum2' */
+  real_T Sum2_g;                       /* '<S43>/Sum2' */
   real_T Constant;                     /* '<S36>/Constant' */
   real_T Byte0;                        /* '<S25>/MATLAB Function1' */
   real_T button;                       /* '<S25>/MATLAB Function' */
@@ -948,16 +955,10 @@ typedef struct {
   real32_T SteeringAnglerad;           /* '<S34>/degree2rad' */
   real32_T n;                          /* '<S36>/n' */
   real32_T CastToSingle3_p;            /* '<S33>/Cast To Single3' */
-  real32_T br_percent;                 /* '<S33>/Gain4' */
-  real32_T Gain2_a;                    /* '<S33>/Gain2' */
-  real32_T Saturation_e;               /* '<S33>/Saturation' */
-  real32_T Gain1;                      /* '<S33>/Gain1' */
+  real32_T br_percent_c;               /* '<S33>/Gain4' */
   real32_T Delay;                      /* '<S33>/Delay' */
   real32_T DataTypeConversion1;        /* '<S33>/Data Type Conversion1' */
   real32_T Sum1;                       /* '<S33>/Sum1' */
-  real32_T Sum2_i;                     /* '<S33>/Sum2' */
-  real32_T Saturation2;                /* '<S33>/Saturation2' */
-  real32_T BrCurrentRef;               /* '<S33>/Amp2mAmp' */
   real32_T Joystick_LatCmd_f;          /* '<S21>/Data Type Conversion15' */
   real32_T Joystick_LongCmd_m;         /* '<S21>/Data Type Conversion16' */
   real32_T Encoder_Actual_Position_g;  /* '<S21>/Data Type Conversion18' */
@@ -1207,6 +1208,16 @@ typedef struct {
   struct {
     void *AQHandles;
     void *SlioLTF;
+  } HiddenToAsyncQueue_InsertedFo_h;   /* synthesized block */
+
+  struct {
+    void *AQHandles;
+    void *SlioLTF;
+  } HiddenToAsyncQueue_InsertedF_ca;   /* synthesized block */
+
+  struct {
+    void *AQHandles;
+    void *SlioLTF;
   } HiddenToAsyncQueue_InsertedF_pr;   /* synthesized block */
 
   struct {
@@ -1222,12 +1233,7 @@ typedef struct {
   struct {
     void *AQHandles;
     void *SlioLTF;
-  } HiddenToAsyncQueue_InsertedFo_h;   /* synthesized block */
-
-  struct {
-    void *AQHandles;
-    void *SlioLTF;
-  } HiddenToAsyncQueue_InsertedF_ca;   /* synthesized block */
+  } HiddenToAsyncQueue_InsertedF_ok;   /* synthesized block */
 
   void* DirectionAvg_d0_SEMAPHORE;     /* synthesized block */
   void* TmpRTBAtPDirectionControllerI_l;/* synthesized block */
@@ -1517,14 +1523,35 @@ struct P_SpeedgoatCANOpen2Buses100us_T_ {
   real_T c1_Gain;                      /* Expression: -1000
                                         * Referenced by: '<S43>/c1'
                                         */
-  real_T Constant_Value_k;             /* Expression: 0
-                                        * Referenced by: '<S21>/Constant'
-                                        */
   real_T offset_Value;                 /* Expression: 3600
                                         * Referenced by: '<S33>/offset'
                                         */
   real_T Gain3_Gain;                   /* Expression: 0.00015625
                                         * Referenced by: '<S33>/Gain3'
+                                        */
+  real_T Gain2_Gain;                   /* Expression: -1
+                                        * Referenced by: '<S33>/Gain2'
+                                        */
+  real_T Saturation_UpperSat;          /* Expression: 0
+                                        * Referenced by: '<S33>/Saturation'
+                                        */
+  real_T Saturation_LowerSat;          /* Expression: -1
+                                        * Referenced by: '<S33>/Saturation'
+                                        */
+  real_T Gain1_Gain;                   /* Expression: 12.7
+                                        * Referenced by: '<S33>/Gain1'
+                                        */
+  real_T Saturation2_UpperSat;         /* Expression: 8
+                                        * Referenced by: '<S33>/Saturation2'
+                                        */
+  real_T Saturation2_LowerSat;         /* Expression: -8
+                                        * Referenced by: '<S33>/Saturation2'
+                                        */
+  real_T Amp2mAmp_Gain;                /* Expression: 1000
+                                        * Referenced by: '<S33>/Amp2mAmp'
+                                        */
+  real_T Constant_Value_k;             /* Expression: 0
+                                        * Referenced by: '<S21>/Constant'
                                         */
   real_T Memory1_InitialCondition;     /* Expression: 0
                                         * Referenced by: '<S34>/Memory1'
@@ -1544,9 +1571,9 @@ struct P_SpeedgoatCANOpen2Buses100us_T_ {
   real_T Memory1_InitialCondition_k;   /* Expression: 0
                                         * Referenced by: '<S42>/Memory1'
                                         */
-  real_T Offsetfor0deg35064V5702mm_Value;/* Expression: 3.4829
-                                          * Referenced by: '<S42>/Offset for 0 deg (3.5064V -> 57.02mm)'
-                                          */
+  real_T Offsetfor0deg_Value;          /* Expression: 3.02258
+                                        * Referenced by: '<S42>/Offset for 0 deg'
+                                        */
   real_T Volt2meter_Gain;              /* Expression: 0.076/5
                                         * Referenced by: '<S42>/Volt2meter'
                                         */
@@ -1577,7 +1604,7 @@ struct P_SpeedgoatCANOpen2Buses100us_T_ {
   int32_T WheelRadius_Gain;            /* Computed Parameter: WheelRadius_Gain
                                         * Referenced by: '<S37>/WheelRadius'
                                         */
-  real32_T Gain1_Gain;                 /* Computed Parameter: Gain1_Gain
+  real32_T Gain1_Gain_n;               /* Computed Parameter: Gain1_Gain_n
                                         * Referenced by: '<S37>/Gain1'
                                         */
   real32_T Constant_Value_l;           /* Computed Parameter: Constant_Value_l
@@ -1607,29 +1634,8 @@ struct P_SpeedgoatCANOpen2Buses100us_T_ {
   real32_T Gain4_Gain;                 /* Computed Parameter: Gain4_Gain
                                         * Referenced by: '<S33>/Gain4'
                                         */
-  real32_T Gain2_Gain;                 /* Computed Parameter: Gain2_Gain
-                                        * Referenced by: '<S33>/Gain2'
-                                        */
-  real32_T Saturation_UpperSat;        /* Computed Parameter: Saturation_UpperSat
-                                        * Referenced by: '<S33>/Saturation'
-                                        */
-  real32_T Saturation_LowerSat;        /* Computed Parameter: Saturation_LowerSat
-                                        * Referenced by: '<S33>/Saturation'
-                                        */
-  real32_T Gain1_Gain_c;               /* Computed Parameter: Gain1_Gain_c
-                                        * Referenced by: '<S33>/Gain1'
-                                        */
   real32_T Delay_InitialCondition;     /* Computed Parameter: Delay_InitialCondition
                                         * Referenced by: '<S33>/Delay'
-                                        */
-  real32_T Saturation2_UpperSat;       /* Computed Parameter: Saturation2_UpperSat
-                                        * Referenced by: '<S33>/Saturation2'
-                                        */
-  real32_T Saturation2_LowerSat;       /* Computed Parameter: Saturation2_LowerSat
-                                        * Referenced by: '<S33>/Saturation2'
-                                        */
-  real32_T Amp2mAmp_Gain;              /* Computed Parameter: Amp2mAmp_Gain
-                                        * Referenced by: '<S33>/Amp2mAmp'
                                         */
   uint32_T Gain4_Gain_h;               /* Computed Parameter: Gain4_Gain_h
                                         * Referenced by: '<S21>/Gain4'

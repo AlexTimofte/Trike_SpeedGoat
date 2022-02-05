@@ -3,9 +3,9 @@
  *
  * Code generation for model "SpeedgoatCANOpen2Buses100us".
  *
- * Model version              : 1.809
+ * Model version              : 1.813
  * Simulink Coder version : 9.0 (R2018b) 24-May-2018
- * C source code generated on : Thu Jul 22 18:33:43 2021
+ * C source code generated on : Thu Dec 30 12:50:12 2021
  *
  * Target selection: slrt.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -249,15 +249,13 @@ static void SpeedgoatCANOpen2Buses100us_output0(void) /* Sample time: [0.0s, 0.0
   dsp_simulink_MovingAverage_i_T *obj_6;
   dsp_private_SlidingWindowAv_i_T *obj_7;
   int8_T wrBufIdx;
-  uint64_T tmp;
+  real32_T tmp;
   uint64_T tmp_0;
-  int128m_T tmp_1;
-  real32_T u0_0;
-  real32_T u1;
-  real32_T u2;
-  uint16_T u0_1;
-  uint16_T u1_0;
-  uint16_T u2_0;
+  uint64_T tmp_1;
+  int128m_T tmp_2;
+  uint16_T u0_0;
+  uint16_T u1;
+  uint16_T u2;
 
   {                                    /* Sample time: [0.0s, 0.0s] */
     rate_scheduler();
@@ -986,7 +984,7 @@ static void SpeedgoatCANOpen2Buses100us_output0(void) /* Sample time: [0.0s, 0.0
   if (SpeedgoatCANOpen2Buses100us_B.Compare) {
     /* Gain: '<S37>/Gain1' */
     SpeedgoatCANOpen2Buses100us_B.Gain1_e =
-      SpeedgoatCANOpen2Buses100us_P.Gain1_Gain *
+      SpeedgoatCANOpen2Buses100us_P.Gain1_Gain_n *
       SpeedgoatCANOpen2Buses100us_B.Joystick_LongCmd;
 
     /* Abs: '<S37>/Abs' */
@@ -1055,15 +1053,15 @@ static void SpeedgoatCANOpen2Buses100us_output0(void) /* Sample time: [0.0s, 0.0
      &SpeedgoatCANOpen2Buses100us_B.DunkA_ActualVelocity);
 
   /* DataTypeConversion: '<S55>/Cast To Single1' */
-  u0_0 = (real32_T)floor(SpeedgoatCANOpen2Buses100us_B.ClearError_n);
-  if (rtIsNaNF(u0_0) || rtIsInfF(u0_0)) {
-    u0_0 = 0.0F;
+  tmp = (real32_T)floor(SpeedgoatCANOpen2Buses100us_B.ClearError_n);
+  if (rtIsNaNF(tmp) || rtIsInfF(tmp)) {
+    tmp = 0.0F;
   } else {
-    u0_0 = (real32_T)fmod(u0_0, 256.0);
+    tmp = (real32_T)fmod(tmp, 256.0);
   }
 
-  SpeedgoatCANOpen2Buses100us_B.ClearError_m = (uint8_T)(u0_0 < 0.0F ? (int32_T)
-    (uint8_T)-(int8_T)(uint8_T)-u0_0 : (int32_T)(uint8_T)u0_0);
+  SpeedgoatCANOpen2Buses100us_B.ClearError_m = (uint8_T)(tmp < 0.0F ? (int32_T)
+    (uint8_T)-(int8_T)(uint8_T)-tmp : (int32_T)(uint8_T)tmp);
 
   /* End of DataTypeConversion: '<S55>/Cast To Single1' */
 
@@ -1072,15 +1070,15 @@ static void SpeedgoatCANOpen2Buses100us_output0(void) /* Sample time: [0.0s, 0.0
     SpeedgoatCANOpen2Buses100us_B.ClearError_m;
 
   /* DataTypeConversion: '<S55>/Cast To Single' */
-  u0_0 = (real32_T)floor(SpeedgoatCANOpen2Buses100us_B.DeviceMode_o);
-  if (rtIsNaNF(u0_0) || rtIsInfF(u0_0)) {
-    u0_0 = 0.0F;
+  tmp = (real32_T)floor(SpeedgoatCANOpen2Buses100us_B.DeviceMode_o);
+  if (rtIsNaNF(tmp) || rtIsInfF(tmp)) {
+    tmp = 0.0F;
   } else {
-    u0_0 = (real32_T)fmod(u0_0, 256.0);
+    tmp = (real32_T)fmod(tmp, 256.0);
   }
 
-  SpeedgoatCANOpen2Buses100us_B.DeviceMode_e = (uint8_T)(u0_0 < 0.0F ? (int32_T)
-    (uint8_T)-(int8_T)(uint8_T)-u0_0 : (int32_T)(uint8_T)u0_0);
+  SpeedgoatCANOpen2Buses100us_B.DeviceMode_e = (uint8_T)(tmp < 0.0F ? (int32_T)
+    (uint8_T)-(int8_T)(uint8_T)-tmp : (int32_T)(uint8_T)tmp);
 
   /* End of DataTypeConversion: '<S55>/Cast To Single' */
 
@@ -1089,15 +1087,15 @@ static void SpeedgoatCANOpen2Buses100us_output0(void) /* Sample time: [0.0s, 0.0
     SpeedgoatCANOpen2Buses100us_B.DeviceMode_e;
 
   /* DataTypeConversion: '<S55>/Cast To Single3' */
-  u0_0 = (real32_T)floor(SpeedgoatCANOpen2Buses100us_B.PowerEnable_a);
-  if (rtIsNaNF(u0_0) || rtIsInfF(u0_0)) {
-    u0_0 = 0.0F;
+  tmp = (real32_T)floor(SpeedgoatCANOpen2Buses100us_B.PowerEnable_a);
+  if (rtIsNaNF(tmp) || rtIsInfF(tmp)) {
+    tmp = 0.0F;
   } else {
-    u0_0 = (real32_T)fmod(u0_0, 256.0);
+    tmp = (real32_T)fmod(tmp, 256.0);
   }
 
-  SpeedgoatCANOpen2Buses100us_B.PowerEnable_i = (uint8_T)(u0_0 < 0.0F ? (int32_T)
-    (uint8_T)-(int8_T)(uint8_T)-u0_0 : (int32_T)(uint8_T)u0_0);
+  SpeedgoatCANOpen2Buses100us_B.PowerEnable_i = (uint8_T)(tmp < 0.0F ? (int32_T)
+    (uint8_T)-(int8_T)(uint8_T)-tmp : (int32_T)(uint8_T)tmp);
 
   /* End of DataTypeConversion: '<S55>/Cast To Single3' */
 
@@ -1106,15 +1104,15 @@ static void SpeedgoatCANOpen2Buses100us_output0(void) /* Sample time: [0.0s, 0.0
     SpeedgoatCANOpen2Buses100us_B.PowerEnable_i;
 
   /* DataTypeConversion: '<S55>/Cast To Single2' */
-  u0_0 = (real32_T)floor(SpeedgoatCANOpen2Buses100us_B.BrakeCtrl_b);
-  if (rtIsNaNF(u0_0) || rtIsInfF(u0_0)) {
-    u0_0 = 0.0F;
+  tmp = (real32_T)floor(SpeedgoatCANOpen2Buses100us_B.BrakeCtrl_b);
+  if (rtIsNaNF(tmp) || rtIsInfF(tmp)) {
+    tmp = 0.0F;
   } else {
-    u0_0 = (real32_T)fmod(u0_0, 256.0);
+    tmp = (real32_T)fmod(tmp, 256.0);
   }
 
-  SpeedgoatCANOpen2Buses100us_B.BrakeCtrl_mu = (uint8_T)(u0_0 < 0.0F ? (int32_T)
-    (uint8_T)-(int8_T)(uint8_T)-u0_0 : (int32_T)(uint8_T)u0_0);
+  SpeedgoatCANOpen2Buses100us_B.BrakeCtrl_mu = (uint8_T)(tmp < 0.0F ? (int32_T)
+    (uint8_T)-(int8_T)(uint8_T)-tmp : (int32_T)(uint8_T)tmp);
 
   /* End of DataTypeConversion: '<S55>/Cast To Single2' */
 
@@ -1170,15 +1168,15 @@ static void SpeedgoatCANOpen2Buses100us_output0(void) /* Sample time: [0.0s, 0.0
      &SpeedgoatCANOpen2Buses100us_B.DunkB_ActualVelocity);
 
   /* DataTypeConversion: '<S58>/Cast To Single1' */
-  u0_0 = (real32_T)floor(SpeedgoatCANOpen2Buses100us_B.ClearError);
-  if (rtIsNaNF(u0_0) || rtIsInfF(u0_0)) {
-    u0_0 = 0.0F;
+  tmp = (real32_T)floor(SpeedgoatCANOpen2Buses100us_B.ClearError);
+  if (rtIsNaNF(tmp) || rtIsInfF(tmp)) {
+    tmp = 0.0F;
   } else {
-    u0_0 = (real32_T)fmod(u0_0, 256.0);
+    tmp = (real32_T)fmod(tmp, 256.0);
   }
 
-  SpeedgoatCANOpen2Buses100us_B.ClearError_j = (uint8_T)(u0_0 < 0.0F ? (int32_T)
-    (uint8_T)-(int8_T)(uint8_T)-u0_0 : (int32_T)(uint8_T)u0_0);
+  SpeedgoatCANOpen2Buses100us_B.ClearError_j = (uint8_T)(tmp < 0.0F ? (int32_T)
+    (uint8_T)-(int8_T)(uint8_T)-tmp : (int32_T)(uint8_T)tmp);
 
   /* End of DataTypeConversion: '<S58>/Cast To Single1' */
 
@@ -1187,15 +1185,15 @@ static void SpeedgoatCANOpen2Buses100us_output0(void) /* Sample time: [0.0s, 0.0
     SpeedgoatCANOpen2Buses100us_B.ClearError_j;
 
   /* DataTypeConversion: '<S58>/Cast To Single' */
-  u0_0 = (real32_T)floor(SpeedgoatCANOpen2Buses100us_B.DeviceMode);
-  if (rtIsNaNF(u0_0) || rtIsInfF(u0_0)) {
-    u0_0 = 0.0F;
+  tmp = (real32_T)floor(SpeedgoatCANOpen2Buses100us_B.DeviceMode);
+  if (rtIsNaNF(tmp) || rtIsInfF(tmp)) {
+    tmp = 0.0F;
   } else {
-    u0_0 = (real32_T)fmod(u0_0, 256.0);
+    tmp = (real32_T)fmod(tmp, 256.0);
   }
 
-  SpeedgoatCANOpen2Buses100us_B.DeviceMode_d = (uint8_T)(u0_0 < 0.0F ? (int32_T)
-    (uint8_T)-(int8_T)(uint8_T)-u0_0 : (int32_T)(uint8_T)u0_0);
+  SpeedgoatCANOpen2Buses100us_B.DeviceMode_d = (uint8_T)(tmp < 0.0F ? (int32_T)
+    (uint8_T)-(int8_T)(uint8_T)-tmp : (int32_T)(uint8_T)tmp);
 
   /* End of DataTypeConversion: '<S58>/Cast To Single' */
 
@@ -1204,15 +1202,15 @@ static void SpeedgoatCANOpen2Buses100us_output0(void) /* Sample time: [0.0s, 0.0
     SpeedgoatCANOpen2Buses100us_B.DeviceMode_d;
 
   /* DataTypeConversion: '<S58>/Cast To Single3' */
-  u0_0 = (real32_T)floor(SpeedgoatCANOpen2Buses100us_B.PowerEnable);
-  if (rtIsNaNF(u0_0) || rtIsInfF(u0_0)) {
-    u0_0 = 0.0F;
+  tmp = (real32_T)floor(SpeedgoatCANOpen2Buses100us_B.PowerEnable);
+  if (rtIsNaNF(tmp) || rtIsInfF(tmp)) {
+    tmp = 0.0F;
   } else {
-    u0_0 = (real32_T)fmod(u0_0, 256.0);
+    tmp = (real32_T)fmod(tmp, 256.0);
   }
 
-  SpeedgoatCANOpen2Buses100us_B.PowerEnable_ir = (uint8_T)(u0_0 < 0.0F ?
-    (int32_T)(uint8_T)-(int8_T)(uint8_T)-u0_0 : (int32_T)(uint8_T)u0_0);
+  SpeedgoatCANOpen2Buses100us_B.PowerEnable_ir = (uint8_T)(tmp < 0.0F ? (int32_T)
+    (uint8_T)-(int8_T)(uint8_T)-tmp : (int32_T)(uint8_T)tmp);
 
   /* End of DataTypeConversion: '<S58>/Cast To Single3' */
 
@@ -1221,15 +1219,15 @@ static void SpeedgoatCANOpen2Buses100us_output0(void) /* Sample time: [0.0s, 0.0
     SpeedgoatCANOpen2Buses100us_B.PowerEnable_ir;
 
   /* DataTypeConversion: '<S58>/Cast To Single2' */
-  u0_0 = (real32_T)floor(SpeedgoatCANOpen2Buses100us_B.BrakeCtrl);
-  if (rtIsNaNF(u0_0) || rtIsInfF(u0_0)) {
-    u0_0 = 0.0F;
+  tmp = (real32_T)floor(SpeedgoatCANOpen2Buses100us_B.BrakeCtrl);
+  if (rtIsNaNF(tmp) || rtIsInfF(tmp)) {
+    tmp = 0.0F;
   } else {
-    u0_0 = (real32_T)fmod(u0_0, 256.0);
+    tmp = (real32_T)fmod(tmp, 256.0);
   }
 
-  SpeedgoatCANOpen2Buses100us_B.BrakeCtrl_k = (uint8_T)(u0_0 < 0.0F ? (int32_T)
-    (uint8_T)-(int8_T)(uint8_T)-u0_0 : (int32_T)(uint8_T)u0_0);
+  SpeedgoatCANOpen2Buses100us_B.BrakeCtrl_k = (uint8_T)(tmp < 0.0F ? (int32_T)
+    (uint8_T)-(int8_T)(uint8_T)-tmp : (int32_T)(uint8_T)tmp);
 
   /* End of DataTypeConversion: '<S58>/Cast To Single2' */
 
@@ -1292,15 +1290,15 @@ static void SpeedgoatCANOpen2Buses100us_output0(void) /* Sample time: [0.0s, 0.0
     SpeedgoatCANOpen2Buses100us_B.DunkC_ActualCurrent;
 
   /* DataTypeConversion: '<S57>/Cast To Single1' */
-  u0_0 = (real32_T)floor(SpeedgoatCANOpen2Buses100us_B.ClearError_h);
-  if (rtIsNaNF(u0_0) || rtIsInfF(u0_0)) {
-    u0_0 = 0.0F;
+  tmp = (real32_T)floor(SpeedgoatCANOpen2Buses100us_B.ClearError_h);
+  if (rtIsNaNF(tmp) || rtIsInfF(tmp)) {
+    tmp = 0.0F;
   } else {
-    u0_0 = (real32_T)fmod(u0_0, 256.0);
+    tmp = (real32_T)fmod(tmp, 256.0);
   }
 
-  SpeedgoatCANOpen2Buses100us_B.ClearError_jb = (uint8_T)(u0_0 < 0.0F ? (int32_T)
-    (uint8_T)-(int8_T)(uint8_T)-u0_0 : (int32_T)(uint8_T)u0_0);
+  SpeedgoatCANOpen2Buses100us_B.ClearError_jb = (uint8_T)(tmp < 0.0F ? (int32_T)
+    (uint8_T)-(int8_T)(uint8_T)-tmp : (int32_T)(uint8_T)tmp);
 
   /* End of DataTypeConversion: '<S57>/Cast To Single1' */
 
@@ -1309,15 +1307,15 @@ static void SpeedgoatCANOpen2Buses100us_output0(void) /* Sample time: [0.0s, 0.0
     SpeedgoatCANOpen2Buses100us_B.ClearError_jb;
 
   /* DataTypeConversion: '<S57>/Cast To Single' */
-  u0_0 = (real32_T)floor(SpeedgoatCANOpen2Buses100us_B.DeviceMode_f);
-  if (rtIsNaNF(u0_0) || rtIsInfF(u0_0)) {
-    u0_0 = 0.0F;
+  tmp = (real32_T)floor(SpeedgoatCANOpen2Buses100us_B.DeviceMode_f);
+  if (rtIsNaNF(tmp) || rtIsInfF(tmp)) {
+    tmp = 0.0F;
   } else {
-    u0_0 = (real32_T)fmod(u0_0, 256.0);
+    tmp = (real32_T)fmod(tmp, 256.0);
   }
 
-  SpeedgoatCANOpen2Buses100us_B.DeviceMode_h = (uint8_T)(u0_0 < 0.0F ? (int32_T)
-    (uint8_T)-(int8_T)(uint8_T)-u0_0 : (int32_T)(uint8_T)u0_0);
+  SpeedgoatCANOpen2Buses100us_B.DeviceMode_h = (uint8_T)(tmp < 0.0F ? (int32_T)
+    (uint8_T)-(int8_T)(uint8_T)-tmp : (int32_T)(uint8_T)tmp);
 
   /* End of DataTypeConversion: '<S57>/Cast To Single' */
 
@@ -1326,15 +1324,15 @@ static void SpeedgoatCANOpen2Buses100us_output0(void) /* Sample time: [0.0s, 0.0
     SpeedgoatCANOpen2Buses100us_B.DeviceMode_h;
 
   /* DataTypeConversion: '<S57>/Cast To Single3' */
-  u0_0 = (real32_T)floor(SpeedgoatCANOpen2Buses100us_B.PowerEnable_m);
-  if (rtIsNaNF(u0_0) || rtIsInfF(u0_0)) {
-    u0_0 = 0.0F;
+  tmp = (real32_T)floor(SpeedgoatCANOpen2Buses100us_B.PowerEnable_m);
+  if (rtIsNaNF(tmp) || rtIsInfF(tmp)) {
+    tmp = 0.0F;
   } else {
-    u0_0 = (real32_T)fmod(u0_0, 256.0);
+    tmp = (real32_T)fmod(tmp, 256.0);
   }
 
-  SpeedgoatCANOpen2Buses100us_B.PowerEnable_ar = (uint8_T)(u0_0 < 0.0F ?
-    (int32_T)(uint8_T)-(int8_T)(uint8_T)-u0_0 : (int32_T)(uint8_T)u0_0);
+  SpeedgoatCANOpen2Buses100us_B.PowerEnable_ar = (uint8_T)(tmp < 0.0F ? (int32_T)
+    (uint8_T)-(int8_T)(uint8_T)-tmp : (int32_T)(uint8_T)tmp);
 
   /* End of DataTypeConversion: '<S57>/Cast To Single3' */
 
@@ -1343,15 +1341,15 @@ static void SpeedgoatCANOpen2Buses100us_output0(void) /* Sample time: [0.0s, 0.0
     SpeedgoatCANOpen2Buses100us_B.PowerEnable_ar;
 
   /* DataTypeConversion: '<S57>/Cast To Single2' */
-  u0_0 = (real32_T)floor(SpeedgoatCANOpen2Buses100us_B.BrakeCtrl_m);
-  if (rtIsNaNF(u0_0) || rtIsInfF(u0_0)) {
-    u0_0 = 0.0F;
+  tmp = (real32_T)floor(SpeedgoatCANOpen2Buses100us_B.BrakeCtrl_m);
+  if (rtIsNaNF(tmp) || rtIsInfF(tmp)) {
+    tmp = 0.0F;
   } else {
-    u0_0 = (real32_T)fmod(u0_0, 256.0);
+    tmp = (real32_T)fmod(tmp, 256.0);
   }
 
-  SpeedgoatCANOpen2Buses100us_B.BrakeCtrl_bj = (uint8_T)(u0_0 < 0.0F ? (int32_T)
-    (uint8_T)-(int8_T)(uint8_T)-u0_0 : (int32_T)(uint8_T)u0_0);
+  SpeedgoatCANOpen2Buses100us_B.BrakeCtrl_bj = (uint8_T)(tmp < 0.0F ? (int32_T)
+    (uint8_T)-(int8_T)(uint8_T)-tmp : (int32_T)(uint8_T)tmp);
 
   /* End of DataTypeConversion: '<S57>/Cast To Single2' */
 
@@ -1470,14 +1468,14 @@ static void SpeedgoatCANOpen2Buses100us_output0(void) /* Sample time: [0.0s, 0.0
 
   /* Saturate: '<S43>/Saturation' */
   u0 = -SpeedgoatCANOpen2Buses100us_P.PID_ctrl_Req_lim;
-  aux2 = SpeedgoatCANOpen2Buses100us_B.Sum4;
-  csum = SpeedgoatCANOpen2Buses100us_P.PID_ctrl_Req_lim;
-  if (aux2 > csum) {
-    SpeedgoatCANOpen2Buses100us_B.Saturation = csum;
-  } else if (aux2 < u0) {
+  csum = SpeedgoatCANOpen2Buses100us_B.Sum4;
+  aux2 = SpeedgoatCANOpen2Buses100us_P.PID_ctrl_Req_lim;
+  if (csum > aux2) {
+    SpeedgoatCANOpen2Buses100us_B.Saturation = aux2;
+  } else if (csum < u0) {
     SpeedgoatCANOpen2Buses100us_B.Saturation = u0;
   } else {
-    SpeedgoatCANOpen2Buses100us_B.Saturation = aux2;
+    SpeedgoatCANOpen2Buses100us_B.Saturation = csum;
   }
 
   /* End of Saturate: '<S43>/Saturation' */
@@ -1530,15 +1528,15 @@ static void SpeedgoatCANOpen2Buses100us_output0(void) /* Sample time: [0.0s, 0.0
      &SpeedgoatCANOpen2Buses100us_B.DunkD_ActualVelocity);
 
   /* DataTypeConversion: '<S51>/Cast To Single1' */
-  u0_0 = (real32_T)floor(SpeedgoatCANOpen2Buses100us_B.ClearError_k);
-  if (rtIsNaNF(u0_0) || rtIsInfF(u0_0)) {
-    u0_0 = 0.0F;
+  tmp = (real32_T)floor(SpeedgoatCANOpen2Buses100us_B.ClearError_k);
+  if (rtIsNaNF(tmp) || rtIsInfF(tmp)) {
+    tmp = 0.0F;
   } else {
-    u0_0 = (real32_T)fmod(u0_0, 256.0);
+    tmp = (real32_T)fmod(tmp, 256.0);
   }
 
-  SpeedgoatCANOpen2Buses100us_B.ClearError_mj = (uint8_T)(u0_0 < 0.0F ? (int32_T)
-    (uint8_T)-(int8_T)(uint8_T)-u0_0 : (int32_T)(uint8_T)u0_0);
+  SpeedgoatCANOpen2Buses100us_B.ClearError_mj = (uint8_T)(tmp < 0.0F ? (int32_T)
+    (uint8_T)-(int8_T)(uint8_T)-tmp : (int32_T)(uint8_T)tmp);
 
   /* End of DataTypeConversion: '<S51>/Cast To Single1' */
 
@@ -1547,15 +1545,15 @@ static void SpeedgoatCANOpen2Buses100us_output0(void) /* Sample time: [0.0s, 0.0
     SpeedgoatCANOpen2Buses100us_B.ClearError_mj;
 
   /* DataTypeConversion: '<S51>/Cast To Single' */
-  u0_0 = (real32_T)floor(SpeedgoatCANOpen2Buses100us_B.DeviceMode_b);
-  if (rtIsNaNF(u0_0) || rtIsInfF(u0_0)) {
-    u0_0 = 0.0F;
+  tmp = (real32_T)floor(SpeedgoatCANOpen2Buses100us_B.DeviceMode_b);
+  if (rtIsNaNF(tmp) || rtIsInfF(tmp)) {
+    tmp = 0.0F;
   } else {
-    u0_0 = (real32_T)fmod(u0_0, 256.0);
+    tmp = (real32_T)fmod(tmp, 256.0);
   }
 
-  SpeedgoatCANOpen2Buses100us_B.DeviceMode_g = (uint8_T)(u0_0 < 0.0F ? (int32_T)
-    (uint8_T)-(int8_T)(uint8_T)-u0_0 : (int32_T)(uint8_T)u0_0);
+  SpeedgoatCANOpen2Buses100us_B.DeviceMode_g = (uint8_T)(tmp < 0.0F ? (int32_T)
+    (uint8_T)-(int8_T)(uint8_T)-tmp : (int32_T)(uint8_T)tmp);
 
   /* End of DataTypeConversion: '<S51>/Cast To Single' */
 
@@ -1564,15 +1562,15 @@ static void SpeedgoatCANOpen2Buses100us_output0(void) /* Sample time: [0.0s, 0.0
     SpeedgoatCANOpen2Buses100us_B.DeviceMode_g;
 
   /* DataTypeConversion: '<S51>/Cast To Single3' */
-  u0_0 = (real32_T)floor(SpeedgoatCANOpen2Buses100us_B.PowerEnable_au);
-  if (rtIsNaNF(u0_0) || rtIsInfF(u0_0)) {
-    u0_0 = 0.0F;
+  tmp = (real32_T)floor(SpeedgoatCANOpen2Buses100us_B.PowerEnable_au);
+  if (rtIsNaNF(tmp) || rtIsInfF(tmp)) {
+    tmp = 0.0F;
   } else {
-    u0_0 = (real32_T)fmod(u0_0, 256.0);
+    tmp = (real32_T)fmod(tmp, 256.0);
   }
 
-  SpeedgoatCANOpen2Buses100us_B.PowerEnable_p = (uint8_T)(u0_0 < 0.0F ? (int32_T)
-    (uint8_T)-(int8_T)(uint8_T)-u0_0 : (int32_T)(uint8_T)u0_0);
+  SpeedgoatCANOpen2Buses100us_B.PowerEnable_p = (uint8_T)(tmp < 0.0F ? (int32_T)
+    (uint8_T)-(int8_T)(uint8_T)-tmp : (int32_T)(uint8_T)tmp);
 
   /* End of DataTypeConversion: '<S51>/Cast To Single3' */
 
@@ -1581,21 +1579,50 @@ static void SpeedgoatCANOpen2Buses100us_output0(void) /* Sample time: [0.0s, 0.0
     SpeedgoatCANOpen2Buses100us_B.PowerEnable_p;
 
   /* DataTypeConversion: '<S51>/Cast To Single2' */
-  u0_0 = (real32_T)floor(SpeedgoatCANOpen2Buses100us_B.BrakeCtrl_n);
-  if (rtIsNaNF(u0_0) || rtIsInfF(u0_0)) {
-    u0_0 = 0.0F;
+  tmp = (real32_T)floor(SpeedgoatCANOpen2Buses100us_B.BrakeCtrl_n);
+  if (rtIsNaNF(tmp) || rtIsInfF(tmp)) {
+    tmp = 0.0F;
   } else {
-    u0_0 = (real32_T)fmod(u0_0, 256.0);
+    tmp = (real32_T)fmod(tmp, 256.0);
   }
 
-  SpeedgoatCANOpen2Buses100us_B.BrakeCtrl_k2 = (uint8_T)(u0_0 < 0.0F ? (int32_T)
-    (uint8_T)-(int8_T)(uint8_T)-u0_0 : (int32_T)(uint8_T)u0_0);
+  SpeedgoatCANOpen2Buses100us_B.BrakeCtrl_k2 = (uint8_T)(tmp < 0.0F ? (int32_T)
+    (uint8_T)-(int8_T)(uint8_T)-tmp : (int32_T)(uint8_T)tmp);
 
   /* End of DataTypeConversion: '<S51>/Cast To Single2' */
 
   /* DataTypeConversion: '<S22>/Data Type Conversion33' */
   SpeedgoatCANOpen2Buses100us_B.DunkD_TPDO_BrakeCtrl =
     SpeedgoatCANOpen2Buses100us_B.BrakeCtrl_k2;
+
+  /* DataTypeConversion: '<S33>/Data Type Conversion' */
+  SpeedgoatCANOpen2Buses100us_B.DataTypeConversion = (uint16_T)
+    SpeedgoatCANOpen2Buses100us_B.Channel_AN3;
+
+  /* Saturate: '<S33>/Saturation1' */
+  u0_0 = SpeedgoatCANOpen2Buses100us_B.DataTypeConversion;
+  u1 = SpeedgoatCANOpen2Buses100us_P.Saturation1_LowerSat;
+  u2 = SpeedgoatCANOpen2Buses100us_P.Saturation1_UpperSat;
+  if (u0_0 > u2) {
+    SpeedgoatCANOpen2Buses100us_B.Saturation1 = u2;
+  } else if (u0_0 < u1) {
+    SpeedgoatCANOpen2Buses100us_B.Saturation1 = u1;
+  } else {
+    SpeedgoatCANOpen2Buses100us_B.Saturation1 = u0_0;
+  }
+
+  /* End of Saturate: '<S33>/Saturation1' */
+
+  /* Sum: '<S33>/Sum' incorporates:
+   *  Constant: '<S33>/offset'
+   */
+  SpeedgoatCANOpen2Buses100us_B.Sum = (real_T)
+    SpeedgoatCANOpen2Buses100us_B.Saturation1 -
+    SpeedgoatCANOpen2Buses100us_P.offset_Value;
+
+  /* Gain: '<S33>/Gain3' */
+  SpeedgoatCANOpen2Buses100us_B.br_percent2 =
+    SpeedgoatCANOpen2Buses100us_P.Gain3_Gain * SpeedgoatCANOpen2Buses100us_B.Sum;
 
   /* MATLAB Function: '<S33>/MATLAB Function' */
   if (SpeedgoatCANOpen2Buses100us_B.Joystick_LongCmd <= 0.0F) {
@@ -1632,9 +1659,14 @@ static void SpeedgoatCANOpen2Buses100us_output0(void) /* Sample time: [0.0s, 0.0
     SpeedgoatCANOpen2Buses100us_B.button_n;
 
   /* Gain: '<S33>/Gain4' */
-  SpeedgoatCANOpen2Buses100us_B.br_percent =
+  SpeedgoatCANOpen2Buses100us_B.br_percent_c =
     SpeedgoatCANOpen2Buses100us_P.Gain4_Gain *
     SpeedgoatCANOpen2Buses100us_B.CastToSingle3_p;
+
+  /* Sum: '<S33>/Sum3' */
+  SpeedgoatCANOpen2Buses100us_B.br_percent =
+    SpeedgoatCANOpen2Buses100us_B.br_percent2 +
+    SpeedgoatCANOpen2Buses100us_B.br_percent_c;
 
   /* Gain: '<S33>/Gain2' */
   SpeedgoatCANOpen2Buses100us_B.Gain2_a =
@@ -1642,30 +1674,29 @@ static void SpeedgoatCANOpen2Buses100us_output0(void) /* Sample time: [0.0s, 0.0
     SpeedgoatCANOpen2Buses100us_B.br_percent;
 
   /* Saturate: '<S33>/Saturation' */
-  u0_0 = SpeedgoatCANOpen2Buses100us_B.Gain2_a;
-  u1 = SpeedgoatCANOpen2Buses100us_P.Saturation_LowerSat;
-  u2 = SpeedgoatCANOpen2Buses100us_P.Saturation_UpperSat;
-  if (u0_0 > u2) {
-    SpeedgoatCANOpen2Buses100us_B.Saturation_e = u2;
-  } else if (u0_0 < u1) {
-    SpeedgoatCANOpen2Buses100us_B.Saturation_e = u1;
+  u0 = SpeedgoatCANOpen2Buses100us_B.Gain2_a;
+  csum = SpeedgoatCANOpen2Buses100us_P.Saturation_LowerSat;
+  aux2 = SpeedgoatCANOpen2Buses100us_P.Saturation_UpperSat;
+  if (u0 > aux2) {
+    SpeedgoatCANOpen2Buses100us_B.Saturation_e = aux2;
+  } else if (u0 < csum) {
+    SpeedgoatCANOpen2Buses100us_B.Saturation_e = csum;
   } else {
-    SpeedgoatCANOpen2Buses100us_B.Saturation_e = u0_0;
+    SpeedgoatCANOpen2Buses100us_B.Saturation_e = u0;
   }
 
   /* End of Saturate: '<S33>/Saturation' */
 
   /* Gain: '<S33>/Gain1' */
-  SpeedgoatCANOpen2Buses100us_B.Gain1 =
-    SpeedgoatCANOpen2Buses100us_P.Gain1_Gain_c *
-    SpeedgoatCANOpen2Buses100us_B.Saturation_e;
+  SpeedgoatCANOpen2Buses100us_B.Gain1 = SpeedgoatCANOpen2Buses100us_P.Gain1_Gain
+    * SpeedgoatCANOpen2Buses100us_B.Saturation_e;
 
   /* Delay: '<S33>/Delay' */
   SpeedgoatCANOpen2Buses100us_B.Delay =
     SpeedgoatCANOpen2Buses100us_DW.Delay_DSTATE[0];
 
   /* DataTypeConversion: '<S33>/Data Type Conversion1' */
-  SpeedgoatCANOpen2Buses100us_B.DataTypeConversion1 =
+  SpeedgoatCANOpen2Buses100us_B.DataTypeConversion1 = (real32_T)
     SpeedgoatCANOpen2Buses100us_B.br_percent;
 
   /* Sum: '<S33>/Sum1' */
@@ -1701,19 +1732,19 @@ static void SpeedgoatCANOpen2Buses100us_output0(void) /* Sample time: [0.0s, 0.0
   /* End of Chart: '<S33>/Retract' */
 
   /* Sum: '<S33>/Sum2' */
-  SpeedgoatCANOpen2Buses100us_B.Sum2_i = SpeedgoatCANOpen2Buses100us_B.Gain1 +
+  SpeedgoatCANOpen2Buses100us_B.Sum2 = SpeedgoatCANOpen2Buses100us_B.Gain1 +
     SpeedgoatCANOpen2Buses100us_B.Br_CurrentReq;
 
   /* Saturate: '<S33>/Saturation2' */
-  u0_0 = SpeedgoatCANOpen2Buses100us_B.Sum2_i;
-  u1 = SpeedgoatCANOpen2Buses100us_P.Saturation2_LowerSat;
-  u2 = SpeedgoatCANOpen2Buses100us_P.Saturation2_UpperSat;
-  if (u0_0 > u2) {
-    SpeedgoatCANOpen2Buses100us_B.Saturation2 = u2;
-  } else if (u0_0 < u1) {
-    SpeedgoatCANOpen2Buses100us_B.Saturation2 = u1;
+  u0 = SpeedgoatCANOpen2Buses100us_B.Sum2;
+  csum = SpeedgoatCANOpen2Buses100us_P.Saturation2_LowerSat;
+  aux2 = SpeedgoatCANOpen2Buses100us_P.Saturation2_UpperSat;
+  if (u0 > aux2) {
+    SpeedgoatCANOpen2Buses100us_B.Saturation2 = aux2;
+  } else if (u0 < csum) {
+    SpeedgoatCANOpen2Buses100us_B.Saturation2 = csum;
   } else {
-    SpeedgoatCANOpen2Buses100us_B.Saturation2 = u0_0;
+    SpeedgoatCANOpen2Buses100us_B.Saturation2 = u0;
   }
 
   /* End of Saturate: '<S33>/Saturation2' */
@@ -1870,35 +1901,6 @@ static void SpeedgoatCANOpen2Buses100us_output0(void) /* Sample time: [0.0s, 0.0
   SpeedgoatCANOpen2Buses100us_B.Actual_Current = (real32_T)
     SpeedgoatCANOpen2Buses100us_B.DunkA_ActualCurrent;
 
-  /* DataTypeConversion: '<S33>/Data Type Conversion' */
-  SpeedgoatCANOpen2Buses100us_B.DataTypeConversion = (uint16_T)
-    SpeedgoatCANOpen2Buses100us_B.Channel_AN3;
-
-  /* Saturate: '<S33>/Saturation1' */
-  u0_1 = SpeedgoatCANOpen2Buses100us_B.DataTypeConversion;
-  u1_0 = SpeedgoatCANOpen2Buses100us_P.Saturation1_LowerSat;
-  u2_0 = SpeedgoatCANOpen2Buses100us_P.Saturation1_UpperSat;
-  if (u0_1 > u2_0) {
-    SpeedgoatCANOpen2Buses100us_B.Saturation1 = u2_0;
-  } else if (u0_1 < u1_0) {
-    SpeedgoatCANOpen2Buses100us_B.Saturation1 = u1_0;
-  } else {
-    SpeedgoatCANOpen2Buses100us_B.Saturation1 = u0_1;
-  }
-
-  /* End of Saturate: '<S33>/Saturation1' */
-
-  /* Sum: '<S33>/Sum' incorporates:
-   *  Constant: '<S33>/offset'
-   */
-  SpeedgoatCANOpen2Buses100us_B.Sum = (real_T)
-    SpeedgoatCANOpen2Buses100us_B.Saturation1 -
-    SpeedgoatCANOpen2Buses100us_P.offset_Value;
-
-  /* Gain: '<S33>/Gain3' */
-  SpeedgoatCANOpen2Buses100us_B.br_percent2 =
-    SpeedgoatCANOpen2Buses100us_P.Gain3_Gain * SpeedgoatCANOpen2Buses100us_B.Sum;
-
   /* DataTypeConversion: '<S34>/Cast To Single' */
   SpeedgoatCANOpen2Buses100us_B.CastToSingle_g =
     SpeedgoatCANOpen2Buses100us_B.DirectionRef;
@@ -2024,11 +2026,11 @@ static void SpeedgoatCANOpen2Buses100us_output0(void) /* Sample time: [0.0s, 0.0
     SpeedgoatCANOpen2Buses100us_B.Channel_AN2;
 
   /* Sum: '<S42>/Sum' incorporates:
-   *  Constant: '<S42>/Offset for 0 deg (3.5064V -> 57.02mm)'
+   *  Constant: '<S42>/Offset for 0 deg'
    */
   SpeedgoatCANOpen2Buses100us_B.DispLeftOffsetVolt = (real_T)
     SpeedgoatCANOpen2Buses100us_B.DispLeftVolt * 1.4901161193847656E-8 -
-    SpeedgoatCANOpen2Buses100us_P.Offsetfor0deg35064V5702mm_Value;
+    SpeedgoatCANOpen2Buses100us_P.Offsetfor0deg_Value;
 
   /* Gain: '<S42>/Volt2meter' */
   SpeedgoatCANOpen2Buses100us_B.DispLeftm =
@@ -2085,7 +2087,7 @@ static void SpeedgoatCANOpen2Buses100us_output0(void) /* Sample time: [0.0s, 0.0
     SpeedgoatCANOpen2Buses100us_P.PID_ctrl_Ki * SpeedgoatCANOpen2Buses100us_B.e;
 
   /* Sum: '<S43>/Sum2' */
-  SpeedgoatCANOpen2Buses100us_B.Sum2 =
+  SpeedgoatCANOpen2Buses100us_B.Sum2_g =
     SpeedgoatCANOpen2Buses100us_B.IntegralGain -
     SpeedgoatCANOpen2Buses100us_B.AntiWindup;
 
@@ -2094,10 +2096,10 @@ static void SpeedgoatCANOpen2Buses100us_output0(void) /* Sample time: [0.0s, 0.0
     SpeedgoatCANOpen2Buses100us_P.Constant_Value_c;
 
   /* Gain: '<S37>/m//s2Km//h' */
-  tmp = (uint64_T)SpeedgoatCANOpen2Buses100us_P.ms2Kmh_Gain;
-  tmp_0 = (uint64_T)SpeedgoatCANOpen2Buses100us_B.VehSpeed_SI;
-  sMultiWordMul(&tmp, 1, &tmp_0, 1, &tmp_1.chunks[0U], 2);
-  SpeedgoatCANOpen2Buses100us_B.VehSpeed_Kmh = tmp_1;
+  tmp_0 = (uint64_T)SpeedgoatCANOpen2Buses100us_P.ms2Kmh_Gain;
+  tmp_1 = (uint64_T)SpeedgoatCANOpen2Buses100us_B.VehSpeed_SI;
+  sMultiWordMul(&tmp_0, 1, &tmp_1, 1, &tmp_2.chunks[0U], 2);
+  SpeedgoatCANOpen2Buses100us_B.VehSpeed_Kmh = tmp_2;
 }
 
 /* Model update function for TID0 */
@@ -2106,7 +2108,7 @@ static void SpeedgoatCANOpen2Buses100us_update0(void) /* Sample time: [0.0s, 0.0
   /* Update for DiscreteIntegrator: '<S43>/Discrete-Time Integrator' */
   SpeedgoatCANOpen2Buses100us_DW.DiscreteTimeIntegrator_DSTATE +=
     SpeedgoatCANOpen2Buses100us_P.DiscreteTimeIntegrator_gainval *
-    SpeedgoatCANOpen2Buses100us_B.Sum2;
+    SpeedgoatCANOpen2Buses100us_B.Sum2_g;
 
   /* Update for DiscreteIntegrator: '<S43>/Discrete-Time Integrator1' */
   SpeedgoatCANOpen2Buses100us_DW.DiscreteTimeIntegrator1_DSTATE +=
@@ -3837,8 +3839,8 @@ RT_MODEL_SpeedgoatCANOpen2Buses100us_T *SpeedgoatCANOpen2Buses100us(void)
   SpeedgoatCANOpen2Buses100us_M->Sizes.numU = (0);/* Number of model inputs */
   SpeedgoatCANOpen2Buses100us_M->Sizes.sysDirFeedThru = (0);/* The model is not direct feedthrough */
   SpeedgoatCANOpen2Buses100us_M->Sizes.numSampTimes = (3);/* Number of sample times */
-  SpeedgoatCANOpen2Buses100us_M->Sizes.numBlocks = (238);/* Number of blocks */
-  SpeedgoatCANOpen2Buses100us_M->Sizes.numBlockIO = (213);/* Number of block outputs */
+  SpeedgoatCANOpen2Buses100us_M->Sizes.numBlocks = (240);/* Number of blocks */
+  SpeedgoatCANOpen2Buses100us_M->Sizes.numBlockIO = (214);/* Number of block outputs */
   SpeedgoatCANOpen2Buses100us_M->Sizes.numBlockPrms = (167);/* Sum of parameter "widths" */
   return SpeedgoatCANOpen2Buses100us_M;
 }

@@ -1684,7 +1684,7 @@ Average</sigName>
               <sigWidth>1</sigWidth>
               <sigDim>[1, 1]</sigDim>
 			  <SubSystemName>SpeedgoatCANOpen2Buses100us/Trike Application Layer/System_Control/BrakeControl</SubSystemName>
-                <sigLabel>br_percent</sigLabel>
+                
 			  <sigTestPoint>false</sigTestPoint>
             </signal>
 			  
@@ -1745,6 +1745,17 @@ Average</sigName>
               <sigWidth>1</sigWidth>
               <sigDim>[1, 1]</sigDim>
 			  <SubSystemName>SpeedgoatCANOpen2Buses100us/Trike Application Layer/System_Control/BrakeControl</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Sum3</sigName>
+              <xpcsigName>Trike Application Layer/System_Control/BrakeControl/Sum3</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses100us/Trike Application Layer/System_Control/BrakeControl</SubSystemName>
+                
 			  <sigTestPoint>false</sigTestPoint>
             </signal>
 			  
@@ -2024,9 +2035,9 @@ Average</sigName>
 		
 		
             <block>
-            <blkName>Offset for 0 deg (3.5064V -&gt; 57.02mm)</blkName>
-            <xpcblkName>Trike Application Layer/System_Control/TiltingControl/Offset_Conversion/Offset for 0 deg (3.5064V -&gt; 57.02mm)</xpcblkName>
-            <SLblockPath>SpeedgoatCANOpen2Buses100us/Trike Application Layer/System_Control/TiltingControl/Offset_Conversion/Offset for 0 deg (3.5064V -&gt; 57.02mm)</SLblockPath>
+            <blkName>Offset for 0 deg</blkName>
+            <xpcblkName>Trike Application Layer/System_Control/TiltingControl/Offset_Conversion/Offset for 0 deg</xpcblkName>
+            <SLblockPath>SpeedgoatCANOpen2Buses100us/Trike Application Layer/System_Control/TiltingControl/Offset_Conversion/Offset for 0 deg</SLblockPath>
             <isSrc>[1 0 1]</isSrc>
           <parameter>
           <paramName>Value</paramName>
