@@ -26,7 +26,7 @@
  * | See matlabroot/simulink/src/sfuntmpl_doc.c for a more detailed template |
  *  ------------------------------------------------------------------------- 
  *
- * Created: Mon Apr 11 20:48:47 2022
+ * Created: Mon Apr 11 21:06:30 2022
  */
 
 #define S_FUNCTION_LEVEL 2
@@ -35,9 +35,9 @@
 /* %%%-SFUNWIZ_defines_Changes_BEGIN --- EDIT HERE TO _END */
 #define NUM_INPUTS            0
 
-#define NUM_OUTPUTS           4
+#define NUM_OUTPUTS           2
 /* Output Port  0 */
-#define OUT_PORT_0_NAME       X_Dir
+#define OUT_PORT_0_NAME       X_Angle
 #define OUTPUT_0_WIDTH        1
 #define OUTPUT_DIMS_0_COL     1
 #define OUTPUT_0_DTYPE        int16_T
@@ -53,7 +53,7 @@
 #define OUT_0_BIAS            0
 #define OUT_0_SLOPE           0.125
 /* Output Port  1 */
-#define OUT_PORT_1_NAME       X_Angle
+#define OUT_PORT_1_NAME       Y_Angle
 #define OUTPUT_1_WIDTH        1
 #define OUTPUT_DIMS_1_COL     1
 #define OUTPUT_1_DTYPE        int16_T
@@ -68,38 +68,6 @@
 #define OUT_1_FRACTIONLENGTH  3
 #define OUT_1_BIAS            0
 #define OUT_1_SLOPE           0.125
-/* Output Port  2 */
-#define OUT_PORT_2_NAME       Y_Dir
-#define OUTPUT_2_WIDTH        1
-#define OUTPUT_DIMS_2_COL     1
-#define OUTPUT_2_DTYPE        int16_T
-#define OUTPUT_2_COMPLEX      COMPLEX_NO
-#define OUT_2_FRAME_BASED     FRAME_NO
-#define OUT_2_BUS_BASED       0
-#define OUT_2_BUS_NAME        
-#define OUT_2_DIMS            1-D
-#define OUT_2_ISSIGNED        1
-#define OUT_2_WORDLENGTH      8
-#define OUT_2_FIXPOINTSCALING 1
-#define OUT_2_FRACTIONLENGTH  3
-#define OUT_2_BIAS            0
-#define OUT_2_SLOPE           0.125
-/* Output Port  3 */
-#define OUT_PORT_3_NAME       Y_Angle
-#define OUTPUT_3_WIDTH        1
-#define OUTPUT_DIMS_3_COL     1
-#define OUTPUT_3_DTYPE        int16_T
-#define OUTPUT_3_COMPLEX      COMPLEX_NO
-#define OUT_3_FRAME_BASED     FRAME_NO
-#define OUT_3_BUS_BASED       0
-#define OUT_3_BUS_NAME        
-#define OUT_3_DIMS            1-D
-#define OUT_3_ISSIGNED        1
-#define OUT_3_WORDLENGTH      8
-#define OUT_3_FIXPOINTSCALING 1
-#define OUT_3_FRACTIONLENGTH  3
-#define OUT_3_BIAS            0
-#define OUT_3_SLOPE           0.125
 
 #define NPARAMS               0
 
@@ -111,7 +79,7 @@
 
 #define SFUNWIZ_GENERATE_TLC  1
 #define SOURCEFILES           "__SFB__"
-#define PANELINDEX            0
+#define PANELINDEX            8
 #define USE_SIMSTRUCT         0
 #define SHOW_COMPILE_STEPS    0
 #define CREATE_DEBUG_MEXFILE  0
@@ -122,9 +90,7 @@
 #include "simstruc.h"
 
 
-extern void RPDOs_from_Inclinometer_Outputs_wrapper(int16_T *X_Dir,
-			int16_T *X_Angle,
-			int16_T *Y_Dir,
+extern void RPDOs_from_Inclinometer_Outputs_wrapper(int16_T *X_Angle,
 			int16_T *Y_Angle);
 /*====================*
  * S-function methods *
@@ -161,14 +127,6 @@ static void mdlInitializeSizes(SimStruct *S)
     ssSetOutputPortWidth(S, 1, OUTPUT_1_WIDTH);
     ssSetOutputPortDataType(S, 1, SS_INT16);
     ssSetOutputPortComplexSignal(S, 1, OUTPUT_1_COMPLEX);
-    /* Output Port 2 */
-    ssSetOutputPortWidth(S, 2, OUTPUT_2_WIDTH);
-    ssSetOutputPortDataType(S, 2, SS_INT16);
-    ssSetOutputPortComplexSignal(S, 2, OUTPUT_2_COMPLEX);
-    /* Output Port 3 */
-    ssSetOutputPortWidth(S, 3, OUTPUT_3_WIDTH);
-    ssSetOutputPortDataType(S, 3, SS_INT16);
-    ssSetOutputPortComplexSignal(S, 3, OUTPUT_3_COMPLEX);
     ssSetNumPWork(S, 0);
 
     ssSetNumSampleTimes(S, 1);
@@ -226,12 +184,10 @@ static void mdlStart(SimStruct *S)
  */
 static void mdlOutputs(SimStruct *S, int_T tid)
 {
-    int16_T *X_Dir = (int16_T *) ssGetOutputPortRealSignal(S, 0);
-    int16_T *X_Angle = (int16_T *) ssGetOutputPortRealSignal(S, 1);
-    int16_T *Y_Dir = (int16_T *) ssGetOutputPortRealSignal(S, 2);
-    int16_T *Y_Angle = (int16_T *) ssGetOutputPortRealSignal(S, 3);
+    int16_T *X_Angle = (int16_T *) ssGetOutputPortRealSignal(S, 0);
+    int16_T *Y_Angle = (int16_T *) ssGetOutputPortRealSignal(S, 1);
 
-    RPDOs_from_Inclinometer_Outputs_wrapper(X_Dir, X_Angle, Y_Dir, Y_Angle);
+    RPDOs_from_Inclinometer_Outputs_wrapper(X_Angle, Y_Angle);
 
 }
 
