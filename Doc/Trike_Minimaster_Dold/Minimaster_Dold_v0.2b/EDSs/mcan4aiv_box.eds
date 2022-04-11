@@ -1,0 +1,1534 @@
+;=============================================================================;
+;                                                                             ;
+;  File:          mcan4ai_box_v4r12.eds                                       ;
+;  Description:   CANopen Electronic Data Sheet (EDS) for the                 ;
+;                 4-channel analogue module µCAN.4.ai-BOX (Voltage)           ;
+;                                                                             ;
+;  Copyright (C) MicroControl GmbH & Co. KG                                   ;
+;  Junkersring 23                                                             ;
+;  53844 Troisdorf                                                            ;
+;  Germany                                                                    ;
+;  Tel: +49-2241-25659-0                                                      ;
+;  Fax: +49-2241-25659-11                                                     ;
+;                                                                             ;
+;------------------------------------------------------------------------------
+; SVN  $Date: 2010-07-13 13:51:07 +0200 (Di, 13 Jul 2010) $
+; SVN  $Rev: 3564 $ --- $Author:Tiderko $
+;------------------------------------------------------------------------------
+
+[FileInfo]
+CreatedBy=J. Tiderko
+ModifiedBy=J. Tiderko
+Description=EDS for µCAN.4.ai-BOX
+CreationTime=02:41PM
+CreationDate=02-04-2021
+ModificationTime=02:41PM
+ModificationDate=02-04-2021
+FileName=mcan4aiv_box.eds
+FileVersion=1
+FileRevision=1
+EDSVersion=4.0
+
+[DeviceInfo]
+VendorName=MicroControl GmbH & Co. KG
+VendorNumber=0x0000000e
+ProductName=µCAN.4.ai-BOX
+ProductNumber=0x0012FB61
+RevisionNumber=0x0302040A
+OrderCode=12.44.001
+BaudRate_10=0
+BaudRate_20=1
+BaudRate_50=1
+BaudRate_125=1
+BaudRate_250=1
+BaudRate_500=1
+BaudRate_800=1
+BaudRate_1000=1
+SimpleBootUpMaster=0
+SimpleBootUpSlave=1
+Granularity=0
+DynamicChannelsSupported=0
+CompactPDO=0
+GroupMessaging=0
+NrOfRXPDO=0
+NrOfTXPDO=2
+LSS_Supported=1
+
+[DummyUsage]
+Dummy0001=0
+Dummy0002=0
+Dummy0003=0
+Dummy0004=0
+Dummy0005=0
+Dummy0006=0
+Dummy0007=0
+
+[Comments]
+Lines=7
+Line1=CANopen Electronic Data Sheet (EDS) for the
+Line2=4-channel analogue module µCAN.4.ai-BOX (Voltage)
+Line3=
+Line4=MicroControl GmbH & Co. KG
+Line5=www.microcontrol.net
+Line6=Tel: +49-2241-25659-0
+Line7=Fax: +49-2241-25659-11
+;-----------------------------------------------------------------------------;
+; Mandatory objects                                                           ;
+;-----------------------------------------------------------------------------;
+
+[MandatoryObjects]
+SupportedObjects=3
+1=0x1000
+2=0x1001
+3=0x1018
+
+[1000]
+ParameterName=DeviceType
+ObjectType=0x7
+DataType=0x0007
+AccessType=ro
+DefaultValue=0x00020194
+PDOMapping=0
+
+[1001]
+ParameterName=ErrorRegister
+ObjectType=0x7
+DataType=0x0005
+AccessType=ro
+DefaultValue=0x0
+PDOMapping=0
+LowLimit=0x0
+HighLimit=0xff
+
+[1018]
+ParameterName=Identity Object
+ObjectType=0x9
+SubNumber=5
+
+[1018sub0]
+ParameterName=Number of entries
+ObjectType=0x7
+DataType=0x0005
+AccessType=ro
+DefaultValue=4
+PDOMapping=0
+LowLimit=0x01
+HighLimit=0x04
+
+[1018sub1]
+ParameterName=Vendor ID
+ObjectType=0x7
+DataType=0x0007
+AccessType=ro
+DefaultValue=0x0000000e
+PDOMapping=0
+
+[1018sub2]
+ParameterName=Product code
+ObjectType=0x7
+DataType=0x0007
+AccessType=ro
+DefaultValue=0x0012FB61
+PDOMapping=0
+
+[1018sub3]
+ParameterName=Revision number
+ObjectType=0x7
+DataType=0x0007
+AccessType=ro
+DefaultValue=0x0302040A
+PDOMapping=0
+
+[1018sub4]
+ParameterName=Serial number
+ObjectType=0x7
+DataType=0x0007
+AccessType=ro
+PDOMapping=0
+;-----------------------------------------------------------------------------;
+; Optional objects                                                            ;
+;-----------------------------------------------------------------------------;
+
+[OptionalObjects]
+SupportedObjects=33
+1=0x1002
+2=0x1003
+3=0x1005
+4=0x1008
+5=0x1009
+6=0x100A
+7=0x100C
+8=0x100D
+9=0x1010
+10=0x1011
+11=0x1014
+12=0x1016
+13=0x1017
+14=0x1029
+15=0x1800
+16=0x1801
+17=0x1A00
+18=0x1A01
+19=0x1F80
+20=0x6110
+21=0x6112
+22=0x6131
+23=0x6132
+24=0x6150
+25=0x61A0
+26=0x61A1
+27=0x7100
+28=0x7120
+29=0x7121
+30=0x7122
+31=0x7123
+32=0x7124
+33=0x7130
+
+[1002]
+ParameterName=Manufacturer status
+ObjectType=0x7
+DataType=0x0007
+AccessType=ro
+DefaultValue=0x0
+PDOMapping=0
+LowLimit=0x0
+HighLimit=0xffffffff
+;--- 1003h: Pre-defined error field ---------------------------------
+
+[1003]
+ParameterName=Pre-defined error field
+ObjectType=0x8
+SubNumber=2
+
+[1003sub0]
+ParameterName=Number of errors
+ObjectType=0x7
+DataType=0x0005
+AccessType=rw
+DefaultValue=0x00
+PDOMapping=0
+
+[1003sub1]
+ParameterName=Standard error field 1
+ObjectType=0x7
+DataType=0x0007
+AccessType=ro
+DefaultValue=0
+PDOMapping=0
+;--- 1005h: COB-ID SYNC message -------------------------------------
+
+[1005]
+ParameterName=COB-ID SYNC message
+ObjectType=0x7
+DataType=0x0007
+AccessType=rw
+DefaultValue=0x80
+PDOMapping=0
+;--- 1008h: Manufacturer device name --------------------------------
+
+[1008]
+ParameterName=Manufacturer device name
+ObjectType=0x7
+DataType=0x0009
+AccessType=const
+DefaultValue=mCAN.4.ai-BOX
+PDOMapping=0
+;--- 1009h: Manufacturer Hardware Version ---------------------------
+
+[1009]
+ParameterName=Manufacturer hardware version
+ObjectType=0x7
+DataType=0x0009
+AccessType=const
+DefaultValue=4.02
+PDOMapping=0
+;--- 100Ah: Manufacturer Software Version ---------------------------
+
+[100A]
+ParameterName=Manufacturer software version
+ObjectType=0x7
+DataType=0x0009
+AccessType=const
+DefaultValue=4.10
+PDOMapping=0
+;--- 100Ch: Guard time ----------------------------------------------
+
+[100C]
+ParameterName=Guard time
+ObjectType=0x7
+DataType=0x0006
+AccessType=rw
+DefaultValue=0x0000
+PDOMapping=0
+LowLimit=0x0000
+HighLimit=0xffff
+;--- 100Ch: Life time factor ----------------------------------------
+
+[100d]
+ParameterName=Life time factor
+ObjectType=0x7
+DataType=0x0005
+AccessType=rw
+DefaultValue=0x00
+PDOMapping=0
+LowLimit=0x00
+HighLimit=0xff
+;--- 1010h: Store parameters ----------------------------------------
+
+[1010]
+ParameterName=Store parameters
+ObjectType=0x8
+SubNumber=5
+
+[1010sub0]
+ParameterName=Number of entries
+ObjectType=0x7
+DataType=0x0005
+AccessType=ro
+DefaultValue=0x04
+PDOMapping=0
+
+[1010sub1]
+ParameterName=Save all parameters
+ObjectType=0x7
+DataType=0x0007
+AccessType=rw
+PDOMapping=0
+
+[1010sub2]
+ParameterName=Save communication parameters
+ObjectType=0x7
+DataType=0x0007
+AccessType=rw
+PDOMapping=0
+
+[1010sub3]
+ParameterName=Save application parameters
+ObjectType=0x7
+DataType=0x0007
+AccessType=rw
+PDOMapping=0
+
+[1010sub4]
+ParameterName=save manufacturer parameters
+ObjectType=0x7
+DataType=0x0007
+AccessType=rw
+PDOMapping=0
+;--- 1011h: Restore default parameters ------------------------------
+
+[1011]
+ParameterName=Restore Default
+ObjectType=0x8
+SubNumber=5
+
+[1011sub0]
+ParameterName=Number of entries
+ObjectType=0x7
+DataType=0x0005
+AccessType=ro
+DefaultValue=0x04
+PDOMapping=0
+
+[1011sub1]
+ParameterName=Restore all parameters
+ObjectType=0x7
+DataType=0x0007
+AccessType=rw
+PDOMapping=0
+
+[1011sub2]
+ParameterName=Restore communication parameters
+ObjectType=0x7
+DataType=0x0007
+AccessType=rw
+PDOMapping=0
+
+[1011sub3]
+ParameterName=Restore application parameters
+ObjectType=0x7
+DataType=0x0007
+AccessType=rw
+PDOMapping=0
+
+[1011sub4]
+ParameterName=Restore manufacturer parameters
+ObjectType=0x7
+DataType=0x0007
+AccessType=rw
+PDOMapping=0
+;--- 1014h: COB-ID emergency message --------------------------------
+
+[1014]
+ParameterName=COB-ID emergency message
+ObjectType=0x7
+DataType=0x0007
+AccessType=rw
+DefaultValue=$NODEID+0x80
+PDOMapping=0
+;--- 1016h: Consumer heartbeat time ---------------------------------
+
+[1016]
+ParameterName=Consumer heartbeat time
+ObjectType=0x8
+SubNumber=3
+
+[1016sub0]
+ParameterName=Number of entries
+ObjectType=0x7
+DataType=0x0005
+AccessType=ro
+DefaultValue=0x02
+PDOMapping=0
+
+[1016sub1]
+ParameterName=Consumer Heartbeat 1
+ObjectType=0x7
+DataType=0x0007
+AccessType=rw
+DefaultValue=0x0
+PDOMapping=0
+LowLimit=0x0
+HighLimit=0x007FFFFF
+
+[1016sub2]
+ParameterName=Consumer Heartbeat 2
+ObjectType=0x7
+DataType=0x0007
+AccessType=rw
+DefaultValue=0x0
+PDOMapping=0
+LowLimit=0x0
+HighLimit=0x007FFFFF
+;--- 1017h: Producer heartbeat time ---------------------------------
+
+[1017]
+ParameterName=Producer heartbeat time
+ObjectType=0x7
+DataType=0x0006
+AccessType=rw
+DefaultValue=0x0000
+PDOMapping=0
+LowLimit=0x0000
+HighLimit=0xffff
+;--- 1029h: Error behaviour -----------------------------------------
+
+[1029]
+ParameterName=Error behaviour
+ObjectType=0x8
+SubNumber=2
+
+[1029sub0]
+ParameterName=Number of entries
+ObjectType=0x7
+DataType=0x0005
+AccessType=ro
+DefaultValue=0x01
+PDOMapping=0
+LowLimit=0x01
+HighLimit=0x01
+
+[1029sub1]
+ParameterName=Communication error
+ObjectType=0x7
+DataType=0x0005
+AccessType=rw
+DefaultValue=0x00
+PDOMapping=0
+LowLimit=0x00
+HighLimit=0x02
+;--- 1800h: TPDO 1 communication Parameter --------------------------
+
+[1800]
+ParameterName=TPDO 1 communication parameter
+ObjectType=0x9
+SubNumber=4
+
+[1800sub0]
+ParameterName=Number of entries
+ObjectType=0x7
+DataType=0x0005
+AccessType=ro
+DefaultValue=0x05
+PDOMapping=0
+
+[1800sub1]
+ParameterName=COB-ID used by PDO
+ObjectType=0x7
+DataType=0x0007
+AccessType=rw
+DefaultValue=$NODEID+0x40000180
+PDOMapping=0
+
+[1800sub2]
+ParameterName=Transmission type
+ObjectType=0x7
+DataType=0x0005
+AccessType=rw
+DefaultValue=0xFF
+PDOMapping=0
+
+[1800sub5]
+ParameterName=Event Timer
+ObjectType=0x7
+DataType=0x0006
+AccessType=rw
+DefaultValue=0x0000
+PDOMapping=0
+;--- 1801h: TPDO 2 communication Parameter --------------------------
+
+[1801]
+ParameterName=TPDO 2 communication parameter
+ObjectType=0x9
+SubNumber=4
+
+[1801sub0]
+ParameterName=Number of entries
+ObjectType=0x7
+DataType=0x0005
+AccessType=ro
+DefaultValue=0x05
+PDOMapping=0
+
+[1801sub1]
+ParameterName=COB-ID used by PDO
+ObjectType=0x7
+DataType=0x0007
+AccessType=rw
+DefaultValue=$NODEID+0x40000280
+PDOMapping=0
+
+[1801sub2]
+ParameterName=Transmission type
+ObjectType=0x7
+DataType=0x0005
+AccessType=rw
+DefaultValue=0xFF
+PDOMapping=0
+
+[1801sub5]
+ParameterName=Event Timer
+ObjectType=0x7
+DataType=0x0006
+AccessType=rw
+DefaultValue=0x0000
+PDOMapping=0
+;--- 1A00h: TPDO 1 mapping parameter --------------------------------
+
+[1A00]
+ParameterName=TPDO 1 mapping parameter
+ObjectType=0x9
+SubNumber=5
+
+[1A00sub0]
+ParameterName=Number of mapped objects
+ObjectType=0x7
+DataType=0x0005
+AccessType=const
+DefaultValue=0x04
+PDOMapping=0
+
+[1A00sub1]
+ParameterName=Mapping for object 1
+ObjectType=0x7
+DataType=0x0007
+AccessType=const
+DefaultValue=0x71300110
+PDOMapping=0
+
+[1A00sub2]
+ParameterName=Mapping for object 2
+ObjectType=0x7
+DataType=0x0007
+AccessType=const
+DefaultValue=0x71300210
+PDOMapping=0
+
+[1A00sub3]
+ParameterName=Mapping for object 3
+ObjectType=0x7
+DataType=0x0007
+AccessType=const
+DefaultValue=0x71300310
+PDOMapping=0
+
+[1A00sub4]
+ParameterName=Mapping for object 4
+ObjectType=0x7
+DataType=0x0007
+AccessType=const
+DefaultValue=0x71300410
+PDOMapping=0
+;--- 1A01h: TPDO 2 mapping parameter --------------------------------
+
+[1A01]
+ParameterName=TPDO 2 mapping parameter
+ObjectType=0x9
+SubNumber=5
+
+[1A01sub0]
+ParameterName=Number of mapped objects
+ObjectType=0x7
+DataType=0x0005
+AccessType=const
+DefaultValue=0x04
+PDOMapping=0
+
+[1A01sub1]
+ParameterName=Mapping for object 3
+ObjectType=0x7
+DataType=0x0007
+AccessType=const
+DefaultValue=0x71000110
+PDOMapping=0
+
+[1A01sub2]
+ParameterName=Mapping for object 4
+ObjectType=0x7
+DataType=0x0007
+AccessType=const
+DefaultValue=0x71000210
+PDOMapping=0
+
+[1A01sub3]
+ParameterName=Mapping for object 5
+ObjectType=0x7
+DataType=0x0007
+AccessType=const
+DefaultValue=0x71000310
+PDOMapping=0
+
+[1A01sub4]
+ParameterName=Mapping for object 6
+ObjectType=0x7
+DataType=0x0007
+AccessType=const
+DefaultValue=0x71000410
+PDOMapping=0
+;--- 1F80h: NMT startup ---------------------------------------------
+
+[1F80]
+ParameterName=NMT startup
+ObjectType=0x7
+DataType=0x0007
+AccessType=rw
+DefaultValue=0x00000000
+PDOMapping=0
+;--- 6110h: AI Sensor type ---------------------------------------------
+
+[6110]
+ParameterName=AI Sensor type
+ObjectType=0x8
+SubNumber=5
+
+[6110sub0]
+ParameterName=Number of entries
+ObjectType=0x7
+DataType=0x0005
+AccessType=ro
+DefaultValue=0x4
+PDOMapping=0
+
+[6110sub1]
+ParameterName=Channel 1
+ObjectType=0x7
+DataType=0x0006
+AccessType=rw
+DefaultValue=0x0029
+PDOMapping=0
+LowLimit=0x00
+HighLimit=0xffff
+
+[6110sub2]
+ParameterName=Channel 2
+ObjectType=0x7
+DataType=0x0006
+AccessType=rw
+DefaultValue=0x0029
+PDOMapping=0
+LowLimit=0x00
+HighLimit=0xffff
+
+[6110sub3]
+ParameterName=Channel 3
+ObjectType=0x7
+DataType=0x0006
+AccessType=rw
+DefaultValue=0x0029
+PDOMapping=0
+LowLimit=0x00
+HighLimit=0xffff
+
+[6110sub4]
+ParameterName=Channel 4
+ObjectType=0x7
+DataType=0x0006
+AccessType=rw
+DefaultValue=0x0029
+PDOMapping=0
+LowLimit=0x00
+HighLimit=0xffff
+;--- 6112h: AI Operating mode -------------------------------------------
+
+[6112]
+ParameterName=AI Operating mode
+ObjectType=0x8
+SubNumber=5
+
+[6112sub0]
+ParameterName=Number of entries
+ObjectType=0x7
+DataType=0x0005
+AccessType=ro
+DefaultValue=0x4
+PDOMapping=0
+
+[6112sub1]
+ParameterName=Channel 1
+ObjectType=0x7
+DataType=0x0005
+AccessType=rw
+DefaultValue=0x01
+PDOMapping=0
+LowLimit=0x00
+HighLimit=0xff
+
+[6112sub2]
+ParameterName=Channel 2
+ObjectType=0x7
+DataType=0x0005
+AccessType=rw
+DefaultValue=0x01
+PDOMapping=0
+LowLimit=0x00
+HighLimit=0xff
+
+[6112sub3]
+ParameterName=Channel 3
+ObjectType=0x7
+DataType=0x0005
+AccessType=rw
+DefaultValue=0x01
+PDOMapping=0
+LowLimit=0x00
+HighLimit=0xff
+
+[6112sub4]
+ParameterName=Channel 4
+ObjectType=0x7
+DataType=0x0005
+AccessType=rw
+DefaultValue=0x01
+PDOMapping=0
+LowLimit=0x00
+HighLimit=0xff
+;--- 6131h: AI Process Value Physical Unit ---------------------------
+
+[6131]
+ParameterName=AI PV Physical Unit
+ObjectType=0x8
+SubNumber=5
+
+[6131sub0]
+ParameterName=Number of entries
+ObjectType=0x7
+DataType=0x0005
+AccessType=ro
+DefaultValue=0x4
+PDOMapping=0
+
+[6131sub1]
+ParameterName=Channel 1
+ObjectType=0x7
+DataType=0x0007
+AccessType=ro
+DefaultValue=0x00260000
+PDOMapping=0
+LowLimit=0x0
+HighLimit=0xffffffff
+
+[6131sub2]
+ParameterName=Channel 2
+ObjectType=0x7
+DataType=0x0007
+AccessType=ro
+DefaultValue=0x00260000
+PDOMapping=0
+LowLimit=0x0
+HighLimit=0xffffffff
+
+[6131sub3]
+ParameterName=Channel 3
+ObjectType=0x7
+DataType=0x0007
+AccessType=ro
+DefaultValue=0x00260000
+PDOMapping=0
+LowLimit=0x0
+HighLimit=0xffffffff
+
+[6131sub4]
+ParameterName=Channel 4
+ObjectType=0x7
+DataType=0x0007
+AccessType=ro
+DefaultValue=0x00260000
+PDOMapping=0
+LowLimit=0x0
+HighLimit=0xffffffff
+;--- 6132h: AI PV Decimal Digits -------------------------------------
+
+[6132]
+ParameterName=AI PV Decimal Digits
+ObjectType=0x8
+SubNumber=5
+
+[6132sub0]
+ParameterName=Number of entries
+ObjectType=0x7
+DataType=0x0005
+AccessType=ro
+DefaultValue=0x4
+PDOMapping=0
+
+[6132sub1]
+ParameterName=Channel 1
+ObjectType=0x7
+DataType=0x0005
+AccessType=ro
+DefaultValue=0x03
+PDOMapping=0
+LowLimit=0x0
+HighLimit=0xff
+
+[6132sub2]
+ParameterName=Channel 2
+ObjectType=0x7
+DataType=0x0005
+AccessType=ro
+DefaultValue=0x03
+PDOMapping=0
+LowLimit=0x0
+HighLimit=0xff
+
+[6132sub3]
+ParameterName=Channel 3
+ObjectType=0x7
+DataType=0x0005
+AccessType=ro
+DefaultValue=0x03
+PDOMapping=0
+LowLimit=0x0
+HighLimit=0xff
+
+[6132sub4]
+ParameterName=Channel 4
+ObjectType=0x7
+DataType=0x0005
+AccessType=ro
+DefaultValue=0x03
+PDOMapping=0
+LowLimit=0x0
+HighLimit=0xff
+;--- 6150h: AI Status ------------------------------------------------
+
+[6150]
+ParameterName=AI Status
+ObjectType=0x8
+SubNumber=5
+
+[6150sub0]
+ParameterName=Number of entries
+ObjectType=0x7
+DataType=0x0005
+AccessType=ro
+DefaultValue=0x4
+PDOMapping=0
+
+[6150sub1]
+ParameterName=Channel 1
+ObjectType=0x7
+DataType=0x0005
+AccessType=ro
+DefaultValue=0x00
+PDOMapping=0
+
+[6150sub2]
+ParameterName=Channel 2
+ObjectType=0x7
+DataType=0x0005
+AccessType=ro
+DefaultValue=0x00
+PDOMapping=0
+
+[6150sub3]
+ParameterName=Channel 3
+ObjectType=0x7
+DataType=0x0005
+AccessType=ro
+DefaultValue=0x00
+PDOMapping=0
+
+[6150sub4]
+ParameterName=Channel 4
+ObjectType=0x7
+DataType=0x0005
+AccessType=ro
+DefaultValue=0x00
+PDOMapping=0
+;--- 61A0h: AI Filter type ------------------------------------------
+
+[61A0]
+ParameterName=AI Filter type
+ObjectType=0x8
+SubNumber=5
+
+[61A0sub0]
+ParameterName=Number of entries
+ObjectType=0x7
+DataType=0x0005
+AccessType=ro
+DefaultValue=0x4
+PDOMapping=0
+
+[61A0sub1]
+ParameterName=Channel 1
+ObjectType=0x7
+DataType=0x0005
+AccessType=rw
+DefaultValue=0x00
+PDOMapping=0
+LowLimit=0x00
+HighLimit=0xff
+
+[61A0sub2]
+ParameterName=Channel 2
+ObjectType=0x7
+DataType=0x0005
+AccessType=rw
+DefaultValue=0x00
+PDOMapping=0
+LowLimit=0x00
+HighLimit=0xff
+
+[61A0sub3]
+ParameterName=Channel 3
+ObjectType=0x7
+DataType=0x0005
+AccessType=rw
+DefaultValue=0x00
+PDOMapping=0
+LowLimit=0x00
+HighLimit=0xff
+
+[61A0sub4]
+ParameterName=Channel 4
+ObjectType=0x7
+DataType=0x0005
+AccessType=rw
+DefaultValue=0x00
+PDOMapping=0
+LowLimit=0x00
+HighLimit=0xff
+;--- 61A1h: AI Filter constant --------------------------------------
+
+[61A1]
+ParameterName=AI Filter constant
+ObjectType=0x8
+SubNumber=5
+
+[61A1sub0]
+ParameterName=Number of entries
+ObjectType=0x7
+DataType=0x0005
+AccessType=ro
+DefaultValue=0x4
+PDOMapping=0
+
+[61A1sub1]
+ParameterName=Channel 1
+ObjectType=0x7
+DataType=0x0006
+AccessType=rw
+DefaultValue=0x0000
+PDOMapping=0
+LowLimit=0x0000
+HighLimit=0x0032
+
+[61A1sub2]
+ParameterName=Channel 2
+ObjectType=0x7
+DataType=0x0006
+AccessType=rw
+DefaultValue=0x0000
+PDOMapping=0
+LowLimit=0x0000
+HighLimit=0x0032
+
+[61A1sub3]
+ParameterName=Channel 3
+ObjectType=0x7
+DataType=0x0006
+AccessType=rw
+DefaultValue=0x0000
+PDOMapping=0
+LowLimit=0x0000
+HighLimit=0x0032
+
+[61A1sub4]
+ParameterName=Channel 4
+ObjectType=0x7
+DataType=0x0006
+AccessType=rw
+DefaultValue=0x0000
+PDOMapping=0
+LowLimit=0x0000
+HighLimit=0x0032
+;--- 7100h: AI Field Value 16Bit -------------------------------------
+
+[7100]
+ParameterName=AI Field Value (FV)
+ObjectType=0x8
+SubNumber=5
+
+[7100sub0]
+ParameterName=Number of entries
+ObjectType=0x7
+DataType=0x0005
+AccessType=ro
+DefaultValue=0x4
+PDOMapping=0
+
+[7100sub1]
+ParameterName=FV Channel 1
+ObjectType=0x7
+DataType=0x0006
+AccessType=ro
+DefaultValue=0x00
+PDOMapping=1
+
+[7100sub2]
+ParameterName=FV Channel 2
+ObjectType=0x7
+DataType=0x0006
+AccessType=ro
+DefaultValue=0x00
+PDOMapping=1
+
+[7100sub3]
+ParameterName=FV Channel 3
+ObjectType=0x7
+DataType=0x0006
+AccessType=ro
+DefaultValue=0x00
+PDOMapping=1
+
+[7100sub4]
+ParameterName=FV Channel 4
+ObjectType=0x7
+DataType=0x0006
+AccessType=ro
+DefaultValue=0x00
+PDOMapping=1
+;--- 7120h: AI Scale 1 FV -------------------------------------------
+
+[7120]
+ParameterName=AI Scale 1 FV
+ObjectType=0x8
+SubNumber=5
+
+[7120sub0]
+ParameterName=Number of entries
+ObjectType=0x7
+DataType=0x0005
+AccessType=ro
+DefaultValue=0x4
+PDOMapping=0
+LowLimit=0x4
+HighLimit=0x4
+
+[7120sub1]
+ParameterName=AI Scale 1 FV 1
+ObjectType=0x7
+DataType=0x0003
+AccessType=rw
+DefaultValue=0x0
+PDOMapping=0
+LowLimit=-32768
+HighLimit=32767
+
+[7120sub2]
+ParameterName=AI Scale 1 FV 2
+ObjectType=0x7
+DataType=0x0003
+AccessType=rw
+DefaultValue=0x0
+PDOMapping=0
+LowLimit=-32768
+HighLimit=32767
+
+[7120sub3]
+ParameterName=AI Scale 1 FV 3
+ObjectType=0x7
+DataType=0x0003
+AccessType=rw
+DefaultValue=0x0
+PDOMapping=0
+LowLimit=-32768
+HighLimit=32767
+
+[7120sub4]
+ParameterName=AI Scale 1 FV 4
+ObjectType=0x7
+DataType=0x0003
+AccessType=rw
+DefaultValue=0x0
+PDOMapping=0
+LowLimit=-32768
+HighLimit=32767
+;--- 7121h: AI Scale 1 PV -------------------------------------------
+
+[7121]
+ParameterName=AI Scale 1 PV
+ObjectType=0x8
+SubNumber=5
+
+[7121sub0]
+ParameterName=Number of entries
+ObjectType=0x7
+DataType=0x0005
+AccessType=ro
+DefaultValue=0x4
+PDOMapping=0
+LowLimit=0x4
+HighLimit=0x4
+
+[7121sub1]
+ParameterName=AI Scale1 PV 1
+ObjectType=0x7
+DataType=0x0003
+AccessType=rw
+DefaultValue=0x0
+PDOMapping=0
+LowLimit=-32768
+HighLimit=32767
+
+[7121sub2]
+ParameterName=AI Scale1 PV 2
+ObjectType=0x7
+DataType=0x0003
+AccessType=rw
+DefaultValue=0x0
+PDOMapping=0
+LowLimit=-32768
+HighLimit=32767
+
+[7121sub3]
+ParameterName=AI Scale1 PV 3
+ObjectType=0x7
+DataType=0x0003
+AccessType=rw
+DefaultValue=0x0
+PDOMapping=0
+LowLimit=-32768
+HighLimit=32767
+
+[7121sub4]
+ParameterName=AI Scale1 PV 4
+ObjectType=0x7
+DataType=0x0003
+AccessType=rw
+DefaultValue=0x0
+PDOMapping=0
+LowLimit=-32768
+HighLimit=32767
+;--- 7122h: AI Scale 2 FV -------------------------------------------
+
+[7122]
+ParameterName=AI Scale 2 FV
+ObjectType=0x8
+SubNumber=5
+
+[7122sub0]
+ParameterName=Number of entries
+ObjectType=0x7
+DataType=0x0005
+AccessType=ro
+DefaultValue=0x4
+PDOMapping=0
+LowLimit=0x4
+HighLimit=0x4
+
+[7122sub1]
+ParameterName=AI Scale 2 FV 1
+ObjectType=0x7
+DataType=0x0003
+AccessType=rw
+DefaultValue=0x0
+PDOMapping=0
+LowLimit=-32768
+HighLimit=32767
+
+[7122sub2]
+ParameterName=AI Scale 2 FV 2
+ObjectType=0x7
+DataType=0x0003
+AccessType=rw
+DefaultValue=0x0
+PDOMapping=0
+LowLimit=-32768
+HighLimit=32767
+
+[7122sub3]
+ParameterName=AI Scale 2 FV 3
+ObjectType=0x7
+DataType=0x0003
+AccessType=rw
+DefaultValue=0x0
+PDOMapping=0
+LowLimit=-32768
+HighLimit=32767
+
+[7122sub4]
+ParameterName=AI Scale 2 FV 4
+ObjectType=0x7
+DataType=0x0003
+AccessType=rw
+DefaultValue=0x0
+PDOMapping=0
+LowLimit=-32768
+HighLimit=32767
+;--- 7123h: AI Scale 2 PV -------------------------------------------
+
+[7123]
+ParameterName=AI Scale 2 PV
+ObjectType=0x8
+SubNumber=5
+
+[7123sub0]
+ParameterName=Number of entries
+ObjectType=0x7
+DataType=0x0005
+AccessType=ro
+DefaultValue=0x4
+PDOMapping=0
+LowLimit=0x4
+HighLimit=0x4
+
+[7123sub1]
+ParameterName=AI Scale 2 PV 1
+ObjectType=0x7
+DataType=0x0003
+AccessType=rw
+DefaultValue=0x0
+PDOMapping=0
+LowLimit=-32768
+HighLimit=32767
+
+[7123sub2]
+ParameterName=AI Scale 2 PV 2
+ObjectType=0x7
+DataType=0x0003
+AccessType=rw
+DefaultValue=0x0
+PDOMapping=0
+LowLimit=-32768
+HighLimit=32767
+
+[7123sub3]
+ParameterName=AI Scale 2 PV 3
+ObjectType=0x7
+DataType=0x0003
+AccessType=rw
+DefaultValue=0x0
+PDOMapping=0
+LowLimit=-32768
+HighLimit=32767
+
+[7123sub4]
+ParameterName=AI Scale 2 PV 4
+ObjectType=0x7
+DataType=0x0003
+AccessType=rw
+DefaultValue=0x0
+PDOMapping=0
+LowLimit=-32768
+HighLimit=32767
+;--- 7124h: AI Input Offset -----------------------------------------
+
+[7124]
+ParameterName=AI Input Offset
+ObjectType=0x8
+SubNumber=5
+
+[7124sub0]
+ParameterName=Number of entries
+ObjectType=0x7
+DataType=0x0005
+AccessType=ro
+DefaultValue=0x4
+PDOMapping=0
+LowLimit=0x4
+HighLimit=0x4
+
+[7124sub1]
+ParameterName=AI Input Offset 1
+ObjectType=0x7
+DataType=0x0003
+AccessType=rw
+DefaultValue=0x0
+PDOMapping=0
+LowLimit=-32768
+HighLimit=32767
+
+[7124sub2]
+ParameterName=AI Input Offset 2
+ObjectType=0x7
+DataType=0x0003
+AccessType=rw
+DefaultValue=0x0
+PDOMapping=0
+LowLimit=-32768
+HighLimit=32767
+
+[7124sub3]
+ParameterName=AI Input Offset 3
+ObjectType=0x7
+DataType=0x0003
+AccessType=rw
+DefaultValue=0x0
+PDOMapping=0
+LowLimit=-32768
+HighLimit=32767
+
+[7124sub4]
+ParameterName=AI Input Offset 4
+ObjectType=0x7
+DataType=0x0003
+AccessType=rw
+DefaultValue=0x0
+PDOMapping=0
+LowLimit=-32768
+HighLimit=32767
+;--- 7130h: AI Process Value 16Bit -----------------------------------
+
+[7130]
+ParameterName=AI Process Value (PV)
+ObjectType=0x8
+SubNumber=5
+
+[7130sub0]
+ParameterName=Number of entries
+ObjectType=0x7
+DataType=0x0005
+AccessType=ro
+DefaultValue=0x4
+PDOMapping=0
+
+[7130sub1]
+ParameterName=PV Channel 1
+ObjectType=0x7
+DataType=0x0006
+AccessType=ro
+DefaultValue=0x00
+PDOMapping=1
+
+[7130sub2]
+ParameterName=PV Channel 2
+ObjectType=0x7
+DataType=0x0006
+AccessType=ro
+DefaultValue=0x00
+PDOMapping=1
+
+[7130sub3]
+ParameterName=PV Channel 3
+ObjectType=0x7
+DataType=0x0006
+AccessType=ro
+DefaultValue=0x00
+PDOMapping=1
+
+[7130sub4]
+ParameterName=PV Channel 4
+ObjectType=0x7
+DataType=0x0006
+AccessType=ro
+DefaultValue=0x00
+PDOMapping=1
+;-----------------------------------------------------------------------------;
+; Manufacturer objects                                                        ;
+;-----------------------------------------------------------------------------;
+
+[ManufacturerObjects]
+SupportedObjects=6
+1=0x2010
+2=0x201A
+3=0x2E00
+4=0x2E10
+5=0x2E22
+6=0x5302
+
+[2010]
+ParameterName=Customer Data
+ObjectType=0x8
+SubNumber=9
+
+[2010sub0]
+ParameterName=Number of entries
+ObjectType=0x7
+DataType=0x0005
+AccessType=ro
+DefaultValue=0x08
+PDOMapping=0
+LowLimit=0x08
+HighLimit=0x08
+
+[2010sub1]
+ParameterName=Customer Data 1
+ObjectType=0x7
+DataType=0x0007
+AccessType=rw
+DefaultValue=0
+PDOMapping=0
+
+[2010sub2]
+ParameterName=Customer Data 2
+ObjectType=0x7
+DataType=0x0007
+AccessType=rw
+DefaultValue=0
+PDOMapping=0
+
+[2010sub3]
+ParameterName=Customer Data 3
+ObjectType=0x7
+DataType=0x0007
+AccessType=rw
+DefaultValue=0
+PDOMapping=0
+
+[2010sub4]
+ParameterName=Customer Data 4
+ObjectType=0x7
+DataType=0x0007
+AccessType=rw
+DefaultValue=0
+PDOMapping=0
+
+[2010sub5]
+ParameterName=Customer Data 5
+ObjectType=0x7
+DataType=0x0007
+AccessType=rw
+DefaultValue=0
+PDOMapping=0
+
+[2010sub6]
+ParameterName=Customer Data 6
+ObjectType=0x7
+DataType=0x0007
+AccessType=rw
+DefaultValue=0
+PDOMapping=0
+
+[2010sub7]
+ParameterName=Customer Data 7
+ObjectType=0x7
+DataType=0x0007
+AccessType=rw
+DefaultValue=0
+PDOMapping=0
+
+[2010sub8]
+ParameterName=Customer Data 8
+ObjectType=0x7
+DataType=0x0007
+AccessType=rw
+DefaultValue=0
+PDOMapping=0
+;--- 201Ah: COB-ID storage ------------------------------------------
+
+[201A]
+ParameterName=COB-ID storage
+ObjectType=0x7
+DataType=0x0005
+AccessType=rw
+DefaultValue=0x00
+PDOMapping=0
+LowLimit=0x00
+HighLimit=0x02
+;--- 2E00h: PDO data format -----------------------------------------
+
+[2E00]
+ParameterName=PDO data format
+ObjectType=0x7
+DataType=0x0005
+AccessType=rw
+DefaultValue=0x00
+PDOMapping=0
+LowLimit=0x00
+HighLimit=0x01
+;--- 2E10h: Disable bootup message ----------------------------------
+
+[2E10]
+ParameterName=Disable bootup message
+ObjectType=0x7
+DataType=0x0005
+AccessType=rw
+DefaultValue=0x00
+PDOMapping=0
+LowLimit=0x00
+HighLimit=0x01
+;--- 2E22h: CAN statistic information -------------------------------
+
+[2E22]
+ParameterName=CAN statistic
+ObjectType=0x8
+SubNumber=4
+
+[2E22sub0]
+ParameterName=Number of entries
+ObjectType=0x7
+DataType=0x0005
+AccessType=ro
+DefaultValue=0x03
+PDOMapping=0
+LowLimit=0x03
+HighLimit=0x03
+
+[2E22sub1]
+ParameterName=CAN Rcv Count
+ObjectType=0x7
+DataType=0x0007
+AccessType=ro
+DefaultValue=0
+PDOMapping=0
+
+[2E22sub2]
+ParameterName=CAN Trm Count
+ObjectType=0x7
+DataType=0x0007
+AccessType=ro
+DefaultValue=0
+PDOMapping=0
+
+[2E22sub3]
+ParameterName=CAN Err Count
+ObjectType=0x7
+DataType=0x0007
+AccessType=ro
+DefaultValue=0
+PDOMapping=0
+;--- 5302h: Sample Rate (slow/fast) -----------------------------
+
+[5302]
+ParameterName=Sample Rate (slow/fast)
+ObjectType=0x7
+DataType=0x0005
+AccessType=rw
+DefaultValue=0x00
+PDOMapping=0
+LowLimit=0x00
+HighLimit=0x01

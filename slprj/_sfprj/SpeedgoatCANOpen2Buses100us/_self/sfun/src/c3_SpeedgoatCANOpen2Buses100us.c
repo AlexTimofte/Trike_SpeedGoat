@@ -40,7 +40,8 @@ static const mxArray* sf_opaque_get_hover_data_for_msg(void *chartInstance,
 #define c3_IN_Clear_Error              ((uint8_T)1U)
 #define c3_IN_Init                     ((uint8_T)2U)
 #define c3_IN_SetCurrentMode           ((uint8_T)3U)
-#define c3_IN_Wait                     ((uint8_T)4U)
+#define c3_IN_SetCurrentMode1          ((uint8_T)4U)
+#define c3_IN_Wait                     ((uint8_T)5U)
 
 /* Variable Declarations */
 
@@ -54,8 +55,7 @@ static const char * c3_c_debug_family_names[2] = { "nargin", "nargout" };
 
 static const char * c3_d_debug_family_names[2] = { "nargin", "nargout" };
 
-static const char * c3_e_debug_family_names[3] = { "nargin", "nargout",
-  "sf_internal_predicateOutput" };
+static const char * c3_e_debug_family_names[2] = { "nargin", "nargout" };
 
 static const char * c3_f_debug_family_names[3] = { "nargin", "nargout",
   "sf_internal_predicateOutput" };
@@ -66,10 +66,20 @@ static const char * c3_g_debug_family_names[3] = { "nargin", "nargout",
 static const char * c3_h_debug_family_names[3] = { "nargin", "nargout",
   "sf_internal_predicateOutput" };
 
-static const char * c3_i_debug_family_names[3] = { "nargin", "nargout",
-  "sf_internal_predicateOutput" };
+static const char * c3_i_debug_family_names[2] = { "nargin", "nargout" };
 
 static const char * c3_j_debug_family_names[3] = { "nargin", "nargout",
+  "sf_internal_predicateOutput" };
+
+static const char * c3_k_debug_family_names[3] = { "nargin", "nargout",
+  "sf_internal_predicateOutput" };
+
+static const char * c3_l_debug_family_names[2] = { "nargin", "nargout" };
+
+static const char * c3_m_debug_family_names[3] = { "nargin", "nargout",
+  "sf_internal_predicateOutput" };
+
+static const char * c3_n_debug_family_names[3] = { "nargin", "nargout",
   "sf_internal_predicateOutput" };
 
 /* Function Declarations */
@@ -103,6 +113,10 @@ static void c3_chartstep_c3_SpeedgoatCANOpen2Buses100us
 static void initSimStructsc3_SpeedgoatCANOpen2Buses100us
   (SFc3_SpeedgoatCANOpen2Buses100usInstanceStruct *chartInstance);
 static void c3_enter_atomic_Init(SFc3_SpeedgoatCANOpen2Buses100usInstanceStruct *
+  chartInstance);
+static void c3_Clear_Error(SFc3_SpeedgoatCANOpen2Buses100usInstanceStruct
+  *chartInstance);
+static void c3_enter_atomic_Wait(SFc3_SpeedgoatCANOpen2Buses100usInstanceStruct *
   chartInstance);
 static void init_script_number_translation(uint32_T c3_machineNumber, uint32_T
   c3_chartNumber, uint32_T c3_instanceNumber);
@@ -143,10 +157,10 @@ static uint8_T c3_g_emlrt_marshallIn
    c3_u, const emlrtMsgIdentifier *c3_parentId);
 static void c3_h_emlrt_marshallIn(SFc3_SpeedgoatCANOpen2Buses100usInstanceStruct
   *chartInstance, const mxArray *c3_b_dataWrittenToVector, const char_T
-  *c3_identifier, boolean_T c3_y[7]);
+  *c3_identifier, boolean_T c3_y[8]);
 static void c3_i_emlrt_marshallIn(SFc3_SpeedgoatCANOpen2Buses100usInstanceStruct
   *chartInstance, const mxArray *c3_u, const emlrtMsgIdentifier *c3_parentId,
-  boolean_T c3_y[7]);
+  boolean_T c3_y[8]);
 static const mxArray *c3_j_emlrt_marshallIn
   (SFc3_SpeedgoatCANOpen2Buses100usInstanceStruct *chartInstance, const mxArray *
    c3_b_setSimStateSideEffectsInfo, const char_T *c3_identifier);
@@ -225,9 +239,9 @@ static void c3_update_debugger_state_c3_SpeedgoatCANOpen2Buses100us
   }
 
   if (*chartInstance->c3_is_c3_SpeedgoatCANOpen2Buses100us == c3_IN_Wait) {
-    _SFD_CS_CALL(STATE_ACTIVE_TAG, 3U, *chartInstance->c3_sfEvent);
+    _SFD_CS_CALL(STATE_ACTIVE_TAG, 4U, *chartInstance->c3_sfEvent);
   } else {
-    _SFD_CS_CALL(STATE_INACTIVE_TAG, 3U, *chartInstance->c3_sfEvent);
+    _SFD_CS_CALL(STATE_INACTIVE_TAG, 4U, *chartInstance->c3_sfEvent);
   }
 
   if (*chartInstance->c3_is_c3_SpeedgoatCANOpen2Buses100us ==
@@ -235,6 +249,13 @@ static void c3_update_debugger_state_c3_SpeedgoatCANOpen2Buses100us
     _SFD_CS_CALL(STATE_ACTIVE_TAG, 2U, *chartInstance->c3_sfEvent);
   } else {
     _SFD_CS_CALL(STATE_INACTIVE_TAG, 2U, *chartInstance->c3_sfEvent);
+  }
+
+  if (*chartInstance->c3_is_c3_SpeedgoatCANOpen2Buses100us ==
+      c3_IN_SetCurrentMode1) {
+    _SFD_CS_CALL(STATE_ACTIVE_TAG, 3U, *chartInstance->c3_sfEvent);
+  } else {
+    _SFD_CS_CALL(STATE_INACTIVE_TAG, 3U, *chartInstance->c3_sfEvent);
   }
 
   _SFD_SET_ANIMATION(c3_prevAniVal);
@@ -267,65 +288,72 @@ static const mxArray *get_sim_state_c3_SpeedgoatCANOpen2Buses100us
   const mxArray *c3_g_y = NULL;
   real32_T c3_g_hoistedGlobal;
   const mxArray *c3_h_y = NULL;
-  uint8_T c3_h_hoistedGlobal;
+  real32_T c3_h_hoistedGlobal;
   const mxArray *c3_i_y = NULL;
   uint8_T c3_i_hoistedGlobal;
   const mxArray *c3_j_y = NULL;
+  uint8_T c3_j_hoistedGlobal;
   const mxArray *c3_k_y = NULL;
+  const mxArray *c3_l_y = NULL;
   c3_st = NULL;
   c3_st = NULL;
   c3_y = NULL;
-  sf_mex_assign(&c3_y, sf_mex_createcellmatrix(10, 1), false);
+  sf_mex_assign(&c3_y, sf_mex_createcellmatrix(11, 1), false);
   c3_hoistedGlobal = *chartInstance->c3_BrakeCtrl;
   c3_b_y = NULL;
   sf_mex_assign(&c3_b_y, sf_mex_create("y", &c3_hoistedGlobal, 1, 0U, 0U, 0U, 0),
                 false);
   sf_mex_setcell(c3_y, 0, c3_b_y);
-  c3_b_hoistedGlobal = *chartInstance->c3_ClearError;
+  c3_b_hoistedGlobal = *chartInstance->c3_BrakeCurrentInit;
   c3_c_y = NULL;
   sf_mex_assign(&c3_c_y, sf_mex_create("y", &c3_b_hoistedGlobal, 1, 0U, 0U, 0U,
     0), false);
   sf_mex_setcell(c3_y, 1, c3_c_y);
-  c3_c_hoistedGlobal = *chartInstance->c3_DeviceMode;
+  c3_c_hoistedGlobal = *chartInstance->c3_ClearError;
   c3_d_y = NULL;
   sf_mex_assign(&c3_d_y, sf_mex_create("y", &c3_c_hoistedGlobal, 1, 0U, 0U, 0U,
     0), false);
   sf_mex_setcell(c3_y, 2, c3_d_y);
-  c3_d_hoistedGlobal = *chartInstance->c3_InitStatus;
+  c3_d_hoistedGlobal = *chartInstance->c3_DeviceMode;
   c3_e_y = NULL;
   sf_mex_assign(&c3_e_y, sf_mex_create("y", &c3_d_hoistedGlobal, 1, 0U, 0U, 0U,
     0), false);
   sf_mex_setcell(c3_y, 3, c3_e_y);
-  c3_e_hoistedGlobal = *chartInstance->c3_PowerEnable;
+  c3_e_hoistedGlobal = *chartInstance->c3_InitStatus;
   c3_f_y = NULL;
   sf_mex_assign(&c3_f_y, sf_mex_create("y", &c3_e_hoistedGlobal, 1, 0U, 0U, 0U,
     0), false);
   sf_mex_setcell(c3_y, 4, c3_f_y);
-  c3_f_hoistedGlobal = *chartInstance->c3_aux;
+  c3_f_hoistedGlobal = *chartInstance->c3_PowerEnable;
   c3_g_y = NULL;
   sf_mex_assign(&c3_g_y, sf_mex_create("y", &c3_f_hoistedGlobal, 1, 0U, 0U, 0U,
     0), false);
   sf_mex_setcell(c3_y, 5, c3_g_y);
-  c3_g_hoistedGlobal = *chartInstance->c3_aux2;
+  c3_g_hoistedGlobal = *chartInstance->c3_aux;
   c3_h_y = NULL;
   sf_mex_assign(&c3_h_y, sf_mex_create("y", &c3_g_hoistedGlobal, 1, 0U, 0U, 0U,
     0), false);
   sf_mex_setcell(c3_y, 6, c3_h_y);
-  c3_h_hoistedGlobal =
-    *chartInstance->c3_is_active_c3_SpeedgoatCANOpen2Buses100us;
+  c3_h_hoistedGlobal = *chartInstance->c3_aux2;
   c3_i_y = NULL;
-  sf_mex_assign(&c3_i_y, sf_mex_create("y", &c3_h_hoistedGlobal, 3, 0U, 0U, 0U,
+  sf_mex_assign(&c3_i_y, sf_mex_create("y", &c3_h_hoistedGlobal, 1, 0U, 0U, 0U,
     0), false);
   sf_mex_setcell(c3_y, 7, c3_i_y);
-  c3_i_hoistedGlobal = *chartInstance->c3_is_c3_SpeedgoatCANOpen2Buses100us;
+  c3_i_hoistedGlobal =
+    *chartInstance->c3_is_active_c3_SpeedgoatCANOpen2Buses100us;
   c3_j_y = NULL;
   sf_mex_assign(&c3_j_y, sf_mex_create("y", &c3_i_hoistedGlobal, 3, 0U, 0U, 0U,
     0), false);
   sf_mex_setcell(c3_y, 8, c3_j_y);
+  c3_j_hoistedGlobal = *chartInstance->c3_is_c3_SpeedgoatCANOpen2Buses100us;
   c3_k_y = NULL;
-  sf_mex_assign(&c3_k_y, sf_mex_create("y",
-    chartInstance->c3_dataWrittenToVector, 11, 0U, 1U, 0U, 1, 7), false);
+  sf_mex_assign(&c3_k_y, sf_mex_create("y", &c3_j_hoistedGlobal, 3, 0U, 0U, 0U,
+    0), false);
   sf_mex_setcell(c3_y, 9, c3_k_y);
+  c3_l_y = NULL;
+  sf_mex_assign(&c3_l_y, sf_mex_create("y",
+    chartInstance->c3_dataWrittenToVector, 11, 0U, 1U, 0U, 1, 8), false);
+  sf_mex_setcell(c3_y, 10, c3_l_y);
   sf_mex_assign(&c3_st, c3_y, false);
   return c3_st;
 }
@@ -335,38 +363,40 @@ static void set_sim_state_c3_SpeedgoatCANOpen2Buses100us
    c3_st)
 {
   const mxArray *c3_u;
-  boolean_T c3_bv0[7];
+  boolean_T c3_bv0[8];
   int32_T c3_i0;
   c3_u = sf_mex_dup(c3_st);
   *chartInstance->c3_BrakeCtrl = c3_d_emlrt_marshallIn(chartInstance, sf_mex_dup
     (sf_mex_getcell(c3_u, 0)), "BrakeCtrl");
+  *chartInstance->c3_BrakeCurrentInit = c3_d_emlrt_marshallIn(chartInstance,
+    sf_mex_dup(sf_mex_getcell(c3_u, 1)), "BrakeCurrentInit");
   *chartInstance->c3_ClearError = c3_d_emlrt_marshallIn(chartInstance,
-    sf_mex_dup(sf_mex_getcell(c3_u, 1)), "ClearError");
+    sf_mex_dup(sf_mex_getcell(c3_u, 2)), "ClearError");
   *chartInstance->c3_DeviceMode = c3_d_emlrt_marshallIn(chartInstance,
-    sf_mex_dup(sf_mex_getcell(c3_u, 2)), "DeviceMode");
+    sf_mex_dup(sf_mex_getcell(c3_u, 3)), "DeviceMode");
   *chartInstance->c3_InitStatus = c3_d_emlrt_marshallIn(chartInstance,
-    sf_mex_dup(sf_mex_getcell(c3_u, 3)), "InitStatus");
+    sf_mex_dup(sf_mex_getcell(c3_u, 4)), "InitStatus");
   *chartInstance->c3_PowerEnable = c3_d_emlrt_marshallIn(chartInstance,
-    sf_mex_dup(sf_mex_getcell(c3_u, 4)), "PowerEnable");
+    sf_mex_dup(sf_mex_getcell(c3_u, 5)), "PowerEnable");
   *chartInstance->c3_aux = c3_d_emlrt_marshallIn(chartInstance, sf_mex_dup
-    (sf_mex_getcell(c3_u, 5)), "aux");
+    (sf_mex_getcell(c3_u, 6)), "aux");
   *chartInstance->c3_aux2 = c3_d_emlrt_marshallIn(chartInstance, sf_mex_dup
-    (sf_mex_getcell(c3_u, 6)), "aux2");
+    (sf_mex_getcell(c3_u, 7)), "aux2");
   *chartInstance->c3_is_active_c3_SpeedgoatCANOpen2Buses100us =
-    c3_f_emlrt_marshallIn(chartInstance, sf_mex_dup(sf_mex_getcell(c3_u, 7)),
+    c3_f_emlrt_marshallIn(chartInstance, sf_mex_dup(sf_mex_getcell(c3_u, 8)),
     "is_active_c3_SpeedgoatCANOpen2Buses100us");
   *chartInstance->c3_is_c3_SpeedgoatCANOpen2Buses100us = c3_f_emlrt_marshallIn
-    (chartInstance, sf_mex_dup(sf_mex_getcell(c3_u, 8)),
+    (chartInstance, sf_mex_dup(sf_mex_getcell(c3_u, 9)),
      "is_c3_SpeedgoatCANOpen2Buses100us");
-  c3_h_emlrt_marshallIn(chartInstance, sf_mex_dup(sf_mex_getcell(c3_u, 9)),
+  c3_h_emlrt_marshallIn(chartInstance, sf_mex_dup(sf_mex_getcell(c3_u, 10)),
                         "dataWrittenToVector", c3_bv0);
-  for (c3_i0 = 0; c3_i0 < 7; c3_i0++) {
+  for (c3_i0 = 0; c3_i0 < 8; c3_i0++) {
     chartInstance->c3_dataWrittenToVector[c3_i0] = c3_bv0[c3_i0];
   }
 
   sf_mex_assign(&chartInstance->c3_setSimStateSideEffectsInfo,
                 c3_j_emlrt_marshallIn(chartInstance, sf_mex_dup(sf_mex_getcell
-    (c3_u, 10)), "setSimStateSideEffectsInfo"), true);
+    (c3_u, 11)), "setSimStateSideEffectsInfo"), true);
   sf_mex_destroy(&c3_u);
   chartInstance->c3_doSetSimStateSideEffects = 1U;
   c3_update_debugger_state_c3_SpeedgoatCANOpen2Buses100us(chartInstance);
@@ -413,39 +443,36 @@ static void c3_chartstep_c3_SpeedgoatCANOpen2Buses100us
 {
   uint32_T c3_debug_family_var_map[3];
   uint32_T c3_b_debug_family_var_map[3];
+  uint32_T c3_c_debug_family_var_map[3];
   real_T c3_nargin = 0.0;
   real_T c3_b_nargin = 0.0;
-  real_T c3_nargout = 1.0;
-  uint32_T c3_c_debug_family_var_map[3];
-  real_T c3_b_nargout = 1.0;
-  uint32_T c3_d_debug_family_var_map[3];
-  boolean_T c3_out;
   real_T c3_c_nargin = 0.0;
-  boolean_T c3_b_out;
-  real_T c3_d_nargin = 0.0;
+  real_T c3_nargout = 1.0;
+  real_T c3_b_nargout = 1.0;
   real_T c3_c_nargout = 1.0;
-  real_T c3_d_nargout = 1.0;
+  boolean_T c3_out;
+  boolean_T c3_b_out;
   boolean_T c3_c_out;
-  boolean_T c3_d_out;
+  uint32_T c3_d_debug_family_var_map[3];
   uint32_T c3_e_debug_family_var_map[2];
+  real_T c3_d_nargin = 0.0;
   real_T c3_e_nargin = 0.0;
-  uint32_T c3_f_debug_family_var_map[2];
+  real_T c3_d_nargout = 1.0;
   real_T c3_e_nargout = 0.0;
+  boolean_T c3_d_out;
+  uint32_T c3_f_debug_family_var_map[3];
   real_T c3_f_nargin = 0.0;
-  real_T c3_f_nargout = 0.0;
-  uint32_T c3_g_debug_family_var_map[3];
-  uint32_T c3_h_debug_family_var_map[2];
-  real_T c3_g_nargin = 0.0;
-  real_T c3_h_nargin = 0.0;
-  real_T c3_g_nargout = 1.0;
-  real_T c3_h_nargout = 0.0;
+  real_T c3_f_nargout = 1.0;
   boolean_T c3_e_out;
+  uint32_T c3_g_debug_family_var_map[2];
+  real_T c3_g_nargin = 0.0;
+  real_T c3_g_nargout = 0.0;
+  uint32_T c3_h_debug_family_var_map[3];
   uint32_T c3_i_debug_family_var_map[2];
+  real_T c3_h_nargin = 0.0;
   real_T c3_i_nargin = 0.0;
+  real_T c3_h_nargout = 1.0;
   real_T c3_i_nargout = 0.0;
-  uint32_T c3_j_debug_family_var_map[3];
-  real_T c3_j_nargin = 0.0;
-  real_T c3_j_nargout = 1.0;
   boolean_T c3_f_out;
   _SFD_CC_CALL(CHART_ENTER_DURING_FUNCTION_TAG, 2U, *chartInstance->c3_sfEvent);
   if (*chartInstance->c3_is_active_c3_SpeedgoatCANOpen2Buses100us == 0U) {
@@ -460,122 +487,17 @@ static void c3_chartstep_c3_SpeedgoatCANOpen2Buses100us
     switch (*chartInstance->c3_is_c3_SpeedgoatCANOpen2Buses100us) {
      case c3_IN_Clear_Error:
       CV_CHART_EVAL(2, 0, c3_IN_Clear_Error);
-      _SFD_CT_CALL(TRANSITION_BEFORE_PROCESSING_TAG, 2U,
-                   *chartInstance->c3_sfEvent);
-      _SFD_SYMBOL_SCOPE_PUSH_EML(0U, 3U, 3U, c3_h_debug_family_names,
-        c3_debug_family_var_map);
-      _SFD_SYMBOL_SCOPE_ADD_EML_IMPORTABLE(&c3_nargin, 0U, c3_sf_marshallOut,
-        c3_sf_marshallIn);
-      _SFD_SYMBOL_SCOPE_ADD_EML_IMPORTABLE(&c3_nargout, 1U, c3_sf_marshallOut,
-        c3_sf_marshallIn);
-      _SFD_SYMBOL_SCOPE_ADD_EML_IMPORTABLE(&c3_out, 2U, c3_b_sf_marshallOut,
-        c3_b_sf_marshallIn);
-      if (!chartInstance->c3_dataWrittenToVector[4U]) {
-        sf_read_before_write_error(chartInstance->S, 0U, 239U, 1, 3);
-      }
-
-      if (CV_EML_IF(2, 0, 0, CV_RELATIONAL_EVAL(5U, 2U, 0, (real_T)
-            *chartInstance->c3_aux, 2000.0, -1, 4U, *chartInstance->c3_aux >
-            2000.0F))) {
-        c3_out = true;
-      } else {
-        c3_out = false;
-      }
-
-      _SFD_SYMBOL_SCOPE_POP();
-      if (c3_out) {
-        _SFD_CT_CALL(TRANSITION_ACTIVE_TAG, 2U, *chartInstance->c3_sfEvent);
-        *chartInstance->c3_is_c3_SpeedgoatCANOpen2Buses100us =
-          c3_IN_NO_ACTIVE_CHILD;
-        _SFD_CS_CALL(STATE_INACTIVE_TAG, 0U, *chartInstance->c3_sfEvent);
-        *chartInstance->c3_is_c3_SpeedgoatCANOpen2Buses100us = c3_IN_Wait;
-        _SFD_CS_CALL(STATE_ACTIVE_TAG, 3U, *chartInstance->c3_sfEvent);
-        _SFD_SYMBOL_SCOPE_PUSH_EML(0U, 2U, 2U, c3_c_debug_family_names,
-          c3_h_debug_family_var_map);
-        _SFD_SYMBOL_SCOPE_ADD_EML_IMPORTABLE(&c3_h_nargin, 0U, c3_sf_marshallOut,
-          c3_sf_marshallIn);
-        _SFD_SYMBOL_SCOPE_ADD_EML_IMPORTABLE(&c3_h_nargout, 1U,
-          c3_sf_marshallOut, c3_sf_marshallIn);
-        *chartInstance->c3_BrakeCtrl = 2.0F;
-        chartInstance->c3_dataWrittenToVector[2U] = true;
-        _SFD_DATA_RANGE_CHECK((real_T)*chartInstance->c3_BrakeCtrl, 6U);
-        *chartInstance->c3_aux = 0.0F;
-        chartInstance->c3_dataWrittenToVector[4U] = true;
-        _SFD_DATA_RANGE_CHECK((real_T)*chartInstance->c3_aux, 0U);
-        *chartInstance->c3_InitStatus = 0.0F;
-        chartInstance->c3_dataWrittenToVector[6U] = true;
-        _SFD_DATA_RANGE_CHECK((real_T)*chartInstance->c3_InitStatus, 8U);
-        _SFD_SYMBOL_SCOPE_POP();
-      } else {
-        _SFD_CS_CALL(STATE_ENTER_DURING_FUNCTION_TAG, 0U,
-                     *chartInstance->c3_sfEvent);
-        _SFD_SYMBOL_SCOPE_PUSH_EML(0U, 2U, 2U, c3_b_debug_family_names,
-          c3_f_debug_family_var_map);
-        _SFD_SYMBOL_SCOPE_ADD_EML_IMPORTABLE(&c3_f_nargin, 0U, c3_sf_marshallOut,
-          c3_sf_marshallIn);
-        _SFD_SYMBOL_SCOPE_ADD_EML_IMPORTABLE(&c3_f_nargout, 1U,
-          c3_sf_marshallOut, c3_sf_marshallIn);
-        *chartInstance->c3_ClearError = 1.0F;
-        chartInstance->c3_dataWrittenToVector[0U] = true;
-        _SFD_DATA_RANGE_CHECK((real_T)*chartInstance->c3_ClearError, 4U);
-        if (!chartInstance->c3_dataWrittenToVector[4U]) {
-          sf_read_before_write_error(chartInstance->S, 0U, 79U, 37, 3);
-        }
-
-        (*chartInstance->c3_aux)++;
-        chartInstance->c3_dataWrittenToVector[4U] = true;
-        _SFD_DATA_RANGE_CHECK((real_T)*chartInstance->c3_aux, 0U);
-        *chartInstance->c3_InitStatus = 0.0F;
-        chartInstance->c3_dataWrittenToVector[6U] = true;
-        _SFD_DATA_RANGE_CHECK((real_T)*chartInstance->c3_InitStatus, 8U);
-        _SFD_SYMBOL_SCOPE_POP();
-      }
-
-      _SFD_CS_CALL(EXIT_OUT_OF_FUNCTION_TAG, 0U, *chartInstance->c3_sfEvent);
+      c3_Clear_Error(chartInstance);
       break;
 
      case c3_IN_Init:
       CV_CHART_EVAL(2, 0, c3_IN_Init);
-      *chartInstance->c3_BrakeCtrl = 0.0F;
-      chartInstance->c3_dataWrittenToVector[2U] = true;
-      _SFD_CT_CALL(TRANSITION_BEFORE_PROCESSING_TAG, 1U,
-                   *chartInstance->c3_sfEvent);
-      _SFD_SYMBOL_SCOPE_PUSH_EML(0U, 3U, 3U, c3_e_debug_family_names,
-        c3_c_debug_family_var_map);
-      _SFD_SYMBOL_SCOPE_ADD_EML_IMPORTABLE(&c3_c_nargin, 0U, c3_sf_marshallOut,
-        c3_sf_marshallIn);
-      _SFD_SYMBOL_SCOPE_ADD_EML_IMPORTABLE(&c3_c_nargout, 1U, c3_sf_marshallOut,
-        c3_sf_marshallIn);
-      _SFD_SYMBOL_SCOPE_ADD_EML_IMPORTABLE(&c3_c_out, 2U, c3_b_sf_marshallOut,
-        c3_b_sf_marshallIn);
-      if (CV_EML_COND(1, 0, 0, CV_RELATIONAL_EVAL(5U, 1U, 0, (real_T)
-            *chartInstance->c3_ButtonStatus, 1.0, -1, 0U,
-            *chartInstance->c3_ButtonStatus == 1.0F)) || CV_EML_COND(1, 0, 1,
-           CV_RELATIONAL_EVAL(5U, 1U, 1, (real_T)*chartInstance->c3_ReadError,
-                              1.0, -1, 1U, *chartInstance->c3_ReadError != 1.0F)))
-      {
-        CV_EML_MCDC(1, 0, 0, true);
-        CV_EML_IF(1, 0, 0, true);
-        c3_c_out = true;
-      } else {
-        CV_EML_MCDC(1, 0, 0, false);
-        CV_EML_IF(1, 0, 0, false);
-        c3_c_out = false;
-      }
-
-      _SFD_SYMBOL_SCOPE_POP();
-      if (c3_c_out) {
-        _SFD_CT_CALL(TRANSITION_ACTIVE_TAG, 1U, *chartInstance->c3_sfEvent);
-        *chartInstance->c3_is_c3_SpeedgoatCANOpen2Buses100us =
-          c3_IN_NO_ACTIVE_CHILD;
-        _SFD_CS_CALL(STATE_INACTIVE_TAG, 1U, *chartInstance->c3_sfEvent);
-        *chartInstance->c3_is_c3_SpeedgoatCANOpen2Buses100us = c3_IN_Clear_Error;
-        _SFD_CS_CALL(STATE_ACTIVE_TAG, 0U, *chartInstance->c3_sfEvent);
-      } else {
-        _SFD_CS_CALL(STATE_ENTER_DURING_FUNCTION_TAG, 1U,
-                     *chartInstance->c3_sfEvent);
-      }
-
+      _SFD_CT_CALL(TRANSITION_ACTIVE_TAG, 1U, *chartInstance->c3_sfEvent);
+      *chartInstance->c3_is_c3_SpeedgoatCANOpen2Buses100us =
+        c3_IN_NO_ACTIVE_CHILD;
+      _SFD_CS_CALL(STATE_INACTIVE_TAG, 1U, *chartInstance->c3_sfEvent);
+      *chartInstance->c3_is_c3_SpeedgoatCANOpen2Buses100us = c3_IN_Clear_Error;
+      _SFD_CS_CALL(STATE_ACTIVE_TAG, 0U, *chartInstance->c3_sfEvent);
       _SFD_CS_CALL(EXIT_OUT_OF_FUNCTION_TAG, 1U, *chartInstance->c3_sfEvent);
       break;
 
@@ -584,6 +506,104 @@ static void c3_chartstep_c3_SpeedgoatCANOpen2Buses100us
       _SFD_CT_CALL(TRANSITION_BEFORE_PROCESSING_TAG, 6U,
                    *chartInstance->c3_sfEvent);
       _SFD_SYMBOL_SCOPE_PUSH_EML(0U, 3U, 3U, c3_g_debug_family_names,
+        c3_debug_family_var_map);
+      _SFD_SYMBOL_SCOPE_ADD_EML_IMPORTABLE(&c3_nargin, 0U, c3_sf_marshallOut,
+        c3_sf_marshallIn);
+      _SFD_SYMBOL_SCOPE_ADD_EML_IMPORTABLE(&c3_nargout, 1U, c3_sf_marshallOut,
+        c3_sf_marshallIn);
+      _SFD_SYMBOL_SCOPE_ADD_EML_IMPORTABLE(&c3_out, 2U, c3_b_sf_marshallOut,
+        c3_b_sf_marshallIn);
+      if (CV_EML_IF(6, 0, 0, CV_RELATIONAL_EVAL(5U, 6U, 0, (real_T)
+            *chartInstance->c3_ReadError, 1.0, -1, 1U,
+            *chartInstance->c3_ReadError != 1.0F))) {
+        c3_out = true;
+      } else {
+        c3_out = false;
+      }
+
+      _SFD_SYMBOL_SCOPE_POP();
+      if (c3_out) {
+        _SFD_CT_CALL(TRANSITION_ACTIVE_TAG, 6U, *chartInstance->c3_sfEvent);
+        *chartInstance->c3_is_c3_SpeedgoatCANOpen2Buses100us =
+          c3_IN_NO_ACTIVE_CHILD;
+        _SFD_CS_CALL(STATE_INACTIVE_TAG, 2U, *chartInstance->c3_sfEvent);
+        *chartInstance->c3_is_c3_SpeedgoatCANOpen2Buses100us = c3_IN_Init;
+        _SFD_CS_CALL(STATE_ACTIVE_TAG, 1U, *chartInstance->c3_sfEvent);
+        c3_enter_atomic_Init(chartInstance);
+      } else {
+        _SFD_CT_CALL(TRANSITION_BEFORE_PROCESSING_TAG, 7U,
+                     *chartInstance->c3_sfEvent);
+        _SFD_SYMBOL_SCOPE_PUSH_EML(0U, 3U, 3U, c3_m_debug_family_names,
+          c3_d_debug_family_var_map);
+        _SFD_SYMBOL_SCOPE_ADD_EML_IMPORTABLE(&c3_d_nargin, 0U, c3_sf_marshallOut,
+          c3_sf_marshallIn);
+        _SFD_SYMBOL_SCOPE_ADD_EML_IMPORTABLE(&c3_d_nargout, 1U,
+          c3_sf_marshallOut, c3_sf_marshallIn);
+        _SFD_SYMBOL_SCOPE_ADD_EML_IMPORTABLE(&c3_d_out, 2U, c3_b_sf_marshallOut,
+          c3_b_sf_marshallIn);
+        if (!chartInstance->c3_dataWrittenToVector[4U]) {
+          sf_read_before_write_error(chartInstance->S, 0U, 257U, 1, 3);
+        }
+
+        if (CV_EML_IF(7, 0, 0, CV_RELATIONAL_EVAL(5U, 7U, 0, (real_T)
+              *chartInstance->c3_aux, 10000.0, -1, 4U, *chartInstance->c3_aux >
+              10000.0F))) {
+          c3_d_out = true;
+        } else {
+          c3_d_out = false;
+        }
+
+        _SFD_SYMBOL_SCOPE_POP();
+        if (c3_d_out) {
+          _SFD_CT_CALL(TRANSITION_ACTIVE_TAG, 7U, *chartInstance->c3_sfEvent);
+          *chartInstance->c3_is_c3_SpeedgoatCANOpen2Buses100us =
+            c3_IN_NO_ACTIVE_CHILD;
+          _SFD_CS_CALL(STATE_INACTIVE_TAG, 2U, *chartInstance->c3_sfEvent);
+          *chartInstance->c3_is_c3_SpeedgoatCANOpen2Buses100us =
+            c3_IN_SetCurrentMode1;
+          _SFD_CS_CALL(STATE_ACTIVE_TAG, 3U, *chartInstance->c3_sfEvent);
+        } else {
+          _SFD_CS_CALL(STATE_ENTER_DURING_FUNCTION_TAG, 2U,
+                       *chartInstance->c3_sfEvent);
+          _SFD_SYMBOL_SCOPE_PUSH_EML(0U, 2U, 2U, c3_d_debug_family_names,
+            c3_g_debug_family_var_map);
+          _SFD_SYMBOL_SCOPE_ADD_EML_IMPORTABLE(&c3_g_nargin, 0U,
+            c3_sf_marshallOut, c3_sf_marshallIn);
+          _SFD_SYMBOL_SCOPE_ADD_EML_IMPORTABLE(&c3_g_nargout, 1U,
+            c3_sf_marshallOut, c3_sf_marshallIn);
+          *chartInstance->c3_DeviceMode = 2.0F;
+          chartInstance->c3_dataWrittenToVector[1U] = true;
+          _SFD_DATA_RANGE_CHECK((real_T)*chartInstance->c3_DeviceMode, 5U);
+          *chartInstance->c3_PowerEnable = 1.0F;
+          chartInstance->c3_dataWrittenToVector[5U] = true;
+          _SFD_DATA_RANGE_CHECK((real_T)*chartInstance->c3_PowerEnable, 7U);
+          *chartInstance->c3_InitStatus = 1.0F;
+          chartInstance->c3_dataWrittenToVector[6U] = true;
+          _SFD_DATA_RANGE_CHECK((real_T)*chartInstance->c3_InitStatus, 8U);
+          *chartInstance->c3_BrakeCurrentInit = 11000.0F;
+          chartInstance->c3_dataWrittenToVector[7U] = true;
+          _SFD_DATA_RANGE_CHECK_MIN_MAX((real_T)
+            *chartInstance->c3_BrakeCurrentInit, 9U, -12000.0, 12000.0, 241U, 91,
+            24, (real_T)*chartInstance->c3_BrakeCurrentInit);
+          if (!chartInstance->c3_dataWrittenToVector[4U]) {
+            sf_read_before_write_error(chartInstance->S, 0U, 241U, 143, 3);
+          }
+
+          (*chartInstance->c3_aux)++;
+          chartInstance->c3_dataWrittenToVector[4U] = true;
+          _SFD_DATA_RANGE_CHECK((real_T)*chartInstance->c3_aux, 0U);
+          _SFD_SYMBOL_SCOPE_POP();
+        }
+      }
+
+      _SFD_CS_CALL(EXIT_OUT_OF_FUNCTION_TAG, 2U, *chartInstance->c3_sfEvent);
+      break;
+
+     case c3_IN_SetCurrentMode1:
+      CV_CHART_EVAL(2, 0, c3_IN_SetCurrentMode1);
+      _SFD_CT_CALL(TRANSITION_BEFORE_PROCESSING_TAG, 8U,
+                   *chartInstance->c3_sfEvent);
+      _SFD_SYMBOL_SCOPE_PUSH_EML(0U, 3U, 3U, c3_n_debug_family_names,
         c3_b_debug_family_var_map);
       _SFD_SYMBOL_SCOPE_ADD_EML_IMPORTABLE(&c3_b_nargin, 0U, c3_sf_marshallOut,
         c3_sf_marshallIn);
@@ -591,7 +611,7 @@ static void c3_chartstep_c3_SpeedgoatCANOpen2Buses100us
         c3_sf_marshallIn);
       _SFD_SYMBOL_SCOPE_ADD_EML_IMPORTABLE(&c3_b_out, 2U, c3_b_sf_marshallOut,
         c3_b_sf_marshallIn);
-      if (CV_EML_IF(6, 0, 0, CV_RELATIONAL_EVAL(5U, 6U, 0, (real_T)
+      if (CV_EML_IF(8, 0, 0, CV_RELATIONAL_EVAL(5U, 8U, 0, (real_T)
             *chartInstance->c3_ReadError, 1.0, -1, 1U,
             *chartInstance->c3_ReadError != 1.0F))) {
         c3_b_out = true;
@@ -601,106 +621,98 @@ static void c3_chartstep_c3_SpeedgoatCANOpen2Buses100us
 
       _SFD_SYMBOL_SCOPE_POP();
       if (c3_b_out) {
-        _SFD_CT_CALL(TRANSITION_ACTIVE_TAG, 6U, *chartInstance->c3_sfEvent);
+        _SFD_CT_CALL(TRANSITION_ACTIVE_TAG, 8U, *chartInstance->c3_sfEvent);
         *chartInstance->c3_is_c3_SpeedgoatCANOpen2Buses100us =
           c3_IN_NO_ACTIVE_CHILD;
-        _SFD_CS_CALL(STATE_INACTIVE_TAG, 2U, *chartInstance->c3_sfEvent);
+        _SFD_CS_CALL(STATE_INACTIVE_TAG, 3U, *chartInstance->c3_sfEvent);
         *chartInstance->c3_is_c3_SpeedgoatCANOpen2Buses100us = c3_IN_Init;
         _SFD_CS_CALL(STATE_ACTIVE_TAG, 1U, *chartInstance->c3_sfEvent);
         c3_enter_atomic_Init(chartInstance);
       } else {
-        _SFD_CS_CALL(STATE_ENTER_DURING_FUNCTION_TAG, 2U,
+        _SFD_CS_CALL(STATE_ENTER_DURING_FUNCTION_TAG, 3U,
                      *chartInstance->c3_sfEvent);
-        _SFD_SYMBOL_SCOPE_PUSH_EML(0U, 2U, 2U, c3_d_debug_family_names,
+        _SFD_SYMBOL_SCOPE_PUSH_EML(0U, 2U, 2U, c3_e_debug_family_names,
           c3_e_debug_family_var_map);
         _SFD_SYMBOL_SCOPE_ADD_EML_IMPORTABLE(&c3_e_nargin, 0U, c3_sf_marshallOut,
           c3_sf_marshallIn);
         _SFD_SYMBOL_SCOPE_ADD_EML_IMPORTABLE(&c3_e_nargout, 1U,
           c3_sf_marshallOut, c3_sf_marshallIn);
-        *chartInstance->c3_DeviceMode = 2.0F;
-        chartInstance->c3_dataWrittenToVector[1U] = true;
-        _SFD_DATA_RANGE_CHECK((real_T)*chartInstance->c3_DeviceMode, 5U);
-        *chartInstance->c3_PowerEnable = 1.0F;
-        chartInstance->c3_dataWrittenToVector[5U] = true;
-        _SFD_DATA_RANGE_CHECK((real_T)*chartInstance->c3_PowerEnable, 7U);
         *chartInstance->c3_InitStatus = 1.0F;
         chartInstance->c3_dataWrittenToVector[6U] = true;
         _SFD_DATA_RANGE_CHECK((real_T)*chartInstance->c3_InitStatus, 8U);
+        *chartInstance->c3_BrakeCtrl = 0.0F;
+        chartInstance->c3_dataWrittenToVector[2U] = true;
+        _SFD_DATA_RANGE_CHECK((real_T)*chartInstance->c3_BrakeCtrl, 6U);
+        *chartInstance->c3_BrakeCurrentInit = 0.0F;
+        chartInstance->c3_dataWrittenToVector[7U] = true;
+        _SFD_DATA_RANGE_CHECK_MIN_MAX((real_T)
+          *chartInstance->c3_BrakeCurrentInit, 9U, -12000.0, 12000.0, 256U, 74,
+          20, (real_T)*chartInstance->c3_BrakeCurrentInit);
         _SFD_SYMBOL_SCOPE_POP();
       }
 
-      _SFD_CS_CALL(EXIT_OUT_OF_FUNCTION_TAG, 2U, *chartInstance->c3_sfEvent);
+      _SFD_CS_CALL(EXIT_OUT_OF_FUNCTION_TAG, 3U, *chartInstance->c3_sfEvent);
       break;
 
      case c3_IN_Wait:
       CV_CHART_EVAL(2, 0, c3_IN_Wait);
-      *chartInstance->c3_BrakeCtrl = 2.0F;
-      chartInstance->c3_dataWrittenToVector[2U] = true;
       _SFD_CT_CALL(TRANSITION_BEFORE_PROCESSING_TAG, 3U,
                    *chartInstance->c3_sfEvent);
-      _SFD_SYMBOL_SCOPE_PUSH_EML(0U, 3U, 3U, c3_i_debug_family_names,
-        c3_d_debug_family_var_map);
-      _SFD_SYMBOL_SCOPE_ADD_EML_IMPORTABLE(&c3_d_nargin, 0U, c3_sf_marshallOut,
+      _SFD_SYMBOL_SCOPE_PUSH_EML(0U, 3U, 3U, c3_j_debug_family_names,
+        c3_c_debug_family_var_map);
+      _SFD_SYMBOL_SCOPE_ADD_EML_IMPORTABLE(&c3_c_nargin, 0U, c3_sf_marshallOut,
         c3_sf_marshallIn);
-      _SFD_SYMBOL_SCOPE_ADD_EML_IMPORTABLE(&c3_d_nargout, 1U, c3_sf_marshallOut,
+      _SFD_SYMBOL_SCOPE_ADD_EML_IMPORTABLE(&c3_c_nargout, 1U, c3_sf_marshallOut,
         c3_sf_marshallIn);
-      _SFD_SYMBOL_SCOPE_ADD_EML_IMPORTABLE(&c3_d_out, 2U, c3_b_sf_marshallOut,
+      _SFD_SYMBOL_SCOPE_ADD_EML_IMPORTABLE(&c3_c_out, 2U, c3_b_sf_marshallOut,
         c3_b_sf_marshallIn);
+      if (!chartInstance->c3_dataWrittenToVector[4U]) {
+        sf_read_before_write_error(chartInstance->S, 0U, 240U, 1, 3);
+      }
+
       if (CV_EML_COND(3, 0, 0, CV_RELATIONAL_EVAL(5U, 3U, 0, (real_T)
-            *chartInstance->c3_ButtonStatus, 0.0, -1, 0U,
-            *chartInstance->c3_ButtonStatus == 0.0F)) && CV_EML_COND(3, 0, 1,
-           CV_RELATIONAL_EVAL(5U, 3U, 1, (real_T)*chartInstance->c3_ReadError,
-                              1.0, -1, 0U, *chartInstance->c3_ReadError == 1.0F)))
-      {
+            *chartInstance->c3_aux, 20.0, -1, 2U, *chartInstance->c3_aux < 20.0F))
+          && CV_EML_COND(3, 0, 1, CV_RELATIONAL_EVAL(5U, 3U, 1, (real_T)
+            *chartInstance->c3_ReadError, 1.0, -1, 0U,
+            *chartInstance->c3_ReadError == 1.0F))) {
         CV_EML_MCDC(3, 0, 0, true);
         CV_EML_IF(3, 0, 0, true);
-        c3_d_out = true;
+        c3_c_out = true;
       } else {
         CV_EML_MCDC(3, 0, 0, false);
         CV_EML_IF(3, 0, 0, false);
-        c3_d_out = false;
+        c3_c_out = false;
       }
 
       _SFD_SYMBOL_SCOPE_POP();
-      if (c3_d_out) {
+      if (c3_c_out) {
         _SFD_CT_CALL(TRANSITION_ACTIVE_TAG, 3U, *chartInstance->c3_sfEvent);
         *chartInstance->c3_is_c3_SpeedgoatCANOpen2Buses100us =
           c3_IN_NO_ACTIVE_CHILD;
-        _SFD_CS_CALL(STATE_INACTIVE_TAG, 3U, *chartInstance->c3_sfEvent);
+        _SFD_CS_CALL(STATE_INACTIVE_TAG, 4U, *chartInstance->c3_sfEvent);
         *chartInstance->c3_is_c3_SpeedgoatCANOpen2Buses100us = c3_IN_Wait;
-        _SFD_CS_CALL(STATE_ACTIVE_TAG, 3U, *chartInstance->c3_sfEvent);
-        _SFD_SYMBOL_SCOPE_PUSH_EML(0U, 2U, 2U, c3_c_debug_family_names,
-          c3_i_debug_family_var_map);
-        _SFD_SYMBOL_SCOPE_ADD_EML_IMPORTABLE(&c3_i_nargin, 0U, c3_sf_marshallOut,
-          c3_sf_marshallIn);
-        _SFD_SYMBOL_SCOPE_ADD_EML_IMPORTABLE(&c3_i_nargout, 1U,
-          c3_sf_marshallOut, c3_sf_marshallIn);
-        *chartInstance->c3_BrakeCtrl = 2.0F;
-        chartInstance->c3_dataWrittenToVector[2U] = true;
-        _SFD_DATA_RANGE_CHECK((real_T)*chartInstance->c3_BrakeCtrl, 6U);
-        *chartInstance->c3_aux = 0.0F;
-        chartInstance->c3_dataWrittenToVector[4U] = true;
-        _SFD_DATA_RANGE_CHECK((real_T)*chartInstance->c3_aux, 0U);
-        *chartInstance->c3_InitStatus = 0.0F;
-        chartInstance->c3_dataWrittenToVector[6U] = true;
-        _SFD_DATA_RANGE_CHECK((real_T)*chartInstance->c3_InitStatus, 8U);
-        _SFD_SYMBOL_SCOPE_POP();
+        _SFD_CS_CALL(STATE_ACTIVE_TAG, 4U, *chartInstance->c3_sfEvent);
+        c3_enter_atomic_Wait(chartInstance);
       } else {
         _SFD_CT_CALL(TRANSITION_BEFORE_PROCESSING_TAG, 4U,
                      *chartInstance->c3_sfEvent);
-        _SFD_SYMBOL_SCOPE_PUSH_EML(0U, 3U, 3U, c3_j_debug_family_names,
-          c3_g_debug_family_var_map);
-        _SFD_SYMBOL_SCOPE_ADD_EML_IMPORTABLE(&c3_g_nargin, 0U, c3_sf_marshallOut,
+        _SFD_SYMBOL_SCOPE_PUSH_EML(0U, 3U, 3U, c3_k_debug_family_names,
+          c3_f_debug_family_var_map);
+        _SFD_SYMBOL_SCOPE_ADD_EML_IMPORTABLE(&c3_f_nargin, 0U, c3_sf_marshallOut,
           c3_sf_marshallIn);
-        _SFD_SYMBOL_SCOPE_ADD_EML_IMPORTABLE(&c3_g_nargout, 1U,
+        _SFD_SYMBOL_SCOPE_ADD_EML_IMPORTABLE(&c3_f_nargout, 1U,
           c3_sf_marshallOut, c3_sf_marshallIn);
         _SFD_SYMBOL_SCOPE_ADD_EML_IMPORTABLE(&c3_e_out, 2U, c3_b_sf_marshallOut,
           c3_b_sf_marshallIn);
+        if (!chartInstance->c3_dataWrittenToVector[4U]) {
+          sf_read_before_write_error(chartInstance->S, 0U, 242U, 1, 3);
+        }
+
         if (CV_EML_COND(4, 0, 0, CV_RELATIONAL_EVAL(5U, 4U, 0, (real_T)
-              *chartInstance->c3_ButtonStatus, 2.0, -1, 0U,
-              *chartInstance->c3_ButtonStatus == 2.0F)) && CV_EML_COND(4, 0, 1,
-             CV_RELATIONAL_EVAL(5U, 4U, 1, (real_T)*chartInstance->c3_ReadError,
-              1.0, -1, 0U, *chartInstance->c3_ReadError == 1.0F))) {
+              *chartInstance->c3_aux, 20.0, -1, 5U, *chartInstance->c3_aux >=
+              20.0F)) && CV_EML_COND(4, 0, 1, CV_RELATIONAL_EVAL(5U, 4U, 1,
+              (real_T)*chartInstance->c3_ReadError, 1.0, -1, 0U,
+              *chartInstance->c3_ReadError == 1.0F))) {
           CV_EML_MCDC(4, 0, 0, true);
           CV_EML_IF(4, 0, 0, true);
           c3_e_out = true;
@@ -713,9 +725,19 @@ static void c3_chartstep_c3_SpeedgoatCANOpen2Buses100us
         _SFD_SYMBOL_SCOPE_POP();
         if (c3_e_out) {
           _SFD_CT_CALL(TRANSITION_ACTIVE_TAG, 4U, *chartInstance->c3_sfEvent);
+          _SFD_SYMBOL_SCOPE_PUSH_EML(0U, 2U, 2U, c3_l_debug_family_names,
+            c3_i_debug_family_var_map);
+          _SFD_SYMBOL_SCOPE_ADD_EML_IMPORTABLE(&c3_i_nargin, 0U,
+            c3_sf_marshallOut, c3_sf_marshallIn);
+          _SFD_SYMBOL_SCOPE_ADD_EML_IMPORTABLE(&c3_i_nargout, 1U,
+            c3_sf_marshallOut, c3_sf_marshallIn);
+          *chartInstance->c3_aux = 0.0F;
+          chartInstance->c3_dataWrittenToVector[4U] = true;
+          _SFD_DATA_RANGE_CHECK((real_T)*chartInstance->c3_aux, 0U);
+          _SFD_SYMBOL_SCOPE_POP();
           *chartInstance->c3_is_c3_SpeedgoatCANOpen2Buses100us =
             c3_IN_NO_ACTIVE_CHILD;
-          _SFD_CS_CALL(STATE_INACTIVE_TAG, 3U, *chartInstance->c3_sfEvent);
+          _SFD_CS_CALL(STATE_INACTIVE_TAG, 4U, *chartInstance->c3_sfEvent);
           *chartInstance->c3_is_c3_SpeedgoatCANOpen2Buses100us =
             c3_IN_SetCurrentMode;
           _SFD_CS_CALL(STATE_ACTIVE_TAG, 2U, *chartInstance->c3_sfEvent);
@@ -723,10 +745,10 @@ static void c3_chartstep_c3_SpeedgoatCANOpen2Buses100us
           _SFD_CT_CALL(TRANSITION_BEFORE_PROCESSING_TAG, 5U,
                        *chartInstance->c3_sfEvent);
           _SFD_SYMBOL_SCOPE_PUSH_EML(0U, 3U, 3U, c3_f_debug_family_names,
-            c3_j_debug_family_var_map);
-          _SFD_SYMBOL_SCOPE_ADD_EML_IMPORTABLE(&c3_j_nargin, 0U,
+            c3_h_debug_family_var_map);
+          _SFD_SYMBOL_SCOPE_ADD_EML_IMPORTABLE(&c3_h_nargin, 0U,
             c3_sf_marshallOut, c3_sf_marshallIn);
-          _SFD_SYMBOL_SCOPE_ADD_EML_IMPORTABLE(&c3_j_nargout, 1U,
+          _SFD_SYMBOL_SCOPE_ADD_EML_IMPORTABLE(&c3_h_nargout, 1U,
             c3_sf_marshallOut, c3_sf_marshallIn);
           _SFD_SYMBOL_SCOPE_ADD_EML_IMPORTABLE(&c3_f_out, 2U,
             c3_b_sf_marshallOut, c3_b_sf_marshallIn);
@@ -743,18 +765,18 @@ static void c3_chartstep_c3_SpeedgoatCANOpen2Buses100us
             _SFD_CT_CALL(TRANSITION_ACTIVE_TAG, 5U, *chartInstance->c3_sfEvent);
             *chartInstance->c3_is_c3_SpeedgoatCANOpen2Buses100us =
               c3_IN_NO_ACTIVE_CHILD;
-            _SFD_CS_CALL(STATE_INACTIVE_TAG, 3U, *chartInstance->c3_sfEvent);
+            _SFD_CS_CALL(STATE_INACTIVE_TAG, 4U, *chartInstance->c3_sfEvent);
             *chartInstance->c3_is_c3_SpeedgoatCANOpen2Buses100us = c3_IN_Init;
             _SFD_CS_CALL(STATE_ACTIVE_TAG, 1U, *chartInstance->c3_sfEvent);
             c3_enter_atomic_Init(chartInstance);
           } else {
-            _SFD_CS_CALL(STATE_ENTER_DURING_FUNCTION_TAG, 3U,
+            _SFD_CS_CALL(STATE_ENTER_DURING_FUNCTION_TAG, 4U,
                          *chartInstance->c3_sfEvent);
           }
         }
       }
 
-      _SFD_CS_CALL(EXIT_OUT_OF_FUNCTION_TAG, 3U, *chartInstance->c3_sfEvent);
+      _SFD_CS_CALL(EXIT_OUT_OF_FUNCTION_TAG, 4U, *chartInstance->c3_sfEvent);
       break;
 
      default:
@@ -802,6 +824,117 @@ static void c3_enter_atomic_Init(SFc3_SpeedgoatCANOpen2Buses100usInstanceStruct 
   chartInstance->c3_dataWrittenToVector[5U] = true;
   _SFD_DATA_RANGE_CHECK((real_T)*chartInstance->c3_PowerEnable, 7U);
   *chartInstance->c3_aux = 0.0F;
+  chartInstance->c3_dataWrittenToVector[4U] = true;
+  _SFD_DATA_RANGE_CHECK((real_T)*chartInstance->c3_aux, 0U);
+  *chartInstance->c3_InitStatus = 0.0F;
+  chartInstance->c3_dataWrittenToVector[6U] = true;
+  _SFD_DATA_RANGE_CHECK((real_T)*chartInstance->c3_InitStatus, 8U);
+  *chartInstance->c3_BrakeCurrentInit = 0.0F;
+  chartInstance->c3_dataWrittenToVector[7U] = true;
+  _SFD_DATA_RANGE_CHECK_MIN_MAX((real_T)*chartInstance->c3_BrakeCurrentInit, 9U,
+    -12000.0, 12000.0, 9U, 139, 20, (real_T)*chartInstance->c3_BrakeCurrentInit);
+  _SFD_SYMBOL_SCOPE_POP();
+}
+
+static void c3_Clear_Error(SFc3_SpeedgoatCANOpen2Buses100usInstanceStruct
+  *chartInstance)
+{
+  uint32_T c3_debug_family_var_map[3];
+  real_T c3_nargin = 0.0;
+  real_T c3_nargout = 1.0;
+  boolean_T c3_out;
+  uint32_T c3_b_debug_family_var_map[2];
+  uint32_T c3_c_debug_family_var_map[2];
+  real_T c3_b_nargin = 0.0;
+  real_T c3_c_nargin = 0.0;
+  real_T c3_b_nargout = 0.0;
+  real_T c3_c_nargout = 0.0;
+  _SFD_CT_CALL(TRANSITION_BEFORE_PROCESSING_TAG, 2U, *chartInstance->c3_sfEvent);
+  _SFD_SYMBOL_SCOPE_PUSH_EML(0U, 3U, 3U, c3_h_debug_family_names,
+    c3_debug_family_var_map);
+  _SFD_SYMBOL_SCOPE_ADD_EML_IMPORTABLE(&c3_nargin, 0U, c3_sf_marshallOut,
+    c3_sf_marshallIn);
+  _SFD_SYMBOL_SCOPE_ADD_EML_IMPORTABLE(&c3_nargout, 1U, c3_sf_marshallOut,
+    c3_sf_marshallIn);
+  _SFD_SYMBOL_SCOPE_ADD_EML_IMPORTABLE(&c3_out, 2U, c3_b_sf_marshallOut,
+    c3_b_sf_marshallIn);
+  if (!chartInstance->c3_dataWrittenToVector[4U]) {
+    sf_read_before_write_error(chartInstance->S, 0U, 239U, 1, 3);
+  }
+
+  if (CV_EML_IF(2, 0, 0, CV_RELATIONAL_EVAL(5U, 2U, 0, (real_T)
+        *chartInstance->c3_aux, 40000.0, -1, 4U, *chartInstance->c3_aux >
+        40000.0F))) {
+    c3_out = true;
+  } else {
+    c3_out = false;
+  }
+
+  _SFD_SYMBOL_SCOPE_POP();
+  if (c3_out) {
+    _SFD_CT_CALL(TRANSITION_ACTIVE_TAG, 2U, *chartInstance->c3_sfEvent);
+    _SFD_SYMBOL_SCOPE_PUSH_EML(0U, 2U, 2U, c3_i_debug_family_names,
+      c3_c_debug_family_var_map);
+    _SFD_SYMBOL_SCOPE_ADD_EML_IMPORTABLE(&c3_c_nargin, 0U, c3_sf_marshallOut,
+      c3_sf_marshallIn);
+    _SFD_SYMBOL_SCOPE_ADD_EML_IMPORTABLE(&c3_c_nargout, 1U, c3_sf_marshallOut,
+      c3_sf_marshallIn);
+    *chartInstance->c3_aux = 0.0F;
+    chartInstance->c3_dataWrittenToVector[4U] = true;
+    _SFD_DATA_RANGE_CHECK((real_T)*chartInstance->c3_aux, 0U);
+    _SFD_SYMBOL_SCOPE_POP();
+    *chartInstance->c3_is_c3_SpeedgoatCANOpen2Buses100us = c3_IN_NO_ACTIVE_CHILD;
+    _SFD_CS_CALL(STATE_INACTIVE_TAG, 0U, *chartInstance->c3_sfEvent);
+    *chartInstance->c3_is_c3_SpeedgoatCANOpen2Buses100us = c3_IN_Wait;
+    _SFD_CS_CALL(STATE_ACTIVE_TAG, 4U, *chartInstance->c3_sfEvent);
+    c3_enter_atomic_Wait(chartInstance);
+  } else {
+    _SFD_CS_CALL(STATE_ENTER_DURING_FUNCTION_TAG, 0U, *chartInstance->c3_sfEvent);
+    _SFD_SYMBOL_SCOPE_PUSH_EML(0U, 2U, 2U, c3_b_debug_family_names,
+      c3_b_debug_family_var_map);
+    _SFD_SYMBOL_SCOPE_ADD_EML_IMPORTABLE(&c3_b_nargin, 0U, c3_sf_marshallOut,
+      c3_sf_marshallIn);
+    _SFD_SYMBOL_SCOPE_ADD_EML_IMPORTABLE(&c3_b_nargout, 1U, c3_sf_marshallOut,
+      c3_sf_marshallIn);
+    *chartInstance->c3_ClearError = 1.0F;
+    chartInstance->c3_dataWrittenToVector[0U] = true;
+    _SFD_DATA_RANGE_CHECK((real_T)*chartInstance->c3_ClearError, 4U);
+    if (!chartInstance->c3_dataWrittenToVector[4U]) {
+      sf_read_before_write_error(chartInstance->S, 0U, 79U, 37, 3);
+    }
+
+    (*chartInstance->c3_aux)++;
+    chartInstance->c3_dataWrittenToVector[4U] = true;
+    _SFD_DATA_RANGE_CHECK((real_T)*chartInstance->c3_aux, 0U);
+    *chartInstance->c3_InitStatus = 0.0F;
+    chartInstance->c3_dataWrittenToVector[6U] = true;
+    _SFD_DATA_RANGE_CHECK((real_T)*chartInstance->c3_InitStatus, 8U);
+    _SFD_SYMBOL_SCOPE_POP();
+  }
+
+  _SFD_CS_CALL(EXIT_OUT_OF_FUNCTION_TAG, 0U, *chartInstance->c3_sfEvent);
+}
+
+static void c3_enter_atomic_Wait(SFc3_SpeedgoatCANOpen2Buses100usInstanceStruct *
+  chartInstance)
+{
+  uint32_T c3_debug_family_var_map[2];
+  real_T c3_nargin = 0.0;
+  real_T c3_nargout = 0.0;
+  _SFD_SYMBOL_SCOPE_PUSH_EML(0U, 2U, 2U, c3_c_debug_family_names,
+    c3_debug_family_var_map);
+  _SFD_SYMBOL_SCOPE_ADD_EML_IMPORTABLE(&c3_nargin, 0U, c3_sf_marshallOut,
+    c3_sf_marshallIn);
+  _SFD_SYMBOL_SCOPE_ADD_EML_IMPORTABLE(&c3_nargout, 1U, c3_sf_marshallOut,
+    c3_sf_marshallIn);
+  *chartInstance->c3_BrakeCtrl = 2.0F;
+  chartInstance->c3_dataWrittenToVector[2U] = true;
+  _SFD_DATA_RANGE_CHECK((real_T)*chartInstance->c3_BrakeCtrl, 6U);
+  if (!chartInstance->c3_dataWrittenToVector[4U]) {
+    sf_read_before_write_error(chartInstance->S, 0U, 238U, 29, 3);
+  }
+
+  (*chartInstance->c3_aux)++;
   chartInstance->c3_dataWrittenToVector[4U] = true;
   _SFD_DATA_RANGE_CHECK((real_T)*chartInstance->c3_aux, 0U);
   *chartInstance->c3_InitStatus = 0.0F;
@@ -1082,7 +1215,7 @@ static uint8_T c3_g_emlrt_marshallIn
 
 static void c3_h_emlrt_marshallIn(SFc3_SpeedgoatCANOpen2Buses100usInstanceStruct
   *chartInstance, const mxArray *c3_b_dataWrittenToVector, const char_T
-  *c3_identifier, boolean_T c3_y[7])
+  *c3_identifier, boolean_T c3_y[8])
 {
   emlrtMsgIdentifier c3_thisId;
   c3_thisId.fIdentifier = (const char *)c3_identifier;
@@ -1095,13 +1228,13 @@ static void c3_h_emlrt_marshallIn(SFc3_SpeedgoatCANOpen2Buses100usInstanceStruct
 
 static void c3_i_emlrt_marshallIn(SFc3_SpeedgoatCANOpen2Buses100usInstanceStruct
   *chartInstance, const mxArray *c3_u, const emlrtMsgIdentifier *c3_parentId,
-  boolean_T c3_y[7])
+  boolean_T c3_y[8])
 {
-  boolean_T c3_bv1[7];
+  boolean_T c3_bv1[8];
   int32_T c3_i2;
   (void)chartInstance;
-  sf_mex_import(c3_parentId, sf_mex_dup(c3_u), c3_bv1, 1, 11, 0U, 1, 0U, 1, 7);
-  for (c3_i2 = 0; c3_i2 < 7; c3_i2++) {
+  sf_mex_import(c3_parentId, sf_mex_dup(c3_u), c3_bv1, 1, 11, 0U, 1, 0U, 1, 8);
+  for (c3_i2 = 0; c3_i2 < 8; c3_i2++) {
     c3_y[c3_i2] = c3_bv1[c3_i2];
   }
 
@@ -1183,16 +1316,18 @@ static void init_simulink_io_address
     (chartInstance->S, 4);
   chartInstance->c3_InitStatus = (real32_T *)ssGetOutputPortSignal_wrapper
     (chartInstance->S, 5);
+  chartInstance->c3_BrakeCurrentInit = (real32_T *)ssGetOutputPortSignal_wrapper
+    (chartInstance->S, 6);
 }
 
 /* SFunction Glue Code */
 static uint32_T* sf_get_sfun_dwork_checksum(void);
 void sf_c3_SpeedgoatCANOpen2Buses100us_get_check_sum(mxArray *plhs[])
 {
-  ((real_T *)mxGetPr((plhs[0])))[0] = (real_T)(2447946917U);
-  ((real_T *)mxGetPr((plhs[0])))[1] = (real_T)(3132647008U);
-  ((real_T *)mxGetPr((plhs[0])))[2] = (real_T)(3142738310U);
-  ((real_T *)mxGetPr((plhs[0])))[3] = (real_T)(2390809362U);
+  ((real_T *)mxGetPr((plhs[0])))[0] = (real_T)(4217452978U);
+  ((real_T *)mxGetPr((plhs[0])))[1] = (real_T)(1570053802U);
+  ((real_T *)mxGetPr((plhs[0])))[2] = (real_T)(3585686981U);
+  ((real_T *)mxGetPr((plhs[0])))[3] = (real_T)(1582269105U);
 }
 
 mxArray* sf_c3_SpeedgoatCANOpen2Buses100us_get_post_codegen_info(void);
@@ -1206,7 +1341,7 @@ mxArray *sf_c3_SpeedgoatCANOpen2Buses100us_get_autoinheritance_info(void)
     autoinheritanceFields);
 
   {
-    mxArray *mxChecksum = mxCreateString("29caxPzcbxYwhU6QMJUfaD");
+    mxArray *mxChecksum = mxCreateString("kB16IzCsmVFQBJQ3HRnAO");
     mxSetField(mxAutoinheritanceInfo,0,"checksum",mxChecksum);
   }
 
@@ -1263,7 +1398,7 @@ mxArray *sf_c3_SpeedgoatCANOpen2Buses100us_get_autoinheritance_info(void)
   {
     const char *dataFields[] = { "size", "type", "complexity" };
 
-    mxArray *mxData = mxCreateStructMatrix(1,5,3,dataFields);
+    mxArray *mxData = mxCreateStructMatrix(1,6,3,dataFields);
 
     {
       mxArray *mxSize = mxCreateDoubleMatrix(1,0,mxREAL);
@@ -1359,6 +1494,25 @@ mxArray *sf_c3_SpeedgoatCANOpen2Buses100us_get_autoinheritance_info(void)
     }
 
     mxSetField(mxData,4,"complexity",mxCreateDoubleScalar(0));
+
+    {
+      mxArray *mxSize = mxCreateDoubleMatrix(1,0,mxREAL);
+      double *pr = mxGetPr(mxSize);
+      mxSetField(mxData,5,"size",mxSize);
+    }
+
+    {
+      const char *typeFields[] = { "base", "fixpt", "isFixedPointType" };
+
+      mxArray *mxType = mxCreateStructMatrix(1,1,sizeof(typeFields)/sizeof
+        (typeFields[0]),typeFields);
+      mxSetField(mxType,0,"base",mxCreateDoubleScalar(9));
+      mxSetField(mxType,0,"fixpt",mxCreateDoubleMatrix(0,0,mxREAL));
+      mxSetField(mxType,0,"isFixedPointType",mxCreateDoubleScalar(0));
+      mxSetField(mxData,5,"type",mxType);
+    }
+
+    mxSetField(mxData,5,"complexity",mxCreateDoubleScalar(0));
     mxSetField(mxAutoinheritanceInfo,0,"outputs",mxData);
   }
 
@@ -1477,10 +1631,11 @@ static const mxArray *sf_get_sim_state_info_c3_SpeedgoatCANOpen2Buses100us(void)
 
   mxArray *mxInfo = mxCreateStructMatrix(1, 1, 2, infoFields);
   const char *infoEncStr[] = {
-    "100 S1x10'type','srcId','name','auxInfo'{{M[1],M[36],T\"BrakeCtrl\",},{M[1],M[3],T\"ClearError\",},{M[1],M[71],T\"DeviceMode\",},{M[1],M[174],T\"InitStatus\",},{M[1],M[234],T\"PowerEnable\",},{M[3],M[70],T\"aux\",},{M[3],M[51],T\"aux2\",},{M[8],M[0],T\"is_active_c3_SpeedgoatCANOpen2Buses100us\",},{M[9],M[0],T\"is_c3_SpeedgoatCANOpen2Buses100us\",},{M[15],M[0],T\"dataWrittenToVector\",}}"
+    "100 S1x10'type','srcId','name','auxInfo'{{M[1],M[36],T\"BrakeCtrl\",},{M[1],M[253],T\"BrakeCurrentInit\",},{M[1],M[3],T\"ClearError\",},{M[1],M[71],T\"DeviceMode\",},{M[1],M[174],T\"InitStatus\",},{M[1],M[234],T\"PowerEnable\",},{M[3],M[70],T\"aux\",},{M[3],M[51],T\"aux2\",},{M[8],M[0],T\"is_active_c3_SpeedgoatCANOpen2Buses100us\",},{M[9],M[0],T\"is_c3_SpeedgoatCANOpen2Buses100us\",}}",
+    "100 S'type','srcId','name','auxInfo'{{M[15],M[0],T\"dataWrittenToVector\",}}"
   };
 
-  mxArray *mxVarInfo = sf_mex_decode_encoded_mx_struct_array(infoEncStr, 10, 10);
+  mxArray *mxVarInfo = sf_mex_decode_encoded_mx_struct_array(infoEncStr, 11, 10);
   mxArray *mxChecksum = mxCreateDoubleMatrix(1, 4, mxREAL);
   sf_c3_SpeedgoatCANOpen2Buses100us_get_check_sum(&mxChecksum);
   mxSetField(mxInfo, 0, infoFields[0], mxChecksum);
@@ -1510,10 +1665,10 @@ static void chart_debug_initialization(SimStruct *S, unsigned int
           (sfGlobalDebugInstanceStruct,
            _SpeedgoatCANOpen2Buses100usMachineNumber_,
            3,
-           4,
-           7,
-           0,
+           5,
            9,
+           0,
+           10,
            0,
            0,
            0,
@@ -1548,23 +1703,27 @@ static void chart_debug_initialization(SimStruct *S, unsigned int
           _SFD_SET_DATA_PROPS(6,2,0,1,"BrakeCtrl");
           _SFD_SET_DATA_PROPS(7,2,0,1,"PowerEnable");
           _SFD_SET_DATA_PROPS(8,2,0,1,"InitStatus");
+          _SFD_SET_DATA_PROPS(9,2,0,1,"BrakeCurrentInit");
           _SFD_STATE_INFO(0,0,0);
           _SFD_STATE_INFO(1,0,0);
           _SFD_STATE_INFO(2,0,0);
           _SFD_STATE_INFO(3,0,0);
-          _SFD_CH_SUBSTATE_COUNT(4);
+          _SFD_STATE_INFO(4,0,0);
+          _SFD_CH_SUBSTATE_COUNT(5);
           _SFD_CH_SUBSTATE_DECOMP(0);
           _SFD_CH_SUBSTATE_INDEX(0,0);
           _SFD_CH_SUBSTATE_INDEX(1,1);
           _SFD_CH_SUBSTATE_INDEX(2,2);
           _SFD_CH_SUBSTATE_INDEX(3,3);
+          _SFD_CH_SUBSTATE_INDEX(4,4);
           _SFD_ST_SUBSTATE_COUNT(0,0);
           _SFD_ST_SUBSTATE_COUNT(1,0);
           _SFD_ST_SUBSTATE_COUNT(2,0);
           _SFD_ST_SUBSTATE_COUNT(3,0);
+          _SFD_ST_SUBSTATE_COUNT(4,0);
         }
 
-        _SFD_CV_INIT_CHART(4,1,0,0);
+        _SFD_CV_INIT_CHART(5,1,0,0);
 
         {
           _SFD_CV_INIT_STATE(0,0,0,0,0,0,NULL,NULL);
@@ -1582,35 +1741,27 @@ static void chart_debug_initialization(SimStruct *S, unsigned int
           _SFD_CV_INIT_STATE(3,0,0,0,0,0,NULL,NULL);
         }
 
+        {
+          _SFD_CV_INIT_STATE(4,0,0,0,0,0,NULL,NULL);
+        }
+
         _SFD_CV_INIT_TRANS(0,0,NULL,NULL,0,NULL);
         _SFD_CV_INIT_TRANS(1,0,NULL,NULL,0,NULL);
         _SFD_CV_INIT_TRANS(5,0,NULL,NULL,0,NULL);
         _SFD_CV_INIT_TRANS(6,0,NULL,NULL,0,NULL);
         _SFD_CV_INIT_TRANS(2,0,NULL,NULL,0,NULL);
+        _SFD_CV_INIT_TRANS(8,0,NULL,NULL,0,NULL);
         _SFD_CV_INIT_TRANS(3,0,NULL,NULL,0,NULL);
         _SFD_CV_INIT_TRANS(4,0,NULL,NULL,0,NULL);
+        _SFD_CV_INIT_TRANS(7,0,NULL,NULL,0,NULL);
 
         /* Initialization of MATLAB Function Model Coverage */
         _SFD_CV_INIT_EML(1,1,0,0,0,0,0,0,0,0,0,0);
         _SFD_CV_INIT_EML(0,1,0,0,0,0,0,0,0,0,0,0);
-        _SFD_CV_INIT_EML(3,1,0,0,0,0,0,0,0,0,0,0);
+        _SFD_CV_INIT_EML(4,1,0,0,0,0,0,0,0,0,0,0);
         _SFD_CV_INIT_EML(2,1,0,0,0,0,0,0,0,0,0,0);
-        _SFD_CV_INIT_EML(1,0,0,0,1,0,0,0,0,0,2,1);
-        _SFD_CV_INIT_EML_IF(1,0,0,1,36,1,36);
-
-        {
-          static int condStart[] = { 1, 22 };
-
-          static int condEnd[] = { 18, 36 };
-
-          static int pfixExpr[] = { 0, 1, -2 };
-
-          _SFD_CV_INIT_EML_MCDC(1,0,0,1,36,2,0,&(condStart[0]),&(condEnd[0]),3,
-                                &(pfixExpr[0]));
-        }
-
-        _SFD_CV_INIT_EML_RELATIONAL(1,0,0,1,18,-1,0);
-        _SFD_CV_INIT_EML_RELATIONAL(1,0,1,22,36,-1,1);
+        _SFD_CV_INIT_EML(3,1,0,0,0,0,0,0,0,0,0,0);
+        _SFD_CV_INIT_EML(1,0,0,0,0,0,0,0,0,0,0,0);
         _SFD_CV_INIT_EML(5,0,0,0,1,0,0,0,0,0,0,0);
         _SFD_CV_INIT_EML_IF(5,0,0,1,15,1,15);
         _SFD_CV_INIT_EML_RELATIONAL(5,0,0,1,15,-1,1);
@@ -1618,40 +1769,46 @@ static void chart_debug_initialization(SimStruct *S, unsigned int
         _SFD_CV_INIT_EML_IF(6,0,0,1,15,1,15);
         _SFD_CV_INIT_EML_RELATIONAL(6,0,0,1,15,-1,1);
         _SFD_CV_INIT_EML(2,0,0,0,1,0,0,0,0,0,0,0);
-        _SFD_CV_INIT_EML_IF(2,0,0,1,9,1,9);
-        _SFD_CV_INIT_EML_RELATIONAL(2,0,0,1,9,-1,4);
+        _SFD_CV_INIT_EML_IF(2,0,0,1,10,1,10);
+        _SFD_CV_INIT_EML_RELATIONAL(2,0,0,1,10,-1,4);
         _SFD_CV_INIT_EML(3,0,0,0,1,0,0,0,0,0,2,1);
-        _SFD_CV_INIT_EML_IF(3,0,0,1,34,1,34);
+        _SFD_CV_INIT_EML_IF(3,0,0,1,28,1,28);
 
         {
-          static int condStart[] = { 1, 20 };
+          static int condStart[] = { 1, 14 };
 
-          static int condEnd[] = { 16, 34 };
+          static int condEnd[] = { 9, 28 };
 
           static int pfixExpr[] = { 0, 1, -3 };
 
-          _SFD_CV_INIT_EML_MCDC(3,0,0,1,34,2,0,&(condStart[0]),&(condEnd[0]),3,
+          _SFD_CV_INIT_EML_MCDC(3,0,0,1,28,2,0,&(condStart[0]),&(condEnd[0]),3,
                                 &(pfixExpr[0]));
         }
 
-        _SFD_CV_INIT_EML_RELATIONAL(3,0,0,1,16,-1,0);
-        _SFD_CV_INIT_EML_RELATIONAL(3,0,1,20,34,-1,0);
+        _SFD_CV_INIT_EML_RELATIONAL(3,0,0,1,9,-1,2);
+        _SFD_CV_INIT_EML_RELATIONAL(3,0,1,14,28,-1,0);
         _SFD_CV_INIT_EML(4,0,0,0,1,0,0,0,0,0,2,1);
-        _SFD_CV_INIT_EML_IF(4,0,0,1,34,1,34);
+        _SFD_CV_INIT_EML_IF(4,0,0,1,28,1,28);
 
         {
-          static int condStart[] = { 1, 20 };
+          static int condStart[] = { 1, 14 };
 
-          static int condEnd[] = { 16, 34 };
+          static int condEnd[] = { 10, 28 };
 
           static int pfixExpr[] = { 0, 1, -3 };
 
-          _SFD_CV_INIT_EML_MCDC(4,0,0,1,34,2,0,&(condStart[0]),&(condEnd[0]),3,
+          _SFD_CV_INIT_EML_MCDC(4,0,0,1,28,2,0,&(condStart[0]),&(condEnd[0]),3,
                                 &(pfixExpr[0]));
         }
 
-        _SFD_CV_INIT_EML_RELATIONAL(4,0,0,1,16,-1,0);
-        _SFD_CV_INIT_EML_RELATIONAL(4,0,1,20,34,-1,0);
+        _SFD_CV_INIT_EML_RELATIONAL(4,0,0,1,10,-1,5);
+        _SFD_CV_INIT_EML_RELATIONAL(4,0,1,14,28,-1,0);
+        _SFD_CV_INIT_EML(7,0,0,0,1,0,0,0,0,0,0,0);
+        _SFD_CV_INIT_EML_IF(7,0,0,1,10,1,10);
+        _SFD_CV_INIT_EML_RELATIONAL(7,0,0,1,10,-1,4);
+        _SFD_CV_INIT_EML(8,0,0,0,1,0,0,0,0,0,0,0);
+        _SFD_CV_INIT_EML_IF(8,0,0,1,15,1,15);
+        _SFD_CV_INIT_EML_RELATIONAL(8,0,0,1,15,-1,1);
         _SFD_SET_DATA_COMPILED_PROPS(0,SF_SINGLE,0,NULL,0,0,0,0.0,1.0,0,0,
           (MexFcnForType)c3_d_sf_marshallOut,(MexInFcnForType)c3_d_sf_marshallIn);
         _SFD_SET_DATA_COMPILED_PROPS(1,SF_SINGLE,0,NULL,0,0,0,0.0,1.0,0,0,
@@ -1669,6 +1826,8 @@ static void chart_debug_initialization(SimStruct *S, unsigned int
         _SFD_SET_DATA_COMPILED_PROPS(7,SF_SINGLE,0,NULL,0,0,0,0.0,1.0,0,0,
           (MexFcnForType)c3_d_sf_marshallOut,(MexInFcnForType)c3_d_sf_marshallIn);
         _SFD_SET_DATA_COMPILED_PROPS(8,SF_SINGLE,0,NULL,0,0,0,0.0,1.0,0,0,
+          (MexFcnForType)c3_d_sf_marshallOut,(MexInFcnForType)c3_d_sf_marshallIn);
+        _SFD_SET_DATA_COMPILED_PROPS(9,SF_SINGLE,0,NULL,0,0,0,0.0,1.0,0,0,
           (MexFcnForType)c3_d_sf_marshallOut,(MexInFcnForType)c3_d_sf_marshallIn);
       }
     } else {
@@ -1697,6 +1856,7 @@ static void chart_debug_initialize_data_addresses(SimStruct *S)
         _SFD_SET_DATA_VALUE_PTR(0U, chartInstance->c3_aux);
         _SFD_SET_DATA_VALUE_PTR(7U, chartInstance->c3_PowerEnable);
         _SFD_SET_DATA_VALUE_PTR(8U, chartInstance->c3_InitStatus);
+        _SFD_SET_DATA_VALUE_PTR(9U, chartInstance->c3_BrakeCurrentInit);
       }
     }
   }
@@ -1704,7 +1864,7 @@ static void chart_debug_initialize_data_addresses(SimStruct *S)
 
 static const char* sf_get_instance_specialization(void)
 {
-  return "s1SJq9tXGtLfhyaRzVgN5SD";
+  return "sZ4uOyvb1jIR0SmfD1jtTOB";
 }
 
 static void sf_check_dwork_consistency(SimStruct *S)
@@ -1888,12 +2048,12 @@ static void mdlSetWorkWidths_c3_SpeedgoatCANOpen2Buses100us(SimStruct *S)
       sf_mark_chart_expressionable_inputs(S,sf_get_instance_specialization(),
         infoStruct,3,2);
       sf_mark_chart_reusable_outputs(S,sf_get_instance_specialization(),
-        infoStruct,3,5);
+        infoStruct,3,6);
     }
 
     {
       unsigned int outPortIdx;
-      for (outPortIdx=1; outPortIdx<=5; ++outPortIdx) {
+      for (outPortIdx=1; outPortIdx<=6; ++outPortIdx) {
         ssSetOutputPortOptimizeInIR(S, outPortIdx, 1U);
       }
     }
@@ -1913,10 +2073,10 @@ static void mdlSetWorkWidths_c3_SpeedgoatCANOpen2Buses100us(SimStruct *S)
   }
 
   ssSetOptions(S,ssGetOptions(S)|SS_OPTION_WORKS_WITH_CODE_REUSE);
-  ssSetChecksum0(S,(1266251590U));
-  ssSetChecksum1(S,(2350436748U));
-  ssSetChecksum2(S,(2112944739U));
-  ssSetChecksum3(S,(1373645868U));
+  ssSetChecksum0(S,(3250123003U));
+  ssSetChecksum1(S,(2408525844U));
+  ssSetChecksum2(S,(1116069873U));
+  ssSetChecksum3(S,(3733404935U));
   ssSetmdlDerivatives(S, NULL);
   ssSetExplicitFCSSCtrl(S,1);
   ssSetStateSemanticsClassicAndSynchronous(S, true);

@@ -411,7 +411,7 @@ static void sf_gateway_c4_SpeedgoatCANOpen2Buses100us
           c4_sf_marshallIn);
         _SFD_SYMBOL_SCOPE_ADD_EML_IMPORTABLE(&c4_d_nargout, 1U,
           c4_sf_marshallOut, c4_sf_marshallIn);
-        *chartInstance->c4_Enable = 0.0F;
+        *chartInstance->c4_Enable = 1.0F;
         chartInstance->c4_dataWrittenToVector[0U] = true;
         _SFD_DATA_RANGE_CHECK((real_T)*chartInstance->c4_Enable, 1U);
         _SFD_SYMBOL_SCOPE_POP();
@@ -811,10 +811,10 @@ static void init_simulink_io_address
 static uint32_T* sf_get_sfun_dwork_checksum(void);
 void sf_c4_SpeedgoatCANOpen2Buses100us_get_check_sum(mxArray *plhs[])
 {
-  ((real_T *)mxGetPr((plhs[0])))[0] = (real_T)(3809459443U);
-  ((real_T *)mxGetPr((plhs[0])))[1] = (real_T)(2608624420U);
-  ((real_T *)mxGetPr((plhs[0])))[2] = (real_T)(191641502U);
-  ((real_T *)mxGetPr((plhs[0])))[3] = (real_T)(398562318U);
+  ((real_T *)mxGetPr((plhs[0])))[0] = (real_T)(21491791U);
+  ((real_T *)mxGetPr((plhs[0])))[1] = (real_T)(3833707373U);
+  ((real_T *)mxGetPr((plhs[0])))[2] = (real_T)(4051847573U);
+  ((real_T *)mxGetPr((plhs[0])))[3] = (real_T)(3448829052U);
 }
 
 mxArray* sf_c4_SpeedgoatCANOpen2Buses100us_get_post_codegen_info(void);
@@ -828,7 +828,7 @@ mxArray *sf_c4_SpeedgoatCANOpen2Buses100us_get_autoinheritance_info(void)
     autoinheritanceFields);
 
   {
-    mxArray *mxChecksum = mxCreateString("0NfG38tPMKdBLj6KXxlNvE");
+    mxArray *mxChecksum = mxCreateString("FvgjMMC5ZoGRqeGfwd5WnE");
     mxSetField(mxAutoinheritanceInfo,0,"checksum",mxChecksum);
   }
 
@@ -1091,7 +1091,7 @@ static void chart_debug_initialize_data_addresses(SimStruct *S)
 
 static const char* sf_get_instance_specialization(void)
 {
-  return "sOHA9EDXE2HfYijKlUer4rD";
+  return "sWE62ZaDDfUj7c9PKxfzjx";
 }
 
 static void sf_check_dwork_consistency(SimStruct *S)
@@ -1298,10 +1298,10 @@ static void mdlSetWorkWidths_c4_SpeedgoatCANOpen2Buses100us(SimStruct *S)
   }
 
   ssSetOptions(S,ssGetOptions(S)|SS_OPTION_WORKS_WITH_CODE_REUSE);
-  ssSetChecksum0(S,(338451628U));
-  ssSetChecksum1(S,(4167546218U));
-  ssSetChecksum2(S,(883773530U));
-  ssSetChecksum3(S,(810680188U));
+  ssSetChecksum0(S,(1066041754U));
+  ssSetChecksum1(S,(3907135699U));
+  ssSetChecksum2(S,(1089594554U));
+  ssSetChecksum3(S,(2461509779U));
   ssSetmdlDerivatives(S, NULL);
   ssSetExplicitFCSSCtrl(S,1);
   ssSetStateSemanticsClassicAndSynchronous(S, true);

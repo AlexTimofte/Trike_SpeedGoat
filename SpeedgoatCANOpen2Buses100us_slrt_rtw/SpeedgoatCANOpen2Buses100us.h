@@ -3,9 +3,9 @@
  *
  * Code generation for model "SpeedgoatCANOpen2Buses100us".
  *
- * Model version              : 1.813
+ * Model version              : 1.821
  * Simulink Coder version : 9.0 (R2018b) 24-May-2018
- * C source code generated on : Thu Dec 30 12:50:12 2021
+ * C source code generated on : Sat Apr  2 12:48:06 2022
  *
  * Target selection: slrt.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -900,6 +900,7 @@ typedef struct {
   real_T Product2;                     /* '<S43>/Product2' */
   real_T c1;                           /* '<S43>/c1' */
   real_T Switch1;                      /* '<S35>/Switch1' */
+  real_T Switch3;                      /* '<S35>/Switch3' */
   real_T Sum;                          /* '<S33>/Sum' */
   real_T br_percent2;                  /* '<S33>/Gain3' */
   real_T br_percent;                   /* '<S33>/Sum3' */
@@ -909,7 +910,6 @@ typedef struct {
   real_T Sum2;                         /* '<S33>/Sum2' */
   real_T Saturation2;                  /* '<S33>/Saturation2' */
   real_T BrCurrentRef;                 /* '<S33>/Amp2mAmp' */
-  real_T Switch3;                      /* '<S35>/Switch3' */
   real_T CastToSingle_g;               /* '<S34>/Cast To Single' */
   real_T Memory1;                      /* '<S34>/Memory1' */
   real_T DirectionAvg;                 /* '<S34>/Cast To Single1' */
@@ -954,11 +954,7 @@ typedef struct {
   real32_T DirectionRef;               /* '<S34>/Robotics Convention' */
   real32_T SteeringAnglerad;           /* '<S34>/degree2rad' */
   real32_T n;                          /* '<S36>/n' */
-  real32_T CastToSingle3_p;            /* '<S33>/Cast To Single3' */
-  real32_T br_percent_c;               /* '<S33>/Gain4' */
-  real32_T Delay;                      /* '<S33>/Delay' */
-  real32_T DataTypeConversion1;        /* '<S33>/Data Type Conversion1' */
-  real32_T Sum1;                       /* '<S33>/Sum1' */
+  real32_T BrakeCurrentInitmA;         /* '<S33>/Gain5' */
   real32_T Joystick_LatCmd_f;          /* '<S21>/Data Type Conversion15' */
   real32_T Joystick_LongCmd_m;         /* '<S21>/Data Type Conversion16' */
   real32_T Encoder_Actual_Position_g;  /* '<S21>/Data Type Conversion18' */
@@ -969,6 +965,11 @@ typedef struct {
   real32_T AN4;                        /* '<S21>/Data Type Conversion21' */
   real32_T Desired_Current;            /* '<S21>/Data Type Conversion14' */
   real32_T Actual_Current;             /* '<S21>/Data Type Conversion9' */
+  real32_T CastToSingle3_p;            /* '<S33>/Cast To Single3' */
+  real32_T br_percent_c;               /* '<S33>/Gain4' */
+  real32_T Delay;                      /* '<S33>/Delay' */
+  real32_T DataTypeConversion1;        /* '<S33>/Data Type Conversion1' */
+  real32_T Sum1;                       /* '<S33>/Sum1' */
   real32_T ClearError;                 /* '<S58>/DunkB_TiltRight_Init_CurrentMode' */
   real32_T DeviceMode;                 /* '<S58>/DunkB_TiltRight_Init_CurrentMode' */
   real32_T BrakeCtrl;                  /* '<S58>/DunkB_TiltRight_Init_CurrentMode' */
@@ -990,6 +991,7 @@ typedef struct {
   real32_T BrakeCtrl_n;                /* '<S51>/DunkD_Brake_Init_CurrentMode' */
   real32_T PowerEnable_au;             /* '<S51>/DunkD_Brake_Init_CurrentMode' */
   real32_T InitStatus_h;               /* '<S51>/DunkD_Brake_Init_CurrentMode' */
+  real32_T BrakeCurrentInit;           /* '<S51>/DunkD_Brake_Init_CurrentMode' */
   real32_T Gain1_e;                    /* '<S37>/Gain1' */
   real32_T TractionRef;                /* '<S37>/Abs' */
   real32_T Br_CurrentReq;              /* '<S33>/Retract' */
@@ -1065,21 +1067,21 @@ typedef struct {
   uint8_T DunkC_TPDO_PowerEnable;      /* '<S22>/Data Type Conversion30' */
   uint8_T BrakeCtrl_bj;                /* '<S57>/Cast To Single2' */
   uint8_T DunkC_TPDO_BrakeCtrl;        /* '<S22>/Data Type Conversion28' */
+  uint8_T BrakeCtrl_k2;                /* '<S51>/Cast To Single2' */
+  uint8_T DunkD_TPDO_BrakeCtrl;        /* '<S22>/Data Type Conversion33' */
   uint8_T ClearError_mj;               /* '<S51>/Cast To Single1' */
   uint8_T DunkD_TPDO_ClearError;       /* '<S22>/Data Type Conversion32' */
   uint8_T DeviceMode_g;                /* '<S51>/Cast To Single' */
   uint8_T DunkD_TPDO_DeviceMode;       /* '<S22>/Data Type Conversion34' */
   uint8_T PowerEnable_p;               /* '<S51>/Cast To Single3' */
   uint8_T DunkD_TPDO_PowerEnable;      /* '<S22>/Data Type Conversion35' */
-  uint8_T BrakeCtrl_k2;                /* '<S51>/Cast To Single2' */
-  uint8_T DunkD_TPDO_BrakeCtrl;        /* '<S22>/Data Type Conversion33' */
   uint8_T Constant_em;                 /* '<S20>/Constant' */
   uint8_T Constant_ge;                 /* '<S18>/Constant' */
   int8_T APT_MotorTemp;                /* '<S2>/RPDOs from APT' */
   int8_T APT_Temp;                     /* '<S2>/RPDOs from APT' */
   boolean_T CANRead_o1;                /* '<S17>/CAN Read' */
   boolean_T CANRead_o1_b;              /* '<S19>/CAN Read' */
-  boolean_T Compare;                   /* '<S61>/Compare' */
+  boolean_T Compare;                   /* '<S62>/Compare' */
 } B_SpeedgoatCANOpen2Buses100us_T;
 
 /* Block states (default storage) for system '<Root>' */
@@ -1183,7 +1185,17 @@ typedef struct {
   struct {
     void *AQHandles;
     void *SlioLTF;
+  } HiddenToAsyncQueue_InsertedF_j3;   /* synthesized block */
+
+  struct {
+    void *AQHandles;
+    void *SlioLTF;
   } HiddenToAsyncQueue_InsertedFo_m;   /* synthesized block */
+
+  struct {
+    void *AQHandles;
+    void *SlioLTF;
+  } HiddenToAsyncQueue_InsertedF_mq;   /* synthesized block */
 
   struct {
     void *AQHandles;
@@ -1199,6 +1211,11 @@ typedef struct {
     void *AQHandles;
     void *SlioLTF;
   } HiddenToAsyncQueue_InsertedFo_g;   /* synthesized block */
+
+  struct {
+    void *AQHandles;
+    void *SlioLTF;
+  } HiddenToAsyncQueue_InsertedFo_f;   /* synthesized block */
 
   struct {
     void *AQHandles;
@@ -1240,12 +1257,17 @@ typedef struct {
   struct {
     void *AQHandles;
     void *SlioLTF;
+  } HiddenToAsyncQueue_InsertedFo_a;   /* synthesized block */
+
+  struct {
+    void *AQHandles;
+    void *SlioLTF;
   } HiddenToAsyncQueue_InsertedF_mu;   /* synthesized block */
 
   struct {
     void *AQHandles;
     void *SlioLTF;
-  } HiddenToAsyncQueue_InsertedFo_a;   /* synthesized block */
+  } HiddenToAsyncQueue_InsertedF_ah;   /* synthesized block */
 
   struct {
     void *AQHandles;
@@ -1326,7 +1348,57 @@ typedef struct {
   struct {
     void *AQHandles;
     void *SlioLTF;
+  } HiddenToAsyncQueue_InsertedF_j5;   /* synthesized block */
+
+  struct {
+    void *AQHandles;
+    void *SlioLTF;
+  } HiddenToAsyncQueue_InsertedF_et;   /* synthesized block */
+
+  struct {
+    void *AQHandles;
+    void *SlioLTF;
+  } HiddenToAsyncQueue_InsertedF_b0;   /* synthesized block */
+
+  struct {
+    void *AQHandles;
+    void *SlioLTF;
+  } HiddenToAsyncQueue_InsertedF_mt;   /* synthesized block */
+
+  struct {
+    void *AQHandles;
+    void *SlioLTF;
+  } HiddenToAsyncQueue_InsertedF_nr;   /* synthesized block */
+
+  struct {
+    void *AQHandles;
+    void *SlioLTF;
+  } HiddenToAsyncQueue_InsertedF_fh;   /* synthesized block */
+
+  struct {
+    void *AQHandles;
+    void *SlioLTF;
   } HiddenToAsyncQueue_InsertedF_dy;   /* synthesized block */
+
+  struct {
+    void *AQHandles;
+    void *SlioLTF;
+  } HiddenToAsyncQueue_InsertedF_db;   /* synthesized block */
+
+  struct {
+    void *AQHandles;
+    void *SlioLTF;
+  } HiddenToAsyncQueue_InsertedF_hs;   /* synthesized block */
+
+  struct {
+    void *AQHandles;
+    void *SlioLTF;
+  } HiddenToAsyncQueue_InsertedF_ac;   /* synthesized block */
+
+  struct {
+    void *AQHandles;
+    void *SlioLTF;
+  } HiddenToAsyncQueue_InsertedF_cm;   /* synthesized block */
 
   void *CANWrite_PWORK;                /* '<S20>/CAN Write' */
   void *CANWrite_PWORK_e;              /* '<S18>/CAN Write' */
@@ -1404,7 +1476,7 @@ struct P_SpeedgoatCANOpen2Buses100us_T_ {
                                         * Referenced by: '<S43>/Saturation'
                                         */
   real32_T CompareToConstant_const;    /* Mask Parameter: CompareToConstant_const
-                                        * Referenced by: '<S61>/Constant'
+                                        * Referenced by: '<S62>/Constant'
                                         */
   real_T CANWrite_P1_Size[2];          /* Computed Parameter: CANWrite_P1_Size
                                         * Referenced by: '<S18>/CAN Write'
@@ -1523,6 +1595,9 @@ struct P_SpeedgoatCANOpen2Buses100us_T_ {
   real_T c1_Gain;                      /* Expression: -1000
                                         * Referenced by: '<S43>/c1'
                                         */
+  real_T Constant_Value_k;             /* Expression: 0
+                                        * Referenced by: '<S21>/Constant'
+                                        */
   real_T offset_Value;                 /* Expression: 3600
                                         * Referenced by: '<S33>/offset'
                                         */
@@ -1549,9 +1624,6 @@ struct P_SpeedgoatCANOpen2Buses100us_T_ {
                                         */
   real_T Amp2mAmp_Gain;                /* Expression: 1000
                                         * Referenced by: '<S33>/Amp2mAmp'
-                                        */
-  real_T Constant_Value_k;             /* Expression: 0
-                                        * Referenced by: '<S21>/Constant'
                                         */
   real_T Memory1_InitialCondition;     /* Expression: 0
                                         * Referenced by: '<S34>/Memory1'
@@ -1630,6 +1702,9 @@ struct P_SpeedgoatCANOpen2Buses100us_T_ {
                                         */
   real32_T n_Gain;                     /* Computed Parameter: n_Gain
                                         * Referenced by: '<S36>/n'
+                                        */
+  real32_T Gain5_Gain;                 /* Computed Parameter: Gain5_Gain
+                                        * Referenced by: '<S33>/Gain5'
                                         */
   real32_T Gain4_Gain;                 /* Computed Parameter: Gain4_Gain
                                         * Referenced by: '<S33>/Gain4'
@@ -1982,8 +2057,9 @@ extern RT_MODEL_SpeedgoatCANOpen2Buses100us_T *const
  * '<S58>'  : 'SpeedgoatCANOpen2Buses100us/Trike Application Layer/System_Init/TiltingRight_DunkMotor_Init'
  * '<S59>'  : 'SpeedgoatCANOpen2Buses100us/Trike Application Layer/System_Init/Brakes_DunkMotor_Init/DunkD_Brake_Init_CurrentMode'
  * '<S60>'  : 'SpeedgoatCANOpen2Buses100us/Trike Application Layer/System_Init/Steering_DunkMotor_Init/DunkA_Steering_Init_SpeedMode'
- * '<S61>'  : 'SpeedgoatCANOpen2Buses100us/Trike Application Layer/System_Init/Subsystem/Compare To Constant'
- * '<S62>'  : 'SpeedgoatCANOpen2Buses100us/Trike Application Layer/System_Init/TiltingLeft_DunkMotor_Init/DunkC_TiltLeft_Init_CurrentMode'
- * '<S63>'  : 'SpeedgoatCANOpen2Buses100us/Trike Application Layer/System_Init/TiltingRight_DunkMotor_Init/DunkB_TiltRight_Init_CurrentMode'
+ * '<S61>'  : 'SpeedgoatCANOpen2Buses100us/Trike Application Layer/System_Init/Steering_DunkMotor_Init/DunkA_Steering_Init_SpeedMode1'
+ * '<S62>'  : 'SpeedgoatCANOpen2Buses100us/Trike Application Layer/System_Init/Subsystem/Compare To Constant'
+ * '<S63>'  : 'SpeedgoatCANOpen2Buses100us/Trike Application Layer/System_Init/TiltingLeft_DunkMotor_Init/DunkC_TiltLeft_Init_CurrentMode'
+ * '<S64>'  : 'SpeedgoatCANOpen2Buses100us/Trike Application Layer/System_Init/TiltingRight_DunkMotor_Init/DunkB_TiltRight_Init_CurrentMode'
  */
 #endif                                 /* RTW_HEADER_SpeedgoatCANOpen2Buses100us_h_ */

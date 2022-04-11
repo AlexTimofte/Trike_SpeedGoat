@@ -10,7 +10,7 @@ typedef struct {
   ChartInfoStruct chartInfo;
   uint32_T chartNumber;
   uint32_T instanceNumber;
-  boolean_T c3_dataWrittenToVector[7];
+  boolean_T c3_dataWrittenToVector[8];
   uint8_T c3_doSetSimStateSideEffects;
   const mxArray *c3_setSimStateSideEffectsInfo;
   void *c3_fEmlrtCtx;
@@ -26,6 +26,7 @@ typedef struct {
   real32_T *c3_aux;
   real32_T *c3_PowerEnable;
   real32_T *c3_InitStatus;
+  real32_T *c3_BrakeCurrentInit;
 } SFc3_SpeedgoatCANOpen2Buses100usInstanceStruct;
 
 #endif                                 /*typedef_SFc3_SpeedgoatCANOpen2Buses100usInstanceStruct*/

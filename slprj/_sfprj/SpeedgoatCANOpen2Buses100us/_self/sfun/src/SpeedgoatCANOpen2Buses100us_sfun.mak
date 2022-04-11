@@ -26,7 +26,7 @@ LD     = link.exe
 LIBCMD = lib.exe
 #------------------------------ Include/Lib Path ------------------------------
 
-USER_INCLUDES   =  /I "C:\Users\Venqo\Desktop\speedgoat\applications\trike_git\trike_speedgoat_algo\slprj\_sfprj\speedgoatcanopen2buses100us\_self\sfun\src" /I "C:\Users\Venqo\Desktop\speedgoat\applications\trike_git\trike_speedgoat_algo"
+USER_INCLUDES   =  /I "E:\speedgoat\Git\trike_100us_develop_algo\slprj\_sfprj\speedgoatcanopen2buses100us\_self\sfun\src" /I "E:\speedgoat\Git\trike_100us_develop_algo"
 AUX_INCLUDES   = 
 MLSLSF_INCLUDES = \
     /I "E:\Program Files\MATLAB\R2018b\extern\include" \
@@ -34,11 +34,11 @@ MLSLSF_INCLUDES = \
     /I "E:\Program Files\MATLAB\R2018b\simulink\include\sf_runtime" \
     /I "E:\Program Files\MATLAB\R2018b\stateflow\c\mex\include" \
     /I "E:\Program Files\MATLAB\R2018b\rtw\c\src" \
-    /I "C:\Users\Venqo\Desktop\SpeedGoat\Applications\Trike_git\Trike_SpeedGoat_algo\slprj\_sfprj\SpeedgoatCANOpen2Buses100us\_self\sfun\src" 
+    /I "E:\SpeedGoat\Git\Trike_100us_develop_algo\slprj\_sfprj\SpeedgoatCANOpen2Buses100us\_self\sfun\src" 
 
 COMPILER_INCLUDES = /I "$(MSVC_ROOT)\include"
 
-THIRD_PARTY_INCLUDES   =  /I "C:\Users\Venqo\Desktop\SpeedGoat\Applications\Trike_git\Trike_SpeedGoat_algo\slprj\_slcc\RntCWIQhSBMk0JpdeDcPVE"
+THIRD_PARTY_INCLUDES   =  /I "E:\SpeedGoat\Git\Trike_100us_develop_algo\slprj\_slcc\RntCWIQhSBMk0JpdeDcPVE"
 INCLUDE_PATH = $(USER_INCLUDES) $(AUX_INCLUDES) $(MLSLSF_INCLUDES)\
  $(THIRD_PARTY_INCLUDES)
 LIB_PATH     = "$(MSVC_ROOT)\lib"

@@ -3,9 +3,9 @@
  *
  * Code generation for model "SpeedgoatCANOpen2Buses100us".
  *
- * Model version              : 1.813
+ * Model version              : 1.821
  * Simulink Coder version : 9.0 (R2018b) 24-May-2018
- * C source code generated on : Thu Dec 30 12:50:12 2021
+ * C source code generated on : Sat Apr  2 12:48:06 2022
  *
  * Target selection: slrt.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -49,7 +49,7 @@ P_SpeedgoatCANOpen2Buses100us_T SpeedgoatCANOpen2Buses100us_P = {
   2.0,
 
   /* Mask Parameter: CompareToConstant_const
-   * Referenced by: '<S61>/Constant'
+   * Referenced by: '<S62>/Constant'
    */
   5.0F,
 
@@ -250,6 +250,11 @@ P_SpeedgoatCANOpen2Buses100us_T SpeedgoatCANOpen2Buses100us_P = {
    */
   -1000.0,
 
+  /* Expression: 0
+   * Referenced by: '<S21>/Constant'
+   */
+  0.0,
+
   /* Expression: 3600
    * Referenced by: '<S33>/offset'
    */
@@ -294,11 +299,6 @@ P_SpeedgoatCANOpen2Buses100us_T SpeedgoatCANOpen2Buses100us_P = {
    * Referenced by: '<S33>/Amp2mAmp'
    */
   1000.0,
-
-  /* Expression: 0
-   * Referenced by: '<S21>/Constant'
-   */
-  0.0,
 
   /* Expression: 0
    * Referenced by: '<S34>/Memory1'
@@ -427,6 +427,11 @@ P_SpeedgoatCANOpen2Buses100us_T SpeedgoatCANOpen2Buses100us_P = {
 
   /* Computed Parameter: n_Gain
    * Referenced by: '<S36>/n'
+   */
+  -1.0F,
+
+  /* Computed Parameter: Gain5_Gain
+   * Referenced by: '<S33>/Gain5'
    */
   -1.0F,
 

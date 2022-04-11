@@ -1520,6 +1520,17 @@ Average</sigName>
           </parameter>
           </block>
             <block>
+            <blkName>Gain5</blkName>
+            <xpcblkName>Trike Application Layer/System_Control/BrakeControl/Gain5</xpcblkName>
+            <SLblockPath>SpeedgoatCANOpen2Buses100us/Trike Application Layer/System_Control/BrakeControl/Gain5</SLblockPath>
+            <isSrc>[0 1 1]</isSrc>
+          <parameter>
+          <paramName>Gain</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>SpeedgoatCANOpen2Buses100us/Trike Application Layer/System_Control/BrakeControl</SubSystemName>
+          </parameter>
+          </block>
+            <block>
             <blkName>Saturation</blkName>
             <xpcblkName>Trike Application Layer/System_Control/BrakeControl/Saturation</xpcblkName>
             <SLblockPath>SpeedgoatCANOpen2Buses100us/Trike Application Layer/System_Control/BrakeControl/Saturation</SLblockPath>
@@ -1685,6 +1696,17 @@ Average</sigName>
               <sigDim>[1, 1]</sigDim>
 			  <SubSystemName>SpeedgoatCANOpen2Buses100us/Trike Application Layer/System_Control/BrakeControl</SubSystemName>
                 
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Gain5</sigName>
+              <xpcsigName>Trike Application Layer/System_Control/BrakeControl/Gain5</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses100us/Trike Application Layer/System_Control/BrakeControl</SubSystemName>
+                <sigLabel>BrakeCurrentInit [mA]</sigLabel>
 			  <sigTestPoint>false</sigTestPoint>
             </signal>
 			  
@@ -2813,6 +2835,16 @@ Gain</sigName>
               <signal>
               <sigName>DunkD_Brake_Init_CurrentMode/p5</sigName>
               <xpcsigName>Trike Application Layer/System_Init/Brakes_DunkMotor_Init/DunkD_Brake_Init_CurrentMode/p5</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses100us/Trike Application Layer/System_Init/Brakes_DunkMotor_Init</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>DunkD_Brake_Init_CurrentMode/p6</sigName>
+              <xpcsigName>Trike Application Layer/System_Init/Brakes_DunkMotor_Init/DunkD_Brake_Init_CurrentMode/p6</xpcsigName>
               <sigWidth>1</sigWidth>
               <sigDim>[1, 1]</sigDim>
 			  <SubSystemName>SpeedgoatCANOpen2Buses100us/Trike Application Layer/System_Init/Brakes_DunkMotor_Init</SubSystemName>

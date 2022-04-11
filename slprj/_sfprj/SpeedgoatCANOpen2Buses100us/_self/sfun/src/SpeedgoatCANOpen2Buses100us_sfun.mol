@@ -7,7 +7,7 @@ c5_SpeedgoatCANOpen2Buses100us.obj
 c12_SpeedgoatCANOpen2Buses100us.obj
 SpeedgoatCANOpen2Buses100us_sfun_registry.obj
 c_mexapi_version.obj
-"C:\Users\Venqo\Desktop\SpeedGoat\Applications\Trike_git\Trike_SpeedGoat_algo\slprj\_slcc\RntCWIQhSBMk0JpdeDcPVE\RntCWIQhSBMk0JpdeDcPVE_cclib.lib"
+"E:\SpeedGoat\Git\Trike_100us_develop_algo\slprj\_slcc\RntCWIQhSBMk0JpdeDcPVE\RntCWIQhSBMk0JpdeDcPVE_cclib.lib"
 
 "E:\Program Files\MATLAB\R2018b\extern\lib\win64\microsoft\sf_runtime.lib"
 "E:\Program Files\MATLAB\R2018b\extern\lib\win64\microsoft\libmx.lib"
