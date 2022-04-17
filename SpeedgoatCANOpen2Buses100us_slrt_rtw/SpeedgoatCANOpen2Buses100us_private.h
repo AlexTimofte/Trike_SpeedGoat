@@ -3,9 +3,9 @@
  *
  * Code generation for model "SpeedgoatCANOpen2Buses100us".
  *
- * Model version              : 1.821
+ * Model version              : 1.861
  * Simulink Coder version : 9.0 (R2018b) 24-May-2018
- * C source code generated on : Sat Apr  2 12:48:06 2022
+ * C source code generated on : Sat Apr 16 13:38:03 2022
  *
  * Target selection: slrt.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -149,111 +149,6 @@ extern "C" {
 
 #endif
 
-  extern void RPDOs_from_DunkA_Start_wrapper(void);
-  extern void RPDOs_from_DunkA_Outputs_wrapper(int32_T *ActualCurrent,
-    int32_T *ActualVelocity);
-  extern void RPDOs_from_DunkA_Terminate_wrapper(void);
-
-#ifdef __cplusplus
-
-}
-#endif
-
-#ifdef __cplusplus
-
-extern "C" {
-
-#endif
-
-  extern void TPDOs_to_DunkA_Start_wrapper(void);
-  extern void TPDOs_to_DunkA_Outputs_wrapper(const uint8_T *ClearError,
-    const uint8_T *DeviceMode,
-    const uint8_T *PowerEnable,
-    const uint8_T *BrakeCtrl,
-    const int32_T *DesiredCurrent);
-  extern void TPDOs_to_DunkA_Terminate_wrapper(void);
-
-#ifdef __cplusplus
-
-}
-#endif
-
-#ifdef __cplusplus
-
-extern "C" {
-
-#endif
-
-  extern void RPDOs_from_DunkB_Start_wrapper(void);
-  extern void RPDOs_from_DunkB_Outputs_wrapper(int32_T *ActualCurrent,
-    int32_T *ActualVelocity);
-  extern void RPDOs_from_DunkB_Terminate_wrapper(void);
-
-#ifdef __cplusplus
-
-}
-#endif
-
-#ifdef __cplusplus
-
-extern "C" {
-
-#endif
-
-  extern void RPDOs_from_DunkC_Start_wrapper(void);
-  extern void RPDOs_from_DunkC_Outputs_wrapper(int32_T *ActualCurrent,
-    int32_T *ActualVelocity);
-  extern void RPDOs_from_DunkC_Terminate_wrapper(void);
-
-#ifdef __cplusplus
-
-}
-#endif
-
-#ifdef __cplusplus
-
-extern "C" {
-
-#endif
-
-  extern void TPDOs_to_DunkB_Start_wrapper(void);
-  extern void TPDOs_to_DunkB_Outputs_wrapper(const uint8_T *ClearError,
-    const uint8_T *DeviceMode,
-    const uint8_T *PowerEnable,
-    const uint8_T *BrakeCtrl,
-    const int32_T *DesiredCurrent);
-  extern void TPDOs_to_DunkB_Terminate_wrapper(void);
-
-#ifdef __cplusplus
-
-}
-#endif
-
-#ifdef __cplusplus
-
-extern "C" {
-
-#endif
-
-  extern void TPDOs_to_DunkC_Start_wrapper(void);
-  extern void TPDOs_to_DunkC_Outputs_wrapper(const uint8_T *ClearError,
-    const uint8_T *DeviceMode,
-    const uint8_T *PowerEnable,
-    const uint8_T *BrakeCtrl,
-    const int32_T *DesiredCurrent);
-  extern void TPDOs_to_DunkC_Terminate_wrapper(void);
-
-#ifdef __cplusplus
-
-}
-#endif
-
-#ifdef __cplusplus
-
-extern "C" {
-
-#endif
-
   extern void RPDOs_from_DunkD_Start_wrapper(void);
   extern void RPDOs_from_DunkD_Outputs_wrapper(int32_T *ActualCurrent,
     int32_T *ActualVelocity);
@@ -289,11 +184,136 @@ extern "C" {
 
 #endif
 
+  extern void RPDOs_from_DunkC_Start_wrapper(void);
+  extern void RPDOs_from_DunkC_Outputs_wrapper(int32_T *ActualCurrent,
+    int32_T *ActualVelocity);
+  extern void RPDOs_from_DunkC_Terminate_wrapper(void);
+
+#ifdef __cplusplus
+
+}
+#endif
+
+#ifdef __cplusplus
+
+extern "C" {
+
+#endif
+
+  extern void TPDOs_to_DunkC_Start_wrapper(void);
+  extern void TPDOs_to_DunkC_Outputs_wrapper(const uint8_T *ClearError,
+    const uint8_T *DeviceMode,
+    const uint8_T *PowerEnable,
+    const uint8_T *BrakeCtrl,
+    const int32_T *DesiredCurrent);
+  extern void TPDOs_to_DunkC_Terminate_wrapper(void);
+
+#ifdef __cplusplus
+
+}
+#endif
+
+#ifdef __cplusplus
+
+extern "C" {
+
+#endif
+
+  extern void RPDOs_from_DunkB_Start_wrapper(void);
+  extern void RPDOs_from_DunkB_Outputs_wrapper(int32_T *ActualCurrent,
+    int32_T *ActualVelocity);
+  extern void RPDOs_from_DunkB_Terminate_wrapper(void);
+
+#ifdef __cplusplus
+
+}
+#endif
+
+#ifdef __cplusplus
+
+extern "C" {
+
+#endif
+
+  extern void TPDOs_to_DunkB_Start_wrapper(void);
+  extern void TPDOs_to_DunkB_Outputs_wrapper(const uint8_T *ClearError,
+    const uint8_T *DeviceMode,
+    const uint8_T *PowerEnable,
+    const uint8_T *BrakeCtrl,
+    const int32_T *DesiredCurrent);
+  extern void TPDOs_to_DunkB_Terminate_wrapper(void);
+
+#ifdef __cplusplus
+
+}
+#endif
+
+#ifdef __cplusplus
+
+extern "C" {
+
+#endif
+
+  extern void RPDOs_from_DunkA_Start_wrapper(void);
+  extern void RPDOs_from_DunkA_Outputs_wrapper(int32_T *ActualCurrent,
+    int32_T *ActualVelocity);
+  extern void RPDOs_from_DunkA_Terminate_wrapper(void);
+
+#ifdef __cplusplus
+
+}
+#endif
+
+#ifdef __cplusplus
+
+extern "C" {
+
+#endif
+
+  extern void TPDOs_to_DunkA_Start_wrapper(void);
+  extern void TPDOs_to_DunkA_Outputs_wrapper(const uint8_T *ClearError,
+    const uint8_T *DeviceMode,
+    const uint8_T *PowerEnable,
+    const uint8_T *BrakeCtrl,
+    const int32_T *DesiredCurrent);
+  extern void TPDOs_to_DunkA_Terminate_wrapper(void);
+
+#ifdef __cplusplus
+
+}
+#endif
+
+#ifdef __cplusplus
+
+extern "C" {
+
+#endif
+
   extern void RPDOs_from_Encoder_Start_wrapper(void);
   extern void RPDOs_from_Encoder_Outputs_wrapper(uint32_T
     *Encoder_Actual_Position,
     uint32_T *Encoder_Stored_Position);
   extern void RPDOs_from_Encoder_Terminate_wrapper(void);
+
+#ifdef __cplusplus
+
+}
+#endif
+
+#ifdef __cplusplus
+
+extern "C" {
+
+#endif
+
+  extern void RPDOs_from_Inclinometer_Start_wrapper(void);
+  extern void RPDOs_from_Inclinometer_Outputs_wrapper(uint8_T *X_sign,
+    uint8_T *X_AngleH,
+    uint8_T *X_AngleL,
+    uint8_T *Y_sign,
+    uint8_T *Y_AngleH,
+    uint8_T *Y_AngleL);
+  extern void RPDOs_from_Inclinometer_Terminate_wrapper(void);
 
 #ifdef __cplusplus
 
@@ -306,8 +326,6 @@ extern const bcstatus1553 bcstatground;
 extern const bmmsglist1553 bmmsg1553ground;
 extern void* slrtRegisterSignalToLoggingService(rtwCAPI_ModelMappingInfo* mdlMMI,
   const char* relBlkPath, int portNumber);
-extern void sMultiWordMul(const uint64_T u1[], int32_T n1, const uint64_T u2[],
-  int32_T n2, uint64_T y[], int32_T n);
 extern void sg_IO602_IO691_write_s(SimStruct *rts);
 extern void sg_IO602_IO691_setup_s(SimStruct *rts);
 extern void sg_IO602_IO691_read_s(SimStruct *rts);

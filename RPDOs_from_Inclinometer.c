@@ -26,7 +26,7 @@
  * | See matlabroot/simulink/src/sfuntmpl_doc.c for a more detailed template |
  *  ------------------------------------------------------------------------- 
  *
- * Created: Mon Apr 11 21:06:30 2022
+ * Created: Sat Apr 16 11:36:28 2022
  */
 
 #define S_FUNCTION_LEVEL 2
@@ -35,12 +35,12 @@
 /* %%%-SFUNWIZ_defines_Changes_BEGIN --- EDIT HERE TO _END */
 #define NUM_INPUTS            0
 
-#define NUM_OUTPUTS           2
+#define NUM_OUTPUTS           6
 /* Output Port  0 */
-#define OUT_PORT_0_NAME       X_Angle
+#define OUT_PORT_0_NAME       X_sign
 #define OUTPUT_0_WIDTH        1
 #define OUTPUT_DIMS_0_COL     1
-#define OUTPUT_0_DTYPE        int16_T
+#define OUTPUT_0_DTYPE        uint8_T
 #define OUTPUT_0_COMPLEX      COMPLEX_NO
 #define OUT_0_FRAME_BASED     FRAME_NO
 #define OUT_0_BUS_BASED       0
@@ -53,10 +53,10 @@
 #define OUT_0_BIAS            0
 #define OUT_0_SLOPE           0.125
 /* Output Port  1 */
-#define OUT_PORT_1_NAME       Y_Angle
+#define OUT_PORT_1_NAME       X_AngleH
 #define OUTPUT_1_WIDTH        1
 #define OUTPUT_DIMS_1_COL     1
-#define OUTPUT_1_DTYPE        int16_T
+#define OUTPUT_1_DTYPE        uint8_T
 #define OUTPUT_1_COMPLEX      COMPLEX_NO
 #define OUT_1_FRAME_BASED     FRAME_NO
 #define OUT_1_BUS_BASED       0
@@ -68,6 +68,70 @@
 #define OUT_1_FRACTIONLENGTH  3
 #define OUT_1_BIAS            0
 #define OUT_1_SLOPE           0.125
+/* Output Port  2 */
+#define OUT_PORT_2_NAME       X_AngleL
+#define OUTPUT_2_WIDTH        1
+#define OUTPUT_DIMS_2_COL     1
+#define OUTPUT_2_DTYPE        uint8_T
+#define OUTPUT_2_COMPLEX      COMPLEX_NO
+#define OUT_2_FRAME_BASED     FRAME_NO
+#define OUT_2_BUS_BASED       0
+#define OUT_2_BUS_NAME        
+#define OUT_2_DIMS            1-D
+#define OUT_2_ISSIGNED        1
+#define OUT_2_WORDLENGTH      8
+#define OUT_2_FIXPOINTSCALING 1
+#define OUT_2_FRACTIONLENGTH  3
+#define OUT_2_BIAS            0
+#define OUT_2_SLOPE           0.125
+/* Output Port  3 */
+#define OUT_PORT_3_NAME       Y_sign
+#define OUTPUT_3_WIDTH        1
+#define OUTPUT_DIMS_3_COL     1
+#define OUTPUT_3_DTYPE        uint8_T
+#define OUTPUT_3_COMPLEX      COMPLEX_NO
+#define OUT_3_FRAME_BASED     FRAME_NO
+#define OUT_3_BUS_BASED       0
+#define OUT_3_BUS_NAME        
+#define OUT_3_DIMS            1-D
+#define OUT_3_ISSIGNED        1
+#define OUT_3_WORDLENGTH      8
+#define OUT_3_FIXPOINTSCALING 1
+#define OUT_3_FRACTIONLENGTH  3
+#define OUT_3_BIAS            0
+#define OUT_3_SLOPE           0.125
+/* Output Port  4 */
+#define OUT_PORT_4_NAME       Y_AngleH
+#define OUTPUT_4_WIDTH        1
+#define OUTPUT_DIMS_4_COL     1
+#define OUTPUT_4_DTYPE        uint8_T
+#define OUTPUT_4_COMPLEX      COMPLEX_NO
+#define OUT_4_FRAME_BASED     FRAME_NO
+#define OUT_4_BUS_BASED       0
+#define OUT_4_BUS_NAME        
+#define OUT_4_DIMS            1-D
+#define OUT_4_ISSIGNED        1
+#define OUT_4_WORDLENGTH      8
+#define OUT_4_FIXPOINTSCALING 1
+#define OUT_4_FRACTIONLENGTH  3
+#define OUT_4_BIAS            0
+#define OUT_4_SLOPE           0.125
+/* Output Port  5 */
+#define OUT_PORT_5_NAME       Y_AngleL
+#define OUTPUT_5_WIDTH        1
+#define OUTPUT_DIMS_5_COL     1
+#define OUTPUT_5_DTYPE        uint8_T
+#define OUTPUT_5_COMPLEX      COMPLEX_NO
+#define OUT_5_FRAME_BASED     FRAME_NO
+#define OUT_5_BUS_BASED       0
+#define OUT_5_BUS_NAME        
+#define OUT_5_DIMS            1-D
+#define OUT_5_ISSIGNED        1
+#define OUT_5_WORDLENGTH      8
+#define OUT_5_FIXPOINTSCALING 1
+#define OUT_5_FRACTIONLENGTH  3
+#define OUT_5_BIAS            0
+#define OUT_5_SLOPE           0.125
 
 #define NPARAMS               0
 
@@ -90,8 +154,12 @@
 #include "simstruc.h"
 
 
-extern void RPDOs_from_Inclinometer_Outputs_wrapper(int16_T *X_Angle,
-			int16_T *Y_Angle);
+extern void RPDOs_from_Inclinometer_Outputs_wrapper(uint8_T *X_sign,
+			uint8_T *X_AngleH,
+			uint8_T *X_AngleL,
+			uint8_T *Y_sign,
+			uint8_T *Y_AngleH,
+			uint8_T *Y_AngleL);
 /*====================*
  * S-function methods *
  *====================*/
@@ -121,12 +189,28 @@ static void mdlInitializeSizes(SimStruct *S)
     if (!ssSetNumOutputPorts(S, NUM_OUTPUTS)) return;
     /* Output Port 0 */
     ssSetOutputPortWidth(S, 0, OUTPUT_0_WIDTH);
-    ssSetOutputPortDataType(S, 0, SS_INT16);
+    ssSetOutputPortDataType(S, 0, SS_UINT8);
     ssSetOutputPortComplexSignal(S, 0, OUTPUT_0_COMPLEX);
     /* Output Port 1 */
     ssSetOutputPortWidth(S, 1, OUTPUT_1_WIDTH);
-    ssSetOutputPortDataType(S, 1, SS_INT16);
+    ssSetOutputPortDataType(S, 1, SS_UINT8);
     ssSetOutputPortComplexSignal(S, 1, OUTPUT_1_COMPLEX);
+    /* Output Port 2 */
+    ssSetOutputPortWidth(S, 2, OUTPUT_2_WIDTH);
+    ssSetOutputPortDataType(S, 2, SS_UINT8);
+    ssSetOutputPortComplexSignal(S, 2, OUTPUT_2_COMPLEX);
+    /* Output Port 3 */
+    ssSetOutputPortWidth(S, 3, OUTPUT_3_WIDTH);
+    ssSetOutputPortDataType(S, 3, SS_UINT8);
+    ssSetOutputPortComplexSignal(S, 3, OUTPUT_3_COMPLEX);
+    /* Output Port 4 */
+    ssSetOutputPortWidth(S, 4, OUTPUT_4_WIDTH);
+    ssSetOutputPortDataType(S, 4, SS_UINT8);
+    ssSetOutputPortComplexSignal(S, 4, OUTPUT_4_COMPLEX);
+    /* Output Port 5 */
+    ssSetOutputPortWidth(S, 5, OUTPUT_5_WIDTH);
+    ssSetOutputPortDataType(S, 5, SS_UINT8);
+    ssSetOutputPortComplexSignal(S, 5, OUTPUT_5_COMPLEX);
     ssSetNumPWork(S, 0);
 
     ssSetNumSampleTimes(S, 1);
@@ -184,10 +268,14 @@ static void mdlStart(SimStruct *S)
  */
 static void mdlOutputs(SimStruct *S, int_T tid)
 {
-    int16_T *X_Angle = (int16_T *) ssGetOutputPortRealSignal(S, 0);
-    int16_T *Y_Angle = (int16_T *) ssGetOutputPortRealSignal(S, 1);
+    uint8_T *X_sign = (uint8_T *) ssGetOutputPortRealSignal(S, 0);
+    uint8_T *X_AngleH = (uint8_T *) ssGetOutputPortRealSignal(S, 1);
+    uint8_T *X_AngleL = (uint8_T *) ssGetOutputPortRealSignal(S, 2);
+    uint8_T *Y_sign = (uint8_T *) ssGetOutputPortRealSignal(S, 3);
+    uint8_T *Y_AngleH = (uint8_T *) ssGetOutputPortRealSignal(S, 4);
+    uint8_T *Y_AngleL = (uint8_T *) ssGetOutputPortRealSignal(S, 5);
 
-    RPDOs_from_Inclinometer_Outputs_wrapper(X_Angle, Y_Angle);
+    RPDOs_from_Inclinometer_Outputs_wrapper(X_sign, X_AngleH, X_AngleL, Y_sign, Y_AngleH, Y_AngleL);
 
 }
 

@@ -3,9 +3,9 @@
  *
  * Code generation for model "SpeedgoatCANOpen2Buses100us".
  *
- * Model version              : 1.821
+ * Model version              : 1.861
  * Simulink Coder version : 9.0 (R2018b) 24-May-2018
- * C source code generated on : Sat Apr  2 12:48:06 2022
+ * C source code generated on : Sat Apr 16 13:38:03 2022
  *
  * Target selection: slrt.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -113,6 +113,17 @@ typedef struct {
 
 #endif
 
+#ifndef DEFINED_TYPEDEF_FOR_Inclinometer_RPDOs_
+#define DEFINED_TYPEDEF_FOR_Inclinometer_RPDOs_
+
+typedef struct {
+  uint8_T Enable;
+  real_T X_Angle;
+  real_T Y_Angle;
+} Inclinometer_RPDOs;
+
+#endif
+
 #ifndef DEFINED_TYPEDEF_FOR_Joystick_RPDOs_
 #define DEFINED_TYPEDEF_FOR_Joystick_RPDOs_
 
@@ -175,28 +186,28 @@ typedef struct {
 
 #endif
 
+#ifndef DEFINED_TYPEDEF_FOR_DunkBrakes_Init_TPDOs_
+#define DEFINED_TYPEDEF_FOR_DunkBrakes_Init_TPDOs_
+
+typedef struct {
+  uint8_T ClearError;
+  uint8_T DeviceMode;
+  uint8_T PowerEnable;
+  uint8_T BrakeCtrl;
+  int16_T CurrentInit;
+} DunkBrakes_Init_TPDOs;
+
+#endif
+
 #ifndef typedef_dsp_private_SlidingWindowAver_T
 #define typedef_dsp_private_SlidingWindowAver_T
 
 typedef struct {
   int32_T isInitialized;
   boolean_T isSetupComplete;
-  real_T pCumSum;
-  real_T pCumSumRev[49];
-  real_T pCumRevIndex;
 } dsp_private_SlidingWindowAver_T;
 
 #endif                                 /*typedef_dsp_private_SlidingWindowAver_T*/
-
-#ifndef typedef_dsp_private_SlidingWindowAv_i_T
-#define typedef_dsp_private_SlidingWindowAv_i_T
-
-typedef struct {
-  int32_T isInitialized;
-  boolean_T isSetupComplete;
-} dsp_private_SlidingWindowAv_i_T;
-
-#endif                                 /*typedef_dsp_private_SlidingWindowAv_i_T*/
 
 #ifndef typedef_cell_wrap_SpeedgoatCANOpen2Bu_T
 #define typedef_cell_wrap_SpeedgoatCANOpen2Bu_T
@@ -222,27 +233,12 @@ typedef struct {
 
 #endif                                 /*typedef_dsp_simulink_MovingAverage_Sp_T*/
 
-#ifndef typedef_dsp_simulink_MovingAverage_i_T
-#define typedef_dsp_simulink_MovingAverage_i_T
-
-typedef struct {
-  boolean_T matlabCodegenIsDeleted;
-  int32_T isInitialized;
-  boolean_T isSetupComplete;
-  boolean_T TunablePropsChanged;
-  cell_wrap_SpeedgoatCANOpen2Bu_T inputVarSize;
-  dsp_private_SlidingWindowAv_i_T *pStatistic;
-  int32_T NumChannels;
-} dsp_simulink_MovingAverage_i_T;
-
-#endif                                 /*typedef_dsp_simulink_MovingAverage_i_T*/
-
 #ifndef SS_INT64
-#define SS_INT64                       40
+#define SS_INT64                       34
 #endif
 
 #ifndef SS_UINT64
-#define SS_UINT64                      41
+#define SS_UINT64                      35
 #endif
 
 /* Parameters (default storage) */

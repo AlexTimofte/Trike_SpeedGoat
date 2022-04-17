@@ -15,7 +15,8 @@
 
 RPDO_ID1C1 RPDO01_APT;
 RPDO_ID1C2 RPDO02_APT;
-RPDO_ID1C3 RPDO03_APT;
+RPDO_ID1C3 RPDO03_APT; 
+
 TPDO_ID1A4 TPDO01_APT;
 // TPDO_test  TPDO05_APT;
 /************************************************************************
@@ -236,7 +237,7 @@ void CANOpenSlave_ResetCommunication_APT(void)
         //CANOpenSlave_InitRPDO(BYTE PDO_NR, WORD CAN_ID, BYTE len, BYTE *dat)
         CANOpenSlave_InitRPDO_APT(1, 0x1C1, 8, &RPDO01_APT.Message);
         CANOpenSlave_InitRPDO_APT(2, 0x1C2, 8, &RPDO02_APT.Message);
-        CANOpenSlave_InitRPDO_APT(3, 0x1C3, 8, &RPDO03_APT.Message);
+        CANOpenSlave_InitRPDO_APT(3, 0x1C3, 8, &RPDO03_APT.Message);         
     #endif
 
 }

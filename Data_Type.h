@@ -41,14 +41,16 @@ typedef union {
 // Inclinometer
 typedef union {
 	struct {
-		int16_T X_Dir;
-		int16_T X_AngleH;
-		int16_T X_AngleL;
-		int16_T Y_Dir;
-		int16_T Y_AngleH;
-		int16_T Y_AngleL;
+		uint8_T X_Dir;
+		uint8_T X_AngleH;
+		uint8_T X_AngleL;
+		uint8_T Y_Dir;
+		uint8_T Y_AngleH;
+		uint8_T Y_AngleL;
+        uint8_T dummy0;
+ 		uint8_T dummy1;
 	};
-	uint8_T Message[6];
+	uint8_T Message[8];
 } RPDO_ID589;
 
 // WDGA Absolut Encoder
