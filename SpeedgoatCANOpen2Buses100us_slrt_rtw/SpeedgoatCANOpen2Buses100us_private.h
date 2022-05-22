@@ -3,9 +3,9 @@
  *
  * Code generation for model "SpeedgoatCANOpen2Buses100us".
  *
- * Model version              : 1.861
+ * Model version              : 1.893
  * Simulink Coder version : 9.0 (R2018b) 24-May-2018
- * C source code generated on : Sat Apr 16 13:38:03 2022
+ * C source code generated on : Sat May 21 12:32:19 2022
  *
  * Target selection: slrt.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -200,6 +200,26 @@ extern "C" {
 
 #endif
 
+  extern void RPDOs_from_Inclinometer_Start_wrapper(void);
+  extern void RPDOs_from_Inclinometer_Outputs_wrapper(uint8_T *X_sign,
+    uint8_T *X_AngleH,
+    uint8_T *X_AngleL,
+    uint8_T *Y_sign,
+    uint8_T *Y_AngleH,
+    uint8_T *Y_AngleL);
+  extern void RPDOs_from_Inclinometer_Terminate_wrapper(void);
+
+#ifdef __cplusplus
+
+}
+#endif
+
+#ifdef __cplusplus
+
+extern "C" {
+
+#endif
+
   extern void TPDOs_to_DunkC_Start_wrapper(void);
   extern void TPDOs_to_DunkC_Outputs_wrapper(const uint8_T *ClearError,
     const uint8_T *DeviceMode,
@@ -300,32 +320,15 @@ extern "C" {
 }
 #endif
 
-#ifdef __cplusplus
-
-extern "C" {
-
-#endif
-
-  extern void RPDOs_from_Inclinometer_Start_wrapper(void);
-  extern void RPDOs_from_Inclinometer_Outputs_wrapper(uint8_T *X_sign,
-    uint8_T *X_AngleH,
-    uint8_T *X_AngleL,
-    uint8_T *Y_sign,
-    uint8_T *Y_AngleH,
-    uint8_T *Y_AngleL);
-  extern void RPDOs_from_Inclinometer_Terminate_wrapper(void);
-
-#ifdef __cplusplus
-
-}
-#endif
-
 extern const serialfifoptr serialfifoground;
 extern const bcmsglist1553 bcmsg1553ground;
 extern const bcstatus1553 bcstatground;
 extern const bmmsglist1553 bmmsg1553ground;
+extern real_T rt_remd_snf(real_T u0, real_T u1);
 extern void* slrtRegisterSignalToLoggingService(rtwCAPI_ModelMappingInfo* mdlMMI,
   const char* relBlkPath, int portNumber);
+extern real_T look1_binlxpw(real_T u0, const real_T bp0[], const real_T table[],
+  uint32_T maxIndex);
 extern void sg_IO602_IO691_write_s(SimStruct *rts);
 extern void sg_IO602_IO691_setup_s(SimStruct *rts);
 extern void sg_IO602_IO691_read_s(SimStruct *rts);

@@ -3,9 +3,9 @@
  *
  * Code generation for model "SpeedgoatCANOpen2Buses100us".
  *
- * Model version              : 1.861
+ * Model version              : 1.893
  * Simulink Coder version : 9.0 (R2018b) 24-May-2018
- * C source code generated on : Sat Apr 16 13:38:03 2022
+ * C source code generated on : Sat May 21 12:32:19 2022
  *
  * Target selection: slrt.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -28,7 +28,7 @@
 #define SpeedgoatCANOpen2Bus_IN_Retract ((uint8_T)2U)
 #define SpeedgoatCANOpen2Buse_IN_Init_m ((uint8_T)1U)
 
-/* Named constants for Chart: '<S50>/DunkD_Brake_Init_CurrentMode' */
+/* Named constants for Chart: '<S55>/DunkD_Brake_Init_CurrentMode' */
 #define SpeedgoatCANO_IN_SetCurrentMode ((uint8_T)3U)
 #define SpeedgoatCANOpen2Buses1_IN_Wait ((uint8_T)5U)
 #define SpeedgoatCANOpen_IN_Clear_Error ((uint8_T)1U)
@@ -37,7 +37,7 @@
 /* Named constants for Chart: '<S27>/EnableCtrl' */
 #define SpeedgoatCANO_IN_Enable_Control ((uint8_T)1U)
 
-/* Named constants for Chart: '<S54>/DunkA_Steering_Init_SpeedMode' */
+/* Named constants for Chart: '<S59>/DunkA_Steering_Init_SpeedMode' */
 #define SpeedgoatCANOpen2Buse_IN_Wait_e ((uint8_T)4U)
 
 /* Block signals (default storage) */
@@ -65,15 +65,77 @@ static void SpeedgoatCANOpen2Buse_readfloat(char_T s1_data[], int32_T *idx,
   *b_finite, real_T *nfv, boolean_T *success);
 static creal_T SpeedgoatCANOpen2Bus_str2double(const char_T s_data[], const
   int32_T s_size[2]);
+static void SpeedgoatC_SystemCore_release_i(dsp_simulink_MovingAverage_i_T *obj);
+static void SpeedgoatCA_SystemCore_delete_i(dsp_simulink_MovingAverage_i_T *obj);
+static void matlabCodegenHandle_matlabCod_i(dsp_simulink_MovingAverage_i_T *obj);
 static void SpeedgoatCAN_SystemCore_release(dsp_simulink_MovingAverage_Sp_T *obj);
 static void SpeedgoatCANO_SystemCore_delete(dsp_simulink_MovingAverage_Sp_T *obj);
 static void matlabCodegenHandle_matlabCodeg(dsp_simulink_MovingAverage_Sp_T *obj);
+static void Speedgoat_SystemCore_release_il(dsp_simulink_MovingAverage_il_T *obj);
+static void SpeedgoatC_SystemCore_delete_il(dsp_simulink_MovingAverage_il_T *obj);
+static void matlabCodegenHandle_matlabCo_il(dsp_simulink_MovingAverage_il_T *obj);
+real_T look1_binlxpw(real_T u0, const real_T bp0[], const real_T table[],
+                     uint32_T maxIndex)
+{
+  real_T frac;
+  uint32_T iRght;
+  uint32_T iLeft;
+  uint32_T bpIdx;
+
+  /* Column-major Lookup 1-D
+     Search method: 'binary'
+     Use previous index: 'off'
+     Interpolation method: 'Linear point-slope'
+     Extrapolation method: 'Linear'
+     Use last breakpoint for index at or above upper limit: 'off'
+     Remove protection against out-of-range input in generated code: 'off'
+   */
+  /* Prelookup - Index and Fraction
+     Index Search method: 'binary'
+     Extrapolation method: 'Linear'
+     Use previous index: 'off'
+     Use last breakpoint for index at or above upper limit: 'off'
+     Remove protection against out-of-range input in generated code: 'off'
+   */
+  if (u0 <= bp0[0U]) {
+    iLeft = 0U;
+    frac = (u0 - bp0[0U]) / (bp0[1U] - bp0[0U]);
+  } else if (u0 < bp0[maxIndex]) {
+    /* Binary Search */
+    bpIdx = maxIndex >> 1U;
+    iLeft = 0U;
+    iRght = maxIndex;
+    while (iRght - iLeft > 1U) {
+      if (u0 < bp0[bpIdx]) {
+        iRght = bpIdx;
+      } else {
+        iLeft = bpIdx;
+      }
+
+      bpIdx = (iRght + iLeft) >> 1U;
+    }
+
+    frac = (u0 - bp0[iLeft]) / (bp0[iLeft + 1U] - bp0[iLeft]);
+  } else {
+    iLeft = maxIndex - 1U;
+    frac = (u0 - bp0[maxIndex - 1U]) / (bp0[maxIndex] - bp0[maxIndex - 1U]);
+  }
+
+  /* Column-major Interpolation 1-D
+     Interpolation method: 'Linear point-slope'
+     Use last breakpoint for index at or above upper limit: 'off'
+     Overflow mode: 'portable wrapping'
+   */
+  return (table[iLeft + 1U] - table[iLeft]) * frac + table[iLeft];
+}
+
 time_T rt_SimUpdateDiscreteEvents(
   int_T rtmNumSampTimes, void *rtmTimingData, int_T *rtmSampleHitPtr, int_T
   *rtmPerTaskSampleHits )
 {
   rtmSampleHitPtr[1] = rtmStepTask(SpeedgoatCANOpen2Buses100us_M, 1);
   rtmSampleHitPtr[2] = rtmStepTask(SpeedgoatCANOpen2Buses100us_M, 2);
+  rtmSampleHitPtr[3] = rtmStepTask(SpeedgoatCANOpen2Buses100us_M, 3);
   UNUSED_PARAMETER(rtmNumSampTimes);
   UNUSED_PARAMETER(rtmTimingData);
   UNUSED_PARAMETER(rtmPerTaskSampleHits);
@@ -95,6 +157,11 @@ void rate_scheduler(void)
   (SpeedgoatCANOpen2Buses100us_M->Timing.TaskCounters.TID[2])++;
   if ((SpeedgoatCANOpen2Buses100us_M->Timing.TaskCounters.TID[2]) > 49) {/* Sample time: [0.005s, 0.0s] */
     SpeedgoatCANOpen2Buses100us_M->Timing.TaskCounters.TID[2] = 0;
+  }
+
+  (SpeedgoatCANOpen2Buses100us_M->Timing.TaskCounters.TID[3])++;
+  if ((SpeedgoatCANOpen2Buses100us_M->Timing.TaskCounters.TID[3]) > 149) {/* Sample time: [0.015s, 0.0s] */
+    SpeedgoatCANOpen2Buses100us_M->Timing.TaskCounters.TID[3] = 0;
   }
 }
 
@@ -554,6 +621,68 @@ static creal_T SpeedgoatCANOpen2Bus_str2double(const char_T s_data[], const
   return x;
 }
 
+real_T rt_remd_snf(real_T u0, real_T u1)
+{
+  real_T y;
+  real_T q;
+  boolean_T y_0;
+  boolean_T y_1;
+  y_0 = ((!rtIsNaN(u0)) && (!rtIsInf(u0)));
+  y_1 = ((!rtIsNaN(u1)) && (!rtIsInf(u1)));
+  if ((!y_0) || (!y_1)) {
+    y = (rtNaN);
+  } else {
+    if (u1 < 0.0) {
+      y = ceil(u1);
+    } else {
+      y = floor(u1);
+    }
+
+    if ((u1 != 0.0) && (u1 != y)) {
+      q = fabs(u0 / u1);
+      if (!(fabs(q - floor(q + 0.5)) > DBL_EPSILON * q)) {
+        y = 0.0 * u0;
+      } else {
+        y = fmod(u0, u1);
+      }
+    } else {
+      y = fmod(u0, u1);
+    }
+  }
+
+  return y;
+}
+
+static void SpeedgoatC_SystemCore_release_i(dsp_simulink_MovingAverage_i_T *obj)
+{
+  dsp_simulink_MovingAverage_i_T *obj_0;
+  dsp_private_SlidingWindowAv_i_T *obj_1;
+  if (obj->isInitialized == 1) {
+    obj_0 = obj;
+    if (obj_0->isSetupComplete) {
+      obj_1 = obj_0->pStatistic;
+      if (obj_1->isInitialized == 1) {
+        obj_1->isInitialized = 2;
+      }
+
+      obj_0->NumChannels = -1;
+    }
+  }
+}
+
+static void SpeedgoatCA_SystemCore_delete_i(dsp_simulink_MovingAverage_i_T *obj)
+{
+  SpeedgoatC_SystemCore_release_i(obj);
+}
+
+static void matlabCodegenHandle_matlabCod_i(dsp_simulink_MovingAverage_i_T *obj)
+{
+  if (!obj->matlabCodegenIsDeleted) {
+    obj->matlabCodegenIsDeleted = true;
+    SpeedgoatCA_SystemCore_delete_i(obj);
+  }
+}
+
 static void SpeedgoatCAN_SystemCore_release(dsp_simulink_MovingAverage_Sp_T *obj)
 {
   dsp_simulink_MovingAverage_Sp_T *obj_0;
@@ -584,6 +713,36 @@ static void matlabCodegenHandle_matlabCodeg(dsp_simulink_MovingAverage_Sp_T *obj
   }
 }
 
+static void Speedgoat_SystemCore_release_il(dsp_simulink_MovingAverage_il_T *obj)
+{
+  dsp_simulink_MovingAverage_il_T *obj_0;
+  dsp_private_SlidingWindowA_il_T *obj_1;
+  if (obj->isInitialized == 1) {
+    obj_0 = obj;
+    if (obj_0->isSetupComplete) {
+      obj_1 = obj_0->pStatistic;
+      if (obj_1->isInitialized == 1) {
+        obj_1->isInitialized = 2;
+      }
+
+      obj_0->NumChannels = -1;
+    }
+  }
+}
+
+static void SpeedgoatC_SystemCore_delete_il(dsp_simulink_MovingAverage_il_T *obj)
+{
+  Speedgoat_SystemCore_release_il(obj);
+}
+
+static void matlabCodegenHandle_matlabCo_il(dsp_simulink_MovingAverage_il_T *obj)
+{
+  if (!obj->matlabCodegenIsDeleted) {
+    obj->matlabCodegenIsDeleted = true;
+    SpeedgoatC_SystemCore_delete_il(obj);
+  }
+}
+
 /* Model output function for TID0 */
 static void SpeedgoatCANOpen2Buses100us_output0(void) /* Sample time: [0.0s, 0.0s] */
 {
@@ -595,19 +754,34 @@ static void SpeedgoatCANOpen2Buses100us_output0(void) /* Sample time: [0.0s, 0.0
   int32_T aux_ySign;
   creal_T x;
   char_T c_data[2];
-  dsp_simulink_MovingAverage_Sp_T *obj;
-  dsp_simulink_MovingAverage_Sp_T *obj_0;
-  dsp_private_SlidingWindowAver_T *obj_1;
+  dsp_simulink_MovingAverage_i_T *obj;
+  dsp_simulink_MovingAverage_i_T *obj_0;
+  dsp_private_SlidingWindowAv_i_T *obj_1;
+  dsp_private_SlidingWindowAv_i_T *obj_2;
+  dsp_private_SlidingWindowAv_i_T *obj_3;
+  dsp_private_SlidingWindowAv_i_T *obj_4;
+  real_T cumRevIndex;
+  real_T csum;
+  real_T csumrev[9];
+  real_T z;
+  dsp_simulink_MovingAverage_Sp_T *obj_5;
+  dsp_simulink_MovingAverage_Sp_T *obj_6;
+  dsp_private_SlidingWindowAver_T *obj_7;
+  dsp_simulink_MovingAverage_il_T *obj_8;
+  dsp_simulink_MovingAverage_il_T *obj_9;
+  dsp_private_SlidingWindowA_il_T *obj_a;
+  dsp_private_SlidingWindowA_il_T *obj_b;
+  dsp_private_SlidingWindowA_il_T *obj_c;
+  dsp_private_SlidingWindowA_il_T *obj_d;
+  real_T csumrev_0[3];
   int8_T wrBufIdx;
   int32_T c_size[2];
   creal_T tmp;
   real32_T tmp_0;
-  uint16_T u0;
+  real_T u0;
+  uint16_T u0_0;
   uint16_T u1;
   uint16_T u2;
-  real_T u0_0;
-  real_T u1_0;
-  real_T u2_0;
 
   {                                    /* Sample time: [0.0s, 0.0s] */
     rate_scheduler();
@@ -732,15 +906,15 @@ static void SpeedgoatCANOpen2Buses100us_output0(void) /* Sample time: [0.0s, 0.0
     SpeedgoatCANOpen2Buses100us_P.SineWave_Bias;
 
   /* DataTypeConversion: '<S16>/Cast To Single' */
-  u1_0 = floor(SpeedgoatCANOpen2Buses100us_B.SineWave);
-  if (rtIsNaN(u1_0) || rtIsInf(u1_0)) {
-    u1_0 = 0.0;
+  u0 = floor(SpeedgoatCANOpen2Buses100us_B.SineWave);
+  if (rtIsNaN(u0) || rtIsInf(u0)) {
+    u0 = 0.0;
   } else {
-    u1_0 = fmod(u1_0, 65536.0);
+    u0 = fmod(u0, 65536.0);
   }
 
-  SpeedgoatCANOpen2Buses100us_B.AN_01 = (int16_T)(u1_0 < 0.0 ? (int32_T)(int16_T)
-    -(int16_T)(uint16_T)-u1_0 : (int32_T)(int16_T)(uint16_T)u1_0);
+  SpeedgoatCANOpen2Buses100us_B.AN_01 = (int16_T)(u0 < 0.0 ? (int32_T)(int16_T)
+    -(int16_T)(uint16_T)-u0 : (int32_T)(int16_T)(uint16_T)u0);
 
   /* End of DataTypeConversion: '<S16>/Cast To Single' */
 
@@ -753,15 +927,15 @@ static void SpeedgoatCANOpen2Buses100us_output0(void) /* Sample time: [0.0s, 0.0
     SpeedgoatCANOpen2Buses100us_P.SineWave1_Bias;
 
   /* DataTypeConversion: '<S16>/Cast To Single1' */
-  u1_0 = floor(SpeedgoatCANOpen2Buses100us_B.SineWave1);
-  if (rtIsNaN(u1_0) || rtIsInf(u1_0)) {
-    u1_0 = 0.0;
+  u0 = floor(SpeedgoatCANOpen2Buses100us_B.SineWave1);
+  if (rtIsNaN(u0) || rtIsInf(u0)) {
+    u0 = 0.0;
   } else {
-    u1_0 = fmod(u1_0, 65536.0);
+    u0 = fmod(u0, 65536.0);
   }
 
-  SpeedgoatCANOpen2Buses100us_B.AN_02 = (int16_T)(u1_0 < 0.0 ? (int32_T)(int16_T)
-    -(int16_T)(uint16_T)-u1_0 : (int32_T)(int16_T)(uint16_T)u1_0);
+  SpeedgoatCANOpen2Buses100us_B.AN_02 = (int16_T)(u0 < 0.0 ? (int32_T)(int16_T)
+    -(int16_T)(uint16_T)-u0 : (int32_T)(int16_T)(uint16_T)u0);
 
   /* End of DataTypeConversion: '<S16>/Cast To Single1' */
 
@@ -774,15 +948,15 @@ static void SpeedgoatCANOpen2Buses100us_output0(void) /* Sample time: [0.0s, 0.0
     SpeedgoatCANOpen2Buses100us_P.SineWave3_Bias;
 
   /* DataTypeConversion: '<S16>/Cast To Single2' */
-  u1_0 = floor(SpeedgoatCANOpen2Buses100us_B.SineWave3);
-  if (rtIsNaN(u1_0) || rtIsInf(u1_0)) {
-    u1_0 = 0.0;
+  u0 = floor(SpeedgoatCANOpen2Buses100us_B.SineWave3);
+  if (rtIsNaN(u0) || rtIsInf(u0)) {
+    u0 = 0.0;
   } else {
-    u1_0 = fmod(u1_0, 65536.0);
+    u0 = fmod(u0, 65536.0);
   }
 
-  SpeedgoatCANOpen2Buses100us_B.AN_03 = (int16_T)(u1_0 < 0.0 ? (int32_T)(int16_T)
-    -(int16_T)(uint16_T)-u1_0 : (int32_T)(int16_T)(uint16_T)u1_0);
+  SpeedgoatCANOpen2Buses100us_B.AN_03 = (int16_T)(u0 < 0.0 ? (int32_T)(int16_T)
+    -(int16_T)(uint16_T)-u0 : (int32_T)(int16_T)(uint16_T)u0);
 
   /* End of DataTypeConversion: '<S16>/Cast To Single2' */
 
@@ -795,15 +969,15 @@ static void SpeedgoatCANOpen2Buses100us_output0(void) /* Sample time: [0.0s, 0.0
     SpeedgoatCANOpen2Buses100us_P.SineWave2_Bias;
 
   /* DataTypeConversion: '<S16>/Cast To Single3' */
-  u1_0 = floor(SpeedgoatCANOpen2Buses100us_B.SineWave2);
-  if (rtIsNaN(u1_0) || rtIsInf(u1_0)) {
-    u1_0 = 0.0;
+  u0 = floor(SpeedgoatCANOpen2Buses100us_B.SineWave2);
+  if (rtIsNaN(u0) || rtIsInf(u0)) {
+    u0 = 0.0;
   } else {
-    u1_0 = fmod(u1_0, 65536.0);
+    u0 = fmod(u0, 65536.0);
   }
 
-  SpeedgoatCANOpen2Buses100us_B.AN_04 = (int16_T)(u1_0 < 0.0 ? (int32_T)(int16_T)
-    -(int16_T)(uint16_T)-u1_0 : (int32_T)(int16_T)(uint16_T)u1_0);
+  SpeedgoatCANOpen2Buses100us_B.AN_04 = (int16_T)(u0 < 0.0 ? (int32_T)(int16_T)
+    -(int16_T)(uint16_T)-u0 : (int32_T)(int16_T)(uint16_T)u0);
 
   /* End of DataTypeConversion: '<S16>/Cast To Single3' */
 
@@ -894,22 +1068,22 @@ static void SpeedgoatCANOpen2Buses100us_output0(void) /* Sample time: [0.0s, 0.0
   /* End of MATLAB Function: '<S27>/APTControlWord' */
 
   /* DataTypeConversion: '<S24>/Data Type Conversion' */
-  u1_0 = floor(SpeedgoatCANOpen2Buses100us_B.APT_CtrlWord);
-  if (rtIsNaN(u1_0) || rtIsInf(u1_0)) {
-    u1_0 = 0.0;
+  u0 = floor(SpeedgoatCANOpen2Buses100us_B.APT_CtrlWord);
+  if (rtIsNaN(u0) || rtIsInf(u0)) {
+    u0 = 0.0;
   } else {
-    u1_0 = fmod(u1_0, 256.0);
+    u0 = fmod(u0, 256.0);
   }
 
-  SpeedgoatCANOpen2Buses100us_B.APT_TPDO_ControlWord = (uint8_T)(u1_0 < 0.0 ?
-    (int32_T)(uint8_T)-(int8_T)(uint8_T)-u1_0 : (int32_T)(uint8_T)u1_0);
+  SpeedgoatCANOpen2Buses100us_B.APT_TPDO_ControlWord = (uint8_T)(u0 < 0.0 ?
+    (int32_T)(uint8_T)-(int8_T)(uint8_T)-u0 : (int32_T)(uint8_T)u0);
 
   /* End of DataTypeConversion: '<S24>/Data Type Conversion' */
-  /* Constant: '<S54>/Constant' */
-  SpeedgoatCANOpen2Buses100us_B.Constant_j =
+  /* Constant: '<S59>/Constant' */
+  SpeedgoatCANOpen2Buses100us_B.Constant =
     SpeedgoatCANOpen2Buses100us_P.Constant_Value_l;
 
-  /* Chart: '<S54>/DunkA_Steering_Init_SpeedMode' */
+  /* Chart: '<S59>/DunkA_Steering_Init_SpeedMode' */
   SpeedgoatCANOpen2Buses100us_DW.sfEvent_a = -1;
   if (SpeedgoatCANOpen2Buses100us_DW.is_active_c12_SpeedgoatCANOpen2 == 0U) {
     SpeedgoatCANOpen2Buses100us_DW.is_active_c12_SpeedgoatCANOpen2 = 1U;
@@ -945,7 +1119,7 @@ static void SpeedgoatCANOpen2Buses100us_output0(void) /* Sample time: [0.0s, 0.0
       break;
 
      case SpeedgoatCANO_IN_SetCurrentMode:
-      if (SpeedgoatCANOpen2Buses100us_B.Constant_j != 1.0F) {
+      if (SpeedgoatCANOpen2Buses100us_B.Constant != 1.0F) {
         SpeedgoatCANOpen2Buses100us_DW.is_c12_SpeedgoatCANOpen2Buses10 =
           SpeedgoatCANOpen2Buses1_IN_Init;
         SpeedgoatCANOpen2Buses100us_B.ClearError_n = 0.0F;
@@ -964,7 +1138,7 @@ static void SpeedgoatCANOpen2Buses100us_output0(void) /* Sample time: [0.0s, 0.0
      default:
       SpeedgoatCANOpen2Buses100us_B.BrakeCtrl_b = 2.0F;
       sf_internal_predicateOutput = ((SpeedgoatCANOpen2Buses100us_DW.aux_j <
-        20.0F) && (SpeedgoatCANOpen2Buses100us_B.Constant_j == 1.0F));
+        20.0F) && (SpeedgoatCANOpen2Buses100us_B.Constant == 1.0F));
       if (sf_internal_predicateOutput) {
         SpeedgoatCANOpen2Buses100us_DW.is_c12_SpeedgoatCANOpen2Buses10 =
           SpeedgoatCANOpen2Buse_IN_Wait_e;
@@ -973,13 +1147,13 @@ static void SpeedgoatCANOpen2Buses100us_output0(void) /* Sample time: [0.0s, 0.0
         SpeedgoatCANOpen2Buses100us_B.InitStatus_f = 0.0F;
       } else {
         sf_internal_predicateOutput = ((SpeedgoatCANOpen2Buses100us_DW.aux_j >=
-          20.0F) && (SpeedgoatCANOpen2Buses100us_B.Constant_j == 1.0F));
+          20.0F) && (SpeedgoatCANOpen2Buses100us_B.Constant == 1.0F));
         if (sf_internal_predicateOutput) {
           SpeedgoatCANOpen2Buses100us_DW.aux_j = 0.0F;
           SpeedgoatCANOpen2Buses100us_DW.is_c12_SpeedgoatCANOpen2Buses10 =
             SpeedgoatCANO_IN_SetCurrentMode;
         } else {
-          if (SpeedgoatCANOpen2Buses100us_B.Constant_j != 1.0F) {
+          if (SpeedgoatCANOpen2Buses100us_B.Constant != 1.0F) {
             SpeedgoatCANOpen2Buses100us_DW.is_c12_SpeedgoatCANOpen2Buses10 =
               SpeedgoatCANOpen2Buses1_IN_Init;
             SpeedgoatCANOpen2Buses100us_B.ClearError_n = 0.0F;
@@ -995,13 +1169,13 @@ static void SpeedgoatCANOpen2Buses100us_output0(void) /* Sample time: [0.0s, 0.0
     }
   }
 
-  /* End of Chart: '<S54>/DunkA_Steering_Init_SpeedMode' */
+  /* End of Chart: '<S59>/DunkA_Steering_Init_SpeedMode' */
 
-  /* Constant: '<S55>/Constant' */
+  /* Constant: '<S60>/Constant' */
   SpeedgoatCANOpen2Buses100us_B.Constant_m =
     SpeedgoatCANOpen2Buses100us_P.Constant_Value_j;
 
-  /* Chart: '<S55>/DunkC_TiltLeft_Init_CurrentMode' */
+  /* Chart: '<S60>/DunkC_TiltLeft_Init_CurrentMode' */
   SpeedgoatCANOpen2Buses100us_DW.sfEvent_c = -1;
   if (SpeedgoatCANOpen2Buses100us_DW.is_active_c2_SpeedgoatCANOpen2B == 0U) {
     SpeedgoatCANOpen2Buses100us_DW.is_active_c2_SpeedgoatCANOpen2B = 1U;
@@ -1087,13 +1261,13 @@ static void SpeedgoatCANOpen2Buses100us_output0(void) /* Sample time: [0.0s, 0.0
     }
   }
 
-  /* End of Chart: '<S55>/DunkC_TiltLeft_Init_CurrentMode' */
+  /* End of Chart: '<S60>/DunkC_TiltLeft_Init_CurrentMode' */
 
-  /* Constant: '<S56>/Constant' */
+  /* Constant: '<S61>/Constant' */
   SpeedgoatCANOpen2Buses100us_B.Constant_e =
     SpeedgoatCANOpen2Buses100us_P.Constant_Value_n;
 
-  /* Chart: '<S56>/DunkB_TiltRight_Init_CurrentMode' */
+  /* Chart: '<S61>/DunkB_TiltRight_Init_CurrentMode' */
   SpeedgoatCANOpen2Buses100us_DW.sfEvent = -1;
   if (SpeedgoatCANOpen2Buses100us_DW.is_active_c1_SpeedgoatCANOpen2B == 0U) {
     SpeedgoatCANOpen2Buses100us_DW.is_active_c1_SpeedgoatCANOpen2B = 1U;
@@ -1179,13 +1353,13 @@ static void SpeedgoatCANOpen2Buses100us_output0(void) /* Sample time: [0.0s, 0.0
     }
   }
 
-  /* End of Chart: '<S56>/DunkB_TiltRight_Init_CurrentMode' */
+  /* End of Chart: '<S61>/DunkB_TiltRight_Init_CurrentMode' */
 
-  /* Constant: '<S50>/Constant' */
+  /* Constant: '<S55>/Constant' */
   SpeedgoatCANOpen2Buses100us_B.Constant_g =
     SpeedgoatCANOpen2Buses100us_P.Constant_Value_h;
 
-  /* Chart: '<S50>/DunkD_Brake_Init_CurrentMode' */
+  /* Chart: '<S55>/DunkD_Brake_Init_CurrentMode' */
   SpeedgoatCANOpen2Buses100us_DW.sfEvent_j = -1;
   if (SpeedgoatCANOpen2Buses100us_DW.is_active_c3_SpeedgoatCANOpen2B == 0U) {
     SpeedgoatCANOpen2Buses100us_DW.is_active_c3_SpeedgoatCANOpen2B = 1U;
@@ -1295,7 +1469,7 @@ static void SpeedgoatCANOpen2Buses100us_output0(void) /* Sample time: [0.0s, 0.0
     }
   }
 
-  /* End of Chart: '<S50>/DunkD_Brake_Init_CurrentMode' */
+  /* End of Chart: '<S55>/DunkD_Brake_Init_CurrentMode' */
 
   /* Chart: '<S27>/EnableCtrl' */
   SpeedgoatCANOpen2Buses100us_DW.sfEvent_n = -1;
@@ -1320,7 +1494,7 @@ static void SpeedgoatCANOpen2Buses100us_output0(void) /* Sample time: [0.0s, 0.0
 
   /* End of Chart: '<S27>/EnableCtrl' */
 
-  /* Sum: '<S52>/Sum' */
+  /* Sum: '<S57>/Sum' */
   SpeedgoatCANOpen2Buses100us_B.Sum_b =
     (((SpeedgoatCANOpen2Buses100us_B.InitStatus_f +
        SpeedgoatCANOpen2Buses100us_B.InitStatus_k) +
@@ -1328,8 +1502,8 @@ static void SpeedgoatCANOpen2Buses100us_output0(void) /* Sample time: [0.0s, 0.0
      SpeedgoatCANOpen2Buses100us_B.InitStatus_a) +
     SpeedgoatCANOpen2Buses100us_B.Enable;
 
-  /* RelationalOperator: '<S58>/Compare' incorporates:
-   *  Constant: '<S58>/Constant'
+  /* RelationalOperator: '<S63>/Compare' incorporates:
+   *  Constant: '<S63>/Constant'
    */
   SpeedgoatCANOpen2Buses100us_B.Compare = (SpeedgoatCANOpen2Buses100us_B.Sum_b ==
     SpeedgoatCANOpen2Buses100us_P.CompareToConstant_const);
@@ -1360,15 +1534,15 @@ static void SpeedgoatCANOpen2Buses100us_output0(void) /* Sample time: [0.0s, 0.0
   /* End of Switch: '<S31>/Switch4' */
 
   /* DataTypeConversion: '<S24>/Data Type Conversion1' */
-  u1_0 = floor(SpeedgoatCANOpen2Buses100us_B.Switch4);
-  if (rtIsNaN(u1_0) || rtIsInf(u1_0)) {
-    u1_0 = 0.0;
+  u0 = floor(SpeedgoatCANOpen2Buses100us_B.Switch4);
+  if (rtIsNaN(u0) || rtIsInf(u0)) {
+    u0 = 0.0;
   } else {
-    u1_0 = fmod(u1_0, 256.0);
+    u0 = fmod(u0, 256.0);
   }
 
-  SpeedgoatCANOpen2Buses100us_B.APT_TPDO_PedalPosition = (uint8_T)(u1_0 < 0.0 ?
-    (int32_T)(uint8_T)-(int8_T)(uint8_T)-u1_0 : (int32_T)(uint8_T)u1_0);
+  SpeedgoatCANOpen2Buses100us_B.APT_TPDO_PedalPosition = (uint8_T)(u0 < 0.0 ?
+    (int32_T)(uint8_T)-(int8_T)(uint8_T)-u0 : (int32_T)(uint8_T)u0);
 
   /* End of DataTypeConversion: '<S24>/Data Type Conversion1' */
   /* MATLAB Function: '<S24>/HeartBeatgenerator' */
@@ -1386,15 +1560,15 @@ static void SpeedgoatCANOpen2Buses100us_output0(void) /* Sample time: [0.0s, 0.0
   /* End of MATLAB Function: '<S24>/HeartBeatgenerator' */
 
   /* DataTypeConversion: '<S24>/Data Type Conversion2' */
-  u1_0 = floor(SpeedgoatCANOpen2Buses100us_B.HB);
-  if (rtIsNaN(u1_0) || rtIsInf(u1_0)) {
-    u1_0 = 0.0;
+  u0 = floor(SpeedgoatCANOpen2Buses100us_B.HB);
+  if (rtIsNaN(u0) || rtIsInf(u0)) {
+    u0 = 0.0;
   } else {
-    u1_0 = fmod(u1_0, 256.0);
+    u0 = fmod(u0, 256.0);
   }
 
-  SpeedgoatCANOpen2Buses100us_B.APT_TPDO_Heartbeat = (uint8_T)(u1_0 < 0.0 ?
-    (int32_T)(uint8_T)-(int8_T)(uint8_T)-u1_0 : (int32_T)(uint8_T)u1_0);
+  SpeedgoatCANOpen2Buses100us_B.APT_TPDO_Heartbeat = (uint8_T)(u0 < 0.0 ?
+    (int32_T)(uint8_T)-(int8_T)(uint8_T)-u0 : (int32_T)(uint8_T)u0);
 
   /* End of DataTypeConversion: '<S24>/Data Type Conversion2' */
   /* S-Function (TPDOs_to_APT): '<S2>/TPDOs from Speedgoat to APT' */
@@ -1417,15 +1591,15 @@ static void SpeedgoatCANOpen2Buses100us_output0(void) /* Sample time: [0.0s, 0.0
     SpeedgoatCANOpen2Buses100us_B.Channel_AN3;
 
   /* Saturate: '<S36>/Saturation1' */
-  u0 = SpeedgoatCANOpen2Buses100us_B.DataTypeConversion;
+  u0_0 = SpeedgoatCANOpen2Buses100us_B.DataTypeConversion;
   u1 = SpeedgoatCANOpen2Buses100us_P.Saturation1_LowerSat;
   u2 = SpeedgoatCANOpen2Buses100us_P.Saturation1_UpperSat;
-  if (u0 > u2) {
+  if (u0_0 > u2) {
     SpeedgoatCANOpen2Buses100us_B.Saturation1 = u2;
-  } else if (u0 < u1) {
+  } else if (u0_0 < u1) {
     SpeedgoatCANOpen2Buses100us_B.Saturation1 = u1;
   } else {
-    SpeedgoatCANOpen2Buses100us_B.Saturation1 = u0;
+    SpeedgoatCANOpen2Buses100us_B.Saturation1 = u0_0;
   }
 
   /* End of Saturate: '<S36>/Saturation1' */
@@ -1447,15 +1621,15 @@ static void SpeedgoatCANOpen2Buses100us_output0(void) /* Sample time: [0.0s, 0.0
     * SpeedgoatCANOpen2Buses100us_B.br_percent2;
 
   /* Saturate: '<S36>/Saturation' */
-  u0_0 = SpeedgoatCANOpen2Buses100us_B.Gain2;
-  u1_0 = SpeedgoatCANOpen2Buses100us_P.Saturation_LowerSat;
-  u2_0 = SpeedgoatCANOpen2Buses100us_P.Saturation_UpperSat;
-  if (u0_0 > u2_0) {
-    SpeedgoatCANOpen2Buses100us_B.Saturation = u2_0;
-  } else if (u0_0 < u1_0) {
-    SpeedgoatCANOpen2Buses100us_B.Saturation = u1_0;
+  u0 = SpeedgoatCANOpen2Buses100us_B.Gain2;
+  csum = SpeedgoatCANOpen2Buses100us_P.Saturation_LowerSat;
+  cumRevIndex = SpeedgoatCANOpen2Buses100us_P.Saturation_UpperSat;
+  if (u0 > cumRevIndex) {
+    SpeedgoatCANOpen2Buses100us_B.Saturation = cumRevIndex;
+  } else if (u0 < csum) {
+    SpeedgoatCANOpen2Buses100us_B.Saturation = csum;
   } else {
-    SpeedgoatCANOpen2Buses100us_B.Saturation = u0_0;
+    SpeedgoatCANOpen2Buses100us_B.Saturation = u0;
   }
 
   /* End of Saturate: '<S36>/Saturation' */
@@ -1466,15 +1640,15 @@ static void SpeedgoatCANOpen2Buses100us_output0(void) /* Sample time: [0.0s, 0.0
     SpeedgoatCANOpen2Buses100us_B.Saturation;
 
   /* Delay: '<S36>/Delay' */
-  SpeedgoatCANOpen2Buses100us_B.Delay =
-    SpeedgoatCANOpen2Buses100us_DW.Delay_DSTATE[0];
+  SpeedgoatCANOpen2Buses100us_B.Delay_o =
+    SpeedgoatCANOpen2Buses100us_DW.Delay_DSTATE_f[0];
 
   /* DataTypeConversion: '<S36>/Data Type Conversion1' */
   SpeedgoatCANOpen2Buses100us_B.DataTypeConversion1 = (real32_T)
     SpeedgoatCANOpen2Buses100us_B.br_percent2;
 
   /* Sum: '<S36>/Sum1' */
-  SpeedgoatCANOpen2Buses100us_B.Sum1 = SpeedgoatCANOpen2Buses100us_B.Delay -
+  SpeedgoatCANOpen2Buses100us_B.Sum1 = SpeedgoatCANOpen2Buses100us_B.Delay_o -
     SpeedgoatCANOpen2Buses100us_B.DataTypeConversion1;
 
   /* Chart: '<S36>/Retract' */
@@ -1510,15 +1684,15 @@ static void SpeedgoatCANOpen2Buses100us_output0(void) /* Sample time: [0.0s, 0.0
     SpeedgoatCANOpen2Buses100us_B.Br_CurrentReq;
 
   /* Saturate: '<S36>/Saturation2' */
-  u0_0 = SpeedgoatCANOpen2Buses100us_B.Sum2;
-  u1_0 = SpeedgoatCANOpen2Buses100us_P.Saturation2_LowerSat;
-  u2_0 = SpeedgoatCANOpen2Buses100us_P.Saturation2_UpperSat;
-  if (u0_0 > u2_0) {
-    SpeedgoatCANOpen2Buses100us_B.Saturation2 = u2_0;
-  } else if (u0_0 < u1_0) {
-    SpeedgoatCANOpen2Buses100us_B.Saturation2 = u1_0;
+  u0 = SpeedgoatCANOpen2Buses100us_B.Sum2;
+  csum = SpeedgoatCANOpen2Buses100us_P.Saturation2_LowerSat;
+  cumRevIndex = SpeedgoatCANOpen2Buses100us_P.Saturation2_UpperSat;
+  if (u0 > cumRevIndex) {
+    SpeedgoatCANOpen2Buses100us_B.Saturation2 = cumRevIndex;
+  } else if (u0 < csum) {
+    SpeedgoatCANOpen2Buses100us_B.Saturation2 = csum;
   } else {
-    SpeedgoatCANOpen2Buses100us_B.Saturation2 = u0_0;
+    SpeedgoatCANOpen2Buses100us_B.Saturation2 = u0;
   }
 
   /* End of Saturate: '<S36>/Saturation2' */
@@ -1546,7 +1720,7 @@ static void SpeedgoatCANOpen2Buses100us_output0(void) /* Sample time: [0.0s, 0.0
   SpeedgoatCANOpen2Buses100us_B.CastToSingle2 =
     SpeedgoatCANOpen2Buses100us_B.VehSpeed_SI;
 
-  /* DataTypeConversion: '<S50>/Cast To Single2' */
+  /* DataTypeConversion: '<S55>/Cast To Single2' */
   tmp_0 = (real32_T)floor(SpeedgoatCANOpen2Buses100us_B.BrakeCtrl_n);
   if (rtIsNaNF(tmp_0) || rtIsInfF(tmp_0)) {
     tmp_0 = 0.0F;
@@ -1557,7 +1731,7 @@ static void SpeedgoatCANOpen2Buses100us_output0(void) /* Sample time: [0.0s, 0.0
   SpeedgoatCANOpen2Buses100us_B.BrakeCtrl_k = (uint8_T)(tmp_0 < 0.0F ? (int32_T)
     (uint8_T)-(int8_T)(uint8_T)-tmp_0 : (int32_T)(uint8_T)tmp_0);
 
-  /* End of DataTypeConversion: '<S50>/Cast To Single2' */
+  /* End of DataTypeConversion: '<S55>/Cast To Single2' */
 
   /* Chart: '<S29>/DecisionBrakeCtrl' */
   SpeedgoatCANOpen2Buses100us_DW.sfEvent_e = -1;
@@ -1606,7 +1780,7 @@ static void SpeedgoatCANOpen2Buses100us_output0(void) /* Sample time: [0.0s, 0.0
   SpeedgoatCANOpen2Buses100us_B.DunkD_TPDO_BrakeCtrl =
     SpeedgoatCANOpen2Buses100us_B.BrakeCtrl_b4;
 
-  /* DataTypeConversion: '<S50>/Cast To Single4' */
+  /* DataTypeConversion: '<S55>/Cast To Single4' */
   tmp_0 = (real32_T)floor(SpeedgoatCANOpen2Buses100us_B.BrakesMotor_CurrentInit);
   if (rtIsNaNF(tmp_0) || rtIsInfF(tmp_0)) {
     tmp_0 = 0.0F;
@@ -1617,7 +1791,7 @@ static void SpeedgoatCANOpen2Buses100us_output0(void) /* Sample time: [0.0s, 0.0
   SpeedgoatCANOpen2Buses100us_B.CurrentInit = (int16_T)(tmp_0 < 0.0F ? (int32_T)
     (int16_T)-(int16_T)(uint16_T)-tmp_0 : (int32_T)(int16_T)(uint16_T)tmp_0);
 
-  /* End of DataTypeConversion: '<S50>/Cast To Single4' */
+  /* End of DataTypeConversion: '<S55>/Cast To Single4' */
 
   /* Gain: '<S29>/Gain5' */
   SpeedgoatCANOpen2Buses100us_B.BrakesMotor_CurrentInitmA =
@@ -1641,18 +1815,18 @@ static void SpeedgoatCANOpen2Buses100us_output0(void) /* Sample time: [0.0s, 0.0
   /* End of Switch: '<S31>/Switch3' */
 
   /* DataTypeConversion: '<S23>/Data Type Conversion36' */
-  u1_0 = floor(SpeedgoatCANOpen2Buses100us_B.Switch3);
-  if (rtIsNaN(u1_0) || rtIsInf(u1_0)) {
-    u1_0 = 0.0;
+  u0 = floor(SpeedgoatCANOpen2Buses100us_B.Switch3);
+  if (rtIsNaN(u0) || rtIsInf(u0)) {
+    u0 = 0.0;
   } else {
-    u1_0 = fmod(u1_0, 4.294967296E+9);
+    u0 = fmod(u0, 4.294967296E+9);
   }
 
-  SpeedgoatCANOpen2Buses100us_B.DunkD_TPDO_DesiredCurrent = u1_0 < 0.0 ?
-    -(int32_T)(uint32_T)-u1_0 : (int32_T)(uint32_T)u1_0;
+  SpeedgoatCANOpen2Buses100us_B.DunkD_TPDO_DesiredCurrent = u0 < 0.0 ? -(int32_T)
+    (uint32_T)-u0 : (int32_T)(uint32_T)u0;
 
   /* End of DataTypeConversion: '<S23>/Data Type Conversion36' */
-  /* DataTypeConversion: '<S50>/Cast To Single1' */
+  /* DataTypeConversion: '<S55>/Cast To Single1' */
   tmp_0 = (real32_T)floor(SpeedgoatCANOpen2Buses100us_B.ClearError_k);
   if (rtIsNaNF(tmp_0) || rtIsInfF(tmp_0)) {
     tmp_0 = 0.0F;
@@ -1663,13 +1837,13 @@ static void SpeedgoatCANOpen2Buses100us_output0(void) /* Sample time: [0.0s, 0.0
   SpeedgoatCANOpen2Buses100us_B.ClearError_m = (uint8_T)(tmp_0 < 0.0F ? (int32_T)
     (uint8_T)-(int8_T)(uint8_T)-tmp_0 : (int32_T)(uint8_T)tmp_0);
 
-  /* End of DataTypeConversion: '<S50>/Cast To Single1' */
+  /* End of DataTypeConversion: '<S55>/Cast To Single1' */
 
   /* DataTypeConversion: '<S23>/Data Type Conversion32' */
   SpeedgoatCANOpen2Buses100us_B.DunkD_TPDO_ClearError =
     SpeedgoatCANOpen2Buses100us_B.ClearError_m;
 
-  /* DataTypeConversion: '<S50>/Cast To Single' */
+  /* DataTypeConversion: '<S55>/Cast To Single' */
   tmp_0 = (real32_T)floor(SpeedgoatCANOpen2Buses100us_B.DeviceMode_b);
   if (rtIsNaNF(tmp_0) || rtIsInfF(tmp_0)) {
     tmp_0 = 0.0F;
@@ -1680,13 +1854,13 @@ static void SpeedgoatCANOpen2Buses100us_output0(void) /* Sample time: [0.0s, 0.0
   SpeedgoatCANOpen2Buses100us_B.DeviceMode_g = (uint8_T)(tmp_0 < 0.0F ? (int32_T)
     (uint8_T)-(int8_T)(uint8_T)-tmp_0 : (int32_T)(uint8_T)tmp_0);
 
-  /* End of DataTypeConversion: '<S50>/Cast To Single' */
+  /* End of DataTypeConversion: '<S55>/Cast To Single' */
 
   /* DataTypeConversion: '<S23>/Data Type Conversion34' */
   SpeedgoatCANOpen2Buses100us_B.DunkD_TPDO_DeviceMode =
     SpeedgoatCANOpen2Buses100us_B.DeviceMode_g;
 
-  /* DataTypeConversion: '<S50>/Cast To Single3' */
+  /* DataTypeConversion: '<S55>/Cast To Single3' */
   tmp_0 = (real32_T)floor(SpeedgoatCANOpen2Buses100us_B.PowerEnable_au);
   if (rtIsNaNF(tmp_0) || rtIsInfF(tmp_0)) {
     tmp_0 = 0.0F;
@@ -1697,7 +1871,7 @@ static void SpeedgoatCANOpen2Buses100us_output0(void) /* Sample time: [0.0s, 0.0
   SpeedgoatCANOpen2Buses100us_B.PowerEnable_p = (uint8_T)(tmp_0 < 0.0F ?
     (int32_T)(uint8_T)-(int8_T)(uint8_T)-tmp_0 : (int32_T)(uint8_T)tmp_0);
 
-  /* End of DataTypeConversion: '<S50>/Cast To Single3' */
+  /* End of DataTypeConversion: '<S55>/Cast To Single3' */
 
   /* DataTypeConversion: '<S23>/Data Type Conversion35' */
   SpeedgoatCANOpen2Buses100us_B.DunkD_TPDO_PowerEnable =
@@ -1716,12 +1890,303 @@ static void SpeedgoatCANOpen2Buses100us_output0(void) /* Sample time: [0.0s, 0.0
     (&SpeedgoatCANOpen2Buses100us_B.DunkC_ActualCurrent,
      &SpeedgoatCANOpen2Buses100us_B.DunkC_ActualVelocity);
 
+  /* Gain: '<S5>/Gain1' */
+  SpeedgoatCANOpen2Buses100us_B.DunkC_ActualVelocity_Inv = (int64_T)
+    SpeedgoatCANOpen2Buses100us_P.Gain1_Gain_j *
+    SpeedgoatCANOpen2Buses100us_B.DunkC_ActualVelocity;
+
   /* Gain: '<S5>/Gain' */
   SpeedgoatCANOpen2Buses100us_B.DunkC_ActualCurrent_Inv = (int64_T)
     SpeedgoatCANOpen2Buses100us_P.Gain_Gain *
     SpeedgoatCANOpen2Buses100us_B.DunkC_ActualCurrent;
 
-  /* DataTypeConversion: '<S55>/Cast To Single1' */
+  /* RateTransition: '<S43>/TmpRTBAtProduct2Inport1' */
+  rtw_xpc_mutex_take
+    (SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtProduct2Inport1_d0_SEMA);
+  SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtProduct2Inport1_RDBuf =
+    SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtProduct2Inport1_LstBufW;
+  rtw_xpc_mutex_give
+    (SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtProduct2Inport1_d0_SEMA);
+  SpeedgoatCANOpen2Buses100us_B.TmpRTBAtProduct2Inport1 =
+    SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtProduct2Inport1_Buf[SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtProduct2Inport1_RDBuf];
+
+  /* RateTransition: '<S43>/TmpRTBAtProduct1Inport1' */
+  rtw_xpc_mutex_take
+    (SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtProduct1Inport1_d0_SEMA);
+  SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtProduct1Inport1_RDBuf =
+    SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtProduct1Inport1_LstBufW;
+  rtw_xpc_mutex_give
+    (SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtProduct1Inport1_d0_SEMA);
+  SpeedgoatCANOpen2Buses100us_B.TmpRTBAtProduct1Inport1 =
+    SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtProduct1Inport1_Buf[SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtProduct1Inport1_RDBuf];
+
+  /* RateTransition: '<S43>/TiltingAngle_stepreqf [deg]' */
+  rtw_xpc_mutex_take
+    (SpeedgoatCANOpen2Buses100us_DW.TiltingAngle_stepreqfdeg_d0_SEM);
+  SpeedgoatCANOpen2Buses100us_DW.TiltingAngle_stepreqfdeg_RDBuf =
+    SpeedgoatCANOpen2Buses100us_DW.TiltingAngle_stepreqfdeg_LstBuf;
+  rtw_xpc_mutex_give
+    (SpeedgoatCANOpen2Buses100us_DW.TiltingAngle_stepreqfdeg_d0_SEM);
+  SpeedgoatCANOpen2Buses100us_B.TiltingAngle_stepreqfdeg =
+    SpeedgoatCANOpen2Buses100us_DW.TiltingAngle_stepreqfdeg_Buf[SpeedgoatCANOpen2Buses100us_DW.TiltingAngle_stepreqfdeg_RDBuf];
+
+  /* S-Function (RPDOs_from_Inclinometer): '<S9>/RPDOs from Inclinometer ' */
+  RPDOs_from_Inclinometer_Outputs_wrapper(&SpeedgoatCANOpen2Buses100us_B.xS,
+    &SpeedgoatCANOpen2Buses100us_B.xH, &SpeedgoatCANOpen2Buses100us_B.xL,
+    &SpeedgoatCANOpen2Buses100us_B.yS, &SpeedgoatCANOpen2Buses100us_B.yH,
+    &SpeedgoatCANOpen2Buses100us_B.yL);
+
+  /* MATLAB Function: '<S9>/Conv' */
+  xAngleH = SpeedgoatCANOpen2Buses100us_B.xH;
+  yAngleH = SpeedgoatCANOpen2Buses100us_B.yH;
+  yAngleL = SpeedgoatCANOpen2Buses100us_B.yL;
+  if (SpeedgoatCANOpen2Buses100us_B.xS == 0) {
+    aux = 1;
+  } else {
+    aux = -1;
+  }
+
+  if (SpeedgoatCANOpen2Buses100us_B.yS == 0) {
+    aux_ySign = 1;
+  } else {
+    aux_ySign = -1;
+  }
+
+  SpeedgoatCANOpen2Buses1_dec2hex(SpeedgoatCANOpen2Buses100us_B.xL, c_data,
+    c_size);
+  x = SpeedgoatCANOpen2Bus_str2double(c_data, c_size);
+  SpeedgoatCANOpen2Buses1_dec2hex(xAngleH, c_data, c_size);
+  tmp = SpeedgoatCANOpen2Bus_str2double(c_data, c_size);
+  u0 = x.re;
+  csum = x.im;
+  if (csum == 0.0) {
+    u0 /= 100.0;
+  } else if (u0 == 0.0) {
+    u0 = 0.0;
+  } else {
+    u0 /= 100.0;
+  }
+
+  cumRevIndex = (tmp.re + u0) * (real_T)aux;
+  SpeedgoatCANOpen2Buses1_dec2hex(yAngleL, c_data, c_size);
+  x = SpeedgoatCANOpen2Bus_str2double(c_data, c_size);
+  SpeedgoatCANOpen2Buses1_dec2hex(yAngleH, c_data, c_size);
+  tmp = SpeedgoatCANOpen2Bus_str2double(c_data, c_size);
+  u0 = x.re;
+  csum = x.im;
+  if (csum == 0.0) {
+    u0 /= 100.0;
+  } else if (u0 == 0.0) {
+    u0 = 0.0;
+  } else {
+    u0 /= 100.0;
+  }
+
+  csum = (tmp.re + u0) * (real_T)aux_ySign;
+  SpeedgoatCANOpen2Buses100us_B.xAngle = cumRevIndex;
+  SpeedgoatCANOpen2Buses100us_B.yAngle = csum;
+
+  /* End of MATLAB Function: '<S9>/Conv' */
+
+  /* Sum: '<S32>/Sum' incorporates:
+   *  Constant: '<S32>/Offset'
+   */
+  SpeedgoatCANOpen2Buses100us_B.Fb_Angledeg =
+    SpeedgoatCANOpen2Buses100us_B.yAngle +
+    SpeedgoatCANOpen2Buses100us_P.Offset_Value;
+
+  /* Saturate: '<S32>/Saturation' */
+  u0 = SpeedgoatCANOpen2Buses100us_B.Fb_Angledeg;
+  csum = SpeedgoatCANOpen2Buses100us_P.Saturation_LowerSat_f;
+  cumRevIndex = SpeedgoatCANOpen2Buses100us_P.Saturation_UpperSat_i;
+  if (u0 > cumRevIndex) {
+    SpeedgoatCANOpen2Buses100us_B.Saturation_a = cumRevIndex;
+  } else if (u0 < csum) {
+    SpeedgoatCANOpen2Buses100us_B.Saturation_a = csum;
+  } else {
+    SpeedgoatCANOpen2Buses100us_B.Saturation_a = u0;
+  }
+
+  /* End of Saturate: '<S32>/Saturation' */
+
+  /* ZeroOrderHold: '<S32>/Zero-Order Hold3' */
+  SpeedgoatCANOpen2Buses100us_B.ZeroOrderHold3 =
+    SpeedgoatCANOpen2Buses100us_B.Saturation_a;
+
+  /* MATLABSystem: '<S32>/Moving Average' */
+  u0 = SpeedgoatCANOpen2Buses100us_B.ZeroOrderHold3;
+  obj = &SpeedgoatCANOpen2Buses100us_DW.obj_b;
+  obj_0 = obj;
+  if (obj_0->TunablePropsChanged) {
+    obj_0->TunablePropsChanged = false;
+  }
+
+  obj_1 = obj->pStatistic;
+  if (obj_1->isInitialized != 1) {
+    obj_2 = obj_1;
+    obj_3 = obj_2;
+    obj_3->isSetupComplete = false;
+    obj_3->isInitialized = 1;
+    obj_4 = obj_3;
+    obj_4->pCumSum = 0.0;
+    obj_4->pCumSumRev[0] = 0.0;
+    obj_4->pCumSumRev[1] = 0.0;
+    obj_4->pCumSumRev[2] = 0.0;
+    obj_4->pCumSumRev[3] = 0.0;
+    obj_4->pCumSumRev[4] = 0.0;
+    obj_4->pCumSumRev[5] = 0.0;
+    obj_4->pCumSumRev[6] = 0.0;
+    obj_4->pCumSumRev[7] = 0.0;
+    obj_4->pCumSumRev[8] = 0.0;
+    obj_4->pCumRevIndex = 1.0;
+    obj_3->isSetupComplete = true;
+    obj_2->pCumSum = 0.0;
+    obj_2->pCumSumRev[0] = 0.0;
+    obj_2->pCumSumRev[1] = 0.0;
+    obj_2->pCumSumRev[2] = 0.0;
+    obj_2->pCumSumRev[3] = 0.0;
+    obj_2->pCumSumRev[4] = 0.0;
+    obj_2->pCumSumRev[5] = 0.0;
+    obj_2->pCumSumRev[6] = 0.0;
+    obj_2->pCumSumRev[7] = 0.0;
+    obj_2->pCumSumRev[8] = 0.0;
+    obj_2->pCumRevIndex = 1.0;
+  }
+
+  cumRevIndex = obj_1->pCumRevIndex;
+  csum = obj_1->pCumSum;
+  csumrev[0] = obj_1->pCumSumRev[0];
+  csumrev[1] = obj_1->pCumSumRev[1];
+  csumrev[2] = obj_1->pCumSumRev[2];
+  csumrev[3] = obj_1->pCumSumRev[3];
+  csumrev[4] = obj_1->pCumSumRev[4];
+  csumrev[5] = obj_1->pCumSumRev[5];
+  csumrev[6] = obj_1->pCumSumRev[6];
+  csumrev[7] = obj_1->pCumSumRev[7];
+  csumrev[8] = obj_1->pCumSumRev[8];
+  csum += u0;
+  z = csumrev[(int32_T)cumRevIndex - 1] + csum;
+  csumrev[(int32_T)cumRevIndex - 1] = u0;
+  if (cumRevIndex != 9.0) {
+    cumRevIndex++;
+  } else {
+    cumRevIndex = 1.0;
+    csum = 0.0;
+    csumrev[7] += csumrev[8];
+    csumrev[6] += csumrev[7];
+    csumrev[5] += csumrev[6];
+    csumrev[4] += csumrev[5];
+    csumrev[3] += csumrev[4];
+    csumrev[2] += csumrev[3];
+    csumrev[1] += csumrev[2];
+    csumrev[0] += csumrev[1];
+  }
+
+  u0 = z / 10.0;
+  obj_1->pCumSum = csum;
+  obj_1->pCumSumRev[0] = csumrev[0];
+  obj_1->pCumSumRev[1] = csumrev[1];
+  obj_1->pCumSumRev[2] = csumrev[2];
+  obj_1->pCumSumRev[3] = csumrev[3];
+  obj_1->pCumSumRev[4] = csumrev[4];
+  obj_1->pCumSumRev[5] = csumrev[5];
+  obj_1->pCumSumRev[6] = csumrev[6];
+  obj_1->pCumSumRev[7] = csumrev[7];
+  obj_1->pCumSumRev[8] = csumrev[8];
+  obj_1->pCumRevIndex = cumRevIndex;
+  SpeedgoatCANOpen2Buses100us_B.Fb_Angle_Filtdeg = u0;
+
+  /* End of MATLABSystem: '<S32>/Moving Average' */
+
+  /* Sum: '<S43>/Sum1' */
+  SpeedgoatCANOpen2Buses100us_B.e =
+    SpeedgoatCANOpen2Buses100us_B.TiltingAngle_stepreqfdeg -
+    SpeedgoatCANOpen2Buses100us_B.Fb_Angle_Filtdeg;
+
+  /* Product: '<S43>/Product1' */
+  SpeedgoatCANOpen2Buses100us_B.Product1 = (real_T)
+    SpeedgoatCANOpen2Buses100us_B.TmpRTBAtProduct1Inport1 *
+    SpeedgoatCANOpen2Buses100us_B.e;
+
+  /* Gain: '<S43>/Proportional  Gain' */
+  SpeedgoatCANOpen2Buses100us_B.ProportionalGain =
+    SpeedgoatCANOpen2Buses100us_P.PID_ctrl1_Kp *
+    SpeedgoatCANOpen2Buses100us_B.Product1;
+
+  /* MATLABSystem: '<S43>/Moving Average2' */
+  u0 = SpeedgoatCANOpen2Buses100us_B.ProportionalGain;
+  obj_5 = &SpeedgoatCANOpen2Buses100us_DW.obj;
+  obj_6 = obj_5;
+  if (obj_6->TunablePropsChanged) {
+    obj_6->TunablePropsChanged = false;
+  }
+
+  obj_7 = obj_5->pStatistic;
+  if (obj_7->isInitialized != 1) {
+    obj_7->isSetupComplete = false;
+    obj_7->isInitialized = 1;
+    obj_7->isSetupComplete = true;
+  }
+
+  SpeedgoatCANOpen2Buses100us_B.Proportional = u0;
+
+  /* End of MATLABSystem: '<S43>/Moving Average2' */
+
+  /* RateTransition: '<S43>/TmpRTBAtSum4Inport2' */
+  rtw_xpc_mutex_take
+    (SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtSum4Inport2_d0_SEMAPHOR);
+  SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtSum4Inport2_RDBuf =
+    SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtSum4Inport2_LstBufWR;
+  rtw_xpc_mutex_give
+    (SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtSum4Inport2_d0_SEMAPHOR);
+  SpeedgoatCANOpen2Buses100us_B.TmpRTBAtSum4Inport2 =
+    SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtSum4Inport2_Buf[SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtSum4Inport2_RDBuf];
+
+  /* Sum: '<S43>/Sum4' */
+  SpeedgoatCANOpen2Buses100us_B.Sum4 =
+    SpeedgoatCANOpen2Buses100us_B.Proportional +
+    SpeedgoatCANOpen2Buses100us_B.TmpRTBAtSum4Inport2;
+
+  /* Product: '<S43>/Product2' */
+  SpeedgoatCANOpen2Buses100us_B.Product2 = (real_T)
+    SpeedgoatCANOpen2Buses100us_B.TmpRTBAtProduct2Inport1 *
+    SpeedgoatCANOpen2Buses100us_B.Sum4;
+
+  /* Gain: '<S43>/c1' */
+  SpeedgoatCANOpen2Buses100us_B.c1 = SpeedgoatCANOpen2Buses100us_P.c1_Gain *
+    SpeedgoatCANOpen2Buses100us_B.Product2;
+
+  /* Gain: '<S32>/Gain1' */
+  SpeedgoatCANOpen2Buses100us_B.LeftTiltMotor_SpeedReqrpm =
+    SpeedgoatCANOpen2Buses100us_P.Gain1_Gain_k *
+    SpeedgoatCANOpen2Buses100us_B.c1;
+
+  /* Switch: '<S31>/Switch1' incorporates:
+   *  Constant: '<S31>/Constant'
+   */
+  if (SpeedgoatCANOpen2Buses100us_B.Compare) {
+    SpeedgoatCANOpen2Buses100us_B.Switch1 =
+      SpeedgoatCANOpen2Buses100us_B.LeftTiltMotor_SpeedReqrpm;
+  } else {
+    SpeedgoatCANOpen2Buses100us_B.Switch1 =
+      SpeedgoatCANOpen2Buses100us_P.Constant_Value;
+  }
+
+  /* End of Switch: '<S31>/Switch1' */
+
+  /* DataTypeConversion: '<S23>/Data Type Conversion31' */
+  u0 = floor(SpeedgoatCANOpen2Buses100us_B.Switch1);
+  if (rtIsNaN(u0) || rtIsInf(u0)) {
+    u0 = 0.0;
+  } else {
+    u0 = fmod(u0, 4.294967296E+9);
+  }
+
+  SpeedgoatCANOpen2Buses100us_B.DunkC_TPDO_DesiredCurrent = u0 < 0.0 ? -(int32_T)
+    (uint32_T)-u0 : (int32_T)(uint32_T)u0;
+
+  /* End of DataTypeConversion: '<S23>/Data Type Conversion31' */
+  /* DataTypeConversion: '<S60>/Cast To Single1' */
   tmp_0 = (real32_T)floor(SpeedgoatCANOpen2Buses100us_B.ClearError_h);
   if (rtIsNaNF(tmp_0) || rtIsInfF(tmp_0)) {
     tmp_0 = 0.0F;
@@ -1732,13 +2197,13 @@ static void SpeedgoatCANOpen2Buses100us_output0(void) /* Sample time: [0.0s, 0.0
   SpeedgoatCANOpen2Buses100us_B.ClearError_j = (uint8_T)(tmp_0 < 0.0F ? (int32_T)
     (uint8_T)-(int8_T)(uint8_T)-tmp_0 : (int32_T)(uint8_T)tmp_0);
 
-  /* End of DataTypeConversion: '<S55>/Cast To Single1' */
+  /* End of DataTypeConversion: '<S60>/Cast To Single1' */
 
   /* DataTypeConversion: '<S23>/Data Type Conversion27' */
   SpeedgoatCANOpen2Buses100us_B.DunkC_TPDO_ClearError =
     SpeedgoatCANOpen2Buses100us_B.ClearError_j;
 
-  /* DataTypeConversion: '<S55>/Cast To Single' */
+  /* DataTypeConversion: '<S60>/Cast To Single' */
   tmp_0 = (real32_T)floor(SpeedgoatCANOpen2Buses100us_B.DeviceMode_f);
   if (rtIsNaNF(tmp_0) || rtIsInfF(tmp_0)) {
     tmp_0 = 0.0F;
@@ -1749,13 +2214,13 @@ static void SpeedgoatCANOpen2Buses100us_output0(void) /* Sample time: [0.0s, 0.0
   SpeedgoatCANOpen2Buses100us_B.DeviceMode_h = (uint8_T)(tmp_0 < 0.0F ? (int32_T)
     (uint8_T)-(int8_T)(uint8_T)-tmp_0 : (int32_T)(uint8_T)tmp_0);
 
-  /* End of DataTypeConversion: '<S55>/Cast To Single' */
+  /* End of DataTypeConversion: '<S60>/Cast To Single' */
 
   /* DataTypeConversion: '<S23>/Data Type Conversion29' */
   SpeedgoatCANOpen2Buses100us_B.DunkC_TPDO_DeviceMode =
     SpeedgoatCANOpen2Buses100us_B.DeviceMode_h;
 
-  /* DataTypeConversion: '<S55>/Cast To Single3' */
+  /* DataTypeConversion: '<S60>/Cast To Single3' */
   tmp_0 = (real32_T)floor(SpeedgoatCANOpen2Buses100us_B.PowerEnable_m);
   if (rtIsNaNF(tmp_0) || rtIsInfF(tmp_0)) {
     tmp_0 = 0.0F;
@@ -1766,13 +2231,13 @@ static void SpeedgoatCANOpen2Buses100us_output0(void) /* Sample time: [0.0s, 0.0
   SpeedgoatCANOpen2Buses100us_B.PowerEnable_ar = (uint8_T)(tmp_0 < 0.0F ?
     (int32_T)(uint8_T)-(int8_T)(uint8_T)-tmp_0 : (int32_T)(uint8_T)tmp_0);
 
-  /* End of DataTypeConversion: '<S55>/Cast To Single3' */
+  /* End of DataTypeConversion: '<S60>/Cast To Single3' */
 
   /* DataTypeConversion: '<S23>/Data Type Conversion30' */
   SpeedgoatCANOpen2Buses100us_B.DunkC_TPDO_PowerEnable =
     SpeedgoatCANOpen2Buses100us_B.PowerEnable_ar;
 
-  /* DataTypeConversion: '<S55>/Cast To Single2' */
+  /* DataTypeConversion: '<S60>/Cast To Single2' */
   tmp_0 = (real32_T)floor(SpeedgoatCANOpen2Buses100us_B.BrakeCtrl_m);
   if (rtIsNaNF(tmp_0) || rtIsInfF(tmp_0)) {
     tmp_0 = 0.0F;
@@ -1783,176 +2248,11 @@ static void SpeedgoatCANOpen2Buses100us_output0(void) /* Sample time: [0.0s, 0.0
   SpeedgoatCANOpen2Buses100us_B.BrakeCtrl_bj = (uint8_T)(tmp_0 < 0.0F ? (int32_T)
     (uint8_T)-(int8_T)(uint8_T)-tmp_0 : (int32_T)(uint8_T)tmp_0);
 
-  /* End of DataTypeConversion: '<S55>/Cast To Single2' */
+  /* End of DataTypeConversion: '<S60>/Cast To Single2' */
 
   /* DataTypeConversion: '<S23>/Data Type Conversion28' */
   SpeedgoatCANOpen2Buses100us_B.DunkC_TPDO_BrakeCtrl =
     SpeedgoatCANOpen2Buses100us_B.BrakeCtrl_bj;
-
-  /* Sin: '<S32>/Sine Wave1' */
-  SpeedgoatCANOpen2Buses100us_B.TiltingAngledeg = sin
-    (SpeedgoatCANOpen2Buses100us_P.SineWave1_Freq_d *
-     SpeedgoatCANOpen2Buses100us_M->Timing.t[0] +
-     SpeedgoatCANOpen2Buses100us_P.SineWave1_Phase_m) *
-    SpeedgoatCANOpen2Buses100us_P.SineWave1_Amp_n +
-    SpeedgoatCANOpen2Buses100us_P.SineWave1_Bias_n;
-
-  /* DataTypeConversion: '<S26>/Cast To Single' */
-  SpeedgoatCANOpen2Buses100us_B.CastToSingle_e =
-    SpeedgoatCANOpen2Buses100us_B.Joystick_LatCmd;
-
-  /* Gain: '<S30>/dem' */
-  SpeedgoatCANOpen2Buses100us_B.dem = SpeedgoatCANOpen2Buses100us_P.dem_Gain *
-    SpeedgoatCANOpen2Buses100us_B.CastToSingle_e;
-
-  /* Gain: '<S30>/Robotics Convention' */
-  SpeedgoatCANOpen2Buses100us_B.DirectionReq =
-    SpeedgoatCANOpen2Buses100us_P.RoboticsConvention_Gain *
-    SpeedgoatCANOpen2Buses100us_B.dem;
-
-  /* Gain: '<S30>/degree2rad' */
-  SpeedgoatCANOpen2Buses100us_B.SteeringAnglerad =
-    SpeedgoatCANOpen2Buses100us_P.degree2rad_Gain *
-    SpeedgoatCANOpen2Buses100us_B.DirectionReq;
-
-  /* Gain: '<S32>/n' */
-  SpeedgoatCANOpen2Buses100us_B.n = SpeedgoatCANOpen2Buses100us_P.n_Gain *
-    SpeedgoatCANOpen2Buses100us_B.SteeringAnglerad;
-
-  /* DataTypeConversion: '<S32>/Cast To Single' */
-  SpeedgoatCANOpen2Buses100us_B.CastToSingle = SpeedgoatCANOpen2Buses100us_B.n;
-
-  /* DataTypeConversion: '<S32>/Cast To Single1' */
-  SpeedgoatCANOpen2Buses100us_B.CastToSingle1 =
-    SpeedgoatCANOpen2Buses100us_B.CastToSingle2;
-
-  /* MATLAB Function: '<S32>/ServoTilting' */
-  SpeedgoatCANOpen2Buses100us_B.TiltingAngle =
-    SpeedgoatCANOpen2Buses100us_B.CastToSingle1 *
-    SpeedgoatCANOpen2Buses100us_B.CastToSingle1 / 10.05525 * sin
-    (SpeedgoatCANOpen2Buses100us_B.CastToSingle);
-  SpeedgoatCANOpen2Buses100us_B.TiltingAngle = atan
-    (SpeedgoatCANOpen2Buses100us_B.TiltingAngle);
-  SpeedgoatCANOpen2Buses100us_B.TiltingAngle =
-    SpeedgoatCANOpen2Buses100us_B.TiltingAngle * 180.0 / 3.1415926535897931;
-
-  /* ManualSwitch: '<S32>/Manual Switch3' */
-  if (SpeedgoatCANOpen2Buses100us_P.ManualSwitch3_CurrentSetting == 1) {
-    SpeedgoatCANOpen2Buses100us_B.ManualSwitch3 =
-      SpeedgoatCANOpen2Buses100us_B.TiltingAngledeg;
-  } else {
-    SpeedgoatCANOpen2Buses100us_B.ManualSwitch3 =
-      SpeedgoatCANOpen2Buses100us_B.TiltingAngle;
-  }
-
-  /* End of ManualSwitch: '<S32>/Manual Switch3' */
-
-  /* Gain: '<S32>/degree2m' */
-  SpeedgoatCANOpen2Buses100us_B.PosReqm =
-    SpeedgoatCANOpen2Buses100us_P.degree2m_Gain *
-    SpeedgoatCANOpen2Buses100us_B.ManualSwitch3;
-
-  /* Product: '<S41>/Product1' */
-  SpeedgoatCANOpen2Buses100us_B.Product1 = (real_T)
-    SpeedgoatCANOpen2Buses100us_B.Compare *
-    SpeedgoatCANOpen2Buses100us_B.PosReqm;
-
-  /* RateTransition: '<S41>/DispLeft [m] filt' */
-  rtw_xpc_mutex_take(SpeedgoatCANOpen2Buses100us_DW.DispLeftmfilt_d0_SEMAPHORE);
-  SpeedgoatCANOpen2Buses100us_DW.DispLeftmfilt_RDBuf =
-    SpeedgoatCANOpen2Buses100us_DW.DispLeftmfilt_LstBufWR;
-  rtw_xpc_mutex_give(SpeedgoatCANOpen2Buses100us_DW.DispLeftmfilt_d0_SEMAPHORE);
-  SpeedgoatCANOpen2Buses100us_B.DispLeftmfilt =
-    SpeedgoatCANOpen2Buses100us_DW.DispLeftmfilt_Buf[SpeedgoatCANOpen2Buses100us_DW.DispLeftmfilt_RDBuf];
-
-  /* Product: '<S41>/Product' */
-  SpeedgoatCANOpen2Buses100us_B.Product = (real_T)
-    SpeedgoatCANOpen2Buses100us_B.Compare *
-    SpeedgoatCANOpen2Buses100us_B.DispLeftmfilt;
-
-  /* Sum: '<S41>/Sum1' */
-  SpeedgoatCANOpen2Buses100us_B.e = SpeedgoatCANOpen2Buses100us_B.Product1 -
-    SpeedgoatCANOpen2Buses100us_B.Product;
-
-  /* Gain: '<S41>/Proportional  Gain' */
-  SpeedgoatCANOpen2Buses100us_B.Proportional =
-    SpeedgoatCANOpen2Buses100us_P.PID_ctrl_Kp * SpeedgoatCANOpen2Buses100us_B.e;
-
-  /* DiscreteIntegrator: '<S41>/Discrete-Time Integrator' */
-  SpeedgoatCANOpen2Buses100us_B.Integral =
-    SpeedgoatCANOpen2Buses100us_DW.DiscreteTimeIntegrator_DSTATE;
-
-  /* Gain: '<S41>/Derivative Gain' */
-  SpeedgoatCANOpen2Buses100us_B.DerivativeGain =
-    SpeedgoatCANOpen2Buses100us_P.PID_ctrl_Kd * SpeedgoatCANOpen2Buses100us_B.e;
-
-  /* DiscreteIntegrator: '<S41>/Discrete-Time Integrator1' */
-  SpeedgoatCANOpen2Buses100us_B.DiscreteTimeIntegrator1 =
-    SpeedgoatCANOpen2Buses100us_DW.DiscreteTimeIntegrator1_DSTATE;
-
-  /* Sum: '<S41>/Sum3' */
-  SpeedgoatCANOpen2Buses100us_B.Sum3 =
-    SpeedgoatCANOpen2Buses100us_B.DerivativeGain -
-    SpeedgoatCANOpen2Buses100us_B.DiscreteTimeIntegrator1;
-
-  /* Gain: '<S41>/FilterOrder' */
-  SpeedgoatCANOpen2Buses100us_B.Derivative =
-    SpeedgoatCANOpen2Buses100us_P.PID_ctrl_N *
-    SpeedgoatCANOpen2Buses100us_B.Sum3;
-
-  /* Sum: '<S41>/Sum4' */
-  SpeedgoatCANOpen2Buses100us_B.Sum4 =
-    (SpeedgoatCANOpen2Buses100us_B.Proportional +
-     SpeedgoatCANOpen2Buses100us_B.Integral) +
-    SpeedgoatCANOpen2Buses100us_B.Derivative;
-
-  /* Saturate: '<S41>/Saturation' */
-  u1_0 = -SpeedgoatCANOpen2Buses100us_P.PID_ctrl_Req_lim;
-  u0_0 = SpeedgoatCANOpen2Buses100us_B.Sum4;
-  u2_0 = SpeedgoatCANOpen2Buses100us_P.PID_ctrl_Req_lim;
-  if (u0_0 > u2_0) {
-    SpeedgoatCANOpen2Buses100us_B.Saturation_j = u2_0;
-  } else if (u0_0 < u1_0) {
-    SpeedgoatCANOpen2Buses100us_B.Saturation_j = u1_0;
-  } else {
-    SpeedgoatCANOpen2Buses100us_B.Saturation_j = u0_0;
-  }
-
-  /* End of Saturate: '<S41>/Saturation' */
-
-  /* Product: '<S41>/Product2' */
-  SpeedgoatCANOpen2Buses100us_B.Product2 = (real_T)
-    SpeedgoatCANOpen2Buses100us_B.Compare *
-    SpeedgoatCANOpen2Buses100us_B.Saturation_j;
-
-  /* Gain: '<S41>/c1' */
-  SpeedgoatCANOpen2Buses100us_B.c1 = SpeedgoatCANOpen2Buses100us_P.c1_Gain *
-    SpeedgoatCANOpen2Buses100us_B.Product2;
-
-  /* Switch: '<S31>/Switch1' incorporates:
-   *  Constant: '<S31>/Constant'
-   */
-  if (SpeedgoatCANOpen2Buses100us_B.Compare) {
-    SpeedgoatCANOpen2Buses100us_B.Switch1 = SpeedgoatCANOpen2Buses100us_B.c1;
-  } else {
-    SpeedgoatCANOpen2Buses100us_B.Switch1 =
-      SpeedgoatCANOpen2Buses100us_P.Constant_Value;
-  }
-
-  /* End of Switch: '<S31>/Switch1' */
-
-  /* DataTypeConversion: '<S23>/Data Type Conversion31' */
-  u1_0 = floor(SpeedgoatCANOpen2Buses100us_B.Switch1);
-  if (rtIsNaN(u1_0) || rtIsInf(u1_0)) {
-    u1_0 = 0.0;
-  } else {
-    u1_0 = fmod(u1_0, 4.294967296E+9);
-  }
-
-  SpeedgoatCANOpen2Buses100us_B.DunkC_TPDO_DesiredCurrent = u1_0 < 0.0 ?
-    -(int32_T)(uint32_T)-u1_0 : (int32_T)(uint32_T)u1_0;
-
-  /* End of DataTypeConversion: '<S23>/Data Type Conversion31' */
 
   /* S-Function (TPDOs_to_DunkC): '<S5>/TPDOs from Speedgoat to Dunker #1' */
   TPDOs_to_DunkC_Outputs_wrapper
@@ -1967,7 +2267,7 @@ static void SpeedgoatCANOpen2Buses100us_output0(void) /* Sample time: [0.0s, 0.0
     (&SpeedgoatCANOpen2Buses100us_B.DunkB_ActualCurrent,
      &SpeedgoatCANOpen2Buses100us_B.DunkB_ActualVelocity);
 
-  /* DataTypeConversion: '<S56>/Cast To Single1' */
+  /* DataTypeConversion: '<S61>/Cast To Single1' */
   tmp_0 = (real32_T)floor(SpeedgoatCANOpen2Buses100us_B.ClearError);
   if (rtIsNaNF(tmp_0) || rtIsInfF(tmp_0)) {
     tmp_0 = 0.0F;
@@ -1978,13 +2278,13 @@ static void SpeedgoatCANOpen2Buses100us_output0(void) /* Sample time: [0.0s, 0.0
   SpeedgoatCANOpen2Buses100us_B.ClearError_jv = (uint8_T)(tmp_0 < 0.0F ?
     (int32_T)(uint8_T)-(int8_T)(uint8_T)-tmp_0 : (int32_T)(uint8_T)tmp_0);
 
-  /* End of DataTypeConversion: '<S56>/Cast To Single1' */
+  /* End of DataTypeConversion: '<S61>/Cast To Single1' */
 
   /* DataTypeConversion: '<S23>/Data Type Conversion22' */
   SpeedgoatCANOpen2Buses100us_B.DunkB_TPDO_ClearError =
     SpeedgoatCANOpen2Buses100us_B.ClearError_jv;
 
-  /* DataTypeConversion: '<S56>/Cast To Single' */
+  /* DataTypeConversion: '<S61>/Cast To Single' */
   tmp_0 = (real32_T)floor(SpeedgoatCANOpen2Buses100us_B.DeviceMode);
   if (rtIsNaNF(tmp_0) || rtIsInfF(tmp_0)) {
     tmp_0 = 0.0F;
@@ -1995,13 +2295,13 @@ static void SpeedgoatCANOpen2Buses100us_output0(void) /* Sample time: [0.0s, 0.0
   SpeedgoatCANOpen2Buses100us_B.DeviceMode_d = (uint8_T)(tmp_0 < 0.0F ? (int32_T)
     (uint8_T)-(int8_T)(uint8_T)-tmp_0 : (int32_T)(uint8_T)tmp_0);
 
-  /* End of DataTypeConversion: '<S56>/Cast To Single' */
+  /* End of DataTypeConversion: '<S61>/Cast To Single' */
 
   /* DataTypeConversion: '<S23>/Data Type Conversion24' */
   SpeedgoatCANOpen2Buses100us_B.DunkB_TPDO_DeviceMode =
     SpeedgoatCANOpen2Buses100us_B.DeviceMode_d;
 
-  /* DataTypeConversion: '<S56>/Cast To Single3' */
+  /* DataTypeConversion: '<S61>/Cast To Single3' */
   tmp_0 = (real32_T)floor(SpeedgoatCANOpen2Buses100us_B.PowerEnable);
   if (rtIsNaNF(tmp_0) || rtIsInfF(tmp_0)) {
     tmp_0 = 0.0F;
@@ -2012,13 +2312,13 @@ static void SpeedgoatCANOpen2Buses100us_output0(void) /* Sample time: [0.0s, 0.0
   SpeedgoatCANOpen2Buses100us_B.PowerEnable_i = (uint8_T)(tmp_0 < 0.0F ?
     (int32_T)(uint8_T)-(int8_T)(uint8_T)-tmp_0 : (int32_T)(uint8_T)tmp_0);
 
-  /* End of DataTypeConversion: '<S56>/Cast To Single3' */
+  /* End of DataTypeConversion: '<S61>/Cast To Single3' */
 
   /* DataTypeConversion: '<S23>/Data Type Conversion25' */
   SpeedgoatCANOpen2Buses100us_B.DunkB_TPDO_PowerEnable =
     SpeedgoatCANOpen2Buses100us_B.PowerEnable_i;
 
-  /* DataTypeConversion: '<S56>/Cast To Single2' */
+  /* DataTypeConversion: '<S61>/Cast To Single2' */
   tmp_0 = (real32_T)floor(SpeedgoatCANOpen2Buses100us_B.BrakeCtrl);
   if (rtIsNaNF(tmp_0) || rtIsInfF(tmp_0)) {
     tmp_0 = 0.0F;
@@ -2029,21 +2329,21 @@ static void SpeedgoatCANOpen2Buses100us_output0(void) /* Sample time: [0.0s, 0.0
   SpeedgoatCANOpen2Buses100us_B.BrakeCtrl_k0 = (uint8_T)(tmp_0 < 0.0F ? (int32_T)
     (uint8_T)-(int8_T)(uint8_T)-tmp_0 : (int32_T)(uint8_T)tmp_0);
 
-  /* End of DataTypeConversion: '<S56>/Cast To Single2' */
+  /* End of DataTypeConversion: '<S61>/Cast To Single2' */
 
   /* DataTypeConversion: '<S23>/Data Type Conversion23' */
   SpeedgoatCANOpen2Buses100us_B.DunkB_TPDO_BrakeCtrl =
     SpeedgoatCANOpen2Buses100us_B.BrakeCtrl_k0;
 
-  /* Product: '<S32>/Product2' */
-  SpeedgoatCANOpen2Buses100us_B.Product2_a =
-    SpeedgoatCANOpen2Buses100us_B.Compare ?
-    SpeedgoatCANOpen2Buses100us_B.DunkC_ActualCurrent : 0;
-
-  /* Gain: '<S32>/Gain' */
-  SpeedgoatCANOpen2Buses100us_B.RightTiltMotor_CurrentReqmA = (int64_T)
-    SpeedgoatCANOpen2Buses100us_P.Gain_Gain_l *
-    SpeedgoatCANOpen2Buses100us_B.Product2_a;
+  /* RateTransition: '<S31>/RightTiltMotor_CurrentReq [mA]' */
+  rtw_xpc_mutex_take
+    (SpeedgoatCANOpen2Buses100us_DW.RightTiltMotor_CurrentReqmA_d0_);
+  SpeedgoatCANOpen2Buses100us_DW.RightTiltMotor_CurrentReqmA_RDB =
+    SpeedgoatCANOpen2Buses100us_DW.RightTiltMotor_CurrentReqmA_Lst;
+  rtw_xpc_mutex_give
+    (SpeedgoatCANOpen2Buses100us_DW.RightTiltMotor_CurrentReqmA_d0_);
+  SpeedgoatCANOpen2Buses100us_B.RightTiltMotor_CurrentReqmA =
+    SpeedgoatCANOpen2Buses100us_DW.RightTiltMotor_CurrentReqmA_Buf[SpeedgoatCANOpen2Buses100us_DW.RightTiltMotor_CurrentReqmA_RDB];
 
   /* Switch: '<S31>/Switch2' incorporates:
    *  Constant: '<S31>/Constant'
@@ -2060,15 +2360,15 @@ static void SpeedgoatCANOpen2Buses100us_output0(void) /* Sample time: [0.0s, 0.0
   /* End of Switch: '<S31>/Switch2' */
 
   /* DataTypeConversion: '<S23>/Data Type Conversion26' */
-  u1_0 = floor(SpeedgoatCANOpen2Buses100us_B.Switch2);
-  if (rtIsNaN(u1_0) || rtIsInf(u1_0)) {
-    u1_0 = 0.0;
+  u0 = floor(SpeedgoatCANOpen2Buses100us_B.Switch2);
+  if (rtIsNaN(u0) || rtIsInf(u0)) {
+    u0 = 0.0;
   } else {
-    u1_0 = fmod(u1_0, 4.294967296E+9);
+    u0 = fmod(u0, 4.294967296E+9);
   }
 
-  SpeedgoatCANOpen2Buses100us_B.DunkB_TPDO_DesiredCurrent = u1_0 < 0.0 ?
-    -(int32_T)(uint32_T)-u1_0 : (int32_T)(uint32_T)u1_0;
+  SpeedgoatCANOpen2Buses100us_B.DunkB_TPDO_DesiredCurrent = u0 < 0.0 ? -(int32_T)
+    (uint32_T)-u0 : (int32_T)(uint32_T)u0;
 
   /* End of DataTypeConversion: '<S23>/Data Type Conversion26' */
 
@@ -2085,7 +2385,7 @@ static void SpeedgoatCANOpen2Buses100us_output0(void) /* Sample time: [0.0s, 0.0
     (&SpeedgoatCANOpen2Buses100us_B.DunkA_ActualCurrent,
      &SpeedgoatCANOpen2Buses100us_B.DunkA_ActualVelocity);
 
-  /* DataTypeConversion: '<S54>/Cast To Single1' */
+  /* DataTypeConversion: '<S59>/Cast To Single1' */
   tmp_0 = (real32_T)floor(SpeedgoatCANOpen2Buses100us_B.ClearError_n);
   if (rtIsNaNF(tmp_0) || rtIsInfF(tmp_0)) {
     tmp_0 = 0.0F;
@@ -2096,13 +2396,13 @@ static void SpeedgoatCANOpen2Buses100us_output0(void) /* Sample time: [0.0s, 0.0
   SpeedgoatCANOpen2Buses100us_B.ClearError_mc = (uint8_T)(tmp_0 < 0.0F ?
     (int32_T)(uint8_T)-(int8_T)(uint8_T)-tmp_0 : (int32_T)(uint8_T)tmp_0);
 
-  /* End of DataTypeConversion: '<S54>/Cast To Single1' */
+  /* End of DataTypeConversion: '<S59>/Cast To Single1' */
 
   /* DataTypeConversion: '<S23>/Data Type Conversion3' */
   SpeedgoatCANOpen2Buses100us_B.DunkA_TPDO_ClearError =
     SpeedgoatCANOpen2Buses100us_B.ClearError_mc;
 
-  /* DataTypeConversion: '<S54>/Cast To Single' */
+  /* DataTypeConversion: '<S59>/Cast To Single' */
   tmp_0 = (real32_T)floor(SpeedgoatCANOpen2Buses100us_B.DeviceMode_o);
   if (rtIsNaNF(tmp_0) || rtIsInfF(tmp_0)) {
     tmp_0 = 0.0F;
@@ -2113,13 +2413,13 @@ static void SpeedgoatCANOpen2Buses100us_output0(void) /* Sample time: [0.0s, 0.0
   SpeedgoatCANOpen2Buses100us_B.DeviceMode_e = (uint8_T)(tmp_0 < 0.0F ? (int32_T)
     (uint8_T)-(int8_T)(uint8_T)-tmp_0 : (int32_T)(uint8_T)tmp_0);
 
-  /* End of DataTypeConversion: '<S54>/Cast To Single' */
+  /* End of DataTypeConversion: '<S59>/Cast To Single' */
 
   /* DataTypeConversion: '<S23>/Data Type Conversion6' */
   SpeedgoatCANOpen2Buses100us_B.DunkA_TPDO_DeviceMode =
     SpeedgoatCANOpen2Buses100us_B.DeviceMode_e;
 
-  /* DataTypeConversion: '<S54>/Cast To Single3' */
+  /* DataTypeConversion: '<S59>/Cast To Single3' */
   tmp_0 = (real32_T)floor(SpeedgoatCANOpen2Buses100us_B.PowerEnable_a);
   if (rtIsNaNF(tmp_0) || rtIsInfF(tmp_0)) {
     tmp_0 = 0.0F;
@@ -2130,13 +2430,13 @@ static void SpeedgoatCANOpen2Buses100us_output0(void) /* Sample time: [0.0s, 0.0
   SpeedgoatCANOpen2Buses100us_B.PowerEnable_i4 = (uint8_T)(tmp_0 < 0.0F ?
     (int32_T)(uint8_T)-(int8_T)(uint8_T)-tmp_0 : (int32_T)(uint8_T)tmp_0);
 
-  /* End of DataTypeConversion: '<S54>/Cast To Single3' */
+  /* End of DataTypeConversion: '<S59>/Cast To Single3' */
 
   /* DataTypeConversion: '<S23>/Data Type Conversion7' */
   SpeedgoatCANOpen2Buses100us_B.DunkA_TPDO_PowerEnable =
     SpeedgoatCANOpen2Buses100us_B.PowerEnable_i4;
 
-  /* DataTypeConversion: '<S54>/Cast To Single2' */
+  /* DataTypeConversion: '<S59>/Cast To Single2' */
   tmp_0 = (real32_T)floor(SpeedgoatCANOpen2Buses100us_B.BrakeCtrl_b);
   if (rtIsNaNF(tmp_0) || rtIsInfF(tmp_0)) {
     tmp_0 = 0.0F;
@@ -2147,7 +2447,7 @@ static void SpeedgoatCANOpen2Buses100us_output0(void) /* Sample time: [0.0s, 0.0
   SpeedgoatCANOpen2Buses100us_B.BrakeCtrl_mu = (uint8_T)(tmp_0 < 0.0F ? (int32_T)
     (uint8_T)-(int8_T)(uint8_T)-tmp_0 : (int32_T)(uint8_T)tmp_0);
 
-  /* End of DataTypeConversion: '<S54>/Cast To Single2' */
+  /* End of DataTypeConversion: '<S59>/Cast To Single2' */
 
   /* DataTypeConversion: '<S23>/Data Type Conversion4' */
   SpeedgoatCANOpen2Buses100us_B.DunkA_TPDO_BrakeCtrl =
@@ -2177,15 +2477,15 @@ static void SpeedgoatCANOpen2Buses100us_output0(void) /* Sample time: [0.0s, 0.0
   /* End of Switch: '<S31>/Switch' */
 
   /* DataTypeConversion: '<S23>/Data Type Conversion8' */
-  u1_0 = floor(SpeedgoatCANOpen2Buses100us_B.Switch);
-  if (rtIsNaN(u1_0) || rtIsInf(u1_0)) {
-    u1_0 = 0.0;
+  u0 = floor(SpeedgoatCANOpen2Buses100us_B.Switch);
+  if (rtIsNaN(u0) || rtIsInf(u0)) {
+    u0 = 0.0;
   } else {
-    u1_0 = fmod(u1_0, 4.294967296E+9);
+    u0 = fmod(u0, 4.294967296E+9);
   }
 
-  SpeedgoatCANOpen2Buses100us_B.DunkA_TPDO_DesiredCurrent = u1_0 < 0.0 ?
-    -(int32_T)(uint32_T)-u1_0 : (int32_T)(uint32_T)u1_0;
+  SpeedgoatCANOpen2Buses100us_B.DunkA_TPDO_DesiredCurrent = u0 < 0.0 ? -(int32_T)
+    (uint32_T)-u0 : (int32_T)(uint32_T)u0;
 
   /* End of DataTypeConversion: '<S23>/Data Type Conversion8' */
 
@@ -2202,69 +2502,25 @@ static void SpeedgoatCANOpen2Buses100us_output0(void) /* Sample time: [0.0s, 0.0
     (&SpeedgoatCANOpen2Buses100us_B.Encoder_Actual_Position,
      &SpeedgoatCANOpen2Buses100us_B.Encoder_Stored_Position);
 
-  /* S-Function (RPDOs_from_Inclinometer): '<S9>/RPDOs from Inclinometer ' */
-  RPDOs_from_Inclinometer_Outputs_wrapper(&SpeedgoatCANOpen2Buses100us_B.xS,
-    &SpeedgoatCANOpen2Buses100us_B.xH, &SpeedgoatCANOpen2Buses100us_B.xL,
-    &SpeedgoatCANOpen2Buses100us_B.yS, &SpeedgoatCANOpen2Buses100us_B.yH,
-    &SpeedgoatCANOpen2Buses100us_B.yL);
-
-  /* MATLAB Function: '<S9>/Conv' */
-  xAngleH = SpeedgoatCANOpen2Buses100us_B.xH;
-  yAngleH = SpeedgoatCANOpen2Buses100us_B.yH;
-  yAngleL = SpeedgoatCANOpen2Buses100us_B.yL;
-  if (SpeedgoatCANOpen2Buses100us_B.xS == 0) {
-    aux = 1;
-  } else {
-    aux = -1;
-  }
-
-  if (SpeedgoatCANOpen2Buses100us_B.yS == 0) {
-    aux_ySign = 1;
-  } else {
-    aux_ySign = -1;
-  }
-
-  SpeedgoatCANOpen2Buses1_dec2hex(SpeedgoatCANOpen2Buses100us_B.xL, c_data,
-    c_size);
-  x = SpeedgoatCANOpen2Bus_str2double(c_data, c_size);
-  SpeedgoatCANOpen2Buses1_dec2hex(xAngleH, c_data, c_size);
-  tmp = SpeedgoatCANOpen2Bus_str2double(c_data, c_size);
-  u0_0 = x.re;
-  u2_0 = x.im;
-  if (u2_0 == 0.0) {
-    u0_0 /= 100.0;
-  } else if (u0_0 == 0.0) {
-    u0_0 = 0.0;
-  } else {
-    u0_0 /= 100.0;
-  }
-
-  u1_0 = (tmp.re + u0_0) * (real_T)aux;
-  SpeedgoatCANOpen2Buses1_dec2hex(yAngleL, c_data, c_size);
-  x = SpeedgoatCANOpen2Bus_str2double(c_data, c_size);
-  SpeedgoatCANOpen2Buses1_dec2hex(yAngleH, c_data, c_size);
-  tmp = SpeedgoatCANOpen2Bus_str2double(c_data, c_size);
-  u0_0 = x.re;
-  u2_0 = x.im;
-  if (u2_0 == 0.0) {
-    u0_0 /= 100.0;
-  } else if (u0_0 == 0.0) {
-    u0_0 = 0.0;
-  } else {
-    u0_0 /= 100.0;
-  }
-
-  u0_0 = (tmp.re + u0_0) * (real_T)aux_ySign;
-  SpeedgoatCANOpen2Buses100us_B.xAngle = u1_0;
-  SpeedgoatCANOpen2Buses100us_B.yAngle = u0_0;
-
-  /* End of MATLAB Function: '<S9>/Conv' */
   /* Constant: '<S9>/Constant' */
   SpeedgoatCANOpen2Buses100us_B.Enable_l =
     SpeedgoatCANOpen2Buses100us_P.Constant_Value_p;
 
+  /* DataTypeConversion: '<S26>/Cast To Single' */
+  SpeedgoatCANOpen2Buses100us_B.CastToSingle_e =
+    SpeedgoatCANOpen2Buses100us_B.Joystick_LatCmd;
+
+  /* Gain: '<S30>/dem' */
+  SpeedgoatCANOpen2Buses100us_B.dem = SpeedgoatCANOpen2Buses100us_P.dem_Gain *
+    SpeedgoatCANOpen2Buses100us_B.CastToSingle_e;
+
+  /* Gain: '<S30>/Robotics Convention' */
+  SpeedgoatCANOpen2Buses100us_B.DirectionReq =
+    SpeedgoatCANOpen2Buses100us_P.RoboticsConvention_Gain *
+    SpeedgoatCANOpen2Buses100us_B.dem;
+
   /* DataTypeConversion: '<S30>/Cast To Single' */
-  SpeedgoatCANOpen2Buses100us_B.CastToSingle_g =
+  SpeedgoatCANOpen2Buses100us_B.CastToSingle =
     SpeedgoatCANOpen2Buses100us_B.DirectionReq;
 
   /* Memory: '<S30>/Memory1' */
@@ -2272,26 +2528,26 @@ static void SpeedgoatCANOpen2Buses100us_output0(void) /* Sample time: [0.0s, 0.0
     SpeedgoatCANOpen2Buses100us_DW.Memory1_PreviousInput;
 
   /* MATLABSystem: '<S30>/Moving Average' */
-  u1_0 = SpeedgoatCANOpen2Buses100us_B.Memory1;
-  obj = &SpeedgoatCANOpen2Buses100us_DW.obj;
-  obj_0 = obj;
-  if (obj_0->TunablePropsChanged) {
-    obj_0->TunablePropsChanged = false;
+  u0 = SpeedgoatCANOpen2Buses100us_B.Memory1;
+  obj_5 = &SpeedgoatCANOpen2Buses100us_DW.obj_c;
+  obj_6 = obj_5;
+  if (obj_6->TunablePropsChanged) {
+    obj_6->TunablePropsChanged = false;
   }
 
-  obj_1 = obj->pStatistic;
-  if (obj_1->isInitialized != 1) {
-    obj_1->isSetupComplete = false;
-    obj_1->isInitialized = 1;
-    obj_1->isSetupComplete = true;
+  obj_7 = obj_5->pStatistic;
+  if (obj_7->isInitialized != 1) {
+    obj_7->isSetupComplete = false;
+    obj_7->isInitialized = 1;
+    obj_7->isSetupComplete = true;
   }
 
-  SpeedgoatCANOpen2Buses100us_B.MovingAverage = u1_0;
+  SpeedgoatCANOpen2Buses100us_B.MovingAverage = u0;
 
   /* End of MATLABSystem: '<S30>/Moving Average' */
 
   /* DataTypeConversion: '<S30>/Cast To Single1' */
-  SpeedgoatCANOpen2Buses100us_B.CastToSingle1_g =
+  SpeedgoatCANOpen2Buses100us_B.CastToSingle1 =
     SpeedgoatCANOpen2Buses100us_B.MovingAverage;
 
   /* RateTransition: '<S30>/TmpRTBAtP ControllerInport1' */
@@ -2316,17 +2572,17 @@ static void SpeedgoatCANOpen2Buses100us_output0(void) /* Sample time: [0.0s, 0.0
   switch (wrBufIdx) {
    case 0:
     SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtPControllerInport1_Buf0 =
-      SpeedgoatCANOpen2Buses100us_B.CastToSingle_g;
+      SpeedgoatCANOpen2Buses100us_B.CastToSingle;
     break;
 
    case 1:
     SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtPControllerInport1_Buf1 =
-      SpeedgoatCANOpen2Buses100us_B.CastToSingle_g;
+      SpeedgoatCANOpen2Buses100us_B.CastToSingle;
     break;
 
    case 2:
     SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtPControllerInport1_Buf2 =
-      SpeedgoatCANOpen2Buses100us_B.CastToSingle_g;
+      SpeedgoatCANOpen2Buses100us_B.CastToSingle;
     break;
   }
 
@@ -2356,17 +2612,17 @@ static void SpeedgoatCANOpen2Buses100us_output0(void) /* Sample time: [0.0s, 0.0
   switch (wrBufIdx) {
    case 0:
     SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtPControllerInport2_Buf0 =
-      SpeedgoatCANOpen2Buses100us_B.CastToSingle1_g;
+      SpeedgoatCANOpen2Buses100us_B.CastToSingle1;
     break;
 
    case 1:
     SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtPControllerInport2_Buf1 =
-      SpeedgoatCANOpen2Buses100us_B.CastToSingle1_g;
+      SpeedgoatCANOpen2Buses100us_B.CastToSingle1;
     break;
 
    case 2:
     SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtPControllerInport2_Buf2 =
-      SpeedgoatCANOpen2Buses100us_B.CastToSingle1_g;
+      SpeedgoatCANOpen2Buses100us_B.CastToSingle1;
     break;
   }
 
@@ -2381,11 +2637,414 @@ static void SpeedgoatCANOpen2Buses100us_output0(void) /* Sample time: [0.0s, 0.0
     SpeedgoatCANOpen2Buses100us_P.Offsetto0pospos180180deg_Value - (real_T)
     SpeedgoatCANOpen2Buses100us_B.Encoder_Actual_Position;
 
+  /* Gain: '<S30>/degree2rad' */
+  SpeedgoatCANOpen2Buses100us_B.SteeringAnglerad =
+    SpeedgoatCANOpen2Buses100us_P.degree2rad_Gain *
+    SpeedgoatCANOpen2Buses100us_B.DirectionReq;
+
   /* Gain: '<S30>/inc2deg' */
   SpeedgoatCANOpen2Buses100us_B.DirectionFb =
     SpeedgoatCANOpen2Buses100us_P.inc2deg_Gain *
     SpeedgoatCANOpen2Buses100us_B.Sum_p;
 
+  /* RateTransition: '<S32>/TmpRTBAtProduct2Inport1' */
+  rtw_xpc_mutex_take
+    (SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtProduct2Inport1_d0_SE_n);
+  SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtProduct2Inport1_RDBuf_c =
+    SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtProduct2Inport1_LstBu_p;
+  rtw_xpc_mutex_give
+    (SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtProduct2Inport1_d0_SE_n);
+  SpeedgoatCANOpen2Buses100us_B.TmpRTBAtProduct2Inport1_m =
+    SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtProduct2Inport1_Buf_j[SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtProduct2Inport1_RDBuf_c];
+
+  /* Product: '<S32>/Product2' */
+  SpeedgoatCANOpen2Buses100us_B.Product2_a =
+    SpeedgoatCANOpen2Buses100us_B.TmpRTBAtProduct2Inport1_m ?
+    SpeedgoatCANOpen2Buses100us_B.DunkC_ActualCurrent : 0;
+
+  /* RateTransition: '<S32>/TmpRTBAtZero-Order Hold2Inport1' */
+  rtw_xpc_mutex_take
+    (SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtZeroOrderHold2Inport1_d);
+  wrBufIdx = (int8_T)
+    (SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtZeroOrderHold2Inport1_L + 1);
+  if (wrBufIdx == 3) {
+    wrBufIdx = 0;
+  }
+
+  if (wrBufIdx == SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtZeroOrderHold2Inport1_R)
+  {
+    wrBufIdx++;
+    if (wrBufIdx == 3) {
+      wrBufIdx = 0;
+    }
+  }
+
+  rtw_xpc_mutex_give
+    (SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtZeroOrderHold2Inport1_d);
+  switch (wrBufIdx) {
+   case 0:
+    SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtZeroOrderHold2Inport1_B =
+      SpeedgoatCANOpen2Buses100us_B.Product2_a;
+    break;
+
+   case 1:
+    SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtZeroOrderHold2Inport1_m =
+      SpeedgoatCANOpen2Buses100us_B.Product2_a;
+    break;
+
+   case 2:
+    SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtZeroOrderHold2Inport1_k =
+      SpeedgoatCANOpen2Buses100us_B.Product2_a;
+    break;
+  }
+
+  SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtZeroOrderHold2Inport1_L = wrBufIdx;
+
+  /* End of RateTransition: '<S32>/TmpRTBAtZero-Order Hold2Inport1' */
+  /* Clock: '<S45>/Clock' */
+  SpeedgoatCANOpen2Buses100us_B.Clock = SpeedgoatCANOpen2Buses100us_M->Timing.t
+    [0];
+
+  /* Sum: '<S45>/Sum' incorporates:
+   *  S-Function (sfun_tstart): '<S45>/startTime'
+   */
+  SpeedgoatCANOpen2Buses100us_B.Sum_f = SpeedgoatCANOpen2Buses100us_B.Clock -
+    (0.0);
+
+  /* Math: '<S45>/Math Function' incorporates:
+   *  Constant: '<S45>/Constant'
+   */
+  SpeedgoatCANOpen2Buses100us_B.MathFunction = rt_remd_snf
+    (SpeedgoatCANOpen2Buses100us_B.Sum_f,
+     SpeedgoatCANOpen2Buses100us_P.Constant_Value_c);
+
+  /* Lookup_n-D: '<S45>/Look-Up Table1' */
+  SpeedgoatCANOpen2Buses100us_B.LookUpTable1 = look1_binlxpw
+    (SpeedgoatCANOpen2Buses100us_B.MathFunction,
+     SpeedgoatCANOpen2Buses100us_P.LookUpTable1_bp01Data,
+     SpeedgoatCANOpen2Buses100us_P.RepeatingSequence1_rep_seq_y, 7U);
+
+  /* SignalConversion: '<S45>/Output' */
+  SpeedgoatCANOpen2Buses100us_B.Output =
+    SpeedgoatCANOpen2Buses100us_B.LookUpTable1;
+
+  /* Gain: '<S32>/n' */
+  SpeedgoatCANOpen2Buses100us_B.n = SpeedgoatCANOpen2Buses100us_P.n_Gain *
+    SpeedgoatCANOpen2Buses100us_B.SteeringAnglerad;
+
+  /* DataTypeConversion: '<S32>/Cast To Single' */
+  SpeedgoatCANOpen2Buses100us_B.CastToSingle_p = SpeedgoatCANOpen2Buses100us_B.n;
+
+  /* DataTypeConversion: '<S32>/Cast To Single1' */
+  SpeedgoatCANOpen2Buses100us_B.CastToSingle1_a =
+    SpeedgoatCANOpen2Buses100us_B.CastToSingle2;
+
+  /* MATLAB Function: '<S32>/ServoTilting' */
+  SpeedgoatCANOpen2Buses100us_B.TiltingAngle =
+    SpeedgoatCANOpen2Buses100us_B.CastToSingle1_a *
+    SpeedgoatCANOpen2Buses100us_B.CastToSingle1_a / 10.05525 * sin
+    (SpeedgoatCANOpen2Buses100us_B.CastToSingle_p);
+  SpeedgoatCANOpen2Buses100us_B.TiltingAngle = atan
+    (SpeedgoatCANOpen2Buses100us_B.TiltingAngle);
+  SpeedgoatCANOpen2Buses100us_B.TiltingAngle =
+    SpeedgoatCANOpen2Buses100us_B.TiltingAngle * 180.0 / 3.1415926535897931;
+
+  /* Sin: '<S32>/Sine Wave1' */
+  SpeedgoatCANOpen2Buses100us_B.TiltingAngle_sinreqdeg = sin
+    (SpeedgoatCANOpen2Buses100us_P.SineWave1_Freq_d *
+     SpeedgoatCANOpen2Buses100us_M->Timing.t[0] +
+     SpeedgoatCANOpen2Buses100us_P.SineWave1_Phase_m) *
+    SpeedgoatCANOpen2Buses100us_P.SineWave1_Amp_n +
+    SpeedgoatCANOpen2Buses100us_P.SineWave1_Bias_n;
+
+  /* ManualSwitch: '<S32>/Manual Switch3' */
+  if (SpeedgoatCANOpen2Buses100us_P.ManualSwitch3_CurrentSetting == 1) {
+    /* ManualSwitch: '<S32>/Manual Switch4' */
+    if (SpeedgoatCANOpen2Buses100us_P.ManualSwitch4_CurrentSetting == 1) {
+      SpeedgoatCANOpen2Buses100us_B.ManualSwitch4 =
+        SpeedgoatCANOpen2Buses100us_B.Output;
+    } else {
+      SpeedgoatCANOpen2Buses100us_B.ManualSwitch4 =
+        SpeedgoatCANOpen2Buses100us_B.TiltingAngle_sinreqdeg;
+    }
+
+    /* End of ManualSwitch: '<S32>/Manual Switch4' */
+    SpeedgoatCANOpen2Buses100us_B.ManualSwitch3 =
+      SpeedgoatCANOpen2Buses100us_B.ManualSwitch4;
+  } else {
+    SpeedgoatCANOpen2Buses100us_B.ManualSwitch3 =
+      SpeedgoatCANOpen2Buses100us_B.TiltingAngle;
+  }
+
+  /* End of ManualSwitch: '<S32>/Manual Switch3' */
+
+  /* RateTransition: '<S32>/TmpRTBAtZero-Order Hold1Inport1' */
+  rtw_xpc_mutex_take
+    (SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtZeroOrderHold1Inport1_d);
+  wrBufIdx = (int8_T)
+    (SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtZeroOrderHold1Inport1_L + 1);
+  if (wrBufIdx == 3) {
+    wrBufIdx = 0;
+  }
+
+  if (wrBufIdx == SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtZeroOrderHold1Inport1_R)
+  {
+    wrBufIdx++;
+    if (wrBufIdx == 3) {
+      wrBufIdx = 0;
+    }
+  }
+
+  rtw_xpc_mutex_give
+    (SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtZeroOrderHold1Inport1_d);
+  switch (wrBufIdx) {
+   case 0:
+    SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtZeroOrderHold1Inport1_B =
+      SpeedgoatCANOpen2Buses100us_B.ManualSwitch3;
+    break;
+
+   case 1:
+    SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtZeroOrderHold1Inport1_j =
+      SpeedgoatCANOpen2Buses100us_B.ManualSwitch3;
+    break;
+
+   case 2:
+    SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtZeroOrderHold1Inport_jr =
+      SpeedgoatCANOpen2Buses100us_B.ManualSwitch3;
+    break;
+  }
+
+  SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtZeroOrderHold1Inport1_L = wrBufIdx;
+
+  /* End of RateTransition: '<S32>/TmpRTBAtZero-Order Hold1Inport1' */
+
+  /* RateTransition: '<S32>/EnableControl' */
+  rtw_xpc_mutex_take(SpeedgoatCANOpen2Buses100us_DW.EnableControl_d0_SEMAPHORE);
+  wrBufIdx = (int8_T)(SpeedgoatCANOpen2Buses100us_DW.EnableControl_LstBufWR + 1);
+  if (wrBufIdx == 3) {
+    wrBufIdx = 0;
+  }
+
+  if (wrBufIdx == SpeedgoatCANOpen2Buses100us_DW.EnableControl_RDBuf) {
+    wrBufIdx++;
+    if (wrBufIdx == 3) {
+      wrBufIdx = 0;
+    }
+  }
+
+  rtw_xpc_mutex_give(SpeedgoatCANOpen2Buses100us_DW.EnableControl_d0_SEMAPHORE);
+  switch (wrBufIdx) {
+   case 0:
+    SpeedgoatCANOpen2Buses100us_DW.EnableControl_Buf0 =
+      SpeedgoatCANOpen2Buses100us_B.Compare;
+    break;
+
+   case 1:
+    SpeedgoatCANOpen2Buses100us_DW.EnableControl_Buf1 =
+      SpeedgoatCANOpen2Buses100us_B.Compare;
+    break;
+
+   case 2:
+    SpeedgoatCANOpen2Buses100us_DW.EnableControl_Buf2 =
+      SpeedgoatCANOpen2Buses100us_B.Compare;
+    break;
+  }
+
+  SpeedgoatCANOpen2Buses100us_DW.EnableControl_LstBufWR = wrBufIdx;
+
+  /* End of RateTransition: '<S32>/EnableControl' */
+
+  /* Gain: '<S32>/degree2m' */
+  SpeedgoatCANOpen2Buses100us_B.PosReqm =
+    SpeedgoatCANOpen2Buses100us_P.degree2m_Gain *
+    SpeedgoatCANOpen2Buses100us_B.ManualSwitch3;
+
+  /* Gain: '<S43>/Derivative Gain' */
+  SpeedgoatCANOpen2Buses100us_B.kd = SpeedgoatCANOpen2Buses100us_P.PID_ctrl1_Kd *
+    SpeedgoatCANOpen2Buses100us_B.Product1;
+
+  /* RateTransition: '<S43>/TmpRTBAtDerivativeInport1' */
+  rtw_xpc_mutex_take
+    (SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtDerivativeInport1_d0_SE);
+  wrBufIdx = (int8_T)
+    (SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtDerivativeInport1_LstBu + 1);
+  if (wrBufIdx == 3) {
+    wrBufIdx = 0;
+  }
+
+  if (wrBufIdx == SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtDerivativeInport1_RDBuf)
+  {
+    wrBufIdx++;
+    if (wrBufIdx == 3) {
+      wrBufIdx = 0;
+    }
+  }
+
+  rtw_xpc_mutex_give
+    (SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtDerivativeInport1_d0_SE);
+  switch (wrBufIdx) {
+   case 0:
+    SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtDerivativeInport1_Buf0 =
+      SpeedgoatCANOpen2Buses100us_B.Product1;
+    break;
+
+   case 1:
+    SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtDerivativeInport1_Buf1 =
+      SpeedgoatCANOpen2Buses100us_B.Product1;
+    break;
+
+   case 2:
+    SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtDerivativeInport1_Buf2 =
+      SpeedgoatCANOpen2Buses100us_B.Product1;
+    break;
+  }
+
+  SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtDerivativeInport1_LstBu = wrBufIdx;
+
+  /* End of RateTransition: '<S43>/TmpRTBAtDerivativeInport1' */
+
+  /* MATLABSystem: '<S43>/Moving Average1' */
+  u0 = SpeedgoatCANOpen2Buses100us_B.kd;
+  obj_8 = &SpeedgoatCANOpen2Buses100us_DW.obj_bz;
+  obj_9 = obj_8;
+  if (obj_9->TunablePropsChanged) {
+    obj_9->TunablePropsChanged = false;
+  }
+
+  obj_a = obj_8->pStatistic;
+  if (obj_a->isInitialized != 1) {
+    obj_b = obj_a;
+    obj_c = obj_b;
+    obj_c->isSetupComplete = false;
+    obj_c->isInitialized = 1;
+    obj_d = obj_c;
+    obj_d->pCumSum = 0.0;
+    obj_d->pCumSumRev[0] = 0.0;
+    obj_d->pCumSumRev[1] = 0.0;
+    obj_d->pCumSumRev[2] = 0.0;
+    obj_d->pCumRevIndex = 1.0;
+    obj_c->isSetupComplete = true;
+    obj_b->pCumSum = 0.0;
+    obj_b->pCumSumRev[0] = 0.0;
+    obj_b->pCumSumRev[1] = 0.0;
+    obj_b->pCumSumRev[2] = 0.0;
+    obj_b->pCumRevIndex = 1.0;
+  }
+
+  cumRevIndex = obj_a->pCumRevIndex;
+  csum = obj_a->pCumSum;
+  csumrev_0[0] = obj_a->pCumSumRev[0];
+  csumrev_0[1] = obj_a->pCumSumRev[1];
+  csumrev_0[2] = obj_a->pCumSumRev[2];
+  csum += u0;
+  z = csumrev_0[(int32_T)cumRevIndex - 1] + csum;
+  csumrev_0[(int32_T)cumRevIndex - 1] = u0;
+  if (cumRevIndex != 3.0) {
+    cumRevIndex++;
+  } else {
+    cumRevIndex = 1.0;
+    csum = 0.0;
+    csumrev_0[1] += csumrev_0[2];
+    csumrev_0[0] += csumrev_0[1];
+  }
+
+  u0 = z / 4.0;
+  obj_a->pCumSum = csum;
+  obj_a->pCumSumRev[0] = csumrev_0[0];
+  obj_a->pCumSumRev[1] = csumrev_0[1];
+  obj_a->pCumSumRev[2] = csumrev_0[2];
+  obj_a->pCumRevIndex = cumRevIndex;
+  SpeedgoatCANOpen2Buses100us_B.kd_ma = u0;
+
+  /* End of MATLABSystem: '<S43>/Moving Average1' */
+
+  /* SampleTimeMath: '<S49>/TSamp'
+   *
+   * About '<S49>/TSamp':
+   *  y = u * K where K = 1 / ( w * Ts )
+   */
+  SpeedgoatCANOpen2Buses100us_B.TSamp = SpeedgoatCANOpen2Buses100us_B.kd_ma *
+    SpeedgoatCANOpen2Buses100us_P.TSamp_WtEt;
+
+  /* UnitDelay: '<S49>/UD' */
+  SpeedgoatCANOpen2Buses100us_B.Uk1 = SpeedgoatCANOpen2Buses100us_DW.UD_DSTATE;
+
+  /* Sum: '<S49>/Diff' */
+  SpeedgoatCANOpen2Buses100us_B.Diff = SpeedgoatCANOpen2Buses100us_B.TSamp -
+    SpeedgoatCANOpen2Buses100us_B.Uk1;
+
+  /* Gain: '<S43>/Integral Gain' */
+  SpeedgoatCANOpen2Buses100us_B.IntegralGain =
+    SpeedgoatCANOpen2Buses100us_P.PID_ctrl1_Ki *
+    SpeedgoatCANOpen2Buses100us_B.Product1;
+
+  /* RateTransition: '<S43>/TmpRTBAtSum2Inport2' */
+  rtw_xpc_mutex_take
+    (SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtSum2Inport2_d0_SEMAPHOR);
+  SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtSum2Inport2_RDBuf =
+    SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtSum2Inport2_LstBufWR;
+  rtw_xpc_mutex_give
+    (SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtSum2Inport2_d0_SEMAPHOR);
+  SpeedgoatCANOpen2Buses100us_B.TmpRTBAtSum2Inport2 =
+    SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtSum2Inport2_Buf[SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtSum2Inport2_RDBuf];
+
+  /* Sum: '<S43>/Sum2' */
+  SpeedgoatCANOpen2Buses100us_B.Sum2_d =
+    SpeedgoatCANOpen2Buses100us_B.IntegralGain -
+    SpeedgoatCANOpen2Buses100us_B.TmpRTBAtSum2Inport2;
+
+  /* RateTransition: '<S43>/TmpRTBAtDiscrete-Time IntegratorInport1' */
+  rtw_xpc_mutex_take
+    (SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtDiscreteTimeIntegrat_bg);
+  wrBufIdx = (int8_T)
+    (SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtDiscreteTimeIntegrato_e + 1);
+  if (wrBufIdx == 3) {
+    wrBufIdx = 0;
+  }
+
+  if (wrBufIdx == SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtDiscreteTimeIntegrato_l)
+  {
+    wrBufIdx++;
+    if (wrBufIdx == 3) {
+      wrBufIdx = 0;
+    }
+  }
+
+  rtw_xpc_mutex_give
+    (SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtDiscreteTimeIntegrat_bg);
+  switch (wrBufIdx) {
+   case 0:
+    SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtDiscreteTimeIntegratorI =
+      SpeedgoatCANOpen2Buses100us_B.Sum2_d;
+    break;
+
+   case 1:
+    SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtDiscreteTimeIntegrato_k =
+      SpeedgoatCANOpen2Buses100us_B.Sum2_d;
+    break;
+
+   case 2:
+    SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtDiscreteTimeIntegrato_b =
+      SpeedgoatCANOpen2Buses100us_B.Sum2_d;
+    break;
+  }
+
+  SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtDiscreteTimeIntegrato_e = wrBufIdx;
+
+  /* End of RateTransition: '<S43>/TmpRTBAtDiscrete-Time IntegratorInport1' */
+  /* Saturate: '<S43>/Saturation1' */
+  u0 = -SpeedgoatCANOpen2Buses100us_P.PID_ctrl1_Req_lim;
+  csum = SpeedgoatCANOpen2Buses100us_B.Diff;
+  cumRevIndex = SpeedgoatCANOpen2Buses100us_P.PID_ctrl1_Req_lim;
+  if (csum > cumRevIndex) {
+    SpeedgoatCANOpen2Buses100us_B.Derivative_sat = cumRevIndex;
+  } else if (csum < u0) {
+    SpeedgoatCANOpen2Buses100us_B.Derivative_sat = u0;
+  } else {
+    SpeedgoatCANOpen2Buses100us_B.Derivative_sat = csum;
+  }
+
+  /* End of Saturate: '<S43>/Saturation1' */
   /* Gain: '<S40>/LSB2Volt' */
   SpeedgoatCANOpen2Buses100us_B.DispLeftVolt =
     SpeedgoatCANOpen2Buses100us_P.LSB2Volt_Gain *
@@ -2438,28 +3097,6 @@ static void SpeedgoatCANOpen2Buses100us_output0(void) /* Sample time: [0.0s, 0.0
   SpeedgoatCANOpen2Buses100us_DW.DispLeftm_LstBufWR = wrBufIdx;
 
   /* End of RateTransition: '<S40>/DispLeft [m]' */
-  /* Sum: '<S41>/Sum' */
-  SpeedgoatCANOpen2Buses100us_B.Sum_e = SpeedgoatCANOpen2Buses100us_B.Sum4 -
-    SpeedgoatCANOpen2Buses100us_B.Saturation_j;
-
-  /* Gain: '<S41>/AntiWindup' */
-  u1_0 = SpeedgoatCANOpen2Buses100us_P.PID_ctrl_Ki /
-    SpeedgoatCANOpen2Buses100us_P.PID_ctrl_Kp;
-  SpeedgoatCANOpen2Buses100us_B.AntiWindup = u1_0 *
-    SpeedgoatCANOpen2Buses100us_B.Sum_e;
-
-  /* Gain: '<S41>/Integral Gain' */
-  SpeedgoatCANOpen2Buses100us_B.IntegralGain =
-    SpeedgoatCANOpen2Buses100us_P.PID_ctrl_Ki * SpeedgoatCANOpen2Buses100us_B.e;
-
-  /* Sum: '<S41>/Sum2' */
-  SpeedgoatCANOpen2Buses100us_B.Sum2_g =
-    SpeedgoatCANOpen2Buses100us_B.IntegralGain -
-    SpeedgoatCANOpen2Buses100us_B.AntiWindup;
-
-  /* Constant: '<S32>/Constant' */
-  SpeedgoatCANOpen2Buses100us_B.Constant =
-    SpeedgoatCANOpen2Buses100us_P.Constant_Value_c;
 
   /* Gain: '<S33>/m//s2Km//h' */
   SpeedgoatCANOpen2Buses100us_B.VehSpeed_Kmh =
@@ -2471,24 +3108,17 @@ static void SpeedgoatCANOpen2Buses100us_output0(void) /* Sample time: [0.0s, 0.0
 static void SpeedgoatCANOpen2Buses100us_update0(void) /* Sample time: [0.0s, 0.0s] */
 {
   /* Update for Delay: '<S36>/Delay' */
-  SpeedgoatCANOpen2Buses100us_DW.Delay_DSTATE[0] =
-    SpeedgoatCANOpen2Buses100us_DW.Delay_DSTATE[1];
-  SpeedgoatCANOpen2Buses100us_DW.Delay_DSTATE[1] =
+  SpeedgoatCANOpen2Buses100us_DW.Delay_DSTATE_f[0] =
+    SpeedgoatCANOpen2Buses100us_DW.Delay_DSTATE_f[1];
+  SpeedgoatCANOpen2Buses100us_DW.Delay_DSTATE_f[1] =
     SpeedgoatCANOpen2Buses100us_B.DataTypeConversion1;
-
-  /* Update for DiscreteIntegrator: '<S41>/Discrete-Time Integrator' */
-  SpeedgoatCANOpen2Buses100us_DW.DiscreteTimeIntegrator_DSTATE +=
-    SpeedgoatCANOpen2Buses100us_P.DiscreteTimeIntegrator_gainval *
-    SpeedgoatCANOpen2Buses100us_B.Sum2_g;
-
-  /* Update for DiscreteIntegrator: '<S41>/Discrete-Time Integrator1' */
-  SpeedgoatCANOpen2Buses100us_DW.DiscreteTimeIntegrator1_DSTATE +=
-    SpeedgoatCANOpen2Buses100us_P.DiscreteTimeIntegrator1_gainval *
-    SpeedgoatCANOpen2Buses100us_B.Derivative;
 
   /* Update for Memory: '<S30>/Memory1' */
   SpeedgoatCANOpen2Buses100us_DW.Memory1_PreviousInput =
     SpeedgoatCANOpen2Buses100us_B.DirectionFb;
+
+  /* Update for UnitDelay: '<S49>/UD' */
+  SpeedgoatCANOpen2Buses100us_DW.UD_DSTATE = SpeedgoatCANOpen2Buses100us_B.TSamp;
 
   /* Update absolute time */
   /* The "clockTick0" counts the number of times the code of this task has
@@ -2533,6 +3163,7 @@ static void SpeedgoatCANOpen2Buses100us_update0(void) /* Sample time: [0.0s, 0.0
 static void SpeedgoatCANOpen2Buses100us_output2(void) /* Sample time: [0.005s, 0.0s] */
 {
   real_T DirectionReq;
+  real32_T yf;
 
   /* RateTransition: '<S30>/TmpRTBAtP ControllerInport1' */
   rtw_xpc_mutex_take
@@ -2601,8 +3232,154 @@ static void SpeedgoatCANOpen2Buses100us_output2(void) /* Sample time: [0.005s, 0
 
   /* End of MATLAB Function: '<S30>/P Controller' */
 
+  /* RateTransition: '<S32>/TmpRTBAtZero-Order Hold2Inport1' */
+  rtw_xpc_mutex_take
+    (SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtZeroOrderHold2Inport1_d);
+  SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtZeroOrderHold2Inport1_R =
+    SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtZeroOrderHold2Inport1_L;
+  rtw_xpc_mutex_give
+    (SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtZeroOrderHold2Inport1_d);
+  switch (SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtZeroOrderHold2Inport1_R) {
+   case 0:
+    SpeedgoatCANOpen2Buses100us_B.TmpRTBAtZeroOrderHold2Inport1 =
+      SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtZeroOrderHold2Inport1_B;
+    break;
+
+   case 1:
+    SpeedgoatCANOpen2Buses100us_B.TmpRTBAtZeroOrderHold2Inport1 =
+      SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtZeroOrderHold2Inport1_m;
+    break;
+
+   case 2:
+    SpeedgoatCANOpen2Buses100us_B.TmpRTBAtZeroOrderHold2Inport1 =
+      SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtZeroOrderHold2Inport1_k;
+    break;
+  }
+
+  /* End of RateTransition: '<S32>/TmpRTBAtZero-Order Hold2Inport1' */
+
+  /* ZeroOrderHold: '<S32>/Zero-Order Hold2' */
+  SpeedgoatCANOpen2Buses100us_B.ZeroOrderHold2 =
+    SpeedgoatCANOpen2Buses100us_B.TmpRTBAtZeroOrderHold2Inport1;
+
+  /* Gain: '<S32>/Gain' */
+  SpeedgoatCANOpen2Buses100us_B.RightTiltMotor_CurrentReqmA_i = (int64_T)
+    SpeedgoatCANOpen2Buses100us_P.Gain_Gain_l *
+    SpeedgoatCANOpen2Buses100us_B.ZeroOrderHold2;
+
+  /* RateTransition: '<S32>/TmpRTBAtZero-Order Hold1Inport1' */
+  rtw_xpc_mutex_take
+    (SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtZeroOrderHold1Inport1_d);
+  SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtZeroOrderHold1Inport1_R =
+    SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtZeroOrderHold1Inport1_L;
+  rtw_xpc_mutex_give
+    (SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtZeroOrderHold1Inport1_d);
+  switch (SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtZeroOrderHold1Inport1_R) {
+   case 0:
+    SpeedgoatCANOpen2Buses100us_B.TmpRTBAtZeroOrderHold1Inport1 =
+      SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtZeroOrderHold1Inport1_B;
+    break;
+
+   case 1:
+    SpeedgoatCANOpen2Buses100us_B.TmpRTBAtZeroOrderHold1Inport1 =
+      SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtZeroOrderHold1Inport1_j;
+    break;
+
+   case 2:
+    SpeedgoatCANOpen2Buses100us_B.TmpRTBAtZeroOrderHold1Inport1 =
+      SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtZeroOrderHold1Inport_jr;
+    break;
+  }
+
+  /* End of RateTransition: '<S32>/TmpRTBAtZero-Order Hold1Inport1' */
+
+  /* ZeroOrderHold: '<S32>/Zero-Order Hold1' */
+  SpeedgoatCANOpen2Buses100us_B.TiltingAngle_stepreqfdeg_p =
+    SpeedgoatCANOpen2Buses100us_B.TmpRTBAtZeroOrderHold1Inport1;
+
+  /* RateTransition: '<S32>/EnableControl' */
+  rtw_xpc_mutex_take(SpeedgoatCANOpen2Buses100us_DW.EnableControl_d0_SEMAPHORE);
+  SpeedgoatCANOpen2Buses100us_DW.EnableControl_RDBuf =
+    SpeedgoatCANOpen2Buses100us_DW.EnableControl_LstBufWR;
+  rtw_xpc_mutex_give(SpeedgoatCANOpen2Buses100us_DW.EnableControl_d0_SEMAPHORE);
+  switch (SpeedgoatCANOpen2Buses100us_DW.EnableControl_RDBuf) {
+   case 0:
+    SpeedgoatCANOpen2Buses100us_B.En =
+      SpeedgoatCANOpen2Buses100us_DW.EnableControl_Buf0;
+    break;
+
+   case 1:
+    SpeedgoatCANOpen2Buses100us_B.En =
+      SpeedgoatCANOpen2Buses100us_DW.EnableControl_Buf1;
+    break;
+
+   case 2:
+    SpeedgoatCANOpen2Buses100us_B.En =
+      SpeedgoatCANOpen2Buses100us_DW.EnableControl_Buf2;
+    break;
+  }
+
+  /* End of RateTransition: '<S32>/EnableControl' */
+
+  /* ZeroOrderHold: '<S32>/Zero-Order Hold' */
+  SpeedgoatCANOpen2Buses100us_B.ZeroOrderHold_k =
+    SpeedgoatCANOpen2Buses100us_B.En;
+
+  /* RateTransition: '<S43>/TmpRTBAtDerivativeInport1' */
+  rtw_xpc_mutex_take
+    (SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtDerivativeInport1_d0_SE);
+  SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtDerivativeInport1_RDBuf =
+    SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtDerivativeInport1_LstBu;
+  rtw_xpc_mutex_give
+    (SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtDerivativeInport1_d0_SE);
+  switch (SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtDerivativeInport1_RDBuf) {
+   case 0:
+    SpeedgoatCANOpen2Buses100us_B.TmpRTBAtDerivativeInport1 =
+      SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtDerivativeInport1_Buf0;
+    break;
+
+   case 1:
+    SpeedgoatCANOpen2Buses100us_B.TmpRTBAtDerivativeInport1 =
+      SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtDerivativeInport1_Buf1;
+    break;
+
+   case 2:
+    SpeedgoatCANOpen2Buses100us_B.TmpRTBAtDerivativeInport1 =
+      SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtDerivativeInport1_Buf2;
+    break;
+  }
+
+  /* End of RateTransition: '<S43>/TmpRTBAtDerivativeInport1' */
+
+  /* MATLAB Function: '<S43>/Derivative' */
+  yf = ((real32_T)SpeedgoatCANOpen2Buses100us_B.TmpRTBAtDerivativeInport1 -
+        SpeedgoatCANOpen2Buses100us_DW.yf_k1) * 0.0697674453F +
+    SpeedgoatCANOpen2Buses100us_DW.yf_k1;
+  SpeedgoatCANOpen2Buses100us_B.ud = (yf - SpeedgoatCANOpen2Buses100us_DW.yf_k1)
+    * 0.2F / 0.015F;
+  SpeedgoatCANOpen2Buses100us_DW.yf_k1 = yf;
+  SpeedgoatCANOpen2Buses100us_B.yf = yf;
+
+  /* Delay: '<S43>/Delay' */
+  SpeedgoatCANOpen2Buses100us_B.Delay =
+    SpeedgoatCANOpen2Buses100us_DW.Delay_DSTATE;
+
+  /* ZeroOrderHold: '<S43>/Zero-Order Hold' */
+  SpeedgoatCANOpen2Buses100us_B.ZeroOrderHold =
+    SpeedgoatCANOpen2Buses100us_B.Delay;
+
+  /* RateTransition: '<S43>/TmpRTBAtDelayInport1' */
+  rtw_xpc_mutex_take
+    (SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtDelayInport1_d0_SEMAPHO);
+  SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtDelayInport1_RDBuf =
+    SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtDelayInport1_LstBufWR;
+  rtw_xpc_mutex_give
+    (SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtDelayInport1_d0_SEMAPHO);
+  SpeedgoatCANOpen2Buses100us_B.TmpRTBAtDelayInport1 =
+    SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtDelayInport1_Buf[SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtDelayInport1_RDBuf];
+
   /* Memory: '<S40>/Memory1' */
-  SpeedgoatCANOpen2Buses100us_B.DispLeftmfilt_k =
+  SpeedgoatCANOpen2Buses100us_B.Memory1_l =
     SpeedgoatCANOpen2Buses100us_DW.Memory1_PreviousInput_b;
 
   /* RateTransition: '<S40>/DispLeft [m]' */
@@ -2651,26 +3428,105 @@ static void SpeedgoatCANOpen2Buses100us_update2(void) /* Sample time: [0.005s, 0
 {
   int8_T wrBufIdx;
 
-  /* Update for RateTransition: '<S41>/DispLeft [m] filt' */
-  rtw_xpc_mutex_take(SpeedgoatCANOpen2Buses100us_DW.DispLeftmfilt_d0_SEMAPHORE);
-  wrBufIdx = (int8_T)(SpeedgoatCANOpen2Buses100us_DW.DispLeftmfilt_LstBufWR + 1);
+  /* Update for RateTransition: '<S43>/TmpRTBAtProduct2Inport1' */
+  rtw_xpc_mutex_take
+    (SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtProduct2Inport1_d0_SEMA);
+  wrBufIdx = (int8_T)
+    (SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtProduct2Inport1_LstBufW + 1);
   if (wrBufIdx == 3) {
     wrBufIdx = 0;
   }
 
-  if (wrBufIdx == SpeedgoatCANOpen2Buses100us_DW.DispLeftmfilt_RDBuf) {
+  if (wrBufIdx == SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtProduct2Inport1_RDBuf)
+  {
     wrBufIdx++;
     if (wrBufIdx == 3) {
       wrBufIdx = 0;
     }
   }
 
-  rtw_xpc_mutex_give(SpeedgoatCANOpen2Buses100us_DW.DispLeftmfilt_d0_SEMAPHORE);
-  SpeedgoatCANOpen2Buses100us_DW.DispLeftmfilt_Buf[wrBufIdx] =
-    SpeedgoatCANOpen2Buses100us_B.DispLeftmfilt_k;
-  SpeedgoatCANOpen2Buses100us_DW.DispLeftmfilt_LstBufWR = wrBufIdx;
+  rtw_xpc_mutex_give
+    (SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtProduct2Inport1_d0_SEMA);
+  SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtProduct2Inport1_Buf[wrBufIdx] =
+    SpeedgoatCANOpen2Buses100us_B.ZeroOrderHold_k;
+  SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtProduct2Inport1_LstBufW = wrBufIdx;
 
-  /* End of Update for RateTransition: '<S41>/DispLeft [m] filt' */
+  /* End of Update for RateTransition: '<S43>/TmpRTBAtProduct2Inport1' */
+
+  /* Update for RateTransition: '<S43>/TmpRTBAtProduct1Inport1' */
+  rtw_xpc_mutex_take
+    (SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtProduct1Inport1_d0_SEMA);
+  wrBufIdx = (int8_T)
+    (SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtProduct1Inport1_LstBufW + 1);
+  if (wrBufIdx == 3) {
+    wrBufIdx = 0;
+  }
+
+  if (wrBufIdx == SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtProduct1Inport1_RDBuf)
+  {
+    wrBufIdx++;
+    if (wrBufIdx == 3) {
+      wrBufIdx = 0;
+    }
+  }
+
+  rtw_xpc_mutex_give
+    (SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtProduct1Inport1_d0_SEMA);
+  SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtProduct1Inport1_Buf[wrBufIdx] =
+    SpeedgoatCANOpen2Buses100us_B.ZeroOrderHold_k;
+  SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtProduct1Inport1_LstBufW = wrBufIdx;
+
+  /* End of Update for RateTransition: '<S43>/TmpRTBAtProduct1Inport1' */
+
+  /* Update for RateTransition: '<S43>/TiltingAngle_stepreqf [deg]' */
+  rtw_xpc_mutex_take
+    (SpeedgoatCANOpen2Buses100us_DW.TiltingAngle_stepreqfdeg_d0_SEM);
+  wrBufIdx = (int8_T)
+    (SpeedgoatCANOpen2Buses100us_DW.TiltingAngle_stepreqfdeg_LstBuf + 1);
+  if (wrBufIdx == 3) {
+    wrBufIdx = 0;
+  }
+
+  if (wrBufIdx == SpeedgoatCANOpen2Buses100us_DW.TiltingAngle_stepreqfdeg_RDBuf)
+  {
+    wrBufIdx++;
+    if (wrBufIdx == 3) {
+      wrBufIdx = 0;
+    }
+  }
+
+  rtw_xpc_mutex_give
+    (SpeedgoatCANOpen2Buses100us_DW.TiltingAngle_stepreqfdeg_d0_SEM);
+  SpeedgoatCANOpen2Buses100us_DW.TiltingAngle_stepreqfdeg_Buf[wrBufIdx] =
+    SpeedgoatCANOpen2Buses100us_B.TiltingAngle_stepreqfdeg_p;
+  SpeedgoatCANOpen2Buses100us_DW.TiltingAngle_stepreqfdeg_LstBuf = wrBufIdx;
+
+  /* End of Update for RateTransition: '<S43>/TiltingAngle_stepreqf [deg]' */
+
+  /* Update for RateTransition: '<S31>/RightTiltMotor_CurrentReq [mA]' */
+  rtw_xpc_mutex_take
+    (SpeedgoatCANOpen2Buses100us_DW.RightTiltMotor_CurrentReqmA_d0_);
+  wrBufIdx = (int8_T)
+    (SpeedgoatCANOpen2Buses100us_DW.RightTiltMotor_CurrentReqmA_Lst + 1);
+  if (wrBufIdx == 3) {
+    wrBufIdx = 0;
+  }
+
+  if (wrBufIdx == SpeedgoatCANOpen2Buses100us_DW.RightTiltMotor_CurrentReqmA_RDB)
+  {
+    wrBufIdx++;
+    if (wrBufIdx == 3) {
+      wrBufIdx = 0;
+    }
+  }
+
+  rtw_xpc_mutex_give
+    (SpeedgoatCANOpen2Buses100us_DW.RightTiltMotor_CurrentReqmA_d0_);
+  SpeedgoatCANOpen2Buses100us_DW.RightTiltMotor_CurrentReqmA_Buf[wrBufIdx] =
+    SpeedgoatCANOpen2Buses100us_B.RightTiltMotor_CurrentReqmA_i;
+  SpeedgoatCANOpen2Buses100us_DW.RightTiltMotor_CurrentReqmA_Lst = wrBufIdx;
+
+  /* End of Update for RateTransition: '<S31>/RightTiltMotor_CurrentReq [mA]' */
 
   /* Update for RateTransition: '<S31>/TmpRTBAtSwitchInport1' */
   rtw_xpc_mutex_take
@@ -2695,6 +3551,59 @@ static void SpeedgoatCANOpen2Buses100us_update2(void) /* Sample time: [0.005s, 0
   SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtSwitchInport1_LstBufWR = wrBufIdx;
 
   /* End of Update for RateTransition: '<S31>/TmpRTBAtSwitchInport1' */
+
+  /* Update for RateTransition: '<S32>/TmpRTBAtProduct2Inport1' */
+  rtw_xpc_mutex_take
+    (SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtProduct2Inport1_d0_SE_n);
+  wrBufIdx = (int8_T)
+    (SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtProduct2Inport1_LstBu_p + 1);
+  if (wrBufIdx == 3) {
+    wrBufIdx = 0;
+  }
+
+  if (wrBufIdx == SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtProduct2Inport1_RDBuf_c)
+  {
+    wrBufIdx++;
+    if (wrBufIdx == 3) {
+      wrBufIdx = 0;
+    }
+  }
+
+  rtw_xpc_mutex_give
+    (SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtProduct2Inport1_d0_SE_n);
+  SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtProduct2Inport1_Buf_j[wrBufIdx] =
+    SpeedgoatCANOpen2Buses100us_B.ZeroOrderHold_k;
+  SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtProduct2Inport1_LstBu_p = wrBufIdx;
+
+  /* End of Update for RateTransition: '<S32>/TmpRTBAtProduct2Inport1' */
+
+  /* Update for RateTransition: '<S43>/TmpRTBAtSum2Inport2' */
+  rtw_xpc_mutex_take
+    (SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtSum2Inport2_d0_SEMAPHOR);
+  wrBufIdx = (int8_T)
+    (SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtSum2Inport2_LstBufWR + 1);
+  if (wrBufIdx == 3) {
+    wrBufIdx = 0;
+  }
+
+  if (wrBufIdx == SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtSum2Inport2_RDBuf) {
+    wrBufIdx++;
+    if (wrBufIdx == 3) {
+      wrBufIdx = 0;
+    }
+  }
+
+  rtw_xpc_mutex_give
+    (SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtSum2Inport2_d0_SEMAPHOR);
+  SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtSum2Inport2_Buf[wrBufIdx] =
+    SpeedgoatCANOpen2Buses100us_B.ZeroOrderHold;
+  SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtSum2Inport2_LstBufWR = wrBufIdx;
+
+  /* End of Update for RateTransition: '<S43>/TmpRTBAtSum2Inport2' */
+
+  /* Update for Delay: '<S43>/Delay' */
+  SpeedgoatCANOpen2Buses100us_DW.Delay_DSTATE =
+    SpeedgoatCANOpen2Buses100us_B.TmpRTBAtDelayInport1;
 
   /* Update for Memory: '<S40>/Memory1' */
   SpeedgoatCANOpen2Buses100us_DW.Memory1_PreviousInput_b =
@@ -2726,6 +3635,149 @@ static void SpeedgoatCANOpen2Buses100us_update2(void) /* Sample time: [0.005s, 0
     SpeedgoatCANOpen2Buses100us_M->Timing.stepSize2 * 4294967296.0;
 }
 
+/* Model output function for TID3 */
+static void SpeedgoatCANOpen2Buses100us_output3(void) /* Sample time: [0.015s, 0.0s] */
+{
+  real_T u0;
+  real_T u1;
+  real_T u2;
+
+  /* RateTransition: '<S43>/TmpRTBAtDiscrete-Time IntegratorInport1' */
+  rtw_xpc_mutex_take
+    (SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtDiscreteTimeIntegrat_bg);
+  SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtDiscreteTimeIntegrato_l =
+    SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtDiscreteTimeIntegrato_e;
+  rtw_xpc_mutex_give
+    (SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtDiscreteTimeIntegrat_bg);
+  switch (SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtDiscreteTimeIntegrato_l) {
+   case 0:
+    SpeedgoatCANOpen2Buses100us_B.TmpRTBAtDiscreteTimeIntegratorI =
+      SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtDiscreteTimeIntegratorI;
+    break;
+
+   case 1:
+    SpeedgoatCANOpen2Buses100us_B.TmpRTBAtDiscreteTimeIntegratorI =
+      SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtDiscreteTimeIntegrato_k;
+    break;
+
+   case 2:
+    SpeedgoatCANOpen2Buses100us_B.TmpRTBAtDiscreteTimeIntegratorI =
+      SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtDiscreteTimeIntegrato_b;
+    break;
+  }
+
+  /* End of RateTransition: '<S43>/TmpRTBAtDiscrete-Time IntegratorInport1' */
+
+  /* DiscreteIntegrator: '<S43>/Discrete-Time Integrator' */
+  SpeedgoatCANOpen2Buses100us_B.Integral =
+    SpeedgoatCANOpen2Buses100us_P.DiscreteTimeIntegrator_gainval *
+    SpeedgoatCANOpen2Buses100us_B.TmpRTBAtDiscreteTimeIntegratorI +
+    SpeedgoatCANOpen2Buses100us_DW.DiscreteTimeIntegrator_DSTATE;
+
+  /* Saturate: '<S43>/Saturation' */
+  u1 = -SpeedgoatCANOpen2Buses100us_P.PID_ctrl1_Req_lim;
+  u0 = SpeedgoatCANOpen2Buses100us_B.Integral;
+  u2 = SpeedgoatCANOpen2Buses100us_P.PID_ctrl1_Req_lim;
+  if (u0 > u2) {
+    SpeedgoatCANOpen2Buses100us_B.Saturation_c = u2;
+  } else if (u0 < u1) {
+    SpeedgoatCANOpen2Buses100us_B.Saturation_c = u1;
+  } else {
+    SpeedgoatCANOpen2Buses100us_B.Saturation_c = u0;
+  }
+
+  /* End of Saturate: '<S43>/Saturation' */
+
+  /* Sum: '<S43>/Sum' */
+  SpeedgoatCANOpen2Buses100us_B.Sum_c = SpeedgoatCANOpen2Buses100us_B.Integral -
+    SpeedgoatCANOpen2Buses100us_B.Saturation_c;
+
+  /* Gain: '<S43>/AntiWindup' */
+  u1 = SpeedgoatCANOpen2Buses100us_P.PID_ctrl1_Ki /
+    SpeedgoatCANOpen2Buses100us_P.PID_ctrl1_Kp;
+  SpeedgoatCANOpen2Buses100us_B.AntiWindup = u1 *
+    SpeedgoatCANOpen2Buses100us_B.Sum_c;
+}
+
+/* Model update function for TID3 */
+static void SpeedgoatCANOpen2Buses100us_update3(void) /* Sample time: [0.015s, 0.0s] */
+{
+  int8_T wrBufIdx;
+
+  /* Update for RateTransition: '<S43>/TmpRTBAtSum4Inport2' */
+  rtw_xpc_mutex_take
+    (SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtSum4Inport2_d0_SEMAPHOR);
+  wrBufIdx = (int8_T)
+    (SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtSum4Inport2_LstBufWR + 1);
+  if (wrBufIdx == 3) {
+    wrBufIdx = 0;
+  }
+
+  if (wrBufIdx == SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtSum4Inport2_RDBuf) {
+    wrBufIdx++;
+    if (wrBufIdx == 3) {
+      wrBufIdx = 0;
+    }
+  }
+
+  rtw_xpc_mutex_give
+    (SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtSum4Inport2_d0_SEMAPHOR);
+  SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtSum4Inport2_Buf[wrBufIdx] =
+    SpeedgoatCANOpen2Buses100us_B.Saturation_c;
+  SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtSum4Inport2_LstBufWR = wrBufIdx;
+
+  /* End of Update for RateTransition: '<S43>/TmpRTBAtSum4Inport2' */
+
+  /* Update for DiscreteIntegrator: '<S43>/Discrete-Time Integrator' */
+  SpeedgoatCANOpen2Buses100us_DW.DiscreteTimeIntegrator_DSTATE =
+    SpeedgoatCANOpen2Buses100us_P.DiscreteTimeIntegrator_gainval *
+    SpeedgoatCANOpen2Buses100us_B.TmpRTBAtDiscreteTimeIntegratorI +
+    SpeedgoatCANOpen2Buses100us_B.Integral;
+
+  /* Update for RateTransition: '<S43>/TmpRTBAtDelayInport1' */
+  rtw_xpc_mutex_take
+    (SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtDelayInport1_d0_SEMAPHO);
+  wrBufIdx = (int8_T)
+    (SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtDelayInport1_LstBufWR + 1);
+  if (wrBufIdx == 3) {
+    wrBufIdx = 0;
+  }
+
+  if (wrBufIdx == SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtDelayInport1_RDBuf) {
+    wrBufIdx++;
+    if (wrBufIdx == 3) {
+      wrBufIdx = 0;
+    }
+  }
+
+  rtw_xpc_mutex_give
+    (SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtDelayInport1_d0_SEMAPHO);
+  SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtDelayInport1_Buf[wrBufIdx] =
+    SpeedgoatCANOpen2Buses100us_B.AntiWindup;
+  SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtDelayInport1_LstBufWR = wrBufIdx;
+
+  /* End of Update for RateTransition: '<S43>/TmpRTBAtDelayInport1' */
+
+  /* Update absolute time */
+  /* The "clockTick3" counts the number of times the code of this task has
+   * been executed. The absolute time is the multiplication of "clockTick3"
+   * and "Timing.stepSize3". Size of "clockTick3" ensures timer will not
+   * overflow during the application lifespan selected.
+   * Timer of this task consists of two 32 bit unsigned integers.
+   * The two integers represent the low bits Timing.clockTick3 and the high bits
+   * Timing.clockTickH3. When the low bit overflows to 0, the high bits increment.
+   */
+  if (!(++SpeedgoatCANOpen2Buses100us_M->Timing.clockTick3)) {
+    ++SpeedgoatCANOpen2Buses100us_M->Timing.clockTickH3;
+  }
+
+  SpeedgoatCANOpen2Buses100us_M->Timing.t[3] =
+    SpeedgoatCANOpen2Buses100us_M->Timing.clockTick3 *
+    SpeedgoatCANOpen2Buses100us_M->Timing.stepSize3 +
+    SpeedgoatCANOpen2Buses100us_M->Timing.clockTickH3 *
+    SpeedgoatCANOpen2Buses100us_M->Timing.stepSize3 * 4294967296.0;
+}
+
 /* Model output wrapper function for compatibility with a static main program */
 static void SpeedgoatCANOpen2Buses100us_output(int_T tid)
 {
@@ -2736,6 +3788,10 @@ static void SpeedgoatCANOpen2Buses100us_output(int_T tid)
 
    case 1 :
     SpeedgoatCANOpen2Buses100us_output2();
+    break;
+
+   case 2 :
+    SpeedgoatCANOpen2Buses100us_output3();
     break;
 
    default :
@@ -2755,6 +3811,10 @@ static void SpeedgoatCANOpen2Buses100us_update(int_T tid)
     SpeedgoatCANOpen2Buses100us_update2();
     break;
 
+   case 2 :
+    SpeedgoatCANOpen2Buses100us_update3();
+    break;
+
    default :
     break;
   }
@@ -2764,9 +3824,15 @@ static void SpeedgoatCANOpen2Buses100us_update(int_T tid)
 static void SpeedgoatCANOpen2Buses100us_initialize(void)
 {
   {
-    dsp_simulink_MovingAverage_Sp_T *b_obj;
-    dsp_private_SlidingWindowAver_T *iobj_0;
-    dsp_simulink_MovingAverage_Sp_T *obj;
+    dsp_simulink_MovingAverage_i_T *b_obj;
+    dsp_private_SlidingWindowAv_i_T *iobj_0;
+    dsp_simulink_MovingAverage_i_T *obj;
+    dsp_simulink_MovingAverage_Sp_T *b_obj_0;
+    dsp_private_SlidingWindowAver_T *iobj_0_0;
+    dsp_simulink_MovingAverage_Sp_T *obj_0;
+    dsp_simulink_MovingAverage_il_T *b_obj_1;
+    dsp_private_SlidingWindowA_il_T *iobj_0_1;
+    dsp_simulink_MovingAverage_il_T *obj_1;
 
     /* Start for S-Function (sg_IO602_IO691_setup_s): '<S15>/CAN Setup ' */
     /* Level2 S-Function Block: '<S15>/CAN Setup ' (sg_IO602_IO691_setup_s) */
@@ -2826,42 +3892,48 @@ static void SpeedgoatCANOpen2Buses100us_initialize(void)
     }
 
     /* End of Start for SubSystem: '<S18>/CAN TX Wrapper' */
-    /* Start for Constant: '<S54>/Constant' */
-    SpeedgoatCANOpen2Buses100us_B.Constant_j =
+    /* Start for Constant: '<S59>/Constant' */
+    SpeedgoatCANOpen2Buses100us_B.Constant =
       SpeedgoatCANOpen2Buses100us_P.Constant_Value_l;
 
-    /* Start for Constant: '<S55>/Constant' */
+    /* Start for Constant: '<S60>/Constant' */
     SpeedgoatCANOpen2Buses100us_B.Constant_m =
       SpeedgoatCANOpen2Buses100us_P.Constant_Value_j;
 
-    /* Start for Constant: '<S56>/Constant' */
+    /* Start for Constant: '<S61>/Constant' */
     SpeedgoatCANOpen2Buses100us_B.Constant_e =
       SpeedgoatCANOpen2Buses100us_P.Constant_Value_n;
 
-    /* Start for Constant: '<S50>/Constant' */
+    /* Start for Constant: '<S55>/Constant' */
     SpeedgoatCANOpen2Buses100us_B.Constant_g =
       SpeedgoatCANOpen2Buses100us_P.Constant_Value_h;
 
-    /* Start for RateTransition: '<S41>/DispLeft [m] filt' */
-    SpeedgoatCANOpen2Buses100us_B.DispLeftmfilt =
-      SpeedgoatCANOpen2Buses100us_P.DispLeftmfilt_InitialCondition;
+    /* Start for RateTransition: '<S43>/TmpRTBAtProduct2Inport1' */
+    SpeedgoatCANOpen2Buses100us_B.TmpRTBAtProduct2Inport1 =
+      SpeedgoatCANOpen2Buses100us_P.TmpRTBAtProduct2Inport1_Initial;
     rtw_xpc_mutex_create
-      (&SpeedgoatCANOpen2Buses100us_DW.DispLeftmfilt_d0_SEMAPHORE);
+      (&SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtProduct2Inport1_d0_SEMA);
 
-    /* Start for RateTransition: '<S31>/TmpRTBAtSwitchInport1' */
-    SpeedgoatCANOpen2Buses100us_B.TmpRTBAtSwitchInport1 =
-      SpeedgoatCANOpen2Buses100us_P.TmpRTBAtSwitchInport1_InitialCo;
+    /* Start for RateTransition: '<S43>/TmpRTBAtProduct1Inport1' */
+    SpeedgoatCANOpen2Buses100us_B.TmpRTBAtProduct1Inport1 =
+      SpeedgoatCANOpen2Buses100us_P.TmpRTBAtProduct1Inport1_Initial;
     rtw_xpc_mutex_create
-      (&SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtSwitchInport1_d0_SEMAPH);
+      (&SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtProduct1Inport1_d0_SEMA);
 
-    /* Start for MATLABSystem: '<S30>/Moving Average' */
-    SpeedgoatCANOpen2Buses100us_DW.obj.matlabCodegenIsDeleted = true;
-    b_obj = &SpeedgoatCANOpen2Buses100us_DW.obj;
+    /* Start for RateTransition: '<S43>/TiltingAngle_stepreqf [deg]' */
+    SpeedgoatCANOpen2Buses100us_B.TiltingAngle_stepreqfdeg =
+      SpeedgoatCANOpen2Buses100us_P.TiltingAngle_stepreqfdeg_Initia;
+    rtw_xpc_mutex_create
+      (&SpeedgoatCANOpen2Buses100us_DW.TiltingAngle_stepreqfdeg_d0_SEM);
+
+    /* Start for MATLABSystem: '<S32>/Moving Average' */
+    SpeedgoatCANOpen2Buses100us_DW.obj_b.matlabCodegenIsDeleted = true;
+    b_obj = &SpeedgoatCANOpen2Buses100us_DW.obj_b;
     b_obj->isInitialized = 0;
     b_obj->NumChannels = -1;
     b_obj->matlabCodegenIsDeleted = false;
-    SpeedgoatCANOpen2Buses100us_DW.objisempty = true;
-    b_obj = &SpeedgoatCANOpen2Buses100us_DW.obj;
+    SpeedgoatCANOpen2Buses100us_DW.objisempty_f = true;
+    b_obj = &SpeedgoatCANOpen2Buses100us_DW.obj_b;
     iobj_0 = &SpeedgoatCANOpen2Buses100us_DW.gobj_0;
     b_obj->isSetupComplete = false;
     b_obj->isInitialized = 1;
@@ -2871,6 +3943,60 @@ static void SpeedgoatCANOpen2Buses100us_initialize(void)
     obj->pStatistic = iobj_0;
     b_obj->isSetupComplete = true;
     b_obj->TunablePropsChanged = false;
+
+    /* Start for MATLABSystem: '<S43>/Moving Average2' */
+    SpeedgoatCANOpen2Buses100us_DW.obj.matlabCodegenIsDeleted = true;
+    b_obj_0 = &SpeedgoatCANOpen2Buses100us_DW.obj;
+    b_obj_0->isInitialized = 0;
+    b_obj_0->NumChannels = -1;
+    b_obj_0->matlabCodegenIsDeleted = false;
+    SpeedgoatCANOpen2Buses100us_DW.objisempty = true;
+    b_obj_0 = &SpeedgoatCANOpen2Buses100us_DW.obj;
+    iobj_0_0 = &SpeedgoatCANOpen2Buses100us_DW.gobj_0_d;
+    b_obj_0->isSetupComplete = false;
+    b_obj_0->isInitialized = 1;
+    obj_0 = b_obj_0;
+    obj_0->NumChannels = 1;
+    iobj_0_0->isInitialized = 0;
+    obj_0->pStatistic = iobj_0_0;
+    b_obj_0->isSetupComplete = true;
+    b_obj_0->TunablePropsChanged = false;
+
+    /* Start for RateTransition: '<S43>/TmpRTBAtSum4Inport2' */
+    SpeedgoatCANOpen2Buses100us_B.TmpRTBAtSum4Inport2 =
+      SpeedgoatCANOpen2Buses100us_P.TmpRTBAtSum4Inport2_InitialCond;
+    rtw_xpc_mutex_create
+      (&SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtSum4Inport2_d0_SEMAPHOR);
+
+    /* Start for RateTransition: '<S31>/RightTiltMotor_CurrentReq [mA]' */
+    SpeedgoatCANOpen2Buses100us_B.RightTiltMotor_CurrentReqmA =
+      SpeedgoatCANOpen2Buses100us_P.RightTiltMotor_CurrentReqmA_Ini;
+    rtw_xpc_mutex_create
+      (&SpeedgoatCANOpen2Buses100us_DW.RightTiltMotor_CurrentReqmA_d0_);
+
+    /* Start for RateTransition: '<S31>/TmpRTBAtSwitchInport1' */
+    SpeedgoatCANOpen2Buses100us_B.TmpRTBAtSwitchInport1 =
+      SpeedgoatCANOpen2Buses100us_P.TmpRTBAtSwitchInport1_InitialCo;
+    rtw_xpc_mutex_create
+      (&SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtSwitchInport1_d0_SEMAPH);
+
+    /* Start for MATLABSystem: '<S30>/Moving Average' */
+    SpeedgoatCANOpen2Buses100us_DW.obj_c.matlabCodegenIsDeleted = true;
+    b_obj_0 = &SpeedgoatCANOpen2Buses100us_DW.obj_c;
+    b_obj_0->isInitialized = 0;
+    b_obj_0->NumChannels = -1;
+    b_obj_0->matlabCodegenIsDeleted = false;
+    SpeedgoatCANOpen2Buses100us_DW.objisempty_h = true;
+    b_obj_0 = &SpeedgoatCANOpen2Buses100us_DW.obj_c;
+    iobj_0_0 = &SpeedgoatCANOpen2Buses100us_DW.gobj_0_j;
+    b_obj_0->isSetupComplete = false;
+    b_obj_0->isInitialized = 1;
+    obj_0 = b_obj_0;
+    obj_0->NumChannels = 1;
+    iobj_0_0->isInitialized = 0;
+    obj_0->pStatistic = iobj_0_0;
+    b_obj_0->isSetupComplete = true;
+    b_obj_0->TunablePropsChanged = false;
 
     /* Start for RateTransition: '<S30>/TmpRTBAtP ControllerInport1' */
     SpeedgoatCANOpen2Buses100us_B.TmpRTBAtPControllerInport1 =
@@ -2884,110 +4010,270 @@ static void SpeedgoatCANOpen2Buses100us_initialize(void)
     rtw_xpc_mutex_create
       (&SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtPControllerInport2_d0_S);
 
+    /* Start for RateTransition: '<S32>/TmpRTBAtProduct2Inport1' */
+    SpeedgoatCANOpen2Buses100us_B.TmpRTBAtProduct2Inport1_m =
+      SpeedgoatCANOpen2Buses100us_P.TmpRTBAtProduct2Inport1_Initi_j;
+    rtw_xpc_mutex_create
+      (&SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtProduct2Inport1_d0_SE_n);
+
+    /* Start for RateTransition: '<S32>/TmpRTBAtZero-Order Hold2Inport1' */
+    SpeedgoatCANOpen2Buses100us_B.TmpRTBAtZeroOrderHold2Inport1 =
+      SpeedgoatCANOpen2Buses100us_P.TmpRTBAtZeroOrderHold2Inport1_I;
+    rtw_xpc_mutex_create
+      (&SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtZeroOrderHold2Inport1_d);
+
+    /* Start for RateTransition: '<S32>/TmpRTBAtZero-Order Hold1Inport1' */
+    SpeedgoatCANOpen2Buses100us_B.TmpRTBAtZeroOrderHold1Inport1 =
+      SpeedgoatCANOpen2Buses100us_P.TmpRTBAtZeroOrderHold1Inport1_I;
+    rtw_xpc_mutex_create
+      (&SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtZeroOrderHold1Inport1_d);
+
+    /* Start for RateTransition: '<S32>/EnableControl' */
+    SpeedgoatCANOpen2Buses100us_B.En =
+      SpeedgoatCANOpen2Buses100us_P.EnableControl_InitialCondition;
+    rtw_xpc_mutex_create
+      (&SpeedgoatCANOpen2Buses100us_DW.EnableControl_d0_SEMAPHORE);
+
+    /* Start for RateTransition: '<S43>/TmpRTBAtDerivativeInport1' */
+    SpeedgoatCANOpen2Buses100us_B.TmpRTBAtDerivativeInport1 =
+      SpeedgoatCANOpen2Buses100us_P.TmpRTBAtDerivativeInport1_Initi;
+    rtw_xpc_mutex_create
+      (&SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtDerivativeInport1_d0_SE);
+
+    /* Start for MATLABSystem: '<S43>/Moving Average1' */
+    SpeedgoatCANOpen2Buses100us_DW.obj_bz.matlabCodegenIsDeleted = true;
+    b_obj_1 = &SpeedgoatCANOpen2Buses100us_DW.obj_bz;
+    b_obj_1->isInitialized = 0;
+    b_obj_1->NumChannels = -1;
+    b_obj_1->matlabCodegenIsDeleted = false;
+    SpeedgoatCANOpen2Buses100us_DW.objisempty_n = true;
+    b_obj_1 = &SpeedgoatCANOpen2Buses100us_DW.obj_bz;
+    iobj_0_1 = &SpeedgoatCANOpen2Buses100us_DW.gobj_0_a;
+    b_obj_1->isSetupComplete = false;
+    b_obj_1->isInitialized = 1;
+    obj_1 = b_obj_1;
+    obj_1->NumChannels = 1;
+    iobj_0_1->isInitialized = 0;
+    obj_1->pStatistic = iobj_0_1;
+    b_obj_1->isSetupComplete = true;
+    b_obj_1->TunablePropsChanged = false;
+
+    /* Start for RateTransition: '<S43>/TmpRTBAtSum2Inport2' */
+    SpeedgoatCANOpen2Buses100us_B.TmpRTBAtSum2Inport2 =
+      SpeedgoatCANOpen2Buses100us_P.TmpRTBAtSum2Inport2_InitialCond;
+    rtw_xpc_mutex_create
+      (&SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtSum2Inport2_d0_SEMAPHOR);
+
+    /* Start for RateTransition: '<S43>/TmpRTBAtDiscrete-Time IntegratorInport1' */
+    SpeedgoatCANOpen2Buses100us_B.TmpRTBAtDiscreteTimeIntegratorI =
+      SpeedgoatCANOpen2Buses100us_P.TmpRTBAtDiscreteTimeIntegratorI;
+    rtw_xpc_mutex_create
+      (&SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtDiscreteTimeIntegrat_bg);
+
+    /* Start for RateTransition: '<S43>/TmpRTBAtDelayInport1' */
+    SpeedgoatCANOpen2Buses100us_B.TmpRTBAtDelayInport1 =
+      SpeedgoatCANOpen2Buses100us_P.TmpRTBAtDelayInport1_InitialCon;
+    rtw_xpc_mutex_create
+      (&SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtDelayInport1_d0_SEMAPHO);
+
     /* Start for RateTransition: '<S40>/DispLeft [m]' */
     SpeedgoatCANOpen2Buses100us_B.DispLeftm_k =
       SpeedgoatCANOpen2Buses100us_P.DispLeftm_InitialCondition;
     rtw_xpc_mutex_create(&SpeedgoatCANOpen2Buses100us_DW.DispLeftm_d0_SEMAPHORE);
   }
 
-  /* user code (Initialize function Body) */
-  CANOpenSlave_ResetCommunication();
-  CANOpenSlave_ResetCommunication_APT();
+  {
+    dsp_simulink_MovingAverage_i_T *obj;
+    dsp_private_SlidingWindowAv_i_T *obj_0;
+    dsp_simulink_MovingAverage_il_T *obj_1;
+    dsp_private_SlidingWindowA_il_T *obj_2;
 
-  /* InitializeConditions for Delay: '<S36>/Delay' */
-  SpeedgoatCANOpen2Buses100us_DW.Delay_DSTATE[0] =
-    SpeedgoatCANOpen2Buses100us_P.Delay_InitialCondition;
-  SpeedgoatCANOpen2Buses100us_DW.Delay_DSTATE[1] =
-    SpeedgoatCANOpen2Buses100us_P.Delay_InitialCondition;
+    /* user code (Initialize function Body) */
+    CANOpenSlave_ResetCommunication();
+    CANOpenSlave_ResetCommunication_APT();
 
-  /* InitializeConditions for RateTransition: '<S41>/DispLeft [m] filt' */
-  SpeedgoatCANOpen2Buses100us_DW.DispLeftmfilt_Buf[0] =
-    SpeedgoatCANOpen2Buses100us_P.DispLeftmfilt_InitialCondition;
+    /* InitializeConditions for Delay: '<S36>/Delay' */
+    SpeedgoatCANOpen2Buses100us_DW.Delay_DSTATE_f[0] =
+      SpeedgoatCANOpen2Buses100us_P.Delay_InitialCondition_m;
+    SpeedgoatCANOpen2Buses100us_DW.Delay_DSTATE_f[1] =
+      SpeedgoatCANOpen2Buses100us_P.Delay_InitialCondition_m;
 
-  /* InitializeConditions for DiscreteIntegrator: '<S41>/Discrete-Time Integrator' */
-  SpeedgoatCANOpen2Buses100us_DW.DiscreteTimeIntegrator_DSTATE =
-    SpeedgoatCANOpen2Buses100us_P.DiscreteTimeIntegrator_IC;
+    /* InitializeConditions for RateTransition: '<S43>/TmpRTBAtProduct2Inport1' */
+    SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtProduct2Inport1_Buf[0] =
+      SpeedgoatCANOpen2Buses100us_P.TmpRTBAtProduct2Inport1_Initial;
 
-  /* InitializeConditions for DiscreteIntegrator: '<S41>/Discrete-Time Integrator1' */
-  SpeedgoatCANOpen2Buses100us_DW.DiscreteTimeIntegrator1_DSTATE =
-    SpeedgoatCANOpen2Buses100us_P.DiscreteTimeIntegrator1_IC;
+    /* InitializeConditions for RateTransition: '<S43>/TmpRTBAtProduct1Inport1' */
+    SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtProduct1Inport1_Buf[0] =
+      SpeedgoatCANOpen2Buses100us_P.TmpRTBAtProduct1Inport1_Initial;
 
-  /* InitializeConditions for RateTransition: '<S31>/TmpRTBAtSwitchInport1' */
-  SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtSwitchInport1_Buf[0] =
-    SpeedgoatCANOpen2Buses100us_P.TmpRTBAtSwitchInport1_InitialCo;
+    /* InitializeConditions for RateTransition: '<S43>/TiltingAngle_stepreqf [deg]' */
+    SpeedgoatCANOpen2Buses100us_DW.TiltingAngle_stepreqfdeg_Buf[0] =
+      SpeedgoatCANOpen2Buses100us_P.TiltingAngle_stepreqfdeg_Initia;
 
-  /* InitializeConditions for Memory: '<S30>/Memory1' */
-  SpeedgoatCANOpen2Buses100us_DW.Memory1_PreviousInput =
-    SpeedgoatCANOpen2Buses100us_P.Memory1_InitialCondition;
+    /* InitializeConditions for RateTransition: '<S43>/TmpRTBAtSum4Inport2' */
+    SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtSum4Inport2_Buf[0] =
+      SpeedgoatCANOpen2Buses100us_P.TmpRTBAtSum4Inport2_InitialCond;
 
-  /* InitializeConditions for RateTransition: '<S30>/TmpRTBAtP ControllerInport1' */
-  SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtPControllerInport1_Buf0 =
-    SpeedgoatCANOpen2Buses100us_P.TmpRTBAtPControllerInport1_Init;
+    /* InitializeConditions for RateTransition: '<S31>/RightTiltMotor_CurrentReq [mA]' */
+    SpeedgoatCANOpen2Buses100us_DW.RightTiltMotor_CurrentReqmA_Buf[0] =
+      SpeedgoatCANOpen2Buses100us_P.RightTiltMotor_CurrentReqmA_Ini;
 
-  /* InitializeConditions for RateTransition: '<S30>/TmpRTBAtP ControllerInport2' */
-  SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtPControllerInport2_Buf0 =
-    SpeedgoatCANOpen2Buses100us_P.TmpRTBAtPControllerInport2_Init;
+    /* InitializeConditions for RateTransition: '<S31>/TmpRTBAtSwitchInport1' */
+    SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtSwitchInport1_Buf[0] =
+      SpeedgoatCANOpen2Buses100us_P.TmpRTBAtSwitchInport1_InitialCo;
 
-  /* InitializeConditions for Memory: '<S40>/Memory1' */
-  SpeedgoatCANOpen2Buses100us_DW.Memory1_PreviousInput_b =
-    SpeedgoatCANOpen2Buses100us_P.Memory1_InitialCondition_k;
+    /* InitializeConditions for Memory: '<S30>/Memory1' */
+    SpeedgoatCANOpen2Buses100us_DW.Memory1_PreviousInput =
+      SpeedgoatCANOpen2Buses100us_P.Memory1_InitialCondition;
 
-  /* InitializeConditions for RateTransition: '<S40>/DispLeft [m]' */
-  SpeedgoatCANOpen2Buses100us_DW.DispLeftm_Buf0 =
-    SpeedgoatCANOpen2Buses100us_P.DispLeftm_InitialCondition;
+    /* InitializeConditions for RateTransition: '<S30>/TmpRTBAtP ControllerInport1' */
+    SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtPControllerInport1_Buf0 =
+      SpeedgoatCANOpen2Buses100us_P.TmpRTBAtPControllerInport1_Init;
 
-  /* InitializeConditions for DiscreteFilter: '<S40>/Discrete Filter' */
-  SpeedgoatCANOpen2Buses100us_DW.DiscreteFilter_states[0] =
-    SpeedgoatCANOpen2Buses100us_P.DiscreteFilter_InitialStates;
-  SpeedgoatCANOpen2Buses100us_DW.DiscreteFilter_states[1] =
-    SpeedgoatCANOpen2Buses100us_P.DiscreteFilter_InitialStates;
+    /* InitializeConditions for RateTransition: '<S30>/TmpRTBAtP ControllerInport2' */
+    SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtPControllerInport2_Buf0 =
+      SpeedgoatCANOpen2Buses100us_P.TmpRTBAtPControllerInport2_Init;
 
-  /* SystemInitialize for Chart: '<S54>/DunkA_Steering_Init_SpeedMode' */
-  SpeedgoatCANOpen2Buses100us_DW.sfEvent_a = -1;
-  SpeedgoatCANOpen2Buses100us_DW.is_active_c12_SpeedgoatCANOpen2 = 0U;
-  SpeedgoatCANOpen2Buses100us_DW.is_c12_SpeedgoatCANOpen2Buses10 =
-    SpeedgoatCAN_IN_NO_ACTIVE_CHILD;
+    /* InitializeConditions for RateTransition: '<S32>/TmpRTBAtProduct2Inport1' */
+    SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtProduct2Inport1_Buf_j[0] =
+      SpeedgoatCANOpen2Buses100us_P.TmpRTBAtProduct2Inport1_Initi_j;
 
-  /* SystemInitialize for Chart: '<S55>/DunkC_TiltLeft_Init_CurrentMode' */
-  SpeedgoatCANOpen2Buses100us_DW.sfEvent_c = -1;
-  SpeedgoatCANOpen2Buses100us_DW.is_active_c2_SpeedgoatCANOpen2B = 0U;
-  SpeedgoatCANOpen2Buses100us_DW.is_c2_SpeedgoatCANOpen2Buses100 =
-    SpeedgoatCAN_IN_NO_ACTIVE_CHILD;
+    /* InitializeConditions for RateTransition: '<S32>/TmpRTBAtZero-Order Hold2Inport1' */
+    SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtZeroOrderHold2Inport1_B =
+      SpeedgoatCANOpen2Buses100us_P.TmpRTBAtZeroOrderHold2Inport1_I;
 
-  /* SystemInitialize for Chart: '<S56>/DunkB_TiltRight_Init_CurrentMode' */
-  SpeedgoatCANOpen2Buses100us_DW.sfEvent = -1;
-  SpeedgoatCANOpen2Buses100us_DW.is_active_c1_SpeedgoatCANOpen2B = 0U;
-  SpeedgoatCANOpen2Buses100us_DW.is_c1_SpeedgoatCANOpen2Buses100 =
-    SpeedgoatCAN_IN_NO_ACTIVE_CHILD;
+    /* InitializeConditions for RateTransition: '<S32>/TmpRTBAtZero-Order Hold1Inport1' */
+    SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtZeroOrderHold1Inport1_B =
+      SpeedgoatCANOpen2Buses100us_P.TmpRTBAtZeroOrderHold1Inport1_I;
 
-  /* SystemInitialize for Chart: '<S50>/DunkD_Brake_Init_CurrentMode' */
-  SpeedgoatCANOpen2Buses100us_DW.sfEvent_j = -1;
-  SpeedgoatCANOpen2Buses100us_DW.is_active_c3_SpeedgoatCANOpen2B = 0U;
-  SpeedgoatCANOpen2Buses100us_DW.is_c3_SpeedgoatCANOpen2Buses100 =
-    SpeedgoatCAN_IN_NO_ACTIVE_CHILD;
+    /* InitializeConditions for RateTransition: '<S32>/EnableControl' */
+    SpeedgoatCANOpen2Buses100us_DW.EnableControl_Buf0 =
+      SpeedgoatCANOpen2Buses100us_P.EnableControl_InitialCondition;
 
-  /* SystemInitialize for Chart: '<S27>/EnableCtrl' */
-  SpeedgoatCANOpen2Buses100us_DW.sfEvent_n = -1;
-  SpeedgoatCANOpen2Buses100us_DW.is_active_c4_SpeedgoatCANOpen2B = 0U;
-  SpeedgoatCANOpen2Buses100us_DW.is_c4_SpeedgoatCANOpen2Buses100 =
-    SpeedgoatCAN_IN_NO_ACTIVE_CHILD;
+    /* InitializeConditions for RateTransition: '<S43>/TmpRTBAtDerivativeInport1' */
+    SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtDerivativeInport1_Buf0 =
+      SpeedgoatCANOpen2Buses100us_P.TmpRTBAtDerivativeInport1_Initi;
 
-  /* SystemInitialize for MATLAB Function: '<S24>/HeartBeatgenerator' */
-  SpeedgoatCANOpen2Buses100us_DW.Heartbeat = 0.0;
-  SpeedgoatCANOpen2Buses100us_DW.tact = 0.0;
+    /* InitializeConditions for UnitDelay: '<S49>/UD' */
+    SpeedgoatCANOpen2Buses100us_DW.UD_DSTATE =
+      SpeedgoatCANOpen2Buses100us_P.DiscreteDerivative_ICPrevScaled;
 
-  /* SystemInitialize for Chart: '<S36>/Retract' */
-  SpeedgoatCANOpen2Buses100us_DW.sfEvent_h = -1;
-  SpeedgoatCANOpen2Buses100us_DW.temporalCounter_i1 = 0U;
-  SpeedgoatCANOpen2Buses100us_DW.is_active_c5_SpeedgoatCANOpen2B = 0U;
-  SpeedgoatCANOpen2Buses100us_DW.is_c5_SpeedgoatCANOpen2Buses100 =
-    SpeedgoatCAN_IN_NO_ACTIVE_CHILD;
+    /* InitializeConditions for RateTransition: '<S43>/TmpRTBAtSum2Inport2' */
+    SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtSum2Inport2_Buf[0] =
+      SpeedgoatCANOpen2Buses100us_P.TmpRTBAtSum2Inport2_InitialCond;
 
-  /* SystemInitialize for Chart: '<S29>/DecisionBrakeCtrl' */
-  SpeedgoatCANOpen2Buses100us_DW.sfEvent_e = -1;
-  SpeedgoatCANOpen2Buses100us_DW.is_active_c13_SpeedgoatCANOpen2 = 0U;
-  SpeedgoatCANOpen2Buses100us_DW.is_c13_SpeedgoatCANOpen2Buses10 =
-    SpeedgoatCAN_IN_NO_ACTIVE_CHILD;
+    /* InitializeConditions for RateTransition: '<S43>/TmpRTBAtDiscrete-Time IntegratorInport1' */
+    SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtDiscreteTimeIntegratorI =
+      SpeedgoatCANOpen2Buses100us_P.TmpRTBAtDiscreteTimeIntegratorI;
+
+    /* InitializeConditions for DiscreteIntegrator: '<S43>/Discrete-Time Integrator' */
+    SpeedgoatCANOpen2Buses100us_DW.DiscreteTimeIntegrator_DSTATE =
+      SpeedgoatCANOpen2Buses100us_P.DiscreteTimeIntegrator_IC;
+
+    /* InitializeConditions for Delay: '<S43>/Delay' */
+    SpeedgoatCANOpen2Buses100us_DW.Delay_DSTATE =
+      SpeedgoatCANOpen2Buses100us_P.Delay_InitialCondition;
+
+    /* InitializeConditions for RateTransition: '<S43>/TmpRTBAtDelayInport1' */
+    SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtDelayInport1_Buf[0] =
+      SpeedgoatCANOpen2Buses100us_P.TmpRTBAtDelayInport1_InitialCon;
+
+    /* InitializeConditions for Memory: '<S40>/Memory1' */
+    SpeedgoatCANOpen2Buses100us_DW.Memory1_PreviousInput_b =
+      SpeedgoatCANOpen2Buses100us_P.Memory1_InitialCondition_k;
+
+    /* InitializeConditions for RateTransition: '<S40>/DispLeft [m]' */
+    SpeedgoatCANOpen2Buses100us_DW.DispLeftm_Buf0 =
+      SpeedgoatCANOpen2Buses100us_P.DispLeftm_InitialCondition;
+
+    /* InitializeConditions for DiscreteFilter: '<S40>/Discrete Filter' */
+    SpeedgoatCANOpen2Buses100us_DW.DiscreteFilter_states[0] =
+      SpeedgoatCANOpen2Buses100us_P.DiscreteFilter_InitialStates;
+    SpeedgoatCANOpen2Buses100us_DW.DiscreteFilter_states[1] =
+      SpeedgoatCANOpen2Buses100us_P.DiscreteFilter_InitialStates;
+
+    /* SystemInitialize for Chart: '<S59>/DunkA_Steering_Init_SpeedMode' */
+    SpeedgoatCANOpen2Buses100us_DW.sfEvent_a = -1;
+    SpeedgoatCANOpen2Buses100us_DW.is_active_c12_SpeedgoatCANOpen2 = 0U;
+    SpeedgoatCANOpen2Buses100us_DW.is_c12_SpeedgoatCANOpen2Buses10 =
+      SpeedgoatCAN_IN_NO_ACTIVE_CHILD;
+
+    /* SystemInitialize for Chart: '<S60>/DunkC_TiltLeft_Init_CurrentMode' */
+    SpeedgoatCANOpen2Buses100us_DW.sfEvent_c = -1;
+    SpeedgoatCANOpen2Buses100us_DW.is_active_c2_SpeedgoatCANOpen2B = 0U;
+    SpeedgoatCANOpen2Buses100us_DW.is_c2_SpeedgoatCANOpen2Buses100 =
+      SpeedgoatCAN_IN_NO_ACTIVE_CHILD;
+
+    /* SystemInitialize for Chart: '<S61>/DunkB_TiltRight_Init_CurrentMode' */
+    SpeedgoatCANOpen2Buses100us_DW.sfEvent = -1;
+    SpeedgoatCANOpen2Buses100us_DW.is_active_c1_SpeedgoatCANOpen2B = 0U;
+    SpeedgoatCANOpen2Buses100us_DW.is_c1_SpeedgoatCANOpen2Buses100 =
+      SpeedgoatCAN_IN_NO_ACTIVE_CHILD;
+
+    /* SystemInitialize for Chart: '<S55>/DunkD_Brake_Init_CurrentMode' */
+    SpeedgoatCANOpen2Buses100us_DW.sfEvent_j = -1;
+    SpeedgoatCANOpen2Buses100us_DW.is_active_c3_SpeedgoatCANOpen2B = 0U;
+    SpeedgoatCANOpen2Buses100us_DW.is_c3_SpeedgoatCANOpen2Buses100 =
+      SpeedgoatCAN_IN_NO_ACTIVE_CHILD;
+
+    /* SystemInitialize for Chart: '<S27>/EnableCtrl' */
+    SpeedgoatCANOpen2Buses100us_DW.sfEvent_n = -1;
+    SpeedgoatCANOpen2Buses100us_DW.is_active_c4_SpeedgoatCANOpen2B = 0U;
+    SpeedgoatCANOpen2Buses100us_DW.is_c4_SpeedgoatCANOpen2Buses100 =
+      SpeedgoatCAN_IN_NO_ACTIVE_CHILD;
+
+    /* SystemInitialize for MATLAB Function: '<S24>/HeartBeatgenerator' */
+    SpeedgoatCANOpen2Buses100us_DW.Heartbeat = 0.0;
+    SpeedgoatCANOpen2Buses100us_DW.tact = 0.0;
+
+    /* SystemInitialize for Chart: '<S36>/Retract' */
+    SpeedgoatCANOpen2Buses100us_DW.sfEvent_h = -1;
+    SpeedgoatCANOpen2Buses100us_DW.temporalCounter_i1 = 0U;
+    SpeedgoatCANOpen2Buses100us_DW.is_active_c5_SpeedgoatCANOpen2B = 0U;
+    SpeedgoatCANOpen2Buses100us_DW.is_c5_SpeedgoatCANOpen2Buses100 =
+      SpeedgoatCAN_IN_NO_ACTIVE_CHILD;
+
+    /* SystemInitialize for Chart: '<S29>/DecisionBrakeCtrl' */
+    SpeedgoatCANOpen2Buses100us_DW.sfEvent_e = -1;
+    SpeedgoatCANOpen2Buses100us_DW.is_active_c13_SpeedgoatCANOpen2 = 0U;
+    SpeedgoatCANOpen2Buses100us_DW.is_c13_SpeedgoatCANOpen2Buses10 =
+      SpeedgoatCAN_IN_NO_ACTIVE_CHILD;
+
+    /* InitializeConditions for MATLABSystem: '<S32>/Moving Average' */
+    obj = &SpeedgoatCANOpen2Buses100us_DW.obj_b;
+    obj_0 = obj->pStatistic;
+    if (obj_0->isInitialized == 1) {
+      obj_0->pCumSum = 0.0;
+      obj_0->pCumSumRev[0] = 0.0;
+      obj_0->pCumSumRev[1] = 0.0;
+      obj_0->pCumSumRev[2] = 0.0;
+      obj_0->pCumSumRev[3] = 0.0;
+      obj_0->pCumSumRev[4] = 0.0;
+      obj_0->pCumSumRev[5] = 0.0;
+      obj_0->pCumSumRev[6] = 0.0;
+      obj_0->pCumSumRev[7] = 0.0;
+      obj_0->pCumSumRev[8] = 0.0;
+      obj_0->pCumRevIndex = 1.0;
+    }
+
+    /* End of InitializeConditions for MATLABSystem: '<S32>/Moving Average' */
+
+    /* SystemInitialize for MATLAB Function: '<S43>/Derivative' */
+    SpeedgoatCANOpen2Buses100us_DW.yf_k1 = 0.0F;
+
+    /* InitializeConditions for MATLABSystem: '<S43>/Moving Average1' */
+    obj_1 = &SpeedgoatCANOpen2Buses100us_DW.obj_bz;
+    obj_2 = obj_1->pStatistic;
+    if (obj_2->isInitialized == 1) {
+      obj_2->pCumSum = 0.0;
+      obj_2->pCumSumRev[0] = 0.0;
+      obj_2->pCumSumRev[1] = 0.0;
+      obj_2->pCumSumRev[2] = 0.0;
+      obj_2->pCumRevIndex = 1.0;
+    }
+
+    /* End of InitializeConditions for MATLABSystem: '<S43>/Moving Average1' */
+  }
 }
 
 /* Model terminate function */
@@ -3036,15 +4322,38 @@ static void SpeedgoatCANOpen2Buses100us_terminate(void)
 
   /* End of Terminate for SubSystem: '<S18>/CAN TX Wrapper' */
 
-  /* Terminate for RateTransition: '<S41>/DispLeft [m] filt' */
-  rtw_xpc_mutex_delete(SpeedgoatCANOpen2Buses100us_DW.DispLeftmfilt_d0_SEMAPHORE);
+  /* Terminate for RateTransition: '<S43>/TmpRTBAtProduct2Inport1' */
+  rtw_xpc_mutex_delete
+    (SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtProduct2Inport1_d0_SEMA);
+
+  /* Terminate for RateTransition: '<S43>/TmpRTBAtProduct1Inport1' */
+  rtw_xpc_mutex_delete
+    (SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtProduct1Inport1_d0_SEMA);
+
+  /* Terminate for RateTransition: '<S43>/TiltingAngle_stepreqf [deg]' */
+  rtw_xpc_mutex_delete
+    (SpeedgoatCANOpen2Buses100us_DW.TiltingAngle_stepreqfdeg_d0_SEM);
+
+  /* Terminate for MATLABSystem: '<S32>/Moving Average' */
+  matlabCodegenHandle_matlabCod_i(&SpeedgoatCANOpen2Buses100us_DW.obj_b);
+
+  /* Terminate for MATLABSystem: '<S43>/Moving Average2' */
+  matlabCodegenHandle_matlabCodeg(&SpeedgoatCANOpen2Buses100us_DW.obj);
+
+  /* Terminate for RateTransition: '<S43>/TmpRTBAtSum4Inport2' */
+  rtw_xpc_mutex_delete
+    (SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtSum4Inport2_d0_SEMAPHOR);
+
+  /* Terminate for RateTransition: '<S31>/RightTiltMotor_CurrentReq [mA]' */
+  rtw_xpc_mutex_delete
+    (SpeedgoatCANOpen2Buses100us_DW.RightTiltMotor_CurrentReqmA_d0_);
 
   /* Terminate for RateTransition: '<S31>/TmpRTBAtSwitchInport1' */
   rtw_xpc_mutex_delete
     (SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtSwitchInport1_d0_SEMAPH);
 
   /* Terminate for MATLABSystem: '<S30>/Moving Average' */
-  matlabCodegenHandle_matlabCodeg(&SpeedgoatCANOpen2Buses100us_DW.obj);
+  matlabCodegenHandle_matlabCodeg(&SpeedgoatCANOpen2Buses100us_DW.obj_c);
 
   /* Terminate for RateTransition: '<S30>/TmpRTBAtP ControllerInport1' */
   rtw_xpc_mutex_delete
@@ -3053,6 +4362,40 @@ static void SpeedgoatCANOpen2Buses100us_terminate(void)
   /* Terminate for RateTransition: '<S30>/TmpRTBAtP ControllerInport2' */
   rtw_xpc_mutex_delete
     (SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtPControllerInport2_d0_S);
+
+  /* Terminate for RateTransition: '<S32>/TmpRTBAtProduct2Inport1' */
+  rtw_xpc_mutex_delete
+    (SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtProduct2Inport1_d0_SE_n);
+
+  /* Terminate for RateTransition: '<S32>/TmpRTBAtZero-Order Hold2Inport1' */
+  rtw_xpc_mutex_delete
+    (SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtZeroOrderHold2Inport1_d);
+
+  /* Terminate for RateTransition: '<S32>/TmpRTBAtZero-Order Hold1Inport1' */
+  rtw_xpc_mutex_delete
+    (SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtZeroOrderHold1Inport1_d);
+
+  /* Terminate for RateTransition: '<S32>/EnableControl' */
+  rtw_xpc_mutex_delete(SpeedgoatCANOpen2Buses100us_DW.EnableControl_d0_SEMAPHORE);
+
+  /* Terminate for RateTransition: '<S43>/TmpRTBAtDerivativeInport1' */
+  rtw_xpc_mutex_delete
+    (SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtDerivativeInport1_d0_SE);
+
+  /* Terminate for MATLABSystem: '<S43>/Moving Average1' */
+  matlabCodegenHandle_matlabCo_il(&SpeedgoatCANOpen2Buses100us_DW.obj_bz);
+
+  /* Terminate for RateTransition: '<S43>/TmpRTBAtSum2Inport2' */
+  rtw_xpc_mutex_delete
+    (SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtSum2Inport2_d0_SEMAPHOR);
+
+  /* Terminate for RateTransition: '<S43>/TmpRTBAtDiscrete-Time IntegratorInport1' */
+  rtw_xpc_mutex_delete
+    (SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtDiscreteTimeIntegrat_bg);
+
+  /* Terminate for RateTransition: '<S43>/TmpRTBAtDelayInport1' */
+  rtw_xpc_mutex_delete
+    (SpeedgoatCANOpen2Buses100us_DW.TmpRTBAtDelayInport1_d0_SEMAPHO);
 
   /* Terminate for RateTransition: '<S40>/DispLeft [m]' */
   rtw_xpc_mutex_delete(SpeedgoatCANOpen2Buses100us_DW.DispLeftm_d0_SEMAPHORE);
@@ -3132,6 +4475,7 @@ RT_MODEL_SpeedgoatCANOpen2Buses100us_T *SpeedgoatCANOpen2Buses100us(void)
     mdlTsMap[0] = 0;
     mdlTsMap[1] = 1;
     mdlTsMap[2] = 2;
+    mdlTsMap[3] = 3;
     SpeedgoatCANOpen2Buses100us_M->Timing.sampleTimeTaskIDPtr = (&mdlTsMap[0]);
     SpeedgoatCANOpen2Buses100us_M->Timing.sampleTimes =
       (&SpeedgoatCANOpen2Buses100us_M->Timing.sampleTimesArray[0]);
@@ -3142,11 +4486,13 @@ RT_MODEL_SpeedgoatCANOpen2Buses100us_T *SpeedgoatCANOpen2Buses100us(void)
     SpeedgoatCANOpen2Buses100us_M->Timing.sampleTimes[0] = (0.0);
     SpeedgoatCANOpen2Buses100us_M->Timing.sampleTimes[1] = (0.0001);
     SpeedgoatCANOpen2Buses100us_M->Timing.sampleTimes[2] = (0.005);
+    SpeedgoatCANOpen2Buses100us_M->Timing.sampleTimes[3] = (0.015);
 
     /* task offsets */
     SpeedgoatCANOpen2Buses100us_M->Timing.offsetTimes[0] = (0.0);
     SpeedgoatCANOpen2Buses100us_M->Timing.offsetTimes[1] = (0.0);
     SpeedgoatCANOpen2Buses100us_M->Timing.offsetTimes[2] = (0.0);
+    SpeedgoatCANOpen2Buses100us_M->Timing.offsetTimes[3] = (0.0);
   }
 
   rtmSetTPtr(SpeedgoatCANOpen2Buses100us_M,
@@ -3166,6 +4512,7 @@ RT_MODEL_SpeedgoatCANOpen2Buses100us_T *SpeedgoatCANOpen2Buses100us(void)
   SpeedgoatCANOpen2Buses100us_M->Timing.stepSize0 = 0.0001;
   SpeedgoatCANOpen2Buses100us_M->Timing.stepSize1 = 0.0001;
   SpeedgoatCANOpen2Buses100us_M->Timing.stepSize2 = 0.005;
+  SpeedgoatCANOpen2Buses100us_M->Timing.stepSize3 = 0.015;
 
   /* Setup for data logging */
   {
@@ -3204,8 +4551,10 @@ RT_MODEL_SpeedgoatCANOpen2Buses100us_T *SpeedgoatCANOpen2Buses100us(void)
                 sizeof(B_SpeedgoatCANOpen2Buses100us_T));
 
   {
+    SpeedgoatCANOpen2Buses100us_B.DunkC_ActualVelocity_Inv = (0LL);
     SpeedgoatCANOpen2Buses100us_B.DunkC_ActualCurrent_Inv = (0LL);
     SpeedgoatCANOpen2Buses100us_B.RightTiltMotor_CurrentReqmA = (0LL);
+    SpeedgoatCANOpen2Buses100us_B.RightTiltMotor_CurrentReqmA_i = (0LL);
   }
 
   /* parameters */
@@ -3236,6 +4585,8 @@ RT_MODEL_SpeedgoatCANOpen2Buses100us_T *SpeedgoatCANOpen2Buses100us(void)
       &(rtmGetTPtr(SpeedgoatCANOpen2Buses100us_M)[1]);
     SpeedgoatCANOpen2Buses100us_M->NonInlinedSFcns.taskTimePtrs[2] =
       &(rtmGetTPtr(SpeedgoatCANOpen2Buses100us_M)[2]);
+    SpeedgoatCANOpen2Buses100us_M->NonInlinedSFcns.taskTimePtrs[3] =
+      &(rtmGetTPtr(SpeedgoatCANOpen2Buses100us_M)[3]);
     rtssSetTPtrPtr(sfcnInfo,
                    SpeedgoatCANOpen2Buses100us_M->NonInlinedSFcns.taskTimePtrs);
     rtssSetTStartPtr(sfcnInfo, &rtmGetTStart(SpeedgoatCANOpen2Buses100us_M));
@@ -4169,10 +5520,10 @@ RT_MODEL_SpeedgoatCANOpen2Buses100us_T *SpeedgoatCANOpen2Buses100us(void)
   SpeedgoatCANOpen2Buses100us_M->Sizes.numY = (0);/* Number of model outputs */
   SpeedgoatCANOpen2Buses100us_M->Sizes.numU = (0);/* Number of model inputs */
   SpeedgoatCANOpen2Buses100us_M->Sizes.sysDirFeedThru = (0);/* The model is not direct feedthrough */
-  SpeedgoatCANOpen2Buses100us_M->Sizes.numSampTimes = (3);/* Number of sample times */
-  SpeedgoatCANOpen2Buses100us_M->Sizes.numBlocks = (244);/* Number of blocks */
-  SpeedgoatCANOpen2Buses100us_M->Sizes.numBlockIO = (217);/* Number of block outputs */
-  SpeedgoatCANOpen2Buses100us_M->Sizes.numBlockPrms = (170);/* Sum of parameter "widths" */
+  SpeedgoatCANOpen2Buses100us_M->Sizes.numSampTimes = (4);/* Number of sample times */
+  SpeedgoatCANOpen2Buses100us_M->Sizes.numBlocks = (303);/* Number of blocks */
+  SpeedgoatCANOpen2Buses100us_M->Sizes.numBlockIO = (249);/* Number of block outputs */
+  SpeedgoatCANOpen2Buses100us_M->Sizes.numBlockPrms = (205);/* Sum of parameter "widths" */
   return SpeedgoatCANOpen2Buses100us_M;
 }
 

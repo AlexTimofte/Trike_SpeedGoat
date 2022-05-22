@@ -3,9 +3,9 @@
  *
  * Code generation for model "SpeedgoatCANOpen2Buses100us".
  *
- * Model version              : 1.861
+ * Model version              : 1.893
  * Simulink Coder version : 9.0 (R2018b) 24-May-2018
- * C source code generated on : Sat Apr 16 13:38:03 2022
+ * C source code generated on : Sat May 21 12:32:19 2022
  *
  * Target selection: slrt.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -19,37 +19,44 @@
 
 /* Block parameters (default storage) */
 P_SpeedgoatCANOpen2Buses100us_T SpeedgoatCANOpen2Buses100us_P = {
-  /* Mask Parameter: PID_ctrl_Kd
-   * Referenced by: '<S41>/Derivative Gain'
+  /* Mask Parameter: DiscreteDerivative_ICPrevScaled
+   * Referenced by: '<S49>/UD'
    */
   0.0,
 
-  /* Mask Parameter: PID_ctrl_Ki
-   * Referenced by:
-   *   '<S41>/AntiWindup'
-   *   '<S41>/Integral Gain'
-   */
-  0.0,
-
-  /* Mask Parameter: PID_ctrl_Kp
-   * Referenced by:
-   *   '<S41>/AntiWindup'
-   *   '<S41>/Proportional  Gain'
-   */
-  10.0,
-
-  /* Mask Parameter: PID_ctrl_N
-   * Referenced by: '<S41>/FilterOrder'
-   */
-  1.0,
-
-  /* Mask Parameter: PID_ctrl_Req_lim
-   * Referenced by: '<S41>/Saturation'
+  /* Mask Parameter: PID_ctrl1_Kd
+   * Referenced by: '<S43>/Derivative Gain'
    */
   2.0,
 
+  /* Mask Parameter: PID_ctrl1_Ki
+   * Referenced by:
+   *   '<S43>/AntiWindup'
+   *   '<S43>/Integral Gain'
+   */
+  0.0,
+
+  /* Mask Parameter: PID_ctrl1_Kp
+   * Referenced by:
+   *   '<S43>/AntiWindup'
+   *   '<S43>/Proportional  Gain'
+   */
+  90.0,
+
+  /* Mask Parameter: PID_ctrl1_Req_lim
+   * Referenced by:
+   *   '<S43>/Saturation'
+   *   '<S43>/Saturation1'
+   */
+  1000.0,
+
+  /* Mask Parameter: RepeatingSequence1_rep_seq_y
+   * Referenced by: '<S45>/Look-Up Table1'
+   */
+  { 0.0, 0.0, 2.0, 2.0, 0.0, 0.0, -2.0, -2.0 },
+
   /* Mask Parameter: CompareToConstant_const
-   * Referenced by: '<S58>/Constant'
+   * Referenced by: '<S63>/Constant'
    */
   5.0F,
 
@@ -270,60 +277,40 @@ P_SpeedgoatCANOpen2Buses100us_T SpeedgoatCANOpen2Buses100us_P = {
    */
   0.25,
 
-  /* Expression: 3
-   * Referenced by: '<S32>/Sine Wave1'
-   */
-  3.0,
-
   /* Expression: 0
-   * Referenced by: '<S32>/Sine Wave1'
+   * Referenced by: synthesized block
    */
   0.0,
 
-  /* Expression: 0.5
-   * Referenced by: '<S32>/Sine Wave1'
-   */
-  0.5,
-
   /* Expression: 0
-   * Referenced by: '<S32>/Sine Wave1'
+   * Referenced by: '<S32>/Offset'
    */
   0.0,
 
-  /* Expression: 0.00246
-   * Referenced by: '<S32>/degree2m'
+  /* Expression: 30
+   * Referenced by: '<S32>/Saturation'
    */
-  0.00246,
+  30.0,
+
+  /* Expression: -30
+   * Referenced by: '<S32>/Saturation'
+   */
+  -30.0,
 
   /* Expression: 0
    * Referenced by: synthesized block
    */
   0.0,
 
-  /* Computed Parameter: DiscreteTimeIntegrator_gainval
-   * Referenced by: '<S41>/Discrete-Time Integrator'
+  /* Expression: -1
+   * Referenced by: '<S43>/c1'
    */
-  0.0002,
+  -1.0,
 
-  /* Expression: 0
-   * Referenced by: '<S41>/Discrete-Time Integrator'
+  /* Expression: -1
+   * Referenced by: '<S32>/Gain1'
    */
-  0.0,
-
-  /* Computed Parameter: DiscreteTimeIntegrator1_gainval
-   * Referenced by: '<S41>/Discrete-Time Integrator1'
-   */
-  0.0002,
-
-  /* Expression: 0
-   * Referenced by: '<S41>/Discrete-Time Integrator1'
-   */
-  0.0,
-
-  /* Expression: -1000
-   * Referenced by: '<S41>/c1'
-   */
-  -1000.0,
+  -1.0,
 
   /* Expression: 0
    * Referenced by: synthesized block
@@ -355,15 +342,96 @@ P_SpeedgoatCANOpen2Buses100us_T SpeedgoatCANOpen2Buses100us_P = {
    */
   0.087890625,
 
+  /* Expression: period
+   * Referenced by: '<S45>/Constant'
+   */
+  48.0,
+
+  /* Expression: rep_seq_t - min(rep_seq_t)
+   * Referenced by: '<S45>/Look-Up Table1'
+   */
+  { 0.0, 12.0, 12.003999999999998, 24.0, 24.004000000000005, 36.0,
+    36.003999999999991, 48.0 },
+
+  /* Expression: 2
+   * Referenced by: '<S32>/Sine Wave1'
+   */
+  2.0,
+
+  /* Expression: 0
+   * Referenced by: '<S32>/Sine Wave1'
+   */
+  0.0,
+
+  /* Expression: 0.5
+   * Referenced by: '<S32>/Sine Wave1'
+   */
+  0.5,
+
+  /* Expression: 0
+   * Referenced by: '<S32>/Sine Wave1'
+   */
+  0.0,
+
+  /* Expression: 0
+   * Referenced by: synthesized block
+   */
+  0.0,
+
+  /* Expression: 0.00246
+   * Referenced by: '<S32>/degree2m'
+   */
+  0.00246,
+
+  /* Expression: 0
+   * Referenced by: synthesized block
+   */
+  0.0,
+
+  /* Computed Parameter: TSamp_WtEt
+   * Referenced by: '<S49>/TSamp'
+   */
+  10000.0,
+
+  /* Expression: 0
+   * Referenced by: synthesized block
+   */
+  0.0,
+
+  /* Expression: 0
+   * Referenced by: synthesized block
+   */
+  0.0,
+
+  /* Computed Parameter: DiscreteTimeIntegrator_gainval
+   * Referenced by: '<S43>/Discrete-Time Integrator'
+   */
+  0.0075,
+
+  /* Expression: 0
+   * Referenced by: '<S43>/Discrete-Time Integrator'
+   */
+  0.0,
+
+  /* Expression: 0.0
+   * Referenced by: '<S43>/Delay'
+   */
+  0.0,
+
+  /* Expression: 0
+   * Referenced by: synthesized block
+   */
+  0.0,
+
   /* Expression: 0
    * Referenced by: '<S40>/Memory1'
    */
   0.0,
 
-  /* Expression: 3.02258
+  /* Expression: 3.34249
    * Referenced by: '<S40>/Offset for 0 deg'
    */
-  3.02258,
+  3.34249,
 
   /* Expression: 0.076/5
    * Referenced by: '<S40>/Volt2meter'
@@ -390,15 +458,25 @@ P_SpeedgoatCANOpen2Buses100us_T SpeedgoatCANOpen2Buses100us_P = {
    */
   0.0,
 
-  /* Expression: 2
-   * Referenced by: '<S32>/Constant'
-   */
-  2.0,
-
   /* Expression: 3.6
    * Referenced by: '<S33>/m//s2Km//h'
    */
   3.6,
+
+  /* Computed Parameter: RightTiltMotor_CurrentReqmA_Ini
+   * Referenced by: synthesized block
+   */
+  (0LL),
+
+  /* Computed Parameter: TmpRTBAtZeroOrderHold2Inport1_I
+   * Referenced by: synthesized block
+   */
+  0,
+
+  /* Computed Parameter: Gain1_Gain_j
+   * Referenced by: '<S5>/Gain1'
+   */
+  MIN_int32_T,
 
   /* Computed Parameter: Gain_Gain
    * Referenced by: '<S5>/Gain'
@@ -408,29 +486,29 @@ P_SpeedgoatCANOpen2Buses100us_T SpeedgoatCANOpen2Buses100us_P = {
   /* Computed Parameter: Gain_Gain_l
    * Referenced by: '<S32>/Gain'
    */
-  -1932735283,
+  MIN_int32_T,
 
   /* Computed Parameter: Constant_Value_l
-   * Referenced by: '<S54>/Constant'
+   * Referenced by: '<S59>/Constant'
    */
   1.0F,
 
   /* Computed Parameter: Constant_Value_j
-   * Referenced by: '<S55>/Constant'
+   * Referenced by: '<S60>/Constant'
    */
   1.0F,
 
   /* Computed Parameter: Constant_Value_n
-   * Referenced by: '<S56>/Constant'
+   * Referenced by: '<S61>/Constant'
    */
   1.0F,
 
   /* Computed Parameter: Constant_Value_h
-   * Referenced by: '<S50>/Constant'
+   * Referenced by: '<S55>/Constant'
    */
   1.0F,
 
-  /* Computed Parameter: Delay_InitialCondition
+  /* Computed Parameter: Delay_InitialCondition_m
    * Referenced by: '<S36>/Delay'
    */
   0.0F,
@@ -460,6 +538,11 @@ P_SpeedgoatCANOpen2Buses100us_T SpeedgoatCANOpen2Buses100us_P = {
    */
   2U,
 
+  /* Computed Parameter: Delay_DelayLength_c
+   * Referenced by: '<S43>/Delay'
+   */
+  1U,
+
   /* Computed Parameter: Gain5_Gain
    * Referenced by: '<S29>/Gain5'
    */
@@ -480,6 +563,26 @@ P_SpeedgoatCANOpen2Buses100us_T SpeedgoatCANOpen2Buses100us_P = {
    */
   3600U,
 
+  /* Computed Parameter: TmpRTBAtProduct2Inport1_Initial
+   * Referenced by: synthesized block
+   */
+  0,
+
+  /* Computed Parameter: TmpRTBAtProduct1Inport1_Initial
+   * Referenced by: synthesized block
+   */
+  0,
+
+  /* Computed Parameter: TmpRTBAtProduct2Inport1_Initi_j
+   * Referenced by: synthesized block
+   */
+  0,
+
+  /* Computed Parameter: EnableControl_InitialCondition
+   * Referenced by: synthesized block
+   */
+  0,
+
   /* Computed Parameter: Constant_Value_k
    * Referenced by: '<S20>/Constant'
    */
@@ -487,6 +590,11 @@ P_SpeedgoatCANOpen2Buses100us_T SpeedgoatCANOpen2Buses100us_P = {
 
   /* Computed Parameter: Constant_Value_nv
    * Referenced by: '<S22>/Constant'
+   */
+  0U,
+
+  /* Computed Parameter: ManualSwitch4_CurrentSetting
+   * Referenced by: '<S32>/Manual Switch4'
    */
   0U,
 
@@ -505,13 +613,13 @@ P_SpeedgoatCANOpen2Buses100us_T SpeedgoatCANOpen2Buses100us_P = {
    */
   1U,
 
-  /* Computed Parameter: ManualSwitch3_CurrentSetting
-   * Referenced by: '<S32>/Manual Switch3'
+  /* Computed Parameter: Constant_Value_p
+   * Referenced by: '<S9>/Constant'
    */
   1U,
 
-  /* Computed Parameter: Constant_Value_p
-   * Referenced by: '<S9>/Constant'
+  /* Computed Parameter: ManualSwitch3_CurrentSetting
+   * Referenced by: '<S32>/Manual Switch3'
    */
   1U
 };

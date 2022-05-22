@@ -3,9 +3,9 @@
  *
  * Code generation for model "SpeedgoatCANOpen2Buses100us".
  *
- * Model version              : 1.861
+ * Model version              : 1.893
  * Simulink Coder version : 9.0 (R2018b) 24-May-2018
- * C source code generated on : Sat Apr 16 13:38:03 2022
+ * C source code generated on : Sat May 21 12:32:19 2022
  *
  * Target selection: slrt.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -209,6 +209,32 @@ typedef struct {
 
 #endif                                 /*typedef_dsp_private_SlidingWindowAver_T*/
 
+#ifndef typedef_dsp_private_SlidingWindowAv_i_T
+#define typedef_dsp_private_SlidingWindowAv_i_T
+
+typedef struct {
+  int32_T isInitialized;
+  boolean_T isSetupComplete;
+  real_T pCumSum;
+  real_T pCumSumRev[9];
+  real_T pCumRevIndex;
+} dsp_private_SlidingWindowAv_i_T;
+
+#endif                                 /*typedef_dsp_private_SlidingWindowAv_i_T*/
+
+#ifndef typedef_dsp_private_SlidingWindowA_il_T
+#define typedef_dsp_private_SlidingWindowA_il_T
+
+typedef struct {
+  int32_T isInitialized;
+  boolean_T isSetupComplete;
+  real_T pCumSum;
+  real_T pCumSumRev[3];
+  real_T pCumRevIndex;
+} dsp_private_SlidingWindowA_il_T;
+
+#endif                                 /*typedef_dsp_private_SlidingWindowA_il_T*/
+
 #ifndef typedef_cell_wrap_SpeedgoatCANOpen2Bu_T
 #define typedef_cell_wrap_SpeedgoatCANOpen2Bu_T
 
@@ -233,12 +259,42 @@ typedef struct {
 
 #endif                                 /*typedef_dsp_simulink_MovingAverage_Sp_T*/
 
+#ifndef typedef_dsp_simulink_MovingAverage_i_T
+#define typedef_dsp_simulink_MovingAverage_i_T
+
+typedef struct {
+  boolean_T matlabCodegenIsDeleted;
+  int32_T isInitialized;
+  boolean_T isSetupComplete;
+  boolean_T TunablePropsChanged;
+  cell_wrap_SpeedgoatCANOpen2Bu_T inputVarSize;
+  dsp_private_SlidingWindowAv_i_T *pStatistic;
+  int32_T NumChannels;
+} dsp_simulink_MovingAverage_i_T;
+
+#endif                                 /*typedef_dsp_simulink_MovingAverage_i_T*/
+
+#ifndef typedef_dsp_simulink_MovingAverage_il_T
+#define typedef_dsp_simulink_MovingAverage_il_T
+
+typedef struct {
+  boolean_T matlabCodegenIsDeleted;
+  int32_T isInitialized;
+  boolean_T isSetupComplete;
+  boolean_T TunablePropsChanged;
+  cell_wrap_SpeedgoatCANOpen2Bu_T inputVarSize;
+  dsp_private_SlidingWindowA_il_T *pStatistic;
+  int32_T NumChannels;
+} dsp_simulink_MovingAverage_il_T;
+
+#endif                                 /*typedef_dsp_simulink_MovingAverage_il_T*/
+
 #ifndef SS_INT64
-#define SS_INT64                       34
+#define SS_INT64                       38
 #endif
 
 #ifndef SS_UINT64
-#define SS_UINT64                      35
+#define SS_UINT64                      39
 #endif
 
 /* Parameters (default storage) */
