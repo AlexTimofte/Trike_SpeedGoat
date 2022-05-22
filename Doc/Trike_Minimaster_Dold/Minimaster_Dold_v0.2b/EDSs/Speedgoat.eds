@@ -1,0 +1,172 @@
+[FileInfo]
+ModifiedBy=Vasile Horga
+Description=EDS for Speedgoat
+CreationTime=06:32PM
+CreationDate=02-13-2021
+ModificationTime=06:32PM
+ModificationDate=02-13-2021
+FileName=Speedgoat.eds
+FileVersion=1
+FileRevision=1
+EDSVersion=4.0
+
+[DeviceInfo]
+VendorName=Speedgoat GmbH
+VendorNumber=5
+ProductName=Baseline S real-time target machine
+ProductNumber=0
+RevisionNumber=0x501
+OrderCode=0
+BaudRate_10=1
+BaudRate_20=1
+BaudRate_50=1
+BaudRate_125=1
+BaudRate_250=1
+BaudRate_500=1
+BaudRate_800=1
+BaudRate_1000=1
+SimpleBootUpMaster=1
+SimpleBootUpSlave=1
+Granularity=8
+DynamicChannelsSupported=0
+CompactPDO=0
+GroupMessaging=0
+NrOfRXPDO=3
+NrOfTXPDO=3
+LSS_Supported=0
+
+[DummyUsage]
+Dummy0001=0
+Dummy0002=0
+Dummy0003=0
+Dummy0004=0
+Dummy0005=0
+Dummy0006=0
+Dummy0007=0
+
+[Comments]
+Lines=9
+Line1=The Speedgoat is a Real-Time target machine,
+Line2=and has a CANopen stack
+Line3=written in the C language.
+Line4=
+Line5=It serves as a slave node and
+Line6=implements the functions of .
+Line7=Vehicle Controller
+Line8=
+Line9=$Date: 2021-04-02 $
+
+[MandatoryObjects]
+SupportedObjects=3
+1=0x1000
+2=0x1001
+3=0x1018
+
+[1000]
+ParameterName=Device Type
+ObjectType=0x7
+DataType=0x0007
+AccessType=ro
+DefaultValue=0x30191
+PDOMapping=0
+
+[1001]
+ParameterName=Error Register
+ObjectType=0x7
+DataType=0x0005
+AccessType=ro
+DefaultValue=0x0
+PDOMapping=1
+
+[1018]
+ParameterName=Identity Object
+ObjectType=0x9
+SubNumber=5
+
+[1018sub0]
+ParameterName=number of entries
+ObjectType=0x7
+DataType=0x0005
+AccessType=ro
+DefaultValue=4
+PDOMapping=0
+LowLimit=1
+HighLimit=4
+
+[1018sub1]
+ParameterName=Vendor Id
+ObjectType=0x7
+DataType=0x0007
+AccessType=ro
+DefaultValue=5
+PDOMapping=0
+
+[1018sub2]
+ParameterName=Product Code
+ObjectType=0x7
+DataType=0x0007
+AccessType=ro
+DefaultValue=0
+PDOMapping=0
+
+[1018sub3]
+ParameterName=Revision number
+ObjectType=0x7
+DataType=0x0007
+AccessType=ro
+DefaultValue=0x501
+PDOMapping=0
+
+[1018sub4]
+ParameterName=Serial number
+ObjectType=0x7
+DataType=0x0007
+AccessType=ro
+PDOMapping=0
+
+[OptionalObjects]
+SupportedObjects=4
+1=0x1008
+2=0x1009
+3=0x100A
+4=0x1017
+
+[1008]
+ParameterName=Device Name
+ObjectType=0x7
+DataType=0x0009
+AccessType=const
+DefaultValue=CAPL
+PDOMapping=0
+
+[1008ObjectLinks]
+ObjectLinks=2
+1=0x1009
+2=0x100A
+
+[1009]
+ParameterName=Hardware-Version
+ObjectType=0x7
+DataType=0x0009
+AccessType=const
+DefaultValue=586
+PDOMapping=0
+
+[100a]
+ParameterName=Software-Version
+ObjectType=0x7
+DataType=0x0009
+AccessType=const
+DefaultValue=5.01
+PDOMapping=0
+
+[1017]
+ParameterName=Producer Heartbeat Time
+ObjectType=0x7
+DataType=0x0006
+AccessType=rw
+DefaultValue=0
+PDOMapping=0
+
+[ManufacturerObjects]
+SupportedObjects=0
