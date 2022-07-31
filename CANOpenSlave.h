@@ -119,7 +119,7 @@ BYTE gProcImg[PROCIMG_SIZE];
 #define INTERNAL_RX_QUEUE
 
 #ifdef INTERNAL_RX_QUEUE
-#define CAN_MSG_QUEUE_LEN 8
+#define CAN_MSG_QUEUE_LEN 16    // mesaje in coada  - 8 anterior
 #endif
 
 /**************************************************************************
@@ -213,8 +213,8 @@ typedef struct
  *************************************************************************/
 
 void CANOpenSlave_ResetCommunication(void);
-void CANOpenSlave_ProcessStackAsyncRx(uint32_T *txID, uint8_T *txDLC, uint8_T *txData);
-void CANOpenSlave_ProcessStack(uint32_T rxID, uint8_T rxDLC, uint8_T const *rxData, uint32_T *txID, uint8_T *txDLC, uint8_T *txData);
+void CANOpenSlave_ProcessStackAsyncRx(uint32_T *txID, uint8_T *txDLC, uint8_T *txData );
+void CANOpenSlave_ProcessStack(uint32_T rxID, uint8_T rxDLC, uint8_T const *rxData, uint32_T *txID, uint8_T *txDLC, uint8_T *txData,uint8_T *inData, uint8_T *outData);
 void CANOpenSlave_GetRPDO(uint8_T no, uint8_T *data);
 void CANOpenHW_SendMessage(CAN_MSG *pTransmitBuf, uint32_T *txID, uint8_T *txDLC, uint8_T *txData);
 void CANOpenSlave_SetTPDO(uint8_T no, uint8_T const *data);

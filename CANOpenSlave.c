@@ -31,6 +31,8 @@ TPDO_ID20x   TPDO01,TPDO02,TPDO03,TPDO04; // DunkenMotoren
 /************************************************************************
  GLOBAL VARIABLES
 *************************************************************************/
+
+uint8_T out_gl=1;
 uint16_T gTimCnt=0; //timer variable updated by irq
 uint16_T aux_gTimCnt=0, TimFactor = 10; //auxiliar timer variable updated by irq used to obtain ms
 
@@ -254,31 +256,25 @@ void CANOpenSlave_ResetCommunication(void)
         // TPDO1, default ID (0x180+NodeID),100ms event, 0ms inhibite, 4 bytes
         // Transmit trigger: 5 ms event time
         CANOpenSlave_InitTPDO(1,   0x20A,  5, 0, 8,  &TPDO01.Message);  // DunkA RPDO
-        CANOpenSlave_InitTPDO(2,   0x20B,  5, 0, 8,  &TPDO02.Message);  // DunkB RPDO
-        CANOpenSlave_InitTPDO(3,   0x20C,  5, 0, 8,  &TPDO03.Message);  // DunkC RPDO
+        CANOpenSlave_InitTPDO(2,   0x20B,  5, 0, 8,  &TPDO02.Message);  // DunkB RPDO 11 Right
+        CANOpenSlave_InitTPDO(3,   0x20C,  5, 0, 8,  &TPDO03.Message);  // DunkC RPDO 12 Left
         CANOpenSlave_InitTPDO(4,   0x20D,  5, 0, 8,  &TPDO04.Message);  // DunkD RPDO
     #endif
 
     #if NR_OF_RPDOS>0
         // RPDO1, default ID (0x200+NodeID) dar  poate fi precizat explicit
         //CANOpenSlave_InitRPDO(BYTE PDO_NR, WORD CAN_ID, BYTE len, BYTE *dat)
-       CANOpenSlave_InitRPDO(1, 0x182, 8, &RPDO01.Message); // Joystick
-       CANOpenSlave_InitRPDO(2, 0x282, 8, &RPDO02.Message); // Joystick
+       CANOpenSlave_InitRPDO(1, 0x18B, 8, &RPDO07.Message); // DunkB TPDO Tilt Right
+       CANOpenSlave_InitRPDO(2, 0x18C, 8, &RPDO08.Message); // DunkC TPDO Tilt Left
        CANOpenSlave_InitRPDO(3, 0x1FF, 4, &RPDO03.Message); // Absolut Encoder WDGA
        CANOpenSlave_InitRPDO(4, 0x2FF, 4, &RPDO04.Message); // Absolut Encoder WDGA    
-       CANOpenSlave_InitRPDO(5, 0x290, 8, &RPDO05.Message); // mCAN.4.ai-box     
-       CANOpenSlave_InitRPDO(6, 0x18A, 8, &RPDO06.Message); // DunkA TPDO
-       CANOpenSlave_InitRPDO(7, 0x18B, 8, &RPDO07.Message); // DunkB TPDO
-       CANOpenSlave_InitRPDO(8, 0x18C, 8, &RPDO08.Message); // DunkC TPDO
-       CANOpenSlave_InitRPDO(9, 0x18D, 8, &RPDO09.Message); // DunkD TPDO 
+       CANOpenSlave_InitRPDO(5, 0x290, 8, &RPDO05.Message); // mCAN.4.ai-box  
+       CANOpenSlave_InitRPDO(6, 0x182, 8, &RPDO01.Message); // Joystick
+       CANOpenSlave_InitRPDO(7, 0x282, 8, &RPDO02.Message); // Joystick   
+       CANOpenSlave_InitRPDO(8, 0x18A, 8, &RPDO06.Message); // DunkA TPDO Steering
+       CANOpenSlave_InitRPDO(9, 0x18D, 8, &RPDO09.Message); // DunkD TPDO Brakes
        CANOpenSlave_InitRPDO(10,0x589, 8, &RPDO14.Message); // Inclinometer    
-       
-//        
-//        CANOpenSlave_InitRPDO(6, 0x28A, 8, &RPDO10.Message); // DunkA TPDO
-//        CANOpenSlave_InitRPDO(7, 0x28B, 8, &RPDO11.Message); // DunkB TPDO
-//        CANOpenSlave_InitRPDO(8, 0x28C, 8, &RPDO12.Message); // DunkC TPDO
-//        CANOpenSlave_InitRPDO(9, 0x28D, 8, &RPDO13.Message); // DunkD TPDO 
-       
+   
     #endif
  
 
@@ -830,7 +826,7 @@ void SDO_Write(WORD Node_ID, WORD index, BYTE subindex, uint32_T data,BYTE len)
 //Syncronous function that must be called on each CAN packet RX attempt
 //Considers valid data when rxDLC>0
 //Ouput data to be transmitted is considered valid when *txData>0
-void CANOpenSlave_ProcessStackAsyncRx(uint32_T *txID, uint8_T *txDLC, uint8_T *txData)
+void CANOpenSlave_ProcessStackAsyncRx(uint32_T *txID, uint8_T *txDLC, uint8_T *txData )
 {
     BYTE    i;
    gTimCnt++; //always advancing time
@@ -1015,13 +1011,17 @@ void CANOpenSlave_ProcessStackAsyncRx(uint32_T *txID, uint8_T *txDLC, uint8_T *t
             gCANOPENConfig.heartbeat_timestamp=CANOpenHW_GetTime()+gCANOPENConfig.heartbeat_time;
         }
     }
+         
 }
 
-void CANOpenSlave_ProcessStack(uint32_T rxID, uint8_T rxDLC, uint8_T const *rxData, uint32_T *txID, uint8_T *txDLC, uint8_T *txData)
-{
+void CANOpenSlave_ProcessStack(uint32_T rxID, uint8_T rxDLC, uint8_T const *rxData, uint32_T *txID, uint8_T *txDLC, uint8_T *txData,uint8_T *inData, uint8_T *outData)
+{    
+  
+    
 	if(rxDLC>0) {
 		#ifdef INTERNAL_RX_QUEUE
 		uint8_T n = CAN_MSG_QUEUE_NEXT(can_rx_queue.in);
+       
 		if(n != can_rx_queue.out) {
 			CAN_MSG *d = &(can_rx_queue.msg[can_rx_queue.in]);
 			memcpy(d->BUF, rxData, rxDLC);
@@ -1035,8 +1035,14 @@ void CANOpenSlave_ProcessStack(uint32_T rxID, uint8_T rxDLC, uint8_T const *rxDa
 			gRxCAN->ID = rxID;
 			gRxCAN->LEN = rxDLC;
 		#endif
-	}
+	
+   *inData  = can_rx_queue.in;
+   
+    *outData = can_rx_queue.out;
+    } 
 	CANOpenSlave_ProcessStackAsyncRx(txID, txDLC, txData);
+    
+
 }
 
 void CANOpenSlave_GetRPDO(uint8_T no, uint8_T *data) {

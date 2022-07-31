@@ -36,7 +36,7 @@ typedef struct
 {
     WORD    ID;                     // Message Identifier
     BYTE    LEN;                    // Data length (0-8)
-    BYTE    BUF[8];                 // Data buffer
+    BYTE    BUF[8];                // Data buffer
 }CAN_MSG;
 
 /**************************************************************************/
