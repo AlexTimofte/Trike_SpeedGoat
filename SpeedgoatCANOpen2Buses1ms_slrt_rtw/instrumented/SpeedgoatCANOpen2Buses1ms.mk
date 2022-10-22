@@ -72,11 +72,11 @@ ALT_MATLAB_ROOT = E:\PROGRA~2\MATLAB\R2018b
 MATLAB_BIN      = E:\Program Files\MATLAB\R2018b\bin
 ALT_MATLAB_BIN  = E:\PROGRA~2\MATLAB\R2018b\bin
 MASTER_ANCHOR_DIR = 
-START_DIR       = E:\SpeedGoat\Git\Trike_1ms_develop_algo
+START_DIR       = E:\SPEEDG~1\Git\WITHOU~1\TRIKE_~1
 S_FUNCTIONS     = RPDOs_from_AN2CANConv_wrapper.c RPDOs_from_APT_wrapper.c RPDOs_from_DunkA_wrapper.c RPDOs_from_DunkB_wrapper.c RPDOs_from_DunkC_wrapper.c RPDOs_from_DunkD_wrapper.c RPDOs_from_Encoder_wrapper.c RPDOs_from_Inclinometer_wrapper.c RPDOs_from_Joystick_wrapper.c TPDOs_to_APT_wrapper.c TPDOs_to_DunkA_wrapper.c TPDOs_to_DunkB_wrapper.c TPDOs_to_DunkC_wrapper.c TPDOs_to_DunkD_wrapper.c sg_IO602_IO691_read_s.cpp sg_IO602_IO691_setup_s.cpp sg_IO602_IO691_write_s.cpp
 S_FUNCTIONS_LIB = C:\ProgramData\Speedgoat\speedgoatlib\R2018b\8.28.4\sg_blocks\common\libsg\libsg_MSVC150_vc.lib C:\ProgramData\Speedgoat\speedgoatlib\R2018b\8.28.4\sg_blocks\can\include\IO602_IO691_lib_MSVC150_vc.lib
-NUMST           = 8
-TID01EQ         = 1
+NUMST           = 7
+TID01EQ         = 0
 NCSTATES        = 0
 BUILDARGS       =  COMBINE_OUTPUT_UPDATE_FCNS=0 INCLUDE_MDL_TERMINATE_FCN=1 MULTI_INSTANCE_CODE=0 ISPROTECTINGMODEL=NOTPROTECTING
 MULTITASKING    = 1
@@ -252,6 +252,9 @@ xpcruntime.lib: xpcimports.obj xpcPCFunctions.obj
 {C:\ProgramData\Speedgoat\speedgoatlib\R2018b\8.28.4\sg_blocks\can\src}.c.obj :
 	@cmd /C "echo ### Compiling $<"
 	$(CC) $(CFLAGS) $<
+{E:\SpeedGoat\Git\Trike_1ms_develop_algo}.c.obj :
+	@cmd /C "echo ### Compiling $<"
+	$(CC) $(CFLAGS) $<
 {C:\ProgramData\Speedgoat\speedgoatlib\R2018b\8.28.4\sg_blocks\can}.c.obj :
 	@cmd /C "echo ### Compiling $<"
 	$(CC) $(CFLAGS) $<
@@ -274,6 +277,10 @@ xpcruntime.lib: xpcimports.obj xpcPCFunctions.obj
 	$(CC) $(CPPFLAGS) $<
 
 {C:\ProgramData\Speedgoat\speedgoatlib\R2018b\8.28.4\sg_blocks\can\src}.cpp.obj :
+	@cmd /C "echo ### Compiling $<"
+	$(CC) $(CPPFLAGS) $<
+
+{E:\SpeedGoat\Git\Trike_1ms_develop_algo}.cpp.obj :
 	@cmd /C "echo ### Compiling $<"
 	$(CC) $(CPPFLAGS) $<
 

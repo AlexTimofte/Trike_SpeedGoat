@@ -20,7 +20,7 @@ typedef struct {
   real32_T *c5_PedalTravelGradient;
   real32_T *c5_Br_CurrentReq;
   real32_T *c5_PedalTravel;
-  uint16_T *c5_temporalCounter_i1;
+  uint8_T *c5_temporalCounter_i1;
 } SFc5_SpeedgoatCANOpen2Buses1msInstanceStruct;
 
 #endif                                 /*typedef_SFc5_SpeedgoatCANOpen2Buses1msInstanceStruct*/

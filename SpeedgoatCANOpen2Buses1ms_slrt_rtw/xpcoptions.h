@@ -50,8 +50,6 @@ void SpeedgoatCANOpen2Buses1ms_ChangeStepSize(real_T newBaseRateStepSize,
     SpeedgoatCANOpen2Buses1ms_M->Timing.stepSize5 * ratio;
   SpeedgoatCANOpen2Buses1ms_M->Timing.stepSize6 =
     SpeedgoatCANOpen2Buses1ms_M->Timing.stepSize6 * ratio;
-  SpeedgoatCANOpen2Buses1ms_M->Timing.stepSize7 =
-    SpeedgoatCANOpen2Buses1ms_M->Timing.stepSize7 * ratio;
   SpeedgoatCANOpen2Buses1ms_M->Timing.stepSize =
     SpeedgoatCANOpen2Buses1ms_M->Timing.stepSize * ratio;
 }

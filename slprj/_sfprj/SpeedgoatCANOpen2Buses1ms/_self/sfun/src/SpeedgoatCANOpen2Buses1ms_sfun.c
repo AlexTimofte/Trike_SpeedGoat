@@ -8,7 +8,6 @@
 #include "c3_SpeedgoatCANOpen2Buses1ms.h"
 #include "c4_SpeedgoatCANOpen2Buses1ms.h"
 #include "c5_SpeedgoatCANOpen2Buses1ms.h"
-#include "c10_SpeedgoatCANOpen2Buses1ms.h"
 #include "c12_SpeedgoatCANOpen2Buses1ms.h"
 #include "c13_SpeedgoatCANOpen2Buses1ms.h"
 #include "c14_SpeedgoatCANOpen2Buses1ms.h"
@@ -62,11 +61,6 @@ unsigned int sf_SpeedgoatCANOpen2Buses1ms_method_dispatcher(SimStruct
 
   if (chartFileNumber==5) {
     c5_SpeedgoatCANOpen2Buses1ms_method_dispatcher(simstructPtr, method, data);
-    return 1;
-  }
-
-  if (chartFileNumber==10) {
-    c10_SpeedgoatCANOpen2Buses1ms_method_dispatcher(simstructPtr, method, data);
     return 1;
   }
 
@@ -152,13 +146,6 @@ unsigned int sf_SpeedgoatCANOpen2Buses1ms_process_testpoint_info_call( int nlhs,
       {
         extern mxArray *sf_c5_SpeedgoatCANOpen2Buses1ms_get_testpoint_info(void);
         plhs[0] = sf_c5_SpeedgoatCANOpen2Buses1ms_get_testpoint_info();
-        break;
-      }
-
-     case 10:
-      {
-        extern mxArray *sf_c10_SpeedgoatCANOpen2Buses1ms_get_testpoint_info(void);
-        plhs[0] = sf_c10_SpeedgoatCANOpen2Buses1ms_get_testpoint_info();
         break;
       }
 
@@ -279,14 +266,6 @@ unsigned int sf_SpeedgoatCANOpen2Buses1ms_process_check_sum_call( int nlhs,
           extern void sf_c5_SpeedgoatCANOpen2Buses1ms_get_check_sum(mxArray
             *plhs[]);
           sf_c5_SpeedgoatCANOpen2Buses1ms_get_check_sum(plhs);
-          break;
-        }
-
-       case 10:
-        {
-          extern void sf_c10_SpeedgoatCANOpen2Buses1ms_get_check_sum(mxArray
-            *plhs[]);
-          sf_c10_SpeedgoatCANOpen2Buses1ms_get_check_sum(plhs);
           break;
         }
 
@@ -438,23 +417,10 @@ unsigned int sf_SpeedgoatCANOpen2Buses1ms_autoinheritance_info( int nlhs,
 
      case 5:
       {
-        if (strcmp(aiChksum, "KLPKHaaEXgPV4ulJh4EqDE") == 0) {
+        if (strcmp(aiChksum, "pdkQRXS0MnB1WIzin3cb6D") == 0) {
           extern mxArray
             *sf_c5_SpeedgoatCANOpen2Buses1ms_get_autoinheritance_info(void);
           plhs[0] = sf_c5_SpeedgoatCANOpen2Buses1ms_get_autoinheritance_info();
-          break;
-        }
-
-        plhs[0] = mxCreateDoubleMatrix(0,0,mxREAL);
-        break;
-      }
-
-     case 10:
-      {
-        if (strcmp(aiChksum, "3B6evMUvId1hBhDnbI4Kf") == 0) {
-          extern mxArray
-            *sf_c10_SpeedgoatCANOpen2Buses1ms_get_autoinheritance_info(void);
-          plhs[0] = sf_c10_SpeedgoatCANOpen2Buses1ms_get_autoinheritance_info();
           break;
         }
 
@@ -623,26 +589,12 @@ unsigned int sf_SpeedgoatCANOpen2Buses1ms_get_eml_resolved_functions_info( int
 
      case 5:
       {
-        if (strcmp(instanceChksum, "sPxpg5Cbc6NCyz1F8fSYKHH") == 0) {
+        if (strcmp(instanceChksum, "svCimcp1A5Bq0DOofK5NZbB") == 0) {
           extern const mxArray
             *sf_c5_SpeedgoatCANOpen2Buses1ms_get_eml_resolved_functions_info
             (void);
           mxArray *persistentMxArray = (mxArray *)
             sf_c5_SpeedgoatCANOpen2Buses1ms_get_eml_resolved_functions_info();
-          plhs[0] = mxDuplicateArray(persistentMxArray);
-          mxDestroyArray(persistentMxArray);
-          break;
-        }
-      }
-
-     case 10:
-      {
-        if (strcmp(instanceChksum, "skxVeLo82yAR3zayK11HYPD") == 0) {
-          extern const mxArray
-            *sf_c10_SpeedgoatCANOpen2Buses1ms_get_eml_resolved_functions_info
-            (void);
-          mxArray *persistentMxArray = (mxArray *)
-            sf_c10_SpeedgoatCANOpen2Buses1ms_get_eml_resolved_functions_info();
           plhs[0] = mxDuplicateArray(persistentMxArray);
           mxDestroyArray(persistentMxArray);
           break;
@@ -796,20 +748,10 @@ unsigned int sf_SpeedgoatCANOpen2Buses1ms_third_party_uses_info( int nlhs,
 
      case 5:
       {
-        if (strcmp(tpChksum, "sPxpg5Cbc6NCyz1F8fSYKHH") == 0) {
+        if (strcmp(tpChksum, "svCimcp1A5Bq0DOofK5NZbB") == 0) {
           extern mxArray *sf_c5_SpeedgoatCANOpen2Buses1ms_third_party_uses_info
             (void);
           plhs[0] = sf_c5_SpeedgoatCANOpen2Buses1ms_third_party_uses_info();
-          break;
-        }
-      }
-
-     case 10:
-      {
-        if (strcmp(tpChksum, "skxVeLo82yAR3zayK11HYPD") == 0) {
-          extern mxArray *sf_c10_SpeedgoatCANOpen2Buses1ms_third_party_uses_info
-            (void);
-          plhs[0] = sf_c10_SpeedgoatCANOpen2Buses1ms_third_party_uses_info();
           break;
         }
       }
@@ -930,19 +872,9 @@ unsigned int sf_SpeedgoatCANOpen2Buses1ms_jit_fallback_info( int nlhs, mxArray *
 
      case 5:
       {
-        if (strcmp(tpChksum, "sPxpg5Cbc6NCyz1F8fSYKHH") == 0) {
+        if (strcmp(tpChksum, "svCimcp1A5Bq0DOofK5NZbB") == 0) {
           extern mxArray *sf_c5_SpeedgoatCANOpen2Buses1ms_jit_fallback_info(void);
           plhs[0] = sf_c5_SpeedgoatCANOpen2Buses1ms_jit_fallback_info();
-          break;
-        }
-      }
-
-     case 10:
-      {
-        if (strcmp(tpChksum, "skxVeLo82yAR3zayK11HYPD") == 0) {
-          extern mxArray *sf_c10_SpeedgoatCANOpen2Buses1ms_jit_fallback_info
-            (void);
-          plhs[0] = sf_c10_SpeedgoatCANOpen2Buses1ms_jit_fallback_info();
           break;
         }
       }
@@ -1067,20 +999,10 @@ unsigned int sf_SpeedgoatCANOpen2Buses1ms_updateBuildInfo_args_info( int nlhs,
 
      case 5:
       {
-        if (strcmp(tpChksum, "sPxpg5Cbc6NCyz1F8fSYKHH") == 0) {
+        if (strcmp(tpChksum, "svCimcp1A5Bq0DOofK5NZbB") == 0) {
           extern mxArray
             *sf_c5_SpeedgoatCANOpen2Buses1ms_updateBuildInfo_args_info(void);
           plhs[0] = sf_c5_SpeedgoatCANOpen2Buses1ms_updateBuildInfo_args_info();
-          break;
-        }
-      }
-
-     case 10:
-      {
-        if (strcmp(tpChksum, "skxVeLo82yAR3zayK11HYPD") == 0) {
-          extern mxArray
-            *sf_c10_SpeedgoatCANOpen2Buses1ms_updateBuildInfo_args_info(void);
-          plhs[0] = sf_c10_SpeedgoatCANOpen2Buses1ms_updateBuildInfo_args_info();
           break;
         }
       }
@@ -1147,7 +1069,7 @@ void SpeedgoatCANOpen2Buses1ms_debug_initialize(struct SfDebugInstanceStruct*
   debugInstance)
 {
   _SpeedgoatCANOpen2Buses1msMachineNumber_ = sf_debug_initialize_machine
-    (debugInstance,"SpeedgoatCANOpen2Buses1ms","sfun",0,21,0,0,0);
+    (debugInstance,"SpeedgoatCANOpen2Buses1ms","sfun",0,19,0,0,0);
   sf_debug_set_machine_event_thresholds(debugInstance,
     _SpeedgoatCANOpen2Buses1msMachineNumber_,0,0);
   sf_debug_set_machine_data_thresholds(debugInstance,

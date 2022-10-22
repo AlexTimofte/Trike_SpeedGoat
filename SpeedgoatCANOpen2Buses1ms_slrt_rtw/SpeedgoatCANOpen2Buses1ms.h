@@ -3,9 +3,9 @@
  *
  * Code generation for model "SpeedgoatCANOpen2Buses1ms".
  *
- * Model version              : 1.938
+ * Model version              : 1.949
  * Simulink Coder version : 9.0 (R2018b) 24-May-2018
- * C source code generated on : Sat Jul 30 12:12:39 2022
+ * C source code generated on : Sat Oct 22 11:25:38 2022
  *
  * Target selection: slrt.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -18,7 +18,6 @@
 #define RTW_HEADER_SpeedgoatCANOpen2Buses1ms_h_
 #include <stddef.h>
 #include <string.h>
-#include <float.h>
 #include <math.h>
 #include "rtw_modelmap.h"
 #ifndef SpeedgoatCANOpen2Buses1ms_COMMON_INCLUDES_
@@ -765,7 +764,7 @@
 #endif
 
 #ifndef rtmIsContinuousTask
-# define rtmIsContinuousTask(rtm, tid) ((tid) <= 1)
+# define rtmIsContinuousTask(rtm, tid) 0
 #endif
 
 #ifndef rtmGetErrorStatus
@@ -774,14 +773,6 @@
 
 #ifndef rtmSetErrorStatus
 # define rtmSetErrorStatus(rtm, val)   ((rtm)->errorStatus = (val))
-#endif
-
-#ifndef rtmIsMajorTimeStep
-# define rtmIsMajorTimeStep(rtm)       (((rtm)->Timing.simTimeStep) == MAJOR_TIME_STEP)
-#endif
-
-#ifndef rtmIsMinorTimeStep
-# define rtmIsMinorTimeStep(rtm)       (((rtm)->Timing.simTimeStep) == MINOR_TIME_STEP)
 #endif
 
 #ifndef rtmIsSampleHit
@@ -908,7 +899,7 @@ typedef struct {
   real_T Product;                      /* '<S31>/Product' */
   real_T RightTiltMotor_SpeedReqrpm;
   real_T Switch2;                      /* '<S31>/Switch2' */
-  real_T TmpRTBAtSwitchInport1;
+  real_T SteeringMotor_SpeedReq;
   real_T Switch;                       /* '<S31>/Switch' */
   real_T TmpRTBAtSum2Inport1;          /* '<S36>/Gain1' */
   real_T Sum2;                         /* '<S36>/Sum2' */
@@ -926,22 +917,19 @@ typedef struct {
   real_T Gain2;                        /* '<S36>/Gain2' */
   real_T Saturation;                   /* '<S36>/Saturation' */
   real_T Gain1;                        /* '<S36>/Gain1' */
-  real_T CastToSingle;                 /* '<S30>/Cast To Single' */
   real_T Memory1;                      /* '<S30>/Memory1' */
-  real_T CastToSingle1;                /* '<S30>/Cast To Single1' */
-  real_T TmpRTBAtPControllerInport1;   /* '<S30>/Cast To Single' */
-  real_T TmpRTBAtPControllerInport2;   /* '<S30>/Cast To Single1' */
+  real_T DirectionFb;                  /* '<S30>/Cast To Single1' */
+  real_T DirectionReq;                 /* '<S30>/Cast To Single' */
+  real_T DirectionReq_o;               /* '<S30>/Cast To Single' */
+  real_T DirectionFb_d;                /* '<S30>/Cast To Single1' */
+  real_T CastToSingle2_i;              /* '<S30>/Cast To Single2' */
+  real_T TmpRTBAtPControllerInport3;   /* '<S30>/Cast To Single2' */
   real_T TmpRTBAtSumInport2_m;         /* '<S30>/Offset to 0 pos => pos = [-180 180]deg' */
   real_T Sum_p;                        /* '<S30>/Sum' */
-  real_T DirectionFb;                  /* '<S30>/inc2deg' */
-  real_T Clock;                        /* '<S47>/Clock' */
-  real_T Sum_f;                        /* '<S47>/Sum' */
-  real_T MathFunction;                 /* '<S47>/Math Function' */
-  real_T LookUpTable1;                 /* '<S47>/Look-Up Table1' */
-  real_T Output;                       /* '<S47>/Output' */
-  real_T TiltingAngle_sinreqdeg;       /* '<S32>/Sine Wave1' */
-  real_T TiltingAngledeg;              /* '<S32>/ServoTilting' */
-  real_T ManualSwitch3;                /* '<S32>/Manual Switch3' */
+  real_T DirectionFb_l;                /* '<S30>/inc2deg' */
+  real_T TmpRTBAtServoTiltingInport1;  /* '<S32>/Cast To Single' */
+  real_T Abs;                          /* '<S32>/Abs' */
+  real_T CastToSingle1;                /* '<S32>/Cast To Single1' */
   real_T TiltingAngle_stepreqfdeg;     /* '<S32>/Zero-Order Hold1' */
   real_T Fb_Angledeg;
   real_T ZeroOrderHold2;               /* '<S32>/Zero-Order Hold2' */
@@ -961,7 +949,7 @@ typedef struct {
   real_T Sum4;                         /* '<S43>/Sum4' */
   real_T Product2;                     /* '<S43>/Product2' */
   real_T tometer;                      /* '<S43>/tometer' */
-  real_T Gain4;                        /* '<S32>/Gain4' */
+  real_T DispReqInvm;                  /* '<S32>/Gain4' */
   real_T Memory1_l;                    /* '<S41>/Memory1' */
   real_T Gain5;                        /* '<S32>/Gain5' */
   real_T e_in_p;                       /* '<S44>/Sum1' */
@@ -1003,32 +991,7 @@ typedef struct {
   real_T Saturation2_g;                /* '<S46>/Saturation2' */
   real_T c1_f;                         /* '<S46>/c1' */
   real_T RightTiltMotor_SpeedReqrpm_m; /* '<S32>/Gain' */
-  real_T PosReqm;                      /* '<S32>/degree2m' */
-  real_T DispLeftmfilt;
-  real_T e_in_b;                       /* '<S45>/Sum1' */
-  real_T e_in_a;                       /* '<S45>/Sum1' */
-  real_T Hyst_cxd;                     /* '<S45>/degree2m' */
-  real_T Product1_g;                   /* '<S45>/Product1' */
-  real_T Proportional_b;               /* '<S45>/Proportional  Gain' */
-  real_T IntegralGain_f;               /* '<S45>/Integral Gain' */
-  real_T Delay_b;                      /* '<S45>/Delay' */
-  real_T ZeroOrderHold_l;              /* '<S45>/Zero-Order Hold' */
-  real_T Sum2_o;                       /* '<S45>/Sum2' */
-  real_T Integral_j;                   /* '<S45>/Discrete-Time Integrator' */
-  real_T Saturation_d;                 /* '<S45>/Saturation' */
-  real_T TmpRTBAtDerivativeInport2_avz;/* '<S45>/Constant' */
-  real_T TmpRTBAtDerivativeInport3_foi;/* '<S45>/Constant1' */
-  real_T DataTypeConversion1_m;        /* '<S45>/Data Type Conversion1' */
-  real_T Sum4_g;                       /* '<S45>/Sum4' */
-  real_T Product2_a;                   /* '<S45>/Product2' */
-  real_T Saturation2_i;                /* '<S45>/Saturation2' */
-  real_T c1_d;                         /* '<S45>/c1' */
-  real_T LeftTiltMotor_CurrentReqmA;   /* '<S32>/Gain6' */
-  real_T TmpRTBAtServoTiltingInport1;  /* '<S32>/Cast To Single' */
-  real_T Abs;                          /* '<S32>/Abs' */
-  real_T CastToSingle1_a;              /* '<S32>/Cast To Single1' */
-  real_T TiltingAngle_sinreqdeg_c;     /* '<S32>/Sine Wave1' */
-  real_T CastToSingle_p;               /* '<S32>/Cast To Single' */
+  real_T CastToSingle;                 /* '<S32>/Cast To Single' */
   real_T TmpRTBAtSumInport2_mb;        /* '<S41>/Offset for 0 deg' */
   real_T DispLeftOffsetVolt;           /* '<S41>/Sum' */
   real_T DispLeftm;                    /* '<S41>/Volt2meter' */
@@ -1045,28 +1008,9 @@ typedef struct {
   real_T Hyst_n;                       /* '<S44>/degree2m' */
   real_T Sum_j;                        /* '<S44>/Sum' */
   real_T AntiWindup_c;                 /* '<S44>/AntiWindup' */
-  real_T Hyst_e;                       /* '<S45>/degree2m' */
-  real_T Sum_d;                        /* '<S45>/Sum' */
-  real_T AntiWindup_p;                 /* '<S45>/AntiWindup' */
   real_T Hyst_i;                       /* '<S46>/degree2m' */
   real_T Sum_o;                        /* '<S46>/Sum' */
-  real_T AntiWindup_pe;                /* '<S46>/AntiWindup' */
-  real_T Clock_p;                      /* '<S48>/Clock' */
-  real_T Sum_oi;                       /* '<S48>/Sum' */
-  real_T MathFunction_f;               /* '<S48>/Math Function' */
-  real_T LookUpTable1_j;               /* '<S48>/Look-Up Table1' */
-  real_T Output_d;                     /* '<S48>/Output' */
-  real_T Clock_pg;                     /* '<S49>/Clock' */
-  real_T Sum_m;                        /* '<S49>/Sum' */
-  real_T MathFunction_h;               /* '<S49>/Math Function' */
-  real_T LookUpTable1_g;               /* '<S49>/Look-Up Table1' */
-  real_T Output_c;                     /* '<S49>/Output' */
-  real_T SineWave2;                    /* '<S32>/Sine Wave2' */
-  real_T TmpRTBAtSum1Inport2;          /* '<S32>/Constant3' */
-  real_T Sum1;                         /* '<S32>/Sum1' */
-  real_T TmpRTBAtManualSwitchInport1;  /* '<S32>/Sum1' */
-  real_T LeftTiltMotor_CurrentReqmA_m; /* '<S32>/Manual Switch' */
-  real_T ZeroOrderHold4;               /* '<S32>/Zero-Order Hold4' */
+  real_T AntiWindup_p;                 /* '<S46>/AntiWindup' */
   real_T VehSpeed_Kmh;                 /* '<S33>/m//s2Km//h' */
   real_T CastToSingle1_e;              /* '<S33>/Cast To Single1' */
   real_T Gain1_e;                      /* '<S33>/Gain1' */
@@ -1074,13 +1018,9 @@ typedef struct {
   real_T Button;                       /* '<S27>/ButtonStatus' */
   real_T APT_CtrlWord;                 /* '<S27>/APTControlWord' */
   real_T TiltingAngle;                 /* '<S32>/ServoTilting' */
-  real_T e_out;                        /* '<S45>/Comp_and_Timer' */
-  real_T timer;                        /* '<S45>/Comp_and_Timer' */
-  real_T e_out_i;                      /* '<S43>/Comp_and_Timer' */
-  real_T timer_a;                      /* '<S43>/Comp_and_Timer' */
+  real_T e_out;                        /* '<S43>/Comp_and_Timer' */
+  real_T timer;                        /* '<S43>/Comp_and_Timer' */
   real_T Fb_Angle_Filtdeg;             /* '<S32>/Moving Average' */
-  real_T LeftTiltMotor_CurrentReqmA_n; /* '<S32>/Manual Switch1' */
-  real_T ManualSwitch4;                /* '<S32>/Manual Switch4' */
   real_T Sum4_e;                       /* '<S29>/Sum4' */
   real_T SpeedReq;                     /* '<S30>/P Controller' */
   real_T MovingAverage;                /* '<S30>/Moving Average' */
@@ -1106,16 +1046,16 @@ typedef struct {
   real32_T Retract_current_m;          /* '<S36>/Retract' */
   real32_T Joystick_LongCmd1;
   real32_T TmpRTBAtSum1Inport1;        /* '<S36>/Delay' */
-  real32_T TmpRTBAtSum1Inport2_o;      /* '<S36>/Data Type Conversion1' */
-  real32_T Sum1_g;                     /* '<S36>/Sum1' */
+  real32_T TmpRTBAtSum1Inport2;        /* '<S36>/Data Type Conversion1' */
+  real32_T Sum1;                       /* '<S36>/Sum1' */
   real32_T TmpRTBAtRetractInport1;     /* '<S36>/Sum1' */
   real32_T DataTypeConversion1_c;      /* '<S36>/Data Type Conversion1' */
   real32_T TmpRTBAtRetractInport2;     /* '<S36>/Data Type Conversion1' */
   real32_T Delay_o;                    /* '<S36>/Delay' */
   real32_T TmpRTBAtDelayInport1;       /* '<S36>/Data Type Conversion1' */
   real32_T CastToSingle_e;             /* '<S26>/Cast To Single' */
-  real32_T dem;                        /* '<S30>/dem' */
-  real32_T DirectionReq;               /* '<S30>/Robotics Convention' */
+  real32_T dem1;                       /* '<S30>/dem1' */
+  real32_T RoboticsConvention1;        /* '<S30>/Robotics Convention1' */
   real32_T SteeringAnglerad;           /* '<S30>/degree2rad' */
   real32_T n;                          /* '<S32>/n' */
   real32_T Constant;                   /* '<S65>/Constant' */
@@ -1270,7 +1210,6 @@ typedef struct {
   boolean_T ZeroOrderHold3;            /* '<S32>/Zero-Order Hold3' */
   B_Derivative_SpeedgoatCANOpen_T sf_Derivative_b;/* '<S46>/Derivative' */
   B_Comp_and_Timer_SpeedgoatCAN_T sf_Comp_and_Timer_b;/* '<S46>/Comp_and_Timer' */
-  B_Derivative_SpeedgoatCANOpen_T sf_Derivative_g;/* '<S45>/Derivative' */
   B_Derivative_SpeedgoatCANOpen_T sf_Derivative_f;/* '<S44>/Derivative' */
   B_Comp_and_Timer_SpeedgoatCAN_T sf_Comp_and_Timer_f;/* '<S44>/Comp_and_Timer' */
   B_Derivative_SpeedgoatCANOpen_T sf_Derivative;/* '<S43>/Derivative' */
@@ -1288,8 +1227,6 @@ typedef struct {
   real_T DiscreteTimeIntegrator_DSTATE_d;/* '<S44>/Discrete-Time Integrator' */
   real_T Delay_DSTATE_j;               /* '<S46>/Delay' */
   real_T DiscreteTimeIntegrator_DSTATE_h;/* '<S46>/Discrete-Time Integrator' */
-  real_T Delay_DSTATE_p;               /* '<S45>/Delay' */
-  real_T DiscreteTimeIntegrator_DSTAT_d1;/* '<S45>/Discrete-Time Integrator' */
   real_T DiscreteFilter_states[2];     /* '<S41>/Discrete Filter' */
   real_T DiscreteFilter_states_b[2];   /* '<S42>/Discrete Filter' */
   real_T lastSin;                      /* '<S16>/Sine Wave' */
@@ -1299,17 +1236,16 @@ typedef struct {
   real_T Retract_current_Buffer0;      /* synthesized block */
   real_T LeftTiltMotor_SpeedReqrpm1_Buff;/* synthesized block */
   real_T RightTiltMotor_SpeedReqrpm_Buff;/* synthesized block */
-  real_T TmpRTBAtSwitchInport1_Buffer0;/* synthesized block */
+  real_T SteeringMotor_SpeedReq_Buffer0;/* synthesized block */
   real_T TmpRTBAtSum2Inport1_Buffer0;  /* synthesized block */
   real_T Sum2_DWORK1;                  /* '<S36>/Sum2' */
   real_T TmpRTBAtSumInport2_Buffer0;   /* synthesized block */
   real_T Sum_DWORK1;                   /* '<S36>/Sum' */
   real_T Memory1_PreviousInput;        /* '<S30>/Memory1' */
-  volatile real_T TmpRTBAtPControllerInport1_Buff[2];/* synthesized block */
-  volatile real_T TmpRTBAtPControllerInport2_Buff[2];/* synthesized block */
+  volatile real_T DirectionReq_Buffer[2];/* synthesized block */
+  volatile real_T DirectionFb_Buffer[2];/* synthesized block */
   real_T TmpRTBAtSumInport2_Buffer0_o; /* synthesized block */
-  real_T TiltingAngle_sinreqdeg_Buffer0;/* synthesized block */
-  real_T TiltingAngledeg_Buffer0;      /* synthesized block */
+  real_T TmpRTBAtServoTiltingInport1_Buf;/* synthesized block */
   volatile real_T Y_Angle_Buffer[2];   /* synthesized block */
   real_T Hyst_Buffer0;                 /* synthesized block */
   real_T TmpRTBAtDerivativeInport2_Buffe;/* synthesized block */
@@ -1322,23 +1258,12 @@ typedef struct {
   real_T Hyst_Buffer0_e0;              /* synthesized block */
   real_T TmpRTBAtDerivativeInport2_Bu_kz;/* synthesized block */
   real_T TmpRTBAtDerivativeInport3_Bu_d1;/* synthesized block */
-  real_T DispLeftmfilt_Buffer0;        /* synthesized block */
-  real_T Hyst_Buffer0_e0i;             /* synthesized block */
-  real_T TmpRTBAtDerivativeInport2_B_kzy;/* synthesized block */
-  real_T TmpRTBAtDerivativeInport3_B_d1g;/* synthesized block */
-  real_T TmpRTBAtServoTiltingInport1_Buf;/* synthesized block */
-  real_T lastSin_k;                    /* '<S32>/Sine Wave1' */
-  real_T lastCos_l;                    /* '<S32>/Sine Wave1' */
   real_T TmpRTBAtSumInport2_Buffer0_os;/* synthesized block */
   volatile real_T DispLeftm_Buffer[2]; /* synthesized block */
   real_T DiscreteFilter_tmp;           /* '<S41>/Discrete Filter' */
   real_T TmpRTBAtSumInport2_Buffer0_osg;/* synthesized block */
   volatile real_T DispRightm_Buffer[2];/* synthesized block */
   real_T DiscreteFilter_tmp_b;         /* '<S42>/Discrete Filter' */
-  real_T lastSin_g;                    /* '<S32>/Sine Wave2' */
-  real_T lastCos_n;                    /* '<S32>/Sine Wave2' */
-  real_T TmpRTBAtSum1Inport2_Buffer0;  /* synthesized block */
-  real_T TmpRTBAtManualSwitchInport1_Buf;/* synthesized block */
   real_T Neutral_State;                /* '<S29>/DecisionBrakeCtrl' */
   real_T Parking_Brake;                /* '<S29>/DecisionBrakeCtrl' */
   real_T tact;                         /* '<S24>/HeartBeatgenerator' */
@@ -1626,6 +1551,26 @@ typedef struct {
   struct {
     void *AQHandles;
     void *SlioLTF;
+  } HiddenToAsyncQueue_InsertedF_j5;   /* synthesized block */
+
+  struct {
+    void *AQHandles;
+    void *SlioLTF;
+  } HiddenToAsyncQueue_InsertedF_mt;   /* synthesized block */
+
+  struct {
+    void *AQHandles;
+    void *SlioLTF;
+  } HiddenToAsyncQueue_InsertedF_fr;   /* synthesized block */
+
+  struct {
+    void *AQHandles;
+    void *SlioLTF;
+  } HiddenToAsyncQueue_InsertedF_pz;   /* synthesized block */
+
+  struct {
+    void *AQHandles;
+    void *SlioLTF;
   } HiddenToAsyncQueue_InsertedF_l2;   /* synthesized block */
 
   struct {
@@ -1651,16 +1596,6 @@ typedef struct {
   struct {
     void *AQHandles;
     void *SlioLTF;
-  } HiddenToAsyncQueue_Inserted_mui;   /* synthesized block */
-
-  struct {
-    void *AQHandles;
-    void *SlioLTF;
-  } HiddenToAsyncQueue_InsertedF_cx;   /* synthesized block */
-
-  struct {
-    void *AQHandles;
-    void *SlioLTF;
   } HiddenToAsyncQueue_InsertedF_ah;   /* synthesized block */
 
   struct {
@@ -1671,27 +1606,7 @@ typedef struct {
   struct {
     void *AQHandles;
     void *SlioLTF;
-  } HiddenToAsyncQueue_InsertedF_mt;   /* synthesized block */
-
-  struct {
-    void *AQHandles;
-    void *SlioLTF;
-  } HiddenToAsyncQueue_InsertedF_ca;   /* synthesized block */
-
-  struct {
-    void *AQHandles;
-    void *SlioLTF;
   } HiddenToAsyncQueue_InsertedF_pr;   /* synthesized block */
-
-  struct {
-    void *AQHandles;
-    void *SlioLTF;
-  } HiddenToAsyncQueue_Inserted_f1l;   /* synthesized block */
-
-  struct {
-    void *AQHandles;
-    void *SlioLTF;
-  } HiddenToAsyncQueue_InsertedF_er;   /* synthesized block */
 
   struct {
     void *AQHandles;
@@ -1726,32 +1641,7 @@ typedef struct {
   struct {
     void *AQHandles;
     void *SlioLTF;
-  } HiddenToAsyncQueue_InsertedF_e1;   /* synthesized block */
-
-  struct {
-    void *AQHandles;
-    void *SlioLTF;
-  } HiddenToAsyncQueue_InsertedF_f5;   /* synthesized block */
-
-  struct {
-    void *AQHandles;
-    void *SlioLTF;
-  } HiddenToAsyncQueue_InsertedF_mn;   /* synthesized block */
-
-  struct {
-    void *AQHandles;
-    void *SlioLTF;
-  } HiddenToAsyncQueue_InsertedF_px;   /* synthesized block */
-
-  struct {
-    void *AQHandles;
-    void *SlioLTF;
   } HiddenToAsyncQueue_InsertedF_ew;   /* synthesized block */
-
-  struct {
-    void *AQHandles;
-    void *SlioLTF;
-  } HiddenToAsyncQueue_InsertedF_eo;   /* synthesized block */
 
   struct {
     void *AQHandles;
@@ -1767,16 +1657,6 @@ typedef struct {
     void *AQHandles;
     void *SlioLTF;
   } HiddenToAsyncQueue_InsertedF_pg;   /* synthesized block */
-
-  struct {
-    void *AQHandles;
-    void *SlioLTF;
-  } HiddenToAsyncQueue_InsertedF_d5;   /* synthesized block */
-
-  struct {
-    void *AQHandles;
-    void *SlioLTF;
-  } HiddenToAsyncQueue_InsertedF_mm;   /* synthesized block */
 
   struct {
     void *AQHandles;
@@ -1836,7 +1716,7 @@ typedef struct {
   struct {
     void *AQHandles;
     void *SlioLTF;
-  } HiddenToAsyncQueue_InsertedF_pz;   /* synthesized block */
+  } HiddenToAsyncQueue_Inserted_pzz;   /* synthesized block */
 
   struct {
     void *AQHandles;
@@ -1871,7 +1751,7 @@ typedef struct {
   struct {
     void *AQHandles;
     void *SlioLTF;
-  } HiddenToAsyncQueue_Inserted_pzz;   /* synthesized block */
+  } HiddenToAsyncQueue_Inserte_pzzs;   /* synthesized block */
 
   struct {
     void *AQHandles;
@@ -1896,7 +1776,7 @@ typedef struct {
   struct {
     void *AQHandles;
     void *SlioLTF;
-  } HiddenToAsyncQueue_Inserted_mmb;   /* synthesized block */
+  } HiddenToAsyncQueue_InsertedF_mm;   /* synthesized block */
 
   struct {
     void *AQHandles;
@@ -1916,7 +1796,7 @@ typedef struct {
   struct {
     void *AQHandles;
     void *SlioLTF;
-  } HiddenToAsyncQueue_Inserte_pzzs;   /* synthesized block */
+  } HiddenToAsyncQueue_Insert_pzzse;   /* synthesized block */
 
   struct {
     void *AQHandles;
@@ -1941,77 +1821,7 @@ typedef struct {
   struct {
     void *AQHandles;
     void *SlioLTF;
-  } HiddenToAsyncQueue_Inserte_mmbz;   /* synthesized block */
-
-  struct {
-    void *AQHandles;
-    void *SlioLTF;
-  } HiddenToAsyncQueue_Insert_gp4aq;   /* synthesized block */
-
-  struct {
-    void *AQHandles;
-    void *SlioLTF;
-  } HiddenToAsyncQueue_Insert_bxdbi;   /* synthesized block */
-
-  struct {
-    void *AQHandles;
-    void *SlioLTF;
-  } HiddenToAsyncQueue_Insert_b5we4;   /* synthesized block */
-
-  struct {
-    void *AQHandles;
-    void *SlioLTF;
-  } HiddenToAsyncQueue_Insert_pzzse;   /* synthesized block */
-
-  struct {
-    void *AQHandles;
-    void *SlioLTF;
-  } HiddenToAsyncQueue_Insert_my4oa;   /* synthesized block */
-
-  struct {
-    void *AQHandles;
-    void *SlioLTF;
-  } HiddenToAsyncQueue_Inser_az1op3;   /* synthesized block */
-
-  struct {
-    void *AQHandles;
-    void *SlioLTF;
-  } HiddenToAsyncQueue_Insert_ejbny;   /* synthesized block */
-
-  struct {
-    void *AQHandles;
-    void *SlioLTF;
-  } HiddenToAsyncQueue_Inserte_jisu;   /* synthesized block */
-
-  struct {
-    void *AQHandles;
-    void *SlioLTF;
-  } HiddenToAsyncQueue_Insert_mmbzy;   /* synthesized block */
-
-  struct {
-    void *AQHandles;
-    void *SlioLTF;
-  } HiddenToAsyncQueue_InsertedF_ff;   /* synthesized block */
-
-  struct {
-    void *AQHandles;
-    void *SlioLTF;
-  } HiddenToAsyncQueue_InsertedF_km;   /* synthesized block */
-
-  struct {
-    void *AQHandles;
-    void *SlioLTF;
-  } HiddenToAsyncQueue_InsertedF_oz;   /* synthesized block */
-
-  struct {
-    void *AQHandles;
-    void *SlioLTF;
-  } HiddenToAsyncQueue_Inser_ejbnyl;   /* synthesized block */
-
-  struct {
-    void *AQHandles;
-    void *SlioLTF;
-  } HiddenToAsyncQueue_InsertedF_hx;   /* synthesized block */
+  } HiddenToAsyncQueue_Inserted_mmb;   /* synthesized block */
 
   struct {
     void *AQHandles;
@@ -2021,7 +1831,7 @@ typedef struct {
   struct {
     void *AQHandles;
     void *SlioLTF;
-  } HiddenToAsyncQueue_InsertedF_j5;   /* synthesized block */
+  } HiddenToAsyncQueue_Inserted_j55;   /* synthesized block */
 
   struct {
     void *AQHandles;
@@ -2054,7 +1864,7 @@ typedef struct {
   real32_T Retract_current_Buffer0_o;  /* synthesized block */
   volatile real32_T Joystick_LongCmd1_Buffer[2];/* synthesized block */
   real32_T TmpRTBAtSum1Inport1_Buffer0;/* synthesized block */
-  real32_T TmpRTBAtSum1Inport2_Buffer0_a;/* synthesized block */
+  real32_T TmpRTBAtSum1Inport2_Buffer0;/* synthesized block */
   volatile real32_T TmpRTBAtRetractInport2_Buffer[2];/* synthesized block */
   volatile real32_T TmpRTBAtDelayInport1_Buffer[2];/* synthesized block */
   real32_T aux2;                       /* '<S71>/DunkB_TiltRight_Init_CurrentMode' */
@@ -2066,28 +1876,24 @@ typedef struct {
   real32_T aux2_l;                     /* '<S65>/DunkD_Brake_Init_CurrentMode' */
   real32_T aux_k;                      /* '<S65>/DunkD_Brake_Init_CurrentMode' */
   int32_T systemEnable;                /* '<S16>/Sine Wave' */
-  int32_T systemEnable_k;              /* '<S32>/Sine Wave1' */
-  int32_T systemEnable_e;              /* '<S32>/Sine Wave2' */
   int32_T sfEvent;                     /* '<S71>/DunkB_TiltRight_Init_CurrentMode' */
   int32_T sfEvent_c;                   /* '<S70>/DunkC_TiltLeft_Init_CurrentMode' */
   int32_T sfEvent_a;                   /* '<S69>/DunkA_Steering_Init_SpeedMode' */
   int32_T sfEvent_n;                   /* '<S27>/EnableCtrl' */
   int32_T sfEvent_j;                   /* '<S65>/DunkD_Brake_Init_CurrentMode' */
-  int32_T sfEvent_h;                   /* '<S45>/Comp_and_Timer' */
   int32_T sfEvent_o;                   /* '<S43>/Comp_and_Timer' */
-  int32_T sfEvent_h1;                  /* '<S36>/Retract' */
+  int32_T sfEvent_h;                   /* '<S36>/Retract' */
   int32_T sfEvent_e;                   /* '<S29>/DecisionBrakeCtrl' */
-  uint16_T temporalCounter_i1;         /* '<S36>/Retract' */
   volatile int8_T Joystick_LongCmd1_ActiveBufIdx;/* synthesized block */
   volatile int8_T Joystick_LongCmd1_semaphoreTake;/* synthesized block */
   volatile int8_T TmpRTBAtRetractInport2_ActiveBu;/* synthesized block */
   volatile int8_T TmpRTBAtRetractInport2_semaphor;/* synthesized block */
   volatile int8_T TmpRTBAtDelayInport1_ActiveBufI;/* synthesized block */
   volatile int8_T TmpRTBAtDelayInport1_semaphoreT;/* synthesized block */
-  volatile int8_T TmpRTBAtPControllerInport1_Acti;/* synthesized block */
-  volatile int8_T TmpRTBAtPControllerInport1_sema;/* synthesized block */
-  volatile int8_T TmpRTBAtPControllerInport2_Acti;/* synthesized block */
-  volatile int8_T TmpRTBAtPControllerInport2_sema;/* synthesized block */
+  volatile int8_T DirectionReq_ActiveBufIdx;/* synthesized block */
+  volatile int8_T DirectionReq_semaphoreTaken;/* synthesized block */
+  volatile int8_T DirectionFb_ActiveBufIdx;/* synthesized block */
+  volatile int8_T DirectionFb_semaphoreTaken;/* synthesized block */
   volatile int8_T Y_Angle_ActiveBufIdx;/* synthesized block */
   volatile int8_T Y_Angle_semaphoreTaken;/* synthesized block */
   volatile int8_T DispLeftm_ActiveBufIdx;/* synthesized block */
@@ -2108,14 +1914,12 @@ typedef struct {
   uint8_T is_c4_SpeedgoatCANOpen2Buses1ms;/* '<S27>/EnableCtrl' */
   uint8_T is_active_c3_SpeedgoatCANOpen2B;/* '<S65>/DunkD_Brake_Init_CurrentMode' */
   uint8_T is_c3_SpeedgoatCANOpen2Buses1ms;/* '<S65>/DunkD_Brake_Init_CurrentMode' */
-  uint8_T is_active_c10_SpeedgoatCANOpen2;/* '<S45>/Comp_and_Timer' */
-  uint8_T is_c10_SpeedgoatCANOpen2Buses1m;/* '<S45>/Comp_and_Timer' */
-  uint8_T temporalCounter_i1_j;        /* '<S45>/Comp_and_Timer' */
   uint8_T is_active_c14_SpeedgoatCANOpen2;/* '<S43>/Comp_and_Timer' */
   uint8_T is_c14_SpeedgoatCANOpen2Buses1m;/* '<S43>/Comp_and_Timer' */
-  uint8_T temporalCounter_i1_m;        /* '<S43>/Comp_and_Timer' */
+  uint8_T temporalCounter_i1;          /* '<S43>/Comp_and_Timer' */
   uint8_T is_active_c5_SpeedgoatCANOpen2B;/* '<S36>/Retract' */
   uint8_T is_c5_SpeedgoatCANOpen2Buses1ms;/* '<S36>/Retract' */
+  uint8_T temporalCounter_i1_n;        /* '<S36>/Retract' */
   uint8_T is_active_c13_SpeedgoatCANOpen2;/* '<S29>/DecisionBrakeCtrl' */
   uint8_T is_c13_SpeedgoatCANOpen2Buses1m;/* '<S29>/DecisionBrakeCtrl' */
   uint8_T TmpRTBAtCANWriteInport2_Buffer0;/* synthesized block */
@@ -2126,7 +1930,6 @@ typedef struct {
   boolean_T CANTXWrapper_MODE_i;       /* '<S17>/CAN TX Wrapper' */
   DW_Derivative_SpeedgoatCANOpe_T sf_Derivative_b;/* '<S46>/Derivative' */
   DW_Comp_and_Timer_SpeedgoatCA_T sf_Comp_and_Timer_b;/* '<S46>/Comp_and_Timer' */
-  DW_Derivative_SpeedgoatCANOpe_T sf_Derivative_g;/* '<S45>/Derivative' */
   DW_Derivative_SpeedgoatCANOpe_T sf_Derivative_f;/* '<S44>/Derivative' */
   DW_Comp_and_Timer_SpeedgoatCA_T sf_Comp_and_Timer_f;/* '<S44>/Comp_and_Timer' */
   DW_Derivative_SpeedgoatCANOpe_T sf_Derivative;/* '<S43>/Derivative' */
@@ -2148,9 +1951,6 @@ struct P_SpeedgoatCANOpen2Buses1ms_T_ {
   real_T PID_DispLeft_Kd;              /* Mask Parameter: PID_DispLeft_Kd
                                         * Referenced by: '<S44>/Constant'
                                         */
-  real_T PID_DispLeft1_Kd;             /* Mask Parameter: PID_DispLeft1_Kd
-                                        * Referenced by: '<S45>/Constant'
-                                        */
   real_T PID_DispRight_Kd;             /* Mask Parameter: PID_DispRight_Kd
                                         * Referenced by: '<S46>/Constant'
                                         */
@@ -2169,11 +1969,6 @@ struct P_SpeedgoatCANOpen2Buses1ms_T_ {
                                         *   '<S46>/AntiWindup'
                                         *   '<S46>/Integral Gain'
                                         */
-  real_T PID_DispLeft1_Ki;             /* Mask Parameter: PID_DispLeft1_Ki
-                                        * Referenced by:
-                                        *   '<S45>/AntiWindup'
-                                        *   '<S45>/Integral Gain'
-                                        */
   real_T PID_Angle_Kp;                 /* Mask Parameter: PID_Angle_Kp
                                         * Referenced by:
                                         *   '<S43>/AntiWindup'
@@ -2189,11 +1984,6 @@ struct P_SpeedgoatCANOpen2Buses1ms_T_ {
                                         *   '<S46>/AntiWindup'
                                         *   '<S46>/Proportional  Gain'
                                         */
-  real_T PID_DispLeft1_Kp;             /* Mask Parameter: PID_DispLeft1_Kp
-                                        * Referenced by:
-                                        *   '<S45>/AntiWindup'
-                                        *   '<S45>/Proportional  Gain'
-                                        */
   real_T PID_Angle_Req_lim;            /* Mask Parameter: PID_Angle_Req_lim
                                         * Referenced by: '<S43>/Saturation'
                                         */
@@ -2203,30 +1993,15 @@ struct P_SpeedgoatCANOpen2Buses1ms_T_ {
   real_T PID_DispRight_Req_lim;        /* Mask Parameter: PID_DispRight_Req_lim
                                         * Referenced by: '<S46>/Saturation'
                                         */
-  real_T PID_DispLeft1_Req_lim;        /* Mask Parameter: PID_DispLeft1_Req_lim
-                                        * Referenced by: '<S45>/Saturation'
-                                        */
   real_T PID_Angle_Ts;                 /* Mask Parameter: PID_Angle_Ts
                                         * Referenced by: '<S43>/Constant1'
                                         */
   real_T PID_DispLeft_Ts;              /* Mask Parameter: PID_DispLeft_Ts
                                         * Referenced by: '<S44>/Constant1'
                                         */
-  real_T PID_DispLeft1_Ts;             /* Mask Parameter: PID_DispLeft1_Ts
-                                        * Referenced by: '<S45>/Constant1'
-                                        */
   real_T PID_DispRight_Ts;             /* Mask Parameter: PID_DispRight_Ts
                                         * Referenced by: '<S46>/Constant1'
                                         */
-  real_T RepeatingSequence1_rep_seq_y[8];/* Mask Parameter: RepeatingSequence1_rep_seq_y
-                                          * Referenced by: '<S47>/Look-Up Table1'
-                                          */
-  real_T RepeatingSequence2_rep_seq_y[8];/* Mask Parameter: RepeatingSequence2_rep_seq_y
-                                          * Referenced by: '<S48>/Look-Up Table1'
-                                          */
-  real_T RepeatingSequence3_rep_seq_y[8];/* Mask Parameter: RepeatingSequence3_rep_seq_y
-                                          * Referenced by: '<S49>/Look-Up Table1'
-                                          */
   real32_T CompareToConstant_const;    /* Mask Parameter: CompareToConstant_const
                                         * Referenced by: '<S73>/Constant'
                                         */
@@ -2308,7 +2083,7 @@ struct P_SpeedgoatCANOpen2Buses1ms_T_ {
   real_T RightTiltMotor_SpeedReqrpm_Init;/* Expression: 0
                                           * Referenced by: synthesized block
                                           */
-  real_T TmpRTBAtSwitchInport1_InitialCo;/* Expression: 0
+  real_T SteeringMotor_SpeedReq_InitialC;/* Expression: 0
                                           * Referenced by: synthesized block
                                           */
   real_T TmpRTBAtSum2Inport1_InitialCond;/* Expression: 0
@@ -2353,31 +2128,22 @@ struct P_SpeedgoatCANOpen2Buses1ms_T_ {
   real_T Memory1_InitialCondition;     /* Expression: 0
                                         * Referenced by: '<S30>/Memory1'
                                         */
+  real_T DirectionReq_InitialCondition;/* Expression: 0
+                                        * Referenced by: synthesized block
+                                        */
+  real_T DirectionFb_InitialCondition; /* Expression: 0
+                                        * Referenced by: synthesized block
+                                        */
   real_T Offsetto0pospos180180deg_Value;/* Expression: 2048
                                          * Referenced by: '<S30>/Offset to 0 pos => pos = [-180 180]deg'
                                          */
-  real_T TmpRTBAtPControllerInport1_Init;/* Expression: 0
-                                          * Referenced by: synthesized block
-                                          */
-  real_T TmpRTBAtPControllerInport2_Init;/* Expression: 0
-                                          * Referenced by: synthesized block
-                                          */
   real_T TmpRTBAtSumInport2_InitialCon_j;/* Expression: 0
                                           * Referenced by: synthesized block
                                           */
   real_T inc2deg_Gain;                 /* Expression: 180/2048
                                         * Referenced by: '<S30>/inc2deg'
                                         */
-  real_T Constant_Value;               /* Expression: period
-                                        * Referenced by: '<S47>/Constant'
-                                        */
-  real_T LookUpTable1_bp01Data[8];     /* Expression: rep_seq_t - min(rep_seq_t)
-                                        * Referenced by: '<S47>/Look-Up Table1'
-                                        */
-  real_T TiltingAngle_sinreqdeg_InitialC;/* Expression: 0
-                                          * Referenced by: synthesized block
-                                          */
-  real_T TiltingAngledeg_InitialConditio;/* Expression: 0
+  real_T TmpRTBAtServoTiltingInport1_Ini;/* Expression: 0
                                           * Referenced by: synthesized block
                                           */
   real_T Y_Angle_InitialCondition;     /* Expression: 0
@@ -2482,68 +2248,8 @@ struct P_SpeedgoatCANOpen2Buses1ms_T_ {
   real_T Gain_Gain;                    /* Expression: -1
                                         * Referenced by: '<S32>/Gain'
                                         */
-  real_T Constant_Value_i;             /* Expression: 0
+  real_T Constant_Value;               /* Expression: 0
                                         * Referenced by: '<S31>/Constant'
-                                        */
-  real_T degree2m_Gain;                /* Expression: 0.00246
-                                        * Referenced by: '<S32>/degree2m'
-                                        */
-  real_T DispLeftmfilt_InitialCondition;/* Expression: 0
-                                         * Referenced by: synthesized block
-                                         */
-  real_T Hyst_InitialCondition_jxk;    /* Expression: 0
-                                        * Referenced by: synthesized block
-                                        */
-  real_T Delay_InitialCondition_gi;    /* Expression: 0.0
-                                        * Referenced by: '<S45>/Delay'
-                                        */
-  real_T DiscreteTimeIntegrator_gainva_h;/* Computed Parameter: DiscreteTimeIntegrator_gainva_h
-                                          * Referenced by: '<S45>/Discrete-Time Integrator'
-                                          */
-  real_T DiscreteTimeIntegrator_IC_o;  /* Expression: 0
-                                        * Referenced by: '<S45>/Discrete-Time Integrator'
-                                        */
-  real_T TmpRTBAtDerivativeInport2_I_jxk;/* Expression: 0
-                                          * Referenced by: synthesized block
-                                          */
-  real_T TmpRTBAtDerivativeInport3_I_jxk;/* Expression: 0
-                                          * Referenced by: synthesized block
-                                          */
-  real_T Saturation2_UpperSat_i;       /* Expression: 4000
-                                        * Referenced by: '<S45>/Saturation2'
-                                        */
-  real_T Saturation2_LowerSat_a;       /* Expression: -6000
-                                        * Referenced by: '<S45>/Saturation2'
-                                        */
-  real_T c1_Gain_e;                    /* Expression: 1
-                                        * Referenced by: '<S45>/c1'
-                                        */
-  real_T Gain6_Gain;                   /* Expression: -1
-                                        * Referenced by: '<S32>/Gain6'
-                                        */
-  real_T TmpRTBAtServoTiltingInport1_Ini;/* Expression: 0
-                                          * Referenced by: synthesized block
-                                          */
-  real_T SineWave1_Amp;                /* Expression: 5
-                                        * Referenced by: '<S32>/Sine Wave1'
-                                        */
-  real_T SineWave1_Bias;               /* Expression: 0
-                                        * Referenced by: '<S32>/Sine Wave1'
-                                        */
-  real_T SineWave1_Freq;               /* Expression: 0.5
-                                        * Referenced by: '<S32>/Sine Wave1'
-                                        */
-  real_T SineWave1_Hsin;               /* Computed Parameter: SineWave1_Hsin
-                                        * Referenced by: '<S32>/Sine Wave1'
-                                        */
-  real_T SineWave1_HCos;               /* Computed Parameter: SineWave1_HCos
-                                        * Referenced by: '<S32>/Sine Wave1'
-                                        */
-  real_T SineWave1_PSin;               /* Computed Parameter: SineWave1_PSin
-                                        * Referenced by: '<S32>/Sine Wave1'
-                                        */
-  real_T SineWave1_PCos;               /* Computed Parameter: SineWave1_PCos
-                                        * Referenced by: '<S32>/Sine Wave1'
                                         */
   real_T TmpRTBAtSumInport2_InitialCo_jx;/* Expression: 0
                                           * Referenced by: synthesized block
@@ -2593,62 +2299,14 @@ struct P_SpeedgoatCANOpen2Buses1ms_T_ {
   real_T Constant3_Value_d;            /* Expression: 0.1
                                         * Referenced by: '<S44>/Constant3'
                                         */
-  real_T degree2m_Gain_d;              /* Expression: 0.00246
+  real_T degree2m_Gain;                /* Expression: 0.00246
                                         * Referenced by: '<S44>/degree2m'
-                                        */
-  real_T Constant3_Value_i;            /* Expression: 0.1
-                                        * Referenced by: '<S45>/Constant3'
-                                        */
-  real_T degree2m_Gain_b;              /* Expression: 0.00246
-                                        * Referenced by: '<S45>/degree2m'
                                         */
   real_T Constant3_Value_a;            /* Expression: 0.1
                                         * Referenced by: '<S46>/Constant3'
                                         */
   real_T degree2m_Gain_j;              /* Expression: 0.00246
                                         * Referenced by: '<S46>/degree2m'
-                                        */
-  real_T Constant_Value_d;             /* Expression: period
-                                        * Referenced by: '<S48>/Constant'
-                                        */
-  real_T LookUpTable1_bp01Data_k[8];   /* Expression: rep_seq_t - min(rep_seq_t)
-                                        * Referenced by: '<S48>/Look-Up Table1'
-                                        */
-  real_T Constant_Value_e;             /* Expression: period
-                                        * Referenced by: '<S49>/Constant'
-                                        */
-  real_T LookUpTable1_bp01Data_h[8];   /* Expression: rep_seq_t - min(rep_seq_t)
-                                        * Referenced by: '<S49>/Look-Up Table1'
-                                        */
-  real_T SineWave2_Amp;                /* Expression: 500
-                                        * Referenced by: '<S32>/Sine Wave2'
-                                        */
-  real_T SineWave2_Bias;               /* Expression: 0
-                                        * Referenced by: '<S32>/Sine Wave2'
-                                        */
-  real_T SineWave2_Freq;               /* Expression: 2
-                                        * Referenced by: '<S32>/Sine Wave2'
-                                        */
-  real_T SineWave2_Hsin;               /* Computed Parameter: SineWave2_Hsin
-                                        * Referenced by: '<S32>/Sine Wave2'
-                                        */
-  real_T SineWave2_HCos;               /* Computed Parameter: SineWave2_HCos
-                                        * Referenced by: '<S32>/Sine Wave2'
-                                        */
-  real_T SineWave2_PSin;               /* Computed Parameter: SineWave2_PSin
-                                        * Referenced by: '<S32>/Sine Wave2'
-                                        */
-  real_T SineWave2_PCos;               /* Computed Parameter: SineWave2_PCos
-                                        * Referenced by: '<S32>/Sine Wave2'
-                                        */
-  real_T TmpRTBAtSum1Inport2_InitialCond;/* Expression: 0
-                                          * Referenced by: synthesized block
-                                          */
-  real_T TmpRTBAtManualSwitchInport1_Ini;/* Expression: 0
-                                          * Referenced by: synthesized block
-                                          */
-  real_T Constant3_Value_o;            /* Expression: 1500*0
-                                        * Referenced by: '<S32>/Constant3'
                                         */
   real_T ms2Kmh_Gain;                  /* Expression: 3.6
                                         * Referenced by: '<S33>/m//s2Km//h'
@@ -2689,7 +2347,7 @@ struct P_SpeedgoatCANOpen2Buses1ms_T_ {
   real32_T TmpRTBAtSum1Inport1_InitialCond;/* Computed Parameter: TmpRTBAtSum1Inport1_InitialCond
                                             * Referenced by: synthesized block
                                             */
-  real32_T TmpRTBAtSum1Inport2_InitialCo_j;/* Computed Parameter: TmpRTBAtSum1Inport2_InitialCo_j
+  real32_T TmpRTBAtSum1Inport2_InitialCond;/* Computed Parameter: TmpRTBAtSum1Inport2_InitialCond
                                             * Referenced by: synthesized block
                                             */
   real32_T TmpRTBAtRetractInport2_InitialC;/* Computed Parameter: TmpRTBAtRetractInport2_InitialC
@@ -2701,11 +2359,11 @@ struct P_SpeedgoatCANOpen2Buses1ms_T_ {
   real32_T TmpRTBAtDelayInport1_InitialCon;/* Computed Parameter: TmpRTBAtDelayInport1_InitialCon
                                             * Referenced by: synthesized block
                                             */
-  real32_T dem_Gain;                   /* Computed Parameter: dem_Gain
-                                        * Referenced by: '<S30>/dem'
+  real32_T dem1_Gain;                  /* Computed Parameter: dem1_Gain
+                                        * Referenced by: '<S30>/dem1'
                                         */
-  real32_T RoboticsConvention_Gain;    /* Computed Parameter: RoboticsConvention_Gain
-                                        * Referenced by: '<S30>/Robotics Convention'
+  real32_T RoboticsConvention1_Gain;   /* Computed Parameter: RoboticsConvention1_Gain
+                                        * Referenced by: '<S30>/Robotics Convention1'
                                         */
   real32_T degree2rad_Gain;            /* Computed Parameter: degree2rad_Gain
                                         * Referenced by: '<S30>/degree2rad'
@@ -2737,9 +2395,6 @@ struct P_SpeedgoatCANOpen2Buses1ms_T_ {
   uint32_T Delay_DelayLength_j;        /* Computed Parameter: Delay_DelayLength_j
                                         * Referenced by: '<S46>/Delay'
                                         */
-  uint32_T Delay_DelayLength_p;        /* Computed Parameter: Delay_DelayLength_p
-                                        * Referenced by: '<S45>/Delay'
-                                        */
   int16_T Gain5_Gain_d;                /* Computed Parameter: Gain5_Gain_d
                                         * Referenced by: '<S29>/Gain5'
                                         */
@@ -2767,16 +2422,10 @@ struct P_SpeedgoatCANOpen2Buses1ms_T_ {
   uint8_T Constant_Value_nv;           /* Computed Parameter: Constant_Value_nv
                                         * Referenced by: '<S22>/Constant'
                                         */
-  uint8_T ManualSwitch4_CurrentSetting;/* Computed Parameter: ManualSwitch4_CurrentSetting
-                                        * Referenced by: '<S32>/Manual Switch4'
-                                        */
-  uint8_T ManualSwitch1_CurrentSetting;/* Computed Parameter: ManualSwitch1_CurrentSetting
-                                        * Referenced by: '<S32>/Manual Switch1'
-                                        */
   uint8_T Joystick_ButtonsStatus_InitialC;/* Computed Parameter: Joystick_ButtonsStatus_InitialC
                                            * Referenced by: synthesized block
                                            */
-  uint8_T Constant_Value_ej;           /* Computed Parameter: Constant_Value_ej
+  uint8_T Constant_Value_e;            /* Computed Parameter: Constant_Value_e
                                         * Referenced by: '<S3>/Constant'
                                         */
   uint8_T RateTransition_InitialCondition;/* Computed Parameter: RateTransition_InitialCondition
@@ -2784,12 +2433,6 @@ struct P_SpeedgoatCANOpen2Buses1ms_T_ {
                                            */
   uint8_T Constant_Value_p;            /* Computed Parameter: Constant_Value_p
                                         * Referenced by: '<S9>/Constant'
-                                        */
-  uint8_T ManualSwitch3_CurrentSetting;/* Computed Parameter: ManualSwitch3_CurrentSetting
-                                        * Referenced by: '<S32>/Manual Switch3'
-                                        */
-  uint8_T ManualSwitch_CurrentSetting; /* Computed Parameter: ManualSwitch_CurrentSetting
-                                        * Referenced by: '<S32>/Manual Switch'
                                         */
 };
 
@@ -2813,7 +2456,7 @@ struct tag_RTM_SpeedgoatCANOpen2Buses1ms_T {
    */
   struct {
     RTWSfcnInfo sfcnInfo;
-    time_T *taskTimePtrs[8];
+    time_T *taskTimePtrs[7];
     SimStruct childSFunctions[5];
     SimStruct *childSFunctionPtrs[5];
     struct _ssBlkInfo2 blkInfo2[5];
@@ -2977,24 +2620,17 @@ struct tag_RTM_SpeedgoatCANOpen2Buses1ms_T {
     uint32_T clockTick6;
     uint32_T clockTickH6;
     time_T stepSize6;
-    uint32_T clockTick7;
-    uint32_T clockTickH7;
-    time_T stepSize7;
     struct {
-      uint16_T TID[8];
+      uint16_T TID[7];
     } TaskCounters;
 
     struct {
-      boolean_T TID0_5;
-      boolean_T TID1_3;
-      boolean_T TID1_4;
-      boolean_T TID1_5;
-      boolean_T TID2_7;
-      boolean_T TID3_4;
-      boolean_T TID3_5;
-      boolean_T TID3_7;
-      boolean_T TID4_7;
-      boolean_T TID5_7;
+      boolean_T TID1_6;
+      boolean_T TID2_3;
+      boolean_T TID2_4;
+      boolean_T TID2_6;
+      boolean_T TID3_6;
+      boolean_T TID4_6;
     } RateInteraction;
 
     time_T tStart;
@@ -3010,12 +2646,12 @@ struct tag_RTM_SpeedgoatCANOpen2Buses1ms_T {
     int_T *sampleHits;
     int_T *perTaskSampleHits;
     time_T *t;
-    time_T sampleTimesArray[8];
-    time_T offsetTimesArray[8];
-    int_T sampleTimeTaskIDArray[8];
-    int_T sampleHitArray[8];
-    int_T perTaskSampleHitsArray[64];
-    time_T tArray[8];
+    time_T sampleTimesArray[7];
+    time_T offsetTimesArray[7];
+    int_T sampleTimeTaskIDArray[7];
+    int_T sampleHitArray[7];
+    int_T perTaskSampleHitsArray[49];
+    time_T tArray[7];
   } Timing;
 };
 

@@ -119,22 +119,16 @@ static uint8_T c5_f_emlrt_marshallIn
 static uint8_T c5_g_emlrt_marshallIn
   (SFc5_SpeedgoatCANOpen2Buses1msInstanceStruct *chartInstance, const mxArray
    *c5_u, const emlrtMsgIdentifier *c5_parentId);
-static uint16_T c5_h_emlrt_marshallIn
-  (SFc5_SpeedgoatCANOpen2Buses1msInstanceStruct *chartInstance, const mxArray
-   *c5_b_temporalCounter_i1, const char_T *c5_identifier);
-static uint16_T c5_i_emlrt_marshallIn
-  (SFc5_SpeedgoatCANOpen2Buses1msInstanceStruct *chartInstance, const mxArray
-   *c5_u, const emlrtMsgIdentifier *c5_parentId);
-static void c5_j_emlrt_marshallIn(SFc5_SpeedgoatCANOpen2Buses1msInstanceStruct
+static void c5_h_emlrt_marshallIn(SFc5_SpeedgoatCANOpen2Buses1msInstanceStruct
   *chartInstance, const mxArray *c5_b_dataWrittenToVector, const char_T
   *c5_identifier, boolean_T c5_y[1]);
-static void c5_k_emlrt_marshallIn(SFc5_SpeedgoatCANOpen2Buses1msInstanceStruct
+static void c5_i_emlrt_marshallIn(SFc5_SpeedgoatCANOpen2Buses1msInstanceStruct
   *chartInstance, const mxArray *c5_u, const emlrtMsgIdentifier *c5_parentId,
   boolean_T c5_y[1]);
-static const mxArray *c5_l_emlrt_marshallIn
+static const mxArray *c5_j_emlrt_marshallIn
   (SFc5_SpeedgoatCANOpen2Buses1msInstanceStruct *chartInstance, const mxArray
    *c5_b_setSimStateSideEffectsInfo, const char_T *c5_identifier);
-static const mxArray *c5_m_emlrt_marshallIn
+static const mxArray *c5_k_emlrt_marshallIn
   (SFc5_SpeedgoatCANOpen2Buses1msInstanceStruct *chartInstance, const mxArray
    *c5_u, const emlrtMsgIdentifier *c5_parentId);
 static const mxArray *sf_get_hover_data_for_msg
@@ -229,7 +223,7 @@ static const mxArray *get_sim_state_c5_SpeedgoatCANOpen2Buses1ms
   const mxArray *c5_c_y = NULL;
   uint8_T c5_c_hoistedGlobal;
   const mxArray *c5_d_y = NULL;
-  uint16_T c5_d_hoistedGlobal;
+  uint8_T c5_d_hoistedGlobal;
   const mxArray *c5_e_y = NULL;
   const mxArray *c5_f_y = NULL;
   c5_st = NULL;
@@ -253,7 +247,7 @@ static const mxArray *get_sim_state_c5_SpeedgoatCANOpen2Buses1ms
   sf_mex_setcell(c5_y, 2, c5_d_y);
   c5_d_hoistedGlobal = *chartInstance->c5_temporalCounter_i1;
   c5_e_y = NULL;
-  sf_mex_assign(&c5_e_y, sf_mex_create("y", &c5_d_hoistedGlobal, 5, 0U, 0U, 0U,
+  sf_mex_assign(&c5_e_y, sf_mex_create("y", &c5_d_hoistedGlobal, 3, 0U, 0U, 0U,
     0), false);
   sf_mex_setcell(c5_y, 3, c5_e_y);
   c5_f_y = NULL;
@@ -279,13 +273,13 @@ static void set_sim_state_c5_SpeedgoatCANOpen2Buses1ms
   *chartInstance->c5_is_c5_SpeedgoatCANOpen2Buses1ms = c5_f_emlrt_marshallIn
     (chartInstance, sf_mex_dup(sf_mex_getcell(c5_u, 2)),
      "is_c5_SpeedgoatCANOpen2Buses1ms");
-  *chartInstance->c5_temporalCounter_i1 = c5_h_emlrt_marshallIn(chartInstance,
+  *chartInstance->c5_temporalCounter_i1 = c5_f_emlrt_marshallIn(chartInstance,
     sf_mex_dup(sf_mex_getcell(c5_u, 3)), "temporalCounter_i1");
-  c5_j_emlrt_marshallIn(chartInstance, sf_mex_dup(sf_mex_getcell(c5_u, 4)),
+  c5_h_emlrt_marshallIn(chartInstance, sf_mex_dup(sf_mex_getcell(c5_u, 4)),
                         "dataWrittenToVector", c5_bv0);
   chartInstance->c5_dataWrittenToVector[0] = c5_bv0[0];
   sf_mex_assign(&chartInstance->c5_setSimStateSideEffectsInfo,
-                c5_l_emlrt_marshallIn(chartInstance, sf_mex_dup(sf_mex_getcell
+                c5_j_emlrt_marshallIn(chartInstance, sf_mex_dup(sf_mex_getcell
     (c5_u, 5)), "setSimStateSideEffectsInfo"), true);
   sf_mex_destroy(&c5_u);
   chartInstance->c5_doSetSimStateSideEffects = 1U;
@@ -340,8 +334,8 @@ static void sf_gateway_c5_SpeedgoatCANOpen2Buses1ms
   _SFD_DATA_RANGE_CHECK((real_T)*chartInstance->c5_PedalTravel, 1U);
   _SFD_DATA_RANGE_CHECK((real_T)*chartInstance->c5_PedalTravelGradient, 0U);
   *chartInstance->c5_sfEvent = CALL_EVENT;
-  if (*chartInstance->c5_temporalCounter_i1 < 511U) {
-    *chartInstance->c5_temporalCounter_i1 = (uint16_T)((uint32_T)
+  if (*chartInstance->c5_temporalCounter_i1 < 127U) {
+    *chartInstance->c5_temporalCounter_i1 = (uint8_T)((uint32_T)
       *chartInstance->c5_temporalCounter_i1 + 1U);
   }
 
@@ -414,7 +408,7 @@ static void sf_gateway_c5_SpeedgoatCANOpen2Buses1ms
         c5_sf_marshallIn);
       _SFD_SYMBOL_SCOPE_ADD_EML_IMPORTABLE(&c5_b_out, 2U, c5_b_sf_marshallOut,
         c5_b_sf_marshallIn);
-      if (CV_EML_IF(2, 0, 0, *chartInstance->c5_temporalCounter_i1 >= 500)) {
+      if (CV_EML_IF(2, 0, 0, *chartInstance->c5_temporalCounter_i1 >= 80)) {
         c5_b_out = true;
       } else {
         c5_b_out = false;
@@ -447,7 +441,7 @@ static void sf_gateway_c5_SpeedgoatCANOpen2Buses1ms
           c5_sf_marshallIn);
         _SFD_SYMBOL_SCOPE_ADD_EML_IMPORTABLE(&c5_d_nargout, 1U,
           c5_sf_marshallOut, c5_sf_marshallIn);
-        *chartInstance->c5_Br_CurrentReq = 1.0F;
+        *chartInstance->c5_Br_CurrentReq = 6.0F;
         chartInstance->c5_dataWrittenToVector[0U] = true;
         _SFD_DATA_RANGE_CHECK((real_T)*chartInstance->c5_Br_CurrentReq, 2U);
         _SFD_SYMBOL_SCOPE_POP();
@@ -753,35 +747,7 @@ static uint8_T c5_g_emlrt_marshallIn
   return c5_y;
 }
 
-static uint16_T c5_h_emlrt_marshallIn
-  (SFc5_SpeedgoatCANOpen2Buses1msInstanceStruct *chartInstance, const mxArray
-   *c5_b_temporalCounter_i1, const char_T *c5_identifier)
-{
-  uint16_T c5_y;
-  emlrtMsgIdentifier c5_thisId;
-  c5_thisId.fIdentifier = (const char *)c5_identifier;
-  c5_thisId.fParent = NULL;
-  c5_thisId.bParentIsCell = false;
-  c5_y = c5_i_emlrt_marshallIn(chartInstance, sf_mex_dup(c5_b_temporalCounter_i1),
-    &c5_thisId);
-  sf_mex_destroy(&c5_b_temporalCounter_i1);
-  return c5_y;
-}
-
-static uint16_T c5_i_emlrt_marshallIn
-  (SFc5_SpeedgoatCANOpen2Buses1msInstanceStruct *chartInstance, const mxArray
-   *c5_u, const emlrtMsgIdentifier *c5_parentId)
-{
-  uint16_T c5_y;
-  uint16_T c5_u1;
-  (void)chartInstance;
-  sf_mex_import(c5_parentId, sf_mex_dup(c5_u), &c5_u1, 1, 5, 0U, 0, 0U, 0);
-  c5_y = c5_u1;
-  sf_mex_destroy(&c5_u);
-  return c5_y;
-}
-
-static void c5_j_emlrt_marshallIn(SFc5_SpeedgoatCANOpen2Buses1msInstanceStruct
+static void c5_h_emlrt_marshallIn(SFc5_SpeedgoatCANOpen2Buses1msInstanceStruct
   *chartInstance, const mxArray *c5_b_dataWrittenToVector, const char_T
   *c5_identifier, boolean_T c5_y[1])
 {
@@ -789,12 +755,12 @@ static void c5_j_emlrt_marshallIn(SFc5_SpeedgoatCANOpen2Buses1msInstanceStruct
   c5_thisId.fIdentifier = (const char *)c5_identifier;
   c5_thisId.fParent = NULL;
   c5_thisId.bParentIsCell = false;
-  c5_k_emlrt_marshallIn(chartInstance, sf_mex_dup(c5_b_dataWrittenToVector),
+  c5_i_emlrt_marshallIn(chartInstance, sf_mex_dup(c5_b_dataWrittenToVector),
                         &c5_thisId, c5_y);
   sf_mex_destroy(&c5_b_dataWrittenToVector);
 }
 
-static void c5_k_emlrt_marshallIn(SFc5_SpeedgoatCANOpen2Buses1msInstanceStruct
+static void c5_i_emlrt_marshallIn(SFc5_SpeedgoatCANOpen2Buses1msInstanceStruct
   *chartInstance, const mxArray *c5_u, const emlrtMsgIdentifier *c5_parentId,
   boolean_T c5_y[1])
 {
@@ -805,7 +771,7 @@ static void c5_k_emlrt_marshallIn(SFc5_SpeedgoatCANOpen2Buses1msInstanceStruct
   sf_mex_destroy(&c5_u);
 }
 
-static const mxArray *c5_l_emlrt_marshallIn
+static const mxArray *c5_j_emlrt_marshallIn
   (SFc5_SpeedgoatCANOpen2Buses1msInstanceStruct *chartInstance, const mxArray
    *c5_b_setSimStateSideEffectsInfo, const char_T *c5_identifier)
 {
@@ -815,13 +781,13 @@ static const mxArray *c5_l_emlrt_marshallIn
   c5_thisId.fIdentifier = (const char *)c5_identifier;
   c5_thisId.fParent = NULL;
   c5_thisId.bParentIsCell = false;
-  sf_mex_assign(&c5_y, c5_m_emlrt_marshallIn(chartInstance, sf_mex_dup
+  sf_mex_assign(&c5_y, c5_k_emlrt_marshallIn(chartInstance, sf_mex_dup
     (c5_b_setSimStateSideEffectsInfo), &c5_thisId), false);
   sf_mex_destroy(&c5_b_setSimStateSideEffectsInfo);
   return c5_y;
 }
 
-static const mxArray *c5_m_emlrt_marshallIn
+static const mxArray *c5_k_emlrt_marshallIn
   (SFc5_SpeedgoatCANOpen2Buses1msInstanceStruct *chartInstance, const mxArray
    *c5_u, const emlrtMsgIdentifier *c5_parentId)
 {
@@ -869,7 +835,7 @@ static void init_simulink_io_address
     (chartInstance->S, 1);
   chartInstance->c5_PedalTravel = (real32_T *)ssGetInputPortSignal_wrapper
     (chartInstance->S, 1);
-  chartInstance->c5_temporalCounter_i1 = (uint16_T *)ssGetDWork_wrapper
+  chartInstance->c5_temporalCounter_i1 = (uint8_T *)ssGetDWork_wrapper
     (chartInstance->S, 3);
 }
 
@@ -877,10 +843,10 @@ static void init_simulink_io_address
 static uint32_T* sf_get_sfun_dwork_checksum(void);
 void sf_c5_SpeedgoatCANOpen2Buses1ms_get_check_sum(mxArray *plhs[])
 {
-  ((real_T *)mxGetPr((plhs[0])))[0] = (real_T)(3868290649U);
-  ((real_T *)mxGetPr((plhs[0])))[1] = (real_T)(2967397538U);
-  ((real_T *)mxGetPr((plhs[0])))[2] = (real_T)(99626472U);
-  ((real_T *)mxGetPr((plhs[0])))[3] = (real_T)(1696813458U);
+  ((real_T *)mxGetPr((plhs[0])))[0] = (real_T)(3930825889U);
+  ((real_T *)mxGetPr((plhs[0])))[1] = (real_T)(1176676887U);
+  ((real_T *)mxGetPr((plhs[0])))[2] = (real_T)(1222145747U);
+  ((real_T *)mxGetPr((plhs[0])))[3] = (real_T)(2995957153U);
 }
 
 mxArray* sf_c5_SpeedgoatCANOpen2Buses1ms_get_post_codegen_info(void);
@@ -894,7 +860,7 @@ mxArray *sf_c5_SpeedgoatCANOpen2Buses1ms_get_autoinheritance_info(void)
     autoinheritanceFields);
 
   {
-    mxArray *mxChecksum = mxCreateString("KLPKHaaEXgPV4ulJh4EqDE");
+    mxArray *mxChecksum = mxCreateString("pdkQRXS0MnB1WIzin3cb6D");
     mxSetField(mxAutoinheritanceInfo,0,"checksum",mxChecksum);
   }
 
@@ -1143,7 +1109,7 @@ static void chart_debug_initialization(SimStruct *S, unsigned int
         _SFD_CV_INIT_EML_IF(1,0,0,1,27,1,27);
         _SFD_CV_INIT_EML_RELATIONAL(1,0,0,1,27,-1,4);
         _SFD_CV_INIT_EML(2,0,0,0,1,0,0,0,0,0,0,0);
-        _SFD_CV_INIT_EML_IF(2,0,0,1,16,1,16);
+        _SFD_CV_INIT_EML_IF(2,0,0,1,15,1,15);
         _SFD_SET_DATA_COMPILED_PROPS(0,SF_SINGLE,0,NULL,0,0,0,0.0,1.0,0,0,
           (MexFcnForType)c5_d_sf_marshallOut,(MexInFcnForType)NULL);
         _SFD_SET_DATA_COMPILED_PROPS(1,SF_SINGLE,0,NULL,0,0,0,0.0,1.0,0,0,
@@ -1178,7 +1144,7 @@ static void chart_debug_initialize_data_addresses(SimStruct *S)
 
 static const char* sf_get_instance_specialization(void)
 {
-  return "sPxpg5Cbc6NCyz1F8fSYKHH";
+  return "svCimcp1A5Bq0DOofK5NZbB";
 }
 
 static void sf_check_dwork_consistency(SimStruct *S)
@@ -1316,7 +1282,7 @@ mxArray *sf_c5_SpeedgoatCANOpen2Buses1ms_get_testpoint_info(void)
 static void sf_set_sfun_dwork_info(SimStruct *S)
 {
   const char *dworkEncStr[] = {
-    "100 S1x4'type','isSigned','wordLength','bias','slope','exponent','isScaledDouble','isComplex','size','local_queue_dwork_idx','local_queue_id','maxStringLength'{{T\"int32\",,,,,,,M[0],M[],M[-1],M[-1],},{T\"uint8\",,,,,,,M[0],M[],M[-1],M[-1],},{T\"uint8\",,,,,,,M[0],M[],M[-1],M[-1],},{T\"uint16\",,,,,,,M[0],M[],M[-1],M[-1],}}"
+    "100 S1x4'type','isSigned','wordLength','bias','slope','exponent','isScaledDouble','isComplex','size','local_queue_dwork_idx','local_queue_id','maxStringLength'{{T\"int32\",,,,,,,M[0],M[],M[-1],M[-1],},{T\"uint8\",,,,,,,M[0],M[],M[-1],M[-1],},{T\"uint8\",,,,,,,M[0],M[],M[-1],M[-1],},{T\"uint8\",,,,,,,M[0],M[],M[-1],M[-1],}}"
   };
 
   sf_set_encoded_dwork_info(S, dworkEncStr, 4, 10);
@@ -1324,8 +1290,8 @@ static void sf_set_sfun_dwork_info(SimStruct *S)
 
 static uint32_T* sf_get_sfun_dwork_checksum()
 {
-  static uint32_T checksum[4] = { 53886659U, 2029911166U, 3433601649U,
-    1924527962U };
+  static uint32_T checksum[4] = { 1031010717U, 1491925625U, 2492558523U,
+    1569467743U };
 
   return checksum;
 }
@@ -1385,10 +1351,10 @@ static void mdlSetWorkWidths_c5_SpeedgoatCANOpen2Buses1ms(SimStruct *S)
   }
 
   ssSetOptions(S,ssGetOptions(S)|SS_OPTION_WORKS_WITH_CODE_REUSE);
-  ssSetChecksum0(S,(2739004455U));
-  ssSetChecksum1(S,(3907312775U));
-  ssSetChecksum2(S,(3734535516U));
-  ssSetChecksum3(S,(3418002373U));
+  ssSetChecksum0(S,(196146990U));
+  ssSetChecksum1(S,(80805652U));
+  ssSetChecksum2(S,(2952517575U));
+  ssSetChecksum3(S,(1773696518U));
   ssSetmdlDerivatives(S, NULL);
   ssSetExplicitFCSSCtrl(S,1);
   ssSetStateSemanticsClassicAndSynchronous(S, true);
