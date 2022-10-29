@@ -1,0 +1,3898 @@
+<?xml version="1.0" encoding="UTF-8"?><Root>
+      		<SubSystem>
+		<Name>AN2CAN_RPDOs</Name>
+		<xPCName>SpeedgoatCANOpen2Buses1ms/AN2CAN_RPDOs</xPCName>
+		
+		
+			  
+			  
+              <signal>
+              <sigName>RPDOs from AN2CAN /p1</sigName>
+              <xpcsigName>AN2CAN_RPDOs/RPDOs from AN2CAN /p1</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/AN2CAN_RPDOs</SubSystemName>
+                <sigLabel>Channel_AN1</sigLabel>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>RPDOs from AN2CAN /p2</sigName>
+              <xpcsigName>AN2CAN_RPDOs/RPDOs from AN2CAN /p2</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/AN2CAN_RPDOs</SubSystemName>
+                <sigLabel>Channel_AN2</sigLabel>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>RPDOs from AN2CAN /p3</sigName>
+              <xpcsigName>AN2CAN_RPDOs/RPDOs from AN2CAN /p3</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/AN2CAN_RPDOs</SubSystemName>
+                <sigLabel>Channel_AN3</sigLabel>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>RPDOs from AN2CAN /p4</sigName>
+              <xpcsigName>AN2CAN_RPDOs/RPDOs from AN2CAN /p4</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/AN2CAN_RPDOs</SubSystemName>
+                <sigLabel>Channel_AN4</sigLabel>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+
+		</SubSystem>
+		<SubSystem>
+		<Name>APT_RPDOs</Name>
+		<xPCName>SpeedgoatCANOpen2Buses1ms/APT_RPDOs</xPCName>
+		
+		
+			  
+			  
+              <signal>
+              <sigName>RPDOs from APT/p1</sigName>
+              <xpcsigName>APT_RPDOs/RPDOs from APT/p1</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/APT_RPDOs</SubSystemName>
+                <sigLabel>APT_StatusWord</sigLabel>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>RPDOs from APT/p2</sigName>
+              <xpcsigName>APT_RPDOs/RPDOs from APT/p2</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/APT_RPDOs</SubSystemName>
+                <sigLabel>APT_PhaseCurrent</sigLabel>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>RPDOs from APT/p3</sigName>
+              <xpcsigName>APT_RPDOs/RPDOs from APT/p3</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/APT_RPDOs</SubSystemName>
+                <sigLabel>APT_Speed</sigLabel>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>RPDOs from APT/p4</sigName>
+              <xpcsigName>APT_RPDOs/RPDOs from APT/p4</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/APT_RPDOs</SubSystemName>
+                <sigLabel>APT_BusVoltage</sigLabel>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>RPDOs from APT/p5</sigName>
+              <xpcsigName>APT_RPDOs/RPDOs from APT/p5</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/APT_RPDOs</SubSystemName>
+                <sigLabel>APT_MotorTemp</sigLabel>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>RPDOs from APT/p6</sigName>
+              <xpcsigName>APT_RPDOs/RPDOs from APT/p6</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/APT_RPDOs</SubSystemName>
+                <sigLabel>APT_Temp</sigLabel>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>RPDOs from APT/p7</sigName>
+              <xpcsigName>APT_RPDOs/RPDOs from APT/p7</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/APT_RPDOs</SubSystemName>
+                <sigLabel>APT_ErrStatus</sigLabel>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>RPDOs from APT/p8</sigName>
+              <xpcsigName>APT_RPDOs/RPDOs from APT/p8</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/APT_RPDOs</SubSystemName>
+                <sigLabel>APT_Direction</sigLabel>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+
+		</SubSystem>
+		<SubSystem>
+		<Name>Dold_MiniMaster_RPDOs</Name>
+		<xPCName>SpeedgoatCANOpen2Buses1ms/Dold_MiniMaster_RPDOs</xPCName>
+		
+		
+            <block>
+            <blkName>Constant</blkName>
+            <xpcblkName>Dold_MiniMaster_RPDOs/Constant</xpcblkName>
+            <SLblockPath>SpeedgoatCANOpen2Buses1ms/Dold_MiniMaster_RPDOs/Constant</SLblockPath>
+            <isSrc>[1 0 1]</isSrc>
+          <parameter>
+          <paramName>Value</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Dold_MiniMaster_RPDOs</SubSystemName>
+          </parameter>
+          </block>
+			  
+			  
+              <signal>
+              <sigName>Constant</sigName>
+              <xpcsigName>Dold_MiniMaster_RPDOs/Constant</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Dold_MiniMaster_RPDOs</SubSystemName>
+                
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+
+		</SubSystem>
+		<SubSystem>
+		<Name>Dunk_Brakes</Name>
+		<xPCName>SpeedgoatCANOpen2Buses1ms/Dunk_Brakes</xPCName>
+		
+		
+			  
+			  
+              <signal>
+              <sigName>RPDOs from Dunker #1/p1</sigName>
+              <xpcsigName>Dunk_Brakes/RPDOs from Dunker #1/p1</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Dunk_Brakes</SubSystemName>
+                <sigLabel>DunkD_ActualCurrent</sigLabel>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>RPDOs from Dunker #1/p2</sigName>
+              <xpcsigName>Dunk_Brakes/RPDOs from Dunker #1/p2</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Dunk_Brakes</SubSystemName>
+                <sigLabel>DunkD_ActualVelocity</sigLabel>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+
+		</SubSystem>
+		<SubSystem>
+		<Name>Dunk_LeftTilt</Name>
+		<xPCName>SpeedgoatCANOpen2Buses1ms/Dunk_LeftTilt</xPCName>
+		
+		
+            <block>
+            <blkName>Gain</blkName>
+            <xpcblkName>Dunk_LeftTilt/Gain</xpcblkName>
+            <SLblockPath>SpeedgoatCANOpen2Buses1ms/Dunk_LeftTilt/Gain</SLblockPath>
+            <isSrc>[0 1 1]</isSrc>
+          <parameter>
+          <paramName>Gain</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Dunk_LeftTilt</SubSystemName>
+          </parameter>
+          </block>
+            <block>
+            <blkName>Gain1</blkName>
+            <xpcblkName>Dunk_LeftTilt/Gain1</xpcblkName>
+            <SLblockPath>SpeedgoatCANOpen2Buses1ms/Dunk_LeftTilt/Gain1</SLblockPath>
+            <isSrc>[0 1 1]</isSrc>
+          <parameter>
+          <paramName>Gain</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Dunk_LeftTilt</SubSystemName>
+          </parameter>
+          </block>
+			  
+			  
+              <signal>
+              <sigName>Gain</sigName>
+              <xpcsigName>Dunk_LeftTilt/Gain</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Dunk_LeftTilt</SubSystemName>
+                <sigLabel>DunkC_ActualCurrent_Inv</sigLabel>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Gain1</sigName>
+              <xpcsigName>Dunk_LeftTilt/Gain1</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Dunk_LeftTilt</SubSystemName>
+                <sigLabel>DunkC_ActualVelocity_Inv</sigLabel>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Signal Copy</sigName>
+              <xpcsigName>Dunk_LeftTilt/Signal Copy</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Dunk_LeftTilt</SubSystemName>
+                <sigLabel>TiltLeft_VelocityReq</sigLabel>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>RPDOs from Dunker #1/p1</sigName>
+              <xpcsigName>Dunk_LeftTilt/RPDOs from Dunker #1/p1</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Dunk_LeftTilt</SubSystemName>
+                <sigLabel>DunkC_ActualCurrent</sigLabel>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>RPDOs from Dunker #1/p2</sigName>
+              <xpcsigName>Dunk_LeftTilt/RPDOs from Dunker #1/p2</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Dunk_LeftTilt</SubSystemName>
+                <sigLabel>DunkC_ActualVelocity</sigLabel>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+
+		</SubSystem>
+		<SubSystem>
+		<Name>Dunk_RightTilt</Name>
+		<xPCName>SpeedgoatCANOpen2Buses1ms/Dunk_RightTilt</xPCName>
+		
+		
+			  
+			  
+              <signal>
+              <sigName>Signal Copy</sigName>
+              <xpcsigName>Dunk_RightTilt/Signal Copy</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Dunk_RightTilt</SubSystemName>
+                <sigLabel>TiltRight_CurrentReq</sigLabel>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>RPDOs from Dunker #1/p1</sigName>
+              <xpcsigName>Dunk_RightTilt/RPDOs from Dunker #1/p1</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Dunk_RightTilt</SubSystemName>
+                <sigLabel>DunkB_ActualCurrent</sigLabel>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>RPDOs from Dunker #1/p2</sigName>
+              <xpcsigName>Dunk_RightTilt/RPDOs from Dunker #1/p2</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Dunk_RightTilt</SubSystemName>
+                <sigLabel>DunkB_ActualVelocity</sigLabel>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+
+		</SubSystem>
+		<SubSystem>
+		<Name>Dunk_Steering</Name>
+		<xPCName>SpeedgoatCANOpen2Buses1ms/Dunk_Steering</xPCName>
+		
+		
+			  
+			  
+              <signal>
+              <sigName>RPDOs from Dunker #1/p1</sigName>
+              <xpcsigName>Dunk_Steering/RPDOs from Dunker #1/p1</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Dunk_Steering</SubSystemName>
+                <sigLabel>DunkA_ActualCurrent</sigLabel>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>RPDOs from Dunker #1/p2</sigName>
+              <xpcsigName>Dunk_Steering/RPDOs from Dunker #1/p2</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Dunk_Steering</SubSystemName>
+                <sigLabel>DunkA_ActualVelocity</sigLabel>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+
+		</SubSystem>
+		<SubSystem>
+		<Name>Encoder_RPDOs</Name>
+		<xPCName>SpeedgoatCANOpen2Buses1ms/Encoder_RPDOs</xPCName>
+		
+		
+			  
+			  
+              <signal>
+              <sigName>RPDOs from Encoder/p1</sigName>
+              <xpcsigName>Encoder_RPDOs/RPDOs from Encoder/p1</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Encoder_RPDOs</SubSystemName>
+                <sigLabel>Encoder_Actual_Position</sigLabel>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>RPDOs from Encoder/p2</sigName>
+              <xpcsigName>Encoder_RPDOs/RPDOs from Encoder/p2</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Encoder_RPDOs</SubSystemName>
+                <sigLabel>Encoder_Stored_Position</sigLabel>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+
+		</SubSystem>
+		<SubSystem>
+		<Name>Inclinometer_RPDOs</Name>
+		<xPCName>SpeedgoatCANOpen2Buses1ms/Inclinometer_RPDOs</xPCName>
+				<SubSystem>
+		<Name>Conv</Name>
+		<xPCName>SpeedgoatCANOpen2Buses1ms/Inclinometer_RPDOs/Conv</xPCName>
+		
+		
+
+		</SubSystem>
+
+		
+            <block>
+            <blkName>Constant</blkName>
+            <xpcblkName>Inclinometer_RPDOs/Constant</xpcblkName>
+            <SLblockPath>SpeedgoatCANOpen2Buses1ms/Inclinometer_RPDOs/Constant</SLblockPath>
+            <isSrc>[1 0 1]</isSrc>
+          <parameter>
+          <paramName>Value</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Inclinometer_RPDOs</SubSystemName>
+          </parameter>
+          </block>
+			  
+			  
+              <signal>
+              <sigName>Conv/p1</sigName>
+              <xpcsigName>Inclinometer_RPDOs/Conv/p1</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Inclinometer_RPDOs</SubSystemName>
+                <sigLabel>X_Angle</sigLabel>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Conv/p2</sigName>
+              <xpcsigName>Inclinometer_RPDOs/Conv/p2</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Inclinometer_RPDOs</SubSystemName>
+                <sigLabel>Y_Angle</sigLabel>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Constant</sigName>
+              <xpcsigName>Inclinometer_RPDOs/Constant</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Inclinometer_RPDOs</SubSystemName>
+                
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>RPDOs from Inclinometer /p1</sigName>
+              <xpcsigName>Inclinometer_RPDOs/RPDOs from Inclinometer /p1</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Inclinometer_RPDOs</SubSystemName>
+                <sigLabel>xS</sigLabel>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>RPDOs from Inclinometer /p2</sigName>
+              <xpcsigName>Inclinometer_RPDOs/RPDOs from Inclinometer /p2</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Inclinometer_RPDOs</SubSystemName>
+                <sigLabel>xH</sigLabel>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>RPDOs from Inclinometer /p3</sigName>
+              <xpcsigName>Inclinometer_RPDOs/RPDOs from Inclinometer /p3</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Inclinometer_RPDOs</SubSystemName>
+                <sigLabel>xL</sigLabel>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>RPDOs from Inclinometer /p4</sigName>
+              <xpcsigName>Inclinometer_RPDOs/RPDOs from Inclinometer /p4</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Inclinometer_RPDOs</SubSystemName>
+                <sigLabel>yS</sigLabel>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>RPDOs from Inclinometer /p5</sigName>
+              <xpcsigName>Inclinometer_RPDOs/RPDOs from Inclinometer /p5</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Inclinometer_RPDOs</SubSystemName>
+                <sigLabel>yH</sigLabel>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>RPDOs from Inclinometer /p6</sigName>
+              <xpcsigName>Inclinometer_RPDOs/RPDOs from Inclinometer /p6</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Inclinometer_RPDOs</SubSystemName>
+                <sigLabel>yL</sigLabel>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+
+		</SubSystem>
+		<SubSystem>
+		<Name>Joystick_RPDOs</Name>
+		<xPCName>SpeedgoatCANOpen2Buses1ms/Joystick_RPDOs</xPCName>
+		
+		
+			  
+			  
+              <signal>
+              <sigName>RPDOs from Joystick/p1</sigName>
+              <xpcsigName>Joystick_RPDOs/RPDOs from Joystick/p1</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Joystick_RPDOs</SubSystemName>
+                <sigLabel>Joystick_ButtonsStatus</sigLabel>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>RPDOs from Joystick/p2</sigName>
+              <xpcsigName>Joystick_RPDOs/RPDOs from Joystick/p2</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Joystick_RPDOs</SubSystemName>
+                <sigLabel>Joystick_LongCmd</sigLabel>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>RPDOs from Joystick/p3</sigName>
+              <xpcsigName>Joystick_RPDOs/RPDOs from Joystick/p3</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Joystick_RPDOs</SubSystemName>
+                <sigLabel>Joystick_LatCmd</sigLabel>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+
+		</SubSystem>
+		<SubSystem>
+		<Name>Speedgoat_TPDOs</Name>
+		<xPCName>SpeedgoatCANOpen2Buses1ms/Speedgoat_TPDOs</xPCName>
+				<SubSystem>
+		<Name>CAN Bus Communication</Name>
+		<xPCName>SpeedgoatCANOpen2Buses1ms/Speedgoat_TPDOs/CAN Bus Communication</xPCName>
+				<SubSystem>
+		<Name>CANOpen Slave 
+Protocol Stack - CAN Bus #1 (A)</Name>
+		<xPCName>SpeedgoatCANOpen2Buses1ms/Speedgoat_TPDOs/CAN Bus Communication/CANOpen Slave  Protocol Stack - CAN Bus #1 (A)</xPCName>
+				<SubSystem>
+		<Name>CAN RX Wrapper</Name>
+		<xPCName>SpeedgoatCANOpen2Buses1ms/Speedgoat_TPDOs/CAN Bus Communication/CANOpen Slave  Protocol Stack - CAN Bus #1 (A)/CAN RX Wrapper</xPCName>
+		
+		
+            <block>
+            <blkName>CAN Read</blkName>
+            <xpcblkName>Speedgoat_TPDOs/CAN Bus Communication/CANOpen Slave  Protocol Stack - CAN Bus #1 (A)/CAN RX Wrapper/CAN Read</xpcblkName>
+            <SLblockPath>SpeedgoatCANOpen2Buses1ms/Speedgoat_TPDOs/CAN Bus Communication/CANOpen Slave  Protocol Stack - CAN Bus #1 (A)/CAN RX Wrapper/CAN Read</SLblockPath>
+            <isSrc>[1 0 6]</isSrc>
+          <parameter>
+          <paramName>P1</paramName>
+          <dim>[1, 6]</dim>  
+		  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Speedgoat_TPDOs/CAN Bus Communication/CANOpen Slave  Protocol Stack - CAN Bus #1 (A)/CAN RX Wrapper</SubSystemName>
+          </parameter>
+          </block>
+			  
+			  
+              <signal>
+              <sigName>CAN Read/p1</sigName>
+              <xpcsigName>Speedgoat_TPDOs/CAN Bus Communication/CANOpen Slave  Protocol Stack - CAN Bus #1 (A)/CAN RX Wrapper/CAN Read/p1</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Speedgoat_TPDOs/CAN Bus Communication/CANOpen Slave  Protocol Stack - CAN Bus #1 (A)/CAN RX Wrapper</SubSystemName>
+                <sigLabel>DataPresent</sigLabel>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>CAN Read/p2</sigName>
+              <xpcsigName>Speedgoat_TPDOs/CAN Bus Communication/CANOpen Slave  Protocol Stack - CAN Bus #1 (A)/CAN RX Wrapper/CAN Read/p2</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Speedgoat_TPDOs/CAN Bus Communication/CANOpen Slave  Protocol Stack - CAN Bus #1 (A)/CAN RX Wrapper</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>CAN Read/p3</sigName>
+              <xpcsigName>Speedgoat_TPDOs/CAN Bus Communication/CANOpen Slave  Protocol Stack - CAN Bus #1 (A)/CAN RX Wrapper/CAN Read/p3</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Speedgoat_TPDOs/CAN Bus Communication/CANOpen Slave  Protocol Stack - CAN Bus #1 (A)/CAN RX Wrapper</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>CAN Read/p4</sigName>
+              <xpcsigName>Speedgoat_TPDOs/CAN Bus Communication/CANOpen Slave  Protocol Stack - CAN Bus #1 (A)/CAN RX Wrapper/CAN Read/p4</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Speedgoat_TPDOs/CAN Bus Communication/CANOpen Slave  Protocol Stack - CAN Bus #1 (A)/CAN RX Wrapper</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>CAN Read/p5</sigName>
+              <xpcsigName>Speedgoat_TPDOs/CAN Bus Communication/CANOpen Slave  Protocol Stack - CAN Bus #1 (A)/CAN RX Wrapper/CAN Read/p5</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Speedgoat_TPDOs/CAN Bus Communication/CANOpen Slave  Protocol Stack - CAN Bus #1 (A)/CAN RX Wrapper</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>CAN Read/p6</sigName>
+              <xpcsigName>Speedgoat_TPDOs/CAN Bus Communication/CANOpen Slave  Protocol Stack - CAN Bus #1 (A)/CAN RX Wrapper/CAN Read/p6</xpcsigName>
+              <sigWidth>8</sigWidth>
+              <sigDim>[8, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Speedgoat_TPDOs/CAN Bus Communication/CANOpen Slave  Protocol Stack - CAN Bus #1 (A)/CAN RX Wrapper</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+
+		</SubSystem>
+		<SubSystem>
+		<Name>CAN TX Wrapper</Name>
+		<xPCName>SpeedgoatCANOpen2Buses1ms/Speedgoat_TPDOs/CAN Bus Communication/CANOpen Slave  Protocol Stack - CAN Bus #1 (A)/CAN TX Wrapper</xPCName>
+		
+		
+            <block>
+            <blkName>Constant</blkName>
+            <xpcblkName>Speedgoat_TPDOs/CAN Bus Communication/CANOpen Slave  Protocol Stack - CAN Bus #1 (A)/CAN TX Wrapper/Constant</xpcblkName>
+            <SLblockPath>SpeedgoatCANOpen2Buses1ms/Speedgoat_TPDOs/CAN Bus Communication/CANOpen Slave  Protocol Stack - CAN Bus #1 (A)/CAN TX Wrapper/Constant</SLblockPath>
+            <isSrc>[1 0 1]</isSrc>
+          <parameter>
+          <paramName>Value</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Speedgoat_TPDOs/CAN Bus Communication/CANOpen Slave  Protocol Stack - CAN Bus #1 (A)/CAN TX Wrapper</SubSystemName>
+          </parameter>
+          </block>
+            <block>
+            <blkName>CAN Write</blkName>
+            <xpcblkName>Speedgoat_TPDOs/CAN Bus Communication/CANOpen Slave  Protocol Stack - CAN Bus #1 (A)/CAN TX Wrapper/CAN Write</xpcblkName>
+            <SLblockPath>SpeedgoatCANOpen2Buses1ms/Speedgoat_TPDOs/CAN Bus Communication/CANOpen Slave  Protocol Stack - CAN Bus #1 (A)/CAN TX Wrapper/CAN Write</SLblockPath>
+            <isSrc>[0 4 0]</isSrc>
+          <parameter>
+          <paramName>P1</paramName>
+          <dim>[1, 7]</dim>  
+		  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Speedgoat_TPDOs/CAN Bus Communication/CANOpen Slave  Protocol Stack - CAN Bus #1 (A)/CAN TX Wrapper</SubSystemName>
+          </parameter>
+          </block>
+
+		</SubSystem>
+
+		
+			  
+			  
+              <signal>
+              <sigName>C Caller/p1</sigName>
+              <xpcsigName>Speedgoat_TPDOs/CAN Bus Communication/CANOpen Slave  Protocol Stack - CAN Bus #1 (A)/C Caller/p1</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Speedgoat_TPDOs/CAN Bus Communication/CANOpen Slave  Protocol Stack - CAN Bus #1 (A)</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>C Caller/p2</sigName>
+              <xpcsigName>Speedgoat_TPDOs/CAN Bus Communication/CANOpen Slave  Protocol Stack - CAN Bus #1 (A)/C Caller/p2</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Speedgoat_TPDOs/CAN Bus Communication/CANOpen Slave  Protocol Stack - CAN Bus #1 (A)</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>C Caller/p3</sigName>
+              <xpcsigName>Speedgoat_TPDOs/CAN Bus Communication/CANOpen Slave  Protocol Stack - CAN Bus #1 (A)/C Caller/p3</xpcsigName>
+              <sigWidth>8</sigWidth>
+              <sigDim>[8, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Speedgoat_TPDOs/CAN Bus Communication/CANOpen Slave  Protocol Stack - CAN Bus #1 (A)</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>C Caller/p4</sigName>
+              <xpcsigName>Speedgoat_TPDOs/CAN Bus Communication/CANOpen Slave  Protocol Stack - CAN Bus #1 (A)/C Caller/p4</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Speedgoat_TPDOs/CAN Bus Communication/CANOpen Slave  Protocol Stack - CAN Bus #1 (A)</SubSystemName>
+                <sigLabel>queue_in</sigLabel>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>C Caller/p5</sigName>
+              <xpcsigName>Speedgoat_TPDOs/CAN Bus Communication/CANOpen Slave  Protocol Stack - CAN Bus #1 (A)/C Caller/p5</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Speedgoat_TPDOs/CAN Bus Communication/CANOpen Slave  Protocol Stack - CAN Bus #1 (A)</SubSystemName>
+                <sigLabel>queue_out</sigLabel>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+
+		</SubSystem>
+		<SubSystem>
+		<Name>CANOpen Slave 
+Protocol Stack - CAN Bus #2 (B)</Name>
+		<xPCName>SpeedgoatCANOpen2Buses1ms/Speedgoat_TPDOs/CAN Bus Communication/CANOpen Slave  Protocol Stack - CAN Bus #2 (B)</xPCName>
+				<SubSystem>
+		<Name>CAN RX Wrapper</Name>
+		<xPCName>SpeedgoatCANOpen2Buses1ms/Speedgoat_TPDOs/CAN Bus Communication/CANOpen Slave  Protocol Stack - CAN Bus #2 (B)/CAN RX Wrapper</xPCName>
+		
+		
+            <block>
+            <blkName>CAN Read</blkName>
+            <xpcblkName>Speedgoat_TPDOs/CAN Bus Communication/CANOpen Slave  Protocol Stack - CAN Bus #2 (B)/CAN RX Wrapper/CAN Read</xpcblkName>
+            <SLblockPath>SpeedgoatCANOpen2Buses1ms/Speedgoat_TPDOs/CAN Bus Communication/CANOpen Slave  Protocol Stack - CAN Bus #2 (B)/CAN RX Wrapper/CAN Read</SLblockPath>
+            <isSrc>[1 0 6]</isSrc>
+          <parameter>
+          <paramName>P1</paramName>
+          <dim>[1, 6]</dim>  
+		  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Speedgoat_TPDOs/CAN Bus Communication/CANOpen Slave  Protocol Stack - CAN Bus #2 (B)/CAN RX Wrapper</SubSystemName>
+          </parameter>
+          </block>
+			  
+			  
+              <signal>
+              <sigName>CAN Read/p1</sigName>
+              <xpcsigName>Speedgoat_TPDOs/CAN Bus Communication/CANOpen Slave  Protocol Stack - CAN Bus #2 (B)/CAN RX Wrapper/CAN Read/p1</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Speedgoat_TPDOs/CAN Bus Communication/CANOpen Slave  Protocol Stack - CAN Bus #2 (B)/CAN RX Wrapper</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>CAN Read/p2</sigName>
+              <xpcsigName>Speedgoat_TPDOs/CAN Bus Communication/CANOpen Slave  Protocol Stack - CAN Bus #2 (B)/CAN RX Wrapper/CAN Read/p2</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Speedgoat_TPDOs/CAN Bus Communication/CANOpen Slave  Protocol Stack - CAN Bus #2 (B)/CAN RX Wrapper</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>CAN Read/p3</sigName>
+              <xpcsigName>Speedgoat_TPDOs/CAN Bus Communication/CANOpen Slave  Protocol Stack - CAN Bus #2 (B)/CAN RX Wrapper/CAN Read/p3</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Speedgoat_TPDOs/CAN Bus Communication/CANOpen Slave  Protocol Stack - CAN Bus #2 (B)/CAN RX Wrapper</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>CAN Read/p4</sigName>
+              <xpcsigName>Speedgoat_TPDOs/CAN Bus Communication/CANOpen Slave  Protocol Stack - CAN Bus #2 (B)/CAN RX Wrapper/CAN Read/p4</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Speedgoat_TPDOs/CAN Bus Communication/CANOpen Slave  Protocol Stack - CAN Bus #2 (B)/CAN RX Wrapper</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>CAN Read/p5</sigName>
+              <xpcsigName>Speedgoat_TPDOs/CAN Bus Communication/CANOpen Slave  Protocol Stack - CAN Bus #2 (B)/CAN RX Wrapper/CAN Read/p5</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Speedgoat_TPDOs/CAN Bus Communication/CANOpen Slave  Protocol Stack - CAN Bus #2 (B)/CAN RX Wrapper</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>CAN Read/p6</sigName>
+              <xpcsigName>Speedgoat_TPDOs/CAN Bus Communication/CANOpen Slave  Protocol Stack - CAN Bus #2 (B)/CAN RX Wrapper/CAN Read/p6</xpcsigName>
+              <sigWidth>8</sigWidth>
+              <sigDim>[8, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Speedgoat_TPDOs/CAN Bus Communication/CANOpen Slave  Protocol Stack - CAN Bus #2 (B)/CAN RX Wrapper</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+
+		</SubSystem>
+		<SubSystem>
+		<Name>CAN TX Wrapper</Name>
+		<xPCName>SpeedgoatCANOpen2Buses1ms/Speedgoat_TPDOs/CAN Bus Communication/CANOpen Slave  Protocol Stack - CAN Bus #2 (B)/CAN TX Wrapper</xPCName>
+		
+		
+            <block>
+            <blkName>Constant</blkName>
+            <xpcblkName>Speedgoat_TPDOs/CAN Bus Communication/CANOpen Slave  Protocol Stack - CAN Bus #2 (B)/CAN TX Wrapper/Constant</xpcblkName>
+            <SLblockPath>SpeedgoatCANOpen2Buses1ms/Speedgoat_TPDOs/CAN Bus Communication/CANOpen Slave  Protocol Stack - CAN Bus #2 (B)/CAN TX Wrapper/Constant</SLblockPath>
+            <isSrc>[1 0 1]</isSrc>
+          <parameter>
+          <paramName>Value</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Speedgoat_TPDOs/CAN Bus Communication/CANOpen Slave  Protocol Stack - CAN Bus #2 (B)/CAN TX Wrapper</SubSystemName>
+          </parameter>
+          </block>
+            <block>
+            <blkName>CAN Write</blkName>
+            <xpcblkName>Speedgoat_TPDOs/CAN Bus Communication/CANOpen Slave  Protocol Stack - CAN Bus #2 (B)/CAN TX Wrapper/CAN Write</xpcblkName>
+            <SLblockPath>SpeedgoatCANOpen2Buses1ms/Speedgoat_TPDOs/CAN Bus Communication/CANOpen Slave  Protocol Stack - CAN Bus #2 (B)/CAN TX Wrapper/CAN Write</SLblockPath>
+            <isSrc>[0 4 0]</isSrc>
+          <parameter>
+          <paramName>P1</paramName>
+          <dim>[1, 7]</dim>  
+		  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Speedgoat_TPDOs/CAN Bus Communication/CANOpen Slave  Protocol Stack - CAN Bus #2 (B)/CAN TX Wrapper</SubSystemName>
+          </parameter>
+          </block>
+
+		</SubSystem>
+
+		
+			  
+			  
+              <signal>
+              <sigName>C Caller/p1</sigName>
+              <xpcsigName>Speedgoat_TPDOs/CAN Bus Communication/CANOpen Slave  Protocol Stack - CAN Bus #2 (B)/C Caller/p1</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Speedgoat_TPDOs/CAN Bus Communication/CANOpen Slave  Protocol Stack - CAN Bus #2 (B)</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>C Caller/p2</sigName>
+              <xpcsigName>Speedgoat_TPDOs/CAN Bus Communication/CANOpen Slave  Protocol Stack - CAN Bus #2 (B)/C Caller/p2</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Speedgoat_TPDOs/CAN Bus Communication/CANOpen Slave  Protocol Stack - CAN Bus #2 (B)</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>C Caller/p3</sigName>
+              <xpcsigName>Speedgoat_TPDOs/CAN Bus Communication/CANOpen Slave  Protocol Stack - CAN Bus #2 (B)/C Caller/p3</xpcsigName>
+              <sigWidth>8</sigWidth>
+              <sigDim>[8, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Speedgoat_TPDOs/CAN Bus Communication/CANOpen Slave  Protocol Stack - CAN Bus #2 (B)</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+
+		</SubSystem>
+
+		
+            <block>
+            <blkName>CAN Setup </blkName>
+            <xpcblkName>Speedgoat_TPDOs/CAN Bus Communication/CAN Setup </xpcblkName>
+            <SLblockPath>SpeedgoatCANOpen2Buses1ms/Speedgoat_TPDOs/CAN Bus Communication/CAN Setup </SLblockPath>
+            <isSrc>[0 0 0]</isSrc>
+          <parameter>
+          <paramName>P1</paramName>
+          <dim>[1, 40]</dim>  
+		  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Speedgoat_TPDOs/CAN Bus Communication</SubSystemName>
+          </parameter>
+          <parameter>
+          <paramName>P2</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Speedgoat_TPDOs/CAN Bus Communication</SubSystemName>
+          </parameter>
+          <parameter>
+          <paramName>P3</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Speedgoat_TPDOs/CAN Bus Communication</SubSystemName>
+          </parameter>
+          </block>
+
+		</SubSystem>
+		<SubSystem>
+		<Name>Subsystem</Name>
+		<xPCName>SpeedgoatCANOpen2Buses1ms/Speedgoat_TPDOs/Subsystem</xPCName>
+		
+		
+            <block>
+            <blkName>Sine Wave</blkName>
+            <xpcblkName>Speedgoat_TPDOs/Subsystem/Sine Wave</xpcblkName>
+            <SLblockPath>SpeedgoatCANOpen2Buses1ms/Speedgoat_TPDOs/Subsystem/Sine Wave</SLblockPath>
+            <isSrc>[1 0 1]</isSrc>
+          <parameter>
+          <paramName>Amplitude</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Speedgoat_TPDOs/Subsystem</SubSystemName>
+          </parameter>
+          <parameter>
+          <paramName>Bias</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Speedgoat_TPDOs/Subsystem</SubSystemName>
+          </parameter>
+          <parameter>
+          <paramName>Frequency</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Speedgoat_TPDOs/Subsystem</SubSystemName>
+          </parameter>
+          <parameter>
+          <paramName>SinH</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Speedgoat_TPDOs/Subsystem</SubSystemName>
+          </parameter>
+          <parameter>
+          <paramName>CosH</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Speedgoat_TPDOs/Subsystem</SubSystemName>
+          </parameter>
+          <parameter>
+          <paramName>SinPhi</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Speedgoat_TPDOs/Subsystem</SubSystemName>
+          </parameter>
+          <parameter>
+          <paramName>CosPhi</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Speedgoat_TPDOs/Subsystem</SubSystemName>
+          </parameter>
+          </block>
+			  
+			  
+              <signal>
+              <sigName>Cast To Single</sigName>
+              <xpcsigName>Speedgoat_TPDOs/Subsystem/Cast To Single</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Speedgoat_TPDOs/Subsystem</SubSystemName>
+                <sigLabel>AN_01</sigLabel>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Cast To Single1</sigName>
+              <xpcsigName>Speedgoat_TPDOs/Subsystem/Cast To Single1</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Speedgoat_TPDOs/Subsystem</SubSystemName>
+                <sigLabel>AN_02</sigLabel>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Cast To Single2</sigName>
+              <xpcsigName>Speedgoat_TPDOs/Subsystem/Cast To Single2</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Speedgoat_TPDOs/Subsystem</SubSystemName>
+                <sigLabel>AN_03</sigLabel>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Cast To Single3</sigName>
+              <xpcsigName>Speedgoat_TPDOs/Subsystem/Cast To Single3</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Speedgoat_TPDOs/Subsystem</SubSystemName>
+                <sigLabel>AN_04</sigLabel>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Sine Wave</sigName>
+              <xpcsigName>Speedgoat_TPDOs/Subsystem/Sine Wave</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Speedgoat_TPDOs/Subsystem</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+
+		</SubSystem>
+
+		
+
+		</SubSystem>
+		<SubSystem>
+		<Name>Trike Application Layer</Name>
+		<xPCName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer</xPCName>
+				<SubSystem>
+		<Name>CAN_A</Name>
+		<xPCName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/CAN_A</xPCName>
+		
+		
+			  
+			  
+              <signal>
+              <sigName>Data Type Conversion22</sigName>
+              <xpcsigName>Trike Application Layer/CAN_A/Data Type Conversion22</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/CAN_A</SubSystemName>
+                <sigLabel>DunkB_TPDO_ClearError</sigLabel>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Data Type Conversion23</sigName>
+              <xpcsigName>Trike Application Layer/CAN_A/Data Type Conversion23</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/CAN_A</SubSystemName>
+                <sigLabel>DunkB_TPDO_BrakeCtrl</sigLabel>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Data Type Conversion24</sigName>
+              <xpcsigName>Trike Application Layer/CAN_A/Data Type Conversion24</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/CAN_A</SubSystemName>
+                <sigLabel>DunkB_TPDO_DeviceMode</sigLabel>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Data Type Conversion25</sigName>
+              <xpcsigName>Trike Application Layer/CAN_A/Data Type Conversion25</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/CAN_A</SubSystemName>
+                <sigLabel>DunkB_TPDO_PowerEnable</sigLabel>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Data Type Conversion26</sigName>
+              <xpcsigName>Trike Application Layer/CAN_A/Data Type Conversion26</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/CAN_A</SubSystemName>
+                <sigLabel>DunkB_TPDO_DesiredCurrent</sigLabel>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Data Type Conversion27</sigName>
+              <xpcsigName>Trike Application Layer/CAN_A/Data Type Conversion27</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/CAN_A</SubSystemName>
+                <sigLabel>DunkC_TPDO_ClearError</sigLabel>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Data Type Conversion28</sigName>
+              <xpcsigName>Trike Application Layer/CAN_A/Data Type Conversion28</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/CAN_A</SubSystemName>
+                <sigLabel>DunkC_TPDO_BrakeCtrl</sigLabel>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Data Type Conversion29</sigName>
+              <xpcsigName>Trike Application Layer/CAN_A/Data Type Conversion29</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/CAN_A</SubSystemName>
+                <sigLabel>DunkC_TPDO_DeviceMode</sigLabel>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Data Type Conversion3</sigName>
+              <xpcsigName>Trike Application Layer/CAN_A/Data Type Conversion3</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/CAN_A</SubSystemName>
+                <sigLabel>DunkA_TPDO_ClearError</sigLabel>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Data Type Conversion30</sigName>
+              <xpcsigName>Trike Application Layer/CAN_A/Data Type Conversion30</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/CAN_A</SubSystemName>
+                <sigLabel>DunkC_TPDO_PowerEnable</sigLabel>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Data Type Conversion31</sigName>
+              <xpcsigName>Trike Application Layer/CAN_A/Data Type Conversion31</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/CAN_A</SubSystemName>
+                <sigLabel>DunkC_TPDO_DesiredCurrent</sigLabel>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Data Type Conversion32</sigName>
+              <xpcsigName>Trike Application Layer/CAN_A/Data Type Conversion32</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/CAN_A</SubSystemName>
+                <sigLabel>DunkD_TPDO_ClearError</sigLabel>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Data Type Conversion33</sigName>
+              <xpcsigName>Trike Application Layer/CAN_A/Data Type Conversion33</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/CAN_A</SubSystemName>
+                <sigLabel>DunkD_TPDO_BrakeCtrl</sigLabel>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Data Type Conversion34</sigName>
+              <xpcsigName>Trike Application Layer/CAN_A/Data Type Conversion34</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/CAN_A</SubSystemName>
+                <sigLabel>DunkD_TPDO_DeviceMode</sigLabel>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Data Type Conversion35</sigName>
+              <xpcsigName>Trike Application Layer/CAN_A/Data Type Conversion35</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/CAN_A</SubSystemName>
+                <sigLabel>DunkD_TPDO_PowerEnable</sigLabel>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Data Type Conversion36</sigName>
+              <xpcsigName>Trike Application Layer/CAN_A/Data Type Conversion36</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/CAN_A</SubSystemName>
+                <sigLabel>DunkD_TPDO_DesiredCurrent</sigLabel>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Data Type Conversion4</sigName>
+              <xpcsigName>Trike Application Layer/CAN_A/Data Type Conversion4</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/CAN_A</SubSystemName>
+                <sigLabel>DunkA_TPDO_BrakeCtrl</sigLabel>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Data Type Conversion6</sigName>
+              <xpcsigName>Trike Application Layer/CAN_A/Data Type Conversion6</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/CAN_A</SubSystemName>
+                <sigLabel>DunkA_TPDO_DeviceMode</sigLabel>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Data Type Conversion7</sigName>
+              <xpcsigName>Trike Application Layer/CAN_A/Data Type Conversion7</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/CAN_A</SubSystemName>
+                <sigLabel>DunkA_TPDO_PowerEnable</sigLabel>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Data Type Conversion8</sigName>
+              <xpcsigName>Trike Application Layer/CAN_A/Data Type Conversion8</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/CAN_A</SubSystemName>
+                <sigLabel>DunkA_TPDO_DesiredCurrent</sigLabel>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+
+		</SubSystem>
+		<SubSystem>
+		<Name>CAN_B</Name>
+		<xPCName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/CAN_B</xPCName>
+				<SubSystem>
+		<Name>HeartBeatgenerator</Name>
+		<xPCName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/CAN_B/HeartBeatgenerator</xPCName>
+		
+		
+
+		</SubSystem>
+
+		
+			  
+			  
+              <signal>
+              <sigName>HeartBeatgenerator</sigName>
+              <xpcsigName>Trike Application Layer/CAN_B/HeartBeatgenerator</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/CAN_B</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Data Type Conversion</sigName>
+              <xpcsigName>Trike Application Layer/CAN_B/Data Type Conversion</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/CAN_B</SubSystemName>
+                <sigLabel>APT_TPDO_ControlWord</sigLabel>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Data Type Conversion1</sigName>
+              <xpcsigName>Trike Application Layer/CAN_B/Data Type Conversion1</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/CAN_B</SubSystemName>
+                <sigLabel>APT_TPDO_PedalPosition</sigLabel>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Data Type Conversion2</sigName>
+              <xpcsigName>Trike Application Layer/CAN_B/Data Type Conversion2</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/CAN_B</SubSystemName>
+                <sigLabel>APT_TPDO_Heartbeat</sigLabel>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+
+		</SubSystem>
+		<SubSystem>
+		<Name>System_Control</Name>
+		<xPCName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control</xPCName>
+				<SubSystem>
+		<Name>BrakeControl</Name>
+		<xPCName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/BrakeControl</xPCName>
+				<SubSystem>
+		<Name>Subsystem</Name>
+		<xPCName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/BrakeControl/Subsystem</xPCName>
+				<SubSystem>
+		<Name>Retract</Name>
+		<xPCName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/BrakeControl/Subsystem/Retract</xPCName>
+		
+		
+
+		</SubSystem>
+
+		
+            <block>
+            <blkName>offset</blkName>
+            <xpcblkName>Trike Application Layer/System_Control/BrakeControl/Subsystem/offset</xpcblkName>
+            <SLblockPath>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/BrakeControl/Subsystem/offset</SLblockPath>
+            <isSrc>[1 0 1]</isSrc>
+          <parameter>
+          <paramName>Value</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/BrakeControl/Subsystem</SubSystemName>
+          </parameter>
+          </block>
+            <block>
+            <blkName>Amp2mAmp</blkName>
+            <xpcblkName>Trike Application Layer/System_Control/BrakeControl/Subsystem/Amp2mAmp</xpcblkName>
+            <SLblockPath>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/BrakeControl/Subsystem/Amp2mAmp</SLblockPath>
+            <isSrc>[0 1 1]</isSrc>
+          <parameter>
+          <paramName>Gain</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/BrakeControl/Subsystem</SubSystemName>
+          </parameter>
+          </block>
+            <block>
+            <blkName>Gain1</blkName>
+            <xpcblkName>Trike Application Layer/System_Control/BrakeControl/Subsystem/Gain1</xpcblkName>
+            <SLblockPath>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/BrakeControl/Subsystem/Gain1</SLblockPath>
+            <isSrc>[0 1 1]</isSrc>
+          <parameter>
+          <paramName>Gain</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/BrakeControl/Subsystem</SubSystemName>
+          </parameter>
+          </block>
+            <block>
+            <blkName>Gain2</blkName>
+            <xpcblkName>Trike Application Layer/System_Control/BrakeControl/Subsystem/Gain2</xpcblkName>
+            <SLblockPath>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/BrakeControl/Subsystem/Gain2</SLblockPath>
+            <isSrc>[0 1 1]</isSrc>
+          <parameter>
+          <paramName>Gain</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/BrakeControl/Subsystem</SubSystemName>
+          </parameter>
+          </block>
+            <block>
+            <blkName>GetInPercent</blkName>
+            <xpcblkName>Trike Application Layer/System_Control/BrakeControl/Subsystem/GetInPercent</xpcblkName>
+            <SLblockPath>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/BrakeControl/Subsystem/GetInPercent</SLblockPath>
+            <isSrc>[0 1 1]</isSrc>
+          <parameter>
+          <paramName>Gain</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/BrakeControl/Subsystem</SubSystemName>
+          </parameter>
+          </block>
+            <block>
+            <blkName>Saturation</blkName>
+            <xpcblkName>Trike Application Layer/System_Control/BrakeControl/Subsystem/Saturation</xpcblkName>
+            <SLblockPath>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/BrakeControl/Subsystem/Saturation</SLblockPath>
+            <isSrc>[0 1 1]</isSrc>
+          <parameter>
+          <paramName>UpperLimit</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/BrakeControl/Subsystem</SubSystemName>
+          </parameter>
+          <parameter>
+          <paramName>LowerLimit</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/BrakeControl/Subsystem</SubSystemName>
+          </parameter>
+          </block>
+            <block>
+            <blkName>Saturation1</blkName>
+            <xpcblkName>Trike Application Layer/System_Control/BrakeControl/Subsystem/Saturation1</xpcblkName>
+            <SLblockPath>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/BrakeControl/Subsystem/Saturation1</SLblockPath>
+            <isSrc>[0 1 1]</isSrc>
+          <parameter>
+          <paramName>UpperLimit</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/BrakeControl/Subsystem</SubSystemName>
+          </parameter>
+          <parameter>
+          <paramName>LowerLimit</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/BrakeControl/Subsystem</SubSystemName>
+          </parameter>
+          </block>
+            <block>
+            <blkName>Saturation2</blkName>
+            <xpcblkName>Trike Application Layer/System_Control/BrakeControl/Subsystem/Saturation2</xpcblkName>
+            <SLblockPath>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/BrakeControl/Subsystem/Saturation2</SLblockPath>
+            <isSrc>[0 1 1]</isSrc>
+          <parameter>
+          <paramName>UpperLimit</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/BrakeControl/Subsystem</SubSystemName>
+          </parameter>
+          <parameter>
+          <paramName>LowerLimit</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/BrakeControl/Subsystem</SubSystemName>
+          </parameter>
+          </block>
+            <block>
+            <blkName>Delay</blkName>
+            <xpcblkName>Trike Application Layer/System_Control/BrakeControl/Subsystem/Delay</xpcblkName>
+            <SLblockPath>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/BrakeControl/Subsystem/Delay</SLblockPath>
+            <isSrc>[0 1 1]</isSrc>
+          <parameter>
+          <paramName>DelayLength</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/BrakeControl/Subsystem</SubSystemName>
+          </parameter>
+          <parameter>
+          <paramName>InitialCondition</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/BrakeControl/Subsystem</SubSystemName>
+          </parameter>
+          </block>
+			  
+			  
+              <signal>
+              <sigName>Retract</sigName>
+              <xpcsigName>Trike Application Layer/System_Control/BrakeControl/Subsystem/Retract</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/BrakeControl/Subsystem</SubSystemName>
+                
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Data Type Conversion</sigName>
+              <xpcsigName>Trike Application Layer/System_Control/BrakeControl/Subsystem/Data Type Conversion</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/BrakeControl/Subsystem</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Data Type Conversion1</sigName>
+              <xpcsigName>Trike Application Layer/System_Control/BrakeControl/Subsystem/Data Type Conversion1</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/BrakeControl/Subsystem</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Amp2mAmp</sigName>
+              <xpcsigName>Trike Application Layer/System_Control/BrakeControl/Subsystem/Amp2mAmp</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/BrakeControl/Subsystem</SubSystemName>
+                <sigLabel>BrakesMotor_CurrentReq</sigLabel>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Gain1</sigName>
+              <xpcsigName>Trike Application Layer/System_Control/BrakeControl/Subsystem/Gain1</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/BrakeControl/Subsystem</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Gain2</sigName>
+              <xpcsigName>Trike Application Layer/System_Control/BrakeControl/Subsystem/Gain2</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/BrakeControl/Subsystem</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>GetInPercent</sigName>
+              <xpcsigName>Trike Application Layer/System_Control/BrakeControl/Subsystem/GetInPercent</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/BrakeControl/Subsystem</SubSystemName>
+                <sigLabel>br_percent2</sigLabel>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Saturation</sigName>
+              <xpcsigName>Trike Application Layer/System_Control/BrakeControl/Subsystem/Saturation</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/BrakeControl/Subsystem</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Saturation1</sigName>
+              <xpcsigName>Trike Application Layer/System_Control/BrakeControl/Subsystem/Saturation1</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/BrakeControl/Subsystem</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Saturation2</sigName>
+              <xpcsigName>Trike Application Layer/System_Control/BrakeControl/Subsystem/Saturation2</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/BrakeControl/Subsystem</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Sum</sigName>
+              <xpcsigName>Trike Application Layer/System_Control/BrakeControl/Subsystem/Sum</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/BrakeControl/Subsystem</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Sum1</sigName>
+              <xpcsigName>Trike Application Layer/System_Control/BrakeControl/Subsystem/Sum1</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/BrakeControl/Subsystem</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Sum2</sigName>
+              <xpcsigName>Trike Application Layer/System_Control/BrakeControl/Subsystem/Sum2</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/BrakeControl/Subsystem</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Delay</sigName>
+              <xpcsigName>Trike Application Layer/System_Control/BrakeControl/Subsystem/Delay</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/BrakeControl/Subsystem</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+
+		</SubSystem>
+		<SubSystem>
+		<Name>DecisionBrakeCtrl</Name>
+		<xPCName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/BrakeControl/DecisionBrakeCtrl</xPCName>
+		
+		
+
+		</SubSystem>
+
+		
+            <block>
+            <blkName>Gain5</blkName>
+            <xpcblkName>Trike Application Layer/System_Control/BrakeControl/Gain5</xpcblkName>
+            <SLblockPath>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/BrakeControl/Gain5</SLblockPath>
+            <isSrc>[0 1 1]</isSrc>
+          <parameter>
+          <paramName>Gain</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/BrakeControl</SubSystemName>
+          </parameter>
+          </block>
+			  
+			  
+              <signal>
+              <sigName>DecisionBrakeCtrl/p1</sigName>
+              <xpcsigName>Trike Application Layer/System_Control/BrakeControl/DecisionBrakeCtrl/p1</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/BrakeControl</SubSystemName>
+                
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>DecisionBrakeCtrl/p2</sigName>
+              <xpcsigName>Trike Application Layer/System_Control/BrakeControl/DecisionBrakeCtrl/p2</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/BrakeControl</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Gain5</sigName>
+              <xpcsigName>Trike Application Layer/System_Control/BrakeControl/Gain5</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/BrakeControl</SubSystemName>
+                <sigLabel>BrakesMotor_CurrentInit [mA]</sigLabel>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Sum4</sigName>
+              <xpcsigName>Trike Application Layer/System_Control/BrakeControl/Sum4</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/BrakeControl</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+
+		</SubSystem>
+		<SubSystem>
+		<Name>SteeringControl</Name>
+		<xPCName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/SteeringControl</xPCName>
+				<SubSystem>
+		<Name>P Controller</Name>
+		<xPCName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/SteeringControl/P Controller</xPCName>
+		
+		
+
+		</SubSystem>
+
+		
+            <block>
+            <blkName>Offset to 0 pos =&gt; pos = [-180 180]deg</blkName>
+            <xpcblkName>Trike Application Layer/System_Control/SteeringControl/Offset to 0 pos =&gt; pos = [-180 180]deg</xpcblkName>
+            <SLblockPath>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/SteeringControl/Offset to 0 pos =&gt; pos = [-180 180]deg</SLblockPath>
+            <isSrc>[1 0 1]</isSrc>
+          <parameter>
+          <paramName>Value</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/SteeringControl</SubSystemName>
+          </parameter>
+          </block>
+            <block>
+            <blkName>Robotics Convention1</blkName>
+            <xpcblkName>Trike Application Layer/System_Control/SteeringControl/Robotics Convention1</xpcblkName>
+            <SLblockPath>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/SteeringControl/Robotics Convention1</SLblockPath>
+            <isSrc>[0 1 1]</isSrc>
+          <parameter>
+          <paramName>Gain</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/SteeringControl</SubSystemName>
+          </parameter>
+          </block>
+            <block>
+            <blkName>degree2rad</blkName>
+            <xpcblkName>Trike Application Layer/System_Control/SteeringControl/degree2rad</xpcblkName>
+            <SLblockPath>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/SteeringControl/degree2rad</SLblockPath>
+            <isSrc>[0 1 1]</isSrc>
+          <parameter>
+          <paramName>Gain</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/SteeringControl</SubSystemName>
+          </parameter>
+          </block>
+            <block>
+            <blkName>dem1</blkName>
+            <xpcblkName>Trike Application Layer/System_Control/SteeringControl/dem1</xpcblkName>
+            <SLblockPath>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/SteeringControl/dem1</SLblockPath>
+            <isSrc>[0 1 1]</isSrc>
+          <parameter>
+          <paramName>Gain</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/SteeringControl</SubSystemName>
+          </parameter>
+          </block>
+            <block>
+            <blkName>inc2deg</blkName>
+            <xpcblkName>Trike Application Layer/System_Control/SteeringControl/inc2deg</xpcblkName>
+            <SLblockPath>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/SteeringControl/inc2deg</SLblockPath>
+            <isSrc>[0 1 1]</isSrc>
+          <parameter>
+          <paramName>Gain</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/SteeringControl</SubSystemName>
+          </parameter>
+          </block>
+            <block>
+            <blkName>Memory1</blkName>
+            <xpcblkName>Trike Application Layer/System_Control/SteeringControl/Memory1</xpcblkName>
+            <SLblockPath>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/SteeringControl/Memory1</SLblockPath>
+            <isSrc>[0 1 1]</isSrc>
+          <parameter>
+          <paramName>InitialCondition</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/SteeringControl</SubSystemName>
+          </parameter>
+          </block>
+			  
+			  
+              <signal>
+              <sigName>P Controller</sigName>
+              <xpcsigName>Trike Application Layer/System_Control/SteeringControl/P Controller</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/SteeringControl</SubSystemName>
+                <sigLabel>SteeringMotor_SpeedReq</sigLabel>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Cast To Single</sigName>
+              <xpcsigName>Trike Application Layer/System_Control/SteeringControl/Cast To Single</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/SteeringControl</SubSystemName>
+                <sigLabel>DirectionReq</sigLabel>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Cast To Single1</sigName>
+              <xpcsigName>Trike Application Layer/System_Control/SteeringControl/Cast To Single1</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/SteeringControl</SubSystemName>
+                
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Cast To Single2</sigName>
+              <xpcsigName>Trike Application Layer/System_Control/SteeringControl/Cast To Single2</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/SteeringControl</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Robotics Convention1</sigName>
+              <xpcsigName>Trike Application Layer/System_Control/SteeringControl/Robotics Convention1</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/SteeringControl</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>degree2rad</sigName>
+              <xpcsigName>Trike Application Layer/System_Control/SteeringControl/degree2rad</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/SteeringControl</SubSystemName>
+                <sigLabel>SteeringAngle [rad]</sigLabel>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>dem1</sigName>
+              <xpcsigName>Trike Application Layer/System_Control/SteeringControl/dem1</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/SteeringControl</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>inc2deg</sigName>
+              <xpcsigName>Trike Application Layer/System_Control/SteeringControl/inc2deg</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/SteeringControl</SubSystemName>
+                
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Memory1</sigName>
+              <xpcsigName>Trike Application Layer/System_Control/SteeringControl/Memory1</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/SteeringControl</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Sum</sigName>
+              <xpcsigName>Trike Application Layer/System_Control/SteeringControl/Sum</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/SteeringControl</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Moving
+Average</sigName>
+              <xpcsigName>Trike Application Layer/System_Control/SteeringControl/Moving Average</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/SteeringControl</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+
+		</SubSystem>
+		<SubSystem>
+		<Name>Subsystem</Name>
+		<xPCName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/Subsystem</xPCName>
+		
+		
+            <block>
+            <blkName>Constant</blkName>
+            <xpcblkName>Trike Application Layer/System_Control/Subsystem/Constant</xpcblkName>
+            <SLblockPath>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/Subsystem/Constant</SLblockPath>
+            <isSrc>[1 0 1]</isSrc>
+          <parameter>
+          <paramName>Value</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/Subsystem</SubSystemName>
+          </parameter>
+          </block>
+            <block>
+            <blkName>Rate Transition</blkName>
+            <xpcblkName>Trike Application Layer/System_Control/Subsystem/Rate Transition</xpcblkName>
+            <SLblockPath>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/Subsystem/Rate Transition</SLblockPath>
+            <isSrc>[0 1 1]</isSrc>
+          <parameter>
+          <paramName>InitialCondition</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/Subsystem</SubSystemName>
+          </parameter>
+          </block>
+			  
+			  
+              <signal>
+              <sigName>Product</sigName>
+              <xpcsigName>Trike Application Layer/System_Control/Subsystem/Product</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/Subsystem</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Rate Transition</sigName>
+              <xpcsigName>Trike Application Layer/System_Control/Subsystem/Rate Transition</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/Subsystem</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Switch</sigName>
+              <xpcsigName>Trike Application Layer/System_Control/Subsystem/Switch</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/Subsystem</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Switch2</sigName>
+              <xpcsigName>Trike Application Layer/System_Control/Subsystem/Switch2</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/Subsystem</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Switch3</sigName>
+              <xpcsigName>Trike Application Layer/System_Control/Subsystem/Switch3</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/Subsystem</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Switch4</sigName>
+              <xpcsigName>Trike Application Layer/System_Control/Subsystem/Switch4</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/Subsystem</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+
+		</SubSystem>
+		<SubSystem>
+		<Name>TiltingControl</Name>
+		<xPCName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TiltingControl</xPCName>
+				<SubSystem>
+		<Name>Offset_Conversion</Name>
+		<xPCName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TiltingControl/Offset_Conversion</xPCName>
+		
+		
+            <block>
+            <blkName>Offset for 0 deg</blkName>
+            <xpcblkName>Trike Application Layer/System_Control/TiltingControl/Offset_Conversion/Offset for 0 deg</xpcblkName>
+            <SLblockPath>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TiltingControl/Offset_Conversion/Offset for 0 deg</SLblockPath>
+            <isSrc>[1 0 1]</isSrc>
+          <parameter>
+          <paramName>Value</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TiltingControl/Offset_Conversion</SubSystemName>
+          </parameter>
+          </block>
+            <block>
+            <blkName>LSB2Volt</blkName>
+            <xpcblkName>Trike Application Layer/System_Control/TiltingControl/Offset_Conversion/LSB2Volt</xpcblkName>
+            <SLblockPath>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TiltingControl/Offset_Conversion/LSB2Volt</SLblockPath>
+            <isSrc>[0 1 1]</isSrc>
+          <parameter>
+          <paramName>Gain</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TiltingControl/Offset_Conversion</SubSystemName>
+          </parameter>
+          </block>
+            <block>
+            <blkName>Volt2meter</blkName>
+            <xpcblkName>Trike Application Layer/System_Control/TiltingControl/Offset_Conversion/Volt2meter</xpcblkName>
+            <SLblockPath>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TiltingControl/Offset_Conversion/Volt2meter</SLblockPath>
+            <isSrc>[0 1 1]</isSrc>
+          <parameter>
+          <paramName>Gain</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TiltingControl/Offset_Conversion</SubSystemName>
+          </parameter>
+          </block>
+            <block>
+            <blkName>Memory1</blkName>
+            <xpcblkName>Trike Application Layer/System_Control/TiltingControl/Offset_Conversion/Memory1</xpcblkName>
+            <SLblockPath>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TiltingControl/Offset_Conversion/Memory1</SLblockPath>
+            <isSrc>[0 1 1]</isSrc>
+          <parameter>
+          <paramName>InitialCondition</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TiltingControl/Offset_Conversion</SubSystemName>
+          </parameter>
+          </block>
+            <block>
+            <blkName>Discrete Filter</blkName>
+            <xpcblkName>Trike Application Layer/System_Control/TiltingControl/Offset_Conversion/Discrete Filter</xpcblkName>
+            <SLblockPath>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TiltingControl/Offset_Conversion/Discrete Filter</SLblockPath>
+            <isSrc>[0 1 1]</isSrc>
+          <parameter>
+          <paramName>Numerator</paramName>
+          <dim>[1, 3]</dim>  
+		  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TiltingControl/Offset_Conversion</SubSystemName>
+          </parameter>
+          <parameter>
+          <paramName>Denominator</paramName>
+          <dim>[1, 3]</dim>  
+		  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TiltingControl/Offset_Conversion</SubSystemName>
+          </parameter>
+          <parameter>
+          <paramName>InitialStates</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TiltingControl/Offset_Conversion</SubSystemName>
+          </parameter>
+          </block>
+			  
+			  
+              <signal>
+              <sigName>LSB2Volt</sigName>
+              <xpcsigName>Trike Application Layer/System_Control/TiltingControl/Offset_Conversion/LSB2Volt</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TiltingControl/Offset_Conversion</SubSystemName>
+                <sigLabel>DispLeft [Volt]</sigLabel>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Volt2meter</sigName>
+              <xpcsigName>Trike Application Layer/System_Control/TiltingControl/Offset_Conversion/Volt2meter</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TiltingControl/Offset_Conversion</SubSystemName>
+                <sigLabel>DispLeft [m]</sigLabel>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Memory1</sigName>
+              <xpcsigName>Trike Application Layer/System_Control/TiltingControl/Offset_Conversion/Memory1</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TiltingControl/Offset_Conversion</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Sum</sigName>
+              <xpcsigName>Trike Application Layer/System_Control/TiltingControl/Offset_Conversion/Sum</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TiltingControl/Offset_Conversion</SubSystemName>
+                <sigLabel>DispLeftOffset [Volt]</sigLabel>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Discrete Filter</sigName>
+              <xpcsigName>Trike Application Layer/System_Control/TiltingControl/Offset_Conversion/Discrete Filter</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TiltingControl/Offset_Conversion</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+
+		</SubSystem>
+		<SubSystem>
+		<Name>Offset_Conversion2</Name>
+		<xPCName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TiltingControl/Offset_Conversion2</xPCName>
+		
+		
+            <block>
+            <blkName>Offset for 0 deg</blkName>
+            <xpcblkName>Trike Application Layer/System_Control/TiltingControl/Offset_Conversion2/Offset for 0 deg</xpcblkName>
+            <SLblockPath>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TiltingControl/Offset_Conversion2/Offset for 0 deg</SLblockPath>
+            <isSrc>[1 0 1]</isSrc>
+          <parameter>
+          <paramName>Value</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TiltingControl/Offset_Conversion2</SubSystemName>
+          </parameter>
+          </block>
+            <block>
+            <blkName>LSB2Volt</blkName>
+            <xpcblkName>Trike Application Layer/System_Control/TiltingControl/Offset_Conversion2/LSB2Volt</xpcblkName>
+            <SLblockPath>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TiltingControl/Offset_Conversion2/LSB2Volt</SLblockPath>
+            <isSrc>[0 1 1]</isSrc>
+          <parameter>
+          <paramName>Gain</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TiltingControl/Offset_Conversion2</SubSystemName>
+          </parameter>
+          </block>
+            <block>
+            <blkName>Volt2meter</blkName>
+            <xpcblkName>Trike Application Layer/System_Control/TiltingControl/Offset_Conversion2/Volt2meter</xpcblkName>
+            <SLblockPath>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TiltingControl/Offset_Conversion2/Volt2meter</SLblockPath>
+            <isSrc>[0 1 1]</isSrc>
+          <parameter>
+          <paramName>Gain</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TiltingControl/Offset_Conversion2</SubSystemName>
+          </parameter>
+          </block>
+            <block>
+            <blkName>Memory1</blkName>
+            <xpcblkName>Trike Application Layer/System_Control/TiltingControl/Offset_Conversion2/Memory1</xpcblkName>
+            <SLblockPath>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TiltingControl/Offset_Conversion2/Memory1</SLblockPath>
+            <isSrc>[0 1 1]</isSrc>
+          <parameter>
+          <paramName>InitialCondition</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TiltingControl/Offset_Conversion2</SubSystemName>
+          </parameter>
+          </block>
+            <block>
+            <blkName>Discrete Filter</blkName>
+            <xpcblkName>Trike Application Layer/System_Control/TiltingControl/Offset_Conversion2/Discrete Filter</xpcblkName>
+            <SLblockPath>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TiltingControl/Offset_Conversion2/Discrete Filter</SLblockPath>
+            <isSrc>[0 1 1]</isSrc>
+          <parameter>
+          <paramName>Numerator</paramName>
+          <dim>[1, 3]</dim>  
+		  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TiltingControl/Offset_Conversion2</SubSystemName>
+          </parameter>
+          <parameter>
+          <paramName>Denominator</paramName>
+          <dim>[1, 3]</dim>  
+		  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TiltingControl/Offset_Conversion2</SubSystemName>
+          </parameter>
+          <parameter>
+          <paramName>InitialStates</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TiltingControl/Offset_Conversion2</SubSystemName>
+          </parameter>
+          </block>
+			  
+			  
+              <signal>
+              <sigName>LSB2Volt</sigName>
+              <xpcsigName>Trike Application Layer/System_Control/TiltingControl/Offset_Conversion2/LSB2Volt</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TiltingControl/Offset_Conversion2</SubSystemName>
+                <sigLabel>DispRight [Volt]</sigLabel>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Volt2meter</sigName>
+              <xpcsigName>Trike Application Layer/System_Control/TiltingControl/Offset_Conversion2/Volt2meter</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TiltingControl/Offset_Conversion2</SubSystemName>
+                <sigLabel>DispRight [m]</sigLabel>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Memory1</sigName>
+              <xpcsigName>Trike Application Layer/System_Control/TiltingControl/Offset_Conversion2/Memory1</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TiltingControl/Offset_Conversion2</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Sum</sigName>
+              <xpcsigName>Trike Application Layer/System_Control/TiltingControl/Offset_Conversion2/Sum</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TiltingControl/Offset_Conversion2</SubSystemName>
+                <sigLabel>DispRightOffset [Volt]</sigLabel>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Discrete Filter</sigName>
+              <xpcsigName>Trike Application Layer/System_Control/TiltingControl/Offset_Conversion2/Discrete Filter</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TiltingControl/Offset_Conversion2</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+
+		</SubSystem>
+		<SubSystem>
+		<Name>PID_ctrl2</Name>
+		<xPCName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TiltingControl/PID_ctrl2</xPCName>
+				<SubSystem>
+		<Name>Comp_and_Timer</Name>
+		<xPCName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TiltingControl/PID_ctrl2/Comp_and_Timer</xPCName>
+		
+		
+
+		</SubSystem>
+		<SubSystem>
+		<Name>Derivative</Name>
+		<xPCName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TiltingControl/PID_ctrl2/Derivative</xPCName>
+		
+		
+
+		</SubSystem>
+
+		
+            <block>
+            <blkName>Constant</blkName>
+            <xpcblkName>Trike Application Layer/System_Control/TiltingControl/PID_ctrl2/Constant</xpcblkName>
+            <SLblockPath>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TiltingControl/PID_ctrl2/Constant</SLblockPath>
+            <isSrc>[1 0 1]</isSrc>
+          <parameter>
+          <paramName>Kd</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TiltingControl/PID_ctrl2</SubSystemName>
+          </parameter>
+          </block>
+            <block>
+            <blkName>Constant1</blkName>
+            <xpcblkName>Trike Application Layer/System_Control/TiltingControl/PID_ctrl2/Constant1</xpcblkName>
+            <SLblockPath>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TiltingControl/PID_ctrl2/Constant1</SLblockPath>
+            <isSrc>[1 0 1]</isSrc>
+          <parameter>
+          <paramName>Ts</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TiltingControl/PID_ctrl2</SubSystemName>
+          </parameter>
+          </block>
+            <block>
+            <blkName>Constant3</blkName>
+            <xpcblkName>Trike Application Layer/System_Control/TiltingControl/PID_ctrl2/Constant3</xpcblkName>
+            <SLblockPath>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TiltingControl/PID_ctrl2/Constant3</SLblockPath>
+            <isSrc>[1 0 1]</isSrc>
+          <parameter>
+          <paramName>Value</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TiltingControl/PID_ctrl2</SubSystemName>
+          </parameter>
+          </block>
+            <block>
+            <blkName>Discrete-Time
+Integrator</blkName>
+            <xpcblkName>Trike Application Layer/System_Control/TiltingControl/PID_ctrl2/Discrete-Time Integrator</xpcblkName>
+            <SLblockPath>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TiltingControl/PID_ctrl2/Discrete-Time Integrator</SLblockPath>
+            <isSrc>[0 1 1]</isSrc>
+          <parameter>
+          <paramName>gainval</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TiltingControl/PID_ctrl2</SubSystemName>
+          </parameter>
+          <parameter>
+          <paramName>InitialCondition</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TiltingControl/PID_ctrl2</SubSystemName>
+          </parameter>
+          </block>
+            <block>
+            <blkName>AntiWindup</blkName>
+            <xpcblkName>Trike Application Layer/System_Control/TiltingControl/PID_ctrl2/AntiWindup</xpcblkName>
+            <SLblockPath>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TiltingControl/PID_ctrl2/AntiWindup</SLblockPath>
+            <isSrc>[0 1 1]</isSrc>
+          <parameter>
+          <paramName>Ki</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TiltingControl/PID_ctrl2</SubSystemName>
+          </parameter>
+          <parameter>
+          <paramName>Kp</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TiltingControl/PID_ctrl2</SubSystemName>
+          </parameter>
+          </block>
+            <block>
+            <blkName>Integral
+Gain</blkName>
+            <xpcblkName>Trike Application Layer/System_Control/TiltingControl/PID_ctrl2/Integral Gain</xpcblkName>
+            <SLblockPath>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TiltingControl/PID_ctrl2/Integral Gain</SLblockPath>
+            <isSrc>[0 1 1]</isSrc>
+          <parameter>
+          <paramName>Ki</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TiltingControl/PID_ctrl2</SubSystemName>
+          </parameter>
+          </block>
+            <block>
+            <blkName>Proportional 
+Gain</blkName>
+            <xpcblkName>Trike Application Layer/System_Control/TiltingControl/PID_ctrl2/Proportional  Gain</xpcblkName>
+            <SLblockPath>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TiltingControl/PID_ctrl2/Proportional  Gain</SLblockPath>
+            <isSrc>[0 1 1]</isSrc>
+          <parameter>
+          <paramName>Kp</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TiltingControl/PID_ctrl2</SubSystemName>
+          </parameter>
+          </block>
+            <block>
+            <blkName>c1</blkName>
+            <xpcblkName>Trike Application Layer/System_Control/TiltingControl/PID_ctrl2/c1</xpcblkName>
+            <SLblockPath>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TiltingControl/PID_ctrl2/c1</SLblockPath>
+            <isSrc>[0 1 1]</isSrc>
+          <parameter>
+          <paramName>Gain</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TiltingControl/PID_ctrl2</SubSystemName>
+          </parameter>
+          </block>
+            <block>
+            <blkName>Saturation</blkName>
+            <xpcblkName>Trike Application Layer/System_Control/TiltingControl/PID_ctrl2/Saturation</xpcblkName>
+            <SLblockPath>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TiltingControl/PID_ctrl2/Saturation</SLblockPath>
+            <isSrc>[0 1 1]</isSrc>
+          <parameter>
+          <paramName>Req_lim</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TiltingControl/PID_ctrl2</SubSystemName>
+          </parameter>
+          <parameter>
+          <paramName>Req_lim</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TiltingControl/PID_ctrl2</SubSystemName>
+          </parameter>
+          </block>
+            <block>
+            <blkName>Saturation2</blkName>
+            <xpcblkName>Trike Application Layer/System_Control/TiltingControl/PID_ctrl2/Saturation2</xpcblkName>
+            <SLblockPath>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TiltingControl/PID_ctrl2/Saturation2</SLblockPath>
+            <isSrc>[0 1 1]</isSrc>
+          <parameter>
+          <paramName>UpperLimit</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TiltingControl/PID_ctrl2</SubSystemName>
+          </parameter>
+          <parameter>
+          <paramName>LowerLimit</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TiltingControl/PID_ctrl2</SubSystemName>
+          </parameter>
+          </block>
+            <block>
+            <blkName>Saturation3</blkName>
+            <xpcblkName>Trike Application Layer/System_Control/TiltingControl/PID_ctrl2/Saturation3</xpcblkName>
+            <SLblockPath>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TiltingControl/PID_ctrl2/Saturation3</SLblockPath>
+            <isSrc>[0 1 1]</isSrc>
+          <parameter>
+          <paramName>UpperLimit</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TiltingControl/PID_ctrl2</SubSystemName>
+          </parameter>
+          <parameter>
+          <paramName>LowerLimit</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TiltingControl/PID_ctrl2</SubSystemName>
+          </parameter>
+          </block>
+            <block>
+            <blkName>Delay</blkName>
+            <xpcblkName>Trike Application Layer/System_Control/TiltingControl/PID_ctrl2/Delay</xpcblkName>
+            <SLblockPath>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TiltingControl/PID_ctrl2/Delay</SLblockPath>
+            <isSrc>[0 1 1]</isSrc>
+          <parameter>
+          <paramName>DelayLength</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TiltingControl/PID_ctrl2</SubSystemName>
+          </parameter>
+          <parameter>
+          <paramName>InitialCondition</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TiltingControl/PID_ctrl2</SubSystemName>
+          </parameter>
+          </block>
+			  
+			  
+              <signal>
+              <sigName>Comp_and_Timer/p1</sigName>
+              <xpcsigName>Trike Application Layer/System_Control/TiltingControl/PID_ctrl2/Comp_and_Timer/p1</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TiltingControl/PID_ctrl2</SubSystemName>
+                <sigLabel>e_out</sigLabel>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Comp_and_Timer/p2</sigName>
+              <xpcsigName>Trike Application Layer/System_Control/TiltingControl/PID_ctrl2/Comp_and_Timer/p2</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TiltingControl/PID_ctrl2</SubSystemName>
+                <sigLabel>timer</sigLabel>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Derivative/p1</sigName>
+              <xpcsigName>Trike Application Layer/System_Control/TiltingControl/PID_ctrl2/Derivative/p1</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TiltingControl/PID_ctrl2</SubSystemName>
+                <sigLabel>derivative</sigLabel>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Derivative/p2</sigName>
+              <xpcsigName>Trike Application Layer/System_Control/TiltingControl/PID_ctrl2/Derivative/p2</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TiltingControl/PID_ctrl2</SubSystemName>
+                <sigLabel>yf</sigLabel>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Constant3</sigName>
+              <xpcsigName>Trike Application Layer/System_Control/TiltingControl/PID_ctrl2/Constant3</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TiltingControl/PID_ctrl2</SubSystemName>
+                <sigLabel>Hyst</sigLabel>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Data Type Conversion1</sigName>
+              <xpcsigName>Trike Application Layer/System_Control/TiltingControl/PID_ctrl2/Data Type Conversion1</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TiltingControl/PID_ctrl2</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Discrete-Time
+Integrator</sigName>
+              <xpcsigName>Trike Application Layer/System_Control/TiltingControl/PID_ctrl2/Discrete-Time Integrator</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TiltingControl/PID_ctrl2</SubSystemName>
+                <sigLabel>Integral</sigLabel>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>AntiWindup</sigName>
+              <xpcsigName>Trike Application Layer/System_Control/TiltingControl/PID_ctrl2/AntiWindup</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TiltingControl/PID_ctrl2</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Integral
+Gain</sigName>
+              <xpcsigName>Trike Application Layer/System_Control/TiltingControl/PID_ctrl2/Integral Gain</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TiltingControl/PID_ctrl2</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Proportional 
+Gain</sigName>
+              <xpcsigName>Trike Application Layer/System_Control/TiltingControl/PID_ctrl2/Proportional  Gain</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TiltingControl/PID_ctrl2</SubSystemName>
+                <sigLabel>Proportional</sigLabel>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>c1</sigName>
+              <xpcsigName>Trike Application Layer/System_Control/TiltingControl/PID_ctrl2/c1</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TiltingControl/PID_ctrl2</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Product1</sigName>
+              <xpcsigName>Trike Application Layer/System_Control/TiltingControl/PID_ctrl2/Product1</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TiltingControl/PID_ctrl2</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Product2</sigName>
+              <xpcsigName>Trike Application Layer/System_Control/TiltingControl/PID_ctrl2/Product2</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TiltingControl/PID_ctrl2</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Saturation</sigName>
+              <xpcsigName>Trike Application Layer/System_Control/TiltingControl/PID_ctrl2/Saturation</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TiltingControl/PID_ctrl2</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Saturation2</sigName>
+              <xpcsigName>Trike Application Layer/System_Control/TiltingControl/PID_ctrl2/Saturation2</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TiltingControl/PID_ctrl2</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Saturation3</sigName>
+              <xpcsigName>Trike Application Layer/System_Control/TiltingControl/PID_ctrl2/Saturation3</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TiltingControl/PID_ctrl2</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Sum</sigName>
+              <xpcsigName>Trike Application Layer/System_Control/TiltingControl/PID_ctrl2/Sum</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TiltingControl/PID_ctrl2</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Sum1</sigName>
+              <xpcsigName>Trike Application Layer/System_Control/TiltingControl/PID_ctrl2/Sum1</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TiltingControl/PID_ctrl2</SubSystemName>
+                <sigLabel>e_in</sigLabel>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Sum2</sigName>
+              <xpcsigName>Trike Application Layer/System_Control/TiltingControl/PID_ctrl2/Sum2</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TiltingControl/PID_ctrl2</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Sum4</sigName>
+              <xpcsigName>Trike Application Layer/System_Control/TiltingControl/PID_ctrl2/Sum4</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TiltingControl/PID_ctrl2</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Zero-Order
+Hold</sigName>
+              <xpcsigName>Trike Application Layer/System_Control/TiltingControl/PID_ctrl2/Zero-Order Hold</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TiltingControl/PID_ctrl2</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Delay</sigName>
+              <xpcsigName>Trike Application Layer/System_Control/TiltingControl/PID_ctrl2/Delay</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TiltingControl/PID_ctrl2</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+
+		</SubSystem>
+		<SubSystem>
+		<Name>Repeating
+Sequence1</Name>
+		<xPCName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TiltingControl/Repeating Sequence1</xPCName>
+		
+		
+            <block>
+            <blkName>Constant</blkName>
+            <xpcblkName>Trike Application Layer/System_Control/TiltingControl/Repeating Sequence1/Constant</xpcblkName>
+            <SLblockPath>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TiltingControl/Repeating Sequence1/Constant</SLblockPath>
+            <isSrc>[1 0 1]</isSrc>
+          <parameter>
+          <paramName>Value</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TiltingControl/Repeating Sequence1</SubSystemName>
+          </parameter>
+          </block>
+            <block>
+            <blkName>Look-Up Table1</blkName>
+            <xpcblkName>Trike Application Layer/System_Control/TiltingControl/Repeating Sequence1/Look-Up Table1</xpcblkName>
+            <SLblockPath>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TiltingControl/Repeating Sequence1/Look-Up Table1</SLblockPath>
+            <isSrc>[0 1 1]</isSrc>
+          <parameter>
+          <paramName>rep_seq_y</paramName>
+          <dim>[1, 8]</dim>  
+		  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TiltingControl/Repeating Sequence1</SubSystemName>
+          </parameter>
+          <parameter>
+          <paramName>BreakpointsForDimension1</paramName>
+          <dim>[1, 8]</dim>  
+		  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TiltingControl/Repeating Sequence1</SubSystemName>
+          </parameter>
+          </block>
+			  
+			  
+              <signal>
+              <sigName>Clock</sigName>
+              <xpcsigName>Trike Application Layer/System_Control/TiltingControl/Repeating Sequence1/Clock</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TiltingControl/Repeating Sequence1</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Output</sigName>
+              <xpcsigName>Trike Application Layer/System_Control/TiltingControl/Repeating Sequence1/Output</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TiltingControl/Repeating Sequence1</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Look-Up Table1</sigName>
+              <xpcsigName>Trike Application Layer/System_Control/TiltingControl/Repeating Sequence1/Look-Up Table1</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TiltingControl/Repeating Sequence1</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Math
+Function</sigName>
+              <xpcsigName>Trike Application Layer/System_Control/TiltingControl/Repeating Sequence1/Math Function</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TiltingControl/Repeating Sequence1</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Sum</sigName>
+              <xpcsigName>Trike Application Layer/System_Control/TiltingControl/Repeating Sequence1/Sum</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TiltingControl/Repeating Sequence1</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+
+		</SubSystem>
+		<SubSystem>
+		<Name>Cond</Name>
+		<xPCName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TiltingControl/Cond</xPCName>
+		
+		
+
+		</SubSystem>
+		<SubSystem>
+		<Name>Cond1</Name>
+		<xPCName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TiltingControl/Cond1</xPCName>
+		
+		
+
+		</SubSystem>
+		<SubSystem>
+		<Name>ServoTilting</Name>
+		<xPCName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TiltingControl/ServoTilting</xPCName>
+		
+		
+
+		</SubSystem>
+
+		
+            <block>
+            <blkName>PID_ctrl2</blkName>
+            <xpcblkName>Trike Application Layer/System_Control/TiltingControl/PID_ctrl2</xpcblkName>
+            <SLblockPath>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TiltingControl/PID_ctrl2</SLblockPath>
+            <isSrc>[0 3 2]</isSrc>
+          <parameter>
+          <paramName>Kp</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TiltingControl</SubSystemName>
+          </parameter>
+          <parameter>
+          <paramName>Ki</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TiltingControl</SubSystemName>
+          </parameter>
+          <parameter>
+          <paramName>Kd</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TiltingControl</SubSystemName>
+          </parameter>
+          <parameter>
+          <paramName>Ts</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TiltingControl</SubSystemName>
+          </parameter>
+          <parameter>
+          <paramName>Req_lim</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TiltingControl</SubSystemName>
+          </parameter>
+          </block>
+            <block>
+            <blkName>Repeating
+Sequence1</blkName>
+            <xpcblkName>Trike Application Layer/System_Control/TiltingControl/Repeating Sequence1</xpcblkName>
+            <SLblockPath>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TiltingControl/Repeating Sequence1</SLblockPath>
+            <isSrc>[1 0 1]</isSrc>
+          <parameter>
+          <paramName>rep_seq_y</paramName>
+          <dim>[1, 8]</dim>  
+		  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TiltingControl</SubSystemName>
+          </parameter>
+          </block>
+            <block>
+            <blkName>Offset</blkName>
+            <xpcblkName>Trike Application Layer/System_Control/TiltingControl/Offset</xpcblkName>
+            <SLblockPath>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TiltingControl/Offset</SLblockPath>
+            <isSrc>[1 0 1]</isSrc>
+          <parameter>
+          <paramName>Value</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TiltingControl</SubSystemName>
+          </parameter>
+          </block>
+            <block>
+            <blkName>Gain</blkName>
+            <xpcblkName>Trike Application Layer/System_Control/TiltingControl/Gain</xpcblkName>
+            <SLblockPath>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TiltingControl/Gain</SLblockPath>
+            <isSrc>[0 1 1]</isSrc>
+          <parameter>
+          <paramName>Gain</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TiltingControl</SubSystemName>
+          </parameter>
+          </block>
+            <block>
+            <blkName>Gain1</blkName>
+            <xpcblkName>Trike Application Layer/System_Control/TiltingControl/Gain1</xpcblkName>
+            <SLblockPath>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TiltingControl/Gain1</SLblockPath>
+            <isSrc>[0 1 1]</isSrc>
+          <parameter>
+          <paramName>Gain</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TiltingControl</SubSystemName>
+          </parameter>
+          </block>
+            <block>
+            <blkName>degree2m</blkName>
+            <xpcblkName>Trike Application Layer/System_Control/TiltingControl/degree2m</xpcblkName>
+            <SLblockPath>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TiltingControl/degree2m</SLblockPath>
+            <isSrc>[0 1 1]</isSrc>
+          <parameter>
+          <paramName>Gain</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TiltingControl</SubSystemName>
+          </parameter>
+          </block>
+            <block>
+            <blkName>n</blkName>
+            <xpcblkName>Trike Application Layer/System_Control/TiltingControl/n</xpcblkName>
+            <SLblockPath>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TiltingControl/n</SLblockPath>
+            <isSrc>[0 1 1]</isSrc>
+          <parameter>
+          <paramName>Gain</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TiltingControl</SubSystemName>
+          </parameter>
+          </block>
+            <block>
+            <blkName>Saturation</blkName>
+            <xpcblkName>Trike Application Layer/System_Control/TiltingControl/Saturation</xpcblkName>
+            <SLblockPath>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TiltingControl/Saturation</SLblockPath>
+            <isSrc>[0 1 1]</isSrc>
+          <parameter>
+          <paramName>UpperLimit</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TiltingControl</SubSystemName>
+          </parameter>
+          <parameter>
+          <paramName>LowerLimit</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TiltingControl</SubSystemName>
+          </parameter>
+          </block>
+            <block>
+            <blkName>Sine Wave1</blkName>
+            <xpcblkName>Trike Application Layer/System_Control/TiltingControl/Sine Wave1</xpcblkName>
+            <SLblockPath>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TiltingControl/Sine Wave1</SLblockPath>
+            <isSrc>[1 0 1]</isSrc>
+          <parameter>
+          <paramName>Amplitude</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TiltingControl</SubSystemName>
+          </parameter>
+          <parameter>
+          <paramName>Bias</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TiltingControl</SubSystemName>
+          </parameter>
+          <parameter>
+          <paramName>Frequency</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TiltingControl</SubSystemName>
+          </parameter>
+          <parameter>
+          <paramName>Phase</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TiltingControl</SubSystemName>
+          </parameter>
+          </block>
+            <block>
+            <blkName>Manual Switch1</blkName>
+            <xpcblkName>Trike Application Layer/System_Control/TiltingControl/Manual Switch1</xpcblkName>
+            <SLblockPath>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TiltingControl/Manual Switch1</SLblockPath>
+            <isSrc>[0 2 1]</isSrc>
+          <parameter>
+          <paramName>CurrentSetting</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TiltingControl</SubSystemName>
+          </parameter>
+          </block>
+            <block>
+            <blkName>Manual Switch4</blkName>
+            <xpcblkName>Trike Application Layer/System_Control/TiltingControl/Manual Switch4</xpcblkName>
+            <SLblockPath>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TiltingControl/Manual Switch4</SLblockPath>
+            <isSrc>[0 2 1]</isSrc>
+          <parameter>
+          <paramName>CurrentSetting</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TiltingControl</SubSystemName>
+          </parameter>
+          </block>
+			  
+			  
+              <signal>
+              <sigName>Cond</sigName>
+              <xpcsigName>Trike Application Layer/System_Control/TiltingControl/Cond</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TiltingControl</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Cond1</sigName>
+              <xpcsigName>Trike Application Layer/System_Control/TiltingControl/Cond1</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TiltingControl</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>ServoTilting</sigName>
+              <xpcsigName>Trike Application Layer/System_Control/TiltingControl/ServoTilting</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TiltingControl</SubSystemName>
+                
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Cast To Single</sigName>
+              <xpcsigName>Trike Application Layer/System_Control/TiltingControl/Cast To Single</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TiltingControl</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Cast To Single1</sigName>
+              <xpcsigName>Trike Application Layer/System_Control/TiltingControl/Cast To Single1</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TiltingControl</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Gain</sigName>
+              <xpcsigName>Trike Application Layer/System_Control/TiltingControl/Gain</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TiltingControl</SubSystemName>
+                <sigLabel>RightTiltMotor_CurrentReq [mA]</sigLabel>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Gain1</sigName>
+              <xpcsigName>Trike Application Layer/System_Control/TiltingControl/Gain1</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TiltingControl</SubSystemName>
+                <sigLabel>LeftTiltMotor_SpeedReq [rpm]</sigLabel>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>degree2m</sigName>
+              <xpcsigName>Trike Application Layer/System_Control/TiltingControl/degree2m</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TiltingControl</SubSystemName>
+                <sigLabel>PosReq [m]</sigLabel>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>n</sigName>
+              <xpcsigName>Trike Application Layer/System_Control/TiltingControl/n</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TiltingControl</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Product2</sigName>
+              <xpcsigName>Trike Application Layer/System_Control/TiltingControl/Product2</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TiltingControl</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Saturation</sigName>
+              <xpcsigName>Trike Application Layer/System_Control/TiltingControl/Saturation</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TiltingControl</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Sine Wave1</sigName>
+              <xpcsigName>Trike Application Layer/System_Control/TiltingControl/Sine Wave1</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TiltingControl</SubSystemName>
+                <sigLabel>TiltingAngle_sinreq [deg]</sigLabel>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Sum</sigName>
+              <xpcsigName>Trike Application Layer/System_Control/TiltingControl/Sum</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TiltingControl</SubSystemName>
+                <sigLabel>Fb_Angle [deg]</sigLabel>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Manual Switch1</sigName>
+              <xpcsigName>Trike Application Layer/System_Control/TiltingControl/Manual Switch1</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TiltingControl</SubSystemName>
+                
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Manual Switch4</sigName>
+              <xpcsigName>Trike Application Layer/System_Control/TiltingControl/Manual Switch4</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TiltingControl</SubSystemName>
+                
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Zero-Order
+Hold</sigName>
+              <xpcsigName>Trike Application Layer/System_Control/TiltingControl/Zero-Order Hold</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TiltingControl</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Zero-Order
+Hold1</sigName>
+              <xpcsigName>Trike Application Layer/System_Control/TiltingControl/Zero-Order Hold1</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TiltingControl</SubSystemName>
+                <sigLabel>TiltingAngle_stepreqf [deg]</sigLabel>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Zero-Order
+Hold2</sigName>
+              <xpcsigName>Trike Application Layer/System_Control/TiltingControl/Zero-Order Hold2</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TiltingControl</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Zero-Order
+Hold3</sigName>
+              <xpcsigName>Trike Application Layer/System_Control/TiltingControl/Zero-Order Hold3</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TiltingControl</SubSystemName>
+                <sigLabel>Fb_Angle_Filt [deg]</sigLabel>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Moving
+Average</sigName>
+              <xpcsigName>Trike Application Layer/System_Control/TiltingControl/Moving Average</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TiltingControl</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+
+		</SubSystem>
+		<SubSystem>
+		<Name>TractionControl</Name>
+		<xPCName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TractionControl</xPCName>
+		
+		
+            <block>
+            <blkName>Gain1</blkName>
+            <xpcblkName>Trike Application Layer/System_Control/TractionControl/Gain1</xpcblkName>
+            <SLblockPath>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TractionControl/Gain1</SLblockPath>
+            <isSrc>[0 1 1]</isSrc>
+          <parameter>
+          <paramName>Gain</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TractionControl</SubSystemName>
+          </parameter>
+          </block>
+            <block>
+            <blkName>Gain2</blkName>
+            <xpcblkName>Trike Application Layer/System_Control/TractionControl/Gain2</xpcblkName>
+            <SLblockPath>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TractionControl/Gain2</SLblockPath>
+            <isSrc>[0 1 1]</isSrc>
+          <parameter>
+          <paramName>Gain</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TractionControl</SubSystemName>
+          </parameter>
+          </block>
+            <block>
+            <blkName>WheelRadius</blkName>
+            <xpcblkName>Trike Application Layer/System_Control/TractionControl/WheelRadius</xpcblkName>
+            <SLblockPath>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TractionControl/WheelRadius</SLblockPath>
+            <isSrc>[0 1 1]</isSrc>
+          <parameter>
+          <paramName>Gain</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TractionControl</SubSystemName>
+          </parameter>
+          </block>
+            <block>
+            <blkName>m//s2Km//h</blkName>
+            <xpcblkName>Trike Application Layer/System_Control/TractionControl/m//s2Km//h</xpcblkName>
+            <SLblockPath>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TractionControl/m//s2Km//h</SLblockPath>
+            <isSrc>[0 1 1]</isSrc>
+          <parameter>
+          <paramName>Gain</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TractionControl</SubSystemName>
+          </parameter>
+          </block>
+			  
+			  
+              <signal>
+              <sigName>Abs</sigName>
+              <xpcsigName>Trike Application Layer/System_Control/TractionControl/Abs</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TractionControl</SubSystemName>
+                <sigLabel>TractionReq</sigLabel>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Cast To Single1</sigName>
+              <xpcsigName>Trike Application Layer/System_Control/TractionControl/Cast To Single1</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TractionControl</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Cast To Single2</sigName>
+              <xpcsigName>Trike Application Layer/System_Control/TractionControl/Cast To Single2</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TractionControl</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Cast To Single3</sigName>
+              <xpcsigName>Trike Application Layer/System_Control/TractionControl/Cast To Single3</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TractionControl</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Gain1</sigName>
+              <xpcsigName>Trike Application Layer/System_Control/TractionControl/Gain1</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TractionControl</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Gain2</sigName>
+              <xpcsigName>Trike Application Layer/System_Control/TractionControl/Gain2</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TractionControl</SubSystemName>
+                <sigLabel>Speed_SI</sigLabel>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>WheelRadius</sigName>
+              <xpcsigName>Trike Application Layer/System_Control/TractionControl/WheelRadius</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TractionControl</SubSystemName>
+                <sigLabel>VehSpeed_SI</sigLabel>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>m//s2Km//h</sigName>
+              <xpcsigName>Trike Application Layer/System_Control/TractionControl/m//s2Km//h</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control/TractionControl</SubSystemName>
+                <sigLabel>VehSpeed_Km/h</sigLabel>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+
+		</SubSystem>
+
+		
+			  
+			  
+              <signal>
+              <sigName>Cast To Single</sigName>
+              <xpcsigName>Trike Application Layer/System_Control/Cast To Single</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Control</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+
+		</SubSystem>
+		<SubSystem>
+		<Name>System_Init</Name>
+		<xPCName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Init</xPCName>
+				<SubSystem>
+		<Name>Brakes_DunkMotor_Init</Name>
+		<xPCName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Init/Brakes_DunkMotor_Init</xPCName>
+				<SubSystem>
+		<Name>DunkD_Brake_Init_CurrentMode</Name>
+		<xPCName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Init/Brakes_DunkMotor_Init/DunkD_Brake_Init_CurrentMode</xPCName>
+		
+		
+
+		</SubSystem>
+
+		
+            <block>
+            <blkName>Constant</blkName>
+            <xpcblkName>Trike Application Layer/System_Init/Brakes_DunkMotor_Init/Constant</xpcblkName>
+            <SLblockPath>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Init/Brakes_DunkMotor_Init/Constant</SLblockPath>
+            <isSrc>[1 0 1]</isSrc>
+          <parameter>
+          <paramName>Value</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Init/Brakes_DunkMotor_Init</SubSystemName>
+          </parameter>
+          </block>
+			  
+			  
+              <signal>
+              <sigName>DunkD_Brake_Init_CurrentMode/p1</sigName>
+              <xpcsigName>Trike Application Layer/System_Init/Brakes_DunkMotor_Init/DunkD_Brake_Init_CurrentMode/p1</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Init/Brakes_DunkMotor_Init</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>DunkD_Brake_Init_CurrentMode/p2</sigName>
+              <xpcsigName>Trike Application Layer/System_Init/Brakes_DunkMotor_Init/DunkD_Brake_Init_CurrentMode/p2</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Init/Brakes_DunkMotor_Init</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>DunkD_Brake_Init_CurrentMode/p3</sigName>
+              <xpcsigName>Trike Application Layer/System_Init/Brakes_DunkMotor_Init/DunkD_Brake_Init_CurrentMode/p3</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Init/Brakes_DunkMotor_Init</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>DunkD_Brake_Init_CurrentMode/p4</sigName>
+              <xpcsigName>Trike Application Layer/System_Init/Brakes_DunkMotor_Init/DunkD_Brake_Init_CurrentMode/p4</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Init/Brakes_DunkMotor_Init</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>DunkD_Brake_Init_CurrentMode/p5</sigName>
+              <xpcsigName>Trike Application Layer/System_Init/Brakes_DunkMotor_Init/DunkD_Brake_Init_CurrentMode/p5</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Init/Brakes_DunkMotor_Init</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>DunkD_Brake_Init_CurrentMode/p6</sigName>
+              <xpcsigName>Trike Application Layer/System_Init/Brakes_DunkMotor_Init/DunkD_Brake_Init_CurrentMode/p6</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Init/Brakes_DunkMotor_Init</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Constant</sigName>
+              <xpcsigName>Trike Application Layer/System_Init/Brakes_DunkMotor_Init/Constant</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Init/Brakes_DunkMotor_Init</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Cast To Single</sigName>
+              <xpcsigName>Trike Application Layer/System_Init/Brakes_DunkMotor_Init/Cast To Single</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Init/Brakes_DunkMotor_Init</SubSystemName>
+                
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Cast To Single1</sigName>
+              <xpcsigName>Trike Application Layer/System_Init/Brakes_DunkMotor_Init/Cast To Single1</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Init/Brakes_DunkMotor_Init</SubSystemName>
+                
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Cast To Single2</sigName>
+              <xpcsigName>Trike Application Layer/System_Init/Brakes_DunkMotor_Init/Cast To Single2</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Init/Brakes_DunkMotor_Init</SubSystemName>
+                
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Cast To Single3</sigName>
+              <xpcsigName>Trike Application Layer/System_Init/Brakes_DunkMotor_Init/Cast To Single3</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Init/Brakes_DunkMotor_Init</SubSystemName>
+                
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Cast To Single4</sigName>
+              <xpcsigName>Trike Application Layer/System_Init/Brakes_DunkMotor_Init/Cast To Single4</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Init/Brakes_DunkMotor_Init</SubSystemName>
+                <sigLabel>CurrentInit</sigLabel>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+
+		</SubSystem>
+		<SubSystem>
+		<Name>Enable</Name>
+		<xPCName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Init/Enable</xPCName>
+				<SubSystem>
+		<Name>Compare
+To Constant</Name>
+		<xPCName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Init/Enable/Compare To Constant</xPCName>
+		
+		
+            <block>
+            <blkName>Constant</blkName>
+            <xpcblkName>Trike Application Layer/System_Init/Enable/Compare To Constant/Constant</xpcblkName>
+            <SLblockPath>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Init/Enable/Compare To Constant/Constant</SLblockPath>
+            <isSrc>[1 0 1]</isSrc>
+          <parameter>
+          <paramName>const</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Init/Enable/Compare To Constant</SubSystemName>
+          </parameter>
+          </block>
+			  
+			  
+              <signal>
+              <sigName>Compare</sigName>
+              <xpcsigName>Trike Application Layer/System_Init/Enable/Compare To Constant/Compare</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Init/Enable/Compare To Constant</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+
+		</SubSystem>
+
+		
+            <block>
+            <blkName>Compare
+To Constant</blkName>
+            <xpcblkName>Trike Application Layer/System_Init/Enable/Compare To Constant</xpcblkName>
+            <SLblockPath>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Init/Enable/Compare To Constant</SLblockPath>
+            <isSrc>[0 1 1]</isSrc>
+          <parameter>
+          <paramName>const</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Init/Enable</SubSystemName>
+          </parameter>
+          </block>
+			  
+			  
+              <signal>
+              <sigName>Sum</sigName>
+              <xpcsigName>Trike Application Layer/System_Init/Enable/Sum</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Init/Enable</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+
+		</SubSystem>
+		<SubSystem>
+		<Name>Steering_DunkMotor_Init</Name>
+		<xPCName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Init/Steering_DunkMotor_Init</xPCName>
+				<SubSystem>
+		<Name>DunkA_Steering_Init_SpeedMode</Name>
+		<xPCName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Init/Steering_DunkMotor_Init/DunkA_Steering_Init_SpeedMode</xPCName>
+		
+		
+
+		</SubSystem>
+
+		
+            <block>
+            <blkName>Constant</blkName>
+            <xpcblkName>Trike Application Layer/System_Init/Steering_DunkMotor_Init/Constant</xpcblkName>
+            <SLblockPath>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Init/Steering_DunkMotor_Init/Constant</SLblockPath>
+            <isSrc>[1 0 1]</isSrc>
+          <parameter>
+          <paramName>Value</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Init/Steering_DunkMotor_Init</SubSystemName>
+          </parameter>
+          </block>
+			  
+			  
+              <signal>
+              <sigName>DunkA_Steering_Init_SpeedMode/p1</sigName>
+              <xpcsigName>Trike Application Layer/System_Init/Steering_DunkMotor_Init/DunkA_Steering_Init_SpeedMode/p1</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Init/Steering_DunkMotor_Init</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>DunkA_Steering_Init_SpeedMode/p2</sigName>
+              <xpcsigName>Trike Application Layer/System_Init/Steering_DunkMotor_Init/DunkA_Steering_Init_SpeedMode/p2</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Init/Steering_DunkMotor_Init</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>DunkA_Steering_Init_SpeedMode/p3</sigName>
+              <xpcsigName>Trike Application Layer/System_Init/Steering_DunkMotor_Init/DunkA_Steering_Init_SpeedMode/p3</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Init/Steering_DunkMotor_Init</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>DunkA_Steering_Init_SpeedMode/p4</sigName>
+              <xpcsigName>Trike Application Layer/System_Init/Steering_DunkMotor_Init/DunkA_Steering_Init_SpeedMode/p4</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Init/Steering_DunkMotor_Init</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>DunkA_Steering_Init_SpeedMode/p5</sigName>
+              <xpcsigName>Trike Application Layer/System_Init/Steering_DunkMotor_Init/DunkA_Steering_Init_SpeedMode/p5</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Init/Steering_DunkMotor_Init</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Constant</sigName>
+              <xpcsigName>Trike Application Layer/System_Init/Steering_DunkMotor_Init/Constant</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Init/Steering_DunkMotor_Init</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Cast To Single</sigName>
+              <xpcsigName>Trike Application Layer/System_Init/Steering_DunkMotor_Init/Cast To Single</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Init/Steering_DunkMotor_Init</SubSystemName>
+                
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Cast To Single1</sigName>
+              <xpcsigName>Trike Application Layer/System_Init/Steering_DunkMotor_Init/Cast To Single1</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Init/Steering_DunkMotor_Init</SubSystemName>
+                
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Cast To Single2</sigName>
+              <xpcsigName>Trike Application Layer/System_Init/Steering_DunkMotor_Init/Cast To Single2</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Init/Steering_DunkMotor_Init</SubSystemName>
+                
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Cast To Single3</sigName>
+              <xpcsigName>Trike Application Layer/System_Init/Steering_DunkMotor_Init/Cast To Single3</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Init/Steering_DunkMotor_Init</SubSystemName>
+                
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+
+		</SubSystem>
+		<SubSystem>
+		<Name>TiltingLeft_DunkMotor_Init</Name>
+		<xPCName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Init/TiltingLeft_DunkMotor_Init</xPCName>
+				<SubSystem>
+		<Name>DunkC_TiltLeft_Init_CurrentMode</Name>
+		<xPCName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Init/TiltingLeft_DunkMotor_Init/DunkC_TiltLeft_Init_CurrentMode</xPCName>
+		
+		
+
+		</SubSystem>
+
+		
+            <block>
+            <blkName>Constant</blkName>
+            <xpcblkName>Trike Application Layer/System_Init/TiltingLeft_DunkMotor_Init/Constant</xpcblkName>
+            <SLblockPath>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Init/TiltingLeft_DunkMotor_Init/Constant</SLblockPath>
+            <isSrc>[1 0 1]</isSrc>
+          <parameter>
+          <paramName>Value</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Init/TiltingLeft_DunkMotor_Init</SubSystemName>
+          </parameter>
+          </block>
+			  
+			  
+              <signal>
+              <sigName>DunkC_TiltLeft_Init_CurrentMode/p1</sigName>
+              <xpcsigName>Trike Application Layer/System_Init/TiltingLeft_DunkMotor_Init/DunkC_TiltLeft_Init_CurrentMode/p1</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Init/TiltingLeft_DunkMotor_Init</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>DunkC_TiltLeft_Init_CurrentMode/p2</sigName>
+              <xpcsigName>Trike Application Layer/System_Init/TiltingLeft_DunkMotor_Init/DunkC_TiltLeft_Init_CurrentMode/p2</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Init/TiltingLeft_DunkMotor_Init</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>DunkC_TiltLeft_Init_CurrentMode/p3</sigName>
+              <xpcsigName>Trike Application Layer/System_Init/TiltingLeft_DunkMotor_Init/DunkC_TiltLeft_Init_CurrentMode/p3</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Init/TiltingLeft_DunkMotor_Init</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>DunkC_TiltLeft_Init_CurrentMode/p4</sigName>
+              <xpcsigName>Trike Application Layer/System_Init/TiltingLeft_DunkMotor_Init/DunkC_TiltLeft_Init_CurrentMode/p4</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Init/TiltingLeft_DunkMotor_Init</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>DunkC_TiltLeft_Init_CurrentMode/p5</sigName>
+              <xpcsigName>Trike Application Layer/System_Init/TiltingLeft_DunkMotor_Init/DunkC_TiltLeft_Init_CurrentMode/p5</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Init/TiltingLeft_DunkMotor_Init</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Constant</sigName>
+              <xpcsigName>Trike Application Layer/System_Init/TiltingLeft_DunkMotor_Init/Constant</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Init/TiltingLeft_DunkMotor_Init</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Cast To Single</sigName>
+              <xpcsigName>Trike Application Layer/System_Init/TiltingLeft_DunkMotor_Init/Cast To Single</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Init/TiltingLeft_DunkMotor_Init</SubSystemName>
+                
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Cast To Single1</sigName>
+              <xpcsigName>Trike Application Layer/System_Init/TiltingLeft_DunkMotor_Init/Cast To Single1</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Init/TiltingLeft_DunkMotor_Init</SubSystemName>
+                
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Cast To Single2</sigName>
+              <xpcsigName>Trike Application Layer/System_Init/TiltingLeft_DunkMotor_Init/Cast To Single2</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Init/TiltingLeft_DunkMotor_Init</SubSystemName>
+                
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Cast To Single3</sigName>
+              <xpcsigName>Trike Application Layer/System_Init/TiltingLeft_DunkMotor_Init/Cast To Single3</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Init/TiltingLeft_DunkMotor_Init</SubSystemName>
+                
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+
+		</SubSystem>
+		<SubSystem>
+		<Name>TiltingRight_DunkMotor_Init</Name>
+		<xPCName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Init/TiltingRight_DunkMotor_Init</xPCName>
+				<SubSystem>
+		<Name>DunkB_TiltRight_Init_CurrentMode</Name>
+		<xPCName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Init/TiltingRight_DunkMotor_Init/DunkB_TiltRight_Init_CurrentMode</xPCName>
+		
+		
+
+		</SubSystem>
+
+		
+            <block>
+            <blkName>Constant</blkName>
+            <xpcblkName>Trike Application Layer/System_Init/TiltingRight_DunkMotor_Init/Constant</xpcblkName>
+            <SLblockPath>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Init/TiltingRight_DunkMotor_Init/Constant</SLblockPath>
+            <isSrc>[1 0 1]</isSrc>
+          <parameter>
+          <paramName>Value</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Init/TiltingRight_DunkMotor_Init</SubSystemName>
+          </parameter>
+          </block>
+			  
+			  
+              <signal>
+              <sigName>DunkB_TiltRight_Init_CurrentMode/p1</sigName>
+              <xpcsigName>Trike Application Layer/System_Init/TiltingRight_DunkMotor_Init/DunkB_TiltRight_Init_CurrentMode/p1</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Init/TiltingRight_DunkMotor_Init</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>DunkB_TiltRight_Init_CurrentMode/p2</sigName>
+              <xpcsigName>Trike Application Layer/System_Init/TiltingRight_DunkMotor_Init/DunkB_TiltRight_Init_CurrentMode/p2</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Init/TiltingRight_DunkMotor_Init</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>DunkB_TiltRight_Init_CurrentMode/p3</sigName>
+              <xpcsigName>Trike Application Layer/System_Init/TiltingRight_DunkMotor_Init/DunkB_TiltRight_Init_CurrentMode/p3</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Init/TiltingRight_DunkMotor_Init</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>DunkB_TiltRight_Init_CurrentMode/p4</sigName>
+              <xpcsigName>Trike Application Layer/System_Init/TiltingRight_DunkMotor_Init/DunkB_TiltRight_Init_CurrentMode/p4</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Init/TiltingRight_DunkMotor_Init</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>DunkB_TiltRight_Init_CurrentMode/p5</sigName>
+              <xpcsigName>Trike Application Layer/System_Init/TiltingRight_DunkMotor_Init/DunkB_TiltRight_Init_CurrentMode/p5</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Init/TiltingRight_DunkMotor_Init</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Constant</sigName>
+              <xpcsigName>Trike Application Layer/System_Init/TiltingRight_DunkMotor_Init/Constant</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Init/TiltingRight_DunkMotor_Init</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Cast To Single</sigName>
+              <xpcsigName>Trike Application Layer/System_Init/TiltingRight_DunkMotor_Init/Cast To Single</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Init/TiltingRight_DunkMotor_Init</SubSystemName>
+                
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Cast To Single1</sigName>
+              <xpcsigName>Trike Application Layer/System_Init/TiltingRight_DunkMotor_Init/Cast To Single1</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Init/TiltingRight_DunkMotor_Init</SubSystemName>
+                
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Cast To Single2</sigName>
+              <xpcsigName>Trike Application Layer/System_Init/TiltingRight_DunkMotor_Init/Cast To Single2</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Init/TiltingRight_DunkMotor_Init</SubSystemName>
+                
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Cast To Single3</sigName>
+              <xpcsigName>Trike Application Layer/System_Init/TiltingRight_DunkMotor_Init/Cast To Single3</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Init/TiltingRight_DunkMotor_Init</SubSystemName>
+                
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+
+		</SubSystem>
+		<SubSystem>
+		<Name>APTControlWord</Name>
+		<xPCName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Init/APTControlWord</xPCName>
+		
+		
+
+		</SubSystem>
+		<SubSystem>
+		<Name>ButtonStatus</Name>
+		<xPCName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Init/ButtonStatus</xPCName>
+		
+		
+
+		</SubSystem>
+		<SubSystem>
+		<Name>EnableCtrl</Name>
+		<xPCName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Init/EnableCtrl</xPCName>
+		
+		
+
+		</SubSystem>
+
+		
+			  
+			  
+              <signal>
+              <sigName>APTControlWord</sigName>
+              <xpcsigName>Trike Application Layer/System_Init/APTControlWord</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Init</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>ButtonStatus</sigName>
+              <xpcsigName>Trike Application Layer/System_Init/ButtonStatus</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Init</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>EnableCtrl</sigName>
+              <xpcsigName>Trike Application Layer/System_Init/EnableCtrl</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Init</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Cast To Single3</sigName>
+              <xpcsigName>Trike Application Layer/System_Init/Cast To Single3</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>SpeedgoatCANOpen2Buses1ms/Trike Application Layer/System_Init</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+
+		</SubSystem>
+
+		
+
+		</SubSystem>
+
+      
+
+</Root>

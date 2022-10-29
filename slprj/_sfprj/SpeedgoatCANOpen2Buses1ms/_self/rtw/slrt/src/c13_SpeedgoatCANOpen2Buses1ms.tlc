@@ -1,0 +1,53 @@
+%implements "chartSource" "C"
+%function ChartConfig(block, system) void
+  %createrecord chartConfiguration { ...
+          executeAtInitialization  0 ...
+  }
+  %return chartConfiguration
+%endfunction
+%function ChartDataMap(block, system) void
+  %createrecord ChartDataElements {\
+    NumChartData   5 \
+    ChartDataDefaults {\
+      RecordType   "ChartData"\
+      Dimensions   []\
+      IsTestPoint  0\
+    }\
+    ChartData {\
+      Name         "sfEvent"\
+      Description  "ActiveChartEvent"\
+      SFName       ""\
+      Path         ""\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "is_active_c13_SpeedgoatCANOpen2Buses1ms"\
+      Description  "StateIsActive"\
+      SFName       ""\
+      Path         ""\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "is_c13_SpeedgoatCANOpen2Buses1ms"\
+      Description  "StateActiveChild"\
+      SFName       ""\
+      Path         ""\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "Neutral_State"\
+      Description  "ChartLocal"\
+      SFName       ""\
+      Path         "Neutral_State"\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "Parking_Brake"\
+      Description  "ChartLocal"\
+      SFName       ""\
+      Path         "Parking_Brake"\
+      SrcLocation  ""\
+    }\
+  }
+  %return ChartDataElements
+%endfunction
